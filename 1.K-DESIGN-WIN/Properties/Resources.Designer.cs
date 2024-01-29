@@ -73,6 +73,16 @@ namespace _1.K_DESIGN_WIN.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap btnMaximizar {
+            get {
+                object obj = ResourceManager.GetObject("btnMaximizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap btnMinimizar {
             get {
                 object obj = ResourceManager.GetObject("btnMinimizar", resourceCulture);

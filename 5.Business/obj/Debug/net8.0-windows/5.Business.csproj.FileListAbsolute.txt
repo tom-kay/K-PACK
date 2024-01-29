@@ -7,7 +7,6 @@ C:\workspace\K-PACK\K-PACK\5.Business\bin\Debug\net8.0-windows\FontAwesome.Sharp
 C:\workspace\K-PACK\K-PACK\5.Business\bin\Debug\net8.0-windows\2.K-CONTROL-WIN.dll
 C:\workspace\K-PACK\K-PACK\5.Business\bin\Debug\net8.0-windows\2.K-CONTROL-WIN.pdb
 C:\workspace\K-PACK\K-PACK\5.Business\obj\Debug\net8.0-windows\5.Business.csproj.AssemblyReference.cache
-C:\workspace\K-PACK\K-PACK\5.Business\obj\Debug\net8.0-windows\_5.Business.Form1.resources
 C:\workspace\K-PACK\K-PACK\5.Business\obj\Debug\net8.0-windows\5.Business.csproj.GenerateResource.cache
 C:\workspace\K-PACK\K-PACK\5.Business\obj\Debug\net8.0-windows\5.Business.GeneratedMSBuildEditorConfig.editorconfig
 C:\workspace\K-PACK\K-PACK\5.Business\obj\Debug\net8.0-windows\5.Business.AssemblyInfoInputs.cache
@@ -23,3 +22,5 @@ C:\workspace\K-PACK\K-PACK\5.Business\bin\Debug\net8.0-windows\1.K-DESIGN-WIN.dl
 C:\workspace\K-PACK\K-PACK\5.Business\bin\Debug\net8.0-windows\3.Framework.dll
 C:\workspace\K-PACK\K-PACK\5.Business\bin\Debug\net8.0-windows\1.K-DESIGN-WIN.pdb
 C:\workspace\K-PACK\K-PACK\5.Business\bin\Debug\net8.0-windows\3.Framework.pdb
+C:\workspace\K-PACK\K-PACK\5.Business\obj\Debug\net8.0-windows\5.Business.sourcelink.json
+C:\workspace\K-PACK\K-PACK\5.Business\obj\Debug\net8.0-windows\_5.Business.frmMain.resources

@@ -1,6 +1,6 @@
-﻿namespace _5.Business
+﻿namespace _1.K_DESIGN_WIN
 {
-    partial class frmMain
+    partial class frmMdiContainer
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMdiContainer));
             pnlMainContainer = new Panel();
             pnlBottomBar = new Panel();
             lblMainMsg = new Label();
@@ -49,16 +49,18 @@
             btnMenu0 = new Button();
             panelLogo = new Panel();
             pnlTitleBar = new Panel();
+            btnMaximum = new PictureBox();
             btnExit = new PictureBox();
-            btnResize = new PictureBox();
+            btnNormal = new PictureBox();
             btnMinimum = new PictureBox();
             pnlMainContainer.SuspendLayout();
             pnlBottomBar.SuspendLayout();
             panelSubMenuBar.SuspendLayout();
             panelTopMenuBar.SuspendLayout();
             pnlTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnMaximum).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnExit).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btnResize).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnNormal).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMinimum).BeginInit();
             SuspendLayout();
             // 
@@ -222,6 +224,7 @@
             btnCloseChildForm.Size = new Size(47, 40);
             btnCloseChildForm.TabIndex = 7;
             btnCloseChildForm.UseVisualStyleBackColor = true;
+            btnCloseChildForm.Click += btnCloseChildForm_Click;
             // 
             // btnMenu5
             // 
@@ -319,21 +322,38 @@
             // pnlTitleBar
             // 
             pnlTitleBar.BackColor = Color.FromArgb(13, 93, 142);
+            pnlTitleBar.Controls.Add(btnMaximum);
             pnlTitleBar.Controls.Add(btnExit);
-            pnlTitleBar.Controls.Add(btnResize);
+            pnlTitleBar.Controls.Add(btnNormal);
             pnlTitleBar.Controls.Add(btnMinimum);
             pnlTitleBar.Dock = DockStyle.Top;
             pnlTitleBar.Location = new Point(0, 0);
             pnlTitleBar.Name = "pnlTitleBar";
             pnlTitleBar.Size = new Size(1192, 20);
             pnlTitleBar.TabIndex = 0;
+            pnlTitleBar.MouseDown += pnlTitleBar_MouseDown;
+            // 
+            // btnMaximum
+            // 
+            btnMaximum.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMaximum.BackColor = SystemColors.ControlDarkDark;
+            btnMaximum.Cursor = Cursors.Hand;
+            btnMaximum.Image = Properties.Resources.btnMaximizar;
+            btnMaximum.Location = new Point(1143, 0);
+            btnMaximum.Margin = new Padding(2);
+            btnMaximum.Name = "btnMaximum";
+            btnMaximum.Size = new Size(25, 15);
+            btnMaximum.SizeMode = PictureBoxSizeMode.CenterImage;
+            btnMaximum.TabIndex = 3;
+            btnMaximum.TabStop = false;
+            btnMaximum.Click += btnMaximum_Click;
             // 
             // btnExit
             // 
             btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnExit.BackColor = Color.Maroon;
             btnExit.Cursor = Cursors.Hand;
-            btnExit.Image = _1.K_DESIGN_WIN.Properties.Resources.btnCerrar;
+            btnExit.Image = Properties.Resources.btnCerrar;
             btnExit.Location = new Point(1167, 0);
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
@@ -341,27 +361,29 @@
             btnExit.SizeMode = PictureBoxSizeMode.CenterImage;
             btnExit.TabIndex = 2;
             btnExit.TabStop = false;
+            btnExit.Click += btnClose_Click;
             // 
-            // btnResize
+            // btnNormal
             // 
-            btnResize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnResize.BackColor = SystemColors.ControlDarkDark;
-            btnResize.Cursor = Cursors.Hand;
-            btnResize.Image = _1.K_DESIGN_WIN.Properties.Resources.btnRestaurar;
-            btnResize.Location = new Point(1143, 0);
-            btnResize.Margin = new Padding(2);
-            btnResize.Name = "btnResize";
-            btnResize.Size = new Size(25, 15);
-            btnResize.SizeMode = PictureBoxSizeMode.CenterImage;
-            btnResize.TabIndex = 1;
-            btnResize.TabStop = false;
+            btnNormal.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnNormal.BackColor = SystemColors.ControlDarkDark;
+            btnNormal.Cursor = Cursors.Hand;
+            btnNormal.Image = Properties.Resources.btnRestaurar;
+            btnNormal.Location = new Point(1143, 0);
+            btnNormal.Margin = new Padding(2);
+            btnNormal.Name = "btnNormal";
+            btnNormal.Size = new Size(25, 15);
+            btnNormal.SizeMode = PictureBoxSizeMode.CenterImage;
+            btnNormal.TabIndex = 1;
+            btnNormal.TabStop = false;
+            btnNormal.Click += btnNormal_Click;
             // 
             // btnMinimum
             // 
             btnMinimum.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnMinimum.BackColor = SystemColors.ControlDarkDark;
             btnMinimum.Cursor = Cursors.Hand;
-            btnMinimum.Image = _1.K_DESIGN_WIN.Properties.Resources.btnMinimizar;
+            btnMinimum.Image = Properties.Resources.btnMinimizar;
             btnMinimum.Location = new Point(1119, 0);
             btnMinimum.Margin = new Padding(2);
             btnMinimum.Name = "btnMinimum";
@@ -369,8 +391,9 @@
             btnMinimum.SizeMode = PictureBoxSizeMode.CenterImage;
             btnMinimum.TabIndex = 0;
             btnMinimum.TabStop = false;
+            btnMinimum.Click += bntMinimize_Click;
             // 
-            // frmMain
+            // frmMdiContainer
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -378,7 +401,7 @@
             Controls.Add(pnlMainContainer);
             FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(569, 300);
-            Name = "frmMain";
+            Name = "frmMdiContainer";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             pnlMainContainer.ResumeLayout(false);
@@ -387,8 +410,9 @@
             panelSubMenuBar.ResumeLayout(false);
             panelTopMenuBar.ResumeLayout(false);
             pnlTitleBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnMaximum).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnExit).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btnResize).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnNormal).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMinimum).EndInit();
             ResumeLayout(false);
         }
@@ -399,7 +423,7 @@
         private Panel pnlTitleBar;
         private PictureBox btnMinimum;
         private PictureBox btnExit;
-        private PictureBox btnResize;
+        private PictureBox btnNormal;
         private Panel panelTopMenuBar;
         private Button button3;
         private Button button2;
@@ -418,5 +442,6 @@
         private Label lblHora;
         private Label lbFecha;
         private Label lblMainMsg;
+        private PictureBox btnMaximum;
     }
 }

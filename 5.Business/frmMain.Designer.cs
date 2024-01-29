@@ -1,6 +1,6 @@
 ﻿namespace _5.Business
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         ///  Required designer variable.

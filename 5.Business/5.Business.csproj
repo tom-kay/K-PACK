@@ -15,4 +15,9 @@
     <ProjectReference Include="..\3.Framework\3.Framework.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Forms\" />
+    <Folder Include="Popups\" />
+  </ItemGroup>
+
 </Project>
