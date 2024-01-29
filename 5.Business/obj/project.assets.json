@@ -1,0 +1,173 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0-windows7.0": {
+      "FontAwesome.Sharp/6.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
+      "1.K-DESIGN-WIN/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/1.K-DESIGN-WIN.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/1.K-DESIGN-WIN.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "2.K-CONTROL-WIN/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "FontAwesome.Sharp": "6.3.0"
+        },
+        "compile": {
+          "bin/placeholder/2.K-CONTROL-WIN.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/2.K-CONTROL-WIN.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "3.Framework/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/3.Framework.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/3.Framework.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FontAwesome.Sharp/6.3.0": {
+      "sha512": "3/Fb0N04yYK8An07oox5ISlUyNgsnWildHfoP69uqTEOsemQemRyciphMkXZOcdBupjUD+lVsRE3FqG41/dzPA==",
+      "type": "package",
+      "path": "fontawesome.sharp/6.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fontawesome.sharp.6.3.0.nupkg.sha512",
+        "fontawesome.sharp.nuspec",
+        "lib/net472/FontAwesome.Sharp.dll",
+        "lib/net48/FontAwesome.Sharp.dll",
+        "lib/net6.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
+      ]
+    },
+    "1.K-DESIGN-WIN/1.0.0": {
+      "type": "project",
+      "path": "../1.K-DESIGN-WIN/1.K-DESIGN-WIN.csproj",
+      "msbuildProject": "../1.K-DESIGN-WIN/1.K-DESIGN-WIN.csproj"
+    },
+    "2.K-CONTROL-WIN/1.0.0": {
+      "type": "project",
+      "path": "../2.K-CONTROL-WIN/2.K-CONTROL-WIN.csproj",
+      "msbuildProject": "../2.K-CONTROL-WIN/2.K-CONTROL-WIN.csproj"
+    },
+    "3.Framework/1.0.0": {
+      "type": "project",
+      "path": "../3.Framework/3.Framework.csproj",
+      "msbuildProject": "../3.Framework/3.Framework.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0-windows7.0": [
+      "1.K-DESIGN-WIN >= 1.0.0",
+      "2.K-CONTROL-WIN >= 1.0.0",
+      "3.Framework >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\workspace\\K-PACK\\K-PACK\\5.Business\\5.Business.csproj",
+      "projectName": "5.Business",
+      "projectPath": "C:\\workspace\\K-PACK\\K-PACK\\5.Business\\5.Business.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "C:\\workspace\\K-PACK\\K-PACK\\5.Business\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {
+            "C:\\workspace\\K-PACK\\K-PACK\\1.K-DESIGN-WIN\\1.K-DESIGN-WIN.csproj": {
+              "projectPath": "C:\\workspace\\K-PACK\\K-PACK\\1.K-DESIGN-WIN\\1.K-DESIGN-WIN.csproj"
+            },
+            "C:\\workspace\\K-PACK\\K-PACK\\2.K-CONTROL-WIN\\2.K-CONTROL-WIN.csproj": {
+              "projectPath": "C:\\workspace\\K-PACK\\K-PACK\\2.K-CONTROL-WIN\\2.K-CONTROL-WIN.csproj"
+            },
+            "C:\\workspace\\K-PACK\\K-PACK\\3.Framework\\3.Framework.csproj": {
+              "projectPath": "C:\\workspace\\K-PACK\\K-PACK\\3.Framework\\3.Framework.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+C:\workspace\K-PACK\K-PACK\3.Framework\bin\Debug\net8.0\3.Framework.deps.json
+C:\workspace\K-PACK\K-PACK\3.Framework\bin\Debug\net8.0\3.Framework.dll
+C:\workspace\K-PACK\K-PACK\3.Framework\bin\Debug\net8.0\3.Framework.pdb
+C:\workspace\K-PACK\K-PACK\3.Framework\obj\Debug\net8.0\3.Framework.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\K-PACK\K-PACK\3.Framework\obj\Debug\net8.0\3.Framework.AssemblyInfoInputs.cache
+C:\workspace\K-PACK\K-PACK\3.Framework\obj\Debug\net8.0\3.Framework.AssemblyInfo.cs
+C:\workspace\K-PACK\K-PACK\3.Framework\obj\Debug\net8.0\3.Framework.csproj.CoreCompileInputs.cache
+C:\workspace\K-PACK\K-PACK\3.Framework\obj\Debug\net8.0\3.Framework.dll
+C:\workspace\K-PACK\K-PACK\3.Framework\obj\Debug\net8.0\refint\3.Framework.dll
+C:\workspace\K-PACK\K-PACK\3.Framework\obj\Debug\net8.0\3.Framework.pdb
+C:\workspace\K-PACK\K-PACK\3.Framework\obj\Debug\net8.0\ref\3.Framework.dll
