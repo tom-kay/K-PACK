@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMdiContainer));
             pnlMainContainer = new Panel();
             pnlBottomBar = new Panel();
             lblMainMsg = new Label();
-            lbFecha = new Label();
-            lblHora = new Label();
+            lblDate = new Label();
+            lblTime = new Label();
+            splMenu = new Splitter();
             panelSubMenuBar = new Panel();
             lblTitle = new Label();
             panelTopMenuBar = new Panel();
@@ -53,6 +55,7 @@
             btnExit = new PictureBox();
             btnNormal = new PictureBox();
             btnMinimum = new PictureBox();
+            tmDateTime = new System.Windows.Forms.Timer(components);
             pnlMainContainer.SuspendLayout();
             pnlBottomBar.SuspendLayout();
             panelSubMenuBar.SuspendLayout();
@@ -68,6 +71,7 @@
             // 
             pnlMainContainer.BackColor = SystemColors.ActiveCaption;
             pnlMainContainer.Controls.Add(pnlBottomBar);
+            pnlMainContainer.Controls.Add(splMenu);
             pnlMainContainer.Controls.Add(panelSubMenuBar);
             pnlMainContainer.Controls.Add(panelTopMenuBar);
             pnlMainContainer.Controls.Add(pnlTitleBar);
@@ -82,12 +86,12 @@
             // 
             pnlBottomBar.BackColor = Color.FromArgb(55, 61, 69);
             pnlBottomBar.Controls.Add(lblMainMsg);
-            pnlBottomBar.Controls.Add(lbFecha);
-            pnlBottomBar.Controls.Add(lblHora);
+            pnlBottomBar.Controls.Add(lblDate);
+            pnlBottomBar.Controls.Add(lblTime);
             pnlBottomBar.Dock = DockStyle.Bottom;
-            pnlBottomBar.Location = new Point(130, 466);
+            pnlBottomBar.Location = new Point(133, 466);
             pnlBottomBar.Name = "pnlBottomBar";
-            pnlBottomBar.Size = new Size(1062, 30);
+            pnlBottomBar.Size = new Size(1059, 30);
             pnlBottomBar.TabIndex = 3;
             // 
             // lblMainMsg
@@ -103,31 +107,39 @@
             lblMainMsg.TabIndex = 2;
             lblMainMsg.Text = "Message";
             // 
-            // lbFecha
+            // lblDate
             // 
-            lbFecha.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lbFecha.AutoSize = true;
-            lbFecha.Font = new Font("Microsoft Sans Serif", 12F);
-            lbFecha.ForeColor = Color.White;
-            lbFecha.Location = new Point(858, 5);
-            lbFecha.Margin = new Padding(4, 0, 4, 0);
-            lbFecha.Name = "lbFecha";
-            lbFecha.Size = new Size(121, 20);
-            lbFecha.TabIndex = 1;
-            lbFecha.Text = "KO, 9999-12-31";
+            lblDate.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblDate.AutoSize = true;
+            lblDate.Font = new Font("Microsoft Sans Serif", 12F);
+            lblDate.ForeColor = Color.White;
+            lblDate.Location = new Point(790, 5);
+            lblDate.Margin = new Padding(4, 0, 4, 0);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(165, 20);
+            lblDate.TabIndex = 1;
+            lblDate.Text = "9999년 12월 31일 일요일";
             // 
-            // lblHora
+            // lblTime
             // 
-            lblHora.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblHora.AutoSize = true;
-            lblHora.Font = new Font("Microsoft Sans Serif", 12F);
-            lblHora.ForeColor = Color.White;
-            lblHora.Location = new Point(987, 5);
-            lblHora.Margin = new Padding(4, 0, 4, 0);
-            lblHora.Name = "lblHora";
-            lblHora.Size = new Size(71, 20);
-            lblHora.TabIndex = 0;
-            lblHora.Text = "00:00:00";
+            lblTime.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblTime.AutoSize = true;
+            lblTime.Font = new Font("Microsoft Sans Serif", 12F);
+            lblTime.ForeColor = Color.White;
+            lblTime.Location = new Point(963, 5);
+            lblTime.Margin = new Padding(4, 0, 4, 0);
+            lblTime.Name = "lblTime";
+            lblTime.Size = new Size(71, 20);
+            lblTime.TabIndex = 0;
+            lblTime.Text = "00:00:00";
+            // 
+            // splMenu
+            // 
+            splMenu.Location = new Point(130, 60);
+            splMenu.Name = "splMenu";
+            splMenu.Size = new Size(3, 436);
+            splMenu.TabIndex = 4;
+            splMenu.TabStop = false;
             // 
             // panelSubMenuBar
             // 
@@ -331,6 +343,7 @@
             pnlTitleBar.Name = "pnlTitleBar";
             pnlTitleBar.Size = new Size(1192, 20);
             pnlTitleBar.TabIndex = 0;
+            pnlTitleBar.MouseDoubleClick += pnlTitleBar_MouseDoubleClick;
             pnlTitleBar.MouseDown += pnlTitleBar_MouseDown;
             // 
             // btnMaximum
@@ -339,10 +352,10 @@
             btnMaximum.BackColor = SystemColors.ControlDarkDark;
             btnMaximum.Cursor = Cursors.Hand;
             btnMaximum.Image = Properties.Resources.btnMaximizar;
-            btnMaximum.Location = new Point(1143, 0);
+            btnMaximum.Location = new Point(1132, 0);
             btnMaximum.Margin = new Padding(2);
             btnMaximum.Name = "btnMaximum";
-            btnMaximum.Size = new Size(25, 15);
+            btnMaximum.Size = new Size(30, 20);
             btnMaximum.SizeMode = PictureBoxSizeMode.CenterImage;
             btnMaximum.TabIndex = 3;
             btnMaximum.TabStop = false;
@@ -351,13 +364,13 @@
             // btnExit
             // 
             btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnExit.BackColor = Color.Maroon;
+            btnExit.BackColor = Color.IndianRed;
             btnExit.Cursor = Cursors.Hand;
             btnExit.Image = Properties.Resources.btnCerrar;
-            btnExit.Location = new Point(1167, 0);
+            btnExit.Location = new Point(1162, 0);
             btnExit.Margin = new Padding(2);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(25, 15);
+            btnExit.Size = new Size(30, 20);
             btnExit.SizeMode = PictureBoxSizeMode.CenterImage;
             btnExit.TabIndex = 2;
             btnExit.TabStop = false;
@@ -369,10 +382,10 @@
             btnNormal.BackColor = SystemColors.ControlDarkDark;
             btnNormal.Cursor = Cursors.Hand;
             btnNormal.Image = Properties.Resources.btnRestaurar;
-            btnNormal.Location = new Point(1143, 0);
+            btnNormal.Location = new Point(1132, 0);
             btnNormal.Margin = new Padding(2);
             btnNormal.Name = "btnNormal";
-            btnNormal.Size = new Size(25, 15);
+            btnNormal.Size = new Size(30, 20);
             btnNormal.SizeMode = PictureBoxSizeMode.CenterImage;
             btnNormal.TabIndex = 1;
             btnNormal.TabStop = false;
@@ -384,14 +397,19 @@
             btnMinimum.BackColor = SystemColors.ControlDarkDark;
             btnMinimum.Cursor = Cursors.Hand;
             btnMinimum.Image = Properties.Resources.btnMinimizar;
-            btnMinimum.Location = new Point(1119, 0);
+            btnMinimum.Location = new Point(1102, 0);
             btnMinimum.Margin = new Padding(2);
             btnMinimum.Name = "btnMinimum";
-            btnMinimum.Size = new Size(25, 15);
+            btnMinimum.Size = new Size(30, 20);
             btnMinimum.SizeMode = PictureBoxSizeMode.CenterImage;
             btnMinimum.TabIndex = 0;
             btnMinimum.TabStop = false;
             btnMinimum.Click += bntMinimize_Click;
+            // 
+            // tmDateTime
+            // 
+            tmDateTime.Enabled = true;
+            tmDateTime.Tick += tmDateTime_Tick;
             // 
             // frmMdiContainer
             // 
@@ -439,9 +457,11 @@
         private Panel panelSubMenuBar;
         private Label lblTitle;
         private Panel pnlBottomBar;
-        private Label lblHora;
-        private Label lbFecha;
+        private Label lblTime;
+        private Label lblDate;
         private Label lblMainMsg;
         private PictureBox btnMaximum;
+        private System.Windows.Forms.Timer tmDateTime;
+        private Splitter splMenu;
     }
 }

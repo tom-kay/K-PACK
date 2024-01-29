@@ -28,30 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            kDropdownMenu1 = new _2.K_CONTROL_WIN.KDropdownMenu(components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             SuspendLayout();
             // 
-            // kDropdownMenu1
-            // 
-            kDropdownMenu1.IsMainMenu = false;
-            kDropdownMenu1.MenuItemHeight = 25;
-            kDropdownMenu1.MenuItemTextColor = Color.Empty;
-            kDropdownMenu1.Name = "kDropdownMenu1";
-            kDropdownMenu1.PrimaryColor = Color.Empty;
-            kDropdownMenu1.Size = new Size(61, 4);
-            // 
-            // Form1
+            // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Name = "Form1";
+            ClientSize = new Size(1149, 647);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Location = new Point(0, 0);
+            Name = "frmMain";
             Text = "Form1";
             ResumeLayout(false);
         }
 
         #endregion
-        private _2.K_CONTROL_WIN.KDropdownMenu kDropdownMenu1;
     }
 }

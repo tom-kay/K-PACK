@@ -28,6 +28,7 @@ namespace _1.K_DESIGN_WIN
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -68,6 +69,7 @@ namespace _1.K_DESIGN_WIN
 
             base.OnPaint(e);
             ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
+            
         }
         private Color SelectThemeColor()
         {
@@ -127,9 +129,12 @@ namespace _1.K_DESIGN_WIN
             childForm.Show();
             lblTitle.Text = childForm.Text;
         }
-        private void btnMenu1_Click(object sender, EventArgs e)
+        private void OpenMenu(Form frm, object sender)
         {
-            //OpenChildForm(new Forms.frmChild1(), sender);
+            //오픈되어 있는 화면이 있으면 활성화 
+
+            //없으면 새로 오픈한다.
+            OpenChildForm(frm, sender);
         }
         private void btnCloseChildForm_Click(object sender, EventArgs e)
         {
@@ -148,10 +153,30 @@ namespace _1.K_DESIGN_WIN
         }
         private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
+            if (e.Clicks == 2)
+            {
+                pnlTitleBar_MouseDoubleClick(sender,e);
+            }
+            else if (e.Clicks == 1)
+            {
+                ReleaseCapture();
+                SendMessage(this.Handle, 0x112, 0xf012, 0);
+            }
         }
-        
+
+        private void pnlTitleBar_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (this.Size == Screen.PrimaryScreen.WorkingArea.Size)
+            {
+                btnNormal_Click(sender, e);
+            }
+            else
+            {
+                btnMaximum_Click(sender, e);
+            }
+
+        }
+
         int lx, ly;
         int sw, sh;
         private void btnNormal_Click(object sender, EventArgs e)
@@ -180,5 +205,12 @@ namespace _1.K_DESIGN_WIN
         {
             Application.Exit();
         }
+
+        private void tmDateTime_Tick(object sender, EventArgs e)
+        {
+            lblDate.Text = DateTime.Now.ToLongDateString();
+            lblTime.Text = DateTime.Now.ToString("HH:mm:ssss");
+        }
+
     }
 }

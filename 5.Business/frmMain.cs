@@ -8,5 +8,6 @@ namespace _5.Business
         {
             InitializeComponent();
         }
+
     }
 }

@@ -7,7 +7,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>Resource\k_icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Resource\k_icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\1.K-DESIGN-WIN\1.K-DESIGN-WIN.csproj" />
