@@ -29,26 +29,145 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.pnlMainContainer.SuspendLayout();
+            this.pnlTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).BeginInit();
+            this.panelTopMenuBar.SuspendLayout();
+            this.panelSubMenuBar.SuspendLayout();
+            this.pnlBottomBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaximum)).BeginInit();
+            this.pnlHeader.SuspendLayout();
+            this.pnlBody.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDesktopPane
             // 
-            this.pnlDesktopPane.Size = new System.Drawing.Size(873, 346);
+            this.pnlDesktopPane.Size = new System.Drawing.Size(821, 660);
             // 
             // trvSubMenu
             // 
             this.trvSubMenu.LineColor = System.Drawing.Color.Black;
-            this.trvSubMenu.Size = new System.Drawing.Size(130, 365);
+            this.trvSubMenu.Size = new System.Drawing.Size(200, 679);
+            // 
+            // pnlMainContainer
+            // 
+            this.pnlMainContainer.Size = new System.Drawing.Size(1024, 768);
+            // 
+            // pnlTitleBar
+            // 
+            this.pnlTitleBar.Size = new System.Drawing.Size(824, 16);
+            // 
+            // btnMinimum
+            // 
+            this.btnMinimum.Location = new System.Drawing.Point(734, 0);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(794, 0);
+            // 
+            // btnNormal
+            // 
+            this.btnNormal.Location = new System.Drawing.Point(764, 0);
+            // 
+            // panelTopMenuBar
+            // 
+            this.panelTopMenuBar.Size = new System.Drawing.Size(824, 44);
+            // 
+            // btnCloseChildForm
+            // 
+            this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
+            this.btnCloseChildForm.Location = new System.Drawing.Point(777, 0);
+            // 
+            // btnMenu5
+            // 
+            this.btnMenu5.FlatAppearance.BorderSize = 0;
+            // 
+            // btnMenu4
+            // 
+            this.btnMenu4.FlatAppearance.BorderSize = 0;
+            // 
+            // btnMenu3
+            // 
+            this.btnMenu3.FlatAppearance.BorderSize = 0;
+            // 
+            // btnMenu2
+            // 
+            this.btnMenu2.FlatAppearance.BorderSize = 0;
+            // 
+            // btnMenu1
+            // 
+            this.btnMenu1.FlatAppearance.BorderSize = 0;
+            // 
+            // btnMenu0
+            // 
+            this.btnMenu0.FlatAppearance.BorderSize = 0;
+            // 
+            // panelSubMenuBar
+            // 
+            this.panelSubMenuBar.Size = new System.Drawing.Size(200, 708);
+            // 
+            // pnlBottomBar
+            // 
+            this.pnlBottomBar.Location = new System.Drawing.Point(203, 684);
+            this.pnlBottomBar.Size = new System.Drawing.Size(821, 24);
+            // 
+            // lblTime
+            // 
+            this.lblTime.Location = new System.Drawing.Point(725, 4);
+            this.lblTime.Text = "16:57:14";
+            // 
+            // lblDate
+            // 
+            this.lblDate.Location = new System.Drawing.Point(552, 4);
+            this.lblDate.Size = new System.Drawing.Size(156, 20);
+            this.lblDate.Text = "2024년 1월 30일 화요일";
+            // 
+            // btnMaximum
+            // 
+            this.btnMaximum.Location = new System.Drawing.Point(764, 0);
+            // 
+            // splMenu
+            // 
+            this.splMenu.Size = new System.Drawing.Size(3, 708);
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.Size = new System.Drawing.Size(1024, 60);
+            // 
+            // pnlBody
+            // 
+            this.pnlBody.Size = new System.Drawing.Size(1024, 708);
+            // 
+            // pnlMenuTab
+            // 
+            this.pnlMenuTab.Location = new System.Drawing.Point(203, 660);
+            this.pnlMenuTab.Size = new System.Drawing.Size(821, 24);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 442);
+            this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SOODAL";
+            this.pnlMainContainer.ResumeLayout(false);
+            this.pnlMainContainer.PerformLayout();
+            this.pnlTitleBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).EndInit();
+            this.panelTopMenuBar.ResumeLayout(false);
+            this.panelSubMenuBar.ResumeLayout(false);
+            this.pnlBottomBar.ResumeLayout(false);
+            this.pnlBottomBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaximum)).EndInit();
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlBody.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

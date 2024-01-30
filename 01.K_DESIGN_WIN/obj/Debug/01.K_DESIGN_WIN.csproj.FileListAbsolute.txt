@@ -10,3 +10,6 @@ C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\01.K_DESIGN_WIN.csproj.Copy
 C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\01.K_DESIGN_WIN.dll
 C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\01.K_DESIGN_WIN.pdb
 C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\_01.K_DESIGN_WIN.frmLoginFrame.resources
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\_01.K_DESIGN_WIN.frmMessageBoxSample.resources
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\_01.K_DESIGN_WIN.frmPopupFrame.resources
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\_01.K_DESIGN_WIN.frmMessageBox.resources

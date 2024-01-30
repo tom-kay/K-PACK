@@ -210,8 +210,8 @@ namespace _01.K_DESIGN_WIN
             this.WindowState = FormWindowState.Minimized;
         }
         private void btnClose_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("종료 하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        {   
+            if (KMessageBox.Show("종료 하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Application.Exit();
             }

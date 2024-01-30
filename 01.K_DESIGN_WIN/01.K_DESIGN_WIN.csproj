@@ -50,7 +50,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\KMessageBox.cs" />
     <Compile Include="Classes\ThemeColor.cs" />
+    <Compile Include="frmMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessageBox.Designer.cs">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessageBoxSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessageBoxSample.Designer.cs">
+      <DependentUpon>frmMessageBoxSample.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLoginFrame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +75,12 @@
     </Compile>
     <Compile Include="frmMdiContainer.Designer.cs">
       <DependentUpon>frmMdiContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPopupFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPopupFrame.Designer.cs">
+      <DependentUpon>frmPopupFrame.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -76,13 +95,27 @@
     <Content Include="Resources\btnMaximizar.png" />
     <Content Include="Resources\btnMinimizar.png" />
     <Content Include="Resources\btnRestaurar.png" />
+    <None Include="Resources\question.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\exclamation.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\chat.png" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmMessageBox.resx">
+      <DependentUpon>frmMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessageBoxSample.resx">
+      <DependentUpon>frmMessageBoxSample.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLoginFrame.resx">
       <DependentUpon>frmLoginFrame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMdiContainer.resx">
       <DependentUpon>frmMdiContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPopupFrame.resx">
+      <DependentUpon>frmPopupFrame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

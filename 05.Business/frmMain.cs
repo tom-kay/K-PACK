@@ -20,7 +20,12 @@ namespace _05.Business
             frmLogin login = new frmLogin();
             login.ShowDialog();
 
+            frmPopup popup = new frmPopup();
+            popup.ShowDialog();
+
             base.btnMaximum_Click(null, null);
+
+
         }
     }
 }
