@@ -62,6 +62,17 @@ namespace _01.K_DESIGN_WIN
             region.Exclude(sizeGripRectangle);
             this.pnlMainContainer.Region = region;
             this.Invalidate();
+
+            if (this.Size == Screen.PrimaryScreen.WorkingArea.Size)
+            {
+                btnNormal.Visible = true;
+                btnMaximum.Visible = false;
+            }
+            else
+            {
+                btnNormal.Visible = false;
+                btnMaximum.Visible = true;
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -72,7 +83,7 @@ namespace _01.K_DESIGN_WIN
 
             base.OnPaint(e);
             ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
-            
+
         }
         private Color SelectThemeColor()
         {
@@ -126,8 +137,8 @@ namespace _01.K_DESIGN_WIN
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            this.pnlMainContainer.Controls.Add(childForm);
-            this.pnlMainContainer.Tag = childForm;
+            this.pnlDesktopPane.Controls.Add(childForm);
+            this.pnlDesktopPane.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
             lblTitle.Text = childForm.Text;
@@ -180,27 +191,21 @@ namespace _01.K_DESIGN_WIN
 
         }
 
-        int lx, ly;
-        int sw, sh;
-        private void btnNormal_Click(object sender, EventArgs e)
-        {
-            this.Size = new Size(sw, sh);
-            this.Location = new Point(lx, ly);
+        protected void btnNormal_Click(object sender, EventArgs e)
+        {   
+            this.WindowState = FormWindowState.Normal;
+
             btnNormal.Visible = false;
             btnMaximum.Visible = true;
         }
-        private void btnMaximum_Click(object sender, EventArgs e)
+        protected void btnMaximum_Click(object sender, EventArgs e)
         {
-            lx = this.Location.X;
-            ly = this.Location.Y;
-            sw = this.Size.Width;
-            sh = this.Size.Height;
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+            this.WindowState = FormWindowState.Maximized;
+
             btnMaximum.Visible = false;
             btnNormal.Visible = true;
         }
-        private void bntMinimize_Click(object sender, EventArgs e)
+        private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }

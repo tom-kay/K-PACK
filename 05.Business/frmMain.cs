@@ -16,6 +16,11 @@ namespace _05.Business
         public frmMain()
         {
             InitializeComponent();
+
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
+
+            base.btnMaximum_Click(null, null);
         }
     }
 }

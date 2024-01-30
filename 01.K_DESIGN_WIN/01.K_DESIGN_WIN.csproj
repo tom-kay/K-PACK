@@ -51,11 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ThemeColor.cs" />
-    <Compile Include="frmLogin.cs">
+    <Compile Include="frmLoginFrame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="frmLoginFrame.Designer.cs">
+      <DependentUpon>frmLoginFrame.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMdiContainer.cs">
       <SubType>Form</SubType>
@@ -78,8 +78,8 @@
     <Content Include="Resources\btnRestaurar.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="frmLoginFrame.resx">
+      <DependentUpon>frmLoginFrame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMdiContainer.resx">
       <DependentUpon>frmMdiContainer.cs</DependentUpon>
