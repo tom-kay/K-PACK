@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("1.K-DESIGN-WIN")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6430f98b97e97cd75801507e7c76059b085b4dee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("1.K-DESIGN-WIN")]
 [assembly: System.Reflection.AssemblyTitleAttribute("1.K-DESIGN-WIN")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

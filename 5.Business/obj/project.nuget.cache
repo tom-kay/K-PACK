@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2n6DlY5J80gNSI430d3JxfDn4Y8oNNMe9ISskJFJno1saOa1RSg1z2lB9VIDGWG2h7VhL2OPm9uaqwmjZZZ0NQ==",
+  "dgSpecHash": "E8N6gZGNG/UEEn/219JfxnnXfUDD0AFbaDlV8W46W6WyB2aRlEjJvTCo2LtbFKjUPFoAbHT30O060a3P04uNcQ==",
   "success": true,
   "projectFilePath": "C:\\workspace\\K-PACK\\K-PACK\\5.Business\\5.Business.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Administrator\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

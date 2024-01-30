@@ -203,7 +203,10 @@ namespace _1.K_DESIGN_WIN
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("종료 하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void tmDateTime_Tick(object sender, EventArgs e)
