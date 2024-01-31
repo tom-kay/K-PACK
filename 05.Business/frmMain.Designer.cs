@@ -28,93 +28,89 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.btnMenu0 = new _02.K_CONTROL_WIN.KButton();
+            this.drm0 = new _02.K_CONTROL_WIN.KDropdownMenu(this.components);
+            this.그래프ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.그래프ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMainContainer.SuspendLayout();
             this.pnlTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).BeginInit();
-            this.panelTopMenuBar.SuspendLayout();
             this.panelSubMenuBar.SuspendLayout();
             this.pnlBottomBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximum)).BeginInit();
             this.pnlHeader.SuspendLayout();
             this.pnlBody.SuspendLayout();
+            this.drm0.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlDesktopPane
+            // panelSubMenuBar
             // 
-            this.pnlDesktopPane.Size = new System.Drawing.Size(821, 660);
+            this.panelSubMenuBar.Controls.Add(this.btnMenu0);
+            this.panelSubMenuBar.Controls.SetChildIndex(this.btnCloseChildForm, 0);
+            this.panelSubMenuBar.Controls.SetChildIndex(this.btnMenu0, 0);
             // 
-            // pnlMainContainer
+            // lblTime
             // 
-            this.pnlMainContainer.Size = new System.Drawing.Size(1024, 768);
+            this.lblTime.Text = "19:21:34";
             // 
-            // pnlTitleBar
+            // lblDate
             // 
-            this.pnlTitleBar.Size = new System.Drawing.Size(824, 30);
-            // 
-            // btnMinimum
-            // 
-            this.btnMinimum.Location = new System.Drawing.Point(734, 0);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(794, 0);
-            // 
-            // btnNormal
-            // 
-            this.btnNormal.Location = new System.Drawing.Point(764, 0);
-            // 
-            // panelTopMenuBar
-            // 
-            this.panelTopMenuBar.Size = new System.Drawing.Size(824, 30);
+            this.lblDate.Size = new System.Drawing.Size(156, 20);
+            this.lblDate.Text = "2024년 1월 31일 수요일";
             // 
             // btnCloseChildForm
             // 
             this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
-            this.btnCloseChildForm.Location = new System.Drawing.Point(777, 0);
             // 
-            // panelSubMenuBar
+            // btnMenu0
             // 
-            this.panelSubMenuBar.Size = new System.Drawing.Size(200, 708);
+            this.btnMenu0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
+            this.btnMenu0.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
+            this.btnMenu0.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
+            this.btnMenu0.BorderRadius = 0;
+            this.btnMenu0.BorderSize = 0;
+            this.btnMenu0.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenu0.FlatAppearance.BorderSize = 0;
+            this.btnMenu0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu0.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnMenu0.ForeColor = System.Drawing.Color.White;
+            this.btnMenu0.Location = new System.Drawing.Point(0, 0);
+            this.btnMenu0.Name = "btnMenu0";
+            this.btnMenu0.Size = new System.Drawing.Size(200, 43);
+            this.btnMenu0.TabIndex = 9;
+            this.btnMenu0.Text = "DASHBOARD";
+            this.btnMenu0.TextColor = System.Drawing.Color.White;
+            this.btnMenu0.UseVisualStyleBackColor = false;
             // 
-            // pnlBottomBar
+            // drm0
             // 
-            this.pnlBottomBar.Location = new System.Drawing.Point(203, 684);
-            this.pnlBottomBar.Size = new System.Drawing.Size(821, 24);
+            this.drm0.IsMainMenu = false;
+            this.drm0.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.그래프ToolStripMenuItem});
+            this.drm0.MenuItemHeight = 25;
+            this.drm0.MenuItemTextColor = System.Drawing.Color.Empty;
+            this.drm0.Name = "drm0";
+            this.drm0.PrimaryColor = System.Drawing.Color.Empty;
+            this.drm0.Size = new System.Drawing.Size(181, 48);
             // 
-            // lblTime
+            // 그래프ToolStripMenuItem
             // 
-            this.lblTime.Location = new System.Drawing.Point(725, 4);
-            this.lblTime.Text = "16:57:14";
+            this.그래프ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.그래프ToolStripMenuItem1});
+            this.그래프ToolStripMenuItem.Name = "그래프ToolStripMenuItem";
+            this.그래프ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.그래프ToolStripMenuItem.Text = "막대";
             // 
-            // lblDate
+            // 그래프ToolStripMenuItem1
             // 
-            this.lblDate.Location = new System.Drawing.Point(552, 4);
-            this.lblDate.Size = new System.Drawing.Size(156, 20);
-            this.lblDate.Text = "2024년 1월 30일 화요일";
-            // 
-            // btnMaximum
-            // 
-            this.btnMaximum.Location = new System.Drawing.Point(764, 0);
-            // 
-            // splMenu
-            // 
-            this.splMenu.Size = new System.Drawing.Size(3, 708);
-            // 
-            // pnlHeader
-            // 
-            this.pnlHeader.Size = new System.Drawing.Size(1024, 60);
-            // 
-            // pnlBody
-            // 
-            this.pnlBody.Size = new System.Drawing.Size(1024, 708);
-            // 
-            // pnlMenuTab
-            // 
-            this.pnlMenuTab.Location = new System.Drawing.Point(203, 660);
-            this.pnlMenuTab.Size = new System.Drawing.Size(821, 24);
+            this.그래프ToolStripMenuItem1.Name = "그래프ToolStripMenuItem1";
+            this.그래프ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.그래프ToolStripMenuItem1.Text = "그래프";
+            this.그래프ToolStripMenuItem1.Click += new System.EventHandler(this.그래프ToolStripMenuItem1_Click);
             // 
             // frmMain
             // 
@@ -122,28 +118,34 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SOODAL";
+            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.Controls.SetChildIndex(this.pnlMainContainer, 0);
             this.pnlMainContainer.ResumeLayout(false);
             this.pnlMainContainer.PerformLayout();
             this.pnlTitleBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNormal)).EndInit();
-            this.panelTopMenuBar.ResumeLayout(false);
             this.panelSubMenuBar.ResumeLayout(false);
             this.pnlBottomBar.ResumeLayout(false);
             this.pnlBottomBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximum)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.pnlBody.ResumeLayout(false);
+            this.drm0.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private _02.K_CONTROL_WIN.KButton btnMenu0;
+        private _02.K_CONTROL_WIN.KDropdownMenu drm0;
+        private System.Windows.Forms.ToolStripMenuItem 그래프ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 그래프ToolStripMenuItem1;
     }
 }
 

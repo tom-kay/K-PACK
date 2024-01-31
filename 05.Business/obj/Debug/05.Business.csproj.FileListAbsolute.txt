@@ -17,6 +17,5 @@ C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\SOODAL.pdb
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\_05.Business.frmMain.resources
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\_05.Business.frmLogin.resources
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\System.ComponentModel.Annotations.dll
-C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\_05.Business.Views.MainView.resources
-C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\_05.Business.Views.PetView.resources
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\_05.Business.frmPopup.resources
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\_05.Business.Form1.resources

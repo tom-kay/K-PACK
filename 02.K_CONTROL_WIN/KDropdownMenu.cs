@@ -16,10 +16,9 @@ namespace _02.K_CONTROL_WIN
         private Bitmap menuItemHeaderSize;
 
         //Constructor
-        public KDropdownMenu(IContainer container)
-            : base(container)
+        public KDropdownMenu(IContainer container): base(container)
         {
-
+            
         }
 
         //Properties
@@ -58,7 +57,7 @@ namespace _02.K_CONTROL_WIN
         private void LoadMenuItemHeight()
         {
             if (isMainMenu)
-                menuItemHeaderSize = new Bitmap(25, 45);
+                menuItemHeaderSize = new Bitmap(25, 30);
             else menuItemHeaderSize = new Bitmap(20, menuItemHeight);
 
             foreach (ToolStripMenuItem menuItemL1 in this.Items)

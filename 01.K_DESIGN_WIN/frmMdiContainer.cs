@@ -1,4 +1,5 @@
 using _01.K_DESIGN_WIN.Classes;
+using _02.K_CONTROL_WIN;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -99,7 +100,7 @@ namespace _01.K_DESIGN_WIN
         private void ActivateButton(object btnSender)
         {
             if (btnSender != null)
-            {
+            {   
                 if (currentButton != (Button)btnSender)
                 {
                     DisableButton();
@@ -112,9 +113,9 @@ namespace _01.K_DESIGN_WIN
                     panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     ThemeColor.PrimaryColor = color;
                     ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-                    btnCloseChildForm.Visible = true;
                 }
             }
+            btnCloseChildForm.Visible = true;
         }
         private void DisableButton()
         {
@@ -141,7 +142,6 @@ namespace _01.K_DESIGN_WIN
             this.pnlDesktopPane.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitle.Text = childForm.Text;
         }
         private void OpenMenu(Form frm, object sender)
         {
@@ -159,9 +159,8 @@ namespace _01.K_DESIGN_WIN
         private void Reset()
         {
             DisableButton();
-            lblTitle.Text = "HOME";
-            panelSubMenuBar.BackColor = Color.FromArgb(0, 150, 136);
-            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            //panelSubMenuBar.BackColor = Color.FromArgb(51, 60, 77);
+            //panelLogo.BackColor = Color.FromArgb(51, 60, 77);
             currentButton = null;
             btnCloseChildForm.Visible = false;
         }

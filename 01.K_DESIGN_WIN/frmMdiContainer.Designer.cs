@@ -43,7 +43,7 @@ namespace _01.K_DESIGN_WIN
             this.lblTime = new System.Windows.Forms.Label();
             this.splMenu = new System.Windows.Forms.Splitter();
             this.panelSubMenuBar = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.panelTopMenuBar = new System.Windows.Forms.Panel();
             this.pnlTitleBar = new System.Windows.Forms.Panel();
@@ -56,7 +56,6 @@ namespace _01.K_DESIGN_WIN
             this.kTabControl1 = new _02.K_CONTROL_WIN.KTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.pnlMainContainer.SuspendLayout();
             this.pnlBody.SuspendLayout();
             this.pnlMenuTab.SuspendLayout();
@@ -181,7 +180,6 @@ namespace _01.K_DESIGN_WIN
             // 
             this.panelSubMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.panelSubMenuBar.Controls.Add(this.btnCloseChildForm);
-            this.panelSubMenuBar.Controls.Add(this.lblTitle);
             this.panelSubMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSubMenuBar.Location = new System.Drawing.Point(0, 0);
             this.panelSubMenuBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -189,18 +187,20 @@ namespace _01.K_DESIGN_WIN
             this.panelSubMenuBar.Size = new System.Drawing.Size(200, 708);
             this.panelSubMenuBar.TabIndex = 2;
             // 
-            // lblTitle
+            // btnCloseChildForm
             // 
-            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(200, 29);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "HOME";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCloseChildForm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
+            this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseChildForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseChildForm.Image")));
+            this.btnCloseChildForm.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCloseChildForm.Location = new System.Drawing.Point(0, 664);
+            this.btnCloseChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCloseChildForm.Name = "btnCloseChildForm";
+            this.btnCloseChildForm.Size = new System.Drawing.Size(200, 44);
+            this.btnCloseChildForm.TabIndex = 8;
+            this.btnCloseChildForm.UseVisualStyleBackColor = true;
+            this.btnCloseChildForm.Click += new System.EventHandler(this.btnCloseChildForm_Click);
             // 
             // pnlHeader
             // 
@@ -354,20 +354,6 @@ namespace _01.K_DESIGN_WIN
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnCloseChildForm
-            // 
-            this.btnCloseChildForm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
-            this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseChildForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseChildForm.Image")));
-            this.btnCloseChildForm.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCloseChildForm.Location = new System.Drawing.Point(0, 664);
-            this.btnCloseChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCloseChildForm.Name = "btnCloseChildForm";
-            this.btnCloseChildForm.Size = new System.Drawing.Size(200, 44);
-            this.btnCloseChildForm.TabIndex = 8;
-            this.btnCloseChildForm.UseVisualStyleBackColor = true;
-            // 
             // frmMdiContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -408,7 +394,6 @@ namespace _01.K_DESIGN_WIN
         protected Panel panelTopMenuBar;
         protected Panel panelLogo;
         protected Panel panelSubMenuBar;
-        protected Label lblTitle;
         protected Panel pnlBottomBar;
         protected Label lblTime;
         protected Label lblDate;
