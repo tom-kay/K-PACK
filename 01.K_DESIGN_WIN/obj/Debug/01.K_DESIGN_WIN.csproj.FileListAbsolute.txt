@@ -13,3 +13,5 @@ C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\_01.K_DESIGN_WIN.frmLoginFr
 C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\_01.K_DESIGN_WIN.frmMessageBoxSample.resources
 C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\_01.K_DESIGN_WIN.frmPopupFrame.resources
 C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\_01.K_DESIGN_WIN.frmMessageBox.resources
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\bin\Debug\02.K_CONTROL_WIN.dll
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\bin\Debug\02.K_CONTROL_WIN.pdb

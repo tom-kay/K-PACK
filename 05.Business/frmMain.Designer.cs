@@ -46,18 +46,13 @@
             // 
             this.pnlDesktopPane.Size = new System.Drawing.Size(821, 660);
             // 
-            // trvSubMenu
-            // 
-            this.trvSubMenu.LineColor = System.Drawing.Color.Black;
-            this.trvSubMenu.Size = new System.Drawing.Size(200, 679);
-            // 
             // pnlMainContainer
             // 
             this.pnlMainContainer.Size = new System.Drawing.Size(1024, 768);
             // 
             // pnlTitleBar
             // 
-            this.pnlTitleBar.Size = new System.Drawing.Size(824, 16);
+            this.pnlTitleBar.Size = new System.Drawing.Size(824, 30);
             // 
             // btnMinimum
             // 
@@ -73,36 +68,12 @@
             // 
             // panelTopMenuBar
             // 
-            this.panelTopMenuBar.Size = new System.Drawing.Size(824, 44);
+            this.panelTopMenuBar.Size = new System.Drawing.Size(824, 30);
             // 
             // btnCloseChildForm
             // 
             this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
             this.btnCloseChildForm.Location = new System.Drawing.Point(777, 0);
-            // 
-            // btnMenu5
-            // 
-            this.btnMenu5.FlatAppearance.BorderSize = 0;
-            // 
-            // btnMenu4
-            // 
-            this.btnMenu4.FlatAppearance.BorderSize = 0;
-            // 
-            // btnMenu3
-            // 
-            this.btnMenu3.FlatAppearance.BorderSize = 0;
-            // 
-            // btnMenu2
-            // 
-            this.btnMenu2.FlatAppearance.BorderSize = 0;
-            // 
-            // btnMenu1
-            // 
-            this.btnMenu1.FlatAppearance.BorderSize = 0;
-            // 
-            // btnMenu0
-            // 
-            this.btnMenu0.FlatAppearance.BorderSize = 0;
             // 
             // panelSubMenuBar
             // 

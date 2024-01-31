@@ -84,6 +84,12 @@
     <Compile Include="KRadioButton.Designer.cs">
       <DependentUpon>KRadioButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="KTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KTabControl.Designer.cs">
+      <DependentUpon>KTabControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="KTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>

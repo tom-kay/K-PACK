@@ -125,5 +125,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\02.K_CONTROL_WIN\02.K_CONTROL_WIN.csproj">
+      <Project>{5815AF69-7BA4-4078-93C6-1858678AE33E}</Project>
+      <Name>02.K_CONTROL_WIN</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
