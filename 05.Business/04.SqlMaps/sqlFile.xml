@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="MemberMapper" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+
+	<statements>
+		<statement id="getMemberCnt" parameterClass="string" resultClass="Int32" >
+
+           SELECT      COUNT(*)
+           FROM MEMBER
+           WHERE 1 = 1
+           AND   user_id = #value#“</statement>
+	</statements>
+</sqlMap>

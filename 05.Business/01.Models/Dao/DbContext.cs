@@ -9,7 +9,6 @@ namespace _05.Business.Models.Dao
 {
     internal class DbContext
     {
-        protected SqlConnection Conexion = new SqlConnection(
-            "Server=DESKTOP-4FVONF2;DataBase=Practica_Patrones;Integrated Security=true");
+        protected SqlConnection Conexion = new SqlConnection("Server=DESKTOP-4FVONF2;DataBase=Practica_Patrones;Integrated Security=true");
     }
 }
