@@ -41,8 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dlls\IBatisNet.Common.dll" />
+    <Content Include="Dlls\IBatisNet.Common.Logging.Log4Net.dll" />
+    <Content Include="Dlls\IBatisNet.DataMapper.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Dlls\providers.config" />
+    <None Include="Dlls\sample.SqlMap.config" />
+    <None Include="Dlls\SqlMap.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
