@@ -1,5 +1,6 @@
 ﻿using _01.K_DESIGN_WIN;
 using _02.K_CONTROL_WIN;
+using _05.Business._03.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace _05.Business
 
             base.btnMaximum_Click(null, null);
 
-
+          
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -65,7 +66,7 @@ namespace _05.Business
 
         private void 그래프ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            base.OpenChildForm(new Form1(), null);
+            base.OpenChildForm(new frmCodeMasterMng(), null);
         }
     }
 }
