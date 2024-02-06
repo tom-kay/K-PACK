@@ -1,22 +1,20 @@
-﻿using IBatisNet.DataMapper.Configuration;
-using IBatisNet.DataMapper;
-using System.Xml;
-using IBatisNet.Common.Utilities;
+﻿using SmartSql;
+using SmartSql.Abstractions;
 using System;
 
 
 namespace _05.Business._01.Models.Dao
 {
-	public class DaoFactory
+  public class DaoFactory
 	{
-    public static ISqlMapper EntityMapper
+    public static ISmartSqlMapper SqlMapper
     {
       get
       {
         try
-        {
-          ISqlMapper mapper = Mapper.Instance();
-          return mapper;
+        { 
+          ISmartSqlMapper SqlMapper = MapperContainer.Instance.GetSqlMapper("SmartSqlMapConfig.xml");
+          return SqlMapper;
         }
         catch (Exception ex)
         {

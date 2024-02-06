@@ -1,32 +1,38 @@
 ﻿using _05.Business._01.Models.Dto;
-using IBatisNet.DataMapper;
-using System;
-using System.Collections;
+using SmartSql.Abstractions;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _05.Business._01.Models.Dao
 {
-	public class CodeMntDao : DaoFactory
+  public class CodeMntDao : DaoFactory
 	{
 
-    public static string FindDepartment(int deptId)
+    public CodeMasterDto GetCodeMaster()
     {
 
-      ISqlMapper mapper = EntityMapper;
-      string str = mapper.QueryForObject<string>("selectCodeMasterList", deptId);
-      return str;
+      RequestContext context = new RequestContext
+      {
+        Scope = "CodeMng",
+        SqlId = "selectCodeMasterList"
+      };
+      CodeMasterDto code = SqlMapper.QuerySingle<CodeMasterDto>(context);
+      
+      return code;
 
     }
 
     public List<CodeMasterDto> GetCodeMasterList()
 		{
-      ISqlMapper mapper = EntityMapper;
-      List<CodeMasterDto> list = mapper.QueryForList<CodeMasterDto>("selectCodeMasterList", null).ToList();
-			
-			return list;
+      RequestContext context = new RequestContext
+      {
+        Scope = "CodeMng",
+        SqlId = "selectCodeMasterList",
+        //Request = new { Ids = new long[] { 1, 2, 3, 4 } }
+      };
+      List<CodeMasterDto> codes = SqlMapper.Query<CodeMasterDto>(context).ToList();
+
+      return codes;
 		}
 
 		//public void insertEmployee(string emp)
