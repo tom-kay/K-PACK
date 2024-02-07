@@ -8,5 +8,6 @@
 	</Database>
 	<SmartSqlMaps>
 		<SmartSqlMap Path="01.Models/Maps" Type="Directory"/>
+		<SmartSqlMap Path="01.Models/Maps/Base" Type="Directory"/>
 	</SmartSqlMaps>
 </SmartSqlMapConfig>

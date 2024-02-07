@@ -2,18 +2,12 @@
 using _02.K_CONTROL_WIN;
 using _05.Business._03.Views;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _05.Business
 {
-    public partial class frmMain : frmMdiContainer
+	public partial class frmMain : frmMdiContainer
     {
         public frmMain()
         {

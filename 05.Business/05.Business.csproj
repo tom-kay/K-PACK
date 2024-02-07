@@ -33,8 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
@@ -62,6 +61,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
       <Private>True</Private>
@@ -179,6 +179,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
@@ -198,17 +199,11 @@
     <Compile Include="01.Models\Dto\CodeMasterDto.cs" />
     <Compile Include="01.Models\Dto\DtoBase.cs" />
     <Compile Include="02.Controllers\ClienteController.cs" />
-    <Compile Include="03.Views\frmCodeMasterMng.cs">
+    <Compile Include="03.Views\Base\frmCodeMasterMng.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="03.Views\frmCodeMasterMng.Designer.cs">
+    <Compile Include="03.Views\Base\frmCodeMasterMng.Designer.cs">
       <DependentUpon>frmCodeMasterMng.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -222,19 +217,16 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPopup.cs">
+    <Compile Include="03.Views\Popup\Common\frmPopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPopup.Designer.cs">
+    <Compile Include="03.Views\Popup\Common\frmPopup.Designer.cs">
       <DependentUpon>frmPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="03.Views\frmCodeMasterMng.resx">
+    <EmbeddedResource Include="03.Views\Base\frmCodeMasterMng.resx">
       <DependentUpon>frmCodeMasterMng.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -242,7 +234,7 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPopup.resx">
+    <EmbeddedResource Include="03.Views\Popup\Common\frmPopup.resx">
       <DependentUpon>frmPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -272,9 +264,10 @@
     <EmbeddedResource Include="SmartSqlMapConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="01.Models\Maps\CodeMng.xml">
+    <EmbeddedResource Include="01.Models\Maps\Base\CodeMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Content Include="icon.ico" />
     <Content Include="Resource\icon.ico" />
   </ItemGroup>
   <ItemGroup>

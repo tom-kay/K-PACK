@@ -17,8 +17,6 @@ C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\SOODAL.pdb
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\_05.Business.frmMain.resources
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\_05.Business.frmLogin.resources
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\_05.Business.frmPopup.resources
-C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\_05.Business.Form1.resources
-C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\log4net.dll
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\System.Buffers.dll
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\System.Diagnostics.DiagnosticSource.dll
@@ -26,7 +24,6 @@ C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\System.Memory.dll
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\System.Numerics.Vectors.dll
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\log4net.xml
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\_05.Business._03.Views.frmCodeMasterMng.resources
@@ -74,7 +71,7 @@ F:\workspace\K-PACK\05.Business\bin\Debug\K4os.Hash.xxHash.dll
 F:\workspace\K-PACK\05.Business\bin\Debug\System.Numerics.Vectors.dll
 F:\workspace\K-PACK\05.Business\bin\Debug\MySql.Data.xml
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\SmartSqlMapConfig.xml
-C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\01.Models\Maps\CodeMng.xml
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\SmartSql.dll
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\MySql.Data.dll
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\MySql.Data.xml
+C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\01.Models\Maps\Base\CodeMng.xml
