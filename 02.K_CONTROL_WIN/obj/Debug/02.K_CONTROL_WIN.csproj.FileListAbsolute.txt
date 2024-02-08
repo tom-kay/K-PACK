@@ -1,3 +1,5 @@
+C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\bin\Debug\02.K_CONTROL_WIN.dll
+C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\bin\Debug\02.K_CONTROL_WIN.pdb
 C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\obj\Debug\02.K_CONTROL_WIN.csproj.AssemblyReference.cache
 C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\obj\Debug\_02.K_CONTROL_WIN.KButton.resources
 C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\obj\Debug\_02.K_CONTROL_WIN.KCircularPictureBox.resources
@@ -11,7 +13,5 @@ C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\obj\Debug\_02.K_CONTROL_WIN.KToggleB
 C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\obj\Debug\_02.K_CONTROL_WIN.Properties.Resources.resources
 C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\obj\Debug\02.K_CONTROL_WIN.csproj.GenerateResource.cache
 C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\obj\Debug\02.K_CONTROL_WIN.csproj.CoreCompileInputs.cache
-C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\bin\Debug\02.K_CONTROL_WIN.dll
-C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\bin\Debug\02.K_CONTROL_WIN.pdb
 C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\obj\Debug\02.K_CONTROL_WIN.dll
 C:\workspace\K-PACK\K-PACK\02.K_CONTROL_WIN\obj\Debug\02.K_CONTROL_WIN.pdb

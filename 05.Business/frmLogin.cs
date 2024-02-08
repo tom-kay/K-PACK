@@ -1,4 +1,4 @@
-﻿using _01.K_DESIGN_WIN;
+﻿using P01_K_DESIGN_WIN;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace _05.Business
+namespace P05_Business
 {
     public partial class frmLogin : frmLoginFrame
     {

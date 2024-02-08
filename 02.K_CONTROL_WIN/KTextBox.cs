@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace _02.K_CONTROL_WIN
+namespace P02_K_CONTROL_WIN
 {
     [DefaultEvent("_TextChanged")]
     public partial class KTextBox : UserControl

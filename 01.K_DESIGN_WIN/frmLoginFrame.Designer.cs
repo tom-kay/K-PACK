@@ -1,4 +1,4 @@
-﻿namespace _01.K_DESIGN_WIN
+﻿namespace P01_K_DESIGN_WIN
 {
     partial class frmLoginFrame
     {

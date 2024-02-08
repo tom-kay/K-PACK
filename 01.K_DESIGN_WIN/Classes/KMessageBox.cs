@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _01.K_DESIGN_WIN.Classes
+namespace P01_K_DESIGN_WIN.Classes
 {
 	public abstract class KMessageBox
 	{

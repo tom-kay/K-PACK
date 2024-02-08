@@ -1,4 +1,4 @@
-﻿namespace _01.K_DESIGN_WIN
+﻿namespace P01_K_DESIGN_WIN
 {
     partial class frmMessageBox
     {
@@ -175,7 +175,7 @@
 			// pictureBoxIcon
 			// 
 			this.pictureBoxIcon.Dock = System.Windows.Forms.DockStyle.Left;
-			this.pictureBoxIcon.Image = global::_01.K_DESIGN_WIN.Properties.Resources.chat;
+			this.pictureBoxIcon.Image = global::P01_K_DESIGN_WIN.Properties.Resources.chat;
 			this.pictureBoxIcon.Location = new System.Drawing.Point(12, 9);
 			this.pictureBoxIcon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.pictureBoxIcon.Name = "pictureBoxIcon";

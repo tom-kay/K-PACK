@@ -1,4 +1,4 @@
-﻿using _01.K_DESIGN_WIN.Classes;
+﻿using P01_K_DESIGN_WIN.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _01.K_DESIGN_WIN
+namespace P01_K_DESIGN_WIN
 {
     public partial class frmMessageBoxSample : Form
     {

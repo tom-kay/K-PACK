@@ -1,11 +1,11 @@
-using _01.K_DESIGN_WIN.Classes;
-using _02.K_CONTROL_WIN;
+using P01_K_DESIGN_WIN.Classes;
+using P02_K_CONTROL_WIN;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace _01.K_DESIGN_WIN
+namespace P01_K_DESIGN_WIN
 {
     public partial class frmMdiContainer : Form
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _02.K_CONTROL_WIN.Properties {
+namespace P02_K_CONTROL_WIN.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace _02.K_CONTROL_WIN.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("_02.K_CONTROL_WIN.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("P02_K_CONTROL_WIN.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

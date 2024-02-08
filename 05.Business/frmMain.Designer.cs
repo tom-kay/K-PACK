@@ -1,37 +1,39 @@
-﻿namespace _05.Business
+﻿using P02_K_CONTROL_WIN;
+
+namespace P05_Business
 {
-    partial class frmMain
-    {
-        /// <summary>
-        /// 필수 디자이너 변수입니다.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class frmMain
+	{
+		/// <summary>
+		/// 필수 디자이너 변수입니다.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// 사용 중인 모든 리소스를 정리합니다.
-        /// </summary>
-        /// <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		/// 사용 중인 모든 리소스를 정리합니다.
+		/// </summary>
+		/// <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form 디자이너에서 생성한 코드
+		#region Windows Form 디자이너에서 생성한 코드
 
-        /// <summary>
-        /// 디자이너 지원에 필요한 메서드입니다. 
-        /// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		/// 디자이너 지원에 필요한 메서드입니다. 
+		/// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-			this.btnMenu0 = new _02.K_CONTROL_WIN.KButton();
-			this.drm0 = new _02.K_CONTROL_WIN.KDropdownMenu(this.components);
+			this.btnMenu0 = new P02_K_CONTROL_WIN.KButton();
+			this.drm0 = new P02_K_CONTROL_WIN.KDropdownMenu(this.components);
 			this.그래프ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.그래프ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.pnlMainContainer.SuspendLayout();
@@ -55,12 +57,12 @@
 			// 
 			// lblTime
 			// 
-			this.lblTime.Text = "14:43:20";
+			this.lblTime.Text = "15:56:06";
 			// 
 			// lblDate
 			// 
 			this.lblDate.Size = new System.Drawing.Size(147, 20);
-			this.lblDate.Text = "2024년 2월 2일 금요일";
+			this.lblDate.Text = "2024년 2월 8일 목요일";
 			// 
 			// btnCloseChildForm
 			// 
@@ -108,7 +110,7 @@
 			// 그래프ToolStripMenuItem1
 			// 
 			this.그래프ToolStripMenuItem1.Name = "그래프ToolStripMenuItem1";
-			this.그래프ToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+			this.그래프ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
 			this.그래프ToolStripMenuItem1.Text = "그래프";
 			this.그래프ToolStripMenuItem1.Click += new System.EventHandler(this.그래프ToolStripMenuItem1_Click);
 			// 
@@ -138,14 +140,14 @@
 			this.drm0.ResumeLayout(false);
 			this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
+		#endregion
 
-        private _02.K_CONTROL_WIN.KButton btnMenu0;
-        private _02.K_CONTROL_WIN.KDropdownMenu drm0;
-        private System.Windows.Forms.ToolStripMenuItem 그래프ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 그래프ToolStripMenuItem1;
-    }
+		private KButton btnMenu0;
+		private KDropdownMenu drm0;
+		private System.Windows.Forms.ToolStripMenuItem 그래프ToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem 그래프ToolStripMenuItem1;
+	}
 }
 

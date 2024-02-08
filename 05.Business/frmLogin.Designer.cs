@@ -1,4 +1,4 @@
-﻿namespace _05.Business
+﻿namespace P05_Business
 {
     partial class frmLogin
     {

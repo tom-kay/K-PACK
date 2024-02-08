@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace _01.K_DESIGN_WIN
+namespace P01_K_DESIGN_WIN
 {
     partial class frmMdiContainer
     {
@@ -37,7 +37,7 @@ namespace _01.K_DESIGN_WIN
 			this.pnlBody = new System.Windows.Forms.Panel();
 			this.pnlDesktopPane = new System.Windows.Forms.Panel();
 			this.pnlMenuTab = new System.Windows.Forms.Panel();
-			this.kTabControl1 = new _02.K_CONTROL_WIN.KTabControl();
+			this.kTabControl1 = new P02_K_CONTROL_WIN.KTabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.pnlBottomBar = new System.Windows.Forms.Panel();
@@ -281,7 +281,7 @@ namespace _01.K_DESIGN_WIN
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnMaximum.BackColor = System.Drawing.Color.Transparent;
 			this.btnMaximum.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnMaximum.Image = global::_01.K_DESIGN_WIN.Properties.Resources.btnMaximizar;
+			this.btnMaximum.Image = global::P01_K_DESIGN_WIN.Properties.Resources.btnMaximizar;
 			this.btnMaximum.Location = new System.Drawing.Point(764, 0);
 			this.btnMaximum.Margin = new System.Windows.Forms.Padding(2);
 			this.btnMaximum.Name = "btnMaximum";
@@ -297,7 +297,7 @@ namespace _01.K_DESIGN_WIN
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnExit.BackColor = System.Drawing.Color.IndianRed;
 			this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnExit.Image = global::_01.K_DESIGN_WIN.Properties.Resources.btnCerrar;
+			this.btnExit.Image = global::P01_K_DESIGN_WIN.Properties.Resources.btnCerrar;
 			this.btnExit.Location = new System.Drawing.Point(794, 0);
 			this.btnExit.Margin = new System.Windows.Forms.Padding(2);
 			this.btnExit.Name = "btnExit";
@@ -313,7 +313,7 @@ namespace _01.K_DESIGN_WIN
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnNormal.BackColor = System.Drawing.Color.Transparent;
 			this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnNormal.Image = global::_01.K_DESIGN_WIN.Properties.Resources.btnRestaurar;
+			this.btnNormal.Image = global::P01_K_DESIGN_WIN.Properties.Resources.btnRestaurar;
 			this.btnNormal.Location = new System.Drawing.Point(764, 0);
 			this.btnNormal.Margin = new System.Windows.Forms.Padding(2);
 			this.btnNormal.Name = "btnNormal";
@@ -329,7 +329,7 @@ namespace _01.K_DESIGN_WIN
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnMinimum.BackColor = System.Drawing.Color.Transparent;
 			this.btnMinimum.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnMinimum.Image = global::_01.K_DESIGN_WIN.Properties.Resources.btnMinimizar;
+			this.btnMinimum.Image = global::P01_K_DESIGN_WIN.Properties.Resources.btnMinimizar;
 			this.btnMinimum.Location = new System.Drawing.Point(734, 0);
 			this.btnMinimum.Margin = new System.Windows.Forms.Padding(2);
 			this.btnMinimum.Name = "btnMinimum";
@@ -405,7 +405,7 @@ namespace _01.K_DESIGN_WIN
         protected Panel pnlHeader;
         protected Panel pnlBody;
         protected Panel pnlMenuTab;
-        private _02.K_CONTROL_WIN.KTabControl kTabControl1;
+        private P02_K_CONTROL_WIN.KTabControl kTabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
         protected Button btnCloseChildForm;

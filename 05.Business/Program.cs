@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace _05.Business
+namespace P05_Business
 {
   internal static class Program
 	{

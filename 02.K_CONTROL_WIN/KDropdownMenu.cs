@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace _02.K_CONTROL_WIN
+namespace P02_K_CONTROL_WIN
 {
     public partial class KDropdownMenu : ContextMenuStrip
     {

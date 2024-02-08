@@ -1,0 +1,17 @@
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.csproj.AssemblyReference.cache
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.Properties.Resources.resources
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.csproj.GenerateResource.cache
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.csproj.CoreCompileInputs.cache
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\bin\Debug\P01_K_DESIGN_WIN.dll
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\bin\Debug\P01_K_DESIGN_WIN.pdb
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\bin\Debug\P02_K_CONTROL_WIN.dll
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\bin\Debug\P02_K_CONTROL_WIN.pdb
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.frmMessageBox.resources
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.frmMessageBoxSample.resources
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.frmLoginFrame.resources
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.frmMdiContainer.resources
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.frmPopupFrame.resources
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.csproj.CopyComplete
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.dll
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.pdb

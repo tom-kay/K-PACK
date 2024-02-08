@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01.K_DESIGN_WIN.Classes
+namespace P01_K_DESIGN_WIN.Classes
 {
     internal class ThemeColor
     {

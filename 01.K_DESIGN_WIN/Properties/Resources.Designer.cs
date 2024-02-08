@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _01.K_DESIGN_WIN.Properties {
+namespace P01_K_DESIGN_WIN.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace _01.K_DESIGN_WIN.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("_01.K_DESIGN_WIN.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("P01_K_DESIGN_WIN.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

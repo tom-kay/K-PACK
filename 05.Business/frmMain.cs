@@ -1,11 +1,11 @@
-﻿using _01.K_DESIGN_WIN;
-using _02.K_CONTROL_WIN;
-using _05.Business._03.Views;
+﻿using P01_K_DESIGN_WIN;
+using P02_K_CONTROL_WIN;
+using P05_Business.S03_Views;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace _05.Business
+namespace P05_Business
 {
 	public partial class frmMain : frmMdiContainer
     {

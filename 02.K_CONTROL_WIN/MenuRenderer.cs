@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _02.K_CONTROL_WIN
+namespace P02_K_CONTROL_WIN
 {
     public class MenuRenderer : ToolStripProfessionalRenderer
     {
