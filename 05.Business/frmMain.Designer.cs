@@ -30,12 +30,8 @@ namespace P05_Business
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-			this.btnMenu0 = new P02_K_CONTROL_WIN.KButton();
-			this.drm0 = new P02_K_CONTROL_WIN.KDropdownMenu(this.components);
-			this.그래프ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.그래프ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.treeView1 = new System.Windows.Forms.TreeView();
 			this.pnlMainContainer.SuspendLayout();
 			this.pnlTitleBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).BeginInit();
@@ -46,18 +42,17 @@ namespace P05_Business
 			((System.ComponentModel.ISupportInitialize)(this.btnMaximum)).BeginInit();
 			this.pnlHeader.SuspendLayout();
 			this.pnlBody.SuspendLayout();
-			this.drm0.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panelSubMenuBar
 			// 
-			this.panelSubMenuBar.Controls.Add(this.btnMenu0);
+			this.panelSubMenuBar.Controls.Add(this.treeView1);
 			this.panelSubMenuBar.Controls.SetChildIndex(this.btnCloseChildForm, 0);
-			this.panelSubMenuBar.Controls.SetChildIndex(this.btnMenu0, 0);
+			this.panelSubMenuBar.Controls.SetChildIndex(this.treeView1, 0);
 			// 
 			// lblTime
 			// 
-			this.lblTime.Text = "15:56:06";
+			this.lblTime.Text = "16:58:20";
 			// 
 			// lblDate
 			// 
@@ -68,51 +63,15 @@ namespace P05_Business
 			// 
 			this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
 			// 
-			// btnMenu0
+			// treeView1
 			// 
-			this.btnMenu0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
-			this.btnMenu0.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
-			this.btnMenu0.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
-			this.btnMenu0.BorderRadius = 0;
-			this.btnMenu0.BorderSize = 0;
-			this.btnMenu0.Dock = System.Windows.Forms.DockStyle.Top;
-			this.btnMenu0.FlatAppearance.BorderSize = 0;
-			this.btnMenu0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnMenu0.Font = new System.Drawing.Font("Verdana", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.btnMenu0.ForeColor = System.Drawing.Color.White;
-			this.btnMenu0.Location = new System.Drawing.Point(0, 0);
-			this.btnMenu0.Name = "btnMenu0";
-			this.btnMenu0.Size = new System.Drawing.Size(200, 43);
-			this.btnMenu0.TabIndex = 9;
-			this.btnMenu0.Text = "DASHBOARD";
-			this.btnMenu0.TextColor = System.Drawing.Color.White;
-			this.btnMenu0.UseVisualStyleBackColor = false;
-			// 
-			// drm0
-			// 
-			this.drm0.IsMainMenu = false;
-			this.drm0.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.그래프ToolStripMenuItem});
-			this.drm0.MenuItemHeight = 25;
-			this.drm0.MenuItemTextColor = System.Drawing.Color.Empty;
-			this.drm0.Name = "drm0";
-			this.drm0.PrimaryColor = System.Drawing.Color.Empty;
-			this.drm0.Size = new System.Drawing.Size(99, 26);
-			// 
-			// 그래프ToolStripMenuItem
-			// 
-			this.그래프ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.그래프ToolStripMenuItem1});
-			this.그래프ToolStripMenuItem.Name = "그래프ToolStripMenuItem";
-			this.그래프ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-			this.그래프ToolStripMenuItem.Text = "막대";
-			// 
-			// 그래프ToolStripMenuItem1
-			// 
-			this.그래프ToolStripMenuItem1.Name = "그래프ToolStripMenuItem1";
-			this.그래프ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-			this.그래프ToolStripMenuItem1.Text = "그래프";
-			this.그래프ToolStripMenuItem1.Click += new System.EventHandler(this.그래프ToolStripMenuItem1_Click);
+			this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
+			this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.treeView1.Location = new System.Drawing.Point(0, 0);
+			this.treeView1.Name = "treeView1";
+			this.treeView1.Size = new System.Drawing.Size(200, 664);
+			this.treeView1.TabIndex = 9;
 			// 
 			// frmMain
 			// 
@@ -124,7 +83,6 @@ namespace P05_Business
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SOODAL";
 			this.Load += new System.EventHandler(this.frmMain_Load);
-			this.Controls.SetChildIndex(this.pnlMainContainer, 0);
 			this.pnlMainContainer.ResumeLayout(false);
 			this.pnlMainContainer.PerformLayout();
 			this.pnlTitleBar.ResumeLayout(false);
@@ -137,17 +95,13 @@ namespace P05_Business
 			((System.ComponentModel.ISupportInitialize)(this.btnMaximum)).EndInit();
 			this.pnlHeader.ResumeLayout(false);
 			this.pnlBody.ResumeLayout(false);
-			this.drm0.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private KButton btnMenu0;
-		private KDropdownMenu drm0;
-		private System.Windows.Forms.ToolStripMenuItem 그래프ToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem 그래프ToolStripMenuItem1;
+		private System.Windows.Forms.TreeView treeView1;
 	}
 }
 
