@@ -7,7 +7,7 @@
 		<Read Name="ReadDB" ConnectionString="Server=localhost;Port=3306;Database=soodal;Uid=root;Pwd=root;" Weight="100"/>
 	</Database>
 	<SmartSqlMaps>
-		<SmartSqlMap Path="01.Models/Maps" Type="Directory"/>
-		<SmartSqlMap Path="01.Models/Maps/Base" Type="Directory"/>
+		<SmartSqlMap Path="S01_Models/Maps" Type="Directory"/>
+		<SmartSqlMap Path="S01_Models/Maps/Base" Type="Directory"/>
 	</SmartSqlMaps>
 </SmartSqlMapConfig>

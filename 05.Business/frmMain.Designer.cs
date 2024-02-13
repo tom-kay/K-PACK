@@ -30,8 +30,22 @@ namespace P05_Business
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("노드2");
+			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("노드4");
+			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("노드6");
+			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("노드5", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
+			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("노드3", new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode4});
+			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("노드0", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode5});
+			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("노드1");
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-			this.treeView1 = new System.Windows.Forms.TreeView();
+			this.trvMenu = new System.Windows.Forms.TreeView();
+			this.imgIconList = new System.Windows.Forms.ImageList(this.components);
 			this.pnlMainContainer.SuspendLayout();
 			this.pnlTitleBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).BeginInit();
@@ -46,32 +60,72 @@ namespace P05_Business
 			// 
 			// panelSubMenuBar
 			// 
-			this.panelSubMenuBar.Controls.Add(this.treeView1);
+			this.panelSubMenuBar.Controls.Add(this.trvMenu);
 			this.panelSubMenuBar.Controls.SetChildIndex(this.btnCloseChildForm, 0);
-			this.panelSubMenuBar.Controls.SetChildIndex(this.treeView1, 0);
+			this.panelSubMenuBar.Controls.SetChildIndex(this.trvMenu, 0);
 			// 
 			// lblTime
 			// 
-			this.lblTime.Text = "16:58:20";
+			this.lblTime.Text = "17:48:39";
 			// 
 			// lblDate
 			// 
-			this.lblDate.Size = new System.Drawing.Size(147, 20);
-			this.lblDate.Text = "2024년 2월 8일 목요일";
+			this.lblDate.Size = new System.Drawing.Size(156, 20);
+			this.lblDate.Text = "2024년 2월 13일 화요일";
 			// 
 			// btnCloseChildForm
 			// 
 			this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
 			// 
-			// treeView1
+			// trvMenu
 			// 
-			this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
-			this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.treeView1.Location = new System.Drawing.Point(0, 0);
-			this.treeView1.Name = "treeView1";
-			this.treeView1.Size = new System.Drawing.Size(200, 664);
-			this.treeView1.TabIndex = 9;
+			this.trvMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
+			this.trvMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.trvMenu.Cursor = System.Windows.Forms.Cursors.Default;
+			this.trvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.trvMenu.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.trvMenu.ForeColor = System.Drawing.Color.White;
+			this.trvMenu.ImageKey = "folder_folder.png";
+			this.trvMenu.ImageList = this.imgIconList;
+			this.trvMenu.Location = new System.Drawing.Point(0, 0);
+			this.trvMenu.Name = "trvMenu";
+			treeNode1.Name = "노드2";
+			treeNode1.Text = "노드2";
+			treeNode2.Name = "노드4";
+			treeNode2.Text = "노드4";
+			treeNode3.Name = "노드6";
+			treeNode3.Text = "노드6";
+			treeNode4.Name = "노드5";
+			treeNode4.Text = "노드5";
+			treeNode5.Name = "노드3";
+			treeNode5.Text = "노드3";
+			treeNode6.ImageKey = "(기본값)";
+			treeNode6.Name = "노드0";
+			treeNode6.SelectedImageKey = "(기본값)";
+			treeNode6.Text = "노드0";
+			treeNode7.Name = "노드1";
+			treeNode7.Text = "노드1";
+			this.trvMenu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode6,
+            treeNode7});
+			this.trvMenu.SelectedImageKey = "folder_folder.png";
+			this.trvMenu.ShowLines = false;
+			this.trvMenu.ShowPlusMinus = false;
+			this.trvMenu.ShowRootLines = false;
+			this.trvMenu.Size = new System.Drawing.Size(200, 664);
+			this.trvMenu.TabIndex = 9;
+			this.trvMenu.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.trvMenu_AfterCollapse);
+			this.trvMenu.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.trvMenu_AfterExpand);
+			// 
+			// imgIconList
+			// 
+			this.imgIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgIconList.ImageStream")));
+			this.imgIconList.TransparentColor = System.Drawing.Color.Transparent;
+			this.imgIconList.Images.SetKeyName(0, "folder_folder.png");
+			this.imgIconList.Images.SetKeyName(1, "folder_folder_open_open.png");
+			this.imgIconList.Images.SetKeyName(2, "notepad_notepad.png");
+			this.imgIconList.Images.SetKeyName(3, "print_print.png");
+			this.imgIconList.Images.SetKeyName(4, "save_guardar.png");
 			// 
 			// frmMain
 			// 
@@ -82,6 +136,7 @@ namespace P05_Business
 			this.Name = "frmMain";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SOODAL";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.frmMain_Load);
 			this.pnlMainContainer.ResumeLayout(false);
 			this.pnlMainContainer.PerformLayout();
@@ -101,7 +156,8 @@ namespace P05_Business
 
 		#endregion
 
-		private System.Windows.Forms.TreeView treeView1;
+		private System.Windows.Forms.TreeView trvMenu;
+		private System.Windows.Forms.ImageList imgIconList;
 	}
 }
 

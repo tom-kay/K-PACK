@@ -33,7 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationIcon>k_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
@@ -194,6 +198,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="S01_Models\Dao\Base\MenuMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\CodeMntDao.cs" />
     <Compile Include="S01_Models\Dao\DaoFactory.cs" />
     <Compile Include="S01_Models\Dto\Base\CodeMasterDto.cs" />
@@ -233,6 +238,222 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Resource\Images\50off_sticker_50off_black_sticker.png" />
+    <Content Include="Resource\Images\accept_sub_sub_accept_black.png" />
+    <Content Include="Resource\Images\access_black_access.png" />
+    <Content Include="Resource\Images\active_database_database_active.png" />
+    <Content Include="Resource\Images\address_blue_address_blue.png" />
+    <Content Include="Resource\Images\add_black_sub_sub_add.png" />
+    <Content Include="Resource\Images\add_comment_add_comment.png" />
+    <Content Include="Resource\Images\add_folder_add_folder.png" />
+    <Content Include="Resource\Images\archive_archive.png" />
+    <Content Include="Resource\Images\arrow_blue_arrow_blue.png" />
+    <Content Include="Resource\Images\attachment_attachment.png" />
+    <Content Include="Resource\Images\bag_shopping_cart_bag_cart_shopping.png" />
+    <Content Include="Resource\Images\barcode_barcode.png" />
+    <Content Include="Resource\Images\basket_ecommerce_buy_shopping_basket_shopping_ecommerce_buy.png" />
+    <Content Include="Resource\Images\battery_battery.png" />
+    <Content Include="Resource\Images\bin_recycle_recycle_bin.png" />
+    <Content Include="Resource\Images\blackboard_blackboard.png" />
+    <Content Include="Resource\Images\black_address_address.png" />
+    <Content Include="Resource\Images\black_button_last_last.png" />
+    <Content Include="Resource\Images\black_currency_funding_investment_dollar_currency_funding_investment_dollar.png" />
+    <Content Include="Resource\Images\black_help_help.png" />
+    <Content Include="Resource\Images\black_nuevo_new_label_nuevo_new_label.png" />
+    <Content Include="Resource\Images\black_play_play_button.png" />
+    <Content Include="Resource\Images\black_power_power.png" />
+    <Content Include="Resource\Images\black_rew_rew_button.png" />
+    <Content Include="Resource\Images\black_rss_rss.png" />
+    <Content Include="Resource\Images\block_black_block.png" />
+    <Content Include="Resource\Images\blog_accept_blog_accept.png" />
+    <Content Include="Resource\Images\blog_add_add_blog.png" />
+    <Content Include="Resource\Images\blog_blog.png" />
+    <Content Include="Resource\Images\blog_compose_blog_compose.png" />
+    <Content Include="Resource\Images\blog_private_blog_private.png" />
+    <Content Include="Resource\Images\bluetooth_black_bluetooth.png" />
+    <Content Include="Resource\Images\blue_block_blue_block.png" />
+    <Content Include="Resource\Images\blue_bluetooth_blue_bluetooth.png" />
+    <Content Include="Resource\Images\blue_blue_access_access.png" />
+    <Content Include="Resource\Images\blue_blue_add_sub_add_sub.png" />
+    <Content Include="Resource\Images\blue_blue_info_info.png" />
+    <Content Include="Resource\Images\blue_blue_warning_warning.png" />
+    <Content Include="Resource\Images\blue_button_eject_blue_eject.png" />
+    <Content Include="Resource\Images\blue_button_ffw_blue_ffw.png" />
+    <Content Include="Resource\Images\blue_ccw_sub_blue_rotate_ccw_sub_rotate.png" />
+    <Content Include="Resource\Images\blue_help_blue_help.png" />
+    <Content Include="Resource\Images\blue_hot_blue_label_hot_label.png" />
+    <Content Include="Resource\Images\blue_label_buy_blue_label_buy.png" />
+    <Content Include="Resource\Images\blue_last_blue_last_button.png" />
+    <Content Include="Resource\Images\blue_next_sub_blue_next_sub.png" />
+    <Content Include="Resource\Images\blue_play_blue_play_button.png" />
+    <Content Include="Resource\Images\blue_pound_currency_blue_pound_currency.png" />
+    <Content Include="Resource\Images\blue_power_power_blue.png" />
+    <Content Include="Resource\Images\blue_rss_blue_rss.png" />
+    <Content Include="Resource\Images\blue_sticker_50off_sticker_blue_50off.png" />
+    <Content Include="Resource\Images\blue_stop_blue_stop_button.png" />
+    <Content Include="Resource\Images\blue_sub_blue_accept_sub_accept.png" />
+    <Content Include="Resource\Images\blue_sub_delete_blue_sub_delete.png" />
+    <Content Include="Resource\Images\blue_sub_prev_blue_sub_prev.png" />
+    <Content Include="Resource\Images\bookmark_bookmark.png" />
+    <Content Include="Resource\Images\book_address_book_address.png" />
+    <Content Include="Resource\Images\box_box.png" />
+    <Content Include="Resource\Images\briefcase_briefcase.png" />
+    <Content Include="Resource\Images\button_black_button_home.png" />
+    <Content Include="Resource\Images\button_blue_first_blue_first.png" />
+    <Content Include="Resource\Images\button_blue_rec_blue_rec.png" />
+    <Content Include="Resource\Images\button_pause_blue_pause_blue.png" />
+    <Content Include="Resource\Images\button_repeat_repeat_black.png" />
+    <Content Include="Resource\Images\button_rew_blue_rew_blue.png" />
+    <Content Include="Resource\Images\calculator_calculator.png" />
+    <Content Include="Resource\Images\camera_camera.png" />
+    <Content Include="Resource\Images\card_card_credit_mastercard_credit_mastercard.png" />
+    <Content Include="Resource\Images\cart_shopping_cart_shopping.png" />
+    <Content Include="Resource\Images\cd_cd.png" />
+    <Content Include="Resource\Images\certificate_certificate.png" />
+    <Content Include="Resource\Images\chart_bar_chart_bar.png" />
+    <Content Include="Resource\Images\chip_chip_microchip_microchip.png" />
+    <Content Include="Resource\Images\clock_clock.png" />
+    <Content Include="Resource\Images\coffee_coffee.png" />
+    <Content Include="Resource\Images\comment_comment_accept_accept.png" />
+    <Content Include="Resource\Images\comment_delete_comment_delete.png" />
+    <Content Include="Resource\Images\comment_edit_edit_comment.png" />
+    <Content Include="Resource\Images\compass_compass.png" />
+    <Content Include="Resource\Images\copy_copy.png" />
+    <Content Include="Resource\Images\credit_cards_cards_credit.png" />
+    <Content Include="Resource\Images\credit_card_credit_visa_card_visa.png" />
+    <Content Include="Resource\Images\credit_credit_card_amex_card_amex.png" />
+    <Content Include="Resource\Images\currency_black_currency_yuan_yuan.png" />
+    <Content Include="Resource\Images\database_inactive_database_inactive.png" />
+    <Content Include="Resource\Images\delete_blog_blog_delete.png" />
+    <Content Include="Resource\Images\delete_delete_folder_folder.png" />
+    <Content Include="Resource\Images\delete_email_email_delete.png" />
+    <Content Include="Resource\Images\delete_sub_delete_sub_black.png" />
+    <Content Include="Resource\Images\design_design.png" />
+    <Content Include="Resource\Images\download_download_folder_folder.png" />
+    <Content Include="Resource\Images\down_sub_down_sub_black.png" />
+    <Content Include="Resource\Images\eject_button_black_eject.png" />
+    <Content Include="Resource\Images\eject_grey_eject_button_grey.png" />
+    <Content Include="Resource\Images\email_add_email_add.png" />
+    <Content Include="Resource\Images\email_email_accept_accept.png" />
+    <Content Include="Resource\Images\email_send_mail_envelope_send_mail_envelope_email.png" />
+    <Content Include="Resource\Images\email_unread_mail_envelop_email_envelop_mail_unread.png" />
+    <Content Include="Resource\Images\empty_empty_battery_battery.png" />
+    <Content Include="Resource\Images\euro_blue_currency_euro_blue_currency.png" />
+    <Content Include="Resource\Images\euro_currency_black_currency_euro.png" />
+    <Content Include="Resource\Images\ffw_black_button_ffw.png" />
+    <Content Include="Resource\Images\file_file_download_download.png" />
+    <Content Include="Resource\Images\file_upload_file_upload.png" />
+    <Content Include="Resource\Images\filter_filter.png" />
+    <Content Include="Resource\Images\folder_block_block_folder.png" />
+    <Content Include="Resource\Images\folder_email_email_folder.png" />
+    <Content Include="Resource\Images\folder_folder.png" />
+    <Content Include="Resource\Images\folder_folder_open_open.png" />
+    <Content Include="Resource\Images\folder_folder_upload_upload.png" />
+    <Content Include="Resource\Images\folder_folder_user_user.png" />
+    <Content Include="Resource\Images\folder_private_folder_private.png" />
+    <Content Include="Resource\Images\folder_search_folder_search.png" />
+    <Content Include="Resource\Images\forward_email_forward_email.png" />
+    <Content Include="Resource\Images\frais_frais.png" />
+    <Content Include="Resource\Images\full_battery_full_battery.png" />
+    <Content Include="Resource\Images\gear_gear.png" />
+    <Content Include="Resource\Images\gift_gift.png" />
+    <Content Include="Resource\Images\globe_globe.png" />
+    <Content Include="Resource\Images\grey_button_grey_ffw_ffw.png" />
+    <Content Include="Resource\Images\grey_button_grey_play_play.png" />
+    <Content Include="Resource\Images\grey_play_grey_button_play.png" />
+    <Content Include="Resource\Images\grey_repeat_repeat_grey_button.png" />
+    <Content Include="Resource\Images\group_group_user_users_user_users.png" />
+    <Content Include="Resource\Images\half_star_half_star.png" />
+    <Content Include="Resource\Images\harddisk_harddisk.png" />
+    <Content Include="Resource\Images\home_home.png" />
+    <Content Include="Resource\Images\inbox_inbox.png" />
+    <Content Include="Resource\Images\info_info_black.png" />
+    <Content Include="Resource\Images\investment_investment_funding_currency_blue_dollar_funding_currency_blue_dollar.png" />
+    <Content Include="Resource\Images\ipod_ipod.png" />
+    <Content Include="Resource\Images\keyboard_keyboard.png" />
+    <Content Include="Resource\Images\key_key.png" />
+    <Content Include="Resource\Images\label_hot_black_label_hot.png" />
+    <Content Include="Resource\Images\label_label.png" />
+    <Content Include="Resource\Images\label_label_buy_buy_black.png" />
+    <Content Include="Resource\Images\laptop_laptop.png" />
+    <Content Include="Resource\Images\last_grey_button_grey_last.png" />
+    <Content Include="Resource\Images\last_last_grey_button_grey.png" />
+    <Content Include="Resource\Images\link_url_url_link.png" />
+    <Content Include="Resource\Images\lock_lock.png" />
+    <Content Include="Resource\Images\lock_lock_folder_folder.png" />
+    <Content Include="Resource\Images\lock_lock_unlock_unlock.png" />
+    <Content Include="Resource\Images\mail_newsletter_compose_email_envelope_mail_newsletter_compose_email_envelope.png" />
+    <Content Include="Resource\Images\mail_newsletter_green_mail_newsletter_email_envelope_green_envelope_email.png" />
+    <Content Include="Resource\Images\may_2009_event_calendar_may_2009_event_calendar.png" />
+    <Content Include="Resource\Images\microphone_microphone.png" />
+    <Content Include="Resource\Images\mobile_mobile_screen_screen.png" />
+    <Content Include="Resource\Images\monitor_monitor.png" />
+    <Content Include="Resource\Images\music_music.png" />
+    <Content Include="Resource\Images\news_news.png" />
+    <Content Include="Resource\Images\none_none_star_star.png" />
+    <Content Include="Resource\Images\notepad_notepad.png" />
+    <Content Include="Resource\Images\open_box_open_box.png" />
+    <Content Include="Resource\Images\outbox_outbox.png" />
+    <Content Include="Resource\Images\oval mouse_gray mouse_mouse_gray mouse_oval mouse_mouse.png" />
+    <Content Include="Resource\Images\pad_game_computer game_pad_game_computer game.png" />
+    <Content Include="Resource\Images\paste_paste.png" />
+    <Content Include="Resource\Images\pause_pause_black_button.png" />
+    <Content Include="Resource\Images\pause_pause_button_grey_grey.png" />
+    <Content Include="Resource\Images\pencil_pencil.png" />
+    <Content Include="Resource\Images\phone_telephone_call_phone_telephone_call.png" />
+    <Content Include="Resource\Images\photo_picture_photo_picture.png" />
+    <Content Include="Resource\Images\pie_chart_pie_chart.png" />
+    <Content Include="Resource\Images\play_button_black_play.png" />
+    <Content Include="Resource\Images\post mail email skype_post mail email skype.png" />
+    <Content Include="Resource\Images\pound_pound_black_currency_currency.png" />
+    <Content Include="Resource\Images\preview_preview.png" />
+    <Content Include="Resource\Images\print_print.png" />
+    <Content Include="Resource\Images\private_private_comment_comment.png" />
+    <Content Include="Resource\Images\puzzle_jigsaw_puzzle_jigsaw.png" />
+    <Content Include="Resource\Images\receipt_receipt.png" />
+    <Content Include="Resource\Images\rec_grey_rec_grey_button.png" />
+    <Content Include="Resource\Images\rec_rec_button_black.png" />
+    <Content Include="Resource\Images\remove_sub_black_remove_sub.png" />
+    <Content Include="Resource\Images\repeat_restart_repeat_refresh_update_restart_refresh_update_button.png" />
+    <Content Include="Resource\Images\reply_email_reply_email.png" />
+    <Content Include="Resource\Images\rew_grey_rew_grey_button.png" />
+    <Content Include="Resource\Images\rotate_ccw_sub_rotate_sub_black_ccw.png" />
+    <Content Include="Resource\Images\rotate_cw_rotate_cw_blue_sub_sub_blue.png" />
+    <Content Include="Resource\Images\rotate_sub_rotate_cw_black_sub_cw.png" />
+    <Content Include="Resource\Images\sale_sticker_blue_sticker_sale_blue.png" />
+    <Content Include="Resource\Images\sale_sticker_sale_sticker_black.png" />
+    <Content Include="Resource\Images\save_guardar.png" />
+    <Content Include="Resource\Images\saving_saving.png" />
+    <Content Include="Resource\Images\search_search.png" />
+    <Content Include="Resource\Images\sent_sent_folder_folder.png" />
+    <Content Include="Resource\Images\shopping_basket_basket_shopping.png" />
+    <Content Include="Resource\Images\speaker_mute_speaker_mute.png" />
+    <Content Include="Resource\Images\speaker_speaker.png" />
+    <Content Include="Resource\Images\star_full_full_star.png" />
+    <Content Include="Resource\Images\sticker_blue_sticker_blue.png" />
+    <Content Include="Resource\Images\sticker_sticker_black.png" />
+    <Content Include="Resource\Images\sub_black_sub_next_arrow_right_next_arrow_right.png" />
+    <Content Include="Resource\Images\sub_blue_sub_blue_remove_remove.png" />
+    <Content Include="Resource\Images\sub_down_sub_blue_down_blue.png" />
+    <Content Include="Resource\Images\sub_prev_sub_black_prev.png" />
+    <Content Include="Resource\Images\sub_up_sub_up_black.png" />
+    <Content Include="Resource\Images\tag_tag.png" />
+    <Content Include="Resource\Images\talk_chat_talk_chat_comments_references_fox_fox_comments_references.png" />
+    <Content Include="Resource\Images\telephone_support_telephone_purple_support_purple.png" />
+    <Content Include="Resource\Images\tools_tools.png" />
+    <Content Include="Resource\Images\up_up_sub_blue_sub_blue.png" />
+    <Content Include="Resource\Images\user_user.png" />
+    <Content Include="Resource\Images\vcards_vcards.png" />
+    <Content Include="Resource\Images\video_video.png" />
+    <Content Include="Resource\Images\wallet_wallet.png" />
+    <Content Include="Resource\Images\ware_trolley_trolley_shopping_ware_shopping.png" />
+    <Content Include="Resource\Images\warning_warning_black.png" />
+    <Content Include="Resource\Images\windows_windows.png" />
+    <Content Include="Resource\Images\yuan_yuan_currency_blue_blue_currency.png" />
+    <Content Include="Resource\k_icon.ico" />
+    <EmbeddedResource Include="S01_Models\Maps\Base\MenuMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmCodeMasterMng.resx">
       <DependentUpon>frmCodeMasterMng.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +476,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Content Include="k_icon.ico" />
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -279,8 +501,6 @@
     <EmbeddedResource Include="S01_Models\Maps\Base\CodeMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <Content Include="icon.ico" />
-    <Content Include="Resource\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\01.K_DESIGN_WIN\P01_K_DESIGN_WIN.csproj">

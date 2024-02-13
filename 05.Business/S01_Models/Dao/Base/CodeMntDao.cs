@@ -1,11 +1,11 @@
-﻿using P05_Business.S01_Models.Dto;
-using log4net;
+﻿using log4net;
 using SmartSql.Abstractions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using P05_Business.S01_Models.Dto.Base;
 
-namespace P05_Business.S01_Models.Dao
+namespace P05_Business.S01_Models.Dao.Base
 {
 	public class CodeMntDao : DaoFactory
 	{

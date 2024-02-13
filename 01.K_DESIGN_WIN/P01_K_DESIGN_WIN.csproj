@@ -127,7 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\02.K_CONTROL_WIN\P02_K_CONTROL_WIN.csproj">
-      <Project>{5815AF69-7BA4-4078-93C6-1858678AE33E}</Project>
+      <Project>{5815af69-7ba4-4078-93c6-1858678ae33e}</Project>
       <Name>P02_K_CONTROL_WIN</Name>
     </ProjectReference>
   </ItemGroup>

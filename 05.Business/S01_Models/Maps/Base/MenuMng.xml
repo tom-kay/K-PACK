@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SmartSqlMap Scope="MenuMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+	<Statements>
+		<Statement Id="selectMenuMasterList">
+			select *
+			from tb_menumaster
+			where UseYn = 'Y'
+				and DelYn != 'Y'
+			order by depthNo, orderseq;
+		</Statement>
+	</Statements>
+</SmartSqlMap>

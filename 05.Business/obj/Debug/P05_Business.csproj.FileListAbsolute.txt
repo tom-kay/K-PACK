@@ -1,4 +1,5 @@
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\log4net.config
+C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\S01_Models\Maps\Base\MenuMng.xml
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\SmartSqlMapConfig.xml
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\S01_Models\Maps\Base\CodeMng.xml
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\SOODAL.exe.config

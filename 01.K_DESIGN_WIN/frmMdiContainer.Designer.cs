@@ -3,34 +3,34 @@ using System.Windows.Forms;
 
 namespace P01_K_DESIGN_WIN
 {
-    partial class frmMdiContainer
-    {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+	partial class frmMdiContainer
+	{
+		/// <summary>
+		///  Required designer variable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+		/// <summary>
+		///  Clean up any resources being used.
+		/// </summary>
+		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
 
-        #region Windows Form Designer generated code
+		#region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+		/// <summary>
+		///  Required method for Designer support - do not modify
+		///  the contents of this method with the code editor.
+		/// </summary>
+		private void InitializeComponent()
+		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMdiContainer));
 			this.pnlMainContainer = new System.Windows.Forms.Panel();
@@ -277,8 +277,8 @@ namespace P01_K_DESIGN_WIN
 			// 
 			// btnMaximum
 			// 
-			this.btnMaximum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnMaximum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.btnMaximum.BackColor = System.Drawing.Color.Transparent;
 			this.btnMaximum.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnMaximum.Image = global::P01_K_DESIGN_WIN.Properties.Resources.btnMaximizar;
@@ -293,8 +293,8 @@ namespace P01_K_DESIGN_WIN
 			// 
 			// btnExit
 			// 
-			this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.btnExit.BackColor = System.Drawing.Color.IndianRed;
 			this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnExit.Image = global::P01_K_DESIGN_WIN.Properties.Resources.btnCerrar;
@@ -309,8 +309,8 @@ namespace P01_K_DESIGN_WIN
 			// 
 			// btnNormal
 			// 
-			this.btnNormal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnNormal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.btnNormal.BackColor = System.Drawing.Color.Transparent;
 			this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnNormal.Image = global::P01_K_DESIGN_WIN.Properties.Resources.btnRestaurar;
@@ -325,8 +325,8 @@ namespace P01_K_DESIGN_WIN
 			// 
 			// btnMinimum
 			// 
-			this.btnMinimum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnMinimum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+						| System.Windows.Forms.AnchorStyles.Right)));
 			this.btnMinimum.BackColor = System.Drawing.Color.Transparent;
 			this.btnMinimum.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnMinimum.Image = global::P01_K_DESIGN_WIN.Properties.Resources.btnMinimizar;
@@ -383,31 +383,31 @@ namespace P01_K_DESIGN_WIN
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).EndInit();
 			this.ResumeLayout(false);
 
-        }
+		}
 
-        #endregion
-        protected Panel pnlDesktopPane;
-        protected Panel pnlMainContainer;
-        protected Panel pnlTitleBar;
-        protected PictureBox btnMinimum;
-        protected PictureBox btnExit;
-        protected PictureBox btnNormal;
-        protected Panel panelTopMenuBar;
-        protected Panel panelLogo;
-        protected Panel panelSubMenuBar;
-        protected Panel pnlBottomBar;
-        protected Label lblTime;
-        protected Label lblDate;
-        protected Label lblMainMsg;
-        protected PictureBox btnMaximum;
-        protected Timer tmDateTime;
-        protected Splitter splMenu;
-        protected Panel pnlHeader;
-        protected Panel pnlBody;
-        protected Panel pnlMenuTab;
-        private P02_K_CONTROL_WIN.KTabControl kTabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
-        protected Button btnCloseChildForm;
-    }
+		#endregion
+		protected Panel pnlDesktopPane;
+		protected Panel pnlMainContainer;
+		protected Panel pnlTitleBar;
+		protected PictureBox btnMinimum;
+		protected PictureBox btnExit;
+		protected PictureBox btnNormal;
+		protected Panel panelTopMenuBar;
+		protected Panel panelLogo;
+		protected Panel panelSubMenuBar;
+		protected Panel pnlBottomBar;
+		protected Label lblTime;
+		protected Label lblDate;
+		protected Label lblMainMsg;
+		protected PictureBox btnMaximum;
+		protected Timer tmDateTime;
+		protected Splitter splMenu;
+		protected Panel pnlHeader;
+		protected Panel pnlBody;
+		protected Panel pnlMenuTab;
+		private P02_K_CONTROL_WIN.KTabControl kTabControl1;
+		private TabPage tabPage1;
+		private TabPage tabPage2;
+		protected Button btnCloseChildForm;
+	}
 }
