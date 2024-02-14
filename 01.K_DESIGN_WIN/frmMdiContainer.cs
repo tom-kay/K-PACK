@@ -7,12 +7,10 @@ using System.Windows.Forms;
 namespace P01_K_DESIGN_WIN
 {
 	public partial class frmMdiContainer : MetroFramework.Forms.MetroForm
-	{
-		private Button currentButton;
+	{	
 		private Random random;
 		private int tempIndex;
-		private Form activeForm;
-
+		
 		private int tolerance = 15;
 		private const int WM_NCHITTEST = 132;
 		private const int HTBOTTOMRIGHT = 17;
@@ -31,6 +29,8 @@ namespace P01_K_DESIGN_WIN
 
 			this.SetStyle(ControlStyles.ResizeRedraw, true);
 			this.DoubleBuffered = true;
+
+			tabMenuForm.TabPages.Clear();   // 모든 메뉴탭 지우기
 		}
 
 		[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -98,26 +98,7 @@ namespace P01_K_DESIGN_WIN
 			string color = ThemeColor.ColorList[index];
 			return ColorTranslator.FromHtml(color);
 		}
-		private void ActivateButton(object btnSender)
-		{
-			if (btnSender != null)
-			{
-				if (currentButton != (Button)btnSender)
-				{
-					DisableButton();
-					Color color = SelectThemeColor();
-					currentButton = (Button)btnSender;
-					currentButton.BackColor = color;
-					currentButton.ForeColor = Color.White;
-					currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-					panelSubMenuBar.BackColor = color;
-					panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-					ThemeColor.PrimaryColor = color;
-					ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-				}
-			}
-			btnCloseChildForm.Visible = true;
-		}
+		
 		private void DisableButton()
 		{
 			foreach (Control previousBtn in panelTopMenuBar.Controls)
@@ -130,39 +111,82 @@ namespace P01_K_DESIGN_WIN
 				}
 			}
 		}
-		protected void OpenChildForm(Form childForm, object btnSender)
-		{
-			if (activeForm != null)
-				activeForm.Close();
-			//ActivateButton(btnSender);
-			activeForm = childForm;
+		protected void OpenChildForm(Form childForm)
+		{	
+			TabPage page = CreateMenuTab(childForm);   //메뉴탭에 메뉴 활성화
+			lblTopMenuCaption.Text = childForm.Text;	//화면명 표시
 			childForm.TopLevel = false;
 			childForm.FormBorderStyle = FormBorderStyle.None;
 			childForm.Dock = DockStyle.Fill;
-			this.pnlDesktopPane.Controls.Add(childForm);
-			this.pnlDesktopPane.Tag = childForm;
+			page.Controls.Add(childForm);
+			page.Tag = childForm;
 			childForm.BringToFront();
 			childForm.Show();
+
+			btnCloseChildForm.Visible = true;
 		}
-		private void OpenMenu(Form frm, object sender)
+
+		private TabPage CreateMenuTab(Form childForm)
+		{
+			TabPage tabPage = new TabPage();
+			tabPage.Text = childForm.Text;
+			tabPage.Tag = childForm.Name;
+			tabMenuForm.TabPages.Add(tabPage);
+			tabMenuForm.TabPages.IndexOf(tabPage);
+			tabMenuForm.SelectTab(tabMenuForm.TabPages.IndexOf(tabPage));
+
+			return tabPage;
+		}
+
+		protected void OpenMenu(Form frm)
 		{
 			//오픈되어 있는 화면이 있으면 활성화 
-
+			foreach (Form openForm in Application.OpenForms)
+			{
+				if (openForm.Name.Equals(frm.Name))
+				{
+					openForm.Activate();    //폼 활성화
+					lblTopMenuCaption.Text = openForm.Text;	// 화면명 표시
+					//탭 선택
+					foreach (TabPage item in tabMenuForm.TabPages)
+					{
+						Form pageForm = item.Tag as Form;
+						if (pageForm.Name.Equals(frm.Name))
+						{
+							tabMenuForm.SelectTab(tabMenuForm.TabPages.IndexOf(item));
+						}
+					}
+					return;
+				}
+			}
 			//없으면 새로 오픈한다.
-			OpenChildForm(frm, sender);
+			OpenChildForm(frm);
 		}
+
 		private void btnCloseChildForm_Click(object sender, EventArgs e)
 		{
-			if (activeForm != null)
-				activeForm.Close();
-			Reset();
+            foreach (Control ctrl in tabMenuForm.SelectedTab.Controls)
+            {
+                if (ctrl is Form)
+                {
+					Form frm = ctrl as Form;
+					frm.Close();
+					if (frm.IsDisposed == true)
+					{
+						tabMenuForm.TabPages.Remove(tabMenuForm.SelectedTab);
+					}
+				}
+            }
+
+			if (Application.OpenForms.Count < 2)
+				Reset();
 		}
 		private void Reset()
 		{
-			DisableButton();
+			//DisableButton();
 			//panelSubMenuBar.BackColor = Color.FromArgb(51, 60, 77);
 			//panelLogo.BackColor = Color.FromArgb(51, 60, 77);
-			currentButton = null;
+			
 			btnCloseChildForm.Visible = false;
 		}
 		private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
@@ -223,6 +247,12 @@ namespace P01_K_DESIGN_WIN
 			lblTime.Text = DateTime.Now.ToString("HH:mm:ssss");
 		}
 
-		
+		private void tabMenuForm_Selected(object sender, TabControlEventArgs e)
+		{
+			if (e.TabPage != null && e.TabPage.Tag is Form)
+			{
+				lblTopMenuCaption.Text = (e.TabPage.Tag as Form).Text; 
+			}
+		}
 	}
 }

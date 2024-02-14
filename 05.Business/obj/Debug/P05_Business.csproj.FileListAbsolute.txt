@@ -1,11 +1,3 @@
-C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.csproj.AssemblyReference.cache
-C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.frmCodeMasterMng.resources
-C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.frmLogin.resources
-C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.frmMain.resources
-C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.frmPopup.resources
-C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.Properties.Resources.resources
-C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.csproj.GenerateResource.cache
-C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.csproj.CoreCompileInputs.cache
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\log4net.config
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\S01_Models\Maps\Base\MenuMng.xml
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\SmartSqlMapConfig.xml
@@ -36,6 +28,15 @@ C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\log4net.xml
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\MySql.Data.xml
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.csproj.AssemblyReference.cache
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmCodeMasterMng.resources
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.frmLogin.resources
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.frmMain.resources
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmMenuMasterMng.resources
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.frmPopup.resources
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.Properties.Resources.resources
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.csproj.GenerateResource.cache
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.csproj.CoreCompileInputs.cache
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.csproj.CopyComplete
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\SOODAL.exe
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\SOODAL.pdb

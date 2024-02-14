@@ -5,6 +5,7 @@ using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace P05_Business
@@ -41,7 +42,10 @@ namespace P05_Business
 				TreeNode cnode = new TreeNode();
 				cnode.Name = item.MenuId;
 				cnode.Text = item.MenuName;
-				cnode.Tag = item.FormName;
+				if (!item.MenuType.Equals("D"))
+				{
+					cnode.Tag = string.Concat(item.Namespace, ".", item.FormName); 
+				}
 
 				//노드 이미지 설정
 				switch (item.MenuType)
@@ -79,7 +83,7 @@ namespace P05_Business
 			{
 				if (e.Node.ImageIndex.Equals(imgIconList.Images.IndexOfKey("folder_folder.png")))
 				{
-					e.Node.ImageIndex = e.Node.SelectedImageIndex = imgIconList.Images.IndexOfKey("folder_folder_open_open.png"); 
+					e.Node.ImageIndex = e.Node.SelectedImageIndex = imgIconList.Images.IndexOfKey("folder_folder_open_open.png");
 				}
 			}
 		}
@@ -90,10 +94,23 @@ namespace P05_Business
 			{
 				if (e.Node.ImageIndex.Equals(imgIconList.Images.IndexOfKey("folder_folder_open_open.png")))
 				{
-					e.Node.ImageIndex = e.Node.SelectedImageIndex = imgIconList.Images.IndexOfKey("folder_folder.png"); 
+					e.Node.ImageIndex = e.Node.SelectedImageIndex = imgIconList.Images.IndexOfKey("folder_folder.png");
 				}
 			}
 		}
 
+		private void trvMenu_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+		{
+			if (e.Node.Tag != null && !e.Node.Tag.ToString().Equals(""))
+			{
+				string formName = e.Node.Tag.ToString();
+
+				Form frm = Activator.CreateInstance(Type.GetType(formName)) as Form;
+				frm.Text = e.Node.Text;
+
+				base.OpenMenu(frm); 
+			}
+
+		}
 	}
 }

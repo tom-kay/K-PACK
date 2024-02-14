@@ -56,7 +56,6 @@ namespace P05_Business
 			((System.ComponentModel.ISupportInitialize)(this.btnMaximum)).BeginInit();
 			this.pnlHeader.SuspendLayout();
 			this.pnlBody.SuspendLayout();
-			this.pnlMenuTab.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// btnMinimum
@@ -80,7 +79,7 @@ namespace P05_Business
 			// lblTime
 			// 
 			this.lblTime.Location = new System.Drawing.Point(693, 4);
-			this.lblTime.Text = "11:21:52";
+			this.lblTime.Text = "16:50:35";
 			// 
 			// lblDate
 			// 
@@ -135,6 +134,7 @@ namespace P05_Business
 			this.trvMenu.TabIndex = 9;
 			this.trvMenu.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.trvMenu_AfterCollapse);
 			this.trvMenu.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.trvMenu_AfterExpand);
+			this.trvMenu.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvMenu_NodeMouseDoubleClick);
 			// 
 			// imgIconList
 			// 
@@ -168,7 +168,6 @@ namespace P05_Business
 			((System.ComponentModel.ISupportInitialize)(this.btnMaximum)).EndInit();
 			this.pnlHeader.ResumeLayout(false);
 			this.pnlBody.ResumeLayout(false);
-			this.pnlMenuTab.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}

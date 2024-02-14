@@ -1,6 +1,6 @@
-﻿namespace P05_Business.S03_Views.Base
+﻿namespace P01_K_DESIGN_WIN
 {
-	partial class frmCodeMasterMng
+	partial class frmSearchContainer
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,17 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.SuspendLayout();
-			// 
-			// frmCodeMasterMng
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+			this.components = new System.ComponentModel.Container();
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(908, 516);
-			this.Name = "frmCodeMasterMng";
-			this.Text = "CODE MASTER";
-			this.ResumeLayout(false);
-
+			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Text = "frmSearchContainer";
 		}
 
 		#endregion

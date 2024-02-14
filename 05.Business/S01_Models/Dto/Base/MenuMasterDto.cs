@@ -13,6 +13,7 @@ namespace P05_Business.S01_Models.Dto.Base
 		public string ParentId { get; set; }
 		public string MenuName { get; set; }
 		public string MenuType { get; set; }
+		public string Namespace { get; set; }
 		public string FormName { get; set; }
 		public int OrderSeq { get; set; }
 		public int DepthNo { get; set; }
