@@ -12,18 +12,6 @@ namespace P05_Business
 	public partial class frmMain : frmMdiContainer
 	{
 
-		private Rectangle sizeGripRectangle;
-		protected override void OnPaint(PaintEventArgs e)
-		{
-
-			SolidBrush blueBrush = new SolidBrush(Color.FromArgb(55, 61, 69));
-			e.Graphics.FillRectangle(blueBrush, sizeGripRectangle);
-
-			base.OnPaint(e);
-			ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
-
-		}
-
 		public frmMain()
 		{
 			InitializeComponent();
@@ -31,7 +19,7 @@ namespace P05_Business
 			//frmLogin login = new frmLogin();
 			//login.ShowDialog();
 
-			//base.btnMaximum_Click(null, null);
+			base.btnMaximum_Click(null, null);
 
 		}
 

@@ -3,11 +3,10 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace P01_K_DESIGN_WIN
 {
-	public partial class frmMdiContainer : Form
+	public partial class frmMdiContainer : MetroFramework.Forms.MetroForm
 	{
 		private Button currentButton;
 		private Random random;
@@ -80,7 +79,7 @@ namespace P01_K_DESIGN_WIN
 		protected override void OnPaint(PaintEventArgs e)
 		{
 
-			SolidBrush blueBrush = new SolidBrush(Color.FromArgb(55, 61, 69));
+			SolidBrush blueBrush = new SolidBrush(Color.FromArgb(244, 244, 244));
 			e.Graphics.FillRectangle(blueBrush, sizeGripRectangle);
 
 			base.OnPaint(e);
@@ -135,7 +134,7 @@ namespace P01_K_DESIGN_WIN
 		{
 			if (activeForm != null)
 				activeForm.Close();
-			ActivateButton(btnSender);
+			//ActivateButton(btnSender);
 			activeForm = childForm;
 			childForm.TopLevel = false;
 			childForm.FormBorderStyle = FormBorderStyle.None;

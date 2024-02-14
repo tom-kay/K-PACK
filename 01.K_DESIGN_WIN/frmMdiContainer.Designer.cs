@@ -37,9 +37,6 @@ namespace P01_K_DESIGN_WIN
 			this.pnlBody = new System.Windows.Forms.Panel();
 			this.pnlDesktopPane = new System.Windows.Forms.Panel();
 			this.pnlMenuTab = new System.Windows.Forms.Panel();
-			this.kTabControl1 = new P02_K_CONTROL_WIN.KTabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.pnlBottomBar = new System.Windows.Forms.Panel();
 			this.lblMainMsg = new System.Windows.Forms.Label();
 			this.lblDate = new System.Windows.Forms.Label();
@@ -56,10 +53,12 @@ namespace P01_K_DESIGN_WIN
 			this.btnMinimum = new System.Windows.Forms.PictureBox();
 			this.panelLogo = new System.Windows.Forms.Panel();
 			this.tmDateTime = new System.Windows.Forms.Timer(this.components);
+			this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.pnlMainContainer.SuspendLayout();
 			this.pnlBody.SuspendLayout();
 			this.pnlMenuTab.SuspendLayout();
-			this.kTabControl1.SuspendLayout();
 			this.pnlBottomBar.SuspendLayout();
 			this.panelSubMenuBar.SuspendLayout();
 			this.pnlHeader.SuspendLayout();
@@ -68,14 +67,17 @@ namespace P01_K_DESIGN_WIN
 			((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnNormal)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).BeginInit();
+			this.metroTabControl1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pnlMainContainer
 			// 
+			this.pnlMainContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.pnlMainContainer.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.pnlMainContainer.Controls.Add(this.pnlBody);
 			this.pnlMainContainer.Controls.Add(this.pnlHeader);
-			this.pnlMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnlMainContainer.Location = new System.Drawing.Point(0, 0);
 			this.pnlMainContainer.Margin = new System.Windows.Forms.Padding(2);
 			this.pnlMainContainer.Name = "pnlMainContainer";
@@ -108,47 +110,12 @@ namespace P01_K_DESIGN_WIN
 			// pnlMenuTab
 			// 
 			this.pnlMenuTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
-			this.pnlMenuTab.Controls.Add(this.kTabControl1);
+			this.pnlMenuTab.Controls.Add(this.metroTabControl1);
 			this.pnlMenuTab.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.pnlMenuTab.Location = new System.Drawing.Point(203, 660);
 			this.pnlMenuTab.Name = "pnlMenuTab";
 			this.pnlMenuTab.Size = new System.Drawing.Size(821, 24);
 			this.pnlMenuTab.TabIndex = 6;
-			// 
-			// kTabControl1
-			// 
-			this.kTabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-			this.kTabControl1.Controls.Add(this.tabPage1);
-			this.kTabControl1.Controls.Add(this.tabPage2);
-			this.kTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.kTabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.kTabControl1.ItemSize = new System.Drawing.Size(120, 21);
-			this.kTabControl1.Location = new System.Drawing.Point(0, 0);
-			this.kTabControl1.Name = "kTabControl1";
-			this.kTabControl1.SelectedIndex = 0;
-			this.kTabControl1.Size = new System.Drawing.Size(821, 24);
-			this.kTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-			this.kTabControl1.TabIndex = 0;
-			// 
-			// tabPage1
-			// 
-			this.tabPage1.Location = new System.Drawing.Point(4, 4);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(813, 0);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "tabPage1";
-			this.tabPage1.UseVisualStyleBackColor = true;
-			// 
-			// tabPage2
-			// 
-			this.tabPage2.Location = new System.Drawing.Point(4, 4);
-			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(813, 0);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "tabPage2";
-			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
 			// pnlBottomBar
 			// 
@@ -182,7 +149,7 @@ namespace P01_K_DESIGN_WIN
 			this.lblDate.AutoSize = true;
 			this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.lblDate.ForeColor = System.Drawing.Color.White;
-			this.lblDate.Location = new System.Drawing.Point(552, 4);
+			this.lblDate.Location = new System.Drawing.Point(555, 4);
 			this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblDate.Name = "lblDate";
 			this.lblDate.Size = new System.Drawing.Size(165, 20);
@@ -195,7 +162,7 @@ namespace P01_K_DESIGN_WIN
 			this.lblTime.AutoSize = true;
 			this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.lblTime.ForeColor = System.Drawing.Color.White;
-			this.lblTime.Location = new System.Drawing.Point(725, 4);
+			this.lblTime.Location = new System.Drawing.Point(728, 4);
 			this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblTime.Name = "lblTime";
 			this.lblTime.Size = new System.Drawing.Size(71, 20);
@@ -277,12 +244,12 @@ namespace P01_K_DESIGN_WIN
 			// 
 			// btnMaximum
 			// 
-			this.btnMaximum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.btnMaximum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnMaximum.BackColor = System.Drawing.Color.Transparent;
 			this.btnMaximum.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnMaximum.Image = global::P01_K_DESIGN_WIN.Properties.Resources.btnMaximizar;
-			this.btnMaximum.Location = new System.Drawing.Point(764, 0);
+			this.btnMaximum.Location = new System.Drawing.Point(767, 0);
 			this.btnMaximum.Margin = new System.Windows.Forms.Padding(2);
 			this.btnMaximum.Name = "btnMaximum";
 			this.btnMaximum.Size = new System.Drawing.Size(30, 30);
@@ -293,12 +260,12 @@ namespace P01_K_DESIGN_WIN
 			// 
 			// btnExit
 			// 
-			this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnExit.BackColor = System.Drawing.Color.IndianRed;
 			this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnExit.Image = global::P01_K_DESIGN_WIN.Properties.Resources.btnCerrar;
-			this.btnExit.Location = new System.Drawing.Point(794, 0);
+			this.btnExit.Location = new System.Drawing.Point(797, 0);
 			this.btnExit.Margin = new System.Windows.Forms.Padding(2);
 			this.btnExit.Name = "btnExit";
 			this.btnExit.Size = new System.Drawing.Size(30, 30);
@@ -309,12 +276,12 @@ namespace P01_K_DESIGN_WIN
 			// 
 			// btnNormal
 			// 
-			this.btnNormal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.btnNormal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnNormal.BackColor = System.Drawing.Color.Transparent;
 			this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnNormal.Image = global::P01_K_DESIGN_WIN.Properties.Resources.btnRestaurar;
-			this.btnNormal.Location = new System.Drawing.Point(764, 0);
+			this.btnNormal.Location = new System.Drawing.Point(767, 0);
 			this.btnNormal.Margin = new System.Windows.Forms.Padding(2);
 			this.btnNormal.Name = "btnNormal";
 			this.btnNormal.Size = new System.Drawing.Size(30, 30);
@@ -325,12 +292,12 @@ namespace P01_K_DESIGN_WIN
 			// 
 			// btnMinimum
 			// 
-			this.btnMinimum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-						| System.Windows.Forms.AnchorStyles.Right)));
+			this.btnMinimum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnMinimum.BackColor = System.Drawing.Color.Transparent;
 			this.btnMinimum.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnMinimum.Image = global::P01_K_DESIGN_WIN.Properties.Resources.btnMinimizar;
-			this.btnMinimum.Location = new System.Drawing.Point(734, 0);
+			this.btnMinimum.Location = new System.Drawing.Point(737, 0);
 			this.btnMinimum.Margin = new System.Windows.Forms.Padding(2);
 			this.btnMinimum.Name = "btnMinimum";
 			this.btnMinimum.Size = new System.Drawing.Size(30, 30);
@@ -354,24 +321,57 @@ namespace P01_K_DESIGN_WIN
 			this.tmDateTime.Enabled = true;
 			this.tmDateTime.Tick += new System.EventHandler(this.tmDateTime_Tick);
 			// 
+			// metroTabControl1
+			// 
+			this.metroTabControl1.Controls.Add(this.tabPage1);
+			this.metroTabControl1.Controls.Add(this.tabPage2);
+			this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.metroTabControl1.ItemSize = new System.Drawing.Size(120, 20);
+			this.metroTabControl1.Location = new System.Drawing.Point(0, 0);
+			this.metroTabControl1.Margin = new System.Windows.Forms.Padding(0);
+			this.metroTabControl1.Name = "metroTabControl1";
+			this.metroTabControl1.SelectedIndex = 0;
+			this.metroTabControl1.Size = new System.Drawing.Size(821, 24);
+			this.metroTabControl1.TabIndex = 0;
+			this.metroTabControl1.UseSelectable = true;
+			// 
+			// tabPage1
+			// 
+			this.tabPage1.Location = new System.Drawing.Point(4, 24);
+			this.tabPage1.Name = "tabPage1";
+			this.tabPage1.Size = new System.Drawing.Size(813, 0);
+			this.tabPage1.TabIndex = 0;
+			this.tabPage1.Text = "tabPage1";
+			// 
+			// tabPage2
+			// 
+			this.tabPage2.Location = new System.Drawing.Point(4, 24);
+			this.tabPage2.Name = "tabPage2";
+			this.tabPage2.Size = new System.Drawing.Size(813, 0);
+			this.tabPage2.TabIndex = 1;
+			this.tabPage2.Text = "tabPage2";
+			// 
 			// frmMdiContainer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1024, 768);
+			this.ControlBox = false;
 			this.Controls.Add(this.pnlMainContainer);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.IsMdiContainer = true;
 			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(1024, 768);
 			this.Name = "frmMdiContainer";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-			this.Text = "Form1";
+			this.TransparencyKey = System.Drawing.Color.Empty;
 			this.pnlMainContainer.ResumeLayout(false);
 			this.pnlMainContainer.PerformLayout();
 			this.pnlBody.ResumeLayout(false);
 			this.pnlMenuTab.ResumeLayout(false);
-			this.kTabControl1.ResumeLayout(false);
 			this.pnlBottomBar.ResumeLayout(false);
 			this.pnlBottomBar.PerformLayout();
 			this.panelSubMenuBar.ResumeLayout(false);
@@ -381,12 +381,12 @@ namespace P01_K_DESIGN_WIN
 			((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnNormal)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).EndInit();
+			this.metroTabControl1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-		protected Panel pnlDesktopPane;
 		protected Panel pnlMainContainer;
 		protected Panel pnlTitleBar;
 		protected PictureBox btnMinimum;
@@ -405,9 +405,10 @@ namespace P01_K_DESIGN_WIN
 		protected Panel pnlHeader;
 		protected Panel pnlBody;
 		protected Panel pnlMenuTab;
-		private P02_K_CONTROL_WIN.KTabControl kTabControl1;
+		protected Button btnCloseChildForm;
+		protected Panel pnlDesktopPane;
+		protected MetroFramework.Controls.MetroTabControl metroTabControl1;
 		private TabPage tabPage1;
 		private TabPage tabPage2;
-		protected Button btnCloseChildForm;
 	}
 }

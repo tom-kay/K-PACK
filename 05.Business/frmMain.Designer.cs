@@ -56,7 +56,20 @@ namespace P05_Business
 			((System.ComponentModel.ISupportInitialize)(this.btnMaximum)).BeginInit();
 			this.pnlHeader.SuspendLayout();
 			this.pnlBody.SuspendLayout();
+			this.pnlMenuTab.SuspendLayout();
 			this.SuspendLayout();
+			// 
+			// btnMinimum
+			// 
+			this.btnMinimum.Location = new System.Drawing.Point(734, 0);
+			// 
+			// btnExit
+			// 
+			this.btnExit.Location = new System.Drawing.Point(794, 0);
+			// 
+			// btnNormal
+			// 
+			this.btnNormal.Location = new System.Drawing.Point(764, 0);
 			// 
 			// panelSubMenuBar
 			// 
@@ -66,12 +79,18 @@ namespace P05_Business
 			// 
 			// lblTime
 			// 
-			this.lblTime.Text = "17:48:39";
+			this.lblTime.Location = new System.Drawing.Point(693, 4);
+			this.lblTime.Text = "11:21:52";
 			// 
 			// lblDate
 			// 
+			this.lblDate.Location = new System.Drawing.Point(520, 4);
 			this.lblDate.Size = new System.Drawing.Size(156, 20);
-			this.lblDate.Text = "2024년 2월 13일 화요일";
+			this.lblDate.Text = "2024년 2월 14일 수요일";
+			// 
+			// btnMaximum
+			// 
+			this.btnMaximum.Location = new System.Drawing.Point(764, 0);
 			// 
 			// btnCloseChildForm
 			// 
@@ -133,10 +152,9 @@ namespace P05_Business
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1024, 768);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.KeyPreview = true;
 			this.Name = "frmMain";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "SOODAL";
-			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.frmMain_Load);
 			this.pnlMainContainer.ResumeLayout(false);
 			this.pnlMainContainer.PerformLayout();
@@ -150,6 +168,7 @@ namespace P05_Business
 			((System.ComponentModel.ISupportInitialize)(this.btnMaximum)).EndInit();
 			this.pnlHeader.ResumeLayout(false);
 			this.pnlBody.ResumeLayout(false);
+			this.pnlMenuTab.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
