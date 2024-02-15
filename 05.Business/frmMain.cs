@@ -2,10 +2,8 @@
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace P05_Business
@@ -17,8 +15,8 @@ namespace P05_Business
 		{
 			InitializeComponent();
 
-			//frmLogin login = new frmLogin();
-			//login.ShowDialog();
+			frmLogin login = new frmLogin();
+			login.ShowDialog();
 
 			base.btnMaximum_Click(null, null);
 

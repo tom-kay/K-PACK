@@ -51,6 +51,7 @@ namespace P05_Business
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnNormal)).BeginInit();
+			this.panelTopMenuBar.SuspendLayout();
 			this.panelSubMenuBar.SuspendLayout();
 			this.pnlBottomBar.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.btnMaximum)).BeginInit();
@@ -79,13 +80,13 @@ namespace P05_Business
 			// lblTime
 			// 
 			this.lblTime.Location = new System.Drawing.Point(693, 4);
-			this.lblTime.Text = "16:50:35";
+			this.lblTime.Text = "09:53:22";
 			// 
 			// lblDate
 			// 
 			this.lblDate.Location = new System.Drawing.Point(520, 4);
 			this.lblDate.Size = new System.Drawing.Size(156, 20);
-			this.lblDate.Text = "2024년 2월 14일 수요일";
+			this.lblDate.Text = "2024년 2월 15일 목요일";
 			// 
 			// btnMaximum
 			// 
@@ -154,6 +155,7 @@ namespace P05_Business
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.KeyPreview = true;
 			this.Name = "frmMain";
+			this.ShowIcon = true;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Load += new System.EventHandler(this.frmMain_Load);
 			this.pnlMainContainer.ResumeLayout(false);
@@ -162,6 +164,7 @@ namespace P05_Business
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnNormal)).EndInit();
+			this.panelTopMenuBar.ResumeLayout(false);
 			this.panelSubMenuBar.ResumeLayout(false);
 			this.pnlBottomBar.ResumeLayout(false);
 			this.pnlBottomBar.PerformLayout();

@@ -1,17 +1,24 @@
 using P01_K_DESIGN_WIN.Classes;
 using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace P01_K_DESIGN_WIN
 {
-	public partial class frmMdiContainer : MetroFramework.Forms.MetroForm
-	{	
-		private Random random;
+	public partial class frmMdiContainer : Form
+	{
+
+		[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+		private extern static void ReleaseCapture();
+		[DllImport("user32.DLL", EntryPoint = "SendMessage")]
+		private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+		//private Random random;
 		private int tempIndex;
 		
-		private int tolerance = 15;
+		private int tolerance = 12;
 		private const int WM_NCHITTEST = 132;
 		private const int HTBOTTOMRIGHT = 17;
 
@@ -21,9 +28,9 @@ namespace P01_K_DESIGN_WIN
 		public frmMdiContainer()
 		{
 			InitializeComponent();
-			random = new Random();
+			//random = new Random();
 			btnCloseChildForm.Visible = false;
-			this.Text = string.Empty;
+			//this.Text = string.Empty;
 			this.ControlBox = false;
 			this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
@@ -31,12 +38,32 @@ namespace P01_K_DESIGN_WIN
 			this.DoubleBuffered = true;
 
 			tabMenuForm.TabPages.Clear();   // 모든 메뉴탭 지우기
+
+			SetTimeZone();	//타임존 설정
 		}
 
-		[DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-		private extern static void ReleaseCapture();
-		[DllImport("user32.DLL", EntryPoint = "SendMessage")]
-		private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+		/// <summary>
+		/// 타임존 설정
+		/// </summary>
+		/// <exception cref="NotImplementedException"></exception>
+		private void SetTimeZone()
+		{
+			BindingList<object> countryList = new BindingList<object>();
+
+			countryList.Add(new { Text = "KOREA", Value = "KOREA" });
+			countryList.Add(new { Text = "USA", Value = "USA" });
+			countryList.Add(new { Text = "JAPAN", Value = "JAPAN" });
+			countryList.Add(new { Text = "AUSTRALIA", Value = "AUSTRALIA" });
+
+			cboTimeZone.DataSource = countryList;
+			cboTimeZone.DisplayMember = "Text";
+			cboTimeZone.ValueMember = "Value";
+
+			cboTimeZone.SelectedIndex = 0;
+		}
+
+
+
 		//Methods
 		protected override void WndProc(ref Message m)
 		{
@@ -87,30 +114,30 @@ namespace P01_K_DESIGN_WIN
 
 		}
 
-		private Color SelectThemeColor()
-		{
-			int index = random.Next(ThemeColor.ColorList.Count);
-			while (tempIndex == index)
-			{
-				index = random.Next(ThemeColor.ColorList.Count);
-			}
-			tempIndex = index;
-			string color = ThemeColor.ColorList[index];
-			return ColorTranslator.FromHtml(color);
-		}
+		//private Color SelectThemeColor()
+		//{
+		//	int index = random.Next(ThemeColor.ColorList.Count);
+		//	while (tempIndex == index)
+		//	{
+		//		index = random.Next(ThemeColor.ColorList.Count);
+		//	}
+		//	tempIndex = index;
+		//	string color = ThemeColor.ColorList[index];
+		//	return ColorTranslator.FromHtml(color);
+		//}
 		
-		private void DisableButton()
-		{
-			foreach (Control previousBtn in panelTopMenuBar.Controls)
-			{
-				if (previousBtn.GetType() == typeof(Button))
-				{
-					previousBtn.BackColor = Color.FromArgb(51, 51, 76);
-					previousBtn.ForeColor = Color.Gainsboro;
-					previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-				}
-			}
-		}
+		//private void DisableButton()
+		//{
+		//	foreach (Control previousBtn in panelTopMenuBar.Controls)
+		//	{
+		//		if (previousBtn.GetType() == typeof(Button))
+		//		{
+		//			previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+		//			previousBtn.ForeColor = Color.Gainsboro;
+		//			previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+		//		}
+		//	}
+		//}
 		protected void OpenChildForm(Form childForm)
 		{	
 			TabPage page = CreateMenuTab(childForm);   //메뉴탭에 메뉴 활성화

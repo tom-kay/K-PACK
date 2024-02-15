@@ -3,14 +3,14 @@
 	partial class frmMenuMasterMng
 	{
 		/// <summary>
-		/// Required designer variable.
+		/// 필수 디자이너 변수입니다.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 
 		/// <summary>
-		/// Clean up any resources being used.
+		/// 사용 중인 모든 리소스를 정리합니다.
 		/// </summary>
-		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+		/// <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
 		protected override void Dispose(bool disposing)
 		{
 			if (disposing && (components != null))
@@ -20,59 +20,80 @@
 			base.Dispose(disposing);
 		}
 
-		#region Windows Form Designer generated code
+		#region Windows Form 디자이너에서 생성한 코드
 
 		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
+		/// 디자이너 지원에 필요한 메서드입니다. 
+		/// 이 메서드의 내용을 코드 편집기로 수정하지 마세요.
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-			this.treeView1 = new System.Windows.Forms.TreeView();
-			this.metroPanel1.SuspendLayout();
+			this.btnDelete = new P02_K_CONTROL_WIN.KButton();
+			this.btnSave = new P02_K_CONTROL_WIN.KButton();
+			this.pnlMain.SuspendLayout();
+			this.pnlHeader.SuspendLayout();
+			this.pnlHeaderBtns.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// metroPanel1
+			// pnlHeaderBtns
 			// 
-			this.metroPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.metroPanel1.Controls.Add(this.treeView1);
-			this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.metroPanel1.HorizontalScrollbarBarColor = true;
-			this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-			this.metroPanel1.HorizontalScrollbarSize = 10;
-			this.metroPanel1.Location = new System.Drawing.Point(0, 0);
-			this.metroPanel1.Name = "metroPanel1";
-			this.metroPanel1.Size = new System.Drawing.Size(800, 450);
-			this.metroPanel1.TabIndex = 0;
-			this.metroPanel1.VerticalScrollbarBarColor = true;
-			this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-			this.metroPanel1.VerticalScrollbarSize = 10;
+			this.pnlHeaderBtns.Controls.Add(this.btnSave);
+			this.pnlHeaderBtns.Controls.Add(this.btnDelete);
 			// 
-			// treeView1
+			// btnDelete
 			// 
-			this.treeView1.BackColor = System.Drawing.SystemColors.HotTrack;
-			this.treeView1.Location = new System.Drawing.Point(30, 52);
-			this.treeView1.Name = "treeView1";
-			this.treeView1.Size = new System.Drawing.Size(121, 97);
-			this.treeView1.TabIndex = 2;
+			this.btnDelete.BackColor = System.Drawing.Color.IndianRed;
+			this.btnDelete.BackgroundColor = System.Drawing.Color.IndianRed;
+			this.btnDelete.BorderColor = System.Drawing.Color.PaleVioletRed;
+			this.btnDelete.BorderRadius = 0;
+			this.btnDelete.BorderSize = 0;
+			this.btnDelete.FlatAppearance.BorderSize = 0;
+			this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+			this.btnDelete.ForeColor = System.Drawing.Color.White;
+			this.btnDelete.Location = new System.Drawing.Point(171, 10);
+			this.btnDelete.Name = "btnDelete";
+			this.btnDelete.Size = new System.Drawing.Size(70, 30);
+			this.btnDelete.TabIndex = 0;
+			this.btnDelete.Text = "삭제";
+			this.btnDelete.TextColor = System.Drawing.Color.White;
+			this.btnDelete.UseVisualStyleBackColor = false;
+			// 
+			// btnSave
+			// 
+			this.btnSave.BackColor = System.Drawing.Color.SeaGreen;
+			this.btnSave.BackgroundColor = System.Drawing.Color.SeaGreen;
+			this.btnSave.BorderColor = System.Drawing.Color.PaleVioletRed;
+			this.btnSave.BorderRadius = 0;
+			this.btnSave.BorderSize = 0;
+			this.btnSave.FlatAppearance.BorderSize = 0;
+			this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+			this.btnSave.ForeColor = System.Drawing.Color.White;
+			this.btnSave.Location = new System.Drawing.Point(95, 10);
+			this.btnSave.Name = "btnSave";
+			this.btnSave.Size = new System.Drawing.Size(70, 30);
+			this.btnSave.TabIndex = 1;
+			this.btnSave.Text = "저장";
+			this.btnSave.TextColor = System.Drawing.Color.White;
+			this.btnSave.UseVisualStyleBackColor = false;
 			// 
 			// frmMenuMasterMng
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.metroPanel1);
 			this.Name = "frmMenuMasterMng";
-			this.Text = "frmMenuMasterMng";
-			this.metroPanel1.ResumeLayout(false);
+			this.Text = "메뉴관리";
+			this.pnlMain.ResumeLayout(false);
+			this.pnlHeader.ResumeLayout(false);
+			this.pnlHeaderBtns.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private MetroFramework.Controls.MetroPanel metroPanel1;
-		private System.Windows.Forms.TreeView treeView1;
+		private P02_K_CONTROL_WIN.KButton btnDelete;
+		private P02_K_CONTROL_WIN.KButton btnSave;
 	}
 }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace P01_K_DESIGN_WIN
 {
-	public partial class frmChildContainer : Form
+	public partial class frmEditContainer : Form
 	{
-		public frmChildContainer()
+		public frmEditContainer()
 		{
 			InitializeComponent();
-		}
-
-		private void frmChildContainer_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			
 		}
 	}
 }

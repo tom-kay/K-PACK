@@ -55,6 +55,14 @@
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.1.1.2\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -215,12 +223,6 @@
     <Compile Include="S01_Models\Dto\DtoBase.cs" />
     <Compile Include="S02_Controllers\Base\CodeMngController.cs" />
     <Compile Include="S02_Controllers\Base\MenuMngController.cs" />
-    <Compile Include="S03_Views\Base\frmCodeMasterMng.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="S03_Views\Base\frmCodeMasterMng.Designer.cs">
-      <DependentUpon>frmCodeMasterMng.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +234,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCodeMasterMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCodeMasterMng.Designer.cs">
+      <DependentUpon>frmCodeMasterMng.cs</DependentUpon>
     </Compile>
     <Compile Include="S03_Views\Base\frmMenuMasterMng.cs">
       <SubType>Form</SubType>
@@ -463,14 +471,14 @@
     <EmbeddedResource Include="S01_Models\Maps\Base\MenuMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="S03_Views\Base\frmCodeMasterMng.resx">
-      <DependentUpon>frmCodeMasterMng.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmCodeMasterMng.resx">
+      <DependentUpon>frmCodeMasterMng.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmMenuMasterMng.resx">
       <DependentUpon>frmMenuMasterMng.cs</DependentUpon>
@@ -488,7 +496,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Content Include="k_icon.ico" />
+    <Content Include="k_icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

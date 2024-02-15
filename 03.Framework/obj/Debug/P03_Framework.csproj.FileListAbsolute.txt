@@ -1,6 +1,9 @@
 C:\workspace\K-PACK\K-PACK\03.Framework\bin\Debug\P03_Framework.dll
 C:\workspace\K-PACK\K-PACK\03.Framework\bin\Debug\P03_Framework.pdb
+C:\workspace\K-PACK\K-PACK\03.Framework\bin\Debug\log4net.dll
+C:\workspace\K-PACK\K-PACK\03.Framework\bin\Debug\log4net.xml
 C:\workspace\K-PACK\K-PACK\03.Framework\obj\Debug\P03_Framework.csproj.AssemblyReference.cache
 C:\workspace\K-PACK\K-PACK\03.Framework\obj\Debug\P03_Framework.csproj.CoreCompileInputs.cache
+C:\workspace\K-PACK\K-PACK\03.Framework\obj\Debug\P03_Framework.csproj.CopyComplete
 C:\workspace\K-PACK\K-PACK\03.Framework\obj\Debug\P03_Framework.dll
 C:\workspace\K-PACK\K-PACK\03.Framework\obj\Debug\P03_Framework.pdb

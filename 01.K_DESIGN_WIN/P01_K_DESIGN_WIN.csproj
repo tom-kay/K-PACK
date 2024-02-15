@@ -61,11 +61,11 @@
   <ItemGroup>
     <Compile Include="Classes\KMessageBox.cs" />
     <Compile Include="Classes\ThemeColor.cs" />
-    <Compile Include="frmChildContainer.cs">
+    <Compile Include="frmEditContainer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChildContainer.Designer.cs">
-      <DependentUpon>frmChildContainer.cs</DependentUpon>
+    <Compile Include="frmEditContainer.Designer.cs">
+      <DependentUpon>frmEditContainer.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMessageBox.cs">
       <SubType>Form</SubType>
@@ -123,8 +123,8 @@
     <None Include="Resources\chat.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmChildContainer.resx">
-      <DependentUpon>frmChildContainer.cs</DependentUpon>
+    <EmbeddedResource Include="frmEditContainer.resx">
+      <DependentUpon>frmEditContainer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMessageBox.resx">
       <DependentUpon>frmMessageBox.cs</DependentUpon>

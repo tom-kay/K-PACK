@@ -40,7 +40,7 @@ namespace P01_K_DESIGN_WIN
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.pnlBottomBar = new System.Windows.Forms.Panel();
-			this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+			this.cboTimeZone = new MetroFramework.Controls.MetroComboBox();
 			this.lblMainMsg = new System.Windows.Forms.Label();
 			this.lblDate = new System.Windows.Forms.Label();
 			this.lblTime = new System.Windows.Forms.Label();
@@ -74,12 +74,10 @@ namespace P01_K_DESIGN_WIN
 			// 
 			// pnlMainContainer
 			// 
-			this.pnlMainContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.pnlMainContainer.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.pnlMainContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
 			this.pnlMainContainer.Controls.Add(this.pnlBody);
 			this.pnlMainContainer.Controls.Add(this.pnlHeader);
+			this.pnlMainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnlMainContainer.Location = new System.Drawing.Point(0, 0);
 			this.pnlMainContainer.Margin = new System.Windows.Forms.Padding(2);
 			this.pnlMainContainer.Name = "pnlMainContainer";
@@ -120,7 +118,6 @@ namespace P01_K_DESIGN_WIN
 			this.tabMenuForm.SelectedIndex = 0;
 			this.tabMenuForm.Size = new System.Drawing.Size(821, 684);
 			this.tabMenuForm.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-			this.tabMenuForm.Style = MetroFramework.MetroColorStyle.Blue;
 			this.tabMenuForm.TabIndex = 7;
 			this.tabMenuForm.UseSelectable = true;
 			this.tabMenuForm.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabMenuForm_Selected);
@@ -145,7 +142,7 @@ namespace P01_K_DESIGN_WIN
 			// pnlBottomBar
 			// 
 			this.pnlBottomBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
-			this.pnlBottomBar.Controls.Add(this.metroComboBox1);
+			this.pnlBottomBar.Controls.Add(this.cboTimeZone);
 			this.pnlBottomBar.Controls.Add(this.lblMainMsg);
 			this.pnlBottomBar.Controls.Add(this.lblDate);
 			this.pnlBottomBar.Controls.Add(this.lblTime);
@@ -156,25 +153,24 @@ namespace P01_K_DESIGN_WIN
 			this.pnlBottomBar.Size = new System.Drawing.Size(821, 24);
 			this.pnlBottomBar.TabIndex = 3;
 			// 
-			// metroComboBox1
+			// cboTimeZone
 			// 
-			this.metroComboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.cboTimeZone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.metroComboBox1.DisplayMember = "KOREA";
-			this.metroComboBox1.FontSize = MetroFramework.MetroComboBoxSize.Small;
-			this.metroComboBox1.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
-			this.metroComboBox1.FormattingEnabled = true;
-			this.metroComboBox1.ItemHeight = 19;
-			this.metroComboBox1.Items.AddRange(new object[] {
+			this.cboTimeZone.DisplayMember = "KOREA";
+			this.cboTimeZone.FontSize = MetroFramework.MetroComboBoxSize.Small;
+			this.cboTimeZone.FontWeight = MetroFramework.MetroComboBoxWeight.Bold;
+			this.cboTimeZone.FormattingEnabled = true;
+			this.cboTimeZone.ItemHeight = 19;
+			this.cboTimeZone.Items.AddRange(new object[] {
             "KOREA",
             "USA",
             "JAPAN"});
-			this.metroComboBox1.Location = new System.Drawing.Point(392, 0);
-			this.metroComboBox1.Name = "metroComboBox1";
-			this.metroComboBox1.PromptText = "KOREA";
-			this.metroComboBox1.Size = new System.Drawing.Size(110, 25);
-			this.metroComboBox1.TabIndex = 3;
-			this.metroComboBox1.UseSelectable = true;
+			this.cboTimeZone.Location = new System.Drawing.Point(392, 0);
+			this.cboTimeZone.Name = "cboTimeZone";
+			this.cboTimeZone.Size = new System.Drawing.Size(110, 25);
+			this.cboTimeZone.TabIndex = 3;
+			this.cboTimeZone.UseSelectable = true;
 			// 
 			// lblMainMsg
 			// 
@@ -383,18 +379,17 @@ namespace P01_K_DESIGN_WIN
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
 			this.ClientSize = new System.Drawing.Size(1024, 768);
 			this.ControlBox = false;
 			this.Controls.Add(this.pnlMainContainer);
-			this.IsMdiContainer = true;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(1024, 768);
 			this.Name = "frmMdiContainer";
-			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-			this.TransparencyKey = System.Drawing.Color.Empty;
 			this.pnlMainContainer.ResumeLayout(false);
 			this.pnlMainContainer.PerformLayout();
 			this.pnlBody.ResumeLayout(false);
@@ -436,7 +431,7 @@ namespace P01_K_DESIGN_WIN
 		private Panel pnlDesktop;
 		private TabPage tabPage1;
 		private TabPage tabPage2;
-		protected MetroFramework.Controls.MetroComboBox metroComboBox1;
+		protected MetroFramework.Controls.MetroComboBox cboTimeZone;
 		protected Label lblTopMenuCaption;
 		protected MetroFramework.Controls.MetroTabControl tabMenuForm;
 	}
