@@ -32,17 +32,17 @@
 			this.btnDelete = new P02_K_CONTROL_WIN.KButton();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.panel5 = new System.Windows.Forms.Panel();
-			this.panel4 = new System.Windows.Forms.Panel();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.kTextBox1 = new P02_K_CONTROL_WIN.KTextBox();
-			this.kTextBox2 = new P02_K_CONTROL_WIN.KTextBox();
 			this.kTextBox3 = new P02_K_CONTROL_WIN.KTextBox();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.label3 = new System.Windows.Forms.Label();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.kTextBox2 = new P02_K_CONTROL_WIN.KTextBox();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.kTextBox1 = new P02_K_CONTROL_WIN.KTextBox();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.label2 = new System.Windows.Forms.Label();
 			this.pnlMain.SuspendLayout();
 			this.pnlBody.SuspendLayout();
 			this.pnlHeader.SuspendLayout();
@@ -142,6 +142,26 @@
 			this.panel6.Size = new System.Drawing.Size(591, 44);
 			this.panel6.TabIndex = 5;
 			// 
+			// kTextBox3
+			// 
+			this.kTextBox3.BackColor = System.Drawing.SystemColors.Window;
+			this.kTextBox3.BorderColor = System.Drawing.Color.White;
+			this.kTextBox3.BorderFocusColor = System.Drawing.Color.White;
+			this.kTextBox3.BorderRadius = 0;
+			this.kTextBox3.BorderSize = 2;
+			this.kTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.kTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.kTextBox3.Location = new System.Drawing.Point(3, 12);
+			this.kTextBox3.Multiline = false;
+			this.kTextBox3.Name = "kTextBox3";
+			this.kTextBox3.PasswordChar = false;
+			this.kTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.kTextBox3.PlaceholderText = "";
+			this.kTextBox3.Size = new System.Drawing.Size(585, 21);
+			this.kTextBox3.TabIndex = 1;
+			this.kTextBox3.Texts = "";
+			this.kTextBox3.UnderlinedStyle = false;
+			// 
 			// panel5
 			// 
 			this.panel5.BackColor = System.Drawing.Color.DarkCyan;
@@ -151,70 +171,6 @@
 			this.panel5.Name = "panel5";
 			this.panel5.Size = new System.Drawing.Size(194, 44);
 			this.panel5.TabIndex = 4;
-			// 
-			// panel4
-			// 
-			this.panel4.BackColor = System.Drawing.Color.White;
-			this.panel4.Controls.Add(this.kTextBox2);
-			this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel4.Location = new System.Drawing.Point(205, 55);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(591, 44);
-			this.panel4.TabIndex = 3;
-			// 
-			// panel1
-			// 
-			this.panel1.BackColor = System.Drawing.Color.DarkCyan;
-			this.panel1.Controls.Add(this.label1);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(4, 4);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(194, 44);
-			this.panel1.TabIndex = 0;
-			// 
-			// panel2
-			// 
-			this.panel2.BackColor = System.Drawing.Color.White;
-			this.panel2.Controls.Add(this.kTextBox1);
-			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel2.Location = new System.Drawing.Point(205, 4);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(591, 44);
-			this.panel2.TabIndex = 1;
-			// 
-			// panel3
-			// 
-			this.panel3.BackColor = System.Drawing.Color.DarkCyan;
-			this.panel3.Controls.Add(this.label2);
-			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel3.Location = new System.Drawing.Point(4, 55);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(194, 44);
-			this.panel3.TabIndex = 2;
-			// 
-			// label1
-			// 
-			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(0, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(194, 44);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "CODE";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label2
-			// 
-			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(0, 0);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(194, 44);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "NAME";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label3
 			// 
@@ -228,65 +184,109 @@
 			this.label3.Text = "USE Y/N";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// kTextBox1
+			// panel4
 			// 
-			this.kTextBox1.BackColor = System.Drawing.SystemColors.Window;
-			this.kTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.kTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.kTextBox1.BorderRadius = 0;
-			this.kTextBox1.BorderSize = 2;
-			this.kTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.kTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.kTextBox1.Location = new System.Drawing.Point(0, 12);
-			this.kTextBox1.Multiline = false;
-			this.kTextBox1.Name = "kTextBox1";
-			this.kTextBox1.PasswordChar = false;
-			this.kTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.kTextBox1.PlaceholderText = "";
-			this.kTextBox1.Size = new System.Drawing.Size(591, 21);
-			this.kTextBox1.TabIndex = 0;
-			this.kTextBox1.Texts = "";
-			this.kTextBox1.UnderlinedStyle = false;
+			this.panel4.BackColor = System.Drawing.Color.White;
+			this.panel4.Controls.Add(this.kTextBox2);
+			this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel4.Location = new System.Drawing.Point(205, 55);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(591, 44);
+			this.panel4.TabIndex = 3;
 			// 
 			// kTextBox2
 			// 
 			this.kTextBox2.BackColor = System.Drawing.SystemColors.Window;
-			this.kTextBox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.kTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.kTextBox2.BorderColor = System.Drawing.Color.White;
+			this.kTextBox2.BorderFocusColor = System.Drawing.Color.White;
 			this.kTextBox2.BorderRadius = 0;
 			this.kTextBox2.BorderSize = 2;
 			this.kTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.kTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.kTextBox2.Location = new System.Drawing.Point(0, 12);
+			this.kTextBox2.Location = new System.Drawing.Point(3, 12);
 			this.kTextBox2.Multiline = false;
 			this.kTextBox2.Name = "kTextBox2";
 			this.kTextBox2.PasswordChar = false;
 			this.kTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.kTextBox2.PlaceholderText = "";
-			this.kTextBox2.Size = new System.Drawing.Size(591, 21);
+			this.kTextBox2.Size = new System.Drawing.Size(585, 21);
 			this.kTextBox2.TabIndex = 1;
 			this.kTextBox2.Texts = "";
 			this.kTextBox2.UnderlinedStyle = false;
 			// 
-			// kTextBox3
+			// panel1
 			// 
-			this.kTextBox3.BackColor = System.Drawing.SystemColors.Window;
-			this.kTextBox3.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.kTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.kTextBox3.BorderRadius = 0;
-			this.kTextBox3.BorderSize = 2;
-			this.kTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.kTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.kTextBox3.Location = new System.Drawing.Point(0, 12);
-			this.kTextBox3.Multiline = false;
-			this.kTextBox3.Name = "kTextBox3";
-			this.kTextBox3.PasswordChar = false;
-			this.kTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.kTextBox3.PlaceholderText = "";
-			this.kTextBox3.Size = new System.Drawing.Size(591, 21);
-			this.kTextBox3.TabIndex = 1;
-			this.kTextBox3.Texts = "";
-			this.kTextBox3.UnderlinedStyle = false;
+			this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+			this.panel1.Controls.Add(this.label1);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel1.Location = new System.Drawing.Point(4, 4);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(194, 44);
+			this.panel1.TabIndex = 0;
+			// 
+			// label1
+			// 
+			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+			this.label1.ForeColor = System.Drawing.Color.White;
+			this.label1.Location = new System.Drawing.Point(0, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(194, 44);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "CODE";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.White;
+			this.panel2.Controls.Add(this.kTextBox1);
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel2.Location = new System.Drawing.Point(205, 4);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(591, 44);
+			this.panel2.TabIndex = 1;
+			// 
+			// kTextBox1
+			// 
+			this.kTextBox1.BackColor = System.Drawing.SystemColors.Window;
+			this.kTextBox1.BorderColor = System.Drawing.Color.White;
+			this.kTextBox1.BorderFocusColor = System.Drawing.Color.White;
+			this.kTextBox1.BorderRadius = 0;
+			this.kTextBox1.BorderSize = 2;
+			this.kTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.kTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.kTextBox1.Location = new System.Drawing.Point(3, 12);
+			this.kTextBox1.Multiline = false;
+			this.kTextBox1.Name = "kTextBox1";
+			this.kTextBox1.PasswordChar = false;
+			this.kTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.kTextBox1.PlaceholderText = "";
+			this.kTextBox1.Size = new System.Drawing.Size(585, 21);
+			this.kTextBox1.TabIndex = 0;
+			this.kTextBox1.Texts = "";
+			this.kTextBox1.UnderlinedStyle = false;
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.DarkCyan;
+			this.panel3.Controls.Add(this.label2);
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel3.Location = new System.Drawing.Point(4, 55);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(194, 44);
+			this.panel3.TabIndex = 2;
+			// 
+			// label2
+			// 
+			this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+			this.label2.ForeColor = System.Drawing.Color.White;
+			this.label2.Location = new System.Drawing.Point(0, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(194, 44);
+			this.label2.TabIndex = 1;
+			this.label2.Text = "NAME";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// frmCodeMasterMng
 			// 
