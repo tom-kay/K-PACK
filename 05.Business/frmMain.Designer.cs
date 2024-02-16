@@ -80,13 +80,13 @@ namespace P05_Business
 			// lblTime
 			// 
 			this.lblTime.Location = new System.Drawing.Point(693, 4);
-			this.lblTime.Text = "09:53:22";
+			this.lblTime.Text = "15:44:45";
 			// 
 			// lblDate
 			// 
 			this.lblDate.Location = new System.Drawing.Point(520, 4);
 			this.lblDate.Size = new System.Drawing.Size(156, 20);
-			this.lblDate.Text = "2024년 2월 15일 목요일";
+			this.lblDate.Text = "2024년 2월 16일 금요일";
 			// 
 			// btnMaximum
 			// 
@@ -143,9 +143,9 @@ namespace P05_Business
 			this.imgIconList.TransparentColor = System.Drawing.Color.Transparent;
 			this.imgIconList.Images.SetKeyName(0, "folder_folder.png");
 			this.imgIconList.Images.SetKeyName(1, "folder_folder_open_open.png");
-			this.imgIconList.Images.SetKeyName(2, "notepad_notepad.png");
-			this.imgIconList.Images.SetKeyName(3, "print_print.png");
-			this.imgIconList.Images.SetKeyName(4, "save_guardar.png");
+			this.imgIconList.Images.SetKeyName(2, "save_guardar.png");
+			this.imgIconList.Images.SetKeyName(3, "notepad_notepad.png");
+			this.imgIconList.Images.SetKeyName(4, "print_print.png");
 			// 
 			// frmMain
 			// 
@@ -155,7 +155,6 @@ namespace P05_Business
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.KeyPreview = true;
 			this.Name = "frmMain";
-			this.ShowIcon = true;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Load += new System.EventHandler(this.frmMain_Load);
 			this.pnlMainContainer.ResumeLayout(false);

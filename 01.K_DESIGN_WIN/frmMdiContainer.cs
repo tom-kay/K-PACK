@@ -50,10 +50,10 @@ namespace P01_K_DESIGN_WIN
 		{
 			BindingList<object> countryList = new BindingList<object>();
 
-			countryList.Add(new { Text = "KOREA", Value = "KOREA" });
-			countryList.Add(new { Text = "USA", Value = "USA" });
-			countryList.Add(new { Text = "JAPAN", Value = "JAPAN" });
-			countryList.Add(new { Text = "AUSTRALIA", Value = "AUSTRALIA" });
+			countryList.Add(new { Text = "KOREA", Value = "Korea Standard Time" });
+			countryList.Add(new { Text = "USA", Value = "Central America Standard Time" });
+			countryList.Add(new { Text = "JAPAN", Value = "Tokyo Standard Time" });
+			countryList.Add(new { Text = "AUSTRALIA", Value = "AUS Eastern Standard Time" });
 
 			cboTimeZone.DataSource = countryList;
 			cboTimeZone.DisplayMember = "Text";
@@ -61,8 +61,6 @@ namespace P01_K_DESIGN_WIN
 
 			cboTimeZone.SelectedIndex = 0;
 		}
-
-
 
 		//Methods
 		protected override void WndProc(ref Message m)
@@ -270,8 +268,21 @@ namespace P01_K_DESIGN_WIN
 
 		private void tmDateTime_Tick(object sender, EventArgs e)
 		{
-			lblDate.Text = DateTime.Now.ToLongDateString();
-			lblTime.Text = DateTime.Now.ToString("HH:mm:ssss");
+			// 현재 시간
+			DateTime currentTime = DateTime.Now;
+
+			string timeZoneName = cboTimeZone.SelectedValue.ToString();
+
+			// 원하는 시간대 설정
+			TimeZoneInfo targetTimeZone = TimeZoneInfo.FindSystemTimeZoneById(timeZoneName);
+
+
+			// 원하는 시간대로 변환
+			DateTime targetTime = TimeZoneInfo.ConvertTime(currentTime, targetTimeZone);
+
+
+			lblDate.Text = targetTime.ToLongDateString();
+			lblTime.Text = targetTime.ToString("HH:mm:ssss");
 		}
 
 		private void tabMenuForm_Selected(object sender, TabControlEventArgs e)

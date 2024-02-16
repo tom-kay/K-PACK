@@ -13,6 +13,12 @@ namespace P05_Business.S03_Views.Base
 		public frmCodeMasterMng()
 		{
 			InitializeComponent();
+			Set_Menu_Button();
+		}
+
+		private void btnSave_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
