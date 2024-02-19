@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using P05_Business.S01_Models.Dto.Base;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace P05_Business.S01_Models.Dao.Base
 {
@@ -11,44 +12,100 @@ namespace P05_Business.S01_Models.Dao.Base
 	{
 		public static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-		public CodeMasterDto GetCodeMaster()
-    {
-
-      RequestContext context = new RequestContext
-      {
-        Scope = "CodeMng",
-        SqlId = "selectCodeMaster"
-      };
-      CodeMasterDto code = SqlMapper.QuerySingle<CodeMasterDto>(context);
-      
-      return code;
-
-    }
-
-    public List<CodeMasterDto> GetCodeMasterList()
+		public List<CodeMasterDto> SelectCodeMasterList(CodeMasterDto item)
 		{
-      RequestContext context = new RequestContext
-      {
-        Scope = "CodeMng",
-        SqlId = "selectCodeMasterList",
-        //Request = new { Ids = new long[] { 1, 2, 3, 4 } }
-      };
-      List<CodeMasterDto> codes = SqlMapper.Query<CodeMasterDto>(context).ToList();
+			RequestContext context = new RequestContext
+			{
+				Scope = "CodeMng",
+				SqlId = "selectCodeMasterList",
+				Request = item
+			};
+			List<CodeMasterDto> codes = SqlMapper.Query<CodeMasterDto>(context).ToList();
 
 			return codes;
 		}
 
-		//public void insertEmployee(string emp)
-		//{
-		//	DaoFactory.getInstance.Insert("insertEmployee", emp);
-		//}
-		//public void updateEmployee(string emp)
-		//{
-		//	DaoFactory.getInstance.Update("updateEmployee", emp);
-		//}
-		//public void deleteEmployeeByEmpno(int id)
-		//{
-		//	DaoFactory.getInstance.Delete("deleteEmployeeByEmpno", id);
-		//}
+		public CodeMasterDto SelectCodeMasterSingle(CodeMasterDto item)
+		{
+
+			RequestContext context = new RequestContext
+			{
+				Scope = "CodeMng",
+				SqlId = "selectCodeMaster",
+				Request = item
+			};
+			CodeMasterDto code = null;
+
+			code = SqlMapper.QuerySingle<CodeMasterDto>(context);
+
+			return code;
+
+		}
+
+		public int InsertCodeMaster(CodeMasterDto item)
+		{
+			int result;
+
+			RequestContext context = new RequestContext
+			{
+				Scope = "CodeMng",
+				SqlId = "insertCodeMaster",
+				Request = item
+			};
+
+			try
+			{
+				SqlMapper.BeginTransaction();
+				int iSave = SqlMapper.Execute(context);
+				SqlMapper.CommitTransaction();
+
+				result = iSave;
+
+			}
+			catch (System.Exception ex)
+			{
+				SqlMapper.RollbackTransaction();
+
+				result = -1;
+
+				throw ex;
+			}
+			
+
+			return result;
+		}
+
+		public CodeMasterDto DeleteCodeMaster(CodeMasterDto item)
+		{
+			CodeMasterDto result = new CodeMasterDto();
+
+			RequestContext context = new RequestContext
+			{
+				Scope = "CodeMng",
+				SqlId = "deleteCodeMaster",
+				Request = new CodeMasterDto()
+				{
+					Code = "asd"
+					, Name = "D11"
+					, UseYn = "D12321"
+				}
+			};
+
+			try
+			{
+				SqlMapper.BeginTransaction();
+				string code = SqlMapper.ExecuteScalar<string>(context);
+				SqlMapper.CommitTransaction();
+
+				//result.Code = code;
+			}
+			catch (System.Exception ex)
+			{
+				SqlMapper.RollbackTransaction();
+				throw ex;
+			}
+
+			return result;
+		}
 	}
 }

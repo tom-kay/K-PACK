@@ -145,6 +145,7 @@
 			// 
 			// panelBody
 			// 
+			this.panelBody.AutoSize = true;
 			this.panelBody.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.panelBody.Controls.Add(this.labelMessage);
 			this.panelBody.Controls.Add(this.pictureBoxIcon);
@@ -187,6 +188,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.CornflowerBlue;
 			this.ClientSize = new System.Drawing.Size(408, 138);
 			this.Controls.Add(this.panelBody);
@@ -204,6 +206,7 @@
 			this.panelBody.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxIcon)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace P05_Business.S01_Models.Dto
-{
+{	
 	public class DtoBase
 	{ 
 		public string DelYn { get; set; }

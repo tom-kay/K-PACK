@@ -4,6 +4,49 @@
 		<Statement Id="selectCodeMasterList">
 			SELECT * 
 			FROM TB_CODEMASTER
+			WHERE `Code` Like Concat('%', @Code,'%')
+				AND `Name` Liek Concat('%', @Name, '%')
+		</Statement>
+
+		<Statement Id="selectCodeMaster">
+			SELECT *
+			FROM TB_CODEMASTER
+			WHERE `Code` = @Code
+		</Statement>
+
+		<Statement Id="insertCodeMaster" resultMap="">
+			INSERT INTO TB_CODEMASTER
+			(
+			`Code`,
+			`Name`,
+			`UseYn`,
+			`CreateDt`,
+			`UpdateDt`
+			)
+			VALUES
+			(
+			@Code,
+			@Name,
+			@UseYn,
+			now(),
+			now()
+			)
+			ON DUPLICATE KEY UPDATE
+			`Name` = @Name,
+			`UseYn` = @UseYn,
+			`UpdateDt` = now();
+			
+			SELECT IFNULL(@CODE,'') AS Code;
+			
+		</Statement>
+		
+
+		<Statement Id="deleteCodeMaster" >
+			UPDATE TB_CODEMASTER
+			SET
+			`DelYn` = @DelYn,
+			`DeleteDt` = now()
+			WHERE `Code` = @Code;
 		</Statement>
 	</Statements>
 </SmartSqlMap>

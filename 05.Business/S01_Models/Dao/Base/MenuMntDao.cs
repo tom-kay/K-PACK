@@ -13,28 +13,28 @@ namespace P05_Business.S01_Models.Dao.Base
 		public static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
 		public CodeMasterDto GetMenuMaster()
-    {
-
-      RequestContext context = new RequestContext
-      {
-        Scope = "MenuMng",
-        SqlId = "selectCodeMaster"
-      };
-      CodeMasterDto menu = SqlMapper.QuerySingle<CodeMasterDto>(context);
-      
-      return menu;
-
-    }
-
-    public List<MenuMasterDto> GetMenuMasterList()
 		{
-      RequestContext context = new RequestContext
-      {
-        Scope = "MenuMng",
-        SqlId = "selectMenuMasterList",
-        //Request = new { Ids = new long[] { 1, 2, 3, 4 } }
-      };
-      List<MenuMasterDto> menus = SqlMapper.Query<MenuMasterDto>(context).ToList();
+
+			RequestContext context = new RequestContext
+			{
+				Scope = "MenuMng",
+				SqlId = "selectCodeMaster"
+			};
+			CodeMasterDto menu = SqlMapper.QuerySingle<CodeMasterDto>(context);
+
+			return menu;
+
+		}
+
+		public List<MenuMasterDto> GetMenuMasterList()
+		{
+			RequestContext context = new RequestContext
+			{
+				Scope = "MenuMng",
+				SqlId = "selectMenuMasterList",
+				//Request = new { Ids = new long[] { 1, 2, 3, 4 } }
+			};
+			List<MenuMasterDto> menus = SqlMapper.Query<MenuMasterDto>(context).ToList();
 
 			return menus;
 		}

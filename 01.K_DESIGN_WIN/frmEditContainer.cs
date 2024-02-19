@@ -1,4 +1,5 @@
-﻿using P02_K_CONTROL_WIN;
+﻿using P01_K_DESIGN_WIN.Classes;
+using P02_K_CONTROL_WIN;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +29,6 @@ namespace P01_K_DESIGN_WIN
 		private void frmEditContainer_Load(object sender, EventArgs e)
 		{
 			Control_SetEvents(this);    //이벤트 할당
-			Set_Menu_Button();
 		}
 		#endregion
 
@@ -62,13 +62,14 @@ namespace P01_K_DESIGN_WIN
 		/// <summary>
 		/// 메뉴에 대한 버튼 권한을 설정한다.
 		/// </summary>
-		protected void Set_Menu_Button()
-		{
-			//닫기 버튼은 무조건 사용안함
-			this.pnlClose.Visible = false;
-
-			this.pnlPrint.Visible = false;
-			this.pnlSearch.Visible = false;
+		protected void Set_Menu_Button(EditButtonSettings settings)
+		{	
+			this.pnlClose.Visible = settings.isClose;
+			this.pnlPrint.Visible = settings.isPrint;
+			this.pnlSearch.Visible = settings.isSearch;
+			this.pnlInit.Visible = settings.isInit;
+			this.pnlDelete.Visible = settings.isDelete;
+			this.pnlSave.Visible = settings.isSave;
 		}
 		#endregion
 

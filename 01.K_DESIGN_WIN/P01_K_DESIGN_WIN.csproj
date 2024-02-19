@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\EditButtonSettings.cs" />
     <Compile Include="Classes\KMessageBox.cs" />
     <Compile Include="Classes\ThemeColor.cs" />
     <Compile Include="frmEditContainer.cs">

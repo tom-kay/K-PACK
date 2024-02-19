@@ -69,14 +69,26 @@
 			this.pnlBody.Controls.Add(this.tableLayoutPanel1);
 			this.pnlBody.Size = new System.Drawing.Size(800, 506);
 			// 
+			// pnlPrint
+			// 
+			this.pnlPrint.Location = new System.Drawing.Point(122, 0);
+			// 
 			// btnPrint
 			// 
 			this.btnPrint.FlatAppearance.BorderSize = 0;
+			// 
+			// pnlSave
+			// 
+			this.pnlSave.Location = new System.Drawing.Point(284, 0);
 			// 
 			// btnSave
 			// 
 			this.btnSave.FlatAppearance.BorderSize = 0;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+			// 
+			// pnlDelete
+			// 
+			this.pnlDelete.Location = new System.Drawing.Point(365, 0);
 			// 
 			// btnDelete
 			// 
@@ -85,6 +97,10 @@
 			// btnClose
 			// 
 			this.btnClose.FlatAppearance.BorderSize = 0;
+			// 
+			// pnlSearch
+			// 
+			this.pnlSearch.Location = new System.Drawing.Point(203, 0);
 			// 
 			// btnSearch
 			// 

@@ -34,23 +34,26 @@
 			this.pnlHeaderBlank = new System.Windows.Forms.Panel();
 			this.pnlHeaderBtns = new System.Windows.Forms.Panel();
 			this.pnlPrint = new System.Windows.Forms.Panel();
-			this.pnlSave = new System.Windows.Forms.Panel();
-			this.pnlDelete = new System.Windows.Forms.Panel();
-			this.pnlClose = new System.Windows.Forms.Panel();
-			this.pnlSearch = new System.Windows.Forms.Panel();
 			this.btnPrint = new P02_K_CONTROL_WIN.KButton();
+			this.pnlSearch = new System.Windows.Forms.Panel();
 			this.btnSearch = new P02_K_CONTROL_WIN.KButton();
+			this.pnlSave = new System.Windows.Forms.Panel();
 			this.btnSave = new P02_K_CONTROL_WIN.KButton();
+			this.pnlDelete = new System.Windows.Forms.Panel();
 			this.btnDelete = new P02_K_CONTROL_WIN.KButton();
+			this.pnlClose = new System.Windows.Forms.Panel();
 			this.btnClose = new P02_K_CONTROL_WIN.KButton();
+			this.pnlInit = new System.Windows.Forms.Panel();
+			this.btnInit = new P02_K_CONTROL_WIN.KButton();
 			this.pnlMain.SuspendLayout();
 			this.pnlHeader.SuspendLayout();
 			this.pnlHeaderBtns.SuspendLayout();
 			this.pnlPrint.SuspendLayout();
+			this.pnlSearch.SuspendLayout();
 			this.pnlSave.SuspendLayout();
 			this.pnlDelete.SuspendLayout();
 			this.pnlClose.SuspendLayout();
-			this.pnlSearch.SuspendLayout();
+			this.pnlInit.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pnlMain
@@ -89,71 +92,32 @@
 			this.pnlHeaderBlank.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnlHeaderBlank.Location = new System.Drawing.Point(0, 0);
 			this.pnlHeaderBlank.Name = "pnlHeaderBlank";
-			this.pnlHeaderBlank.Size = new System.Drawing.Size(354, 35);
+			this.pnlHeaderBlank.Size = new System.Drawing.Size(263, 35);
 			this.pnlHeaderBlank.TabIndex = 1;
 			// 
 			// pnlHeaderBtns
 			// 
 			this.pnlHeaderBtns.Controls.Add(this.pnlPrint);
+			this.pnlHeaderBtns.Controls.Add(this.pnlInit);
 			this.pnlHeaderBtns.Controls.Add(this.pnlSearch);
 			this.pnlHeaderBtns.Controls.Add(this.pnlSave);
 			this.pnlHeaderBtns.Controls.Add(this.pnlDelete);
 			this.pnlHeaderBtns.Controls.Add(this.pnlClose);
 			this.pnlHeaderBtns.Dock = System.Windows.Forms.DockStyle.Right;
-			this.pnlHeaderBtns.Location = new System.Drawing.Point(354, 0);
+			this.pnlHeaderBtns.Location = new System.Drawing.Point(263, 0);
 			this.pnlHeaderBtns.Name = "pnlHeaderBtns";
-			this.pnlHeaderBtns.Size = new System.Drawing.Size(446, 35);
+			this.pnlHeaderBtns.Size = new System.Drawing.Size(537, 35);
 			this.pnlHeaderBtns.TabIndex = 0;
 			// 
 			// pnlPrint
 			// 
 			this.pnlPrint.Controls.Add(this.btnPrint);
 			this.pnlPrint.Dock = System.Windows.Forms.DockStyle.Right;
-			this.pnlPrint.Location = new System.Drawing.Point(41, 0);
+			this.pnlPrint.Location = new System.Drawing.Point(51, 0);
 			this.pnlPrint.Name = "pnlPrint";
 			this.pnlPrint.Padding = new System.Windows.Forms.Padding(3);
 			this.pnlPrint.Size = new System.Drawing.Size(81, 35);
 			this.pnlPrint.TabIndex = 3;
-			// 
-			// pnlSave
-			// 
-			this.pnlSave.Controls.Add(this.btnSave);
-			this.pnlSave.Dock = System.Windows.Forms.DockStyle.Right;
-			this.pnlSave.Location = new System.Drawing.Point(203, 0);
-			this.pnlSave.Name = "pnlSave";
-			this.pnlSave.Padding = new System.Windows.Forms.Padding(3);
-			this.pnlSave.Size = new System.Drawing.Size(81, 35);
-			this.pnlSave.TabIndex = 2;
-			// 
-			// pnlDelete
-			// 
-			this.pnlDelete.Controls.Add(this.btnDelete);
-			this.pnlDelete.Dock = System.Windows.Forms.DockStyle.Right;
-			this.pnlDelete.Location = new System.Drawing.Point(284, 0);
-			this.pnlDelete.Name = "pnlDelete";
-			this.pnlDelete.Padding = new System.Windows.Forms.Padding(3);
-			this.pnlDelete.Size = new System.Drawing.Size(81, 35);
-			this.pnlDelete.TabIndex = 1;
-			// 
-			// pnlClose
-			// 
-			this.pnlClose.Controls.Add(this.btnClose);
-			this.pnlClose.Dock = System.Windows.Forms.DockStyle.Right;
-			this.pnlClose.Location = new System.Drawing.Point(365, 0);
-			this.pnlClose.Name = "pnlClose";
-			this.pnlClose.Padding = new System.Windows.Forms.Padding(3);
-			this.pnlClose.Size = new System.Drawing.Size(81, 35);
-			this.pnlClose.TabIndex = 0;
-			// 
-			// pnlSearch
-			// 
-			this.pnlSearch.Controls.Add(this.btnSearch);
-			this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Right;
-			this.pnlSearch.Location = new System.Drawing.Point(122, 0);
-			this.pnlSearch.Name = "pnlSearch";
-			this.pnlSearch.Padding = new System.Windows.Forms.Padding(3);
-			this.pnlSearch.Size = new System.Drawing.Size(81, 35);
-			this.pnlSearch.TabIndex = 4;
 			// 
 			// btnPrint
 			// 
@@ -175,6 +139,16 @@
 			this.btnPrint.TextColor = System.Drawing.Color.White;
 			this.btnPrint.UseVisualStyleBackColor = false;
 			// 
+			// pnlSearch
+			// 
+			this.pnlSearch.Controls.Add(this.btnSearch);
+			this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Right;
+			this.pnlSearch.Location = new System.Drawing.Point(213, 0);
+			this.pnlSearch.Name = "pnlSearch";
+			this.pnlSearch.Padding = new System.Windows.Forms.Padding(3);
+			this.pnlSearch.Size = new System.Drawing.Size(81, 35);
+			this.pnlSearch.TabIndex = 4;
+			// 
 			// btnSearch
 			// 
 			this.btnSearch.BackColor = System.Drawing.Color.Chocolate;
@@ -194,6 +168,16 @@
 			this.btnSearch.Text = "조회";
 			this.btnSearch.TextColor = System.Drawing.Color.White;
 			this.btnSearch.UseVisualStyleBackColor = false;
+			// 
+			// pnlSave
+			// 
+			this.pnlSave.Controls.Add(this.btnSave);
+			this.pnlSave.Dock = System.Windows.Forms.DockStyle.Right;
+			this.pnlSave.Location = new System.Drawing.Point(294, 0);
+			this.pnlSave.Name = "pnlSave";
+			this.pnlSave.Padding = new System.Windows.Forms.Padding(3);
+			this.pnlSave.Size = new System.Drawing.Size(81, 35);
+			this.pnlSave.TabIndex = 2;
 			// 
 			// btnSave
 			// 
@@ -215,6 +199,16 @@
 			this.btnSave.TextColor = System.Drawing.Color.White;
 			this.btnSave.UseVisualStyleBackColor = false;
 			// 
+			// pnlDelete
+			// 
+			this.pnlDelete.Controls.Add(this.btnDelete);
+			this.pnlDelete.Dock = System.Windows.Forms.DockStyle.Right;
+			this.pnlDelete.Location = new System.Drawing.Point(375, 0);
+			this.pnlDelete.Name = "pnlDelete";
+			this.pnlDelete.Padding = new System.Windows.Forms.Padding(3);
+			this.pnlDelete.Size = new System.Drawing.Size(81, 35);
+			this.pnlDelete.TabIndex = 1;
+			// 
 			// btnDelete
 			// 
 			this.btnDelete.BackColor = System.Drawing.Color.IndianRed;
@@ -234,6 +228,16 @@
 			this.btnDelete.Text = "삭제";
 			this.btnDelete.TextColor = System.Drawing.Color.White;
 			this.btnDelete.UseVisualStyleBackColor = false;
+			// 
+			// pnlClose
+			// 
+			this.pnlClose.Controls.Add(this.btnClose);
+			this.pnlClose.Dock = System.Windows.Forms.DockStyle.Right;
+			this.pnlClose.Location = new System.Drawing.Point(456, 0);
+			this.pnlClose.Name = "pnlClose";
+			this.pnlClose.Padding = new System.Windows.Forms.Padding(3);
+			this.pnlClose.Size = new System.Drawing.Size(81, 35);
+			this.pnlClose.TabIndex = 0;
 			// 
 			// btnClose
 			// 
@@ -255,6 +259,36 @@
 			this.btnClose.TextColor = System.Drawing.Color.White;
 			this.btnClose.UseVisualStyleBackColor = false;
 			// 
+			// pnlInit
+			// 
+			this.pnlInit.Controls.Add(this.btnInit);
+			this.pnlInit.Dock = System.Windows.Forms.DockStyle.Right;
+			this.pnlInit.Location = new System.Drawing.Point(132, 0);
+			this.pnlInit.Name = "pnlInit";
+			this.pnlInit.Padding = new System.Windows.Forms.Padding(3);
+			this.pnlInit.Size = new System.Drawing.Size(81, 35);
+			this.pnlInit.TabIndex = 5;
+			// 
+			// btnInit
+			// 
+			this.btnInit.BackColor = System.Drawing.Color.Goldenrod;
+			this.btnInit.BackgroundColor = System.Drawing.Color.Goldenrod;
+			this.btnInit.BorderColor = System.Drawing.Color.PaleVioletRed;
+			this.btnInit.BorderRadius = 0;
+			this.btnInit.BorderSize = 0;
+			this.btnInit.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnInit.FlatAppearance.BorderSize = 0;
+			this.btnInit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnInit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+			this.btnInit.ForeColor = System.Drawing.Color.White;
+			this.btnInit.Location = new System.Drawing.Point(3, 3);
+			this.btnInit.Name = "btnInit";
+			this.btnInit.Size = new System.Drawing.Size(75, 29);
+			this.btnInit.TabIndex = 0;
+			this.btnInit.Text = "초기화";
+			this.btnInit.TextColor = System.Drawing.Color.White;
+			this.btnInit.UseVisualStyleBackColor = false;
+			// 
 			// frmEditContainer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -268,10 +302,11 @@
 			this.pnlHeader.ResumeLayout(false);
 			this.pnlHeaderBtns.ResumeLayout(false);
 			this.pnlPrint.ResumeLayout(false);
+			this.pnlSearch.ResumeLayout(false);
 			this.pnlSave.ResumeLayout(false);
 			this.pnlDelete.ResumeLayout(false);
 			this.pnlClose.ResumeLayout(false);
-			this.pnlSearch.ResumeLayout(false);
+			this.pnlInit.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -294,5 +329,7 @@
 		public P02_K_CONTROL_WIN.KButton btnClose;
 		public System.Windows.Forms.Panel pnlSearch;
 		public P02_K_CONTROL_WIN.KButton btnSearch;
+		public System.Windows.Forms.Panel pnlInit;
+		public P02_K_CONTROL_WIN.KButton btnInit;
 	}
 }
