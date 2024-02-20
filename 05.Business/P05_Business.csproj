@@ -219,6 +219,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\AccessMain.cs" />
+    <Compile Include="Common\DataGrid.cs" />
+    <Compile Include="Common\GlobalVariables.cs" />
+    <Compile Include="Common\MainMessage.cs" />
     <Compile Include="S01_Models\Dao\Base\MenuMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\CodeMntDao.cs" />
     <Compile Include="S01_Models\Dao\DaoFactory.cs" />
@@ -238,6 +242,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCodeMasterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCodeMasterList.Designer.cs">
+      <DependentUpon>frmCodeMasterList.cs</DependentUpon>
     </Compile>
     <Compile Include="S03_Views\Base\frmCodeMasterMng.cs">
       <SubType>Form</SubType>
@@ -484,6 +494,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmCodeMasterList.resx">
+      <DependentUpon>frmCodeMasterList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmCodeMasterMng.resx">
       <DependentUpon>frmCodeMasterMng.cs</DependentUpon>
     </EmbeddedResource>
@@ -545,8 +558,6 @@
       <Name>P03_Framework</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

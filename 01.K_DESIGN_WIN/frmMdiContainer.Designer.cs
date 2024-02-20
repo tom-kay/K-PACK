@@ -40,8 +40,9 @@ namespace P01_K_DESIGN_WIN
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.pnlBottomBar = new System.Windows.Forms.Panel();
-			this.cboTimeZone = new MetroFramework.Controls.MetroComboBox();
+			this.panel1 = new System.Windows.Forms.Panel();
 			this.lblMainMsg = new System.Windows.Forms.Label();
+			this.cboTimeZone = new MetroFramework.Controls.MetroComboBox();
 			this.lblDate = new System.Windows.Forms.Label();
 			this.lblTime = new System.Windows.Forms.Label();
 			this.splMenu = new System.Windows.Forms.Splitter();
@@ -57,12 +58,12 @@ namespace P01_K_DESIGN_WIN
 			this.btnMinimum = new System.Windows.Forms.PictureBox();
 			this.panelLogo = new System.Windows.Forms.Panel();
 			this.tmDateTime = new System.Windows.Forms.Timer(this.components);
-			this.panel1 = new System.Windows.Forms.Panel();
 			this.pnlMainContainer.SuspendLayout();
 			this.pnlBody.SuspendLayout();
 			this.pnlDesktop.SuspendLayout();
 			this.tabMenuForm.SuspendLayout();
 			this.pnlBottomBar.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.panelSubMenuBar.SuspendLayout();
 			this.pnlHeader.SuspendLayout();
 			this.panelTopMenuBar.SuspendLayout();
@@ -71,7 +72,6 @@ namespace P01_K_DESIGN_WIN
 			((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnNormal)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).BeginInit();
-			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pnlMainContainer
@@ -155,6 +155,28 @@ namespace P01_K_DESIGN_WIN
 			this.pnlBottomBar.Size = new System.Drawing.Size(821, 24);
 			this.pnlBottomBar.TabIndex = 3;
 			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.lblMainMsg);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(386, 24);
+			this.panel1.TabIndex = 4;
+			// 
+			// lblMainMsg
+			// 
+			this.lblMainMsg.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.lblMainMsg.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblMainMsg.ForeColor = System.Drawing.Color.White;
+			this.lblMainMsg.Location = new System.Drawing.Point(0, 0);
+			this.lblMainMsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.lblMainMsg.Name = "lblMainMsg";
+			this.lblMainMsg.Size = new System.Drawing.Size(386, 24);
+			this.lblMainMsg.TabIndex = 2;
+			this.lblMainMsg.Text = "Message";
+			this.lblMainMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
 			// cboTimeZone
 			// 
 			this.cboTimeZone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -169,19 +191,6 @@ namespace P01_K_DESIGN_WIN
 			this.cboTimeZone.Size = new System.Drawing.Size(110, 25);
 			this.cboTimeZone.TabIndex = 3;
 			this.cboTimeZone.UseSelectable = true;
-			// 
-			// lblMainMsg
-			// 
-			this.lblMainMsg.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.lblMainMsg.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblMainMsg.ForeColor = System.Drawing.Color.White;
-			this.lblMainMsg.Location = new System.Drawing.Point(0, 0);
-			this.lblMainMsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.lblMainMsg.Name = "lblMainMsg";
-			this.lblMainMsg.Size = new System.Drawing.Size(386, 24);
-			this.lblMainMsg.TabIndex = 2;
-			this.lblMainMsg.Text = "Message";
-			this.lblMainMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// lblDate
 			// 
@@ -373,15 +382,6 @@ namespace P01_K_DESIGN_WIN
 			this.tmDateTime.Enabled = true;
 			this.tmDateTime.Tick += new System.EventHandler(this.tmDateTime_Tick);
 			// 
-			// panel1
-			// 
-			this.panel1.Controls.Add(this.lblMainMsg);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panel1.Location = new System.Drawing.Point(0, 0);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(386, 24);
-			this.panel1.TabIndex = 4;
-			// 
 			// frmMdiContainer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -404,6 +404,7 @@ namespace P01_K_DESIGN_WIN
 			this.tabMenuForm.ResumeLayout(false);
 			this.pnlBottomBar.ResumeLayout(false);
 			this.pnlBottomBar.PerformLayout();
+			this.panel1.ResumeLayout(false);
 			this.panelSubMenuBar.ResumeLayout(false);
 			this.pnlHeader.ResumeLayout(false);
 			this.panelTopMenuBar.ResumeLayout(false);
@@ -412,36 +413,36 @@ namespace P01_K_DESIGN_WIN
 			((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnNormal)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnMinimum)).EndInit();
-			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
-		protected Panel pnlMainContainer;
-		protected Panel pnlTitleBar;
-		protected PictureBox btnMinimum;
-		protected PictureBox btnExit;
-		protected PictureBox btnNormal;
-		protected Panel panelTopMenuBar;
-		protected Panel panelLogo;
-		protected Panel panelSubMenuBar;
-		protected Panel pnlBottomBar;
-		protected Label lblTime;
-		protected Label lblDate;
-		protected Label lblMainMsg;
-		protected PictureBox btnMaximum;
-		protected Timer tmDateTime;
-		protected Splitter splMenu;
-		protected Panel pnlHeader;
-		protected Panel pnlBody;
-		protected Button btnCloseChildForm;
-		private Panel pnlDesktop;
-		private TabPage tabPage1;
-		private TabPage tabPage2;
-		protected MetroFramework.Controls.MetroComboBox cboTimeZone;
-		protected Label lblTopMenuCaption;
-		protected MetroFramework.Controls.MetroTabControl tabMenuForm;
-		private Panel panel1;
+
+		public Panel pnlMainContainer;
+		public Panel pnlTitleBar;
+		public PictureBox btnMinimum;
+		public PictureBox btnExit;
+		public PictureBox btnNormal;
+		public Panel panelTopMenuBar;
+		public Panel panelLogo;
+		public Panel panelSubMenuBar;
+		public Panel pnlBottomBar;
+		public Label lblTime;
+		public Label lblDate;
+		public Label lblMainMsg;
+		public PictureBox btnMaximum;
+		public Timer tmDateTime;
+		public Splitter splMenu;
+		public Panel pnlHeader;
+		public Panel pnlBody;
+		public Button btnCloseChildForm;
+		public Panel pnlDesktop;
+		public TabPage tabPage1;
+		public TabPage tabPage2;
+		public MetroFramework.Controls.MetroComboBox cboTimeZone;
+		public Label lblTopMenuCaption;
+		public MetroFramework.Controls.MetroTabControl tabMenuForm;
+		public Panel panel1;
 	}
 }

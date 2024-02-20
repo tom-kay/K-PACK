@@ -5,7 +5,7 @@
 			SELECT * 
 			FROM TB_CODEMASTER
 			WHERE `Code` Like Concat('%', @Code,'%')
-				AND `Name` Liek Concat('%', @Name, '%')
+				AND `Name` Like Concat('%', @Name, '%')
 		</Statement>
 
 		<Statement Id="selectCodeMaster">

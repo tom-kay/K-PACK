@@ -1,4 +1,5 @@
-﻿using P01_K_DESIGN_WIN.Classes;
+﻿using MetroFramework.Controls;
+using P01_K_DESIGN_WIN.Classes;
 using P02_K_CONTROL_WIN;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,23 @@ namespace P01_K_DESIGN_WIN
 		{
 			Control_SetEvents(this);    //이벤트 할당
 		}
+
+		private void btnInit_Click(object sender, EventArgs e)
+		{
+			Control_Init(this);
+		}
+
+		private void btnClose_Click(object sender, EventArgs e)
+		{
+			foreach (Form frm in Application.OpenForms)
+			{
+				if (frm.GetType().BaseType.Name.Equals("frmMdiContainer"))
+				{
+					((frmMdiContainer)frm).CloseChildForm();
+					return;
+				}
+			}
+		}
 		#endregion
 
 		#region Custom Methods
@@ -55,6 +73,34 @@ namespace P01_K_DESIGN_WIN
 				if (ctrl.Controls.Count > 0)
 				{
 					Control_SetEvents(ctrl);
+				}
+			}
+		}
+
+		private void Control_Init(Control control)
+		{
+			foreach (Control ctrl in control.Controls)
+			{
+				if (ctrl is TextBox)
+				{
+					((TextBox)ctrl).Text = string.Empty;
+				}
+				else if (ctrl is KTextBox)
+				{
+					((KTextBox)ctrl).Texts = string.Empty;
+				}
+				else if (ctrl is CheckBox)
+				{
+					((CheckBox)ctrl).Checked = false;
+				}
+				else if (ctrl is MetroCheckBox)
+				{
+					((MetroCheckBox)ctrl).Checked = false;
+				}
+				
+				if (ctrl.Controls.Count > 0)
+				{
+					Control_Init(ctrl);
 				}
 			}
 		}
@@ -126,7 +172,10 @@ namespace P01_K_DESIGN_WIN
 				}
 			}
 
-		} 
+		}
+
 		#endregion
+
+		
 	}
 }

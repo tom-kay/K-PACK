@@ -142,6 +142,9 @@
     <EmbeddedResource Include="frmPopupFrame.resx">
       <DependentUpon>frmPopupFrame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchContainer.resx">
+      <DependentUpon>frmSearchContainer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

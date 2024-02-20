@@ -1,4 +1,5 @@
 ﻿using P01_K_DESIGN_WIN;
+using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
@@ -20,6 +21,7 @@ namespace P05_Business
 
 			base.btnMaximum_Click(null, null);
 
+			lblMainMsg.Text = "READY!!";
 		}
 
 		private void frmMain_Load(object sender, EventArgs e)

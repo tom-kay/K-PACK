@@ -19,3 +19,4 @@ C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.csproj.Cor
 C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.csproj.CopyComplete
 C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.dll
 C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.pdb
+C:\workspace\K-PACK\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.frmSearchContainer.resources

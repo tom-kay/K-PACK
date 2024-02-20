@@ -190,10 +190,15 @@ namespace P01_K_DESIGN_WIN
 
 		private void btnCloseChildForm_Click(object sender, EventArgs e)
 		{
-            foreach (Control ctrl in tabMenuForm.SelectedTab.Controls)
-            {
-                if (ctrl is Form)
-                {
+			CloseChildForm();
+		}
+
+		public void CloseChildForm()
+		{
+			foreach (Control ctrl in tabMenuForm.SelectedTab.Controls)
+			{
+				if (ctrl is Form)
+				{
 					Form frm = ctrl as Form;
 					frm.Close();
 					if (frm.IsDisposed == true)
@@ -201,11 +206,12 @@ namespace P01_K_DESIGN_WIN
 						tabMenuForm.TabPages.Remove(tabMenuForm.SelectedTab);
 					}
 				}
-            }
+			}
 
 			if (Application.OpenForms.Count < 2)
 				Reset();
 		}
+
 		private void Reset()
 		{
 			//DisableButton();

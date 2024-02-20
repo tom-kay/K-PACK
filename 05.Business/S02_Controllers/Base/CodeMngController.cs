@@ -38,12 +38,12 @@ namespace P05_Business.S02_Controllers.Base
 			return codeMasterDto;
 		}
 
-		public CodeMasterDto RemoveCodeMaster(CodeMasterDto item)
+		public int RemoveCodeMaster(CodeMasterDto item)
 		{
 			CodeMntDao dao = new CodeMntDao();
-			CodeMasterDto codeMaster = dao.DeleteCodeMaster(item);
+			int result = dao.DeleteCodeMaster(item);
 
-			return codeMaster;
+			return result;
 
 		}
 

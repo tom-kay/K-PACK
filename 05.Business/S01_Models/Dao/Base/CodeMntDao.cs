@@ -75,33 +75,27 @@ namespace P05_Business.S01_Models.Dao.Base
 			return result;
 		}
 
-		public CodeMasterDto DeleteCodeMaster(CodeMasterDto item)
+		public int DeleteCodeMaster(CodeMasterDto item)
 		{
-			CodeMasterDto result = new CodeMasterDto();
+			int result = 0;
 
 			RequestContext context = new RequestContext
 			{
 				Scope = "CodeMng",
 				SqlId = "deleteCodeMaster",
-				Request = new CodeMasterDto()
-				{
-					Code = "asd"
-					, Name = "D11"
-					, UseYn = "D12321"
-				}
+				Request = item
 			};
 
 			try
 			{
 				SqlMapper.BeginTransaction();
-				string code = SqlMapper.ExecuteScalar<string>(context);
+				result = SqlMapper.Execute(context);
 				SqlMapper.CommitTransaction();
-
-				//result.Code = code;
 			}
 			catch (System.Exception ex)
 			{
 				SqlMapper.RollbackTransaction();
+				result = -1;
 				throw ex;
 			}
 

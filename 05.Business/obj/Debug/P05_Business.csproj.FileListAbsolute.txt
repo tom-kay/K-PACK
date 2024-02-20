@@ -33,7 +33,6 @@ C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\System.Diagnostics.DiagnosticSo
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.csproj.AssemblyReference.cache
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.frmLogin.resources
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.frmMain.resources
-C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmCodeMasterMng.resources
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.frmPopup.resources
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.Properties.Resources.resources
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.csproj.GenerateResource.cache
@@ -45,3 +44,5 @@ C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frm
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\Logging.xml
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\Dapper.dll
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\Dapper.xml
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmCodeMasterMng.resources
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmCodeMasterList.resources

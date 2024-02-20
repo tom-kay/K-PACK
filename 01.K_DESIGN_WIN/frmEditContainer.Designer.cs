@@ -35,6 +35,8 @@
 			this.pnlHeaderBtns = new System.Windows.Forms.Panel();
 			this.pnlPrint = new System.Windows.Forms.Panel();
 			this.btnPrint = new P02_K_CONTROL_WIN.KButton();
+			this.pnlInit = new System.Windows.Forms.Panel();
+			this.btnInit = new P02_K_CONTROL_WIN.KButton();
 			this.pnlSearch = new System.Windows.Forms.Panel();
 			this.btnSearch = new P02_K_CONTROL_WIN.KButton();
 			this.pnlSave = new System.Windows.Forms.Panel();
@@ -43,17 +45,15 @@
 			this.btnDelete = new P02_K_CONTROL_WIN.KButton();
 			this.pnlClose = new System.Windows.Forms.Panel();
 			this.btnClose = new P02_K_CONTROL_WIN.KButton();
-			this.pnlInit = new System.Windows.Forms.Panel();
-			this.btnInit = new P02_K_CONTROL_WIN.KButton();
 			this.pnlMain.SuspendLayout();
 			this.pnlHeader.SuspendLayout();
 			this.pnlHeaderBtns.SuspendLayout();
 			this.pnlPrint.SuspendLayout();
+			this.pnlInit.SuspendLayout();
 			this.pnlSearch.SuspendLayout();
 			this.pnlSave.SuspendLayout();
 			this.pnlDelete.SuspendLayout();
 			this.pnlClose.SuspendLayout();
-			this.pnlInit.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pnlMain
@@ -138,6 +138,37 @@
 			this.btnPrint.Text = "출력";
 			this.btnPrint.TextColor = System.Drawing.Color.White;
 			this.btnPrint.UseVisualStyleBackColor = false;
+			// 
+			// pnlInit
+			// 
+			this.pnlInit.Controls.Add(this.btnInit);
+			this.pnlInit.Dock = System.Windows.Forms.DockStyle.Right;
+			this.pnlInit.Location = new System.Drawing.Point(132, 0);
+			this.pnlInit.Name = "pnlInit";
+			this.pnlInit.Padding = new System.Windows.Forms.Padding(3);
+			this.pnlInit.Size = new System.Drawing.Size(81, 35);
+			this.pnlInit.TabIndex = 5;
+			// 
+			// btnInit
+			// 
+			this.btnInit.BackColor = System.Drawing.Color.Goldenrod;
+			this.btnInit.BackgroundColor = System.Drawing.Color.Goldenrod;
+			this.btnInit.BorderColor = System.Drawing.Color.PaleVioletRed;
+			this.btnInit.BorderRadius = 0;
+			this.btnInit.BorderSize = 0;
+			this.btnInit.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnInit.FlatAppearance.BorderSize = 0;
+			this.btnInit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnInit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+			this.btnInit.ForeColor = System.Drawing.Color.White;
+			this.btnInit.Location = new System.Drawing.Point(3, 3);
+			this.btnInit.Name = "btnInit";
+			this.btnInit.Size = new System.Drawing.Size(75, 29);
+			this.btnInit.TabIndex = 0;
+			this.btnInit.Text = "초기화";
+			this.btnInit.TextColor = System.Drawing.Color.White;
+			this.btnInit.UseVisualStyleBackColor = false;
+			this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
 			// 
 			// pnlSearch
 			// 
@@ -258,36 +289,7 @@
 			this.btnClose.Text = "닫기";
 			this.btnClose.TextColor = System.Drawing.Color.White;
 			this.btnClose.UseVisualStyleBackColor = false;
-			// 
-			// pnlInit
-			// 
-			this.pnlInit.Controls.Add(this.btnInit);
-			this.pnlInit.Dock = System.Windows.Forms.DockStyle.Right;
-			this.pnlInit.Location = new System.Drawing.Point(132, 0);
-			this.pnlInit.Name = "pnlInit";
-			this.pnlInit.Padding = new System.Windows.Forms.Padding(3);
-			this.pnlInit.Size = new System.Drawing.Size(81, 35);
-			this.pnlInit.TabIndex = 5;
-			// 
-			// btnInit
-			// 
-			this.btnInit.BackColor = System.Drawing.Color.Goldenrod;
-			this.btnInit.BackgroundColor = System.Drawing.Color.Goldenrod;
-			this.btnInit.BorderColor = System.Drawing.Color.PaleVioletRed;
-			this.btnInit.BorderRadius = 0;
-			this.btnInit.BorderSize = 0;
-			this.btnInit.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.btnInit.FlatAppearance.BorderSize = 0;
-			this.btnInit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnInit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-			this.btnInit.ForeColor = System.Drawing.Color.White;
-			this.btnInit.Location = new System.Drawing.Point(3, 3);
-			this.btnInit.Name = "btnInit";
-			this.btnInit.Size = new System.Drawing.Size(75, 29);
-			this.btnInit.TabIndex = 0;
-			this.btnInit.Text = "초기화";
-			this.btnInit.TextColor = System.Drawing.Color.White;
-			this.btnInit.UseVisualStyleBackColor = false;
+			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
 			// frmEditContainer
 			// 
@@ -302,11 +304,11 @@
 			this.pnlHeader.ResumeLayout(false);
 			this.pnlHeaderBtns.ResumeLayout(false);
 			this.pnlPrint.ResumeLayout(false);
+			this.pnlInit.ResumeLayout(false);
 			this.pnlSearch.ResumeLayout(false);
 			this.pnlSave.ResumeLayout(false);
 			this.pnlDelete.ResumeLayout(false);
 			this.pnlClose.ResumeLayout(false);
-			this.pnlInit.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
