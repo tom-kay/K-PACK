@@ -243,6 +243,18 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="S03_Views\Base\frmCodeDetailList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCodeDetailList.Designer.cs">
+      <DependentUpon>frmCodeDetailList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCodeDetailMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCodeDetailMng.Designer.cs">
+      <DependentUpon>frmCodeDetailMng.cs</DependentUpon>
+    </Compile>
     <Compile Include="S03_Views\Base\frmCodeMasterList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,6 +505,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmCodeDetailMng.resx">
+      <DependentUpon>frmCodeDetailMng.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmCodeMasterList.resx">
       <DependentUpon>frmCodeMasterList.cs</DependentUpon>

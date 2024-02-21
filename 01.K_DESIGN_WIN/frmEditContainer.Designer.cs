@@ -63,7 +63,7 @@
 			this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnlMain.Location = new System.Drawing.Point(0, 0);
 			this.pnlMain.Name = "pnlMain";
-			this.pnlMain.Size = new System.Drawing.Size(800, 450);
+			this.pnlMain.Size = new System.Drawing.Size(1008, 729);
 			this.pnlMain.TabIndex = 0;
 			// 
 			// pnlBody
@@ -73,7 +73,7 @@
 			this.pnlBody.Margin = new System.Windows.Forms.Padding(0, 50, 0, 0);
 			this.pnlBody.Name = "pnlBody";
 			this.pnlBody.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-			this.pnlBody.Size = new System.Drawing.Size(800, 415);
+			this.pnlBody.Size = new System.Drawing.Size(1008, 694);
 			this.pnlBody.TabIndex = 1;
 			// 
 			// pnlHeader
@@ -84,7 +84,7 @@
 			this.pnlHeader.Location = new System.Drawing.Point(0, 0);
 			this.pnlHeader.Margin = new System.Windows.Forms.Padding(0);
 			this.pnlHeader.Name = "pnlHeader";
-			this.pnlHeader.Size = new System.Drawing.Size(800, 35);
+			this.pnlHeader.Size = new System.Drawing.Size(1008, 35);
 			this.pnlHeader.TabIndex = 0;
 			// 
 			// pnlHeaderBlank
@@ -92,7 +92,7 @@
 			this.pnlHeaderBlank.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnlHeaderBlank.Location = new System.Drawing.Point(0, 0);
 			this.pnlHeaderBlank.Name = "pnlHeaderBlank";
-			this.pnlHeaderBlank.Size = new System.Drawing.Size(263, 35);
+			this.pnlHeaderBlank.Size = new System.Drawing.Size(471, 35);
 			this.pnlHeaderBlank.TabIndex = 1;
 			// 
 			// pnlHeaderBtns
@@ -104,7 +104,7 @@
 			this.pnlHeaderBtns.Controls.Add(this.pnlDelete);
 			this.pnlHeaderBtns.Controls.Add(this.pnlClose);
 			this.pnlHeaderBtns.Dock = System.Windows.Forms.DockStyle.Right;
-			this.pnlHeaderBtns.Location = new System.Drawing.Point(263, 0);
+			this.pnlHeaderBtns.Location = new System.Drawing.Point(471, 0);
 			this.pnlHeaderBtns.Name = "pnlHeaderBtns";
 			this.pnlHeaderBtns.Size = new System.Drawing.Size(537, 35);
 			this.pnlHeaderBtns.TabIndex = 0;
@@ -296,8 +296,9 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Controls.Add(this.pnlMain);
+			this.MinimumSize = new System.Drawing.Size(1024, 768);
 			this.Name = "frmEditContainer";
 			this.Load += new System.EventHandler(this.frmEditContainer_Load);
 			this.pnlMain.ResumeLayout(false);
