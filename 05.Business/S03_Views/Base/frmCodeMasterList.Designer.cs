@@ -355,7 +355,6 @@
 			this.dgvList.AllowUserToOrderColumns = true;
 			this.dgvList.AllowUserToResizeRows = false;
 			dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Empty;
 			this.dgvList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvList.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -396,6 +395,7 @@
 			this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvList.Size = new System.Drawing.Size(1008, 629);
 			this.dgvList.TabIndex = 0;
+			this.dgvList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvList_CellMouseDoubleClick);
 			// 
 			// frmCodeMasterList
 			// 

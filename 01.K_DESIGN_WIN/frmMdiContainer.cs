@@ -165,12 +165,12 @@ namespace P01_K_DESIGN_WIN
 
 		protected void OpenMenu(Form frm)
 		{
-			//오픈되어 있는 화면이 있으면 활성화 
+			//오픈되어 있는 동일 화면이 있으면 닫는다.
 			foreach (Form openForm in Application.OpenForms)
 			{
 				if (openForm.Name.Equals(frm.Name))
-				{
-					openForm.Activate();    //폼 활성화
+				{	
+					//openForm.Activate();    //폼 활성화
 					lblTopMenuCaption.Text = openForm.Text;	// 화면명 표시
 					//탭 선택
 					foreach (TabPage item in tabMenuForm.TabPages)
@@ -179,11 +179,43 @@ namespace P01_K_DESIGN_WIN
 						if (pageForm.Name.Equals(frm.Name))
 						{
 							tabMenuForm.SelectTab(tabMenuForm.TabPages.IndexOf(item));
+							break;
 						}
 					}
+					
 					return;
 				}
 			}
+
+			//없으면 새로 오픈한다.
+			OpenChildForm(frm);
+		}
+
+		protected void LinkOpenMenu(Form frm)
+		{
+			//오픈되어 있는 동일 화면이 있으면 닫는다.
+			foreach (Form openForm in Application.OpenForms)
+			{
+				if (openForm.Name.Equals(frm.Name))
+				{
+					//openForm.Activate();    //폼 활성화
+					lblTopMenuCaption.Text = openForm.Text; // 화면명 표시
+															//탭 선택
+					foreach (TabPage item in tabMenuForm.TabPages)
+					{
+						Form pageForm = item.Tag as Form;
+						if (pageForm.Name.Equals(frm.Name))
+						{
+							tabMenuForm.SelectTab(tabMenuForm.TabPages.IndexOf(item));
+							break;
+						}
+					}
+
+					CloseChildForm();
+					break;
+				}
+			}
+
 			//없으면 새로 오픈한다.
 			OpenChildForm(frm);
 		}

@@ -220,7 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\AccessMain.cs" />
-    <Compile Include="Common\DataGrid.cs" />
+    <Compile Include="Common\UserDataGrid.cs" />
     <Compile Include="Common\GlobalVariables.cs" />
     <Compile Include="Common\MainMessage.cs" />
     <Compile Include="S01_Models\Dao\Base\MenuMntDao.cs" />
@@ -537,6 +537,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resource\Logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SmartSqlMapConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

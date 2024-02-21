@@ -7,18 +7,18 @@ using System.Windows.Forms;
 
 namespace P05_Business.Common
 {
-	public static class AccessMain
+	public class AccessMain
 	{
-		public static void ChildFormClose()
+		public static frmMain MdiMain;
+        
+        public static void ChildFormClose()
 		{
-			foreach (Form frm in Application.OpenForms)
-			{
-				if (frm.Name.Equals(GlobalVariables.MdiFormName))
-				{
-					((frmMain)frm).CloseChildForm();
-					return;
-				}
-			}
+			MdiMain.CloseChildForm();
+		}
+
+		public static void OpenChildForm(Form form)
+		{
+			MdiMain.OpenChildForm(form);
 		}
 	}
 }

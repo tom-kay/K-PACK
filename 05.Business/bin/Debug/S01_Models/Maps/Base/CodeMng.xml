@@ -2,23 +2,38 @@
 <SmartSqlMap Scope="CodeMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
 	<Statements>
 		<Statement Id="selectCodeMasterList">
-			SELECT * 
+			SELECT `Code`
+			, `Name`
+			, Remark
+			, UseYn
+			, DelYn
+			, date_format(CreateDt, '%Y-%m-%d %H:%i:%s') AS CreateDt
+			, date_format(UpdateDt, '%Y-%m-%d %H:%i:%s') AS UpdateDt
+			, date_format(DeleteDt, '%Y-%m-%d %H:%i:%s') AS DeleteDt
 			FROM TB_CODEMASTER
 			WHERE `Code` Like Concat('%', @Code,'%')
-				AND `Name` Like Concat('%', @Name, '%')
+			AND `Name` Like Concat('%', @Name, '%')
 		</Statement>
 
 		<Statement Id="selectCodeMaster">
-			SELECT *
+			SELECT `Code`
+			, `Name`
+			, Remark
+			, UseYn
+			, DelYn
+			, date_format(CreateDt, '%Y-%m-%d %H:%i:%s') AS CreateDt
+			, date_format(UpdateDt, '%Y-%m-%d %H:%i:%s') AS UpdateDt
+			, date_format(DeleteDt, '%Y-%m-%d %H:%i:%s') AS DeleteDt
 			FROM TB_CODEMASTER
 			WHERE `Code` = @Code
 		</Statement>
 
-		<Statement Id="insertCodeMaster" resultMap="">
+		<Statement Id="insertCodeMaster">
 			INSERT INTO TB_CODEMASTER
 			(
 			`Code`,
 			`Name`,
+			`Remark`,
 			`UseYn`,
 			`CreateDt`,
 			`UpdateDt`
@@ -27,12 +42,14 @@
 			(
 			@Code,
 			@Name,
+			@Remark,
 			@UseYn,
 			now(),
 			now()
 			)
 			ON DUPLICATE KEY UPDATE
 			`Name` = @Name,
+			`Remark` = @Remark,
 			`UseYn` = @UseYn,
 			`UpdateDt` = now();
 			

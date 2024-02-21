@@ -20,9 +20,21 @@ namespace P05_Business.S03_Views.Base
 
 			Set_Menu_Button(new EditButtonSettings { isPrint = false });
 		}
+
+		public frmCodeMasterMng(string code) : this()
+		{
+			txtCode.Texts = code;
+
+			SearchData();
+		}
 		#endregion
 
 		#region Default Events
+		private void frmCodeMasterMng_Load(object sender, EventArgs e)
+		{
+			
+		}
+
 		/// <summary>
 		/// 그리드 조회
 		/// </summary>
@@ -40,6 +52,7 @@ namespace P05_Business.S03_Views.Base
 
 			SearchData();
 		}
+
 
 		private void btnInit_Click(object sender, EventArgs e)
 		{
@@ -101,14 +114,15 @@ namespace P05_Business.S03_Views.Base
 				{
 					Code = txtCode.Texts,
 					Name = txtName.Texts,
-					UseYn = rdoY.Checked ? "Y" : "N"
+					UseYn = rdoY.Checked ? "Y" : "N",
+					Remark = txtRemark.Texts,
 				};
 
 				CodeMasterDto result = ctrl.AddCodeMaster(item);
 
 				if (result != null)
 				{
-					MainMessage.show("저장되었습니다.");
+					MainMessage.Show("저장되었습니다.");
 				}
 			}
 			catch (Exception ex)
@@ -134,8 +148,9 @@ namespace P05_Business.S03_Views.Base
 					txtName.Texts = list.Name;
 					if (list.UseYn == "Y") rdoY.Checked = true;
 					else rdoN.Checked = true;
+					txtRemark.Texts = list.Remark;
 
-					MainMessage.show("조회되었습니다.");
+					MainMessage.Show("조회되었습니다.");
 				}
 				else
 				{
@@ -169,7 +184,7 @@ namespace P05_Business.S03_Views.Base
 
 				if (iDelete > -1)
 				{
-					MainMessage.show("삭제되었습니다.");
+					MainMessage.Show("삭제되었습니다.");
 					btnInit.PerformClick();
 				}
 			}
@@ -177,7 +192,9 @@ namespace P05_Business.S03_Views.Base
 			{
 				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-		} 
+		}
 		#endregion
+
+		
 	}
 }

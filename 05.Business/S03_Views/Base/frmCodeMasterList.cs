@@ -1,28 +1,33 @@
 ﻿using P01_K_DESIGN_WIN.Classes;
+using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace P05_Business.S03_Views.Base
 {
 	public partial class frmCodeMasterList : P01_K_DESIGN_WIN.frmSearchContainer
 	{
+		#region Member Variables
 		CodeMngController ctrl = new CodeMngController();
+		#endregion
 
+		#region Constructor
 		public frmCodeMasterList()
 		{
 			InitializeComponent();
 
 			Set_Menu_Button(new EditButtonSettings { isPrint = false });
-		}
 
+			//그리드 생성
+			CreateGrid();
+
+		}
+		#endregion
+
+		#region Control Events
 		private void btnInit_Click(object sender, EventArgs e)
 		{
 			rdoUseY.Checked = true;
@@ -34,6 +39,20 @@ namespace P05_Business.S03_Views.Base
 			SearchData();
 		}
 
+		private void dgvList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				string code = dgvList.Rows[e.RowIndex].Cells["CODE"].Value.ToString();
+
+				frmCodeMasterMng frm = new frmCodeMasterMng(code);
+
+				AccessMain.OpenChildForm(frm);
+			}
+		}
+		#endregion
+
+		#region Custom Methods
 		private void SearchData()
 		{
 			try
@@ -50,74 +69,28 @@ namespace P05_Business.S03_Views.Base
 
 				dgvList.DataSource = codeMasters;
 
-				//그리드 헤더명 설정
-                foreach (DataGridViewColumn	column in dgvList.Columns)
-                {
-					var prop = typeof(CodeMasterDto).GetProperty(column.Name);
-					var attrs = prop.GetCustomAttributes(typeof(DisplayAttribute), false);
-                    if (attrs.Length > 0)
-                    {
-						var displayAttr = attrs[0] as DisplayAttribute;
-						column.HeaderText = displayAttr.Name;
-                    }
-                }
-
-            }
+				MainMessage.Show("조회되었습니다.");
+			}
 			catch (Exception ex)
 			{
 				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
-		private void Render_Grid(DataGridView dgv, DataGridViewAutoSizeColumnsMode sizeColumnsMode)
+		private void CreateGrid()
 		{
-			dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
-			dgv.AutoSizeColumnsMode = sizeColumnsMode;	//사용자정의
-			dgv.AllowUserToResizeRows = false;
-			dgv.BackgroundColor = SystemColors.Window;
-			dgv.BorderStyle = BorderStyle.None;
-			dgv.CellBorderStyle = DataGridViewCellBorderStyle.None;
-			dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			UserDataGrid.Create(dgvList, DataGridViewAutoSizeColumnsMode.Fill);
+			UserDataGrid.AddTextBoxColumn(dgvList, "CODE", "CODE", true, true, 10, DataGridViewContentAlignment.MiddleLeft);
+			UserDataGrid.AddTextBoxColumn(dgvList, "NAME", "NAME", true, true, 10, DataGridViewContentAlignment.MiddleLeft);
+			UserDataGrid.AddTextBoxColumn(dgvList, "UseYn", "사용", true, true, 10, DataGridViewContentAlignment.MiddleCenter);
+			UserDataGrid.AddTextBoxColumn(dgvList, "DelYn", "삭제", true, true, 10, DataGridViewContentAlignment.MiddleCenter);
+			UserDataGrid.AddTextBoxColumn(dgvList, "CreateDt", "생성일자", true, true, 10, DataGridViewContentAlignment.MiddleCenter, UserDataGrid.TextType.DateTime);
+			UserDataGrid.AddTextBoxColumn(dgvList, "UpdateDt", "수정일자", true, true, 10, DataGridViewContentAlignment.MiddleCenter, UserDataGrid.TextType.DateTime);
+			UserDataGrid.AddTextBoxColumn(dgvList, "DeleteDt", "삭제일자", true, true, 10, DataGridViewContentAlignment.MiddleCenter, UserDataGrid.TextType.DateTime);
+			UserDataGrid.End(dgvList);
+		} 
+		#endregion
 
-			dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-			dgv.ColumnHeadersHeight = 35;
-			dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-			
-			dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.CornflowerBlue;
-			dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-			dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft New Tai Lue", 12, FontStyle.Bold);
-			dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-			dgv.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.CornflowerBlue;
-			dgv.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
-			
-			dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			dgv.DefaultCellStyle.BackColor = SystemColors.Window;
-			dgv.DefaultCellStyle.ForeColor= SystemColors.WindowText;
-			dgv.DefaultCellStyle.Font = new Font("Microsoft New Tai Lue", 12);
-			dgv.DefaultCellStyle.SelectionBackColor = Color.Beige;
-			dgv.DefaultCellStyle.SelectionForeColor= SystemColors.WindowText;
-			
 
-			List<DataGridViewColumn> columns = new List<DataGridViewColumn>();
-			DataGridViewColumn[] columns1 = new DataGridViewColumn[columns.Count];
-			DataGridViewColumn column = new DataGridViewColumn();
-			DataGridViewTextBoxColumn text = new DataGridViewTextBoxColumn();
-			DataGridViewComboBoxColumn comboBox = new DataGridViewComboBoxColumn();
-			DataGridViewCheckBoxColumn checkBox = new DataGridViewCheckBoxColumn();
-			DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-			DataGridViewImageColumn image = new DataGridViewImageColumn();
-			DataGridViewLinkColumn link = new DataGridViewLinkColumn();
-			
-			column.HeaderText = "";
-			column.Width = 10;
-			column.ReadOnly = true;
-			column.Visible = true;
-			column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			column.DefaultCellStyle.Font = new Font("Microsoft New Tai Lue", 12);
-			column.DataPropertyName = "Name";
-			column.Name = "Name";
-			
-			dgv.Columns.AddRange(columns1);
-		}
 	}
 }

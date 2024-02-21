@@ -9,16 +9,9 @@ namespace P05_Business.Common
 {
 	public static class MainMessage
 	{
-		public static void show(string message)
+		public static void Show(string message)
 		{
-			foreach(Form frm in Application.OpenForms)
-			{
-				if (frm.Name.Equals(GlobalVariables.MdiFormName))
-				{
-					((frmMain)frm).lblMainMsg.Text = message;
-					return;
-				}
-			}
+			AccessMain.MdiMain.lblMainMsg.Text = message;
 		}
 	}
 }

@@ -2,6 +2,7 @@
 using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
+using SmartSql.SqlMap.Tags;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -16,8 +17,13 @@ namespace P05_Business
 		{
 			InitializeComponent();
 
+			AccessMain.MdiMain = this;
+
 			frmLogin login = new frmLogin();
 			login.ShowDialog();
+
+			//회사로고 표시
+			picLogo.Image = Image.FromFile(GlobalVariables.GetLogoFileImage);
 
 			base.btnMaximum_Click(null, null);
 
@@ -108,9 +114,13 @@ namespace P05_Business
 				Form frm = Activator.CreateInstance(Type.GetType(formName)) as Form;
 				frm.Text = e.Node.Text;
 
-				base.OpenMenu(frm); 
+				base.OpenMenu(frm);
 			}
+		}
 
+		public new void OpenChildForm(Form form)
+		{
+			base.LinkOpenMenu(form);
 		}
 	}
 }

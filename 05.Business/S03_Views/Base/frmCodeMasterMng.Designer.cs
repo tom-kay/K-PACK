@@ -42,6 +42,10 @@
 			this.txtCode = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
+			this.panel7 = new System.Windows.Forms.Panel();
+			this.panel8 = new System.Windows.Forms.Panel();
+			this.label4 = new System.Windows.Forms.Label();
+			this.txtRemark = new P02_K_CONTROL_WIN.KTextBox();
 			this.pnlMain.SuspendLayout();
 			this.pnlBody.SuspendLayout();
 			this.pnlHeader.SuspendLayout();
@@ -59,6 +63,8 @@
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel3.SuspendLayout();
+			this.panel7.SuspendLayout();
+			this.panel8.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pnlMain
@@ -123,14 +129,17 @@
 			this.panPart1.Controls.Add(this.panel1, 0, 0);
 			this.panPart1.Controls.Add(this.panel2, 1, 0);
 			this.panPart1.Controls.Add(this.panel3, 0, 1);
+			this.panPart1.Controls.Add(this.panel7, 0, 3);
+			this.panPart1.Controls.Add(this.panel8, 1, 3);
 			this.panPart1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panPart1.Location = new System.Drawing.Point(0, 10);
 			this.panPart1.Name = "panPart1";
-			this.panPart1.RowCount = 3;
+			this.panPart1.RowCount = 4;
 			this.panPart1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
 			this.panPart1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
 			this.panPart1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-			this.panPart1.Size = new System.Drawing.Size(934, 109);
+			this.panPart1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+			this.panPart1.Size = new System.Drawing.Size(934, 145);
 			this.panPart1.TabIndex = 0;
 			// 
 			// panel6
@@ -309,12 +318,65 @@
 			this.label2.Text = "NAME";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// panel7
+			// 
+			this.panel7.Controls.Add(this.label4);
+			this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel7.Location = new System.Drawing.Point(4, 112);
+			this.panel7.Name = "panel7";
+			this.panel7.Size = new System.Drawing.Size(94, 29);
+			this.panel7.TabIndex = 6;
+			// 
+			// panel8
+			// 
+			this.panel8.Controls.Add(this.txtRemark);
+			this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel8.Location = new System.Drawing.Point(105, 112);
+			this.panel8.Name = "panel8";
+			this.panel8.Size = new System.Drawing.Size(825, 29);
+			this.panel8.TabIndex = 7;
+			// 
+			// label4
+			// 
+			this.label4.BackColor = System.Drawing.Color.CornflowerBlue;
+			this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label4.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold);
+			this.label4.ForeColor = System.Drawing.Color.White;
+			this.label4.Location = new System.Drawing.Point(0, 0);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(94, 29);
+			this.label4.TabIndex = 2;
+			this.label4.Text = "REMARK";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// txtRemark
+			// 
+			this.txtRemark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtRemark.BackColor = System.Drawing.SystemColors.Window;
+			this.txtRemark.BorderColor = System.Drawing.Color.White;
+			this.txtRemark.BorderFocusColor = System.Drawing.Color.White;
+			this.txtRemark.BorderRadius = 0;
+			this.txtRemark.BorderSize = 2;
+			this.txtRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.txtRemark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtRemark.Location = new System.Drawing.Point(3, 4);
+			this.txtRemark.Multiline = false;
+			this.txtRemark.Name = "txtRemark";
+			this.txtRemark.PasswordChar = false;
+			this.txtRemark.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtRemark.PlaceholderText = "";
+			this.txtRemark.Size = new System.Drawing.Size(819, 21);
+			this.txtRemark.TabIndex = 2;
+			this.txtRemark.Texts = "";
+			this.txtRemark.UnderlinedStyle = false;
+			// 
 			// frmCodeMasterMng
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.ClientSize = new System.Drawing.Size(934, 607);
 			this.Name = "frmCodeMasterMng";
 			this.Text = "코드관리";
+			this.Load += new System.EventHandler(this.frmCodeMasterMng_Load);
 			this.pnlMain.ResumeLayout(false);
 			this.pnlBody.ResumeLayout(false);
 			this.pnlBody.PerformLayout();
@@ -334,6 +396,8 @@
 			this.panel1.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
+			this.panel7.ResumeLayout(false);
+			this.panel8.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -353,5 +417,9 @@
 		private P02_K_CONTROL_WIN.KTextBox txtName;
 		private P02_K_CONTROL_WIN.KRadioButton rdoN;
 		private P02_K_CONTROL_WIN.KRadioButton rdoY;
+		private System.Windows.Forms.Panel panel7;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Panel panel8;
+		private P02_K_CONTROL_WIN.KTextBox txtRemark;
 	}
 }
