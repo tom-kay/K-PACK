@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace P05_Business.S01_Models.Dto
 {
-	public class DtoBase
+	public class DtoBase : ICloneable
 	{
 		[Display(Name = "삭제유무")]
 		public string DelYn { get; set; }
@@ -19,5 +19,10 @@ namespace P05_Business.S01_Models.Dto
 		public string DeleteId { get; set; }
 		[Display(Name = "삭제일자")]
 		public DateTime? DeleteDt { get; set; }
+
+		public object Clone()
+		{
+			return this.MemberwiseClone();
+		}
 	}
 }

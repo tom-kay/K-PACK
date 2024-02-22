@@ -33,6 +33,7 @@ namespace P05_Business.Common
 			dataGrid.BorderStyle = BorderStyle.None;
 			dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
 			dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+			dataGrid.AutoGenerateColumns = false;
 			
 
 			dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;

@@ -41,11 +41,11 @@
 			// 
 			// pnlMain
 			// 
-			this.pnlMain.Size = new System.Drawing.Size(1069, 608);
+			this.pnlMain.Size = new System.Drawing.Size(1069, 729);
 			// 
 			// pnlBody
 			// 
-			this.pnlBody.Size = new System.Drawing.Size(1069, 573);
+			this.pnlBody.Size = new System.Drawing.Size(1069, 694);
 			// 
 			// pnlHeader
 			// 
@@ -86,7 +86,7 @@
 			// frmCodeDetailMng
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-			this.ClientSize = new System.Drawing.Size(1069, 608);
+			this.ClientSize = new System.Drawing.Size(1069, 729);
 			this.Name = "frmCodeDetailMng";
 			this.pnlMain.ResumeLayout(false);
 			this.pnlHeader.ResumeLayout(false);

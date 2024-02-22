@@ -300,6 +300,7 @@
 			this.Controls.Add(this.pnlMain);
 			this.MinimumSize = new System.Drawing.Size(1024, 768);
 			this.Name = "frmEditContainer";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEditContainer_FormClosing);
 			this.Load += new System.EventHandler(this.frmEditContainer_Load);
 			this.pnlMain.ResumeLayout(false);
 			this.pnlHeader.ResumeLayout(false);

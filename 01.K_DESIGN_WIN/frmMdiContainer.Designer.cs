@@ -31,7 +31,6 @@ namespace P01_K_DESIGN_WIN
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMdiContainer));
 			this.pnlMainContainer = new System.Windows.Forms.Panel();
 			this.pnlBody = new System.Windows.Forms.Panel();
@@ -57,7 +56,7 @@ namespace P01_K_DESIGN_WIN
 			this.btnNormal = new System.Windows.Forms.PictureBox();
 			this.btnMinimum = new System.Windows.Forms.PictureBox();
 			this.panelLogo = new System.Windows.Forms.Panel();
-			this.tmDateTime = new System.Windows.Forms.Timer(this.components);
+			this.tmDateTime = new System.Windows.Forms.Timer();
 			this.pnlMainContainer.SuspendLayout();
 			this.pnlBody.SuspendLayout();
 			this.pnlDesktop.SuspendLayout();
@@ -100,7 +99,7 @@ namespace P01_K_DESIGN_WIN
 			// 
 			// pnlDesktop
 			// 
-			this.pnlDesktop.BackColor = System.Drawing.SystemColors.ActiveCaption;
+			this.pnlDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
 			this.pnlDesktop.Controls.Add(this.tabMenuForm);
 			this.pnlDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnlDesktop.Location = new System.Drawing.Point(203, 0);
@@ -121,12 +120,13 @@ namespace P01_K_DESIGN_WIN
 			this.tabMenuForm.Size = new System.Drawing.Size(821, 684);
 			this.tabMenuForm.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
 			this.tabMenuForm.TabIndex = 7;
+			this.tabMenuForm.UseCustomBackColor = true;
 			this.tabMenuForm.UseSelectable = true;
 			this.tabMenuForm.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabMenuForm_Selected);
 			// 
 			// tabPage1
 			// 
-			this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+			this.tabPage1.BackColor = System.Drawing.Color.White;
 			this.tabPage1.Location = new System.Drawing.Point(4, 4);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Size = new System.Drawing.Size(813, 642);
@@ -135,6 +135,7 @@ namespace P01_K_DESIGN_WIN
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.BackColor = System.Drawing.Color.White;
 			this.tabPage2.Location = new System.Drawing.Point(4, 4);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Size = new System.Drawing.Size(813, 642);

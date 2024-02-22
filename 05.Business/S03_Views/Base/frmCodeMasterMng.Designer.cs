@@ -43,8 +43,8 @@
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.panel7 = new System.Windows.Forms.Panel();
-			this.panel8 = new System.Windows.Forms.Panel();
 			this.label4 = new System.Windows.Forms.Label();
+			this.panel8 = new System.Windows.Forms.Panel();
 			this.txtRemark = new P02_K_CONTROL_WIN.KTextBox();
 			this.pnlMain.SuspendLayout();
 			this.pnlBody.SuspendLayout();
@@ -67,26 +67,9 @@
 			this.panel8.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// pnlMain
-			// 
-			this.pnlMain.Size = new System.Drawing.Size(934, 607);
-			// 
 			// pnlBody
 			// 
 			this.pnlBody.Controls.Add(this.panPart1);
-			this.pnlBody.Size = new System.Drawing.Size(934, 572);
-			// 
-			// pnlHeader
-			// 
-			this.pnlHeader.Size = new System.Drawing.Size(934, 35);
-			// 
-			// pnlHeaderBtns
-			// 
-			this.pnlHeaderBtns.Location = new System.Drawing.Point(397, 0);
-			// 
-			// pnlHeaderBlank
-			// 
-			this.pnlHeaderBlank.Size = new System.Drawing.Size(397, 35);
 			// 
 			// btnPrint
 			// 
@@ -139,7 +122,7 @@
 			this.panPart1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
 			this.panPart1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
 			this.panPart1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-			this.panPart1.Size = new System.Drawing.Size(934, 145);
+			this.panPart1.Size = new System.Drawing.Size(1008, 145);
 			this.panPart1.TabIndex = 0;
 			// 
 			// panel6
@@ -150,7 +133,7 @@
 			this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel6.Location = new System.Drawing.Point(105, 76);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(825, 29);
+			this.panel6.Size = new System.Drawing.Size(899, 29);
 			this.panel6.TabIndex = 5;
 			// 
 			// rdoN
@@ -165,6 +148,7 @@
 			this.rdoN.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
 			this.rdoN.Size = new System.Drawing.Size(48, 24);
 			this.rdoN.TabIndex = 1;
+			this.rdoN.Tag = "UseYn";
 			this.rdoN.Text = "N";
 			this.rdoN.UnCheckedColor = System.Drawing.Color.Gray;
 			this.rdoN.UseVisualStyleBackColor = true;
@@ -183,6 +167,7 @@
 			this.rdoY.Size = new System.Drawing.Size(48, 24);
 			this.rdoY.TabIndex = 0;
 			this.rdoY.TabStop = true;
+			this.rdoY.Tag = "UseYn";
 			this.rdoY.Text = "Y";
 			this.rdoY.UnCheckedColor = System.Drawing.Color.Gray;
 			this.rdoY.UseVisualStyleBackColor = true;
@@ -217,7 +202,7 @@
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel4.Location = new System.Drawing.Point(105, 40);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(825, 29);
+			this.panel4.Size = new System.Drawing.Size(899, 29);
 			this.panel4.TabIndex = 3;
 			// 
 			// txtName
@@ -236,8 +221,9 @@
 			this.txtName.PasswordChar = false;
 			this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtName.PlaceholderText = "";
-			this.txtName.Size = new System.Drawing.Size(819, 21);
+			this.txtName.Size = new System.Drawing.Size(893, 21);
 			this.txtName.TabIndex = 1;
+			this.txtName.Tag = "Name";
 			this.txtName.Texts = "";
 			this.txtName.UnderlinedStyle = false;
 			// 
@@ -271,7 +257,7 @@
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel2.Location = new System.Drawing.Point(105, 4);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(825, 29);
+			this.panel2.Size = new System.Drawing.Size(899, 29);
 			this.panel2.TabIndex = 1;
 			// 
 			// txtCode
@@ -290,8 +276,9 @@
 			this.txtCode.PasswordChar = false;
 			this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCode.PlaceholderText = "";
-			this.txtCode.Size = new System.Drawing.Size(819, 21);
+			this.txtCode.Size = new System.Drawing.Size(893, 21);
 			this.txtCode.TabIndex = 0;
+			this.txtCode.Tag = "Code";
 			this.txtCode.Texts = "";
 			this.txtCode.UnderlinedStyle = false;
 			// 
@@ -327,15 +314,6 @@
 			this.panel7.Size = new System.Drawing.Size(94, 29);
 			this.panel7.TabIndex = 6;
 			// 
-			// panel8
-			// 
-			this.panel8.Controls.Add(this.txtRemark);
-			this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel8.Location = new System.Drawing.Point(105, 112);
-			this.panel8.Name = "panel8";
-			this.panel8.Size = new System.Drawing.Size(825, 29);
-			this.panel8.TabIndex = 7;
-			// 
 			// label4
 			// 
 			this.label4.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -348,6 +326,16 @@
 			this.label4.TabIndex = 2;
 			this.label4.Text = "REMARK";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panel8
+			// 
+			this.panel8.BackColor = System.Drawing.Color.White;
+			this.panel8.Controls.Add(this.txtRemark);
+			this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel8.Location = new System.Drawing.Point(105, 112);
+			this.panel8.Name = "panel8";
+			this.panel8.Size = new System.Drawing.Size(899, 29);
+			this.panel8.TabIndex = 7;
 			// 
 			// txtRemark
 			// 
@@ -365,15 +353,16 @@
 			this.txtRemark.PasswordChar = false;
 			this.txtRemark.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtRemark.PlaceholderText = "";
-			this.txtRemark.Size = new System.Drawing.Size(819, 21);
+			this.txtRemark.Size = new System.Drawing.Size(893, 21);
 			this.txtRemark.TabIndex = 2;
+			this.txtRemark.Tag = "Remark";
 			this.txtRemark.Texts = "";
 			this.txtRemark.UnderlinedStyle = false;
 			// 
 			// frmCodeMasterMng
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-			this.ClientSize = new System.Drawing.Size(934, 607);
+			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Name = "frmCodeMasterMng";
 			this.Text = "코드관리";
 			this.Load += new System.EventHandler(this.frmCodeMasterMng_Load);
