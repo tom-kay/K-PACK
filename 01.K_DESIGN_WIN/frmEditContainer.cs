@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace P01_K_DESIGN_WIN
 {
@@ -19,11 +20,17 @@ namespace P01_K_DESIGN_WIN
 		#region Member Variable
 		protected bool isFormChagned = true;
         protected object originalData { get; set; } //원본 데이터
-		protected object currentData { get; set; }		//수정 데이터
-        #endregion
+		protected object currentData { get; set; }      //수정 데이터
 
-        #region Constructor
-        public frmEditContainer()
+		private const string FORM_FONT_NAME = "Microsoft New Tai Lue";
+		private const float FORM_FONT_SIZE = 12f;
+
+		private static string DISABLE_COLOR_HEX = "#F0F0F0";
+		Color TEXTBOX_DISABLE_COLOR = ColorTranslator.FromHtml(DISABLE_COLOR_HEX);
+		#endregion
+
+		#region Constructor
+		public frmEditContainer()
 		{
 			InitializeComponent();
 
@@ -34,6 +41,7 @@ namespace P01_K_DESIGN_WIN
 		#region Form Events
 		private void frmEditContainer_Load(object sender, EventArgs e)
 		{
+			Control_SetDesign(this);
 			Control_SetEvents(this);    //이벤트 할당
 		}
 
@@ -56,7 +64,7 @@ namespace P01_K_DESIGN_WIN
 
 		private void btnClose_Click(object sender, EventArgs e)
 		{
-			foreach (Form frm in Application.OpenForms)
+			foreach (Form frm in System.Windows.Forms.Application.OpenForms)
 			{
 				if (frm.GetType().BaseType.Name.Equals("frmMdiContainer"))
 				{
@@ -68,32 +76,6 @@ namespace P01_K_DESIGN_WIN
 		#endregion
 
 		#region Custom Methods
-		/// <summary>
-		/// 폼컨트롤 이벤트 할당
-		/// </summary>
-		/// <param name="control"></param>
-		private void Control_SetEvents(Control control)
-		{
-			foreach (Control ctrl in control.Controls)
-			{
-				if (ctrl is TextBox)
-				{
-					((TextBox)ctrl).Enter += TextBox_Enter;
-					((TextBox)ctrl).Leave += TextBox_Leave;
-				}
-				else if (ctrl is KTextBox)
-				{
-					((KTextBox)ctrl).Enter += TextBox_Enter;
-					((KTextBox)ctrl).Leave += TextBox_Leave;
-				}
-
-				if (ctrl.Controls.Count > 0)
-				{
-					Control_SetEvents(ctrl);
-				}
-			}
-		}
-
 		private void Control_Init(Control control)
 		{
 			foreach (Control ctrl in control.Controls)
@@ -122,6 +104,93 @@ namespace P01_K_DESIGN_WIN
 			}
 		}
 
+		private void Control_SetDesign(Control control)
+		{
+			foreach (Control ctrl in control.Controls)
+			{
+				if (ctrl is Label)
+				{
+					Label lbl = (Label)ctrl;
+					lbl.AutoSize = false;
+					lbl.Dock = DockStyle.Fill;
+					lbl.ForeColor = Color.White;
+					lbl.BackColor = Color.CornflowerBlue;
+					lbl.Font = new Font(FORM_FONT_NAME, FORM_FONT_SIZE, FontStyle.Bold);
+				}
+				else if (ctrl is KTextBox)
+				{
+					KTextBox txt = (KTextBox)ctrl;
+					txt.ForeColor = SystemColors.WindowText;
+					txt.Font = new Font(FORM_FONT_NAME, FORM_FONT_SIZE);
+					TextBox_EnabledChanged(ctrl, null);
+				}
+				else if (ctrl is TextBox)
+				{
+					TextBox txt = (TextBox)ctrl;
+					txt.ForeColor = SystemColors.WindowText;
+					txt.Font = new Font(FORM_FONT_NAME, FORM_FONT_SIZE);
+					TextBox_EnabledChanged(ctrl, null);
+				}
+				else if (ctrl is KComboBox)
+				{
+					KComboBox cbo = (KComboBox)ctrl;
+					cbo.ForeColor = SystemColors.WindowText;
+					cbo.Font = new Font(FORM_FONT_NAME, FORM_FONT_SIZE);
+				}
+				else if (ctrl is ComboBox)
+				{
+					ComboBox cbo = (ComboBox)ctrl;
+					cbo.ForeColor = SystemColors.WindowText;
+					cbo.Font = new Font(FORM_FONT_NAME, FORM_FONT_SIZE);
+				}
+				else if (ctrl is KRadioButton)
+				{
+					KRadioButton rdo = (KRadioButton)ctrl;
+					rdo.ForeColor = SystemColors.WindowText;
+					rdo.Font = new Font(FORM_FONT_NAME, FORM_FONT_SIZE);
+				}
+				else if (ctrl is RadioButton)
+				{
+					RadioButton rdo = (RadioButton)ctrl;
+					rdo.ForeColor = SystemColors.WindowText;
+					rdo.Font = new Font(FORM_FONT_NAME, FORM_FONT_SIZE);
+				}
+
+				if (ctrl.Controls.Count > 0)
+				{
+					Control_SetDesign(ctrl);
+				}
+			}
+		}
+
+		/// <summary>
+		/// 폼컨트롤 이벤트 할당
+		/// </summary>
+		/// <param name="control"></param>
+		private void Control_SetEvents(Control control)
+		{
+			foreach (Control ctrl in control.Controls)
+			{
+				if (ctrl is TextBox)
+				{
+					((TextBox)ctrl).Enter += TextBox_Enter;
+					((TextBox)ctrl).Leave += TextBox_Leave;
+					((TextBox)ctrl).EnabledChanged += TextBox_EnabledChanged;
+				}
+				else if (ctrl is KTextBox)
+				{
+					((KTextBox)ctrl).Enter += TextBox_Enter;
+					((KTextBox)ctrl).Leave += TextBox_Leave;
+					((KTextBox)ctrl).EnabledChanged += TextBox_EnabledChanged;
+				}
+
+				if (ctrl.Controls.Count > 0)
+				{
+					Control_SetEvents(ctrl);
+				}
+			}
+		}
+
 		/// <summary>
 		/// 메뉴에 대한 버튼 권한을 설정한다.
 		/// </summary>
@@ -138,6 +207,47 @@ namespace P01_K_DESIGN_WIN
 
 
 		#region Custom Events
+		private void TextBox_EnabledChanged(object sender, EventArgs e)
+		{
+			if (sender is KTextBox)
+			{
+				KTextBox txt = (KTextBox)sender;
+
+				if (txt.Enabled)
+				{
+					if (((KTextBox)sender).Parent is Panel)
+					{
+						((Panel)((KTextBox)sender).Parent).BackColor = SystemColors.Window;
+					}
+				}
+                else
+                {
+					if (((KTextBox)sender).Parent is Panel)
+					{
+						((Panel)((KTextBox)sender).Parent).BackColor = TEXTBOX_DISABLE_COLOR;
+					}
+				}
+            }
+			else if (sender is TextBox)
+			{
+				TextBox txt = (TextBox)sender;
+
+				if (txt.Enabled)
+				{
+					if (((TextBox)sender).Parent is Panel)
+					{
+						((Panel)((TextBox)sender).Parent).BackColor = SystemColors.Window;
+					} 
+				}
+				else
+				{
+					if (((TextBox)sender).Parent is Panel)
+					{
+						((Panel)((TextBox)sender).Parent).BackColor = TEXTBOX_DISABLE_COLOR;
+					}
+				}
+			}
+		}
 
 		/// <summary>
 		/// 텍스트 박스가 활성화 되었을 때
@@ -146,20 +256,20 @@ namespace P01_K_DESIGN_WIN
 		/// <param name="e"></param>
 		protected void TextBox_Enter(object sender, EventArgs e)
 		{
-			if (sender is TextBox)
-			{
-				((TextBox)sender).BackColor = Color.Beige;
-				if (((TextBox)sender).Parent is Panel)
-				{
-					((Panel)((TextBox)sender).Parent).BackColor = Color.Beige;
-				}
-			}
-			else if (sender is KTextBox)
+			if (sender is KTextBox)
 			{
 				((KTextBox)sender).BackColor = Color.Beige;
 				if (((KTextBox)sender).Parent is Panel)
 				{
 					((Panel)((KTextBox)sender).Parent).BackColor = Color.Beige;
+				}
+			}
+			else if (sender is TextBox)
+			{
+				((TextBox)sender).BackColor = Color.Beige;
+				if (((TextBox)sender).Parent is Panel)
+				{
+					((Panel)((TextBox)sender).Parent).BackColor = Color.Beige;
 				}
 			}
 		}
@@ -172,20 +282,20 @@ namespace P01_K_DESIGN_WIN
 		/// <exception cref="NotImplementedException"></exception>
 		protected void TextBox_Leave(object sender, EventArgs e)
 		{
-			if (sender is TextBox)
-			{
-				((TextBox)sender).BackColor = SystemColors.Window;
-				if (((TextBox)sender).Parent is Panel)
-				{
-					((Panel)((TextBox)sender).Parent).BackColor = SystemColors.Window;
-				}
-			}
-			else if (sender is KTextBox)
+			if (sender is KTextBox)
 			{
 				((KTextBox)sender).BackColor = SystemColors.Window;
 				if (((KTextBox)sender).Parent is Panel)
 				{
 					((Panel)((KTextBox)sender).Parent).BackColor = SystemColors.Window;
+				}
+			}
+			else if (sender is TextBox)
+			{
+				((TextBox)sender).BackColor = SystemColors.Window;
+				if (((TextBox)sender).Parent is Panel)
+				{
+					((Panel)((TextBox)sender).Parent).BackColor = SystemColors.Window;
 				}
 			}
 
@@ -248,7 +358,9 @@ namespace P01_K_DESIGN_WIN
 		{	
 			bool isEquals = true;
 
-			Type type1 = originalData.GetType();
+            if (originalData == null) return true;
+
+            Type type1 = originalData.GetType();
 
 			// Get all fields of the type
 			FieldInfo[] type1Fields = type1.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);

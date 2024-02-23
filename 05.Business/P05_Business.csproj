@@ -226,7 +226,9 @@
     <Compile Include="S01_Models\Dao\Base\MenuMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\CodeMntDao.cs" />
     <Compile Include="S01_Models\Dao\DaoFactory.cs" />
+    <Compile Include="S01_Models\Dto\Base\CodeDetailDto.cs" />
     <Compile Include="S01_Models\Dto\Base\CodeMasterDto.cs" />
+    <Compile Include="S01_Models\Dto\Base\CompanyInfoDto.cs" />
     <Compile Include="S01_Models\Dto\Base\MenuMasterDto.cs" />
     <Compile Include="S01_Models\Dto\DtoBase.cs" />
     <Compile Include="S02_Controllers\Base\CodeMngController.cs" />
@@ -267,11 +269,29 @@
     <Compile Include="S03_Views\Base\frmCodeMasterMng.Designer.cs">
       <DependentUpon>frmCodeMasterMng.cs</DependentUpon>
     </Compile>
+    <Compile Include="S03_Views\Base\frmCompanyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCompanyInfo.Designer.cs">
+      <DependentUpon>frmCompanyInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="S03_Views\Base\frmMenuMasterMng.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="S03_Views\Base\frmMenuMasterMng.Designer.cs">
       <DependentUpon>frmMenuMasterMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmUserList.Designer.cs">
+      <DependentUpon>frmUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmUserMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmUserMng.Designer.cs">
+      <DependentUpon>frmUserMng.cs</DependentUpon>
     </Compile>
     <Compile Include="S03_Views\Popup\Common\frmPopup.cs">
       <SubType>Form</SubType>
@@ -514,6 +534,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmCodeMasterMng.resx">
       <DependentUpon>frmCodeMasterMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmCompanyInfo.resx">
+      <DependentUpon>frmCompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmMenuMasterMng.resx">
       <DependentUpon>frmMenuMasterMng.cs</DependentUpon>

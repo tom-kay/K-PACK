@@ -48,3 +48,4 @@ C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frm
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmCodeMasterList.resources
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\Resource\Logo.jpg
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmCodeDetailMng.resources
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmCompanyInfo.resources

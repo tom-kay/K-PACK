@@ -15,7 +15,6 @@ namespace P05_Business.Common
 		public const string LogoFilePath = "Resource";
 		public const string LogoFile = "Logo.jpg";
 
-
         public static string GetLogoFileImage { get { return Path.Combine(GlobalVariables.ExcutePath, GlobalVariables.LogoFilePath, GlobalVariables.LogoFile); } }
     }
 }
