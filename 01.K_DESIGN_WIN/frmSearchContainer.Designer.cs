@@ -78,7 +78,7 @@
 			this.pnlSearchOptional.Location = new System.Drawing.Point(0, 35);
 			this.pnlSearchOptional.Margin = new System.Windows.Forms.Padding(0);
 			this.pnlSearchOptional.Name = "pnlSearchOptional";
-			this.pnlSearchOptional.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+			this.pnlSearchOptional.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
 			this.pnlSearchOptional.Size = new System.Drawing.Size(1008, 100);
 			this.pnlSearchOptional.TabIndex = 1;
 			// 
@@ -231,7 +231,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Controls.Add(this.pnlSearchMain);
-			this.MinimumSize = new System.Drawing.Size(1024, 768);
+			this.MinimumSize = new System.Drawing.Size(800, 600);
 			this.Name = "frmSearchContainer";
 			this.Text = "frmSearchContainer";
 			this.Load += new System.EventHandler(this.frmSearchContainer_Load);

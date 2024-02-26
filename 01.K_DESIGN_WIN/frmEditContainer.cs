@@ -18,7 +18,7 @@ namespace P01_K_DESIGN_WIN
 	public partial class frmEditContainer : Form
 	{
 		#region Member Variable
-		protected bool isFormChagned = true;
+		protected bool isFormChagned = false;
         protected object originalData { get; set; } //원본 데이터
 		protected object currentData { get; set; }      //수정 데이터
 
@@ -47,7 +47,7 @@ namespace P01_K_DESIGN_WIN
 
 		private void frmEditContainer_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (!isFormChagned || !EqualsObject())
+			if (isFormChagned || !EqualsObject())
 			{
 				var result = KMessageBox.Show("저장되지 않은 데이터가 있습니다. 닫으시겠습니까?", "확인", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 				if (result == DialogResult.No)
@@ -60,6 +60,7 @@ namespace P01_K_DESIGN_WIN
 		private void btnInit_Click(object sender, EventArgs e)
 		{
 			Control_Init(this);
+
 		}
 
 		private void btnClose_Click(object sender, EventArgs e)

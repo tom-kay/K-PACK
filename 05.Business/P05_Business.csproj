@@ -293,6 +293,12 @@
     <Compile Include="S03_Views\Base\frmUserMng.Designer.cs">
       <DependentUpon>frmUserMng.cs</DependentUpon>
     </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmMasterCodePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmMasterCodePopup.Designer.cs">
+      <DependentUpon>frmMasterCodePopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="S03_Views\Popup\Common\frmPopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -540,6 +546,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmMenuMasterMng.resx">
       <DependentUpon>frmMenuMasterMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Common\frmMasterCodePopup.resx">
+      <DependentUpon>frmMasterCodePopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Common\frmPopup.resx">
       <DependentUpon>frmPopup.cs</DependentUpon>
