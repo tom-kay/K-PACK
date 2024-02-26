@@ -4,6 +4,7 @@ using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace P05_Business.S03_Views.Base
@@ -40,6 +41,18 @@ namespace P05_Business.S03_Views.Base
 		{
 			BindControls(this, currentData, dto);
 		}
+		
+		private void btnInit_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				SetInit();//초기화
+			}
+			catch (Exception ex)
+			{
+				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
 
 		/// <summary>
 		/// 그리드 조회
@@ -53,7 +66,7 @@ namespace P05_Business.S03_Views.Base
 				//코드 입력 확인
 				if (string.IsNullOrEmpty(txtCode.Texts))
 				{
-					KMessageBox.Show("CODE를 입력 바랍니다.", "저장", MessageBoxButtons.OK);
+					KMessageBox.Show("CODE를 입력 바랍니다.", "조회", MessageBoxButtons.OK);
 					txtCode.Focus();
 					return;
 				}
@@ -65,38 +78,6 @@ namespace P05_Business.S03_Views.Base
 				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-
-		private void btnInit_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				SetInit();//초기화
-			}
-			catch (Exception ex)
-			{
-				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
-
-		private void btnDelete_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				if (string.IsNullOrEmpty(txtCode.Texts))
-				{
-					KMessageBox.Show("CODE를 입력 바랍니다.", "저장", MessageBoxButtons.OK);
-					txtCode.Focus();
-					return;
-				}
-
-				DeleteData();   //삭제
-			}
-			catch (Exception ex)
-			{
-				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
-
 		private void btnSave_Click(object sender, EventArgs e)
 		{
 			try
@@ -117,12 +98,34 @@ namespace P05_Business.S03_Views.Base
 			}
 
 		}
+
+		private void btnDelete_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (string.IsNullOrEmpty(txtCode.Texts))
+				{
+					KMessageBox.Show("CODE를 입력 바랍니다.", "삭제", MessageBoxButtons.OK);
+					txtCode.Focus();
+					return;
+				}
+
+				DeleteData();   //삭제
+			}
+			catch (Exception ex)
+			{
+				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
 		#endregion
 
 		#region Custom Methods
 		private void SetInit()
 		{
 			rdoY.Checked = true;
+
+			SetModelBinding(base.currentData as CodeMasterDto);
 		}
 		
 		private bool ValidationData()
@@ -153,7 +156,18 @@ namespace P05_Business.S03_Views.Base
 
 		private void SaveData()
 		{
-			CodeMasterDto result = ctrl.AddCodeMaster(base.currentData as CodeMasterDto);
+			CodeMasterDto saveData = base.currentData as CodeMasterDto;
+
+			CodeMasterDto param = new CodeMasterDto() { 
+				Code = saveData.Code,
+				Name = saveData.Name,
+				UseYn = saveData.UseYn,
+				Remark = saveData.Remark,
+				CreateId = "SYSTEM",
+				UpdateId = "SYSTEM",
+			};
+
+			CodeMasterDto result = ctrl.AddCodeMaster(param);
 
 			if (result != null)
 			{
@@ -219,73 +233,19 @@ namespace P05_Business.S03_Views.Base
 
 		private void SetControlTag()
 		{
+			//라디오 버튼 셋팅
 			rdoY.Tag = new Tuple<string, string>("UseYn", "Y");
 			rdoN.Tag = new Tuple<string, string>("UseYn", "N");
 		}
 
 		private void SetModelBinding(CodeMasterDto item)
 		{
-			base.isFormChagned = true;
-
 			base.originalData = item.Clone();   //원본
-			base.currentData = item;			//수정본
+			base.currentData = item;            //수정본
+
+			base.isFormChagned = false;
 		}
 		#endregion
 
-		#region 사용하지 않음 (주석)
-		/*
-		private void BindControls(Control control, object data)
-		{
-			foreach (Control childControl in control.Controls)
-			{
-				if (childControl.Tag != null)
-				{
-					string propertyName = childControl.Tag.ToString();
-					if (childControl is KTextBox)
-					{
-						childControl.DataBindings.Add("Texts", data, propertyName);
-					}
-					else if (childControl is TextBox || childControl is ComboBox)
-					{
-						childControl.DataBindings.Add("Text", data, propertyName);
-					}
-					else if (childControl is CheckBox)
-					{
-						childControl.DataBindings.Add("Checked", data, propertyName);
-					}
-					else if (childControl is KRadioButton)
-					{
-						((KRadioButton)childControl).CheckedChanged += (s, e) =>
-						{
-							if (((KRadioButton)s).Checked)
-							{
-								var tagName = (Tuple<string, string>)((KRadioButton)s).Tag;
-								typeof(CodeMasterDto).GetProperty(tagName.Item1).SetValue(data, tagName.Item2);
-							}
-						};
-						var tag = (Tuple<string, string>)((KRadioButton)childControl).Tag;
-						((KRadioButton)childControl).Checked = tag.Item2.Equals(typeof(CodeMasterDto).GetProperty(tag.Item1).GetValue(data));
-					}
-					else if (childControl is RadioButton)
-					{
-						((RadioButton)childControl).CheckedChanged += (s, e) =>
-						{
-							if (((RadioButton)s).Checked)
-							{
-								var tagName = (Tuple<string, string>)((RadioButton)s).Tag;
-								typeof(CodeMasterDto).GetProperty(tagName.Item1).SetValue(data, tagName.Item2);
-							}
-						};
-						var tag = (Tuple<string, string>)((RadioButton)childControl).Tag;
-						((RadioButton)childControl).Checked = tag.Item2.Equals(typeof(CodeMasterDto).GetProperty(tag.Item1).GetValue(data));
-					}
-				}
-
-				// Recursively bind child controls
-				BindControls(childControl, data);
-			}
-		}
-		*/
-		#endregion
 	}
 }

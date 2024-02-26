@@ -6,24 +6,46 @@
 			, `Name`
 			, Remark
 			, UseYn
-			, DelYn
-			, date_format(CreateDt, '%Y-%m-%d %H:%i:%s') AS CreateDt
-			, date_format(UpdateDt, '%Y-%m-%d %H:%i:%s') AS UpdateDt
-			, date_format(DeleteDt, '%Y-%m-%d %H:%i:%s') AS DeleteDt
+			, ifnull(DelYn,'') AS DelYn
+			,`CreateId`
+			,date_format(CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`
+			,`UpdateId`
+			,date_format(UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`
+			,`DeleteId`
+			,date_format(DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
 			FROM TB_CODEMASTER
-			WHERE `Code` Like Concat('%', @Code,'%')
-			AND `Name` Like Concat('%', @Name, '%')
+			WHERE 1 = 1
+			<IsNotEmpty Prepend="And" Property="Code">
+				`Code` Like Concat('%', @Code,'%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="Name">
+				`Name` Like Concat('%', @Name, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="UseYn">
+				`UseYn` = @UseYn
+			</IsNotEmpty>
+			<Switch Prepend="And" Property="DelYn">
+				<Case CompareValue="Y">
+					'DelYn' IS NOT NULL AND `DelYn` = 'Y'
+				</Case>
+				<Case CompareValue="N">
+					(`DelYn` IS NULL OR `DelYn` != 'Y')
+				</Case>
+			</Switch>
 		</Statement>
 
 		<Statement Id="selectCodeMaster">
 			SELECT `Code`
-			, `Name`
-			, Remark
-			, UseYn
-			, DelYn
-			, date_format(CreateDt, '%Y-%m-%d %H:%i:%s') AS CreateDt
-			, date_format(UpdateDt, '%Y-%m-%d %H:%i:%s') AS UpdateDt
-			, date_format(DeleteDt, '%Y-%m-%d %H:%i:%s') AS DeleteDt
+				, `Name`
+				, Remark
+				, UseYn
+				, DelYn
+				`CreateId`,
+				date_format(CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`,
+				`UpdateId`,
+				date_format(UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
+				`DeleteId`,
+			date_format(DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
 			FROM TB_CODEMASTER
 			WHERE `Code` = @Code
 		</Statement>
@@ -35,8 +57,7 @@
 			`Name`,
 			`Remark`,
 			`UseYn`,
-			`CreateDt`,
-			`UpdateDt`
+			`CreateDt`
 			)
 			VALUES
 			(
@@ -44,7 +65,6 @@
 			@Name,
 			@Remark,
 			@UseYn,
-			now(),
 			now()
 			)
 			ON DUPLICATE KEY UPDATE
@@ -64,6 +84,140 @@
 			`DelYn` = @DelYn,
 			`DeleteDt` = now()
 			WHERE `Code` = @Code;
+		</Statement>
+
+
+		<Statement Id="selectCodeDetailList">
+			SELECT CM.`Code` AS MasterCode,
+			CM.`Name` AS MasterName,
+			CD.`Code`,
+			CD.`Name`,
+			CD.`Remark`,
+			CD.`Option1`,
+			CD.`Option2`,
+			CD.`Option3`,
+			CD.`Option4`,
+			CD.`Option5`,
+			CD.`Option6`,
+			CD.`Option7`,
+			CD.`Option8`,
+			CD.`Option9`,
+			CD.`Option10`,
+			CD.`UseYn`,
+			CD.`DelYn`,
+			CD.`CreateId`,
+			date_format(CD.CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`,
+			CD.`UpdateId`,
+			date_format(CD.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
+			CD.`DeleteId`,
+			date_format(CD.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+			FROM `TB_CODEDETAIL` AS CD
+			INNER JOIN TB_CODEMASTER AS CM
+			ON CD.MasterCode = CM.`Code`
+			WHERE 1=1
+			<IsNotEmpty Prepend="And" Property="MasterCode">
+				CD.`MasterCode` Like Concat('%', @MasterCode, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="Code">
+				CD.`Code` Like Concat('%', @Code, '%')
+			</IsNotEmpty>
+		</Statement>
+
+		<Statement Id="selectCodeDetail">
+			SELECT CM.`Code` AS MasterCode,
+			CM.`Name` AS MasterName,
+			CD.`Code`,
+			CD.`Name`,
+			CD.`Remark`,
+			CD.`Option1`,
+			CD.`Option2`,
+			CD.`Option3`,
+			CD.`Option4`,
+			CD.`Option5`,
+			CD.`Option6`,
+			CD.`Option7`,
+			CD.`Option8`,
+			CD.`Option9`,
+			CD.`Option10`,
+			CD.`UseYn`,
+			CD.`DelYn`,
+			CD.`CreateId`,
+			date_format(CD.CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`,
+			CD.`UpdateId`,
+			date_format(CD.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
+			CD.`DeleteId`,
+			date_format(CD.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+			FROM `TB_CODEDETAIL` AS CD
+			INNER JOIN TB_CODEMASTER AS CM
+			ON CD.MasterCode = CM.`Code`
+			WHERE CD.`MasterCode` = @MasterCode
+			AND CD.`Code` = @Code
+		</Statement>
+
+		<Statement Id="insertCodeDetail">
+			INSERT INTO `TB_CODEDETAIL`
+			(`Code`,
+			`MasterCode`,
+			`Name`,
+			`Remark`,
+			`Option1`,
+			`Option2`,
+			`Option3`,
+			`Option4`,
+			`Option5`,
+			`Option6`,
+			`Option7`,
+			`Option8`,
+			`Option9`,
+			`Option10`,
+			`UseYn`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`)
+			VALUES
+			(@Code,
+			@MasterCode,
+			@Name,
+			@Remark,
+			@Option1,
+			@Option2,
+			@Option3,
+			@Option4,
+			@Option5,
+			@Option6,
+			@Option7,
+			@Option8,
+			@Option9,
+			@Option10,
+			@UseYn,
+			@DelYn,
+			@CreateId,
+			now())
+			ON DUPLICATE KEY UPDATE
+			`Name` = @Name,
+			`Remark` = @Remark,
+			`Option1` = @Option1,
+			`Option2` = @Option2,
+			`Option3` = @Option3,
+			`Option4` = @Option4,
+			`Option5` = @Option5,
+			`Option6` = @Option6,
+			`Option7` = @Option7,
+			`Option8` = @Option8,
+			`Option9` = @Option9,
+			`Option10` = @Option10,
+			`UseYn` = @UseYn,
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now();
+
+		</Statement>
+
+		<Statement Id="deleteCodeDetail" >
+			UPDATE `TB_CODEDETAIL` SET
+			`DelYn` = @DelYn,
+			`DeleteDt` = now()
+			WHERE `MasterCode` = @MasterCode
+			AND `Code` = @Code
 		</Statement>
 	</Statements>
 </SmartSqlMap>

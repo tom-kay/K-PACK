@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace P05_Business.S01_Models.Dto.Base
 {
-	internal class CodeDetailDto : DtoBase
+	public class CodeDetailDto : DtoBase
 	{
 
 		[Required(ErrorMessage ="[CODE]는 필수 입니다.")]
@@ -21,7 +21,9 @@ namespace P05_Business.S01_Models.Dto.Base
 		[MaxLength(20, ErrorMessage = "[MASTER CODE]는 최대 20자리까지만 허용됩니다.")]
 		public string MasterCode { get; set; }
 
-		[MaxLength(20, ErrorMessage = "[코드명]은 최대 50자리까지만 허용됩니다.")]
+        public string MasterName { get; set; }
+
+        [MaxLength(20, ErrorMessage = "[코드명]은 최대 50자리까지만 허용됩니다.")]
 		public string Name { get; set; }
 
 		[MaxLength(20, ErrorMessage = "[설명]은 최대 255자리까지만 허용됩니다.")]

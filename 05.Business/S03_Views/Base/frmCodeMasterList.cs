@@ -60,7 +60,7 @@ namespace P05_Business.S03_Views.Base
 				CodeMasterDto item = new CodeMasterDto()
 				{
 					Code = txtCode.Texts,
-					Name = txtName.Text,
+					Name = txtName.Texts,
 					UseYn = rdoUseY.Checked ? "Y" : "N",
 					DelYn = rdoDelY.Checked ? "Y" : "N",
 				};

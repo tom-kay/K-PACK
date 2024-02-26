@@ -298,7 +298,7 @@
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Controls.Add(this.pnlMain);
-			this.MinimumSize = new System.Drawing.Size(1024, 768);
+			this.MinimumSize = new System.Drawing.Size(800, 600);
 			this.Name = "frmEditContainer";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEditContainer_FormClosing);
 			this.Load += new System.EventHandler(this.frmEditContainer_Load);

@@ -26,6 +26,8 @@ namespace P05_Business.Common
 		/// <param name="sizeColumnsMode"></param>
 		public static void Create(DataGridView dataGrid, DataGridViewAutoSizeColumnsMode sizeColumnsMode)
 		{
+			dataGrid.Refresh();
+
 			dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
 			dataGrid.AutoSizeColumnsMode = sizeColumnsMode;  //사용자정의
 			dataGrid.AllowUserToResizeRows = false;
@@ -34,7 +36,8 @@ namespace P05_Business.Common
 			dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
 			dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGrid.AutoGenerateColumns = false;
-			
+			dataGrid.RowHeadersVisible = false;
+			dataGrid.EnableHeadersVisualStyles = false;
 
 			dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
 			dataGrid.ColumnHeadersHeight = 35;
