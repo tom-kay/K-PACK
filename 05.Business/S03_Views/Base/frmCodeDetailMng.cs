@@ -29,7 +29,7 @@ namespace P05_Business.S03_Views.Base
 
 			SetControlTag();
 
-			SetModelBinding(dto);
+			SetDtoBinding();
 		}
 		#endregion
 
@@ -37,7 +37,7 @@ namespace P05_Business.S03_Views.Base
 		
 		private void frmCodeDetailMng_Load(object sender, EventArgs e)
 		{
-			BindControls(this, currentData, dto);
+			LinkModelControls(this, dto);
 		}
 		
 		private void btnInit_Click(object sender, EventArgs e)
@@ -133,15 +133,14 @@ namespace P05_Business.S03_Views.Base
 		private void btnFindMasterCode_Click(object sender, EventArgs e)
 		{
 			try
-			{
-				string masterCode  = txtMasterCode.Texts;
+			{	
 				frmMasterCodePopup popup = new frmMasterCodePopup("FIND MASTER CODE");
 
                 if (popup.DialogResult == DialogResult.OK)
-                {
-					txtMasterCode.Texts = popup.ResultCode;
-					txtMasterName.Texts = popup.ResultName;
-                }
+                {	
+					txtMasterCode.SetValue(popup.ResultCode);
+					txtMasterName.SetValue(popup.ResultName);
+				}
             }
 			catch (Exception ex)
 			{
@@ -159,10 +158,10 @@ namespace P05_Business.S03_Views.Base
 			rdoN.Tag = new Tuple<string, string>("UseYn", "N");
 		}
 
-		private void SetModelBinding(CodeDetailDto item)
+		private void SetDtoBinding()
 		{
-			base.originalData = item.Clone();   //원본
-			base.currentData = item;            //수정본
+			base.originalData = dto.Clone();   //원본
+			base.currentData = dto;            //수정본
 
 			base.isFormChagned = false;
 		}
@@ -171,7 +170,7 @@ namespace P05_Business.S03_Views.Base
 		{
 			rdoY.Checked = true;
 
-			SetModelBinding(base.currentData as CodeDetailDto);
+			SetDtoBinding();
 		}
 
 		/// <summary>
@@ -183,21 +182,21 @@ namespace P05_Business.S03_Views.Base
 			{
 				CodeDetailDto param = new CodeDetailDto()
 				{
+					MasterCode = txtMasterCode.Texts,
 					Code = txtCode.Texts
 				};
 
-				CodeDetailDto item = ctrl.GetCodeDetail(param);
+				dto = ctrl.GetCodeDetail(param);
 
-				if (item != null)
+				SetDtoBinding();
+
+				if (dto != null)
 				{
-					SetModelBinding(item);
-
 					MainMessage.Show("조회되었습니다.");
 				}
 				else
 				{
 					KMessageBox.Show("자료가 없습니다.", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					btnInit.PerformClick();
 				}
 			}
 			catch (Exception ex)
@@ -241,7 +240,7 @@ namespace P05_Business.S03_Views.Base
 
 		private void SaveData()
 		{
-			CodeDetailDto saveData = base.currentData as CodeDetailDto;
+			CodeDetailDto saveData = dto;
 
 			CodeDetailDto param = new CodeDetailDto()
 			{
@@ -264,11 +263,11 @@ namespace P05_Business.S03_Views.Base
 				UpdateId = "SYSTEM"
 			};
 
-			CodeDetailDto result = ctrl.AddCodeDetail(param);
+			dto = ctrl.AddCodeDetail(param);
 
-			if (result != null)
+			if (dto != null)
 			{
-				SetModelBinding(base.currentData as CodeDetailDto);
+				SetDtoBinding();
 
 				MainMessage.Show("저장되었습니다.");
 			}
@@ -297,8 +296,7 @@ namespace P05_Business.S03_Views.Base
 			}
 		}
 
-		#endregion
 
-		
+		#endregion
 	}
 }

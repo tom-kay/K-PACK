@@ -236,6 +236,7 @@ namespace P01_K_DESIGN_WIN
 					if (frm.IsDisposed == true)
 					{
 						tabMenuForm.TabPages.Remove(tabMenuForm.SelectedTab);
+						break;
 					}
 				}
 			}
@@ -297,10 +298,19 @@ namespace P01_K_DESIGN_WIN
 			this.WindowState = FormWindowState.Minimized;
 		}
 		private void btnClose_Click(object sender, EventArgs e)
-		{
+		{	
 			if (KMessageBox.Show("종료 하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
 			{
-				Application.Exit();
+				//열려있는 서브폼 닫기
+				int pagesCount = tabMenuForm.TabPages.Count;
+                for (int i = 0; i < pagesCount; i++)
+                {
+					tabMenuForm.SelectedIndex = i;
+					CloseChildForm();
+				}
+                
+				if (tabMenuForm.TabPages.Count == 0)
+					Application.Exit();
 			}
 		}
 

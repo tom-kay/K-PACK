@@ -19,8 +19,8 @@ namespace P01_K_DESIGN_WIN
 	{
 		#region Member Variable
 		protected bool isFormChagned = false;
-        protected object originalData { get; set; } //원본 데이터
-		protected object currentData { get; set; }      //수정 데이터
+		protected object originalData;	//원본 데이터
+		protected object currentData;   //수정 데이터
 
 		private const string FORM_FONT_NAME = "Microsoft New Tai Lue";
 		private const float FORM_FONT_SIZE = 12f;
@@ -172,23 +172,35 @@ namespace P01_K_DESIGN_WIN
 		{
 			foreach (Control ctrl in control.Controls)
 			{
-				if (ctrl is TextBox)
-				{
-					((TextBox)ctrl).Enter += TextBox_Enter;
-					((TextBox)ctrl).Leave += TextBox_Leave;
-					((TextBox)ctrl).EnabledChanged += TextBox_EnabledChanged;
-				}
-				else if (ctrl is KTextBox)
+				if (ctrl is KTextBox)
 				{
 					((KTextBox)ctrl).Enter += TextBox_Enter;
 					((KTextBox)ctrl).Leave += TextBox_Leave;
 					((KTextBox)ctrl).EnabledChanged += TextBox_EnabledChanged;
+					((KTextBox)ctrl).KeyDown += Control_KeyDown;
+
 				}
+				else if (ctrl is TextBox)
+				{
+					((TextBox)ctrl).Enter += TextBox_Enter;
+					((TextBox)ctrl).Leave += TextBox_Leave;
+					((TextBox)ctrl).EnabledChanged += TextBox_EnabledChanged;
+					((TextBox)ctrl).KeyDown += Control_KeyDown;
+				}
+
 
 				if (ctrl.Controls.Count > 0)
 				{
 					Control_SetEvents(ctrl);
 				}
+			}
+		}
+
+		private void Control_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				SendKeys.Send("{TAB}");
 			}
 		}
 
@@ -303,12 +315,12 @@ namespace P01_K_DESIGN_WIN
 		}
 
 
-		protected void BindControls<T>(Control control, object data, T classObject) where T : class
+		protected void LinkModelControls<T>(Control control, T data) where T : class
 		{
 			foreach (Control childControl in control.Controls)
 			{
 				if (childControl.Tag != null)
-				{
+				{	
 					string propertyName = childControl.Tag.ToString();
 					if (childControl is KTextBox)
 					{
@@ -333,7 +345,7 @@ namespace P01_K_DESIGN_WIN
 							}
 						};
 						var tag = (Tuple<string, string>)((KRadioButton)childControl).Tag;
-						((KRadioButton)childControl).Checked = tag.Item2.Equals(typeof(T).GetProperty(tag.Item1).GetValue(data));
+						((KRadioButton)childControl).Checked = tag.Item2.Equals(data.GetType().GetProperty(tag.Item1).GetValue(data));
 					}
 					else if (childControl is RadioButton)
 					{
@@ -346,12 +358,12 @@ namespace P01_K_DESIGN_WIN
 							}
 						};
 						var tag = (Tuple<string, string>)((RadioButton)childControl).Tag;
-						((RadioButton)childControl).Checked = tag.Item2.Equals(typeof(T).GetProperty(tag.Item1).GetValue(data));
+						((RadioButton)childControl).Checked = tag.Item2.Equals(data.GetType().GetProperty(tag.Item1).GetValue(data));
 					}
 				}
 
 				// Recursively bind child controls
-				BindControls(childControl, data, classObject);
+				LinkModelControls(childControl, data);
 			}
 		}
 

@@ -21,7 +21,7 @@ namespace P05_Business.S01_Models.Dto
 		public DateTime? DeleteDt { get; set; }
 
 		public object Clone()
-		{
+		{	
 			return this.MemberwiseClone();
 		}
 	}

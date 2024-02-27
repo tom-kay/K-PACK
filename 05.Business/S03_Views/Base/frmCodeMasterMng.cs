@@ -25,7 +25,7 @@ namespace P05_Business.S03_Views.Base
 
 			SetControlTag();
 
-			SetModelBinding(dto);
+			SetDtoBinding();
 		}
 
 		public frmCodeMasterMng(string code) : this()
@@ -39,7 +39,7 @@ namespace P05_Business.S03_Views.Base
 		#region Control Events
 		private void frmCodeMasterMng_Load(object sender, EventArgs e)
 		{
-			BindControls(this, currentData, dto);
+			LinkModelControls(this, dto);
 		}
 		
 		private void btnInit_Click(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace P05_Business.S03_Views.Base
 		{
 			rdoY.Checked = true;
 
-			SetModelBinding(base.currentData as CodeMasterDto);
+			SetDtoBinding();
 		}
 		
 		private bool ValidationData()
@@ -156,7 +156,7 @@ namespace P05_Business.S03_Views.Base
 
 		private void SaveData()
 		{
-			CodeMasterDto saveData = base.currentData as CodeMasterDto;
+			CodeMasterDto saveData = dto;
 
 			CodeMasterDto param = new CodeMasterDto() { 
 				Code = saveData.Code,
@@ -167,11 +167,11 @@ namespace P05_Business.S03_Views.Base
 				UpdateId = "SYSTEM",
 			};
 
-			CodeMasterDto result = ctrl.AddCodeMaster(param);
+			dto = ctrl.AddCodeMaster(param);
 
-			if (result != null)
+			if (dto != null)
 			{
-				SetModelBinding(base.currentData as CodeMasterDto);
+				SetDtoBinding();
 
 				MainMessage.Show("저장되었습니다.");
 			}
@@ -186,12 +186,12 @@ namespace P05_Business.S03_Views.Base
 					Code = txtCode.Texts
 				};
 
-				CodeMasterDto item = ctrl.GetCodeMaster(param);
+				dto = ctrl.GetCodeMaster(param);
 
-				if (item != null)
+				SetDtoBinding();
+
+				if (dto != null)
 				{
-					SetModelBinding(item);
-
 					MainMessage.Show("조회되었습니다.");
 				}
 				else
@@ -238,10 +238,10 @@ namespace P05_Business.S03_Views.Base
 			rdoN.Tag = new Tuple<string, string>("UseYn", "N");
 		}
 
-		private void SetModelBinding(CodeMasterDto item)
+		private void SetDtoBinding()
 		{
-			base.originalData = item.Clone();   //원본
-			base.currentData = item;            //수정본
+			base.originalData = dto.Clone();   //원본
+			base.currentData = dto;            //수정본
 
 			base.isFormChagned = false;
 		}

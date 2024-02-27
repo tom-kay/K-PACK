@@ -23,9 +23,8 @@ namespace P02_K_CONTROL_WIN
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
 
-        //Events
-        public event EventHandler _TextChanged;
-
+		//Events
+		public event EventHandler _TextChanged;
         #endregion
 
         //-> Constructor
@@ -109,6 +108,13 @@ namespace P02_K_CONTROL_WIN
             }
         }
 
+		[Category("K Code Advance")]
+		public bool ReadOnly
+		{
+			get { return textBox1.ReadOnly; }
+			set { textBox1.ReadOnly = value; }
+		}
+
         [Category("K Code Advance")]
         public override Color ForeColor
         {
@@ -144,7 +150,7 @@ namespace P02_K_CONTROL_WIN
             set
             {
                 RemovePlaceholder();//If it is the case.
-                textBox1.Text = value;
+				textBox1.Text = value;
                 SetPlaceholder();//If it is the case.
             }
         }
@@ -186,6 +192,14 @@ namespace P02_K_CONTROL_WIN
                 SetPlaceholder();
             }
         }
+
+		[Category("K Code Advance")]
+		public CharacterCasing CharacterCasing 
+		{
+			get { return textBox1.CharacterCasing; } 
+			set { textBox1.CharacterCasing = value; }
+		}
+
         #endregion
 
         #region -> Overridden methods
@@ -257,6 +271,15 @@ namespace P02_K_CONTROL_WIN
                 }
             }
         }
+
+		public void SetValue(string text)
+		{
+			this.Texts = text;
+			if (this.DataBindings != null && this.DataBindings.Count > 0)
+			{
+				this.DataBindings[0].WriteValue();
+			}
+		}
         #endregion
 
         #region -> Private methods
@@ -322,14 +345,14 @@ namespace P02_K_CONTROL_WIN
                 this.Height = textBox1.Height + this.Padding.Top + this.Padding.Bottom;
             }
         }
-        #endregion
+		#endregion
 
-        #region -> TextBox events
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (_TextChanged != null)
-                _TextChanged.Invoke(sender, e);
-        }
+		#region -> TextBox events
+		private void textBox1_TextChanged(object sender, EventArgs e)
+        {	
+			if (_TextChanged != null)
+				_TextChanged.Invoke(sender, e);
+		}
         private void textBox1_Click(object sender, EventArgs e)
         {
             this.OnClick(e);

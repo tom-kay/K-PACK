@@ -199,7 +199,7 @@ namespace P05_Business.Common
 			column.Name = name;
 			column.DataPropertyName = name;
 			column.HeaderText = headerText;
-			column.Width = columnWidth;
+			column.FillWeight = columnWidth;
 			column.ReadOnly = readOnly;
 			column.Visible = visible;
 			column.DefaultCellStyle.Alignment = alignment;

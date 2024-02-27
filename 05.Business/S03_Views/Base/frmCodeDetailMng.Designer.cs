@@ -39,21 +39,15 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.panel31 = new System.Windows.Forms.Panel();
 			this.panel33 = new System.Windows.Forms.Panel();
-			this.txtMasterName = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel32 = new System.Windows.Forms.Panel();
+			this.button1 = new System.Windows.Forms.Button();
 			this.panel15 = new System.Windows.Forms.Panel();
-			this.txtMasterCode = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel16 = new System.Windows.Forms.Panel();
-			this.txtCode = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel17 = new System.Windows.Forms.Panel();
-			this.txtName = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel18 = new System.Windows.Forms.Panel();
-			this.txtRemark = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel29 = new System.Windows.Forms.Panel();
 			this.label15 = new System.Windows.Forms.Label();
 			this.panel30 = new System.Windows.Forms.Panel();
-			this.rdoN = new P02_K_CONTROL_WIN.KRadioButton();
-			this.rdoY = new P02_K_CONTROL_WIN.KRadioButton();
 			this.pnlpart2 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.label5 = new System.Windows.Forms.Label();
@@ -76,26 +70,32 @@
 			this.panel14 = new System.Windows.Forms.Panel();
 			this.label14 = new System.Windows.Forms.Label();
 			this.panel19 = new System.Windows.Forms.Panel();
-			this.txtOption1 = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel20 = new System.Windows.Forms.Panel();
-			this.txtOption3 = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel21 = new System.Windows.Forms.Panel();
-			this.txtOption5 = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel22 = new System.Windows.Forms.Panel();
-			this.txtOption7 = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel23 = new System.Windows.Forms.Panel();
-			this.txtOption9 = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel24 = new System.Windows.Forms.Panel();
-			this.txtOption2 = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel25 = new System.Windows.Forms.Panel();
-			this.txtOption4 = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel26 = new System.Windows.Forms.Panel();
-			this.txtOption6 = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel27 = new System.Windows.Forms.Panel();
-			this.txtOption8 = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel28 = new System.Windows.Forms.Panel();
+			this.txtOption1 = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtOption3 = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtOption5 = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtOption7 = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtOption9 = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtOption2 = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtOption4 = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtOption6 = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtOption8 = new P02_K_CONTROL_WIN.KTextBox();
 			this.txtOption10 = new P02_K_CONTROL_WIN.KTextBox();
-			this.button1 = new System.Windows.Forms.Button();
+			this.txtMasterName = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtMasterCode = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtCode = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtName = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtRemark = new P02_K_CONTROL_WIN.KTextBox();
+			this.rdoN = new P02_K_CONTROL_WIN.KRadioButton();
+			this.rdoY = new P02_K_CONTROL_WIN.KRadioButton();
 			this.pnlMain.SuspendLayout();
 			this.pnlBody.SuspendLayout();
 			this.pnlHeader.SuspendLayout();
@@ -322,7 +322,7 @@
 			this.panel31.Location = new System.Drawing.Point(105, 4);
 			this.panel31.Name = "panel31";
 			this.panel31.Size = new System.Drawing.Size(960, 29);
-			this.panel31.TabIndex = 1;
+			this.panel31.TabIndex = 0;
 			// 
 			// panel33
 			// 
@@ -331,29 +331,7 @@
 			this.panel33.Location = new System.Drawing.Point(153, 0);
 			this.panel33.Name = "panel33";
 			this.panel33.Size = new System.Drawing.Size(807, 29);
-			this.panel33.TabIndex = 2;
-			// 
-			// txtMasterName
-			// 
-			this.txtMasterName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtMasterName.BackColor = System.Drawing.SystemColors.Window;
-			this.txtMasterName.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtMasterName.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtMasterName.BorderRadius = 0;
-			this.txtMasterName.BorderSize = 2;
-			this.txtMasterName.Enabled = false;
-			this.txtMasterName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtMasterName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtMasterName.Location = new System.Drawing.Point(0, 6);
-			this.txtMasterName.Multiline = false;
-			this.txtMasterName.Name = "txtMasterName";
-			this.txtMasterName.PasswordChar = false;
-			this.txtMasterName.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtMasterName.PlaceholderText = "";
-			this.txtMasterName.Size = new System.Drawing.Size(804, 17);
-			this.txtMasterName.TabIndex = 1;
-			this.txtMasterName.Texts = "";
-			this.txtMasterName.UnderlinedStyle = false;
+			this.panel33.TabIndex = 0;
 			// 
 			// panel32
 			// 
@@ -362,7 +340,20 @@
 			this.panel32.Location = new System.Drawing.Point(124, 0);
 			this.panel32.Name = "panel32";
 			this.panel32.Size = new System.Drawing.Size(29, 29);
-			this.panel32.TabIndex = 1;
+			this.panel32.TabIndex = 100;
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.PowderBlue;
+			this.button1.BackgroundImage = global::P05_Business.Properties.Resources.search_search;
+			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button1.Location = new System.Drawing.Point(0, 0);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(29, 29);
+			this.button1.TabIndex = 0;
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.btnFindMasterCode_Click);
 			// 
 			// panel15
 			// 
@@ -373,28 +364,6 @@
 			this.panel15.Size = new System.Drawing.Size(124, 29);
 			this.panel15.TabIndex = 0;
 			// 
-			// txtMasterCode
-			// 
-			this.txtMasterCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtMasterCode.BackColor = System.Drawing.SystemColors.Window;
-			this.txtMasterCode.BorderColor = System.Drawing.Color.Empty;
-			this.txtMasterCode.BorderFocusColor = System.Drawing.Color.Empty;
-			this.txtMasterCode.BorderRadius = 0;
-			this.txtMasterCode.BorderSize = 2;
-			this.txtMasterCode.Enabled = false;
-			this.txtMasterCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtMasterCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtMasterCode.Location = new System.Drawing.Point(3, 6);
-			this.txtMasterCode.Multiline = false;
-			this.txtMasterCode.Name = "txtMasterCode";
-			this.txtMasterCode.PasswordChar = false;
-			this.txtMasterCode.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtMasterCode.PlaceholderText = "";
-			this.txtMasterCode.Size = new System.Drawing.Size(118, 17);
-			this.txtMasterCode.TabIndex = 0;
-			this.txtMasterCode.Texts = "";
-			this.txtMasterCode.UnderlinedStyle = false;
-			// 
 			// panel16
 			// 
 			this.panel16.Controls.Add(this.txtCode);
@@ -403,27 +372,6 @@
 			this.panel16.Name = "panel16";
 			this.panel16.Size = new System.Drawing.Size(960, 29);
 			this.panel16.TabIndex = 1;
-			// 
-			// txtCode
-			// 
-			this.txtCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtCode.BackColor = System.Drawing.SystemColors.Window;
-			this.txtCode.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtCode.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtCode.BorderRadius = 0;
-			this.txtCode.BorderSize = 2;
-			this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtCode.Location = new System.Drawing.Point(3, 6);
-			this.txtCode.Multiline = false;
-			this.txtCode.Name = "txtCode";
-			this.txtCode.PasswordChar = false;
-			this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtCode.PlaceholderText = "";
-			this.txtCode.Size = new System.Drawing.Size(954, 17);
-			this.txtCode.TabIndex = 0;
-			this.txtCode.Texts = "";
-			this.txtCode.UnderlinedStyle = false;
 			// 
 			// panel17
 			// 
@@ -434,27 +382,6 @@
 			this.panel17.Size = new System.Drawing.Size(960, 29);
 			this.panel17.TabIndex = 2;
 			// 
-			// txtName
-			// 
-			this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtName.BackColor = System.Drawing.SystemColors.Window;
-			this.txtName.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtName.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtName.BorderRadius = 0;
-			this.txtName.BorderSize = 2;
-			this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtName.Location = new System.Drawing.Point(3, 6);
-			this.txtName.Multiline = false;
-			this.txtName.Name = "txtName";
-			this.txtName.PasswordChar = false;
-			this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtName.PlaceholderText = "";
-			this.txtName.Size = new System.Drawing.Size(954, 17);
-			this.txtName.TabIndex = 0;
-			this.txtName.Texts = "";
-			this.txtName.UnderlinedStyle = false;
-			// 
 			// panel18
 			// 
 			this.panel18.Controls.Add(this.txtRemark);
@@ -462,28 +389,7 @@
 			this.panel18.Location = new System.Drawing.Point(105, 148);
 			this.panel18.Name = "panel18";
 			this.panel18.Size = new System.Drawing.Size(960, 29);
-			this.panel18.TabIndex = 4;
-			// 
-			// txtRemark
-			// 
-			this.txtRemark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtRemark.BackColor = System.Drawing.SystemColors.Window;
-			this.txtRemark.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtRemark.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtRemark.BorderRadius = 0;
-			this.txtRemark.BorderSize = 2;
-			this.txtRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtRemark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtRemark.Location = new System.Drawing.Point(3, 6);
-			this.txtRemark.Multiline = false;
-			this.txtRemark.Name = "txtRemark";
-			this.txtRemark.PasswordChar = false;
-			this.txtRemark.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtRemark.PlaceholderText = "";
-			this.txtRemark.Size = new System.Drawing.Size(954, 17);
-			this.txtRemark.TabIndex = 0;
-			this.txtRemark.Texts = "";
-			this.txtRemark.UnderlinedStyle = false;
+			this.panel18.TabIndex = 3;
 			// 
 			// panel29
 			// 
@@ -516,42 +422,6 @@
 			this.panel30.Name = "panel30";
 			this.panel30.Size = new System.Drawing.Size(960, 29);
 			this.panel30.TabIndex = 3;
-			// 
-			// rdoN
-			// 
-			this.rdoN.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.rdoN.AutoSize = true;
-			this.rdoN.CheckedColor = System.Drawing.Color.DarkCyan;
-			this.rdoN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.rdoN.Location = new System.Drawing.Point(58, 2);
-			this.rdoN.MinimumSize = new System.Drawing.Size(0, 21);
-			this.rdoN.Name = "rdoN";
-			this.rdoN.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-			this.rdoN.Size = new System.Drawing.Size(48, 24);
-			this.rdoN.TabIndex = 1;
-			this.rdoN.Tag = "UseYn";
-			this.rdoN.Text = "N";
-			this.rdoN.UnCheckedColor = System.Drawing.Color.Gray;
-			this.rdoN.UseVisualStyleBackColor = true;
-			// 
-			// rdoY
-			// 
-			this.rdoY.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.rdoY.AutoSize = true;
-			this.rdoY.Checked = true;
-			this.rdoY.CheckedColor = System.Drawing.Color.DarkCyan;
-			this.rdoY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.rdoY.Location = new System.Drawing.Point(3, 2);
-			this.rdoY.MinimumSize = new System.Drawing.Size(0, 21);
-			this.rdoY.Name = "rdoY";
-			this.rdoY.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-			this.rdoY.Size = new System.Drawing.Size(48, 24);
-			this.rdoY.TabIndex = 0;
-			this.rdoY.TabStop = true;
-			this.rdoY.Tag = "UseYn";
-			this.rdoY.Text = "Y";
-			this.rdoY.UnCheckedColor = System.Drawing.Color.Gray;
-			this.rdoY.UseVisualStyleBackColor = true;
 			// 
 			// pnlpart2
 			// 
@@ -834,27 +704,6 @@
 			this.panel19.Size = new System.Drawing.Size(426, 29);
 			this.panel19.TabIndex = 0;
 			// 
-			// txtOption1
-			// 
-			this.txtOption1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtOption1.BackColor = System.Drawing.SystemColors.Window;
-			this.txtOption1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtOption1.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtOption1.BorderRadius = 0;
-			this.txtOption1.BorderSize = 2;
-			this.txtOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtOption1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtOption1.Location = new System.Drawing.Point(3, 6);
-			this.txtOption1.Multiline = false;
-			this.txtOption1.Name = "txtOption1";
-			this.txtOption1.PasswordChar = false;
-			this.txtOption1.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtOption1.PlaceholderText = "";
-			this.txtOption1.Size = new System.Drawing.Size(420, 17);
-			this.txtOption1.TabIndex = 0;
-			this.txtOption1.Texts = "";
-			this.txtOption1.UnderlinedStyle = false;
-			// 
 			// panel20
 			// 
 			this.panel20.Controls.Add(this.txtOption3);
@@ -863,27 +712,6 @@
 			this.panel20.Name = "panel20";
 			this.panel20.Size = new System.Drawing.Size(426, 29);
 			this.panel20.TabIndex = 2;
-			// 
-			// txtOption3
-			// 
-			this.txtOption3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtOption3.BackColor = System.Drawing.SystemColors.Window;
-			this.txtOption3.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtOption3.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtOption3.BorderRadius = 0;
-			this.txtOption3.BorderSize = 2;
-			this.txtOption3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtOption3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtOption3.Location = new System.Drawing.Point(3, 6);
-			this.txtOption3.Multiline = false;
-			this.txtOption3.Name = "txtOption3";
-			this.txtOption3.PasswordChar = false;
-			this.txtOption3.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtOption3.PlaceholderText = "";
-			this.txtOption3.Size = new System.Drawing.Size(420, 17);
-			this.txtOption3.TabIndex = 0;
-			this.txtOption3.Texts = "";
-			this.txtOption3.UnderlinedStyle = false;
 			// 
 			// panel21
 			// 
@@ -894,27 +722,6 @@
 			this.panel21.Size = new System.Drawing.Size(426, 29);
 			this.panel21.TabIndex = 4;
 			// 
-			// txtOption5
-			// 
-			this.txtOption5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtOption5.BackColor = System.Drawing.SystemColors.Window;
-			this.txtOption5.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtOption5.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtOption5.BorderRadius = 0;
-			this.txtOption5.BorderSize = 2;
-			this.txtOption5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtOption5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtOption5.Location = new System.Drawing.Point(3, 6);
-			this.txtOption5.Multiline = false;
-			this.txtOption5.Name = "txtOption5";
-			this.txtOption5.PasswordChar = false;
-			this.txtOption5.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtOption5.PlaceholderText = "";
-			this.txtOption5.Size = new System.Drawing.Size(420, 17);
-			this.txtOption5.TabIndex = 0;
-			this.txtOption5.Texts = "";
-			this.txtOption5.UnderlinedStyle = false;
-			// 
 			// panel22
 			// 
 			this.panel22.Controls.Add(this.txtOption7);
@@ -923,27 +730,6 @@
 			this.panel22.Name = "panel22";
 			this.panel22.Size = new System.Drawing.Size(426, 29);
 			this.panel22.TabIndex = 6;
-			// 
-			// txtOption7
-			// 
-			this.txtOption7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtOption7.BackColor = System.Drawing.SystemColors.Window;
-			this.txtOption7.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtOption7.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtOption7.BorderRadius = 0;
-			this.txtOption7.BorderSize = 2;
-			this.txtOption7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtOption7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtOption7.Location = new System.Drawing.Point(3, 6);
-			this.txtOption7.Multiline = false;
-			this.txtOption7.Name = "txtOption7";
-			this.txtOption7.PasswordChar = false;
-			this.txtOption7.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtOption7.PlaceholderText = "";
-			this.txtOption7.Size = new System.Drawing.Size(420, 17);
-			this.txtOption7.TabIndex = 0;
-			this.txtOption7.Texts = "";
-			this.txtOption7.UnderlinedStyle = false;
 			// 
 			// panel23
 			// 
@@ -954,27 +740,6 @@
 			this.panel23.Size = new System.Drawing.Size(426, 29);
 			this.panel23.TabIndex = 8;
 			// 
-			// txtOption9
-			// 
-			this.txtOption9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtOption9.BackColor = System.Drawing.SystemColors.Window;
-			this.txtOption9.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtOption9.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtOption9.BorderRadius = 0;
-			this.txtOption9.BorderSize = 2;
-			this.txtOption9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtOption9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtOption9.Location = new System.Drawing.Point(3, 6);
-			this.txtOption9.Multiline = false;
-			this.txtOption9.Name = "txtOption9";
-			this.txtOption9.PasswordChar = false;
-			this.txtOption9.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtOption9.PlaceholderText = "";
-			this.txtOption9.Size = new System.Drawing.Size(420, 17);
-			this.txtOption9.TabIndex = 0;
-			this.txtOption9.Texts = "";
-			this.txtOption9.UnderlinedStyle = false;
-			// 
 			// panel24
 			// 
 			this.panel24.Controls.Add(this.txtOption2);
@@ -983,27 +748,6 @@
 			this.panel24.Name = "panel24";
 			this.panel24.Size = new System.Drawing.Size(426, 29);
 			this.panel24.TabIndex = 1;
-			// 
-			// txtOption2
-			// 
-			this.txtOption2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtOption2.BackColor = System.Drawing.SystemColors.Window;
-			this.txtOption2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtOption2.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtOption2.BorderRadius = 0;
-			this.txtOption2.BorderSize = 2;
-			this.txtOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtOption2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtOption2.Location = new System.Drawing.Point(3, 6);
-			this.txtOption2.Multiline = false;
-			this.txtOption2.Name = "txtOption2";
-			this.txtOption2.PasswordChar = false;
-			this.txtOption2.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtOption2.PlaceholderText = "";
-			this.txtOption2.Size = new System.Drawing.Size(419, 17);
-			this.txtOption2.TabIndex = 0;
-			this.txtOption2.Texts = "";
-			this.txtOption2.UnderlinedStyle = false;
 			// 
 			// panel25
 			// 
@@ -1014,27 +758,6 @@
 			this.panel25.Size = new System.Drawing.Size(426, 29);
 			this.panel25.TabIndex = 3;
 			// 
-			// txtOption4
-			// 
-			this.txtOption4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtOption4.BackColor = System.Drawing.SystemColors.Window;
-			this.txtOption4.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtOption4.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtOption4.BorderRadius = 0;
-			this.txtOption4.BorderSize = 2;
-			this.txtOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtOption4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtOption4.Location = new System.Drawing.Point(3, 6);
-			this.txtOption4.Multiline = false;
-			this.txtOption4.Name = "txtOption4";
-			this.txtOption4.PasswordChar = false;
-			this.txtOption4.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtOption4.PlaceholderText = "";
-			this.txtOption4.Size = new System.Drawing.Size(419, 17);
-			this.txtOption4.TabIndex = 0;
-			this.txtOption4.Texts = "";
-			this.txtOption4.UnderlinedStyle = false;
-			// 
 			// panel26
 			// 
 			this.panel26.Controls.Add(this.txtOption6);
@@ -1043,27 +766,6 @@
 			this.panel26.Name = "panel26";
 			this.panel26.Size = new System.Drawing.Size(426, 29);
 			this.panel26.TabIndex = 5;
-			// 
-			// txtOption6
-			// 
-			this.txtOption6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtOption6.BackColor = System.Drawing.SystemColors.Window;
-			this.txtOption6.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtOption6.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtOption6.BorderRadius = 0;
-			this.txtOption6.BorderSize = 2;
-			this.txtOption6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtOption6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtOption6.Location = new System.Drawing.Point(3, 6);
-			this.txtOption6.Multiline = false;
-			this.txtOption6.Name = "txtOption6";
-			this.txtOption6.PasswordChar = false;
-			this.txtOption6.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtOption6.PlaceholderText = "";
-			this.txtOption6.Size = new System.Drawing.Size(419, 17);
-			this.txtOption6.TabIndex = 0;
-			this.txtOption6.Texts = "";
-			this.txtOption6.UnderlinedStyle = false;
 			// 
 			// panel27
 			// 
@@ -1074,27 +776,6 @@
 			this.panel27.Size = new System.Drawing.Size(426, 29);
 			this.panel27.TabIndex = 7;
 			// 
-			// txtOption8
-			// 
-			this.txtOption8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtOption8.BackColor = System.Drawing.SystemColors.Window;
-			this.txtOption8.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtOption8.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtOption8.BorderRadius = 0;
-			this.txtOption8.BorderSize = 2;
-			this.txtOption8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtOption8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtOption8.Location = new System.Drawing.Point(3, 6);
-			this.txtOption8.Multiline = false;
-			this.txtOption8.Name = "txtOption8";
-			this.txtOption8.PasswordChar = false;
-			this.txtOption8.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtOption8.PlaceholderText = "";
-			this.txtOption8.Size = new System.Drawing.Size(419, 17);
-			this.txtOption8.TabIndex = 0;
-			this.txtOption8.Texts = "";
-			this.txtOption8.UnderlinedStyle = false;
-			// 
 			// panel28
 			// 
 			this.panel28.Controls.Add(this.txtOption10);
@@ -1104,6 +785,222 @@
 			this.panel28.Size = new System.Drawing.Size(426, 29);
 			this.panel28.TabIndex = 9;
 			// 
+			// txtOption1
+			// 
+			this.txtOption1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtOption1.BackColor = System.Drawing.SystemColors.Window;
+			this.txtOption1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtOption1.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtOption1.BorderRadius = 0;
+			this.txtOption1.BorderSize = 2;
+			this.txtOption1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtOption1.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtOption1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtOption1.Location = new System.Drawing.Point(3, 3);
+			this.txtOption1.Multiline = false;
+			this.txtOption1.Name = "txtOption1";
+			this.txtOption1.PasswordChar = false;
+			this.txtOption1.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtOption1.PlaceholderText = "";
+			this.txtOption1.ReadOnly = false;
+			this.txtOption1.Size = new System.Drawing.Size(420, 22);
+			this.txtOption1.TabIndex = 0;
+			this.txtOption1.Tag = "Option1";
+			this.txtOption1.Texts = "";
+			this.txtOption1.UnderlinedStyle = false;
+			// 
+			// txtOption3
+			// 
+			this.txtOption3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtOption3.BackColor = System.Drawing.SystemColors.Window;
+			this.txtOption3.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtOption3.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtOption3.BorderRadius = 0;
+			this.txtOption3.BorderSize = 2;
+			this.txtOption3.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtOption3.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtOption3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtOption3.Location = new System.Drawing.Point(3, 3);
+			this.txtOption3.Multiline = false;
+			this.txtOption3.Name = "txtOption3";
+			this.txtOption3.PasswordChar = false;
+			this.txtOption3.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtOption3.PlaceholderText = "";
+			this.txtOption3.ReadOnly = false;
+			this.txtOption3.Size = new System.Drawing.Size(420, 22);
+			this.txtOption3.TabIndex = 0;
+			this.txtOption3.Tag = "Option3";
+			this.txtOption3.Texts = "";
+			this.txtOption3.UnderlinedStyle = false;
+			// 
+			// txtOption5
+			// 
+			this.txtOption5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtOption5.BackColor = System.Drawing.SystemColors.Window;
+			this.txtOption5.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtOption5.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtOption5.BorderRadius = 0;
+			this.txtOption5.BorderSize = 2;
+			this.txtOption5.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtOption5.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtOption5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtOption5.Location = new System.Drawing.Point(3, 3);
+			this.txtOption5.Multiline = false;
+			this.txtOption5.Name = "txtOption5";
+			this.txtOption5.PasswordChar = false;
+			this.txtOption5.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtOption5.PlaceholderText = "";
+			this.txtOption5.ReadOnly = false;
+			this.txtOption5.Size = new System.Drawing.Size(420, 22);
+			this.txtOption5.TabIndex = 0;
+			this.txtOption5.Tag = "Option5";
+			this.txtOption5.Texts = "";
+			this.txtOption5.UnderlinedStyle = false;
+			// 
+			// txtOption7
+			// 
+			this.txtOption7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtOption7.BackColor = System.Drawing.SystemColors.Window;
+			this.txtOption7.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtOption7.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtOption7.BorderRadius = 0;
+			this.txtOption7.BorderSize = 2;
+			this.txtOption7.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtOption7.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtOption7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtOption7.Location = new System.Drawing.Point(3, 3);
+			this.txtOption7.Multiline = false;
+			this.txtOption7.Name = "txtOption7";
+			this.txtOption7.PasswordChar = false;
+			this.txtOption7.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtOption7.PlaceholderText = "";
+			this.txtOption7.ReadOnly = false;
+			this.txtOption7.Size = new System.Drawing.Size(420, 22);
+			this.txtOption7.TabIndex = 0;
+			this.txtOption7.Tag = "Option7";
+			this.txtOption7.Texts = "";
+			this.txtOption7.UnderlinedStyle = false;
+			// 
+			// txtOption9
+			// 
+			this.txtOption9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtOption9.BackColor = System.Drawing.SystemColors.Window;
+			this.txtOption9.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtOption9.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtOption9.BorderRadius = 0;
+			this.txtOption9.BorderSize = 2;
+			this.txtOption9.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtOption9.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtOption9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtOption9.Location = new System.Drawing.Point(3, 3);
+			this.txtOption9.Multiline = false;
+			this.txtOption9.Name = "txtOption9";
+			this.txtOption9.PasswordChar = false;
+			this.txtOption9.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtOption9.PlaceholderText = "";
+			this.txtOption9.ReadOnly = false;
+			this.txtOption9.Size = new System.Drawing.Size(420, 22);
+			this.txtOption9.TabIndex = 0;
+			this.txtOption9.Tag = "Option9";
+			this.txtOption9.Texts = "";
+			this.txtOption9.UnderlinedStyle = false;
+			// 
+			// txtOption2
+			// 
+			this.txtOption2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtOption2.BackColor = System.Drawing.SystemColors.Window;
+			this.txtOption2.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtOption2.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtOption2.BorderRadius = 0;
+			this.txtOption2.BorderSize = 2;
+			this.txtOption2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtOption2.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtOption2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtOption2.Location = new System.Drawing.Point(3, 3);
+			this.txtOption2.Multiline = false;
+			this.txtOption2.Name = "txtOption2";
+			this.txtOption2.PasswordChar = false;
+			this.txtOption2.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtOption2.PlaceholderText = "";
+			this.txtOption2.ReadOnly = false;
+			this.txtOption2.Size = new System.Drawing.Size(419, 22);
+			this.txtOption2.TabIndex = 0;
+			this.txtOption2.Tag = "Option2";
+			this.txtOption2.Texts = "";
+			this.txtOption2.UnderlinedStyle = false;
+			// 
+			// txtOption4
+			// 
+			this.txtOption4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtOption4.BackColor = System.Drawing.SystemColors.Window;
+			this.txtOption4.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtOption4.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtOption4.BorderRadius = 0;
+			this.txtOption4.BorderSize = 2;
+			this.txtOption4.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtOption4.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtOption4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtOption4.Location = new System.Drawing.Point(3, 3);
+			this.txtOption4.Multiline = false;
+			this.txtOption4.Name = "txtOption4";
+			this.txtOption4.PasswordChar = false;
+			this.txtOption4.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtOption4.PlaceholderText = "";
+			this.txtOption4.ReadOnly = false;
+			this.txtOption4.Size = new System.Drawing.Size(419, 22);
+			this.txtOption4.TabIndex = 0;
+			this.txtOption4.Tag = "Option4";
+			this.txtOption4.Texts = "";
+			this.txtOption4.UnderlinedStyle = false;
+			// 
+			// txtOption6
+			// 
+			this.txtOption6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtOption6.BackColor = System.Drawing.SystemColors.Window;
+			this.txtOption6.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtOption6.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtOption6.BorderRadius = 0;
+			this.txtOption6.BorderSize = 2;
+			this.txtOption6.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtOption6.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtOption6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtOption6.Location = new System.Drawing.Point(3, 3);
+			this.txtOption6.Multiline = false;
+			this.txtOption6.Name = "txtOption6";
+			this.txtOption6.PasswordChar = false;
+			this.txtOption6.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtOption6.PlaceholderText = "";
+			this.txtOption6.ReadOnly = false;
+			this.txtOption6.Size = new System.Drawing.Size(419, 22);
+			this.txtOption6.TabIndex = 0;
+			this.txtOption6.Tag = "Option6";
+			this.txtOption6.Texts = "";
+			this.txtOption6.UnderlinedStyle = false;
+			// 
+			// txtOption8
+			// 
+			this.txtOption8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtOption8.BackColor = System.Drawing.SystemColors.Window;
+			this.txtOption8.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtOption8.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtOption8.BorderRadius = 0;
+			this.txtOption8.BorderSize = 2;
+			this.txtOption8.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtOption8.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtOption8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtOption8.Location = new System.Drawing.Point(3, 3);
+			this.txtOption8.Multiline = false;
+			this.txtOption8.Name = "txtOption8";
+			this.txtOption8.PasswordChar = false;
+			this.txtOption8.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtOption8.PlaceholderText = "";
+			this.txtOption8.ReadOnly = false;
+			this.txtOption8.Size = new System.Drawing.Size(419, 22);
+			this.txtOption8.TabIndex = 0;
+			this.txtOption8.Tag = "Option8";
+			this.txtOption8.Texts = "";
+			this.txtOption8.UnderlinedStyle = false;
+			// 
 			// txtOption10
 			// 
 			this.txtOption10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -1112,31 +1009,177 @@
 			this.txtOption10.BorderFocusColor = System.Drawing.Color.HotPink;
 			this.txtOption10.BorderRadius = 0;
 			this.txtOption10.BorderSize = 2;
-			this.txtOption10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+			this.txtOption10.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtOption10.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtOption10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtOption10.Location = new System.Drawing.Point(3, 6);
+			this.txtOption10.Location = new System.Drawing.Point(3, 3);
 			this.txtOption10.Multiline = false;
 			this.txtOption10.Name = "txtOption10";
 			this.txtOption10.PasswordChar = false;
 			this.txtOption10.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtOption10.PlaceholderText = "";
-			this.txtOption10.Size = new System.Drawing.Size(419, 17);
+			this.txtOption10.ReadOnly = false;
+			this.txtOption10.Size = new System.Drawing.Size(419, 22);
 			this.txtOption10.TabIndex = 0;
+			this.txtOption10.Tag = "Option10";
 			this.txtOption10.Texts = "";
 			this.txtOption10.UnderlinedStyle = false;
 			// 
-			// button1
+			// txtMasterName
 			// 
-			this.button1.BackColor = System.Drawing.Color.PowderBlue;
-			this.button1.BackgroundImage = global::P05_Business.Properties.Resources.search_search;
-			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.button1.Location = new System.Drawing.Point(0, 0);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(29, 29);
-			this.button1.TabIndex = 0;
-			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.btnFindMasterCode_Click);
+			this.txtMasterName.BackColor = System.Drawing.SystemColors.Window;
+			this.txtMasterName.BorderColor = System.Drawing.Color.Empty;
+			this.txtMasterName.BorderFocusColor = System.Drawing.Color.Empty;
+			this.txtMasterName.BorderRadius = 0;
+			this.txtMasterName.BorderSize = 2;
+			this.txtMasterName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtMasterName.Enabled = false;
+			this.txtMasterName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtMasterName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtMasterName.Location = new System.Drawing.Point(3, 3);
+			this.txtMasterName.Multiline = false;
+			this.txtMasterName.Name = "txtMasterName";
+			this.txtMasterName.PasswordChar = false;
+			this.txtMasterName.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtMasterName.PlaceholderText = "";
+			this.txtMasterName.ReadOnly = false;
+			this.txtMasterName.Size = new System.Drawing.Size(801, 22);
+			this.txtMasterName.TabIndex = 0;
+			this.txtMasterName.Tag = "MasterName";
+			this.txtMasterName.Texts = "";
+			this.txtMasterName.UnderlinedStyle = false;
+			// 
+			// txtMasterCode
+			// 
+			this.txtMasterCode.BackColor = System.Drawing.SystemColors.Window;
+			this.txtMasterCode.BorderColor = System.Drawing.Color.Empty;
+			this.txtMasterCode.BorderFocusColor = System.Drawing.Color.Empty;
+			this.txtMasterCode.BorderRadius = 0;
+			this.txtMasterCode.BorderSize = 2;
+			this.txtMasterCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtMasterCode.Enabled = false;
+			this.txtMasterCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtMasterCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtMasterCode.Location = new System.Drawing.Point(3, 3);
+			this.txtMasterCode.Multiline = false;
+			this.txtMasterCode.Name = "txtMasterCode";
+			this.txtMasterCode.PasswordChar = false;
+			this.txtMasterCode.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtMasterCode.PlaceholderText = "";
+			this.txtMasterCode.ReadOnly = false;
+			this.txtMasterCode.Size = new System.Drawing.Size(118, 22);
+			this.txtMasterCode.TabIndex = 0;
+			this.txtMasterCode.Tag = "MasterCode";
+			this.txtMasterCode.Texts = "";
+			this.txtMasterCode.UnderlinedStyle = false;
+			// 
+			// txtCode
+			// 
+			this.txtCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtCode.BackColor = System.Drawing.SystemColors.Window;
+			this.txtCode.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtCode.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtCode.BorderRadius = 0;
+			this.txtCode.BorderSize = 2;
+			this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtCode.Location = new System.Drawing.Point(3, 3);
+			this.txtCode.Multiline = false;
+			this.txtCode.Name = "txtCode";
+			this.txtCode.PasswordChar = false;
+			this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtCode.PlaceholderText = "";
+			this.txtCode.ReadOnly = false;
+			this.txtCode.Size = new System.Drawing.Size(954, 22);
+			this.txtCode.TabIndex = 0;
+			this.txtCode.Tag = "Code";
+			this.txtCode.Texts = "";
+			this.txtCode.UnderlinedStyle = false;
+			// 
+			// txtName
+			// 
+			this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtName.BackColor = System.Drawing.SystemColors.Window;
+			this.txtName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtName.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtName.BorderRadius = 0;
+			this.txtName.BorderSize = 2;
+			this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtName.Location = new System.Drawing.Point(3, 3);
+			this.txtName.Multiline = false;
+			this.txtName.Name = "txtName";
+			this.txtName.PasswordChar = false;
+			this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtName.PlaceholderText = "";
+			this.txtName.ReadOnly = false;
+			this.txtName.Size = new System.Drawing.Size(954, 22);
+			this.txtName.TabIndex = 0;
+			this.txtName.Tag = "Name";
+			this.txtName.Texts = "";
+			this.txtName.UnderlinedStyle = false;
+			// 
+			// txtRemark
+			// 
+			this.txtRemark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtRemark.BackColor = System.Drawing.SystemColors.Window;
+			this.txtRemark.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtRemark.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtRemark.BorderRadius = 0;
+			this.txtRemark.BorderSize = 2;
+			this.txtRemark.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtRemark.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtRemark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtRemark.Location = new System.Drawing.Point(3, 3);
+			this.txtRemark.Multiline = false;
+			this.txtRemark.Name = "txtRemark";
+			this.txtRemark.PasswordChar = false;
+			this.txtRemark.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtRemark.PlaceholderText = "";
+			this.txtRemark.ReadOnly = false;
+			this.txtRemark.Size = new System.Drawing.Size(954, 22);
+			this.txtRemark.TabIndex = 4;
+			this.txtRemark.Tag = "Remark";
+			this.txtRemark.Texts = "";
+			this.txtRemark.UnderlinedStyle = false;
+			// 
+			// rdoN
+			// 
+			this.rdoN.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.rdoN.AutoSize = true;
+			this.rdoN.CheckedColor = System.Drawing.Color.DarkCyan;
+			this.rdoN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.rdoN.Location = new System.Drawing.Point(58, 2);
+			this.rdoN.MinimumSize = new System.Drawing.Size(0, 21);
+			this.rdoN.Name = "rdoN";
+			this.rdoN.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+			this.rdoN.Size = new System.Drawing.Size(48, 24);
+			this.rdoN.TabIndex = 1;
+			this.rdoN.Tag = "UseYn";
+			this.rdoN.Text = "N";
+			this.rdoN.UnCheckedColor = System.Drawing.Color.Gray;
+			this.rdoN.UseVisualStyleBackColor = true;
+			// 
+			// rdoY
+			// 
+			this.rdoY.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.rdoY.AutoSize = true;
+			this.rdoY.Checked = true;
+			this.rdoY.CheckedColor = System.Drawing.Color.DarkCyan;
+			this.rdoY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.rdoY.Location = new System.Drawing.Point(3, 2);
+			this.rdoY.MinimumSize = new System.Drawing.Size(0, 21);
+			this.rdoY.Name = "rdoY";
+			this.rdoY.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+			this.rdoY.Size = new System.Drawing.Size(48, 24);
+			this.rdoY.TabIndex = 0;
+			this.rdoY.TabStop = true;
+			this.rdoY.Tag = "UseYn";
+			this.rdoY.Text = "Y";
+			this.rdoY.UnCheckedColor = System.Drawing.Color.Gray;
+			this.rdoY.UseVisualStyleBackColor = true;
 			// 
 			// frmCodeDetailMng
 			// 
@@ -1242,7 +1285,6 @@
 		private System.Windows.Forms.Panel panel17;
 		private System.Windows.Forms.Panel panel18;
 		private P02_K_CONTROL_WIN.KTextBox txtOption1;
-		private P02_K_CONTROL_WIN.KTextBox txtMasterCode;
 		private P02_K_CONTROL_WIN.KTextBox txtCode;
 		private P02_K_CONTROL_WIN.KTextBox txtName;
 		private P02_K_CONTROL_WIN.KTextBox txtRemark;
@@ -1262,8 +1304,9 @@
 		private P02_K_CONTROL_WIN.KRadioButton rdoY;
 		private System.Windows.Forms.Panel panel31;
 		private System.Windows.Forms.Panel panel33;
-		private P02_K_CONTROL_WIN.KTextBox txtMasterName;
 		private System.Windows.Forms.Panel panel32;
 		private System.Windows.Forms.Button button1;
+		private P02_K_CONTROL_WIN.KTextBox txtMasterName;
+		private P02_K_CONTROL_WIN.KTextBox txtMasterCode;
 	}
 }

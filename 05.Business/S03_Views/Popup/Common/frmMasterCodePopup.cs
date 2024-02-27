@@ -115,7 +115,7 @@ namespace P05_Business.S03_Views.Popup.Common
 			CodeMasterDto param = new CodeMasterDto()
 			{
 				Code = txtCode.Texts,
-				Name = txtName.Text,
+				Name = txtName.Texts,
 				UseYn = "Y",
 				DelYn = "N",
 			};
@@ -127,8 +127,8 @@ namespace P05_Business.S03_Views.Popup.Common
 		private void CreateGrid()
 		{
 			UserDataGrid.Create(dgvList, DataGridViewAutoSizeColumnsMode.Fill);
-			UserDataGrid.AddTextBoxColumn(dgvList, "CODE", "CODE", true, true, 10, DataGridViewContentAlignment.MiddleLeft);
-			UserDataGrid.AddTextBoxColumn(dgvList, "NAME", "NAME", true, true, 10, DataGridViewContentAlignment.MiddleLeft);
+			UserDataGrid.AddTextBoxColumn(dgvList, "CODE", "CODE", true, true, 20, DataGridViewContentAlignment.MiddleLeft);
+			UserDataGrid.AddTextBoxColumn(dgvList, "NAME", "NAME", true, true, 80, DataGridViewContentAlignment.MiddleLeft);
 			UserDataGrid.End(dgvList);
 		}
 
