@@ -39,15 +39,22 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.panel31 = new System.Windows.Forms.Panel();
 			this.panel33 = new System.Windows.Forms.Panel();
+			this.txtMasterName = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel32 = new System.Windows.Forms.Panel();
 			this.button1 = new System.Windows.Forms.Button();
 			this.panel15 = new System.Windows.Forms.Panel();
+			this.txtMasterCode = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel16 = new System.Windows.Forms.Panel();
+			this.txtCode = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel17 = new System.Windows.Forms.Panel();
+			this.txtName = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel18 = new System.Windows.Forms.Panel();
+			this.txtRemark = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel29 = new System.Windows.Forms.Panel();
 			this.label15 = new System.Windows.Forms.Label();
 			this.panel30 = new System.Windows.Forms.Panel();
+			this.rdoN = new P02_K_CONTROL_WIN.KRadioButton();
+			this.rdoY = new P02_K_CONTROL_WIN.KRadioButton();
 			this.pnlpart2 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.label5 = new System.Windows.Forms.Label();
@@ -70,32 +77,25 @@
 			this.panel14 = new System.Windows.Forms.Panel();
 			this.label14 = new System.Windows.Forms.Label();
 			this.panel19 = new System.Windows.Forms.Panel();
-			this.panel20 = new System.Windows.Forms.Panel();
-			this.panel21 = new System.Windows.Forms.Panel();
-			this.panel22 = new System.Windows.Forms.Panel();
-			this.panel23 = new System.Windows.Forms.Panel();
-			this.panel24 = new System.Windows.Forms.Panel();
-			this.panel25 = new System.Windows.Forms.Panel();
-			this.panel26 = new System.Windows.Forms.Panel();
-			this.panel27 = new System.Windows.Forms.Panel();
-			this.panel28 = new System.Windows.Forms.Panel();
 			this.txtOption1 = new P02_K_CONTROL_WIN.KTextBox();
+			this.panel20 = new System.Windows.Forms.Panel();
 			this.txtOption3 = new P02_K_CONTROL_WIN.KTextBox();
+			this.panel21 = new System.Windows.Forms.Panel();
 			this.txtOption5 = new P02_K_CONTROL_WIN.KTextBox();
+			this.panel22 = new System.Windows.Forms.Panel();
 			this.txtOption7 = new P02_K_CONTROL_WIN.KTextBox();
+			this.panel23 = new System.Windows.Forms.Panel();
 			this.txtOption9 = new P02_K_CONTROL_WIN.KTextBox();
+			this.panel24 = new System.Windows.Forms.Panel();
 			this.txtOption2 = new P02_K_CONTROL_WIN.KTextBox();
+			this.panel25 = new System.Windows.Forms.Panel();
 			this.txtOption4 = new P02_K_CONTROL_WIN.KTextBox();
+			this.panel26 = new System.Windows.Forms.Panel();
 			this.txtOption6 = new P02_K_CONTROL_WIN.KTextBox();
+			this.panel27 = new System.Windows.Forms.Panel();
 			this.txtOption8 = new P02_K_CONTROL_WIN.KTextBox();
+			this.panel28 = new System.Windows.Forms.Panel();
 			this.txtOption10 = new P02_K_CONTROL_WIN.KTextBox();
-			this.txtMasterName = new P02_K_CONTROL_WIN.KTextBox();
-			this.txtMasterCode = new P02_K_CONTROL_WIN.KTextBox();
-			this.txtCode = new P02_K_CONTROL_WIN.KTextBox();
-			this.txtName = new P02_K_CONTROL_WIN.KTextBox();
-			this.txtRemark = new P02_K_CONTROL_WIN.KTextBox();
-			this.rdoN = new P02_K_CONTROL_WIN.KRadioButton();
-			this.rdoY = new P02_K_CONTROL_WIN.KRadioButton();
 			this.pnlMain.SuspendLayout();
 			this.pnlBody.SuspendLayout();
 			this.pnlHeader.SuspendLayout();
@@ -333,6 +333,31 @@
 			this.panel33.Size = new System.Drawing.Size(807, 29);
 			this.panel33.TabIndex = 0;
 			// 
+			// txtMasterName
+			// 
+			this.txtMasterName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtMasterName.BackColor = System.Drawing.SystemColors.Window;
+			this.txtMasterName.BorderColor = System.Drawing.Color.Empty;
+			this.txtMasterName.BorderFocusColor = System.Drawing.Color.Empty;
+			this.txtMasterName.BorderRadius = 0;
+			this.txtMasterName.BorderSize = 2;
+			this.txtMasterName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtMasterName.Enabled = false;
+			this.txtMasterName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtMasterName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtMasterName.Location = new System.Drawing.Point(3, 3);
+			this.txtMasterName.Multiline = false;
+			this.txtMasterName.Name = "txtMasterName";
+			this.txtMasterName.PasswordChar = false;
+			this.txtMasterName.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtMasterName.PlaceholderText = "";
+			this.txtMasterName.ReadOnly = false;
+			this.txtMasterName.Size = new System.Drawing.Size(801, 22);
+			this.txtMasterName.TabIndex = 0;
+			this.txtMasterName.Tag = "MasterName";
+			this.txtMasterName.Texts = "";
+			this.txtMasterName.UnderlinedStyle = false;
+			// 
 			// panel32
 			// 
 			this.panel32.Controls.Add(this.button1);
@@ -364,6 +389,30 @@
 			this.panel15.Size = new System.Drawing.Size(124, 29);
 			this.panel15.TabIndex = 0;
 			// 
+			// txtMasterCode
+			// 
+			this.txtMasterCode.BackColor = System.Drawing.SystemColors.Window;
+			this.txtMasterCode.BorderColor = System.Drawing.Color.Empty;
+			this.txtMasterCode.BorderFocusColor = System.Drawing.Color.Empty;
+			this.txtMasterCode.BorderRadius = 0;
+			this.txtMasterCode.BorderSize = 2;
+			this.txtMasterCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtMasterCode.Enabled = false;
+			this.txtMasterCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtMasterCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtMasterCode.Location = new System.Drawing.Point(3, 3);
+			this.txtMasterCode.Multiline = false;
+			this.txtMasterCode.Name = "txtMasterCode";
+			this.txtMasterCode.PasswordChar = false;
+			this.txtMasterCode.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtMasterCode.PlaceholderText = "";
+			this.txtMasterCode.ReadOnly = false;
+			this.txtMasterCode.Size = new System.Drawing.Size(118, 22);
+			this.txtMasterCode.TabIndex = 0;
+			this.txtMasterCode.Tag = "MasterCode";
+			this.txtMasterCode.Texts = "";
+			this.txtMasterCode.UnderlinedStyle = false;
+			// 
 			// panel16
 			// 
 			this.panel16.Controls.Add(this.txtCode);
@@ -372,6 +421,30 @@
 			this.panel16.Name = "panel16";
 			this.panel16.Size = new System.Drawing.Size(960, 29);
 			this.panel16.TabIndex = 1;
+			// 
+			// txtCode
+			// 
+			this.txtCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtCode.BackColor = System.Drawing.SystemColors.Window;
+			this.txtCode.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtCode.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtCode.BorderRadius = 0;
+			this.txtCode.BorderSize = 2;
+			this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+			this.txtCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtCode.Location = new System.Drawing.Point(3, 3);
+			this.txtCode.Multiline = false;
+			this.txtCode.Name = "txtCode";
+			this.txtCode.PasswordChar = false;
+			this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtCode.PlaceholderText = "";
+			this.txtCode.ReadOnly = false;
+			this.txtCode.Size = new System.Drawing.Size(954, 22);
+			this.txtCode.TabIndex = 0;
+			this.txtCode.Tag = "Code";
+			this.txtCode.Texts = "";
+			this.txtCode.UnderlinedStyle = false;
 			// 
 			// panel17
 			// 
@@ -382,6 +455,30 @@
 			this.panel17.Size = new System.Drawing.Size(960, 29);
 			this.panel17.TabIndex = 2;
 			// 
+			// txtName
+			// 
+			this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtName.BackColor = System.Drawing.SystemColors.Window;
+			this.txtName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtName.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtName.BorderRadius = 0;
+			this.txtName.BorderSize = 2;
+			this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtName.Location = new System.Drawing.Point(3, 3);
+			this.txtName.Multiline = false;
+			this.txtName.Name = "txtName";
+			this.txtName.PasswordChar = false;
+			this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtName.PlaceholderText = "";
+			this.txtName.ReadOnly = false;
+			this.txtName.Size = new System.Drawing.Size(954, 22);
+			this.txtName.TabIndex = 0;
+			this.txtName.Tag = "Name";
+			this.txtName.Texts = "";
+			this.txtName.UnderlinedStyle = false;
+			// 
 			// panel18
 			// 
 			this.panel18.Controls.Add(this.txtRemark);
@@ -390,6 +487,30 @@
 			this.panel18.Name = "panel18";
 			this.panel18.Size = new System.Drawing.Size(960, 29);
 			this.panel18.TabIndex = 3;
+			// 
+			// txtRemark
+			// 
+			this.txtRemark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtRemark.BackColor = System.Drawing.SystemColors.Window;
+			this.txtRemark.BorderColor = System.Drawing.Color.MediumSlateBlue;
+			this.txtRemark.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtRemark.BorderRadius = 0;
+			this.txtRemark.BorderSize = 2;
+			this.txtRemark.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtRemark.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtRemark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtRemark.Location = new System.Drawing.Point(3, 3);
+			this.txtRemark.Multiline = false;
+			this.txtRemark.Name = "txtRemark";
+			this.txtRemark.PasswordChar = false;
+			this.txtRemark.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtRemark.PlaceholderText = "";
+			this.txtRemark.ReadOnly = false;
+			this.txtRemark.Size = new System.Drawing.Size(954, 22);
+			this.txtRemark.TabIndex = 4;
+			this.txtRemark.Tag = "Remark";
+			this.txtRemark.Texts = "";
+			this.txtRemark.UnderlinedStyle = false;
 			// 
 			// panel29
 			// 
@@ -422,6 +543,42 @@
 			this.panel30.Name = "panel30";
 			this.panel30.Size = new System.Drawing.Size(960, 29);
 			this.panel30.TabIndex = 3;
+			// 
+			// rdoN
+			// 
+			this.rdoN.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.rdoN.AutoSize = true;
+			this.rdoN.CheckedColor = System.Drawing.Color.DarkCyan;
+			this.rdoN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.rdoN.Location = new System.Drawing.Point(58, 2);
+			this.rdoN.MinimumSize = new System.Drawing.Size(0, 21);
+			this.rdoN.Name = "rdoN";
+			this.rdoN.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+			this.rdoN.Size = new System.Drawing.Size(48, 24);
+			this.rdoN.TabIndex = 1;
+			this.rdoN.Tag = "UseYn|N";
+			this.rdoN.Text = "N";
+			this.rdoN.UnCheckedColor = System.Drawing.Color.Gray;
+			this.rdoN.UseVisualStyleBackColor = true;
+			// 
+			// rdoY
+			// 
+			this.rdoY.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.rdoY.AutoSize = true;
+			this.rdoY.Checked = true;
+			this.rdoY.CheckedColor = System.Drawing.Color.DarkCyan;
+			this.rdoY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.rdoY.Location = new System.Drawing.Point(3, 2);
+			this.rdoY.MinimumSize = new System.Drawing.Size(0, 21);
+			this.rdoY.Name = "rdoY";
+			this.rdoY.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+			this.rdoY.Size = new System.Drawing.Size(48, 24);
+			this.rdoY.TabIndex = 0;
+			this.rdoY.TabStop = true;
+			this.rdoY.Tag = "UseYn|Y";
+			this.rdoY.Text = "Y";
+			this.rdoY.UnCheckedColor = System.Drawing.Color.Gray;
+			this.rdoY.UseVisualStyleBackColor = true;
 			// 
 			// pnlpart2
 			// 
@@ -704,87 +861,6 @@
 			this.panel19.Size = new System.Drawing.Size(426, 29);
 			this.panel19.TabIndex = 0;
 			// 
-			// panel20
-			// 
-			this.panel20.Controls.Add(this.txtOption3);
-			this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel20.Location = new System.Drawing.Point(105, 50);
-			this.panel20.Name = "panel20";
-			this.panel20.Size = new System.Drawing.Size(426, 29);
-			this.panel20.TabIndex = 2;
-			// 
-			// panel21
-			// 
-			this.panel21.Controls.Add(this.txtOption5);
-			this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel21.Location = new System.Drawing.Point(105, 86);
-			this.panel21.Name = "panel21";
-			this.panel21.Size = new System.Drawing.Size(426, 29);
-			this.panel21.TabIndex = 4;
-			// 
-			// panel22
-			// 
-			this.panel22.Controls.Add(this.txtOption7);
-			this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel22.Location = new System.Drawing.Point(105, 122);
-			this.panel22.Name = "panel22";
-			this.panel22.Size = new System.Drawing.Size(426, 29);
-			this.panel22.TabIndex = 6;
-			// 
-			// panel23
-			// 
-			this.panel23.Controls.Add(this.txtOption9);
-			this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel23.Location = new System.Drawing.Point(105, 158);
-			this.panel23.Name = "panel23";
-			this.panel23.Size = new System.Drawing.Size(426, 29);
-			this.panel23.TabIndex = 8;
-			// 
-			// panel24
-			// 
-			this.panel24.Controls.Add(this.txtOption2);
-			this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel24.Location = new System.Drawing.Point(639, 14);
-			this.panel24.Name = "panel24";
-			this.panel24.Size = new System.Drawing.Size(426, 29);
-			this.panel24.TabIndex = 1;
-			// 
-			// panel25
-			// 
-			this.panel25.Controls.Add(this.txtOption4);
-			this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel25.Location = new System.Drawing.Point(639, 50);
-			this.panel25.Name = "panel25";
-			this.panel25.Size = new System.Drawing.Size(426, 29);
-			this.panel25.TabIndex = 3;
-			// 
-			// panel26
-			// 
-			this.panel26.Controls.Add(this.txtOption6);
-			this.panel26.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel26.Location = new System.Drawing.Point(639, 86);
-			this.panel26.Name = "panel26";
-			this.panel26.Size = new System.Drawing.Size(426, 29);
-			this.panel26.TabIndex = 5;
-			// 
-			// panel27
-			// 
-			this.panel27.Controls.Add(this.txtOption8);
-			this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel27.Location = new System.Drawing.Point(639, 122);
-			this.panel27.Name = "panel27";
-			this.panel27.Size = new System.Drawing.Size(426, 29);
-			this.panel27.TabIndex = 7;
-			// 
-			// panel28
-			// 
-			this.panel28.Controls.Add(this.txtOption10);
-			this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel28.Location = new System.Drawing.Point(639, 158);
-			this.panel28.Name = "panel28";
-			this.panel28.Size = new System.Drawing.Size(426, 29);
-			this.panel28.TabIndex = 9;
-			// 
 			// txtOption1
 			// 
 			this.txtOption1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -808,6 +884,15 @@
 			this.txtOption1.Tag = "Option1";
 			this.txtOption1.Texts = "";
 			this.txtOption1.UnderlinedStyle = false;
+			// 
+			// panel20
+			// 
+			this.panel20.Controls.Add(this.txtOption3);
+			this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel20.Location = new System.Drawing.Point(105, 50);
+			this.panel20.Name = "panel20";
+			this.panel20.Size = new System.Drawing.Size(426, 29);
+			this.panel20.TabIndex = 2;
 			// 
 			// txtOption3
 			// 
@@ -833,6 +918,15 @@
 			this.txtOption3.Texts = "";
 			this.txtOption3.UnderlinedStyle = false;
 			// 
+			// panel21
+			// 
+			this.panel21.Controls.Add(this.txtOption5);
+			this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel21.Location = new System.Drawing.Point(105, 86);
+			this.panel21.Name = "panel21";
+			this.panel21.Size = new System.Drawing.Size(426, 29);
+			this.panel21.TabIndex = 4;
+			// 
 			// txtOption5
 			// 
 			this.txtOption5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -856,6 +950,15 @@
 			this.txtOption5.Tag = "Option5";
 			this.txtOption5.Texts = "";
 			this.txtOption5.UnderlinedStyle = false;
+			// 
+			// panel22
+			// 
+			this.panel22.Controls.Add(this.txtOption7);
+			this.panel22.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel22.Location = new System.Drawing.Point(105, 122);
+			this.panel22.Name = "panel22";
+			this.panel22.Size = new System.Drawing.Size(426, 29);
+			this.panel22.TabIndex = 6;
 			// 
 			// txtOption7
 			// 
@@ -881,6 +984,15 @@
 			this.txtOption7.Texts = "";
 			this.txtOption7.UnderlinedStyle = false;
 			// 
+			// panel23
+			// 
+			this.panel23.Controls.Add(this.txtOption9);
+			this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel23.Location = new System.Drawing.Point(105, 158);
+			this.panel23.Name = "panel23";
+			this.panel23.Size = new System.Drawing.Size(426, 29);
+			this.panel23.TabIndex = 8;
+			// 
 			// txtOption9
 			// 
 			this.txtOption9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -904,6 +1016,15 @@
 			this.txtOption9.Tag = "Option9";
 			this.txtOption9.Texts = "";
 			this.txtOption9.UnderlinedStyle = false;
+			// 
+			// panel24
+			// 
+			this.panel24.Controls.Add(this.txtOption2);
+			this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel24.Location = new System.Drawing.Point(639, 14);
+			this.panel24.Name = "panel24";
+			this.panel24.Size = new System.Drawing.Size(426, 29);
+			this.panel24.TabIndex = 1;
 			// 
 			// txtOption2
 			// 
@@ -929,6 +1050,15 @@
 			this.txtOption2.Texts = "";
 			this.txtOption2.UnderlinedStyle = false;
 			// 
+			// panel25
+			// 
+			this.panel25.Controls.Add(this.txtOption4);
+			this.panel25.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel25.Location = new System.Drawing.Point(639, 50);
+			this.panel25.Name = "panel25";
+			this.panel25.Size = new System.Drawing.Size(426, 29);
+			this.panel25.TabIndex = 3;
+			// 
 			// txtOption4
 			// 
 			this.txtOption4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -952,6 +1082,15 @@
 			this.txtOption4.Tag = "Option4";
 			this.txtOption4.Texts = "";
 			this.txtOption4.UnderlinedStyle = false;
+			// 
+			// panel26
+			// 
+			this.panel26.Controls.Add(this.txtOption6);
+			this.panel26.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel26.Location = new System.Drawing.Point(639, 86);
+			this.panel26.Name = "panel26";
+			this.panel26.Size = new System.Drawing.Size(426, 29);
+			this.panel26.TabIndex = 5;
 			// 
 			// txtOption6
 			// 
@@ -977,6 +1116,15 @@
 			this.txtOption6.Texts = "";
 			this.txtOption6.UnderlinedStyle = false;
 			// 
+			// panel27
+			// 
+			this.panel27.Controls.Add(this.txtOption8);
+			this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel27.Location = new System.Drawing.Point(639, 122);
+			this.panel27.Name = "panel27";
+			this.panel27.Size = new System.Drawing.Size(426, 29);
+			this.panel27.TabIndex = 7;
+			// 
 			// txtOption8
 			// 
 			this.txtOption8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -1001,6 +1149,15 @@
 			this.txtOption8.Texts = "";
 			this.txtOption8.UnderlinedStyle = false;
 			// 
+			// panel28
+			// 
+			this.panel28.Controls.Add(this.txtOption10);
+			this.panel28.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel28.Location = new System.Drawing.Point(639, 158);
+			this.panel28.Name = "panel28";
+			this.panel28.Size = new System.Drawing.Size(426, 29);
+			this.panel28.TabIndex = 9;
+			// 
 			// txtOption10
 			// 
 			this.txtOption10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -1024,162 +1181,6 @@
 			this.txtOption10.Tag = "Option10";
 			this.txtOption10.Texts = "";
 			this.txtOption10.UnderlinedStyle = false;
-			// 
-			// txtMasterName
-			// 
-			this.txtMasterName.BackColor = System.Drawing.SystemColors.Window;
-			this.txtMasterName.BorderColor = System.Drawing.Color.Empty;
-			this.txtMasterName.BorderFocusColor = System.Drawing.Color.Empty;
-			this.txtMasterName.BorderRadius = 0;
-			this.txtMasterName.BorderSize = 2;
-			this.txtMasterName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-			this.txtMasterName.Enabled = false;
-			this.txtMasterName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtMasterName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtMasterName.Location = new System.Drawing.Point(3, 3);
-			this.txtMasterName.Multiline = false;
-			this.txtMasterName.Name = "txtMasterName";
-			this.txtMasterName.PasswordChar = false;
-			this.txtMasterName.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtMasterName.PlaceholderText = "";
-			this.txtMasterName.ReadOnly = false;
-			this.txtMasterName.Size = new System.Drawing.Size(801, 22);
-			this.txtMasterName.TabIndex = 0;
-			this.txtMasterName.Tag = "MasterName";
-			this.txtMasterName.Texts = "";
-			this.txtMasterName.UnderlinedStyle = false;
-			// 
-			// txtMasterCode
-			// 
-			this.txtMasterCode.BackColor = System.Drawing.SystemColors.Window;
-			this.txtMasterCode.BorderColor = System.Drawing.Color.Empty;
-			this.txtMasterCode.BorderFocusColor = System.Drawing.Color.Empty;
-			this.txtMasterCode.BorderRadius = 0;
-			this.txtMasterCode.BorderSize = 2;
-			this.txtMasterCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtMasterCode.Enabled = false;
-			this.txtMasterCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtMasterCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtMasterCode.Location = new System.Drawing.Point(3, 3);
-			this.txtMasterCode.Multiline = false;
-			this.txtMasterCode.Name = "txtMasterCode";
-			this.txtMasterCode.PasswordChar = false;
-			this.txtMasterCode.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtMasterCode.PlaceholderText = "";
-			this.txtMasterCode.ReadOnly = false;
-			this.txtMasterCode.Size = new System.Drawing.Size(118, 22);
-			this.txtMasterCode.TabIndex = 0;
-			this.txtMasterCode.Tag = "MasterCode";
-			this.txtMasterCode.Texts = "";
-			this.txtMasterCode.UnderlinedStyle = false;
-			// 
-			// txtCode
-			// 
-			this.txtCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtCode.BackColor = System.Drawing.SystemColors.Window;
-			this.txtCode.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtCode.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtCode.BorderRadius = 0;
-			this.txtCode.BorderSize = 2;
-			this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-			this.txtCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtCode.Location = new System.Drawing.Point(3, 3);
-			this.txtCode.Multiline = false;
-			this.txtCode.Name = "txtCode";
-			this.txtCode.PasswordChar = false;
-			this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtCode.PlaceholderText = "";
-			this.txtCode.ReadOnly = false;
-			this.txtCode.Size = new System.Drawing.Size(954, 22);
-			this.txtCode.TabIndex = 0;
-			this.txtCode.Tag = "Code";
-			this.txtCode.Texts = "";
-			this.txtCode.UnderlinedStyle = false;
-			// 
-			// txtName
-			// 
-			this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtName.BackColor = System.Drawing.SystemColors.Window;
-			this.txtName.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtName.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtName.BorderRadius = 0;
-			this.txtName.BorderSize = 2;
-			this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-			this.txtName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtName.Location = new System.Drawing.Point(3, 3);
-			this.txtName.Multiline = false;
-			this.txtName.Name = "txtName";
-			this.txtName.PasswordChar = false;
-			this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtName.PlaceholderText = "";
-			this.txtName.ReadOnly = false;
-			this.txtName.Size = new System.Drawing.Size(954, 22);
-			this.txtName.TabIndex = 0;
-			this.txtName.Tag = "Name";
-			this.txtName.Texts = "";
-			this.txtName.UnderlinedStyle = false;
-			// 
-			// txtRemark
-			// 
-			this.txtRemark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtRemark.BackColor = System.Drawing.SystemColors.Window;
-			this.txtRemark.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtRemark.BorderFocusColor = System.Drawing.Color.HotPink;
-			this.txtRemark.BorderRadius = 0;
-			this.txtRemark.BorderSize = 2;
-			this.txtRemark.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-			this.txtRemark.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtRemark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtRemark.Location = new System.Drawing.Point(3, 3);
-			this.txtRemark.Multiline = false;
-			this.txtRemark.Name = "txtRemark";
-			this.txtRemark.PasswordChar = false;
-			this.txtRemark.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtRemark.PlaceholderText = "";
-			this.txtRemark.ReadOnly = false;
-			this.txtRemark.Size = new System.Drawing.Size(954, 22);
-			this.txtRemark.TabIndex = 4;
-			this.txtRemark.Tag = "Remark";
-			this.txtRemark.Texts = "";
-			this.txtRemark.UnderlinedStyle = false;
-			// 
-			// rdoN
-			// 
-			this.rdoN.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.rdoN.AutoSize = true;
-			this.rdoN.CheckedColor = System.Drawing.Color.DarkCyan;
-			this.rdoN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.rdoN.Location = new System.Drawing.Point(58, 2);
-			this.rdoN.MinimumSize = new System.Drawing.Size(0, 21);
-			this.rdoN.Name = "rdoN";
-			this.rdoN.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-			this.rdoN.Size = new System.Drawing.Size(48, 24);
-			this.rdoN.TabIndex = 1;
-			this.rdoN.Tag = "UseYn";
-			this.rdoN.Text = "N";
-			this.rdoN.UnCheckedColor = System.Drawing.Color.Gray;
-			this.rdoN.UseVisualStyleBackColor = true;
-			// 
-			// rdoY
-			// 
-			this.rdoY.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.rdoY.AutoSize = true;
-			this.rdoY.Checked = true;
-			this.rdoY.CheckedColor = System.Drawing.Color.DarkCyan;
-			this.rdoY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-			this.rdoY.Location = new System.Drawing.Point(3, 2);
-			this.rdoY.MinimumSize = new System.Drawing.Size(0, 21);
-			this.rdoY.Name = "rdoY";
-			this.rdoY.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-			this.rdoY.Size = new System.Drawing.Size(48, 24);
-			this.rdoY.TabIndex = 0;
-			this.rdoY.TabStop = true;
-			this.rdoY.Tag = "UseYn";
-			this.rdoY.Text = "Y";
-			this.rdoY.UnCheckedColor = System.Drawing.Color.Gray;
-			this.rdoY.UseVisualStyleBackColor = true;
 			// 
 			// frmCodeDetailMng
 			// 

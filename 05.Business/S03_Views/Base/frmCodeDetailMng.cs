@@ -27,9 +27,9 @@ namespace P05_Business.S03_Views.Base
 
 			Set_Menu_Button(new EditButtonSettings { isPrint = false });
 
-			SetControlTag();
+			//InitTag();
 
-			SetDtoBinding();
+			InitDto();
 		}
 		#endregion
 
@@ -37,7 +37,7 @@ namespace P05_Business.S03_Views.Base
 		
 		private void frmCodeDetailMng_Load(object sender, EventArgs e)
 		{
-			LinkModelControls(this, dto);
+			//LinkModelControls(this, dto);
 		}
 		
 		private void btnInit_Click(object sender, EventArgs e)
@@ -136,7 +136,7 @@ namespace P05_Business.S03_Views.Base
 			{	
 				frmMasterCodePopup popup = new frmMasterCodePopup("FIND MASTER CODE");
 
-                if (popup.DialogResult == DialogResult.OK)
+                if (popup.ShowDialog() == DialogResult.OK)
                 {	
 					txtMasterCode.SetValue(popup.ResultCode);
 					txtMasterName.SetValue(popup.ResultName);
@@ -152,16 +152,16 @@ namespace P05_Business.S03_Views.Base
 
 		#region Custom Methods
 
-		private void SetControlTag()
+		private void InitTag()
 		{
 			rdoY.Tag = new Tuple<string, string>("UseYn", "Y");
 			rdoN.Tag = new Tuple<string, string>("UseYn", "N");
+			rdoY.Checked = rdoN.Checked = false;
 		}
 
-		private void SetDtoBinding()
-		{
-			base.originalData = dto.Clone();   //원본
-			base.currentData = dto;            //수정본
+		private void InitDto()
+		{	
+			base.currentData = dto;            //원본 데이터
 
 			base.isFormChagned = false;
 		}
@@ -170,7 +170,7 @@ namespace P05_Business.S03_Views.Base
 		{
 			rdoY.Checked = true;
 
-			SetDtoBinding();
+			InitDto();
 		}
 
 		/// <summary>
@@ -179,7 +179,7 @@ namespace P05_Business.S03_Views.Base
 		private void SearchData()
 		{
 			try
-			{
+			{	
 				CodeDetailDto param = new CodeDetailDto()
 				{
 					MasterCode = txtMasterCode.Texts,
@@ -188,10 +188,10 @@ namespace P05_Business.S03_Views.Base
 
 				dto = ctrl.GetCodeDetail(param);
 
-				SetDtoBinding();
-
 				if (dto != null)
 				{
+					DataHandles.DtoToControls(this, dto);
+					InitDto();
 					MainMessage.Show("조회되었습니다.");
 				}
 				else
@@ -240,7 +240,7 @@ namespace P05_Business.S03_Views.Base
 
 		private void SaveData()
 		{
-			CodeDetailDto saveData = dto;
+			CodeDetailDto saveData = DataHandles.ControlsToDto(this, dto);
 
 			CodeDetailDto param = new CodeDetailDto()
 			{
@@ -267,7 +267,7 @@ namespace P05_Business.S03_Views.Base
 
 			if (dto != null)
 			{
-				SetDtoBinding();
+				InitDto();
 
 				MainMessage.Show("저장되었습니다.");
 			}

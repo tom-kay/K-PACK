@@ -1,4 +1,5 @@
-﻿using P02_K_CONTROL_WIN;
+﻿using P01_K_DESIGN_WIN.Classes;
+using P02_K_CONTROL_WIN;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -286,6 +287,11 @@ namespace P01_K_DESIGN_WIN
 		{
 			ReleaseCapture();
 			SendMessage(this.Handle, 0x112, 0xf012, 0);
+		}
+
+		private void btnInit_Click(object sender, EventArgs e)
+		{
+			FormSettings.Control_Init(this);
 		}
 	}
 }

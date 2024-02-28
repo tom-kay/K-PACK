@@ -48,9 +48,11 @@
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.rdoUseN = new MetroFramework.Controls.MetroRadioButton();
 			this.rdoUseY = new MetroFramework.Controls.MetroRadioButton();
+			this.rdoUseA = new MetroFramework.Controls.MetroRadioButton();
 			this.panel8 = new System.Windows.Forms.Panel();
 			this.rdoDelN = new MetroFramework.Controls.MetroRadioButton();
 			this.rdoDelY = new MetroFramework.Controls.MetroRadioButton();
+			this.rdoDelA = new MetroFramework.Controls.MetroRadioButton();
 			this.dgvList = new System.Windows.Forms.DataGridView();
 			this.pnlClose.SuspendLayout();
 			this.pnlSearch.SuspendLayout();
@@ -102,7 +104,6 @@
 			this.pnlSearchOptional.AutoSize = true;
 			this.pnlSearchOptional.Controls.Add(this.tableLayoutPanel1);
 			this.pnlSearchOptional.Margin = new System.Windows.Forms.Padding(0, 100, 0, 0);
-			this.pnlSearchOptional.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
 			this.pnlSearchOptional.Size = new System.Drawing.Size(1008, 55);
 			// 
 			// tableLayoutPanel1
@@ -170,6 +171,7 @@
 			this.txtCode.BorderFocusColor = System.Drawing.SystemColors.Window;
 			this.txtCode.BorderRadius = 0;
 			this.txtCode.BorderSize = 2;
+			this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtCode.Location = new System.Drawing.Point(3, 3);
@@ -178,6 +180,7 @@
 			this.txtCode.PasswordChar = false;
 			this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCode.PlaceholderText = "";
+			this.txtCode.ReadOnly = false;
 			this.txtCode.Size = new System.Drawing.Size(120, 22);
 			this.txtCode.TabIndex = 0;
 			this.txtCode.Texts = "";
@@ -261,6 +264,7 @@
 			this.txtName.BorderFocusColor = System.Drawing.SystemColors.Window;
 			this.txtName.BorderRadius = 0;
 			this.txtName.BorderSize = 2;
+			this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtName.Location = new System.Drawing.Point(3, 3);
@@ -269,6 +273,7 @@
 			this.txtName.PasswordChar = false;
 			this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtName.PlaceholderText = "";
+			this.txtName.ReadOnly = false;
 			this.txtName.Size = new System.Drawing.Size(120, 22);
 			this.txtName.TabIndex = 1;
 			this.txtName.Texts = "";
@@ -278,6 +283,7 @@
 			// 
 			this.panel7.Controls.Add(this.rdoUseN);
 			this.panel7.Controls.Add(this.rdoUseY);
+			this.panel7.Controls.Add(this.rdoUseA);
 			this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel7.Location = new System.Drawing.Point(627, 3);
 			this.panel7.Name = "panel7";
@@ -288,10 +294,11 @@
 			// 
 			this.rdoUseN.AutoSize = true;
 			this.rdoUseN.BackColor = System.Drawing.Color.Transparent;
+			this.rdoUseN.Dock = System.Windows.Forms.DockStyle.Left;
 			this.rdoUseN.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-			this.rdoUseN.Location = new System.Drawing.Point(42, 5);
+			this.rdoUseN.Location = new System.Drawing.Point(81, 0);
 			this.rdoUseN.Name = "rdoUseN";
-			this.rdoUseN.Size = new System.Drawing.Size(35, 19);
+			this.rdoUseN.Size = new System.Drawing.Size(35, 29);
 			this.rdoUseN.TabIndex = 1;
 			this.rdoUseN.Text = "N";
 			this.rdoUseN.UseCustomBackColor = true;
@@ -301,21 +308,37 @@
 			// 
 			this.rdoUseY.AutoSize = true;
 			this.rdoUseY.BackColor = System.Drawing.Color.Transparent;
-			this.rdoUseY.Checked = true;
+			this.rdoUseY.Dock = System.Windows.Forms.DockStyle.Left;
 			this.rdoUseY.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-			this.rdoUseY.Location = new System.Drawing.Point(3, 5);
+			this.rdoUseY.Location = new System.Drawing.Point(48, 0);
 			this.rdoUseY.Name = "rdoUseY";
-			this.rdoUseY.Size = new System.Drawing.Size(33, 19);
+			this.rdoUseY.Size = new System.Drawing.Size(33, 29);
 			this.rdoUseY.TabIndex = 0;
-			this.rdoUseY.TabStop = true;
 			this.rdoUseY.Text = "Y";
 			this.rdoUseY.UseCustomBackColor = true;
 			this.rdoUseY.UseSelectable = true;
+			// 
+			// rdoUseA
+			// 
+			this.rdoUseA.AutoSize = true;
+			this.rdoUseA.BackColor = System.Drawing.Color.Transparent;
+			this.rdoUseA.Checked = true;
+			this.rdoUseA.Dock = System.Windows.Forms.DockStyle.Left;
+			this.rdoUseA.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+			this.rdoUseA.Location = new System.Drawing.Point(0, 0);
+			this.rdoUseA.Name = "rdoUseA";
+			this.rdoUseA.Size = new System.Drawing.Size(48, 29);
+			this.rdoUseA.TabIndex = 2;
+			this.rdoUseA.TabStop = true;
+			this.rdoUseA.Text = "ALL";
+			this.rdoUseA.UseCustomBackColor = true;
+			this.rdoUseA.UseSelectable = true;
 			// 
 			// panel8
 			// 
 			this.panel8.Controls.Add(this.rdoDelN);
 			this.panel8.Controls.Add(this.rdoDelY);
+			this.panel8.Controls.Add(this.rdoDelA);
 			this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel8.Location = new System.Drawing.Point(879, 3);
 			this.panel8.Name = "panel8";
@@ -326,10 +349,11 @@
 			// 
 			this.rdoDelN.AutoSize = true;
 			this.rdoDelN.BackColor = System.Drawing.Color.Transparent;
+			this.rdoDelN.Dock = System.Windows.Forms.DockStyle.Left;
 			this.rdoDelN.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-			this.rdoDelN.Location = new System.Drawing.Point(42, 5);
+			this.rdoDelN.Location = new System.Drawing.Point(81, 0);
 			this.rdoDelN.Name = "rdoDelN";
-			this.rdoDelN.Size = new System.Drawing.Size(35, 19);
+			this.rdoDelN.Size = new System.Drawing.Size(35, 29);
 			this.rdoDelN.TabIndex = 3;
 			this.rdoDelN.Text = "N";
 			this.rdoDelN.UseCustomBackColor = true;
@@ -339,16 +363,31 @@
 			// 
 			this.rdoDelY.AutoSize = true;
 			this.rdoDelY.BackColor = System.Drawing.Color.Transparent;
-			this.rdoDelY.Checked = true;
+			this.rdoDelY.Dock = System.Windows.Forms.DockStyle.Left;
 			this.rdoDelY.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-			this.rdoDelY.Location = new System.Drawing.Point(3, 5);
+			this.rdoDelY.Location = new System.Drawing.Point(48, 0);
 			this.rdoDelY.Name = "rdoDelY";
-			this.rdoDelY.Size = new System.Drawing.Size(33, 19);
+			this.rdoDelY.Size = new System.Drawing.Size(33, 29);
 			this.rdoDelY.TabIndex = 2;
-			this.rdoDelY.TabStop = true;
 			this.rdoDelY.Text = "Y";
 			this.rdoDelY.UseCustomBackColor = true;
 			this.rdoDelY.UseSelectable = true;
+			// 
+			// rdoDelA
+			// 
+			this.rdoDelA.AutoSize = true;
+			this.rdoDelA.BackColor = System.Drawing.Color.Transparent;
+			this.rdoDelA.Checked = true;
+			this.rdoDelA.Dock = System.Windows.Forms.DockStyle.Left;
+			this.rdoDelA.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+			this.rdoDelA.Location = new System.Drawing.Point(0, 0);
+			this.rdoDelA.Name = "rdoDelA";
+			this.rdoDelA.Size = new System.Drawing.Size(48, 29);
+			this.rdoDelA.TabIndex = 4;
+			this.rdoDelA.TabStop = true;
+			this.rdoDelA.Text = "ALL";
+			this.rdoDelA.UseCustomBackColor = true;
+			this.rdoDelA.UseSelectable = true;
 			// 
 			// dgvList
 			// 
@@ -450,5 +489,7 @@
 		private MetroFramework.Controls.MetroRadioButton rdoDelN;
 		private MetroFramework.Controls.MetroRadioButton rdoDelY;
 		private System.Windows.Forms.DataGridView dgvList;
+		private MetroFramework.Controls.MetroRadioButton rdoUseA;
+		private MetroFramework.Controls.MetroRadioButton rdoDelA;
 	}
 }

@@ -134,7 +134,7 @@
 			this.panel6.Location = new System.Drawing.Point(105, 76);
 			this.panel6.Name = "panel6";
 			this.panel6.Size = new System.Drawing.Size(899, 29);
-			this.panel6.TabIndex = 5;
+			this.panel6.TabIndex = 2;
 			// 
 			// rdoN
 			// 
@@ -148,7 +148,8 @@
 			this.rdoN.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
 			this.rdoN.Size = new System.Drawing.Size(48, 24);
 			this.rdoN.TabIndex = 1;
-			this.rdoN.Tag = "UseYn";
+			this.rdoN.TabStop = true;
+			this.rdoN.Tag = "UseYn|N";
 			this.rdoN.Text = "N";
 			this.rdoN.UnCheckedColor = System.Drawing.Color.Gray;
 			this.rdoN.UseVisualStyleBackColor = true;
@@ -167,7 +168,7 @@
 			this.rdoY.Size = new System.Drawing.Size(48, 24);
 			this.rdoY.TabIndex = 0;
 			this.rdoY.TabStop = true;
-			this.rdoY.Tag = "UseYn";
+			this.rdoY.Tag = "UseYn|Y";
 			this.rdoY.Text = "Y";
 			this.rdoY.UnCheckedColor = System.Drawing.Color.Gray;
 			this.rdoY.UseVisualStyleBackColor = true;
@@ -203,7 +204,7 @@
 			this.panel4.Location = new System.Drawing.Point(105, 40);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(899, 29);
-			this.panel4.TabIndex = 3;
+			this.panel4.TabIndex = 1;
 			// 
 			// txtName
 			// 
@@ -213,6 +214,7 @@
 			this.txtName.BorderFocusColor = System.Drawing.Color.White;
 			this.txtName.BorderRadius = 0;
 			this.txtName.BorderSize = 2;
+			this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtName.Location = new System.Drawing.Point(3, 4);
@@ -221,8 +223,9 @@
 			this.txtName.PasswordChar = false;
 			this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtName.PlaceholderText = "";
+			this.txtName.ReadOnly = false;
 			this.txtName.Size = new System.Drawing.Size(893, 21);
-			this.txtName.TabIndex = 1;
+			this.txtName.TabIndex = 0;
 			this.txtName.Tag = "Name";
 			this.txtName.Texts = "";
 			this.txtName.UnderlinedStyle = false;
@@ -258,7 +261,7 @@
 			this.panel2.Location = new System.Drawing.Point(105, 4);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(899, 29);
-			this.panel2.TabIndex = 1;
+			this.panel2.TabIndex = 0;
 			// 
 			// txtCode
 			// 
@@ -268,6 +271,7 @@
 			this.txtCode.BorderFocusColor = System.Drawing.Color.White;
 			this.txtCode.BorderRadius = 0;
 			this.txtCode.BorderSize = 2;
+			this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtCode.Location = new System.Drawing.Point(3, 4);
@@ -276,6 +280,7 @@
 			this.txtCode.PasswordChar = false;
 			this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCode.PlaceholderText = "";
+			this.txtCode.ReadOnly = false;
 			this.txtCode.Size = new System.Drawing.Size(893, 21);
 			this.txtCode.TabIndex = 0;
 			this.txtCode.Tag = "Code";
@@ -335,7 +340,7 @@
 			this.panel8.Location = new System.Drawing.Point(105, 112);
 			this.panel8.Name = "panel8";
 			this.panel8.Size = new System.Drawing.Size(899, 29);
-			this.panel8.TabIndex = 7;
+			this.panel8.TabIndex = 3;
 			// 
 			// txtRemark
 			// 
@@ -345,6 +350,7 @@
 			this.txtRemark.BorderFocusColor = System.Drawing.Color.White;
 			this.txtRemark.BorderRadius = 0;
 			this.txtRemark.BorderSize = 2;
+			this.txtRemark.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.txtRemark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtRemark.Location = new System.Drawing.Point(3, 4);
@@ -353,8 +359,9 @@
 			this.txtRemark.PasswordChar = false;
 			this.txtRemark.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtRemark.PlaceholderText = "";
+			this.txtRemark.ReadOnly = false;
 			this.txtRemark.Size = new System.Drawing.Size(893, 21);
-			this.txtRemark.TabIndex = 2;
+			this.txtRemark.TabIndex = 0;
 			this.txtRemark.Tag = "Remark";
 			this.txtRemark.Texts = "";
 			this.txtRemark.UnderlinedStyle = false;

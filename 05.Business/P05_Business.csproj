@@ -220,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\AccessMain.cs" />
+    <Compile Include="Common\DataHandles.cs" />
     <Compile Include="Common\UserDataGrid.cs" />
     <Compile Include="Common\GlobalVariables.cs" />
     <Compile Include="Common\MainMessage.cs" />
@@ -531,6 +532,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmCodeDetailList.resx">
+      <DependentUpon>frmCodeDetailList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmCodeDetailMng.resx">
       <DependentUpon>frmCodeDetailMng.cs</DependentUpon>

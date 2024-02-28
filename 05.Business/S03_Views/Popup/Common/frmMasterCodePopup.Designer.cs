@@ -30,14 +30,14 @@
 		{
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.txtCode = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.txtName = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dgvList = new System.Windows.Forms.DataGridView();
+			this.txtCode = new P02_K_CONTROL_WIN.KTextBox();
+			this.txtName = new P02_K_CONTROL_WIN.KTextBox();
 			this.pnlPopupOptional.SuspendLayout();
 			this.pnlContainer.SuspendLayout();
 			this.pnlTitleBar.SuspendLayout();
@@ -101,6 +101,7 @@
 			// btnInit
 			// 
 			this.btnInit.FlatAppearance.BorderSize = 0;
+			this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
 			// 
 			// btnSearch
 			// 
@@ -136,26 +137,6 @@
 			this.panel1.Size = new System.Drawing.Size(292, 29);
 			this.panel1.TabIndex = 2;
 			// 
-			// txtCode
-			// 
-			this.txtCode.BackColor = System.Drawing.SystemColors.Window;
-			this.txtCode.BorderColor = System.Drawing.Color.Empty;
-			this.txtCode.BorderFocusColor = System.Drawing.Color.Empty;
-			this.txtCode.BorderRadius = 0;
-			this.txtCode.BorderSize = 2;
-			this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtCode.Location = new System.Drawing.Point(3, 6);
-			this.txtCode.Multiline = false;
-			this.txtCode.Name = "txtCode";
-			this.txtCode.PasswordChar = false;
-			this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtCode.PlaceholderText = "";
-			this.txtCode.Size = new System.Drawing.Size(286, 17);
-			this.txtCode.TabIndex = 0;
-			this.txtCode.Texts = "";
-			this.txtCode.UnderlinedStyle = false;
-			// 
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.SystemColors.Window;
@@ -165,26 +146,6 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(292, 29);
 			this.panel2.TabIndex = 3;
-			// 
-			// txtName
-			// 
-			this.txtName.BackColor = System.Drawing.SystemColors.Window;
-			this.txtName.BorderColor = System.Drawing.Color.Empty;
-			this.txtName.BorderFocusColor = System.Drawing.Color.Empty;
-			this.txtName.BorderRadius = 0;
-			this.txtName.BorderSize = 2;
-			this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-			this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtName.Location = new System.Drawing.Point(3, 6);
-			this.txtName.Multiline = false;
-			this.txtName.Name = "txtName";
-			this.txtName.PasswordChar = false;
-			this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtName.PlaceholderText = "";
-			this.txtName.Size = new System.Drawing.Size(286, 17);
-			this.txtName.TabIndex = 0;
-			this.txtName.Texts = "";
-			this.txtName.UnderlinedStyle = false;
 			// 
 			// panel3
 			// 
@@ -241,6 +202,50 @@
 			this.dgvList.Size = new System.Drawing.Size(796, 321);
 			this.dgvList.TabIndex = 0;
 			this.dgvList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellDoubleClick);
+			// 
+			// txtCode
+			// 
+			this.txtCode.BackColor = System.Drawing.SystemColors.Window;
+			this.txtCode.BorderColor = System.Drawing.Color.Empty;
+			this.txtCode.BorderFocusColor = System.Drawing.Color.Empty;
+			this.txtCode.BorderRadius = 0;
+			this.txtCode.BorderSize = 2;
+			this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+			this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtCode.Location = new System.Drawing.Point(3, 3);
+			this.txtCode.Multiline = false;
+			this.txtCode.Name = "txtCode";
+			this.txtCode.PasswordChar = false;
+			this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtCode.PlaceholderText = "";
+			this.txtCode.ReadOnly = false;
+			this.txtCode.Size = new System.Drawing.Size(286, 22);
+			this.txtCode.TabIndex = 0;
+			this.txtCode.Texts = "";
+			this.txtCode.UnderlinedStyle = false;
+			// 
+			// txtName
+			// 
+			this.txtName.BackColor = System.Drawing.SystemColors.Window;
+			this.txtName.BorderColor = System.Drawing.Color.Empty;
+			this.txtName.BorderFocusColor = System.Drawing.Color.Empty;
+			this.txtName.BorderRadius = 0;
+			this.txtName.BorderSize = 2;
+			this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+			this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtName.Location = new System.Drawing.Point(3, 3);
+			this.txtName.Multiline = false;
+			this.txtName.Name = "txtName";
+			this.txtName.PasswordChar = false;
+			this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
+			this.txtName.PlaceholderText = "";
+			this.txtName.ReadOnly = false;
+			this.txtName.Size = new System.Drawing.Size(286, 22);
+			this.txtName.TabIndex = 0;
+			this.txtName.Texts = "";
+			this.txtName.UnderlinedStyle = false;
 			// 
 			// frmMasterCodePopup
 			// 

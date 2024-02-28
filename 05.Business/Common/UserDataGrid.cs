@@ -58,6 +58,8 @@ namespace P05_Business.Common
 
 			dataGrid.RowsDefaultCellStyle.SelectionBackColor = Color.Beige;
 			dataGrid.RowsDefaultCellStyle.SelectionForeColor = SystemColors.WindowText;
+
+			dataGrid.RowTemplate.Height = 35;
 		}
 
 		public static void End(DataGridView dataGrid)

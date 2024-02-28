@@ -28,7 +28,6 @@ namespace P05_Business.S03_Views.Popup.Common
 
 			lblPopupTitle.Text = title;
 
-			this.ShowDialog();
         }
 
 		public frmMasterCodePopup(string title, string code) : this(title)
@@ -76,6 +75,11 @@ namespace P05_Business.S03_Views.Popup.Common
 				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		} 
+		
+		private void btnInit_Click(object sender, System.EventArgs e)
+		{
+			dgvList.DataSource = null;
+		}
 		#endregion
 
 
@@ -133,5 +137,6 @@ namespace P05_Business.S03_Views.Popup.Common
 		}
 
 		#endregion
+
 	}
 }

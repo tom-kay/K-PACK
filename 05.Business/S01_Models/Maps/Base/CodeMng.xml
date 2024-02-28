@@ -21,9 +21,14 @@
 			<IsNotEmpty Prepend="And" Property="Name">
 				`Name` Like Concat('%', @Name, '%')
 			</IsNotEmpty>
-			<IsNotEmpty Prepend="And" Property="UseYn">
-				`UseYn` = @UseYn
-			</IsNotEmpty>
+			<Switch Prepend="And" Property="UseYn">
+				<Case CompareValue="Y">
+					'UseYn' IS NOT NULL AND `UseYn` = 'Y'
+				</Case>
+				<Case CompareValue="N">
+					(`UseYn` IS NULL OR `UseYn` != 'Y')
+				</Case>
+			</Switch>
 			<Switch Prepend="And" Property="DelYn">
 				<Case CompareValue="Y">
 					'DelYn' IS NOT NULL AND `DelYn` = 'Y'
@@ -121,6 +126,25 @@
 			<IsNotEmpty Prepend="And" Property="Code">
 				CD.`Code` Like Concat('%', @Code, '%')
 			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="Name">
+				CD.`Name` Like Concat('%', @Name, '%')
+			</IsNotEmpty>
+			<Switch Prepend="And" Property="UseYn">
+				<Case CompareValue="Y">
+					'UseYn' IS NOT NULL AND `UseYn` = 'Y'
+				</Case>
+				<Case CompareValue="N">
+					(`UseYn` IS NULL OR `UseYn` != 'Y')
+				</Case>
+			</Switch>
+			<Switch Prepend="And" Property="DelYn">
+				<Case CompareValue="Y">
+					'DelYn' IS NOT NULL AND `DelYn` = 'Y'
+				</Case>
+				<Case CompareValue="N">
+					(`DelYn` IS NULL OR `DelYn` != 'Y')
+				</Case>
+			</Switch>
 		</Statement>
 
 		<Statement Id="selectCodeDetail">

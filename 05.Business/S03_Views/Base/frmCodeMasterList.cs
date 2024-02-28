@@ -30,8 +30,10 @@ namespace P05_Business.S03_Views.Base
 		#region Control Events
 		private void btnInit_Click(object sender, EventArgs e)
 		{
-			rdoUseY.Checked = true;
-			rdoDelY.Checked = true;
+			rdoUseA.Checked = true;
+			rdoDelA.Checked = true;
+
+			dgvList.DataSource = null;
 		}
 
 		private void btnSearch_Click(object sender, EventArgs e)
@@ -61,8 +63,8 @@ namespace P05_Business.S03_Views.Base
 				{
 					Code = txtCode.Texts,
 					Name = txtName.Texts,
-					UseYn = rdoUseY.Checked ? "Y" : "N",
-					DelYn = rdoDelY.Checked ? "Y" : "N",
+					UseYn = rdoUseA.Checked ? "" : rdoUseY.Checked ? "Y" : "N",
+					DelYn = rdoDelA.Checked ? "" : rdoDelY.Checked ? "Y" : "N",
 				};
 
 				List<CodeMasterDto> codeMasters = ctrl.GetCodeMasterList(item);

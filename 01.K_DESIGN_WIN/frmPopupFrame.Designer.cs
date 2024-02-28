@@ -130,6 +130,7 @@
 			this.btnInit.Text = "초기화";
 			this.btnInit.TextColor = System.Drawing.Color.White;
 			this.btnInit.UseVisualStyleBackColor = false;
+			this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
 			// 
 			// pnlSearch
 			// 

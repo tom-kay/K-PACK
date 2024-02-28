@@ -23,9 +23,9 @@ namespace P05_Business.S03_Views.Base
 
 			Set_Menu_Button(new EditButtonSettings { isPrint = false });
 
-			SetControlTag();
+			//InitTag();
 
-			SetDtoBinding();
+			InitDto();
 		}
 
 		public frmCodeMasterMng(string code) : this()
@@ -39,7 +39,7 @@ namespace P05_Business.S03_Views.Base
 		#region Control Events
 		private void frmCodeMasterMng_Load(object sender, EventArgs e)
 		{
-			LinkModelControls(this, dto);
+			//LinkModelControls(this, dto);
 		}
 		
 		private void btnInit_Click(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace P05_Business.S03_Views.Base
 		{
 			rdoY.Checked = true;
 
-			SetDtoBinding();
+			InitDto();
 		}
 		
 		private bool ValidationData()
@@ -155,8 +155,8 @@ namespace P05_Business.S03_Views.Base
 		}
 
 		private void SaveData()
-		{
-			CodeMasterDto saveData = dto;
+		{	
+			CodeMasterDto saveData = DataHandles.ControlsToDto(this, dto);
 
 			CodeMasterDto param = new CodeMasterDto() { 
 				Code = saveData.Code,
@@ -171,7 +171,7 @@ namespace P05_Business.S03_Views.Base
 
 			if (dto != null)
 			{
-				SetDtoBinding();
+				InitDto();
 
 				MainMessage.Show("저장되었습니다.");
 			}
@@ -188,10 +188,11 @@ namespace P05_Business.S03_Views.Base
 
 				dto = ctrl.GetCodeMaster(param);
 
-				SetDtoBinding();
-
 				if (dto != null)
 				{
+					DataHandles.DtoToControls(this, dto);   //데이터 바인딩
+					InitDto();
+
 					MainMessage.Show("조회되었습니다.");
 				}
 				else
@@ -231,18 +232,18 @@ namespace P05_Business.S03_Views.Base
 			}
 		}
 
-		private void SetControlTag()
-		{
-			//라디오 버튼 셋팅
-			rdoY.Tag = new Tuple<string, string>("UseYn", "Y");
-			rdoN.Tag = new Tuple<string, string>("UseYn", "N");
-		}
+		//private void InitTag()
+		//{
+		//	//라디오 버튼 셋팅
+		//	rdoY.Tag = new Tuple<string, string>("UseYn", "Y");
+		//	rdoN.Tag = new Tuple<string, string>("UseYn", "N");
 
-		private void SetDtoBinding()
-		{
-			base.originalData = dto.Clone();   //원본
-			base.currentData = dto;            //수정본
+		//	rdoY.Checked = rdoN.Checked = false;
+		//}
 
+		private void InitDto()
+		{	
+			base.currentData = dto;			//원본 데이터
 			base.isFormChagned = false;
 		}
 		#endregion

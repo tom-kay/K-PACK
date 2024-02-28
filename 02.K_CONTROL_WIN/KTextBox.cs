@@ -370,7 +370,16 @@ namespace P02_K_CONTROL_WIN
             this.OnKeyPress(e);
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
+		private void textBox1_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				SendKeys.Send("{TAB}");
+			}
+		}
+
+
+		private void textBox1_Enter(object sender, EventArgs e)
         {
             isFocused = true;
             this.Invalidate();
@@ -382,7 +391,9 @@ namespace P02_K_CONTROL_WIN
             this.Invalidate();
             SetPlaceholder();
         }
-        ///::::+
-        #endregion
-    }
+		///::::+
+		#endregion
+
+		
+	}
 }
