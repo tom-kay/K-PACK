@@ -320,8 +320,8 @@
 			// 
 			this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtName.BackColor = System.Drawing.SystemColors.Window;
-			this.txtName.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtName.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtName.BorderColor = System.Drawing.Color.Empty;
+			this.txtName.BorderFocusColor = System.Drawing.Color.Empty;
 			this.txtName.BorderRadius = 0;
 			this.txtName.BorderSize = 2;
 			this.txtName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
@@ -372,11 +372,11 @@
 			// 
 			this.txtCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtCode.BackColor = System.Drawing.SystemColors.Window;
-			this.txtCode.BorderColor = System.Drawing.Color.MediumSlateBlue;
-			this.txtCode.BorderFocusColor = System.Drawing.Color.HotPink;
+			this.txtCode.BorderColor = System.Drawing.Color.Empty;
+			this.txtCode.BorderFocusColor = System.Drawing.Color.Empty;
 			this.txtCode.BorderRadius = 0;
 			this.txtCode.BorderSize = 2;
-			this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtCode.Location = new System.Drawing.Point(3, 3);

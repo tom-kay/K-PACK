@@ -23,7 +23,7 @@
 			</IsNotEmpty>
 			<Switch Prepend="And" Property="UseYn">
 				<Case CompareValue="Y">
-					'UseYn' IS NOT NULL AND `UseYn` = 'Y'
+					`UseYn` IS NOT NULL AND `UseYn` = 'Y'
 				</Case>
 				<Case CompareValue="N">
 					(`UseYn` IS NULL OR `UseYn` != 'Y')
@@ -31,7 +31,7 @@
 			</Switch>
 			<Switch Prepend="And" Property="DelYn">
 				<Case CompareValue="Y">
-					'DelYn' IS NOT NULL AND `DelYn` = 'Y'
+					`DelYn` IS NOT NULL AND `DelYn` = 'Y'
 				</Case>
 				<Case CompareValue="N">
 					(`DelYn` IS NULL OR `DelYn` != 'Y')
@@ -131,18 +131,18 @@
 			</IsNotEmpty>
 			<Switch Prepend="And" Property="UseYn">
 				<Case CompareValue="Y">
-					'UseYn' IS NOT NULL AND `UseYn` = 'Y'
+					CD.`UseYn` IS NOT NULL AND CD.`UseYn` = 'Y'
 				</Case>
 				<Case CompareValue="N">
-					(`UseYn` IS NULL OR `UseYn` != 'Y')
+					(CD.`UseYn` IS NULL OR CD.`UseYn` != 'Y')
 				</Case>
 			</Switch>
 			<Switch Prepend="And" Property="DelYn">
 				<Case CompareValue="Y">
-					'DelYn' IS NOT NULL AND `DelYn` = 'Y'
+					CD.`DelYn` IS NOT NULL AND CD.`DelYn` = 'Y'
 				</Case>
 				<Case CompareValue="N">
-					(`DelYn` IS NULL OR `DelYn` != 'Y')
+					(CD.`DelYn` IS NULL OR CD.`DelYn` != 'Y')
 				</Case>
 			</Switch>
 		</Statement>
