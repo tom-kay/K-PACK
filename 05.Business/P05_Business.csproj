@@ -221,9 +221,11 @@
   <ItemGroup>
     <Compile Include="Common\AccessMain.cs" />
     <Compile Include="Common\DataHandles.cs" />
+    <Compile Include="Common\Helpers\ComboHelper.cs" />
     <Compile Include="Common\UserDataGrid.cs" />
     <Compile Include="Common\GlobalVariables.cs" />
     <Compile Include="Common\MainMessage.cs" />
+    <Compile Include="S01_Models\Dao\Base\CompanyMngDao.cs" />
     <Compile Include="S01_Models\Dao\Base\MenuMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\CodeMntDao.cs" />
     <Compile Include="S01_Models\Dao\DaoFactory.cs" />
@@ -233,6 +235,7 @@
     <Compile Include="S01_Models\Dto\Base\MenuMasterDto.cs" />
     <Compile Include="S01_Models\Dto\DtoBase.cs" />
     <Compile Include="S02_Controllers\Base\CodeMngController.cs" />
+    <Compile Include="S02_Controllers\Base\CompanyMngController.cs" />
     <Compile Include="S02_Controllers\Base\MenuMngController.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -591,6 +594,9 @@
     <Content Include="Resource\Logo.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="S01_Models\Maps\Base\CompanyMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="SmartSqlMapConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

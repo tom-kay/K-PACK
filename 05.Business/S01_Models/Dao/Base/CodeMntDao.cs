@@ -1,10 +1,7 @@
-﻿using log4net;
-using SmartSql.Abstractions;
+﻿using SmartSql.Abstractions;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using P05_Business.S01_Models.Dto.Base;
-using Microsoft.VisualBasic.ApplicationServices;
 
 namespace P05_Business.S01_Models.Dao.Base
 {

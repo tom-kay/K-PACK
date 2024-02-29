@@ -38,7 +38,9 @@ namespace P02_K_CONTROL_WIN
 
             //ComboBox: Dropdown list
             cmbList.BackColor = listBackColor;
-            cmbList.Font = new Font(this.Font.Name, 10F);
+			//cmbList.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+			cmbList.Dock = DockStyle.Fill;
+			cmbList.Font = new Font(this.Font.Name, 10F);
             cmbList.ForeColor = listTextColor;
             cmbList.SelectedIndexChanged += new EventHandler(ComboBox_SelectedIndexChanged);//Default event
             cmbList.TextChanged += new EventHandler(ComboBox_TextChanged);//Refresh text
@@ -69,7 +71,7 @@ namespace P02_K_CONTROL_WIN
             this.Controls.Add(lblText);//2
             this.Controls.Add(btnIcon);//1
             this.Controls.Add(cmbList);//0
-            this.MinimumSize = new Size(200, 30);
+            //this.MinimumSize = new Size(200, 30);
             this.Size = new Size(200, 30);
             this.ForeColor = Color.DimGray;
             this.Padding = new Padding(borderSize);//Border Size
@@ -289,7 +291,7 @@ namespace P02_K_CONTROL_WIN
         #region -> Private methods
         private void AdjustComboBoxDimensions()
         {
-            cmbList.Width = lblText.Width;
+            //cmbList.Width = lblText.Width;
             cmbList.Location = new Point()
             {
                 X = this.Width - this.Padding.Right - cmbList.Width,

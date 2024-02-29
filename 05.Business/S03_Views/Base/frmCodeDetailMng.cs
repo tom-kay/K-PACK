@@ -31,11 +31,19 @@ namespace P05_Business.S03_Views.Base
 
 			InitDto();
 		}
-		#endregion
 
-		#region Control Events
-		
-		private void frmCodeDetailMng_Load(object sender, EventArgs e)
+		public frmCodeDetailMng(string mCode, string code) : this()
+        {
+			txtMasterCode.Texts = mCode;
+			txtCode.Texts = code;
+
+			SearchData();
+		}
+        #endregion
+
+        #region Control Events
+
+        private void frmCodeDetailMng_Load(object sender, EventArgs e)
 		{
 			//LinkModelControls(this, dto);
 		}
@@ -151,13 +159,6 @@ namespace P05_Business.S03_Views.Base
 		#endregion
 
 		#region Custom Methods
-
-		private void InitTag()
-		{
-			rdoY.Tag = new Tuple<string, string>("UseYn", "Y");
-			rdoN.Tag = new Tuple<string, string>("UseYn", "N");
-			rdoY.Checked = rdoN.Checked = false;
-		}
 
 		private void InitDto()
 		{	

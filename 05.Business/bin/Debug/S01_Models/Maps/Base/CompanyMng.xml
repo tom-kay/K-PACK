@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SmartSqlMap Scope="Base.CompanyMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+	<Statements>
+		<Statement Id="SelectAdd">
+			, ifnull(DelYn,'N') AS DelYn
+			,`CreateId`
+			,date_format(CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`
+			,`UpdateId`
+			,date_format(UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`
+			,`DeleteId`
+			,date_format(DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+		</Statement>
+
+		<Statement Id="selectCompanyList">
+			SELECT `CompanyCode`
+			, `Nationality`
+			, `CompanyGroup`
+			, `CompanyNameK`
+			, `CompanyNameE`
+			, `TelNo`
+			, `FaxNo`
+			, `AddressK1`
+			, `AddressK2`
+			, `AddressE1`
+			, `AddressE2`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `TB_COMPANY`
+		</Statement>
+
+		<Statement Id="selectCompany">
+			SELECT `CompanyCode`
+			, `Nationality`
+			, `CompanyGroup`
+			, `CompanyNameK`
+			, `CompanyNameE`
+			, `TelNo`
+			, `FaxNo`
+			, `AddressK1`
+			, `AddressK2`
+			, `AddressE1`
+			, `AddressE2`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM TB_CODEMASTER
+			WHERE `CompanyCode` = @CompanyCode
+		</Statement>
+
+		<Statement Id="insertCompany">
+
+			INSERT INTO `TB_COMPANY`
+			(`CompanyCode`,
+			`Nationality`,
+			`CompanyGroup`,
+			`CompanyNameK`,
+			`CompanyNameE`,
+			`TelNo`,
+			`FaxNo`,
+			`AddressK1`,
+			`AddressK2`,
+			`AddressE1`,
+			`AddressE2`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES
+			(@CompanyCode,
+			@Nationality,
+			@CompanyGroup,
+			@CompanyNameK,
+			@CompanyNameE,
+			@TelNo,
+			@FaxNo,
+			@AddressK1,
+			@AddressK2,
+			@AddressE1,
+			@AddressE2,
+			@CreateId,
+			now())
+			ON DUPLICATE KEY UPDATE
+			`Nationality` = @Nationality,
+			`CompanyGroup` = @CompanyGroup,
+			`CompanyNameK` = @CompanyNameK,
+			`CompanyNameE` = @CompanyNameE,
+			`TelNo` = @TelNo,
+			`FaxNo` = @FaxNo,
+			`AddressK1` = @AddressK1,
+			`AddressK2` = @AddressK2,
+			`AddressE1` = @AddressE1,
+			`AddressE2` = @AddressE2,
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now();
+		</Statement>
+		
+
+		<Statement Id="deleteCompany" >
+			UPDATE `TB_COMPANY`
+			SET
+			`DelYn` = @DelYn,
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = now()
+			WHERE `CompanyCode` = @CompanyCode
+		</Statement>
+
+
+	</Statements>
+</SmartSqlMap>

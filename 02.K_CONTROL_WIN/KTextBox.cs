@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace P02_K_CONTROL_WIN
@@ -198,6 +199,13 @@ namespace P02_K_CONTROL_WIN
 		{
 			get { return textBox1.CharacterCasing; } 
 			set { textBox1.CharacterCasing = value; }
+		}
+
+		[Category("K Code Advance")]
+		public int MaxLength 
+		{ 
+			get { return textBox1.MaxLength; } 
+			set { textBox1.MaxLength = value; } 
 		}
 
         #endregion

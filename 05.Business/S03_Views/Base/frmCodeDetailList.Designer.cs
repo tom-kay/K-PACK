@@ -124,6 +124,7 @@
 			this.dgvList.RowTemplate.Height = 23;
 			this.dgvList.Size = new System.Drawing.Size(1008, 594);
 			this.dgvList.TabIndex = 0;
+			this.dgvList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvList_CellMouseDoubleClick);
 			// 
 			// pnlSearchOptions
 			// 
@@ -476,6 +477,7 @@
 			this.btnFindMasterCode.Name = "btnFindMasterCode";
 			this.btnFindMasterCode.Size = new System.Drawing.Size(29, 29);
 			this.btnFindMasterCode.TabIndex = 0;
+			this.btnFindMasterCode.Tag = "txtMasterCode";
 			this.btnFindMasterCode.UseVisualStyleBackColor = false;
 			this.btnFindMasterCode.Click += new System.EventHandler(this.btnFindMasterCode_Click);
 			// 
@@ -512,7 +514,7 @@
 			this.txtMasterCode.Tag = "MasterCode";
 			this.txtMasterCode.Texts = "";
 			this.txtMasterCode.UnderlinedStyle = false;
-			this.txtMasterCode.Leave += new System.EventHandler(this.txtMasterCode_Leave);
+			this.txtMasterCode.Leave += new System.EventHandler(this.btnFindMasterCode_Click);
 			// 
 			// panel1
 			// 

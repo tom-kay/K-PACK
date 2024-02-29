@@ -29,7 +29,7 @@ namespace P05_Business.Common
 							var tuple = c.Tag as Tuple<string, string>;
 							if (tuple != null && dto.GetType().GetProperty(tuple.Item1) != null)
 							{
-								(c as KRadioButton).Checked = dto.GetType().GetProperty(tuple.Item1).GetValue(dto, null).ToString() == tuple.Item2;
+								(c as KRadioButton).Checked = Convert.ToString(dto.GetType().GetProperty(tuple.Item1).GetValue(dto, null)) == tuple.Item2;
 							}
 						}
 						else if (c is RadioButton)
@@ -37,7 +37,7 @@ namespace P05_Business.Common
 							var tuple = c.Tag as Tuple<string, string>;
 							if (tuple != null && dto.GetType().GetProperty(tuple.Item1) != null)
 							{
-								(c as RadioButton).Checked = dto.GetType().GetProperty(tuple.Item1).GetValue(dto, null).ToString() == tuple.Item2;
+								(c as RadioButton).Checked = Convert.ToString(dto.GetType().GetProperty(tuple.Item1).GetValue(dto, null)) == tuple.Item2;
 							}
 						}
 					}

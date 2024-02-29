@@ -100,7 +100,7 @@ namespace P05_Business.S03_Views.Popup.Common
 					this.ResultName = results[0].Name;
 					this.DialogResult = DialogResult.OK;
 				}
-				else if (results.Count > 1)
+				else
 				{
 
 					this.ShowDialog(); // 팝업 다이얼로그 표시

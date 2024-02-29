@@ -1,4 +1,5 @@
 ﻿using P01_K_DESIGN_WIN.Classes;
+using P02_K_CONTROL_WIN;
 using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
@@ -54,13 +55,32 @@ namespace P05_Business.S03_Views.Base
 		{
 			try
 			{
-				frmMasterCodePopup popup = new frmMasterCodePopup("FIND MASTER CODE");
+				frmMasterCodePopup popup;
 
-				if (popup.ShowDialog() == DialogResult.OK)
-				{
-					txtMasterCode.SetValue(popup.ResultCode);
-					txtMasterName.SetValue(popup.ResultName);
+				if (sender is KTextBox)
+                {
+					if (string.IsNullOrEmpty(txtMasterCode.Texts)) return;
+
+					string masterCode = txtMasterCode.Texts;
+					popup = new frmMasterCodePopup("FIND MASTER CODE", masterCode);
+
+					if (popup.DialogResult == DialogResult.OK)
+					{
+						txtMasterCode.SetValue(popup.ResultCode);
+						txtMasterName.SetValue(popup.ResultName);
+					}
 				}
+				else
+				{
+					popup = new frmMasterCodePopup("FIND MASTER CODE");
+
+					if (popup.ShowDialog() == DialogResult.OK)
+					{
+						txtMasterCode.SetValue(popup.ResultCode);
+						txtMasterName.SetValue(popup.ResultName);
+					}
+				}
+
 			}
 			catch (Exception ex)
 			{
@@ -73,26 +93,6 @@ namespace P05_Business.S03_Views.Base
 			try
 			{
 				SearchData();
-			}
-			catch (Exception ex)
-			{
-				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
-
-		private void txtMasterCode_Leave(object sender, EventArgs e)
-		{
-			try
-			{
-				string masterCode = txtMasterCode.Texts;
-
-				frmMasterCodePopup popup = new frmMasterCodePopup("FIND MASTER CODE", masterCode);
-
-				if (popup.DialogResult == DialogResult.OK)
-				{
-					txtMasterCode.SetValue(popup.ResultCode);
-					txtMasterName.SetValue(popup.ResultName);
-				}
 			}
 			catch (Exception ex)
 			{
@@ -122,6 +122,19 @@ namespace P05_Business.S03_Views.Base
 			catch (Exception ex)
 			{
 				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void dgvList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				string masterCode = dgvList.Rows[e.RowIndex].Cells["MasterCode"].Value.ToString();
+				string code = dgvList.Rows[e.RowIndex].Cells["Code"].Value.ToString();
+
+				frmCodeDetailMng frm = new frmCodeDetailMng(masterCode, code);
+
+				AccessMain.OpenChildForm(frm);
 			}
 		}
 	}

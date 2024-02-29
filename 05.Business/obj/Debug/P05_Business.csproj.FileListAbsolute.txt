@@ -51,3 +51,4 @@ C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frm
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmCompanyInfo.resources
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Popup.Common.frmMasterCodePopup.resources
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmCodeDetailList.resources
+C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\S01_Models\Maps\Base\CompanyMng.xml

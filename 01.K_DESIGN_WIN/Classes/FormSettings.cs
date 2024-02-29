@@ -51,7 +51,9 @@ namespace P01_K_DESIGN_WIN.Classes
 			foreach (Control ctrl in control.Controls)
 			{
 				if (ctrl is Label)
-				{	
+				{
+					if (ctrl.Parent is KComboBox) continue;
+
 					Label lbl = (Label)ctrl;
 
 					lbl.AutoSize = false;

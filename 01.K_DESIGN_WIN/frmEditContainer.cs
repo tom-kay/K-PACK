@@ -23,7 +23,7 @@ namespace P01_K_DESIGN_WIN
 		{
 			InitializeComponent();
 
-
+			InitControlTag();
 		} 
 		#endregion
 
@@ -32,8 +32,6 @@ namespace P01_K_DESIGN_WIN
 		{
 			FormSettings.Control_SetDesign(this);
 			FormSettings.Control_SetEvents(this);    //이벤트 할당
-
-			InitControlTag();
 		}
 
 		private void InitControlTag()
@@ -118,6 +116,8 @@ namespace P01_K_DESIGN_WIN
 
 		private bool EqualsObject(Control control, object dto)
 		{
+			if (control == null || dto == null) return true;
+
 			foreach (Control c in control.Controls)
 			{
 				if (c is KRadioButton || c is RadioButton)
@@ -150,7 +150,7 @@ namespace P01_K_DESIGN_WIN
 				}
 				else
 				{
-					if (c.Tag != null && dto.GetType().GetProperty(c.Tag.ToString()) != null)
+					if (!string.IsNullOrEmpty(Convert.ToString(c.Tag)) && dto.GetType().GetProperty(c.Tag.ToString()) != null)
 					{
 						if (c is KTextBox)
 						{
