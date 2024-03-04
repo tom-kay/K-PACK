@@ -37,7 +37,7 @@ namespace P05_Business.S03_Views.Base
 			txtMasterCode.Texts = mCode;
 			txtCode.Texts = code;
 
-			SearchData();
+			IS_LINK_OPEN = true;
 		}
         #endregion
 
@@ -46,6 +46,7 @@ namespace P05_Business.S03_Views.Base
         private void frmCodeDetailMng_Load(object sender, EventArgs e)
 		{
 			//LinkModelControls(this, dto);
+			if (IS_LINK_OPEN) SearchData();
 		}
 		
 		private void btnInit_Click(object sender, EventArgs e)
@@ -130,7 +131,11 @@ namespace P05_Business.S03_Views.Base
 					return;
 				}
 
-				DeleteData();   //삭제
+
+				if (KMessageBox.Show("삭제 하시겠습니까?", "삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					DeleteData();   //삭제 
+				}
 			}
 			catch (Exception ex)
 			{
@@ -161,7 +166,8 @@ namespace P05_Business.S03_Views.Base
 		#region Custom Methods
 
 		private void InitDto()
-		{	
+		{
+			
 			base.currentData = dto;            //원본 데이터
 
 			base.isFormChagned = false;
@@ -169,8 +175,11 @@ namespace P05_Business.S03_Views.Base
 
 		private void SetInit()
 		{
-			rdoY.Checked = true;
+			txtCode.Enabled = true;
 
+			rdoY.Checked = rdoN.Checked = false;
+
+			dto = new CodeDetailDto();
 			InitDto();
 		}
 
@@ -193,6 +202,9 @@ namespace P05_Business.S03_Views.Base
 				{
 					DataHandles.DtoToControls(this, dto);
 					InitDto();
+
+					txtCode.Enabled = false;
+
 					MainMessage.Show("조회되었습니다.");
 				}
 				else

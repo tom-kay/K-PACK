@@ -10,6 +10,8 @@ namespace P01_K_DESIGN_WIN
 		#region Member Variable
 		protected bool isFormChagned = false;
 		protected object currentData;   //원본 데이터
+		protected bool IS_LINK_OPEN = false;
+
 
 		//private const string FORM_FONT_NAME = "Microsoft New Tai Lue";
 		//private const float FORM_FONT_SIZE = 12f;
@@ -22,14 +24,14 @@ namespace P01_K_DESIGN_WIN
 		public frmEditContainer()
 		{
 			InitializeComponent();
-
-			InitControlTag();
 		} 
 		#endregion
 
 		#region Form Events
 		private void frmEditContainer_Load(object sender, EventArgs e)
 		{
+			InitControlTag();
+
 			FormSettings.Control_SetDesign(this);
 			FormSettings.Control_SetEvents(this);    //이벤트 할당
 		}

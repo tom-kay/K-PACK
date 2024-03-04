@@ -86,7 +86,7 @@
 		<Statement Id="deleteCodeMaster" >
 			UPDATE TB_CODEMASTER
 			SET
-			`DelYn` = @DelYn,
+			`DelYn` = 'Y',
 			`DeleteDt` = now()
 			WHERE `Code` = @Code;
 		</Statement>
@@ -238,7 +238,7 @@
 
 		<Statement Id="deleteCodeDetail" >
 			UPDATE `TB_CODEDETAIL` SET
-			`DelYn` = @DelYn,
+			`DelYn` = 'Y',
 			`DeleteDt` = now()
 			WHERE `MasterCode` = @MasterCode
 			AND `Code` = @Code

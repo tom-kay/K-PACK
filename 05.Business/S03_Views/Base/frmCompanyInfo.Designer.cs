@@ -166,13 +166,8 @@
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
 			this.tableLayoutPanel1.RowCount = 1;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 51);
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 47);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// panel1
@@ -181,7 +176,7 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(4, 14);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(94, 33);
+			this.panel1.Size = new System.Drawing.Size(94, 29);
 			this.panel1.TabIndex = 0;
 			// 
 			// label1
@@ -192,7 +187,7 @@
 			this.label1.ForeColor = System.Drawing.Color.White;
 			this.label1.Location = new System.Drawing.Point(0, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(94, 33);
+			this.label1.Size = new System.Drawing.Size(94, 29);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "회사코드";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -205,7 +200,7 @@
 			this.panel2.Margin = new System.Windows.Forms.Padding(0);
 			this.panel2.Name = "panel2";
 			this.panel2.Padding = new System.Windows.Forms.Padding(3);
-			this.panel2.Size = new System.Drawing.Size(233, 39);
+			this.panel2.Size = new System.Drawing.Size(233, 35);
 			this.panel2.TabIndex = 1;
 			// 
 			// txtCompanyCode
@@ -219,7 +214,7 @@
 			this.txtCompanyCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtCompanyCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCompanyCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtCompanyCode.Location = new System.Drawing.Point(6, 8);
+			this.txtCompanyCode.Location = new System.Drawing.Point(6, 6);
 			this.txtCompanyCode.MaxLength = 4;
 			this.txtCompanyCode.Multiline = false;
 			this.txtCompanyCode.Name = "txtCompanyCode";
@@ -239,7 +234,7 @@
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel3.Location = new System.Drawing.Point(339, 14);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(94, 33);
+			this.panel3.Size = new System.Drawing.Size(94, 29);
 			this.panel3.TabIndex = 2;
 			// 
 			// label2
@@ -250,7 +245,7 @@
 			this.label2.ForeColor = System.Drawing.Color.White;
 			this.label2.Location = new System.Drawing.Point(0, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(94, 33);
+			this.label2.Size = new System.Drawing.Size(94, 29);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "그룹";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -263,7 +258,7 @@
 			this.panel4.Margin = new System.Windows.Forms.Padding(0);
 			this.panel4.Name = "panel4";
 			this.panel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-			this.panel4.Size = new System.Drawing.Size(233, 39);
+			this.panel4.Size = new System.Drawing.Size(233, 35);
 			this.panel4.TabIndex = 3;
 			// 
 			// txtCompanyGroup
@@ -277,7 +272,7 @@
 			this.txtCompanyGroup.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtCompanyGroup.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCompanyGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtCompanyGroup.Location = new System.Drawing.Point(6, 8);
+			this.txtCompanyGroup.Location = new System.Drawing.Point(6, 6);
 			this.txtCompanyGroup.MaxLength = 30;
 			this.txtCompanyGroup.Multiline = false;
 			this.txtCompanyGroup.Name = "txtCompanyGroup";
@@ -297,7 +292,7 @@
 			this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel17.Location = new System.Drawing.Point(674, 14);
 			this.panel17.Name = "panel17";
-			this.panel17.Size = new System.Drawing.Size(94, 33);
+			this.panel17.Size = new System.Drawing.Size(94, 29);
 			this.panel17.TabIndex = 4;
 			// 
 			// label9
@@ -308,7 +303,7 @@
 			this.label9.ForeColor = System.Drawing.Color.White;
 			this.label9.Location = new System.Drawing.Point(0, 0);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(94, 33);
+			this.label9.Size = new System.Drawing.Size(94, 29);
 			this.label9.TabIndex = 2;
 			this.label9.Text = "국적";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -321,7 +316,7 @@
 			this.panel18.Margin = new System.Windows.Forms.Padding(0);
 			this.panel18.Name = "panel18";
 			this.panel18.Padding = new System.Windows.Forms.Padding(3);
-			this.panel18.Size = new System.Drawing.Size(235, 39);
+			this.panel18.Size = new System.Drawing.Size(235, 35);
 			this.panel18.TabIndex = 5;
 			// 
 			// cboNationality
@@ -339,7 +334,7 @@
 			this.cboNationality.Location = new System.Drawing.Point(3, 3);
 			this.cboNationality.Name = "cboNationality";
 			this.cboNationality.Padding = new System.Windows.Forms.Padding(1);
-			this.cboNationality.Size = new System.Drawing.Size(229, 33);
+			this.cboNationality.Size = new System.Drawing.Size(229, 29);
 			this.cboNationality.TabIndex = 0;
 			this.cboNationality.Tag = "Nationality";
 			this.cboNationality.Texts = "";
@@ -370,7 +365,7 @@
 			this.tableLayoutPanel2.Controls.Add(this.panel21, 2, 1);
 			this.tableLayoutPanel2.Controls.Add(this.panel22, 3, 1);
 			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 61);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 57);
 			this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
 			this.tableLayoutPanel2.RowCount = 6;

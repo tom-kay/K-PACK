@@ -32,7 +32,7 @@ namespace P05_Business.S03_Views.Base
 		{
 			txtCode.Texts = code;
 
-			SearchData();
+			IS_LINK_OPEN = true;
 		}
 		#endregion
 
@@ -40,6 +40,7 @@ namespace P05_Business.S03_Views.Base
 		private void frmCodeMasterMng_Load(object sender, EventArgs e)
 		{
 			//LinkModelControls(this, dto);
+			if (IS_LINK_OPEN) SearchData();
 		}
 		
 		private void btnInit_Click(object sender, EventArgs e)
@@ -123,8 +124,11 @@ namespace P05_Business.S03_Views.Base
 		#region Custom Methods
 		private void SetInit()
 		{
-			rdoY.Checked = true;
+			txtCode.Enabled = true;	
 
+			rdoY.Checked = rdoN.Checked = false;
+
+			dto = new CodeMasterDto();
 			InitDto();
 		}
 		
@@ -193,6 +197,8 @@ namespace P05_Business.S03_Views.Base
 					DataHandles.DtoToControls(this, dto);   //데이터 바인딩
 					InitDto();
 
+					txtCode.Enabled = false;
+
 					MainMessage.Show("조회되었습니다.");
 				}
 				else
@@ -242,7 +248,8 @@ namespace P05_Business.S03_Views.Base
 		//}
 
 		private void InitDto()
-		{	
+		{
+			
 			base.currentData = dto;			//원본 데이터
 			base.isFormChagned = false;
 		}

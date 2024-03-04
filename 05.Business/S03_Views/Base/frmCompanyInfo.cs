@@ -118,7 +118,6 @@ namespace P05_Business.S03_Views.Base
 		private void SetInit()
 		{
 			dto = new CompanyInfoDto();
-
 			InitDto();
 		}
 
@@ -235,7 +234,20 @@ namespace P05_Business.S03_Views.Base
 		private void InitCombo()
 		{
 			cboNationality.Items.Clear();
+
 			
+		}
+
+		public void InitComboBox(ComboBox cbo, string masterCode)
+		{
+			try
+			{
+
+			}
+			catch (Exception ex)
+			{
+				cbo.Items.Clear();
+			}
 		}
 		#endregion
 

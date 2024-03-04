@@ -218,6 +218,7 @@
 			this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtName.Location = new System.Drawing.Point(3, 4);
+			this.txtName.MaxLength = 32767;
 			this.txtName.Multiline = false;
 			this.txtName.Name = "txtName";
 			this.txtName.PasswordChar = false;
@@ -271,10 +272,11 @@
 			this.txtCode.BorderFocusColor = System.Drawing.Color.White;
 			this.txtCode.BorderRadius = 0;
 			this.txtCode.BorderSize = 2;
-			this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtCode.Location = new System.Drawing.Point(3, 4);
+			this.txtCode.MaxLength = 32767;
 			this.txtCode.Multiline = false;
 			this.txtCode.Name = "txtCode";
 			this.txtCode.PasswordChar = false;
@@ -354,6 +356,7 @@
 			this.txtRemark.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.txtRemark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtRemark.Location = new System.Drawing.Point(3, 4);
+			this.txtRemark.MaxLength = 32767;
 			this.txtRemark.Multiline = false;
 			this.txtRemark.Name = "txtRemark";
 			this.txtRemark.PasswordChar = false;
