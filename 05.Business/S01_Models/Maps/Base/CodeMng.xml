@@ -62,6 +62,7 @@
 			`Name`,
 			`Remark`,
 			`UseYn`,
+			`CreateId`,
 			`CreateDt`
 			)
 			VALUES
@@ -70,16 +71,22 @@
 			@Name,
 			@Remark,
 			@UseYn,
+			@CreateId,
 			now()
 			)
 			ON DUPLICATE KEY UPDATE
 			`Name` = @Name,
 			`Remark` = @Remark,
 			`UseYn` = @UseYn,
-			`UpdateDt` = now();
-			
+			`UpdateId` = 'SYSTEM'
+			`UpdateDt` = now(),
+			`DelYn` = 'N',
+			`DeleteId` = 'SYSTEM'
+			`DeleteDt` = null
+			;
+
 			SELECT IFNULL(@CODE,'') AS Code;
-			
+
 		</Statement>
 		
 
@@ -108,6 +115,7 @@
 			CD.`Option8`,
 			CD.`Option9`,
 			CD.`Option10`,
+			CD.`OrderSeq`,
 			CD.`UseYn`,
 			CD.`DelYn`,
 			CD.`CreateId`,
@@ -163,6 +171,7 @@
 			CD.`Option8`,
 			CD.`Option9`,
 			CD.`Option10`,
+			CD.`OrderSeq`,
 			CD.`UseYn`,
 			CD.`DelYn`,
 			CD.`CreateId`,
@@ -194,6 +203,7 @@
 			`Option8`,
 			`Option9`,
 			`Option10`,
+			`OrderSeq`,
 			`UseYn`,
 			`DelYn`,
 			`CreateId`,
@@ -213,6 +223,7 @@
 			@Option8,
 			@Option9,
 			@Option10,
+			0,
 			@UseYn,
 			@DelYn,
 			@CreateId,
@@ -232,7 +243,10 @@
 			`Option10` = @Option10,
 			`UseYn` = @UseYn,
 			`UpdateId` = @UpdateId,
-			`UpdateDt` = now();
+			`UpdateDt` = now(),
+			`DelYn` = 'N',
+			`DeleteDt` = null
+			;
 
 		</Statement>
 
@@ -242,6 +256,21 @@
 			`DeleteDt` = now()
 			WHERE `MasterCode` = @MasterCode
 			AND `Code` = @Code
+		</Statement>
+
+		<Statement Id="selectUseCodeList" >
+			SELECT CD.`Code`
+			, CD.`Name`
+			, CM.`Name` AS MasterName
+			FROM TB_CODEDETAIL AS CD
+			JOIN TB_CODEMASTER AS CM
+			ON CD.MASTERCODE = CM.`CODE`
+			WHERE CD.MASTERCODE = @MasterCode
+			AND CD.USEYN = 'Y'
+			AND IFNULL(CD.DELYN,'N') = 'N'
+			AND CM.USEYN = 'Y'
+			AND IFNULL(CM.DELYN,'N') = 'N'
+			ORDER BY CD.OrderSeq
 		</Statement>
 	</Statements>
 </SmartSqlMap>

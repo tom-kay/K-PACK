@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Windows.Forms;
 
 namespace P02_K_CONTROL_WIN
@@ -198,7 +199,7 @@ namespace P02_K_CONTROL_WIN
 
         #region -> Data properties
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [Localizable(true)]
@@ -208,7 +209,7 @@ namespace P02_K_CONTROL_WIN
             get { return cmbList.Items; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [AttributeProvider(typeof(IListSource))]
         [DefaultValue(null)]
         public object DataSource
@@ -217,7 +218,7 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.DataSource = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
@@ -229,7 +230,7 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.AutoCompleteCustomSource = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [Browsable(true)]
         [DefaultValue(AutoCompleteSource.None)]
         [EditorBrowsable(EditorBrowsableState.Always)]
@@ -239,7 +240,7 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.AutoCompleteSource = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [Browsable(true)]
         [DefaultValue(AutoCompleteMode.None)]
         [EditorBrowsable(EditorBrowsableState.Always)]
@@ -249,7 +250,7 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.AutoCompleteMode = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [Bindable(true)]
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -259,7 +260,7 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.SelectedItem = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SelectedIndex
@@ -268,7 +269,27 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.SelectedIndex = value; }
         }
 
-        [Category("RJ Code - Data")]
+		[Category("K Code - Data")]
+		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public string SelectedText
+		{
+			get { return cmbList.SelectedText; }
+			set { cmbList.SelectedText = value; }
+		}
+
+		[Category("K Code - Data")]
+		[DefaultValue(null)]
+		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		[Bindable(true)]
+		public object SelectedValue
+		{
+			get { return cmbList.SelectedValue; }
+			set { cmbList.SelectedValue = value; }
+		}
+
+        [Category("K Code - Data")]
         [DefaultValue("")]
         [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [TypeConverter("System.Windows.Forms.Design.DataMemberFieldConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
@@ -278,7 +299,7 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.DisplayMember = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [DefaultValue("")]
         [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public string ValueMember

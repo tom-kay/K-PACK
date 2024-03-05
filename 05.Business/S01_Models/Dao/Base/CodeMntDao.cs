@@ -189,6 +189,19 @@ namespace P05_Business.S01_Models.Dao.Base
 
 			return result;
 		} 
+
+		public List<CodeDetailDto> selectUseCodeList(CodeDetailDto item)
+		{
+			RequestContext context = new RequestContext
+			{
+				Scope = "CodeMng",
+				SqlId = "selectUseCodeList",
+				Request = item
+			};
+			List<CodeDetailDto> items = SqlMapper.Query<CodeDetailDto>(context).ToList();
+
+			return items;
+		}
 		#endregion
 
 	}

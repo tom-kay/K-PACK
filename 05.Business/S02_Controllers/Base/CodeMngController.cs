@@ -93,6 +93,14 @@ namespace P05_Business.S02_Controllers.Base
 			return result;
 
 		} 
+
+		public List<CodeDetailDto> GetUseCodeList(CodeDetailDto item)
+		{
+			CodeMntDao dao = new CodeMntDao();
+			List<CodeDetailDto> list = dao.selectUseCodeList(item);
+
+			return list;
+		}
 		#endregion
 
 

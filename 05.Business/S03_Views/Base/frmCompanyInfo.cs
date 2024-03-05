@@ -1,8 +1,11 @@
 ﻿using P01_K_DESIGN_WIN.Classes;
+using P02_K_CONTROL_WIN;
 using P05_Business.Common;
+using P05_Business.Common.Helpers;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace P05_Business.S03_Views.Base
@@ -21,8 +24,6 @@ namespace P05_Business.S03_Views.Base
 
 			Set_Menu_Button(new EditButtonSettings { isPrint = false });
 
-			InitCombo();
-
 			InitDto();
 		}
 		#endregion
@@ -30,7 +31,7 @@ namespace P05_Business.S03_Views.Base
 		#region Control Events
 		private void frmCompanyInfo_Load(object sender, EventArgs e)
 		{
-
+			InitCombo();
 		}
 
 		private void btnInit_Click(object sender, EventArgs e)
@@ -84,6 +85,7 @@ namespace P05_Business.S03_Views.Base
 				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
 			try
@@ -94,8 +96,11 @@ namespace P05_Business.S03_Views.Base
 					return;
 				}
 
+                if (KMessageBox.Show("삭제하시겠습니까?", "삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+					DeleteData();   //삭제
+				}
 
-				DeleteData();   //삭제
 			}
 			catch (Exception ex)
 			{
@@ -117,6 +122,8 @@ namespace P05_Business.S03_Views.Base
 
 		private void SetInit()
 		{
+			txtCompanyCode.Enabled = true;
+
 			dto = new CompanyInfoDto();
 			InitDto();
 		}
@@ -138,6 +145,8 @@ namespace P05_Business.S03_Views.Base
 				if (dto != null)
 				{
 					DataHandles.DtoToControls(this, dto);
+
+					txtCompanyCode.Enabled = false;
 					InitDto();
 					MainMessage.Show("조회되었습니다.");
 				}
@@ -231,24 +240,15 @@ namespace P05_Business.S03_Views.Base
 			}
 		}
 
+		/// <summary>
+		/// 콤보박스 초기설정
+		/// </summary>
 		private void InitCombo()
-		{
-			cboNationality.Items.Clear();
-
-			
+		{	
+			ComboHelper.InitComboBox(cboNationality, "NATIONALITY",false, true);
 		}
 
-		public void InitComboBox(ComboBox cbo, string masterCode)
-		{
-			try
-			{
-
-			}
-			catch (Exception ex)
-			{
-				cbo.Items.Clear();
-			}
-		}
+		
 		#endregion
 
 

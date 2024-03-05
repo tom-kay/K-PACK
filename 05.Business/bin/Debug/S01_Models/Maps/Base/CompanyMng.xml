@@ -40,7 +40,7 @@
 			, `AddressE1`
 			, `AddressE2`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM TB_CODEMASTER
+			FROM `TB_COMPANY`
 			WHERE `CompanyCode` = @CompanyCode
 		</Statement>
 
@@ -87,7 +87,10 @@
 			`AddressE1` = @AddressE1,
 			`AddressE2` = @AddressE2,
 			`UpdateId` = @UpdateId,
-			`UpdateDt` = now();
+			`UpdateDt` = now(),
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = null
+			;
 		</Statement>
 		
 

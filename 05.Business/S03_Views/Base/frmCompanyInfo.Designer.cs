@@ -166,8 +166,8 @@
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
 			this.tableLayoutPanel1.RowCount = 1;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 47);
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 48);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// panel1
@@ -176,7 +176,7 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(4, 14);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(94, 29);
+			this.panel1.Size = new System.Drawing.Size(94, 30);
 			this.panel1.TabIndex = 0;
 			// 
 			// label1
@@ -187,7 +187,7 @@
 			this.label1.ForeColor = System.Drawing.Color.White;
 			this.label1.Location = new System.Drawing.Point(0, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(94, 29);
+			this.label1.Size = new System.Drawing.Size(94, 30);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "회사코드";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -200,8 +200,8 @@
 			this.panel2.Margin = new System.Windows.Forms.Padding(0);
 			this.panel2.Name = "panel2";
 			this.panel2.Padding = new System.Windows.Forms.Padding(3);
-			this.panel2.Size = new System.Drawing.Size(233, 35);
-			this.panel2.TabIndex = 1;
+			this.panel2.Size = new System.Drawing.Size(233, 36);
+			this.panel2.TabIndex = 0;
 			// 
 			// txtCompanyCode
 			// 
@@ -214,7 +214,7 @@
 			this.txtCompanyCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtCompanyCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCompanyCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtCompanyCode.Location = new System.Drawing.Point(6, 6);
+			this.txtCompanyCode.Location = new System.Drawing.Point(6, 7);
 			this.txtCompanyCode.MaxLength = 4;
 			this.txtCompanyCode.Multiline = false;
 			this.txtCompanyCode.Name = "txtCompanyCode";
@@ -223,7 +223,7 @@
 			this.txtCompanyCode.PlaceholderText = "";
 			this.txtCompanyCode.ReadOnly = false;
 			this.txtCompanyCode.Size = new System.Drawing.Size(221, 22);
-			this.txtCompanyCode.TabIndex = 1;
+			this.txtCompanyCode.TabIndex = 0;
 			this.txtCompanyCode.Tag = "CompanyCode";
 			this.txtCompanyCode.Texts = "";
 			this.txtCompanyCode.UnderlinedStyle = false;
@@ -234,7 +234,7 @@
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel3.Location = new System.Drawing.Point(339, 14);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(94, 29);
+			this.panel3.Size = new System.Drawing.Size(94, 30);
 			this.panel3.TabIndex = 2;
 			// 
 			// label2
@@ -245,7 +245,7 @@
 			this.label2.ForeColor = System.Drawing.Color.White;
 			this.label2.Location = new System.Drawing.Point(0, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(94, 29);
+			this.label2.Size = new System.Drawing.Size(94, 30);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "그룹";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -258,8 +258,8 @@
 			this.panel4.Margin = new System.Windows.Forms.Padding(0);
 			this.panel4.Name = "panel4";
 			this.panel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-			this.panel4.Size = new System.Drawing.Size(233, 35);
-			this.panel4.TabIndex = 3;
+			this.panel4.Size = new System.Drawing.Size(233, 36);
+			this.panel4.TabIndex = 1;
 			// 
 			// txtCompanyGroup
 			// 
@@ -272,7 +272,7 @@
 			this.txtCompanyGroup.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtCompanyGroup.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCompanyGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtCompanyGroup.Location = new System.Drawing.Point(6, 6);
+			this.txtCompanyGroup.Location = new System.Drawing.Point(6, 7);
 			this.txtCompanyGroup.MaxLength = 30;
 			this.txtCompanyGroup.Multiline = false;
 			this.txtCompanyGroup.Name = "txtCompanyGroup";
@@ -281,7 +281,7 @@
 			this.txtCompanyGroup.PlaceholderText = "";
 			this.txtCompanyGroup.ReadOnly = false;
 			this.txtCompanyGroup.Size = new System.Drawing.Size(221, 22);
-			this.txtCompanyGroup.TabIndex = 2;
+			this.txtCompanyGroup.TabIndex = 0;
 			this.txtCompanyGroup.Tag = "CompanyGroup";
 			this.txtCompanyGroup.Texts = "";
 			this.txtCompanyGroup.UnderlinedStyle = false;
@@ -292,7 +292,7 @@
 			this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel17.Location = new System.Drawing.Point(674, 14);
 			this.panel17.Name = "panel17";
-			this.panel17.Size = new System.Drawing.Size(94, 29);
+			this.panel17.Size = new System.Drawing.Size(94, 30);
 			this.panel17.TabIndex = 4;
 			// 
 			// label9
@@ -303,7 +303,7 @@
 			this.label9.ForeColor = System.Drawing.Color.White;
 			this.label9.Location = new System.Drawing.Point(0, 0);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(94, 29);
+			this.label9.Size = new System.Drawing.Size(94, 30);
 			this.label9.TabIndex = 2;
 			this.label9.Text = "국적";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -316,8 +316,8 @@
 			this.panel18.Margin = new System.Windows.Forms.Padding(0);
 			this.panel18.Name = "panel18";
 			this.panel18.Padding = new System.Windows.Forms.Padding(3);
-			this.panel18.Size = new System.Drawing.Size(235, 35);
-			this.panel18.TabIndex = 5;
+			this.panel18.Size = new System.Drawing.Size(235, 36);
+			this.panel18.TabIndex = 2;
 			// 
 			// cboNationality
 			// 
@@ -334,7 +334,7 @@
 			this.cboNationality.Location = new System.Drawing.Point(3, 3);
 			this.cboNationality.Name = "cboNationality";
 			this.cboNationality.Padding = new System.Windows.Forms.Padding(1);
-			this.cboNationality.Size = new System.Drawing.Size(229, 29);
+			this.cboNationality.Size = new System.Drawing.Size(229, 30);
 			this.cboNationality.TabIndex = 0;
 			this.cboNationality.Tag = "Nationality";
 			this.cboNationality.Texts = "";
@@ -365,7 +365,7 @@
 			this.tableLayoutPanel2.Controls.Add(this.panel21, 2, 1);
 			this.tableLayoutPanel2.Controls.Add(this.panel22, 3, 1);
 			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 57);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 58);
 			this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
 			this.tableLayoutPanel2.RowCount = 6;
@@ -410,7 +410,7 @@
 			this.panel6.Name = "panel6";
 			this.panel6.Padding = new System.Windows.Forms.Padding(3);
 			this.panel6.Size = new System.Drawing.Size(401, 35);
-			this.panel6.TabIndex = 1;
+			this.panel6.TabIndex = 0;
 			// 
 			// txtCompanyNameK
 			// 
@@ -432,7 +432,7 @@
 			this.txtCompanyNameK.PlaceholderText = "";
 			this.txtCompanyNameK.ReadOnly = false;
 			this.txtCompanyNameK.Size = new System.Drawing.Size(389, 22);
-			this.txtCompanyNameK.TabIndex = 2;
+			this.txtCompanyNameK.TabIndex = 0;
 			this.txtCompanyNameK.Tag = "CompanyNameK";
 			this.txtCompanyNameK.Texts = "";
 			this.txtCompanyNameK.UnderlinedStyle = false;
@@ -468,7 +468,7 @@
 			this.panel8.Name = "panel8";
 			this.panel8.Padding = new System.Windows.Forms.Padding(3);
 			this.panel8.Size = new System.Drawing.Size(402, 35);
-			this.panel8.TabIndex = 3;
+			this.panel8.TabIndex = 1;
 			// 
 			// txtCompanyNameE
 			// 
@@ -490,7 +490,7 @@
 			this.txtCompanyNameE.PlaceholderText = "";
 			this.txtCompanyNameE.ReadOnly = false;
 			this.txtCompanyNameE.Size = new System.Drawing.Size(389, 22);
-			this.txtCompanyNameE.TabIndex = 3;
+			this.txtCompanyNameE.TabIndex = 0;
 			this.txtCompanyNameE.Tag = "CompanyNameE";
 			this.txtCompanyNameE.Texts = "";
 			this.txtCompanyNameE.UnderlinedStyle = false;
@@ -527,7 +527,7 @@
 			this.panel10.Name = "panel10";
 			this.panel10.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
 			this.panel10.Size = new System.Drawing.Size(905, 35);
-			this.panel10.TabIndex = 5;
+			this.panel10.TabIndex = 4;
 			// 
 			// txtAddressK1
 			// 
@@ -549,7 +549,7 @@
 			this.txtAddressK1.PlaceholderText = "";
 			this.txtAddressK1.ReadOnly = false;
 			this.txtAddressK1.Size = new System.Drawing.Size(892, 22);
-			this.txtAddressK1.TabIndex = 3;
+			this.txtAddressK1.TabIndex = 0;
 			this.txtAddressK1.Tag = "AddressK1";
 			this.txtAddressK1.Texts = "";
 			this.txtAddressK1.UnderlinedStyle = false;
@@ -586,7 +586,7 @@
 			this.panel12.Name = "panel12";
 			this.panel12.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
 			this.panel12.Size = new System.Drawing.Size(905, 35);
-			this.panel12.TabIndex = 7;
+			this.panel12.TabIndex = 5;
 			// 
 			// txtAddressK2
 			// 
@@ -608,7 +608,7 @@
 			this.txtAddressK2.PlaceholderText = "";
 			this.txtAddressK2.ReadOnly = false;
 			this.txtAddressK2.Size = new System.Drawing.Size(892, 22);
-			this.txtAddressK2.TabIndex = 4;
+			this.txtAddressK2.TabIndex = 0;
 			this.txtAddressK2.Tag = "AddressK2";
 			this.txtAddressK2.Texts = "";
 			this.txtAddressK2.UnderlinedStyle = false;
@@ -645,7 +645,7 @@
 			this.panel14.Name = "panel14";
 			this.panel14.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
 			this.panel14.Size = new System.Drawing.Size(905, 35);
-			this.panel14.TabIndex = 9;
+			this.panel14.TabIndex = 6;
 			// 
 			// txtAddressE1
 			// 
@@ -667,7 +667,7 @@
 			this.txtAddressE1.PlaceholderText = "";
 			this.txtAddressE1.ReadOnly = false;
 			this.txtAddressE1.Size = new System.Drawing.Size(892, 22);
-			this.txtAddressE1.TabIndex = 4;
+			this.txtAddressE1.TabIndex = 0;
 			this.txtAddressE1.Tag = "AddressE1";
 			this.txtAddressE1.Texts = "";
 			this.txtAddressE1.UnderlinedStyle = false;
@@ -704,7 +704,7 @@
 			this.panel16.Name = "panel16";
 			this.panel16.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
 			this.panel16.Size = new System.Drawing.Size(905, 35);
-			this.panel16.TabIndex = 11;
+			this.panel16.TabIndex = 7;
 			// 
 			// txtAddressE2
 			// 
@@ -726,7 +726,7 @@
 			this.txtAddressE2.PlaceholderText = "";
 			this.txtAddressE2.ReadOnly = false;
 			this.txtAddressE2.Size = new System.Drawing.Size(892, 22);
-			this.txtAddressE2.TabIndex = 4;
+			this.txtAddressE2.TabIndex = 0;
 			this.txtAddressE2.Tag = "AddressE2";
 			this.txtAddressE2.Texts = "";
 			this.txtAddressE2.UnderlinedStyle = false;
@@ -762,7 +762,7 @@
 			this.panel20.Name = "panel20";
 			this.panel20.Padding = new System.Windows.Forms.Padding(3);
 			this.panel20.Size = new System.Drawing.Size(401, 35);
-			this.panel20.TabIndex = 13;
+			this.panel20.TabIndex = 2;
 			// 
 			// txtTelNo
 			// 
@@ -784,7 +784,7 @@
 			this.txtTelNo.PlaceholderText = "";
 			this.txtTelNo.ReadOnly = false;
 			this.txtTelNo.Size = new System.Drawing.Size(389, 22);
-			this.txtTelNo.TabIndex = 3;
+			this.txtTelNo.TabIndex = 0;
 			this.txtTelNo.Tag = "TelNo";
 			this.txtTelNo.Texts = "";
 			this.txtTelNo.UnderlinedStyle = false;
@@ -820,7 +820,7 @@
 			this.panel22.Name = "panel22";
 			this.panel22.Padding = new System.Windows.Forms.Padding(3);
 			this.panel22.Size = new System.Drawing.Size(402, 35);
-			this.panel22.TabIndex = 15;
+			this.panel22.TabIndex = 3;
 			// 
 			// txtFaxNo
 			// 
@@ -842,7 +842,7 @@
 			this.txtFaxNo.PlaceholderText = "";
 			this.txtFaxNo.ReadOnly = false;
 			this.txtFaxNo.Size = new System.Drawing.Size(389, 22);
-			this.txtFaxNo.TabIndex = 3;
+			this.txtFaxNo.TabIndex = 0;
 			this.txtFaxNo.Tag = "FaxNo";
 			this.txtFaxNo.Texts = "";
 			this.txtFaxNo.UnderlinedStyle = false;

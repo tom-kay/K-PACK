@@ -51,7 +51,9 @@ namespace P05_Business.S01_Models.Dto.Base
 		[MaxLength(20, ErrorMessage = "[옵션10]은 최대 20자리까지만 허용됩니다.")]
 		public string Option10 { get; set; }
 
-		public string UseYn { get; set; }
+        public int? OrderSeq { get; set; }
+
+        public string UseYn { get; set; }
 
 	}
 }

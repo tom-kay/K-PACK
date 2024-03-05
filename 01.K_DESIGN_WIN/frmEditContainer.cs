@@ -170,14 +170,14 @@ namespace P01_K_DESIGN_WIN
 						}
 						else if (c is KComboBox)
 						{
-							if (!Equals((c as KComboBox).SelectedItem, dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null)))
+							if (!Equals((c as KComboBox).SelectedValue, Convert.ToString(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null))))
 							{
 								return false;
 							}
 						}
 						else if (c is ComboBox)
 						{
-							if (!Equals((c as ComboBox).SelectedItem, dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null)))
+							if (!Equals((c as ComboBox).SelectedValue, Convert.ToString(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null))))
 							{
 								return false;
 							}

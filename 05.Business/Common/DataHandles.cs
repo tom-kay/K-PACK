@@ -56,11 +56,11 @@ namespace P05_Business.Common
 						}
 						else if (c is KComboBox)
 						{
-							(c as KComboBox).SelectedItem = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null);
+							(c as KComboBox).SelectedValue = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null);
 						}
 						else if (c is ComboBox)
 						{
-							(c as ComboBox).SelectedItem = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null);
+							(c as ComboBox).SelectedValue = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null);
 						}
 						else if (c is CheckBox)
 						{
@@ -124,11 +124,11 @@ namespace P05_Business.Common
 						}
 						else if (c is KComboBox)
 						{
-							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as KComboBox).SelectedItem);
+							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as KComboBox).SelectedValue);
 						}
 						else if (c is ComboBox)
 						{
-							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as ComboBox).SelectedItem);
+							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as ComboBox).SelectedValue);
 						}
 						else if (c is CheckBox)
 						{
