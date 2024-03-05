@@ -1,9 +1,5 @@
 ﻿using P02_K_CONTROL_WIN;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace P05_Business.Common
@@ -62,9 +58,13 @@ namespace P05_Business.Common
 						{
 							(c as ComboBox).SelectedValue = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null);
 						}
+						else if (c is KToggleButton)
+						{
+							(c as KToggleButton).Checked = Convert.ToBoolean(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null));
+						}
 						else if (c is CheckBox)
 						{
-							(c as CheckBox).Checked = (bool)dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null);
+							(c as CheckBox).Checked = Convert.ToBoolean(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null));
 						}
 
 					}
@@ -129,6 +129,10 @@ namespace P05_Business.Common
 						else if (c is ComboBox)
 						{
 							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as ComboBox).SelectedValue);
+						}
+						else if (c is KToggleButton)
+						{
+							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as KToggleButton).Checked);
 						}
 						else if (c is CheckBox)
 						{

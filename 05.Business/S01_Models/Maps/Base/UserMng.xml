@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SmartSqlMap Scope="Base.UserMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+	<Statements>
+		<Statement Id="SelectAdd">
+			, ifnull(DelYn,'N') AS DelYn
+			,`CreateId`
+			,date_format(CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`
+			,`UpdateId`
+			,date_format(UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`
+			,`DeleteId`
+			,date_format(DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+		</Statement>
+
+		<Statement Id="selectUserList">
+			SELECT `UserId`,
+			`CompanyCode`,
+			`UserNameK`,
+			`UserNameE`,
+			`Nationality`,
+			`TelNo1`,
+			`TelNo2`,
+			`Email`,
+			`Address1`,
+			`Address2`,
+			`EnterDt`,
+			`LeaveDt`,
+			`DepartmentCode`,
+			`TeamCode`,
+			`PositionCode`,
+			`JobCode`,
+			`TaskCharge`,
+			`LoginId`,
+			`LoginErrorCnt`,
+			`UseYn`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_user`
+			WHERE `CompanyCode` = @CompanyCode;
+		</Statement>
+
+		<Statement Id="selectUser">
+			SELECT `UserId`,
+			`CompanyCode`,
+			`UserNameK`,
+			`UserNameE`,
+			`Nationality`,
+			`TelNo1`,
+			`TelNo2`,
+			`Email`,
+			`Address1`,
+			`Address2`,
+			`EnterDt`,
+			`LeaveDt`,
+			`DepartmentCode`,
+			`TeamCode`,
+			`PositionCode`,
+			`JobCode`,
+			`TaskCharge`,
+			`LoginId`,
+			`LoginErrorCnt`,
+			`UseYn`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_user`
+			WHERE `UserId` = @UserId;
+		</Statement>
+
+		<Statement Id="insertUser">
+
+			INSERT INTO `tb_user`
+			(`UserId`,
+			`CompanyCode`,
+			`UserNameK`,
+			`UserNameE`,
+			`Nationality`,
+			`TelNo1`,
+			`TelNo2`,
+			`Email`,
+			`Address1`,
+			`Address2`,
+			`EnterDt`,
+			`LeaveDt`,
+			`DepartmentCode`,
+			`TeamCode`,
+			`PositionCode`,
+			`JobCode`,
+			`TaskCharge`,
+			`LoginId`,
+			`LoginPw`,
+			`LoginErrorCnt`,
+			`UseYn`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES
+			(@UserId,
+			@CompanyCode,
+			@UserNameK,
+			@UserNameE,
+			@Nationality,
+			@TelNo1,
+			@TelNo2,
+			@Email,
+			@Address1,
+			@Address2,
+			@EnterDt,
+			@LeaveDt,
+			@DepartmentCode,
+			@TeamCode,
+			@PositionCode,
+			@JobCode,
+			@TaskCharge,
+			@LoginId,
+			SHA(@LoginPw,512),
+			@LoginErrorCnt,
+			@UseYn,
+			'N',
+			@CreateId,
+			@CreateDt)
+			ON DUPLICATE KEY UPDATE
+			`UserId` = @UserId,
+			`CompanyCode` = @CompanyCode,
+			`UserNameK` = @UserNameK,
+			`UserNameE` = @UserNameE,
+			`Nationality` = @Nationality,
+			`TelNo1` = @TelNo1,
+			`TelNo2` = @TelNo2,
+			`Email` = @Email,
+			`Address1` = @Address1,
+			`Address2` = @Address2,
+			`EnterDt` = @EnterDt,
+			`LeaveDt` = @LeaveDt,
+			`DepartmentCode` = @DepartmentCode,
+			`TeamCode` = @TeamCode,
+			`PositionCode` = @PositionCode,
+			`JobCode` = @JobCode,
+			`TaskCharge` = @TaskCharge,
+			`LoginId` = @LoginId,
+			`LoginPw` = SHA2(@LoginPw,512),
+			`LoginErrorCnt` = @LoginErrorCnt,
+			`UseYn` = @UseYn,
+			`DelYn` = 'N',
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = null,
+			`Deletedt` = null
+			;
+		</Statement>
+		
+
+		<Statement Id="deleteUser" >
+			UPDATE `tb_user`
+			SET
+			`DelYn` = @DelYn,
+			`DeleteId` = @DeleteId,
+			`Deletedt` = now()
+			WHERE `UserId` = '';
+		</Statement>
+
+
+	</Statements>
+</SmartSqlMap>

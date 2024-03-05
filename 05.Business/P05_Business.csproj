@@ -222,17 +222,21 @@
     <Compile Include="Common\AccessMain.cs" />
     <Compile Include="Common\DataHandles.cs" />
     <Compile Include="Common\Helpers\ComboHelper.cs" />
+    <Compile Include="Common\LoginCompany.cs" />
+    <Compile Include="Common\LoginUserInfo.cs" />
     <Compile Include="Common\UserDataGrid.cs" />
     <Compile Include="Common\GlobalVariables.cs" />
     <Compile Include="Common\MainMessage.cs" />
     <Compile Include="S01_Models\Dao\Base\CompanyMngDao.cs" />
     <Compile Include="S01_Models\Dao\Base\MenuMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\CodeMntDao.cs" />
+    <Compile Include="S01_Models\Dao\Base\UserMngDao.cs" />
     <Compile Include="S01_Models\Dao\DaoFactory.cs" />
     <Compile Include="S01_Models\Dto\Base\CodeDetailDto.cs" />
     <Compile Include="S01_Models\Dto\Base\CodeMasterDto.cs" />
     <Compile Include="S01_Models\Dto\Base\CompanyInfoDto.cs" />
     <Compile Include="S01_Models\Dto\Base\MenuMasterDto.cs" />
+    <Compile Include="S01_Models\Dto\Base\UserMngDto.cs" />
     <Compile Include="S01_Models\Dto\DtoBase.cs" />
     <Compile Include="S02_Controllers\Base\CodeMngController.cs" />
     <Compile Include="S02_Controllers\Base\CompanyMngController.cs" />
@@ -249,6 +253,7 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="S02_Controllers\Base\UserMngController.cs" />
     <Compile Include="S03_Views\Base\frmCodeDetailList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -554,6 +559,12 @@
     <EmbeddedResource Include="S03_Views\Base\frmMenuMasterMng.resx">
       <DependentUpon>frmMenuMasterMng.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmUserList.resx">
+      <DependentUpon>frmUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmUserMng.resx">
+      <DependentUpon>frmUserMng.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Common\frmMasterCodePopup.resx">
       <DependentUpon>frmMasterCodePopup.cs</DependentUpon>
     </EmbeddedResource>
@@ -595,6 +606,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="S01_Models\Maps\Base\CompanyMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S01_Models\Maps\Base\UserMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <Content Include="SmartSqlMapConfig.xml">

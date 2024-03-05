@@ -163,9 +163,9 @@ namespace P05_Business.S03_Views.Base
 
 		private bool ValidationData()
 		{
-			if (string.IsNullOrEmpty(txtCompanyCode.Texts))
+			if (txtCompanyCode.Texts.Length != 4)
 			{
-				KMessageBox.Show("[회사코드]를 입력 바랍니다.", "저장", MessageBoxButtons.OK);
+				KMessageBox.Show("4자리 [회사코드]를 입력 바랍니다.", "저장", MessageBoxButtons.OK);
 				txtCompanyCode.Focus();
 				return false;
 			}
@@ -196,6 +196,7 @@ namespace P05_Business.S03_Views.Base
 				CompanyCode = tmp.CompanyCode,
 				CompanyGroup = tmp.CompanyGroup,
 				Nationality = tmp.Nationality,
+				HeadOffice = tmp.HeadOffice,
 				CompanyNameK = tmp.CompanyNameK,
 				CompanyNameE = tmp.CompanyNameE,
 				TelNo = tmp.TelNo,

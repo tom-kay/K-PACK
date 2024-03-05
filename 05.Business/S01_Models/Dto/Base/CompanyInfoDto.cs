@@ -5,15 +5,18 @@ namespace P05_Business.S01_Models.Dto.Base
 	public class CompanyInfoDto : DtoBase
 	{
 		[Required(ErrorMessage ="[회사코드]는 필수 입니다.")]
-		[MaxLength(4, ErrorMessage = "[회사코드]는 최대 4 자리입니다.")]
+		[StringLength(4, MinimumLength = 4, ErrorMessage = "[회사코드]는 4 자리입니다.")]
 		public string CompanyCode { get; set; }
 
 		[MaxLength(30, ErrorMessage = "[회사그룹]은 최대 30 자리입니다.")]
 		public string CompanyGroup { get; set; }
 
+		[Required(ErrorMessage ="[국적]은 필수 입니다.")]
         public string Nationality { get; set; }
 
-		[MaxLength(255, ErrorMessage = "[회사명(한글)]은 최대 255 자리입니다.")]
+        public bool? HeadOffice { get; set; }
+
+        [MaxLength(255, ErrorMessage = "[회사명(한글)]은 최대 255 자리입니다.")]
 		public string CompanyNameK { get; set; }
 
 		[MaxLength(255, ErrorMessage = "[회사명(영문)]은 최대 255 자리입니다.")]

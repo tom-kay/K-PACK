@@ -182,14 +182,20 @@ namespace P01_K_DESIGN_WIN
 								return false;
 							}
 						}
-						else if (c is CheckBox)
+						else if (c is KToggleButton)
 						{
-							if (!Equals((c as CheckBox).Checked, (bool)dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null)))
+							if (!Equals((c as KToggleButton).Checked, Convert.ToBoolean(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null))))
 							{
 								return false;
 							}
 						}
-						
+						else if (c is CheckBox)
+						{
+							if (!Equals((c as CheckBox).Checked, Convert.ToBoolean(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null))))
+							{
+								return false;
+							}
+						}
 					}
 				}
 

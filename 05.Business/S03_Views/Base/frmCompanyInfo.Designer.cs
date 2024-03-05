@@ -41,6 +41,10 @@
 			this.label9 = new System.Windows.Forms.Label();
 			this.panel18 = new System.Windows.Forms.Panel();
 			this.cboNationality = new P02_K_CONTROL_WIN.KComboBox();
+			this.panel23 = new System.Windows.Forms.Panel();
+			this.label12 = new System.Windows.Forms.Label();
+			this.panel24 = new System.Windows.Forms.Panel();
+			this.tglHeadOffice = new P02_K_CONTROL_WIN.KToggleButton();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
@@ -91,6 +95,8 @@
 			this.panel4.SuspendLayout();
 			this.panel17.SuspendLayout();
 			this.panel18.SuspendLayout();
+			this.panel23.SuspendLayout();
+			this.panel24.SuspendLayout();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.panel5.SuspendLayout();
 			this.panel6.SuspendLayout();
@@ -147,19 +153,23 @@
 			// 
 			this.tableLayoutPanel1.AutoSize = true;
 			this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-			this.tableLayoutPanel1.ColumnCount = 6;
+			this.tableLayoutPanel1.ColumnCount = 8;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
 			this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
 			this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
 			this.tableLayoutPanel1.Controls.Add(this.panel4, 3, 0);
 			this.tableLayoutPanel1.Controls.Add(this.panel17, 4, 0);
 			this.tableLayoutPanel1.Controls.Add(this.panel18, 5, 0);
+			this.tableLayoutPanel1.Controls.Add(this.panel23, 6, 0);
+			this.tableLayoutPanel1.Controls.Add(this.panel24, 7, 0);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 10);
 			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -200,7 +210,7 @@
 			this.panel2.Margin = new System.Windows.Forms.Padding(0);
 			this.panel2.Name = "panel2";
 			this.panel2.Padding = new System.Windows.Forms.Padding(3);
-			this.panel2.Size = new System.Drawing.Size(233, 36);
+			this.panel2.Size = new System.Drawing.Size(198, 36);
 			this.panel2.TabIndex = 0;
 			// 
 			// txtCompanyCode
@@ -222,7 +232,7 @@
 			this.txtCompanyCode.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCompanyCode.PlaceholderText = "";
 			this.txtCompanyCode.ReadOnly = false;
-			this.txtCompanyCode.Size = new System.Drawing.Size(221, 22);
+			this.txtCompanyCode.Size = new System.Drawing.Size(186, 22);
 			this.txtCompanyCode.TabIndex = 0;
 			this.txtCompanyCode.Tag = "CompanyCode";
 			this.txtCompanyCode.Texts = "";
@@ -232,7 +242,7 @@
 			// 
 			this.panel3.Controls.Add(this.label2);
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel3.Location = new System.Drawing.Point(339, 14);
+			this.panel3.Location = new System.Drawing.Point(304, 14);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(94, 30);
 			this.panel3.TabIndex = 2;
@@ -254,11 +264,11 @@
 			// 
 			this.panel4.Controls.Add(this.txtCompanyGroup);
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel4.Location = new System.Drawing.Point(437, 11);
+			this.panel4.Location = new System.Drawing.Point(402, 11);
 			this.panel4.Margin = new System.Windows.Forms.Padding(0);
 			this.panel4.Name = "panel4";
 			this.panel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-			this.panel4.Size = new System.Drawing.Size(233, 36);
+			this.panel4.Size = new System.Drawing.Size(198, 36);
 			this.panel4.TabIndex = 1;
 			// 
 			// txtCompanyGroup
@@ -280,7 +290,7 @@
 			this.txtCompanyGroup.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCompanyGroup.PlaceholderText = "";
 			this.txtCompanyGroup.ReadOnly = false;
-			this.txtCompanyGroup.Size = new System.Drawing.Size(221, 22);
+			this.txtCompanyGroup.Size = new System.Drawing.Size(186, 22);
 			this.txtCompanyGroup.TabIndex = 0;
 			this.txtCompanyGroup.Tag = "CompanyGroup";
 			this.txtCompanyGroup.Texts = "";
@@ -290,7 +300,7 @@
 			// 
 			this.panel17.Controls.Add(this.label9);
 			this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel17.Location = new System.Drawing.Point(674, 14);
+			this.panel17.Location = new System.Drawing.Point(604, 14);
 			this.panel17.Name = "panel17";
 			this.panel17.Size = new System.Drawing.Size(94, 30);
 			this.panel17.TabIndex = 4;
@@ -312,11 +322,11 @@
 			// 
 			this.panel18.Controls.Add(this.cboNationality);
 			this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel18.Location = new System.Drawing.Point(772, 11);
+			this.panel18.Location = new System.Drawing.Point(702, 11);
 			this.panel18.Margin = new System.Windows.Forms.Padding(0);
 			this.panel18.Name = "panel18";
 			this.panel18.Padding = new System.Windows.Forms.Padding(3);
-			this.panel18.Size = new System.Drawing.Size(235, 36);
+			this.panel18.Size = new System.Drawing.Size(198, 36);
 			this.panel18.TabIndex = 2;
 			// 
 			// cboNationality
@@ -334,10 +344,57 @@
 			this.cboNationality.Location = new System.Drawing.Point(3, 3);
 			this.cboNationality.Name = "cboNationality";
 			this.cboNationality.Padding = new System.Windows.Forms.Padding(1);
-			this.cboNationality.Size = new System.Drawing.Size(229, 30);
+			this.cboNationality.Size = new System.Drawing.Size(192, 30);
 			this.cboNationality.TabIndex = 0;
 			this.cboNationality.Tag = "Nationality";
 			this.cboNationality.Texts = "";
+			// 
+			// panel23
+			// 
+			this.panel23.Controls.Add(this.label12);
+			this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel23.Location = new System.Drawing.Point(904, 14);
+			this.panel23.Name = "panel23";
+			this.panel23.Size = new System.Drawing.Size(44, 30);
+			this.panel23.TabIndex = 5;
+			// 
+			// label12
+			// 
+			this.label12.BackColor = System.Drawing.Color.CornflowerBlue;
+			this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label12.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold);
+			this.label12.ForeColor = System.Drawing.Color.White;
+			this.label12.Location = new System.Drawing.Point(0, 0);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(44, 30);
+			this.label12.TabIndex = 3;
+			this.label12.Text = "본사";
+			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panel24
+			// 
+			this.panel24.Controls.Add(this.tglHeadOffice);
+			this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel24.Location = new System.Drawing.Point(952, 11);
+			this.panel24.Margin = new System.Windows.Forms.Padding(0);
+			this.panel24.Name = "panel24";
+			this.panel24.Size = new System.Drawing.Size(55, 36);
+			this.panel24.TabIndex = 6;
+			// 
+			// tglHeadOffice
+			// 
+			this.tglHeadOffice.AutoSize = true;
+			this.tglHeadOffice.Location = new System.Drawing.Point(3, 6);
+			this.tglHeadOffice.MinimumSize = new System.Drawing.Size(45, 22);
+			this.tglHeadOffice.Name = "tglHeadOffice";
+			this.tglHeadOffice.OffBackColor = System.Drawing.Color.Gray;
+			this.tglHeadOffice.OffToggleColor = System.Drawing.Color.Gainsboro;
+			this.tglHeadOffice.OnBackColor = System.Drawing.Color.PowderBlue;
+			this.tglHeadOffice.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+			this.tglHeadOffice.Size = new System.Drawing.Size(45, 22);
+			this.tglHeadOffice.TabIndex = 0;
+			this.tglHeadOffice.Tag = "HeadOffice";
+			this.tglHeadOffice.UseVisualStyleBackColor = true;
 			// 
 			// tableLayoutPanel2
 			// 
@@ -873,6 +930,9 @@
 			this.panel4.ResumeLayout(false);
 			this.panel17.ResumeLayout(false);
 			this.panel18.ResumeLayout(false);
+			this.panel23.ResumeLayout(false);
+			this.panel24.ResumeLayout(false);
+			this.panel24.PerformLayout();
 			this.tableLayoutPanel2.ResumeLayout(false);
 			this.panel5.ResumeLayout(false);
 			this.panel6.ResumeLayout(false);
@@ -942,5 +1002,9 @@
 		private P02_K_CONTROL_WIN.KTextBox txtTelNo;
 		private P02_K_CONTROL_WIN.KTextBox txtFaxNo;
 		private P02_K_CONTROL_WIN.KComboBox cboNationality;
+		private System.Windows.Forms.Panel panel23;
+		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Panel panel24;
+		private P02_K_CONTROL_WIN.KToggleButton tglHeadOffice;
 	}
 }
