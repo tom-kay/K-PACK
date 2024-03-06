@@ -213,6 +213,8 @@ namespace P05_Business.S03_Views.Base
 
 			if (result >= 0)
 			{
+				txtCompanyCode.Enabled = false;
+
 				InitDto();
 
 				MainMessage.Show("저장되었습니다.");

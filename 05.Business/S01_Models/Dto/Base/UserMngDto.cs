@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace P05_Business.S01_Models.Dto.Base
 {
-	public class UserMngDto
+	public class UserMngDto : DtoBase
 	{	
         public string UserId { get; set; }
-		public string CompanyCode { get; set; }
 		[MaxLength(50, ErrorMessage ="[사용자명(한글)]은 최대 50자까지 입력 가능합니다.")]
 		public string UserNameK { get; set; }
 		[MaxLength(50, ErrorMessage = "[사용자명(영문)]은 최대 50자까지 입력 가능합니다.")]
@@ -33,9 +32,12 @@ namespace P05_Business.S01_Models.Dto.Base
 		public string PositionCode { get; set; }
 		public string JobCode { get; set; }
 		[MaxLength(255, ErrorMessage = "[담당업무]은 최대 255자까지 입력 가능합니다.")]
+
+		[Required(ErrorMessage ="[로그인ID]는 필수 항목입니다.")]
 		public string TaskCharge { get; set; }
 		[MaxLength(50, ErrorMessage = "[로그인ID]는 최대 50자까지 입력 가능합니다.")]
 		public string LoginId { get; set; }
+		public string LoginPw { get; set; }
 		public int? LoginErrorCnt { get; set; }
 		public string UseYn { get; set; }
 		

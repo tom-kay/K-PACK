@@ -421,6 +421,7 @@
     <Content Include="Resource\Images\empty_empty_battery_battery.png" />
     <Content Include="Resource\Images\euro_blue_currency_euro_blue_currency.png" />
     <Content Include="Resource\Images\euro_currency_black_currency_euro.png" />
+    <Content Include="Resource\Images\eye.png" />
     <Content Include="Resource\Images\ffw_black_button_ffw.png" />
     <Content Include="Resource\Images\file_file_download_download.png" />
     <Content Include="Resource\Images\file_upload_file_upload.png" />

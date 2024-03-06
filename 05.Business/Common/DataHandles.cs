@@ -1,5 +1,8 @@
-﻿using P02_K_CONTROL_WIN;
+﻿using P01_K_DESIGN_WIN.Classes;
+using P02_K_CONTROL_WIN;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Windows.Forms;
 
 namespace P05_Business.Common
@@ -148,6 +151,24 @@ namespace P05_Business.Common
 				}
 			}
 			return dto;
+		}
+
+		public static ICollection<ValidationResult> Validate<T> (T dto) where T : class 
+		{
+			var context = new ValidationContext(dto, null, null);
+			var results = new List<ValidationResult>();
+
+			bool isValid = Validator.TryValidateObject(dto, context, results, true);
+
+			if (!isValid)
+			{
+				foreach (var validationResult in results)
+				{
+					KMessageBox.Show(validationResult.ErrorMessage, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+
+			return results;
 		}
 	}
 }

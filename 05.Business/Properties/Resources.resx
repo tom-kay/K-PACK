@@ -121,4 +121,10 @@
   <data name="search_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Images\search_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="may_2009_event_calendar_may_2009_event_calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Images\may_2009_event_calendar_may_2009_event_calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Images\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

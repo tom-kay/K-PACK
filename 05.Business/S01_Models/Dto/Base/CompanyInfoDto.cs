@@ -3,11 +3,7 @@
 namespace P05_Business.S01_Models.Dto.Base
 {
 	public class CompanyInfoDto : DtoBase
-	{
-		[Required(ErrorMessage ="[회사코드]는 필수 입니다.")]
-		[StringLength(4, MinimumLength = 4, ErrorMessage = "[회사코드]는 4 자리입니다.")]
-		public string CompanyCode { get; set; }
-
+	{	
 		[MaxLength(30, ErrorMessage = "[회사그룹]은 최대 30 자리입니다.")]
 		public string CompanyGroup { get; set; }
 

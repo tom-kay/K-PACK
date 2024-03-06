@@ -92,7 +92,7 @@
 			`CreateDt`
 			)
 			VALUES
-			(@UserId,
+			(FN_CreateUserId(@CompanyCode, @UserId),
 			@CompanyCode,
 			@UserNameK,
 			@UserNameE,
@@ -117,8 +117,6 @@
 			@CreateId,
 			@CreateDt)
 			ON DUPLICATE KEY UPDATE
-			`UserId` = @UserId,
-			`CompanyCode` = @CompanyCode,
 			`UserNameK` = @UserNameK,
 			`UserNameE` = @UserNameE,
 			`Nationality` = @Nationality,
@@ -153,7 +151,7 @@
 			`DelYn` = @DelYn,
 			`DeleteId` = @DeleteId,
 			`Deletedt` = now()
-			WHERE `UserId` = '';
+			WHERE `UserId` = @UserId;
 		</Statement>
 
 

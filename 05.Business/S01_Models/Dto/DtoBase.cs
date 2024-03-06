@@ -5,6 +5,8 @@ namespace P05_Business.S01_Models.Dto
 {
 	public class DtoBase : ICloneable
 	{
+		[Display(Name = "회사코드")]
+		public string CompanyCode { get; set; }
 		[Display(Name = "삭제유무")]
 		public string DelYn { get; set; }
 		[Display(Name = "생성자")]
