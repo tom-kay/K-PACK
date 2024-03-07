@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUserMng));
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
@@ -41,7 +42,7 @@
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.txtNationality = new P02_K_CONTROL_WIN.KTextBox();
+			this.cboNationality = new P02_K_CONTROL_WIN.KComboBox();
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.label4 = new System.Windows.Forms.Label();
 			this.panel8 = new System.Windows.Forms.Panel();
@@ -99,12 +100,12 @@
 			this.panel29 = new System.Windows.Forms.Panel();
 			this.label15 = new System.Windows.Forms.Label();
 			this.panel30 = new System.Windows.Forms.Panel();
-			this.btnEnterDt = new P02_K_CONTROL_WIN.KButton();
+			this.cboEnterDate = new P02_K_CONTROL_WIN.KButtonCalendar();
 			this.txtEnterDate = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel31 = new System.Windows.Forms.Panel();
 			this.label16 = new System.Windows.Forms.Label();
 			this.panel32 = new System.Windows.Forms.Panel();
-			this.btnLeaveDt = new P02_K_CONTROL_WIN.KButton();
+			this.cboLeaveDate = new P02_K_CONTROL_WIN.KButtonCalendar();
 			this.txtLeaveDate = new P02_K_CONTROL_WIN.KTextBox();
 			this.panel15 = new System.Windows.Forms.Panel();
 			this.label8 = new System.Windows.Forms.Label();
@@ -337,6 +338,7 @@
 			this.txtUserNameK.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtUserNameK.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtUserNameK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtUserNameK.OnlyNumber = false;
 			this.txtUserNameK.Location = new System.Drawing.Point(3, 6);
 			this.txtUserNameK.MaxLength = 32767;
 			this.txtUserNameK.Multiline = false;
@@ -394,6 +396,7 @@
 			this.txtUserNameE.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtUserNameE.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtUserNameE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtUserNameE.OnlyNumber = false;
 			this.txtUserNameE.Location = new System.Drawing.Point(4, 6);
 			this.txtUserNameE.MaxLength = 32767;
 			this.txtUserNameE.Multiline = false;
@@ -432,38 +435,32 @@
 			// 
 			// panel6
 			// 
-			this.panel6.Controls.Add(this.txtNationality);
+			this.panel6.Controls.Add(this.cboNationality);
 			this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel6.Location = new System.Drawing.Point(122, 109);
-			this.panel6.Margin = new System.Windows.Forms.Padding(0);
+			this.panel6.Location = new System.Drawing.Point(125, 112);
 			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(277, 35);
+			this.panel6.Size = new System.Drawing.Size(271, 29);
 			this.panel6.TabIndex = 6;
 			// 
-			// txtNationality
+			// cboNationality
 			// 
-			this.txtNationality.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtNationality.BackColor = System.Drawing.SystemColors.Window;
-			this.txtNationality.BorderColor = System.Drawing.Color.White;
-			this.txtNationality.BorderFocusColor = System.Drawing.Color.White;
-			this.txtNationality.BorderRadius = 0;
-			this.txtNationality.BorderSize = 2;
-			this.txtNationality.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-			this.txtNationality.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtNationality.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtNationality.Location = new System.Drawing.Point(3, 6);
-			this.txtNationality.MaxLength = 32767;
-			this.txtNationality.Multiline = false;
-			this.txtNationality.Name = "txtNationality";
-			this.txtNationality.PasswordChar = false;
-			this.txtNationality.PlaceholderColor = System.Drawing.Color.DarkGray;
-			this.txtNationality.PlaceholderText = "";
-			this.txtNationality.ReadOnly = false;
-			this.txtNationality.Size = new System.Drawing.Size(271, 22);
-			this.txtNationality.TabIndex = 0;
-			this.txtNationality.Tag = "Nationality";
-			this.txtNationality.Texts = "";
-			this.txtNationality.UnderlinedStyle = false;
+			this.cboNationality.BackColor = System.Drawing.Color.PowderBlue;
+			this.cboNationality.BorderColor = System.Drawing.Color.Transparent;
+			this.cboNationality.BorderSize = 1;
+			this.cboNationality.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.cboNationality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboNationality.Font = new System.Drawing.Font("굴림", 10F);
+			this.cboNationality.ForeColor = System.Drawing.Color.DimGray;
+			this.cboNationality.IconColor = System.Drawing.Color.Navy;
+			this.cboNationality.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+			this.cboNationality.ListTextColor = System.Drawing.Color.DimGray;
+			this.cboNationality.Location = new System.Drawing.Point(0, 0);
+			this.cboNationality.Name = "cboNationality";
+			this.cboNationality.Padding = new System.Windows.Forms.Padding(1);
+			this.cboNationality.Size = new System.Drawing.Size(271, 29);
+			this.cboNationality.TabIndex = 0;
+			this.cboNationality.Tag = "Nationality";
+			this.cboNationality.Texts = "";
 			// 
 			// panel7
 			// 
@@ -508,6 +505,7 @@
 			this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtEmail.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtEmail.OnlyNumber = false;
 			this.txtEmail.Location = new System.Drawing.Point(4, 6);
 			this.txtEmail.MaxLength = 32767;
 			this.txtEmail.Multiline = false;
@@ -565,6 +563,7 @@
 			this.txtTelNo1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtTelNo1.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtTelNo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtTelNo1.OnlyNumber = false;
 			this.txtTelNo1.Location = new System.Drawing.Point(3, 6);
 			this.txtTelNo1.MaxLength = 32767;
 			this.txtTelNo1.Multiline = false;
@@ -622,6 +621,7 @@
 			this.txtTelNo2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtTelNo2.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtTelNo2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtTelNo2.OnlyNumber = false;
 			this.txtTelNo2.Location = new System.Drawing.Point(4, 6);
 			this.txtTelNo2.MaxLength = 32767;
 			this.txtTelNo2.Multiline = false;
@@ -680,6 +680,7 @@
 			this.txtAddress1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtAddress1.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtAddress1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtAddress1.OnlyNumber = false;
 			this.txtAddress1.Location = new System.Drawing.Point(3, 6);
 			this.txtAddress1.MaxLength = 32767;
 			this.txtAddress1.Multiline = false;
@@ -738,6 +739,7 @@
 			this.txtAddress2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtAddress2.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtAddress2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtAddress2.OnlyNumber = false;
 			this.txtAddress2.Location = new System.Drawing.Point(3, 6);
 			this.txtAddress2.MaxLength = 32767;
 			this.txtAddress2.Multiline = false;
@@ -789,7 +791,7 @@
 			this.cboDepartment.BorderColor = System.Drawing.Color.Transparent;
 			this.cboDepartment.BorderSize = 1;
 			this.cboDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.cboDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+			this.cboDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cboDepartment.Font = new System.Drawing.Font("굴림", 10F);
 			this.cboDepartment.ForeColor = System.Drawing.Color.DimGray;
 			this.cboDepartment.IconColor = System.Drawing.Color.Navy;
@@ -840,7 +842,7 @@
 			this.cboTeam.BorderColor = System.Drawing.Color.Transparent;
 			this.cboTeam.BorderSize = 1;
 			this.cboTeam.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.cboTeam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+			this.cboTeam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cboTeam.Font = new System.Drawing.Font("굴림", 10F);
 			this.cboTeam.ForeColor = System.Drawing.Color.DimGray;
 			this.cboTeam.IconColor = System.Drawing.Color.Navy;
@@ -891,7 +893,7 @@
 			this.cboPosition.BorderColor = System.Drawing.Color.Transparent;
 			this.cboPosition.BorderSize = 1;
 			this.cboPosition.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.cboPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+			this.cboPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cboPosition.Font = new System.Drawing.Font("굴림", 10F);
 			this.cboPosition.ForeColor = System.Drawing.Color.DimGray;
 			this.cboPosition.IconColor = System.Drawing.Color.Navy;
@@ -942,7 +944,7 @@
 			this.cboJob.BorderColor = System.Drawing.Color.Transparent;
 			this.cboJob.BorderSize = 1;
 			this.cboJob.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.cboJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+			this.cboJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cboJob.Font = new System.Drawing.Font("굴림", 10F);
 			this.cboJob.ForeColor = System.Drawing.Color.DimGray;
 			this.cboJob.IconColor = System.Drawing.Color.Navy;
@@ -999,6 +1001,7 @@
 			this.txtLoginErrorCnt.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtLoginErrorCnt.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtLoginErrorCnt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtLoginErrorCnt.OnlyNumber = true;
 			this.txtLoginErrorCnt.Location = new System.Drawing.Point(3, 6);
 			this.txtLoginErrorCnt.MaxLength = 32767;
 			this.txtLoginErrorCnt.Multiline = false;
@@ -1147,6 +1150,7 @@
 			this.txtLoginId.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtLoginId.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtLoginId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtLoginId.OnlyNumber = false;
 			this.txtLoginId.Location = new System.Drawing.Point(3, 6);
 			this.txtLoginId.MaxLength = 32767;
 			this.txtLoginId.Multiline = false;
@@ -1205,6 +1209,7 @@
 			this.txtLoginPw.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtLoginPw.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtLoginPw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtLoginPw.OnlyNumber = false;
 			this.txtLoginPw.Location = new System.Drawing.Point(4, 6);
 			this.txtLoginPw.MaxLength = 32767;
 			this.txtLoginPw.Multiline = false;
@@ -1243,7 +1248,7 @@
 			// 
 			// panel30
 			// 
-			this.panel30.Controls.Add(this.btnEnterDt);
+			this.panel30.Controls.Add(this.cboEnterDate);
 			this.panel30.Controls.Add(this.txtEnterDate);
 			this.panel30.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel30.Location = new System.Drawing.Point(122, 361);
@@ -1252,26 +1257,20 @@
 			this.panel30.Size = new System.Drawing.Size(277, 35);
 			this.panel30.TabIndex = 17;
 			// 
-			// btnEnterDt
+			// cboEnterDate
 			// 
-			this.btnEnterDt.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.btnEnterDt.BackColor = System.Drawing.Color.Transparent;
-			this.btnEnterDt.BackgroundColor = System.Drawing.Color.Transparent;
-			this.btnEnterDt.BackgroundImage = global::P05_Business.Properties.Resources.may_2009_event_calendar_may_2009_event_calendar;
-			this.btnEnterDt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.btnEnterDt.BorderColor = System.Drawing.Color.PaleVioletRed;
-			this.btnEnterDt.BorderRadius = 0;
-			this.btnEnterDt.BorderSize = 0;
-			this.btnEnterDt.FlatAppearance.BorderSize = 0;
-			this.btnEnterDt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnEnterDt.ForeColor = System.Drawing.Color.White;
-			this.btnEnterDt.Location = new System.Drawing.Point(248, 6);
-			this.btnEnterDt.Name = "btnEnterDt";
-			this.btnEnterDt.Size = new System.Drawing.Size(22, 22);
-			this.btnEnterDt.TabIndex = 6;
-			this.btnEnterDt.TextColor = System.Drawing.Color.White;
-			this.btnEnterDt.UseVisualStyleBackColor = false;
-			this.btnEnterDt.Click += new System.EventHandler(this.btnCalendar_Click);
+			this.cboEnterDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.cboEnterDate.BackColor = System.Drawing.Color.Transparent;
+			this.cboEnterDate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cboEnterDate.BackgroundImage")));
+			this.cboEnterDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.cboEnterDate.FlatAppearance.BorderSize = 0;
+			this.cboEnterDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cboEnterDate.Location = new System.Drawing.Point(249, 6);
+			this.cboEnterDate.Name = "cboEnterDate";
+			this.cboEnterDate.Size = new System.Drawing.Size(22, 22);
+			this.cboEnterDate.TabIndex = 7;
+			this.cboEnterDate.Tag = "txtEnterDate";
+			this.cboEnterDate.UseVisualStyleBackColor = false;
 			// 
 			// txtEnterDate
 			// 
@@ -1284,6 +1283,7 @@
 			this.txtEnterDate.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtEnterDate.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtEnterDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtEnterDate.OnlyNumber = false;
 			this.txtEnterDate.Location = new System.Drawing.Point(3, 6);
 			this.txtEnterDate.MaxLength = 32767;
 			this.txtEnterDate.Multiline = false;
@@ -1322,7 +1322,7 @@
 			// 
 			// panel32
 			// 
-			this.panel32.Controls.Add(this.btnLeaveDt);
+			this.panel32.Controls.Add(this.cboLeaveDate);
 			this.panel32.Controls.Add(this.txtLeaveDate);
 			this.panel32.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel32.Location = new System.Drawing.Point(521, 361);
@@ -1331,26 +1331,20 @@
 			this.panel32.Size = new System.Drawing.Size(278, 35);
 			this.panel32.TabIndex = 18;
 			// 
-			// btnLeaveDt
+			// cboLeaveDate
 			// 
-			this.btnLeaveDt.Anchor = System.Windows.Forms.AnchorStyles.Right;
-			this.btnLeaveDt.BackColor = System.Drawing.Color.Transparent;
-			this.btnLeaveDt.BackgroundColor = System.Drawing.Color.Transparent;
-			this.btnLeaveDt.BackgroundImage = global::P05_Business.Properties.Resources.may_2009_event_calendar_may_2009_event_calendar;
-			this.btnLeaveDt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.btnLeaveDt.BorderColor = System.Drawing.Color.PaleVioletRed;
-			this.btnLeaveDt.BorderRadius = 0;
-			this.btnLeaveDt.BorderSize = 0;
-			this.btnLeaveDt.FlatAppearance.BorderSize = 0;
-			this.btnLeaveDt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnLeaveDt.ForeColor = System.Drawing.Color.White;
-			this.btnLeaveDt.Location = new System.Drawing.Point(249, 6);
-			this.btnLeaveDt.Name = "btnLeaveDt";
-			this.btnLeaveDt.Size = new System.Drawing.Size(22, 22);
-			this.btnLeaveDt.TabIndex = 7;
-			this.btnLeaveDt.TextColor = System.Drawing.Color.White;
-			this.btnLeaveDt.UseVisualStyleBackColor = false;
-			this.btnLeaveDt.Click += new System.EventHandler(this.btnCalendar_Click);
+			this.cboLeaveDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.cboLeaveDate.BackColor = System.Drawing.Color.Transparent;
+			this.cboLeaveDate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cboLeaveDate.BackgroundImage")));
+			this.cboLeaveDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.cboLeaveDate.FlatAppearance.BorderSize = 0;
+			this.cboLeaveDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cboLeaveDate.Location = new System.Drawing.Point(249, 6);
+			this.cboLeaveDate.Name = "cboLeaveDate";
+			this.cboLeaveDate.Size = new System.Drawing.Size(22, 22);
+			this.cboLeaveDate.TabIndex = 8;
+			this.cboLeaveDate.Tag = "txtLeaveDate";
+			this.cboLeaveDate.UseVisualStyleBackColor = false;
 			// 
 			// txtLeaveDate
 			// 
@@ -1363,6 +1357,7 @@
 			this.txtLeaveDate.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtLeaveDate.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtLeaveDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtLeaveDate.OnlyNumber = false;
 			this.txtLeaveDate.Location = new System.Drawing.Point(4, 6);
 			this.txtLeaveDate.MaxLength = 32767;
 			this.txtLeaveDate.Multiline = false;
@@ -1421,6 +1416,7 @@
 			this.txtChargeTask.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtChargeTask.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtChargeTask.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtChargeTask.OnlyNumber = false;
 			this.txtChargeTask.Location = new System.Drawing.Point(3, 6);
 			this.txtChargeTask.MaxLength = 32767;
 			this.txtChargeTask.Multiline = false;
@@ -1479,6 +1475,7 @@
 			this.txtUserId.Enabled = false;
 			this.txtUserId.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtUserId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtUserId.OnlyNumber = false;
 			this.txtUserId.Location = new System.Drawing.Point(3, 6);
 			this.txtUserId.MaxLength = 32767;
 			this.txtUserId.Multiline = false;
@@ -1537,6 +1534,7 @@
 			this.txtCompanyCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtCompanyCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCompanyCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtCompanyCode.OnlyNumber = false;
 			this.txtCompanyCode.Location = new System.Drawing.Point(5, 6);
 			this.txtCompanyCode.MaxLength = 32767;
 			this.txtCompanyCode.Multiline = false;
@@ -1564,6 +1562,7 @@
 			this.txtCompanyName.Enabled = false;
 			this.txtCompanyName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCompanyName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+			this.txtCompanyName.OnlyNumber = false;
 			this.txtCompanyName.Location = new System.Drawing.Point(4, 6);
 			this.txtCompanyName.MaxLength = 32767;
 			this.txtCompanyName.Multiline = false;
@@ -1699,13 +1698,11 @@
 		private P02_K_CONTROL_WIN.KTextBox txtLoginId;
 		private P02_K_CONTROL_WIN.KTextBox txtUserNameK;
 		private P02_K_CONTROL_WIN.KTextBox txtUserNameE;
-		private P02_K_CONTROL_WIN.KTextBox txtNationality;
 		private P02_K_CONTROL_WIN.KTextBox txtEmail;
 		private P02_K_CONTROL_WIN.KTextBox txtTelNo1;
 		private P02_K_CONTROL_WIN.KTextBox txtTelNo2;
 		private P02_K_CONTROL_WIN.KTextBox txtAddress1;
 		private P02_K_CONTROL_WIN.KTextBox txtAddress2;
-		private P02_K_CONTROL_WIN.KTextBox txtLoginErrorCnt;
 		private P02_K_CONTROL_WIN.KTextBox txtLoginPw;
 		private P02_K_CONTROL_WIN.KComboBox cboDepartment;
 		private P02_K_CONTROL_WIN.KComboBox cboTeam;
@@ -1715,12 +1712,10 @@
 		private System.Windows.Forms.Panel panel29;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.Panel panel30;
-		private P02_K_CONTROL_WIN.KButton btnEnterDt;
 		private P02_K_CONTROL_WIN.KTextBox txtEnterDate;
 		private System.Windows.Forms.Panel panel31;
 		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Panel panel32;
-		private P02_K_CONTROL_WIN.KButton btnLeaveDt;
 		private P02_K_CONTROL_WIN.KTextBox txtLeaveDate;
 		private P02_K_CONTROL_WIN.KComboBox cboJob;
 		private System.Windows.Forms.Panel panel15;
@@ -1738,5 +1733,9 @@
 		private P02_K_CONTROL_WIN.KTextBox txtCompanyName;
 		private P02_K_CONTROL_WIN.KButton btnShowPw;
 		private System.Windows.Forms.ToolTip tooltip;
+		private P02_K_CONTROL_WIN.KButtonCalendar cboEnterDate;
+		private P02_K_CONTROL_WIN.KButtonCalendar cboLeaveDate;
+		private P02_K_CONTROL_WIN.KComboBox cboNationality;
+		private P02_K_CONTROL_WIN.KTextBox txtLoginErrorCnt;
 	}
 }

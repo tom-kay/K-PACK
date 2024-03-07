@@ -5,6 +5,7 @@ using P05_Business.Common.Helpers;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
@@ -18,8 +19,6 @@ namespace P05_Business.S03_Views.Base
 		UserMngController ctrl = new UserMngController();
 		UserMngDto dto = new UserMngDto();
 
-		MonthCalendar calendar = new MonthCalendar();
-
 		#endregion Member Variables
 
 		#region Constructor
@@ -31,8 +30,7 @@ namespace P05_Business.S03_Views.Base
 			Set_Menu_Button(new EditButtonSettings { isPrint = false });
 
 			InitDto();
-
-			this.Controls.Add(calendar);
+			
 		}
 		
 		#endregion Constructor
@@ -80,7 +78,7 @@ namespace P05_Business.S03_Views.Base
 			try
 			{
 				bool isVal = ValidationData();
-
+				isVal = true;
 				if (isVal)
 				{
 					if (KMessageBox.Show("저장하시겠습니까?", "저장", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -122,52 +120,6 @@ namespace P05_Business.S03_Views.Base
 			txtLoginPw.PasswordChar = !txtLoginPw.PasswordChar;
 		}
 
-		private void btnCalendar_Click(object sender, EventArgs e)
-		{
-			// sender를 Button으로 캐스팅
-			KButton button = sender as KButton;
-
-			// 버튼의 위치를 화면 좌표로 변환
-			Point screenLocation = button.PointToScreen(Point.Empty);
-
-			// 화면 좌표를 폼의 클라이언트 좌표로 변환
-			Point buttonLocation = this.PointToClient(screenLocation);
-
-			int X, Y;
-			// 버튼이 폼의 오른쪽에 가까운지 확인
-			if (buttonLocation.X + button.Width + calendar.Width > this.Width)
-			{
-				// 버튼이 폼의 오른쪽에 가까우면 MonthCalendar를 버튼의 왼쪽에 표시
-				//calendar.Location = new Point(buttonLocation.X - calendar.Width, buttonLocation.Y);
-				X = buttonLocation.X + button.Width - calendar.Width;
-			}
-			else
-			{
-				// 그렇지 않으면 MonthCalendar를 버튼의 오른쪽에 표시
-				//calendar.Location = new Point(buttonLocation.X + button.Width, buttonLocation.Y);
-				X = buttonLocation.X;
-			}
-
-			// 버튼이 폼의 하단에 가까운지 확인
-			if (buttonLocation.Y + button.Height + calendar.Height > this.Height)
-			{
-				// 버튼이 폼의 하단에 가까우면 MonthCalendar를 버튼의 위에 표시
-				//calendar.Location = new Point(buttonLocation.X, buttonLocation.Y - calendar.Height);
-				Y = buttonLocation.Y - calendar.Height;
-			}
-			else
-			{
-				// 그렇지 않으면 MonthCalendar를 버튼의 아래에 표시
-				//calendar.Location = new Point(buttonLocation.X, buttonLocation.Y + button.Height);
-				Y = buttonLocation.Y + button.Height;
-			}
-
-			calendar.Location = new Point(X, Y);
-
-			calendar.Show();
-
-			calendar.BringToFront();
-		}
 
 		#endregion Control Events
 
@@ -184,7 +136,7 @@ namespace P05_Business.S03_Views.Base
 		/// </summary>
 		private void InitCombo()
 		{
-
+			ComboHelper.InitComboBox(cboNationality, "NATIONALITY", false, true);	//국적
 			ComboHelper.InitComboBox(cboDepartment, "NATIONALITY", false, true);	//부서목록
 			ComboHelper.InitComboBox(cboTeam, "NATIONALITY", false, true);			//팀목록
 			ComboHelper.InitComboBox(cboPosition, "NATIONALITY", false, true);		//직위목록
@@ -194,7 +146,7 @@ namespace P05_Business.S03_Views.Base
 
 		private void SetInit()
 		{
-			
+
 			dto = new UserMngDto();
 			InitDto();
 		}
@@ -255,13 +207,11 @@ namespace P05_Business.S03_Views.Base
 				return false;
 			}
 
-			
-
 			return true;
 		}
 
 		private void SaveData()
-		{
+		{	
 			UserMngDto tmp = DataHandles.ControlsToDto(this, dto);
 
 			UserMngDto param = new UserMngDto()
@@ -291,6 +241,10 @@ namespace P05_Business.S03_Views.Base
 				CreateId = tmp.CreateId,
 				UpdateId = tmp.UpdateId,
 			};
+
+			//유효성 검사
+			var context = new ValidationContext(param, serviceProvider: null, items: null);
+			Validator.ValidateObject(param, context, validateAllProperties: true);
 
 			int result = ctrl.AddUserInfo(param);
 
@@ -323,8 +277,6 @@ namespace P05_Business.S03_Views.Base
 				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-
-
 
 		#endregion Custom Methods
 

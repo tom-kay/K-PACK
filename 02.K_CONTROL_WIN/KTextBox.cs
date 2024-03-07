@@ -24,6 +24,8 @@ namespace P02_K_CONTROL_WIN
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
 
+		private bool onlyNumber = false;
+
 		//Events
 		public event EventHandler _TextChanged;
         #endregion
@@ -208,6 +210,12 @@ namespace P02_K_CONTROL_WIN
 			set { textBox1.MaxLength = value; } 
 		}
 
+		[Category("K Code Advance")]
+		public bool OnlyNumber { 
+			get { return onlyNumber; }
+			set { onlyNumber = value; } 
+		}
+
         #endregion
 
         #region -> Overridden methods
@@ -376,6 +384,14 @@ namespace P02_K_CONTROL_WIN
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             this.OnKeyPress(e);
+
+			if (onlyNumber)
+			{
+				if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+				{
+					e.Handled = true;
+				}
+			}
         }
 
 		private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -399,7 +415,7 @@ namespace P02_K_CONTROL_WIN
             this.Invalidate();
             SetPlaceholder();
         }
-		///::::+
+		
 		#endregion
 
 		

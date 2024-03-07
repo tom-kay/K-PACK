@@ -69,6 +69,10 @@ namespace P05_Business.Common
 						{
 							(c as CheckBox).Checked = Convert.ToBoolean(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null));
 						}
+						else
+						{
+							c.Text = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null).ToString();
+						}
 
 					}
 				}
@@ -119,7 +123,29 @@ namespace P05_Business.Common
 					{
 						if (c is KTextBox)
 						{
-							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as KTextBox).Texts);
+							Type underlyingType = Nullable.GetUnderlyingType(dto.GetType().GetProperty(c.Tag.ToString()).PropertyType);
+
+							object textValue;
+							if (underlyingType != null)
+							{
+								string text = (c as KTextBox).Texts;
+								int number;
+								bool success = int.TryParse(text, out number);
+								textValue = string.IsNullOrEmpty(text) || !success ? null : (object)number;
+							}
+							else
+							{
+								if (dto.GetType().GetProperty(c.Tag.ToString()).PropertyType == typeof(int))
+								{
+									textValue = Convert.ToInt32((c as KTextBox).Texts);
+								}
+								else
+								{
+									textValue = (c as KTextBox).Texts;
+								}
+							}
+
+							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, textValue);
 						}
 						else if (c is TextBox)
 						{
@@ -140,6 +166,10 @@ namespace P05_Business.Common
 						else if (c is CheckBox)
 						{
 							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as CheckBox).Checked);
+						}
+						else
+						{
+							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, c.Text);
 						}
 
 					}

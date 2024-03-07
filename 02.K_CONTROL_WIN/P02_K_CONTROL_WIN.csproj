@@ -48,6 +48,9 @@
     <Compile Include="KButton.Designer.cs">
       <DependentUpon>KButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="KButtonCalendar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="KCircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -115,6 +118,7 @@
   <ItemGroup>
     <Content Include="Resources\calendarDark.png" />
     <Content Include="Resources\calendarWhite.png" />
+    <None Include="Resources\may_2009_event_calendar_may_2009_event_calendar.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="KButton.resx">

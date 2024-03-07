@@ -48,7 +48,7 @@ namespace P05_Business.Common.Helpers
 
 				cbo.SelectedIndex = 0;
 			}
-			catch (Exception ex)
+			catch
 			{
 				cbo.Items.Clear();
 			}

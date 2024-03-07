@@ -22,21 +22,36 @@ namespace P01_K_DESIGN_WIN.Classes
 		{
 			foreach (Control ctrl in control.Controls)
 			{
-				if (ctrl is TextBox)
+				if (ctrl is KTextBox)
+				{
+					((KTextBox)ctrl).Texts = string.Empty;
+				}
+				else if (ctrl is TextBox)
 				{
 					((TextBox)ctrl).Text = string.Empty;
 				}
-				else if (ctrl is KTextBox)
+				else if (ctrl is KComboBox)
 				{
-					((KTextBox)ctrl).Texts = string.Empty;
+					if (((KComboBox)ctrl).DataSource != null)
+					{
+						((KComboBox)ctrl).SelectedIndex = 0;
+					}
+				}
+				else if (ctrl is MetroCheckBox)
+				{
+					((MetroCheckBox)ctrl).Checked = false;
 				}
 				else if (ctrl is CheckBox)
 				{
 					((CheckBox)ctrl).Checked = false;
 				}
-				else if (ctrl is MetroCheckBox)
+				else if (ctrl is KRadioButton)
 				{
-					((MetroCheckBox)ctrl).Checked = false;
+					((KRadioButton)ctrl).Checked = false;
+				}
+				else if (ctrl is RadioButton)
+				{
+					((RadioButton)ctrl).Checked = false;
 				}
 
 				if (ctrl.Controls.Count > 0)

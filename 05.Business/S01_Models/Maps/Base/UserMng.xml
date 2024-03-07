@@ -110,12 +110,12 @@
 			@JobCode,
 			@TaskCharge,
 			@LoginId,
-			SHA(@LoginPw,512),
+			SHA2(@LoginPw,512),
 			@LoginErrorCnt,
 			@UseYn,
 			'N',
 			@CreateId,
-			@CreateDt)
+			now())
 			ON DUPLICATE KEY UPDATE
 			`UserNameK` = @UserNameK,
 			`UserNameE` = @UserNameE,
