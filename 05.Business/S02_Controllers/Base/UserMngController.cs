@@ -30,9 +30,9 @@ namespace P05_Business.S02_Controllers.Base
 			return result;
 		}
 
-		public int AddUserInfo(UserMngDto user)
+		public string AddUserInfo(UserMngDto user)
 		{
-			int result = dao.InsertUser(user);
+			string result = dao.InsertUser(user);
 
 			return result;
 		}

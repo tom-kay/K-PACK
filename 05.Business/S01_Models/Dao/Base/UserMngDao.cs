@@ -36,9 +36,9 @@ namespace P05_Business.S01_Models.Dao.Base
 			return result;
 		}
 
-		public int InsertUser(UserMngDto item)
+		public string InsertUser(UserMngDto item)
 		{
-			int result;
+			string result;
 
 			RequestContext context = new RequestContext
 			{
@@ -50,7 +50,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			try
 			{
 				SqlMapper.BeginTransaction();
-				result = SqlMapper.Execute(context);
+				result = SqlMapper.ExecuteScalar<string>(context);
 				SqlMapper.CommitTransaction();
 
 			}

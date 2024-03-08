@@ -37,6 +37,7 @@
 					(`DelYn` IS NULL OR `DelYn` != 'Y')
 				</Case>
 			</Switch>
+			ORDER BY `NAME`
 		</Statement>
 
 		<Statement Id="selectCodeMaster">
@@ -78,10 +79,10 @@
 			`Name` = @Name,
 			`Remark` = @Remark,
 			`UseYn` = @UseYn,
-			`UpdateId` = 'SYSTEM'
+			`UpdateId` = 'SYSTEM',
 			`UpdateDt` = now(),
 			`DelYn` = 'N',
-			`DeleteId` = 'SYSTEM'
+			`DeleteId` = 'SYSTEM',
 			`DeleteDt` = null
 			;
 
@@ -153,6 +154,7 @@
 					(CD.`DelYn` IS NULL OR CD.`DelYn` != 'Y')
 				</Case>
 			</Switch>
+			ORDER BY MASTERNAME, `NAME`
 		</Statement>
 
 		<Statement Id="selectCodeDetail">
@@ -225,7 +227,7 @@
 			@Option10,
 			0,
 			@UseYn,
-			@DelYn,
+			'N',
 			@CreateId,
 			now())
 			ON DUPLICATE KEY UPDATE

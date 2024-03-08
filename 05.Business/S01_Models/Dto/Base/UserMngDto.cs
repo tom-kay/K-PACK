@@ -10,6 +10,7 @@ namespace P05_Business.S01_Models.Dto.Base
 	public class UserMngDto : DtoBase
 	{	
         public string UserId { get; set; }
+		public string CompanyNameK { get; set; }
 		[MaxLength(50, ErrorMessage ="[사용자명(한글)]은 최대 50자까지 입력 가능합니다.")]
 		public string UserNameK { get; set; }
 		[MaxLength(50, ErrorMessage = "[사용자명(영문)]은 최대 50자까지 입력 가능합니다.")]
@@ -36,6 +37,7 @@ namespace P05_Business.S01_Models.Dto.Base
 		[Required(ErrorMessage ="[로그인ID]는 필수 항목입니다.")]
 		[MaxLength(50, ErrorMessage = "[로그인ID]는 최대 50자까지 입력 가능합니다.")]
 		public string LoginId { get; set; }
+		[Required(ErrorMessage = "[로그인 비밀번호]는 필수 항목입니다.")]
 		public string LoginPw { get; set; }
 		public int? LoginErrorCnt { get; set; }
 		public string UseYn { get; set; }

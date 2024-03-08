@@ -79,7 +79,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 561);
 			this.Name = "frmUserList";
-			this.Text = "frmUserList";
+			this.Text = "사용자조회";
 			this.pnlClose.ResumeLayout(false);
 			this.pnlSearch.ResumeLayout(false);
 			this.pnlInit.ResumeLayout(false);

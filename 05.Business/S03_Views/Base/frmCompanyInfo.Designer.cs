@@ -161,7 +161,7 @@
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
 			this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
 			this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
@@ -176,8 +176,8 @@
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
 			this.tableLayoutPanel1.RowCount = 1;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 48);
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 49);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// panel1
@@ -186,7 +186,7 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(4, 14);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(94, 30);
+			this.panel1.Size = new System.Drawing.Size(94, 31);
 			this.panel1.TabIndex = 0;
 			// 
 			// label1
@@ -197,7 +197,7 @@
 			this.label1.ForeColor = System.Drawing.Color.White;
 			this.label1.Location = new System.Drawing.Point(0, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(94, 30);
+			this.label1.Size = new System.Drawing.Size(94, 31);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "회사코드";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -210,7 +210,7 @@
 			this.panel2.Margin = new System.Windows.Forms.Padding(0);
 			this.panel2.Name = "panel2";
 			this.panel2.Padding = new System.Windows.Forms.Padding(3);
-			this.panel2.Size = new System.Drawing.Size(198, 36);
+			this.panel2.Size = new System.Drawing.Size(197, 37);
 			this.panel2.TabIndex = 0;
 			// 
 			// txtCompanyCode
@@ -228,11 +228,12 @@
 			this.txtCompanyCode.MaxLength = 4;
 			this.txtCompanyCode.Multiline = false;
 			this.txtCompanyCode.Name = "txtCompanyCode";
+			this.txtCompanyCode.OnlyNumber = false;
 			this.txtCompanyCode.PasswordChar = false;
 			this.txtCompanyCode.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCompanyCode.PlaceholderText = "";
 			this.txtCompanyCode.ReadOnly = false;
-			this.txtCompanyCode.Size = new System.Drawing.Size(186, 22);
+			this.txtCompanyCode.Size = new System.Drawing.Size(185, 22);
 			this.txtCompanyCode.TabIndex = 0;
 			this.txtCompanyCode.Tag = "CompanyCode";
 			this.txtCompanyCode.Texts = "";
@@ -242,9 +243,9 @@
 			// 
 			this.panel3.Controls.Add(this.label2);
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel3.Location = new System.Drawing.Point(304, 14);
+			this.panel3.Location = new System.Drawing.Point(303, 14);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(94, 30);
+			this.panel3.Size = new System.Drawing.Size(94, 31);
 			this.panel3.TabIndex = 2;
 			// 
 			// label2
@@ -255,7 +256,7 @@
 			this.label2.ForeColor = System.Drawing.Color.White;
 			this.label2.Location = new System.Drawing.Point(0, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(94, 30);
+			this.label2.Size = new System.Drawing.Size(94, 31);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "그룹";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -264,11 +265,11 @@
 			// 
 			this.panel4.Controls.Add(this.txtCompanyGroup);
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel4.Location = new System.Drawing.Point(402, 11);
+			this.panel4.Location = new System.Drawing.Point(401, 11);
 			this.panel4.Margin = new System.Windows.Forms.Padding(0);
 			this.panel4.Name = "panel4";
 			this.panel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-			this.panel4.Size = new System.Drawing.Size(198, 36);
+			this.panel4.Size = new System.Drawing.Size(197, 37);
 			this.panel4.TabIndex = 1;
 			// 
 			// txtCompanyGroup
@@ -286,11 +287,12 @@
 			this.txtCompanyGroup.MaxLength = 30;
 			this.txtCompanyGroup.Multiline = false;
 			this.txtCompanyGroup.Name = "txtCompanyGroup";
+			this.txtCompanyGroup.OnlyNumber = false;
 			this.txtCompanyGroup.PasswordChar = false;
 			this.txtCompanyGroup.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCompanyGroup.PlaceholderText = "";
 			this.txtCompanyGroup.ReadOnly = false;
-			this.txtCompanyGroup.Size = new System.Drawing.Size(186, 22);
+			this.txtCompanyGroup.Size = new System.Drawing.Size(185, 22);
 			this.txtCompanyGroup.TabIndex = 0;
 			this.txtCompanyGroup.Tag = "CompanyGroup";
 			this.txtCompanyGroup.Texts = "";
@@ -300,9 +302,9 @@
 			// 
 			this.panel17.Controls.Add(this.label9);
 			this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel17.Location = new System.Drawing.Point(604, 14);
+			this.panel17.Location = new System.Drawing.Point(602, 14);
 			this.panel17.Name = "panel17";
-			this.panel17.Size = new System.Drawing.Size(94, 30);
+			this.panel17.Size = new System.Drawing.Size(94, 31);
 			this.panel17.TabIndex = 4;
 			// 
 			// label9
@@ -313,7 +315,7 @@
 			this.label9.ForeColor = System.Drawing.Color.White;
 			this.label9.Location = new System.Drawing.Point(0, 0);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(94, 30);
+			this.label9.Size = new System.Drawing.Size(94, 31);
 			this.label9.TabIndex = 2;
 			this.label9.Text = "국적";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -322,11 +324,11 @@
 			// 
 			this.panel18.Controls.Add(this.cboNationality);
 			this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel18.Location = new System.Drawing.Point(702, 11);
+			this.panel18.Location = new System.Drawing.Point(700, 11);
 			this.panel18.Margin = new System.Windows.Forms.Padding(0);
 			this.panel18.Name = "panel18";
 			this.panel18.Padding = new System.Windows.Forms.Padding(3);
-			this.panel18.Size = new System.Drawing.Size(198, 36);
+			this.panel18.Size = new System.Drawing.Size(197, 37);
 			this.panel18.TabIndex = 2;
 			// 
 			// cboNationality
@@ -344,7 +346,7 @@
 			this.cboNationality.Location = new System.Drawing.Point(3, 3);
 			this.cboNationality.Name = "cboNationality";
 			this.cboNationality.Padding = new System.Windows.Forms.Padding(1);
-			this.cboNationality.Size = new System.Drawing.Size(192, 30);
+			this.cboNationality.Size = new System.Drawing.Size(191, 31);
 			this.cboNationality.TabIndex = 0;
 			this.cboNationality.Tag = "Nationality";
 			this.cboNationality.Texts = "";
@@ -353,9 +355,9 @@
 			// 
 			this.panel23.Controls.Add(this.label12);
 			this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel23.Location = new System.Drawing.Point(904, 14);
+			this.panel23.Location = new System.Drawing.Point(901, 14);
 			this.panel23.Name = "panel23";
-			this.panel23.Size = new System.Drawing.Size(44, 30);
+			this.panel23.Size = new System.Drawing.Size(44, 31);
 			this.panel23.TabIndex = 5;
 			// 
 			// label12
@@ -366,7 +368,7 @@
 			this.label12.ForeColor = System.Drawing.Color.White;
 			this.label12.Location = new System.Drawing.Point(0, 0);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(44, 30);
+			this.label12.Size = new System.Drawing.Size(44, 31);
 			this.label12.TabIndex = 3;
 			this.label12.Text = "본사";
 			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -375,10 +377,10 @@
 			// 
 			this.panel24.Controls.Add(this.tglHeadOffice);
 			this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel24.Location = new System.Drawing.Point(952, 11);
+			this.panel24.Location = new System.Drawing.Point(949, 11);
 			this.panel24.Margin = new System.Windows.Forms.Padding(0);
 			this.panel24.Name = "panel24";
-			this.panel24.Size = new System.Drawing.Size(55, 36);
+			this.panel24.Size = new System.Drawing.Size(58, 37);
 			this.panel24.TabIndex = 6;
 			// 
 			// tglHeadOffice
@@ -422,7 +424,7 @@
 			this.tableLayoutPanel2.Controls.Add(this.panel21, 2, 1);
 			this.tableLayoutPanel2.Controls.Add(this.panel22, 3, 1);
 			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 58);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 59);
 			this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
 			this.tableLayoutPanel2.RowCount = 6;
@@ -484,6 +486,7 @@
 			this.txtCompanyNameK.MaxLength = 32767;
 			this.txtCompanyNameK.Multiline = false;
 			this.txtCompanyNameK.Name = "txtCompanyNameK";
+			this.txtCompanyNameK.OnlyNumber = false;
 			this.txtCompanyNameK.PasswordChar = false;
 			this.txtCompanyNameK.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCompanyNameK.PlaceholderText = "";
@@ -542,6 +545,7 @@
 			this.txtCompanyNameE.MaxLength = 32767;
 			this.txtCompanyNameE.Multiline = false;
 			this.txtCompanyNameE.Name = "txtCompanyNameE";
+			this.txtCompanyNameE.OnlyNumber = false;
 			this.txtCompanyNameE.PasswordChar = false;
 			this.txtCompanyNameE.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCompanyNameE.PlaceholderText = "";
@@ -601,6 +605,7 @@
 			this.txtAddressK1.MaxLength = 32767;
 			this.txtAddressK1.Multiline = false;
 			this.txtAddressK1.Name = "txtAddressK1";
+			this.txtAddressK1.OnlyNumber = false;
 			this.txtAddressK1.PasswordChar = false;
 			this.txtAddressK1.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtAddressK1.PlaceholderText = "";
@@ -660,6 +665,7 @@
 			this.txtAddressK2.MaxLength = 32767;
 			this.txtAddressK2.Multiline = false;
 			this.txtAddressK2.Name = "txtAddressK2";
+			this.txtAddressK2.OnlyNumber = false;
 			this.txtAddressK2.PasswordChar = false;
 			this.txtAddressK2.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtAddressK2.PlaceholderText = "";
@@ -719,6 +725,7 @@
 			this.txtAddressE1.MaxLength = 32767;
 			this.txtAddressE1.Multiline = false;
 			this.txtAddressE1.Name = "txtAddressE1";
+			this.txtAddressE1.OnlyNumber = false;
 			this.txtAddressE1.PasswordChar = false;
 			this.txtAddressE1.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtAddressE1.PlaceholderText = "";
@@ -778,6 +785,7 @@
 			this.txtAddressE2.MaxLength = 32767;
 			this.txtAddressE2.Multiline = false;
 			this.txtAddressE2.Name = "txtAddressE2";
+			this.txtAddressE2.OnlyNumber = false;
 			this.txtAddressE2.PasswordChar = false;
 			this.txtAddressE2.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtAddressE2.PlaceholderText = "";
@@ -836,6 +844,7 @@
 			this.txtTelNo.MaxLength = 30;
 			this.txtTelNo.Multiline = false;
 			this.txtTelNo.Name = "txtTelNo";
+			this.txtTelNo.OnlyNumber = false;
 			this.txtTelNo.PasswordChar = false;
 			this.txtTelNo.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtTelNo.PlaceholderText = "";
@@ -894,6 +903,7 @@
 			this.txtFaxNo.MaxLength = 30;
 			this.txtFaxNo.Multiline = false;
 			this.txtFaxNo.Name = "txtFaxNo";
+			this.txtFaxNo.OnlyNumber = false;
 			this.txtFaxNo.PasswordChar = false;
 			this.txtFaxNo.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtFaxNo.PlaceholderText = "";
@@ -910,7 +920,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Name = "frmCompanyInfo";
-			this.Text = "frmCompanyInfo";
+			this.Text = "회사정보";
 			this.Load += new System.EventHandler(this.frmCompanyInfo_Load);
 			this.pnlMain.ResumeLayout(false);
 			this.pnlBody.ResumeLayout(false);

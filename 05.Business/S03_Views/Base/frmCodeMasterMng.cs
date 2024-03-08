@@ -175,6 +175,7 @@ namespace P05_Business.S03_Views.Base
 
 			if (dto != null)
 			{
+				txtCode.Enabled = false;
 				InitDto();
 
 				MainMessage.Show("저장되었습니다.");

@@ -9,6 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
+using System.Xml.XPath;
 
 namespace P05_Business.S03_Views.Base
 {
@@ -56,7 +57,7 @@ namespace P05_Business.S03_Views.Base
 		private void btnSearch_Click(object sender, EventArgs e)
 		{
 			try
-			{
+			{	
 				//회사코드
 				if (string.IsNullOrEmpty(txtUserId.Texts))
 				{
@@ -78,7 +79,7 @@ namespace P05_Business.S03_Views.Base
 			try
 			{
 				bool isVal = ValidationData();
-				isVal = true;
+				
 				if (isVal)
 				{
 					if (KMessageBox.Show("저장하시겠습니까?", "저장", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -137,10 +138,10 @@ namespace P05_Business.S03_Views.Base
 		private void InitCombo()
 		{
 			ComboHelper.InitComboBox(cboNationality, "NATIONALITY", false, true);	//국적
-			ComboHelper.InitComboBox(cboDepartment, "NATIONALITY", false, true);	//부서목록
-			ComboHelper.InitComboBox(cboTeam, "NATIONALITY", false, true);			//팀목록
-			ComboHelper.InitComboBox(cboPosition, "NATIONALITY", false, true);		//직위목록
-			ComboHelper.InitComboBox(cboJob, "NATIONALITY", false, true);			//직책목록
+			ComboHelper.InitComboBox(cboDepartment, "DEPARTMENT", false, true);	//부서목록
+			ComboHelper.InitComboBox(cboTeam, "TEAM", false, true);			//팀목록
+			ComboHelper.InitComboBox(cboPosition, "POSITION", false, true);		//직위목록
+			ComboHelper.InitComboBox(cboJob, "JOBTYPE", false, true);			//직책목록
 
 		}
 
@@ -246,10 +247,14 @@ namespace P05_Business.S03_Views.Base
 			var context = new ValidationContext(param, serviceProvider: null, items: null);
 			Validator.ValidateObject(param, context, validateAllProperties: true);
 
-			int result = ctrl.AddUserInfo(param);
+			string result = ctrl.AddUserInfo(param);
 
-			if (result >= 0)
+			if (!string.IsNullOrEmpty(result))
 			{
+				txtUserId.Texts = result;
+
+				SearchData();
+
 				InitDto();
 
 				MainMessage.Show("저장되었습니다.");

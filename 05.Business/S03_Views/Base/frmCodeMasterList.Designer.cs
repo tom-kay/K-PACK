@@ -175,8 +175,10 @@
 			this.txtCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtCode.Location = new System.Drawing.Point(3, 3);
+			this.txtCode.MaxLength = 32767;
 			this.txtCode.Multiline = false;
 			this.txtCode.Name = "txtCode";
+			this.txtCode.OnlyNumber = false;
 			this.txtCode.PasswordChar = false;
 			this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCode.PlaceholderText = "";
@@ -268,8 +270,10 @@
 			this.txtName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtName.Location = new System.Drawing.Point(3, 3);
+			this.txtName.MaxLength = 32767;
 			this.txtName.Multiline = false;
 			this.txtName.Name = "txtName";
+			this.txtName.OnlyNumber = false;
 			this.txtName.PasswordChar = false;
 			this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtName.PlaceholderText = "";
@@ -441,6 +445,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Name = "frmCodeMasterList";
+			this.Text = "코드마스터조회";
 			this.pnlClose.ResumeLayout(false);
 			this.pnlSearch.ResumeLayout(false);
 			this.pnlInit.ResumeLayout(false);

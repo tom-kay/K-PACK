@@ -221,6 +221,7 @@
 			this.txtName.MaxLength = 32767;
 			this.txtName.Multiline = false;
 			this.txtName.Name = "txtName";
+			this.txtName.OnlyNumber = false;
 			this.txtName.PasswordChar = false;
 			this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtName.PlaceholderText = "";
@@ -279,6 +280,7 @@
 			this.txtCode.MaxLength = 32767;
 			this.txtCode.Multiline = false;
 			this.txtCode.Name = "txtCode";
+			this.txtCode.OnlyNumber = false;
 			this.txtCode.PasswordChar = false;
 			this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCode.PlaceholderText = "";
@@ -359,6 +361,7 @@
 			this.txtRemark.MaxLength = 32767;
 			this.txtRemark.Multiline = false;
 			this.txtRemark.Name = "txtRemark";
+			this.txtRemark.OnlyNumber = false;
 			this.txtRemark.PasswordChar = false;
 			this.txtRemark.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtRemark.PlaceholderText = "";
@@ -374,7 +377,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Name = "frmCodeMasterMng";
-			this.Text = "코드관리";
+			this.Text = "코드마스터관리";
 			this.Load += new System.EventHandler(this.frmCodeMasterMng_Load);
 			this.pnlMain.ResumeLayout(false);
 			this.pnlBody.ResumeLayout(false);

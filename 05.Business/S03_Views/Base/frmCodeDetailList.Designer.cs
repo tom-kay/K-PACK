@@ -329,8 +329,10 @@
 			this.txtName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtName.Location = new System.Drawing.Point(3, 3);
+			this.txtName.MaxLength = 32767;
 			this.txtName.Multiline = false;
 			this.txtName.Name = "txtName";
+			this.txtName.OnlyNumber = false;
 			this.txtName.PasswordChar = false;
 			this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtName.PlaceholderText = "";
@@ -381,8 +383,10 @@
 			this.txtCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtCode.Location = new System.Drawing.Point(3, 3);
+			this.txtCode.MaxLength = 32767;
 			this.txtCode.Multiline = false;
 			this.txtCode.Name = "txtCode";
+			this.txtCode.OnlyNumber = false;
 			this.txtCode.PasswordChar = false;
 			this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCode.PlaceholderText = "";
@@ -446,8 +450,10 @@
 			this.txtMasterName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtMasterName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtMasterName.Location = new System.Drawing.Point(3, 3);
+			this.txtMasterName.MaxLength = 32767;
 			this.txtMasterName.Multiline = false;
 			this.txtMasterName.Name = "txtMasterName";
+			this.txtMasterName.OnlyNumber = false;
 			this.txtMasterName.PasswordChar = false;
 			this.txtMasterName.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtMasterName.PlaceholderText = "";
@@ -503,8 +509,10 @@
 			this.txtMasterCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtMasterCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtMasterCode.Location = new System.Drawing.Point(3, 3);
+			this.txtMasterCode.MaxLength = 32767;
 			this.txtMasterCode.Multiline = false;
 			this.txtMasterCode.Name = "txtMasterCode";
+			this.txtMasterCode.OnlyNumber = false;
 			this.txtMasterCode.PasswordChar = false;
 			this.txtMasterCode.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtMasterCode.PlaceholderText = "";
@@ -542,6 +550,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.ClientSize = new System.Drawing.Size(1008, 729);
 			this.Name = "frmCodeDetailList";
+			this.Text = "코드상세조회";
 			this.pnlClose.ResumeLayout(false);
 			this.pnlSearch.ResumeLayout(false);
 			this.pnlInit.ResumeLayout(false);

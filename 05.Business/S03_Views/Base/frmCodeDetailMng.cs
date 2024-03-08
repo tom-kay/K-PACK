@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -44,8 +45,7 @@ namespace P05_Business.S03_Views.Base
         #region Control Events
 
         private void frmCodeDetailMng_Load(object sender, EventArgs e)
-		{
-			//LinkModelControls(this, dto);
+		{	
 			if (IS_LINK_OPEN) SearchData();
 		}
 		
@@ -280,6 +280,7 @@ namespace P05_Business.S03_Views.Base
 
 			if (dto != null)
 			{
+				txtCode.Enabled = false;
 				InitDto();
 
 				MainMessage.Show("저장되었습니다.");
