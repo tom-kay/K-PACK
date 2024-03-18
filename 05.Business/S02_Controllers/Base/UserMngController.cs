@@ -43,5 +43,12 @@ namespace P05_Business.S02_Controllers.Base
 
 			return result;
 		}
+
+		public UserMngDto signInUser(UserMngDto user)
+		{
+			UserMngDto result = dao.SignInUser(user);
+
+			return result;
+		}
 	}
 }

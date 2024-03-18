@@ -88,5 +88,18 @@ namespace P05_Business.S01_Models.Dao.Base
 
 			return result;
 		}
+
+		public UserMngDto SignInUser(UserMngDto item)
+		{
+			RequestContext context = new RequestContext
+			{
+				Scope = "Base.UserMng",
+				SqlId = "signInUser",
+				Request = item
+			};
+			UserMngDto result = SqlMapper.QuerySingle<UserMngDto>(context);
+
+			return result;
+		}
 	}
 }

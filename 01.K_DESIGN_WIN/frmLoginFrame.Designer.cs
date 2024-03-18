@@ -329,10 +329,12 @@
 			this.Controls.Add(this.pnlBody);
 			this.Controls.Add(this.pnlLogo);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.KeyPreview = true;
 			this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.Name = "frmLoginFrame";
 			this.Opacity = 0.9D;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLoginFrame_KeyDown);
 			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MoveWindow);
 			this.pnlLogo.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();

@@ -16,7 +16,7 @@ namespace P01_K_DESIGN_WIN
 		private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
 		//private Random random;
-		private int tempIndex;
+		//private int tempIndex;
 		
 		private int tolerance = 12;
 		private const int WM_NCHITTEST = 132;

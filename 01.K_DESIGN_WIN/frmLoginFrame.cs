@@ -89,5 +89,12 @@ namespace P01_K_DESIGN_WIN
 
         }
 
-    }
+		private void frmLoginFrame_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				SendKeys.Send("{TAB}");
+			}
+		}
+	}
 }
