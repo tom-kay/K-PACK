@@ -10,6 +10,8 @@ namespace P05_Business.S01_Models.Dto.Base
 		[Required(ErrorMessage ="[국적]은 필수 입니다.")]
         public string Nationality { get; set; }
 
+        public string NationalityName { get; set; }
+
         public bool? HeadOffice { get; set; }
 
         [MaxLength(255, ErrorMessage = "[회사명(한글)]은 최대 255 자리입니다.")]

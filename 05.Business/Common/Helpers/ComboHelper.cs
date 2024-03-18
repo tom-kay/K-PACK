@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace P05_Business.Common.Helpers
 {
@@ -45,6 +46,48 @@ namespace P05_Business.Common.Helpers
 				cbo.DataSource = items;
 				cbo.ValueMember = "Code";
 				cbo.DisplayMember = "Name";
+
+				cbo.SelectedIndex = 0;
+			}
+			catch
+			{
+				cbo.Items.Clear();
+			}
+		}
+
+		/// <summary>
+		/// 회사정보 콤보박스 초기 설정
+		/// </summary>
+		/// <param name="cbo"></param>
+		/// <param name="delYn"></param>
+		/// <param name="allItem"></param>
+		/// <param name="blankItem"></param>
+		public static void InitComboBoxCompany(ComboBox cbo, string delYn, bool allItem = false, bool blankItem = false)
+		{
+			try
+			{
+				cbo.Items.Clear();
+
+				CompanyInfoDto param = new CompanyInfoDto()
+				{
+					DelYn = delYn
+				};
+
+				List<CompanyInfoDto> items = new CompanyMngController().GetCompanyInfoList(param);
+
+				if (allItem)
+				{
+					items.Insert(0, new CompanyInfoDto() { CompanyCode = "", CompanyGroup = "전체" });
+				}
+
+				if (blankItem)
+				{
+					items.Insert(0, new CompanyInfoDto() { CompanyCode = "", CompanyGroup = "" });
+				}
+
+				cbo.DataSource = items;
+				cbo.ValueMember = "CompanyCode";
+				cbo.DisplayMember = "CompanyGroup";
 
 				cbo.SelectedIndex = 0;
 			}

@@ -12,29 +12,77 @@
 		</Statement>
 
 		<Statement Id="selectUserList">
-			SELECT `UserId`,
-			`CompanyCode`,
-			`UserNameK`,
-			`UserNameE`,
-			`Nationality`,
-			`TelNo1`,
-			`TelNo2`,
-			`Email`,
-			`Address1`,
-			`Address2`,
-			`EnterDt`,
-			`LeaveDt`,
-			`DepartmentCode`,
-			`TeamCode`,
-			`PositionCode`,
-			`JobCode`,
-			`TaskCharge`,
-			`LoginId`,
-			`LoginErrorCnt`,
-			`UseYn`
+			SELECT user.`UserId`,
+			user.`CompanyCode`,
+			com.`CompanyNameK`,
+			user.`UserNameK`,
+			user.`UserNameE`,
+			user.`Nationality`,
+			user.`TelNo1`,
+			user.`TelNo2`,
+			user.`Email`,
+			user.`Address1`,
+			user.`Address2`,
+			user.`EnterDt`,
+			user.`LeaveDt`,
+			user.`DepartmentCode`,
+			user.`TeamCode`,
+			user.`PositionCode`,
+			user.`JobCode`,
+			user.`TaskCharge`,
+			user.`LoginId`,
+			user.`LoginErrorCnt`,
+			user.`UseYn`,
+			dept.`Name` AS DepartmentName,
+			team.`Name` AS TeamName,
+			pos.`Name` AS PositionName,
+			job.`Name` AS JobName
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `tb_user` AS user
-			WHERE `CompanyCode` = @CompanyCode;
+			JOIN `tb_company` AS com
+			ON user.CompanyCode = com.CompanyCode
+			LEFT JOIN tb_codedetail AS dept
+			ON dept.MasterCode = 'DEPARTMENT'
+			AND dept.`Code` = `user`.`DepartmentCode`
+			LEFT JOIN tb_codedetail AS team
+			ON team.MasterCode = 'TEAM'
+			AND team.`Code` = `user`.`TeamCode`
+			LEFT JOIN tb_codedetail AS pos
+			ON pos.MasterCode = 'POSITION'
+			AND pos.`Code` = `user`.`PositionCode`
+			LEFT JOIN tb_codedetail AS job
+			ON job.MasterCode = 'JOBTYPE'
+			AND job.`Code` = `user`.`JobCode`
+			WHERE 1=1
+			<IsNotEmpty Prepend="And" Property="CompanyCode">
+				user.`CompanyCode` = @CompanyCode
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="LoginId">
+				user.`LoginId` Like Concat('%', @LoginId,'%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="UserNameK">
+				user.`UserNameK` Like Concat('%', @UserNameK,'%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="DepartmentCode">
+				user.`DepartmentCode` = @DepartmentCode
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="TeamCode">
+				user.`TeamCode` = @TeamCode
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="PositionCode">
+				user.`PositionCode` = @PositionCode
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="JobCode">
+				user.`JobCode` = @JobCode
+			</IsNotEmpty>
+			<Switch Prepend="And" Property="UseYn">
+				<Case CompareValue="Y">
+					user.`UseYn` IS NOT NULL AND user.`UseYn` = 'Y'
+				</Case>
+				<Case CompareValue="N">
+					(user.`UseYn` IS NULL OR user.`UseYn` != 'Y')
+				</Case>
+			</Switch>
 		</Statement>
 
 		<Statement Id="selectUser">
@@ -61,9 +109,12 @@
 			company.CompanyNameK
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `tb_user` AS user
-				JOIN `tb_company` AS company
-				ON user.CompanyCode = company.CompanyCode
-			WHERE `UserId` = @UserId;
+			JOIN `tb_company` AS company
+			ON user.CompanyCode = company.CompanyCode
+			WHERE `UserId` = @UserId
+			<IsNotEmpty Prepend="And" Property="CompanyCode">
+				user.`CompanyCode` = @CompanyCode
+			</IsNotEmpty>
 		</Statement>
 
 		<Statement Id="insertUser">

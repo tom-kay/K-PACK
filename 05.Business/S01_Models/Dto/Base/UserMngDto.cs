@@ -29,9 +29,13 @@ namespace P05_Business.S01_Models.Dto.Base
 		public string EnterDt { get; set; }
 		public string LeaveDt { get; set; }
 		public string DepartmentCode { get; set; }
-		public string TeamCode { get; set; }
-		public string PositionCode { get; set; }
+        public string DepartmentName { get; set; }
+        public string TeamCode { get; set; }
+        public string TeamName { get; set; }
+        public string PositionCode { get; set; }
+		public string PositionName { get; set; }
 		public string JobCode { get; set; }
+		public string JobName { get; set; }
 		[MaxLength(255, ErrorMessage = "[담당업무]은 최대 255자까지 입력 가능합니다.")]
 		public string TaskCharge { get; set; }
 		[Required(ErrorMessage ="[로그인ID]는 필수 항목입니다.")]

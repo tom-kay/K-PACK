@@ -33,6 +33,13 @@ namespace P05_Business.S03_Views.Base
 			InitDto();
 			
 		}
+
+		public frmUserMng(string userId) : this()
+		{
+			IS_LINK_OPEN = true;
+
+			txtUserId.Texts = userId;
+		}
 		
 		#endregion Constructor
 
@@ -40,6 +47,8 @@ namespace P05_Business.S03_Views.Base
 		private void frmUserMng_Load(object sender, EventArgs e)
 		{
 			InitCombo();
+
+			if (IS_LINK_OPEN) SearchData();
 		}
 
 		private void btnInit_Click(object sender, EventArgs e)

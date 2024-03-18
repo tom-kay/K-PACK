@@ -1,5 +1,6 @@
 ﻿using P01_K_DESIGN_WIN;
 using P05_Business.Common;
+using P05_Business.Common.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,9 +23,19 @@ namespace P05_Business
 
 		}
 
-        private void btnlogin_Click(object sender, EventArgs e)
+		private void frmLogin_Load(object sender, EventArgs e)
+		{
+			ComboHelper.InitComboBoxCompany(cboCompany, "N", false, false);
+		}
+
+		private void btnlogin_Click(object sender, EventArgs e)
         {
+			//
+
+
             this.Close();
         }
-    }
+
+		
+	}
 }
