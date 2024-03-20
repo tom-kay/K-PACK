@@ -30,6 +30,9 @@ namespace P05_Business
 		private void frmLogin_Load(object sender, EventArgs e)
 		{
 			ComboHelper.InitComboBoxCompany(cboCompany, "N", false, false);
+
+			txtUser.Text = "superadmin";
+			txtPass.Text = "admin";
 		}
 
 		private void btnlogin_Click(object sender, EventArgs e)

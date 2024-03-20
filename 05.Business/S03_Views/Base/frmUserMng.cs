@@ -70,7 +70,7 @@ namespace P05_Business.S03_Views.Base
 				//회사코드
 				if (string.IsNullOrEmpty(txtUserId.Texts))
 				{
-					KMessageBox.Show("[로그인 ID]를 입력 바랍니다.", "조회", MessageBoxButtons.OK);
+					KMessageBox.Show("[USER ID]를 입력 바랍니다.", "조회", MessageBoxButtons.OK);
 					txtLoginId.Focus();
 					return;
 				}

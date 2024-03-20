@@ -29,7 +29,7 @@ namespace P01_K_DESIGN_WIN
 		{
 			InitializeComponent();
 			//random = new Random();
-			btnCloseChildForm.Visible = false;
+			//btnCloseChildForm.Visible = false;
 			//this.Text = string.Empty;
 			this.ControlBox = false;
 			this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
@@ -39,7 +39,7 @@ namespace P01_K_DESIGN_WIN
 
 			tabMenuForm.TabPages.Clear();   // 모든 메뉴탭 지우기
 
-			SetTimeZone();	//타임존 설정
+			SetTimeZone();  //타임존 설정
 		}
 
 		/// <summary>
@@ -148,7 +148,7 @@ namespace P01_K_DESIGN_WIN
 			childForm.BringToFront();
 			childForm.Show();
 
-			btnCloseChildForm.Visible = true;
+			//btnCloseChildForm.Visible = true;
 		}
 
 		private TabPage CreateMenuTab(Form childForm)
@@ -222,7 +222,20 @@ namespace P01_K_DESIGN_WIN
 
 		private void btnCloseChildForm_Click(object sender, EventArgs e)
 		{
-			CloseChildForm();
+			//CloseChildForm();
+			if (KMessageBox.Show("로그아웃 하시겠습니까?", "로그아웃", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
+				//열려있는 서브폼 닫기
+				int pagesCount = tabMenuForm.TabPages.Count;
+				for (int i = 0; i < pagesCount; i++)
+				{
+					tabMenuForm.SelectedIndex = i;
+					CloseChildForm();
+				}
+
+				if (tabMenuForm.TabPages.Count == 0)
+					Application.Restart();
+			}
 		}
 
 		public void CloseChildForm()
@@ -241,8 +254,8 @@ namespace P01_K_DESIGN_WIN
 				}
 			}
 
-			if (Application.OpenForms.Count < 2)
-				Reset();
+			//if (Application.OpenForms.Count < 2)
+			//	Reset();
 		}
 
 		private void Reset()
@@ -251,7 +264,7 @@ namespace P01_K_DESIGN_WIN
 			//panelSubMenuBar.BackColor = Color.FromArgb(51, 60, 77);
 			//panelLogo.BackColor = Color.FromArgb(51, 60, 77);
 			
-			btnCloseChildForm.Visible = false;
+			//btnCloseChildForm.Visible = false;
 		}
 		private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
 		{

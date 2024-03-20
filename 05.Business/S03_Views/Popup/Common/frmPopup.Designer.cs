@@ -30,7 +30,15 @@
         {
 			this.pnlContainer.SuspendLayout();
 			this.pnlTitleBar.SuspendLayout();
+			this.pnlPopupButtonBar.SuspendLayout();
+			this.pnlButtons.SuspendLayout();
+			this.pnlInit.SuspendLayout();
+			this.pnlSearch.SuspendLayout();
 			this.SuspendLayout();
+			// 
+			// pnlPopupOptional
+			// 
+			this.pnlPopupOptional.Size = new System.Drawing.Size(819, 100);
 			// 
 			// pnlContainer
 			// 
@@ -39,7 +47,7 @@
 			// pnlTitleBar
 			// 
 			this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-			this.pnlTitleBar.Size = new System.Drawing.Size(819, 50);
+			this.pnlTitleBar.Size = new System.Drawing.Size(819, 35);
 			// 
 			// btnClose
 			// 
@@ -51,6 +59,30 @@
 			this.btnMinimize.FlatAppearance.BorderSize = 0;
 			this.btnMinimize.Location = new System.Drawing.Point(719, 0);
 			// 
+			// pnlBody
+			// 
+			this.pnlBody.Size = new System.Drawing.Size(819, 345);
+			// 
+			// lblPopupTitle
+			// 
+			this.lblPopupTitle.Size = new System.Drawing.Size(719, 35);
+			// 
+			// pnlPopupButtonBar
+			// 
+			this.pnlPopupButtonBar.Size = new System.Drawing.Size(819, 35);
+			// 
+			// pnlButtons
+			// 
+			this.pnlButtons.Location = new System.Drawing.Point(585, 0);
+			// 
+			// btnInit
+			// 
+			this.btnInit.FlatAppearance.BorderSize = 0;
+			// 
+			// btnSearch
+			// 
+			this.btnSearch.FlatAppearance.BorderSize = 0;
+			// 
 			// frmPopup
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -59,6 +91,10 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.pnlContainer.ResumeLayout(false);
 			this.pnlTitleBar.ResumeLayout(false);
+			this.pnlPopupButtonBar.ResumeLayout(false);
+			this.pnlButtons.ResumeLayout(false);
+			this.pnlInit.ResumeLayout(false);
+			this.pnlSearch.ResumeLayout(false);
 			this.ResumeLayout(false);
 
         }

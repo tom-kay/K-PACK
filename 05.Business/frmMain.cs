@@ -122,5 +122,10 @@ namespace P05_Business
 		{
 			base.LinkOpenMenu(form);
 		}
+
+		private void btnUserSetting_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

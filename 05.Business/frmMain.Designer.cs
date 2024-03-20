@@ -31,18 +31,18 @@ namespace P05_Business
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("노드2");
-			System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("노드4");
-			System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("노드6");
-			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("노드5", new System.Windows.Forms.TreeNode[] {
-            treeNode10});
-			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("노드3", new System.Windows.Forms.TreeNode[] {
-            treeNode9,
-            treeNode11});
-			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("노드0", new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode12});
-			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("노드1");
+			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("노드2");
+			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("노드4");
+			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("노드6");
+			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("노드5", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
+			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("노드3", new System.Windows.Forms.TreeNode[] {
+            treeNode2,
+            treeNode4});
+			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("노드0", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode5});
+			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("노드1");
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
 			this.trvMenu = new System.Windows.Forms.TreeView();
 			this.imgIconList = new System.Windows.Forms.ImageList(this.components);
@@ -61,6 +61,10 @@ namespace P05_Business
 			this.pnlBody.SuspendLayout();
 			this.pnlDesktop.SuspendLayout();
 			this.panel1.SuspendLayout();
+			this.panelSubMenuBarBody.SuspendLayout();
+			this.panelSubMenuBarBottom.SuspendLayout();
+			this.panelUserSetting.SuspendLayout();
+			this.panelLogout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -80,22 +84,16 @@ namespace P05_Business
 			// 
 			this.panelLogo.Controls.Add(this.picLogo);
 			// 
-			// panelSubMenuBar
-			// 
-			this.panelSubMenuBar.Controls.Add(this.trvMenu);
-			this.panelSubMenuBar.Controls.SetChildIndex(this.btnCloseChildForm, 0);
-			this.panelSubMenuBar.Controls.SetChildIndex(this.trvMenu, 0);
-			// 
 			// lblTime
 			// 
 			this.lblTime.Location = new System.Drawing.Point(693, 4);
-			this.lblTime.Text = "13:37:55";
+			this.lblTime.Text = "16:36:32";
 			// 
 			// lblDate
 			// 
 			this.lblDate.Location = new System.Drawing.Point(520, 4);
 			this.lblDate.Size = new System.Drawing.Size(156, 20);
-			this.lblDate.Text = "2024년 2월 21일 수요일";
+			this.lblDate.Text = "2024년 3월 20일 수요일";
 			// 
 			// btnMaximum
 			// 
@@ -104,6 +102,15 @@ namespace P05_Business
 			// btnCloseChildForm
 			// 
 			this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
+			// 
+			// panelSubMenuBarBody
+			// 
+			this.panelSubMenuBarBody.Controls.Add(this.trvMenu);
+			// 
+			// btnUserSetting
+			// 
+			this.btnUserSetting.FlatAppearance.BorderSize = 0;
+			this.btnUserSetting.Click += new System.EventHandler(this.btnUserSetting_Click);
 			// 
 			// trvMenu
 			// 
@@ -117,30 +124,30 @@ namespace P05_Business
 			this.trvMenu.ImageList = this.imgIconList;
 			this.trvMenu.Location = new System.Drawing.Point(0, 0);
 			this.trvMenu.Name = "trvMenu";
-			treeNode8.Name = "노드2";
-			treeNode8.Text = "노드2";
-			treeNode9.Name = "노드4";
-			treeNode9.Text = "노드4";
-			treeNode10.Name = "노드6";
-			treeNode10.Text = "노드6";
-			treeNode11.Name = "노드5";
-			treeNode11.Text = "노드5";
-			treeNode12.Name = "노드3";
-			treeNode12.Text = "노드3";
-			treeNode13.ImageKey = "(기본값)";
-			treeNode13.Name = "노드0";
-			treeNode13.SelectedImageKey = "(기본값)";
-			treeNode13.Text = "노드0";
-			treeNode14.Name = "노드1";
-			treeNode14.Text = "노드1";
+			treeNode1.Name = "노드2";
+			treeNode1.Text = "노드2";
+			treeNode2.Name = "노드4";
+			treeNode2.Text = "노드4";
+			treeNode3.Name = "노드6";
+			treeNode3.Text = "노드6";
+			treeNode4.Name = "노드5";
+			treeNode4.Text = "노드5";
+			treeNode5.Name = "노드3";
+			treeNode5.Text = "노드3";
+			treeNode6.ImageKey = "(기본값)";
+			treeNode6.Name = "노드0";
+			treeNode6.SelectedImageKey = "(기본값)";
+			treeNode6.Text = "노드0";
+			treeNode7.Name = "노드1";
+			treeNode7.Text = "노드1";
 			this.trvMenu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode13,
-            treeNode14});
+            treeNode6,
+            treeNode7});
 			this.trvMenu.SelectedImageKey = "folder_folder.png";
 			this.trvMenu.ShowLines = false;
 			this.trvMenu.ShowPlusMinus = false;
 			this.trvMenu.ShowRootLines = false;
-			this.trvMenu.Size = new System.Drawing.Size(200, 664);
+			this.trvMenu.Size = new System.Drawing.Size(200, 644);
 			this.trvMenu.TabIndex = 9;
 			this.trvMenu.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.trvMenu_AfterCollapse);
 			this.trvMenu.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.trvMenu_AfterExpand);
@@ -192,6 +199,12 @@ namespace P05_Business
 			this.pnlBody.ResumeLayout(false);
 			this.pnlDesktop.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
+			this.panelSubMenuBarBody.ResumeLayout(false);
+			this.panelSubMenuBarBottom.ResumeLayout(false);
+			this.panelSubMenuBarBottom.PerformLayout();
+			this.panelUserSetting.ResumeLayout(false);
+			this.panelLogout.ResumeLayout(false);
+			this.panelLogout.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
 			this.ResumeLayout(false);
 

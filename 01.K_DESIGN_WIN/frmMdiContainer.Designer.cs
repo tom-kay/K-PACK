@@ -31,6 +31,7 @@ namespace P01_K_DESIGN_WIN
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMdiContainer));
 			this.pnlMainContainer = new System.Windows.Forms.Panel();
 			this.pnlBody = new System.Windows.Forms.Panel();
@@ -46,7 +47,13 @@ namespace P01_K_DESIGN_WIN
 			this.lblTime = new System.Windows.Forms.Label();
 			this.splMenu = new System.Windows.Forms.Splitter();
 			this.panelSubMenuBar = new System.Windows.Forms.Panel();
+			this.panelSubMenuBarBody = new System.Windows.Forms.Panel();
+			this.panelSubMenuBarBottom = new System.Windows.Forms.Panel();
+			this.panelUserSetting = new System.Windows.Forms.Panel();
+			this.btnUserSetting = new System.Windows.Forms.Button();
+			this.panelLogout = new System.Windows.Forms.Panel();
 			this.btnCloseChildForm = new System.Windows.Forms.Button();
+			this.panelSubMenuBarTop = new System.Windows.Forms.Panel();
 			this.pnlHeader = new System.Windows.Forms.Panel();
 			this.panelTopMenuBar = new System.Windows.Forms.Panel();
 			this.lblTopMenuCaption = new System.Windows.Forms.Label();
@@ -56,7 +63,8 @@ namespace P01_K_DESIGN_WIN
 			this.btnNormal = new System.Windows.Forms.PictureBox();
 			this.btnMinimum = new System.Windows.Forms.PictureBox();
 			this.panelLogo = new System.Windows.Forms.Panel();
-			this.tmDateTime = new System.Windows.Forms.Timer();
+			this.tmDateTime = new System.Windows.Forms.Timer(this.components);
+			this.tip = new System.Windows.Forms.ToolTip(this.components);
 			this.pnlMainContainer.SuspendLayout();
 			this.pnlBody.SuspendLayout();
 			this.pnlDesktop.SuspendLayout();
@@ -64,6 +72,9 @@ namespace P01_K_DESIGN_WIN
 			this.pnlBottomBar.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.panelSubMenuBar.SuspendLayout();
+			this.panelSubMenuBarBottom.SuspendLayout();
+			this.panelUserSetting.SuspendLayout();
+			this.panelLogout.SuspendLayout();
 			this.pnlHeader.SuspendLayout();
 			this.panelTopMenuBar.SuspendLayout();
 			this.pnlTitleBar.SuspendLayout();
@@ -231,7 +242,9 @@ namespace P01_K_DESIGN_WIN
 			// panelSubMenuBar
 			// 
 			this.panelSubMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
-			this.panelSubMenuBar.Controls.Add(this.btnCloseChildForm);
+			this.panelSubMenuBar.Controls.Add(this.panelSubMenuBarBody);
+			this.panelSubMenuBar.Controls.Add(this.panelSubMenuBarBottom);
+			this.panelSubMenuBar.Controls.Add(this.panelSubMenuBarTop);
 			this.panelSubMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panelSubMenuBar.Location = new System.Drawing.Point(0, 0);
 			this.panelSubMenuBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -239,20 +252,82 @@ namespace P01_K_DESIGN_WIN
 			this.panelSubMenuBar.Size = new System.Drawing.Size(200, 708);
 			this.panelSubMenuBar.TabIndex = 2;
 			// 
+			// panelSubMenuBarBody
+			// 
+			this.panelSubMenuBarBody.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelSubMenuBarBody.Location = new System.Drawing.Point(0, 10);
+			this.panelSubMenuBarBody.Name = "panelSubMenuBarBody";
+			this.panelSubMenuBarBody.Size = new System.Drawing.Size(200, 644);
+			this.panelSubMenuBarBody.TabIndex = 10;
+			// 
+			// panelSubMenuBarBottom
+			// 
+			this.panelSubMenuBarBottom.Controls.Add(this.panelUserSetting);
+			this.panelSubMenuBarBottom.Controls.Add(this.panelLogout);
+			this.panelSubMenuBarBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panelSubMenuBarBottom.Location = new System.Drawing.Point(0, 654);
+			this.panelSubMenuBarBottom.Name = "panelSubMenuBarBottom";
+			this.panelSubMenuBarBottom.Size = new System.Drawing.Size(200, 54);
+			this.panelSubMenuBarBottom.TabIndex = 9;
+			// 
+			// panelUserSetting
+			// 
+			this.panelUserSetting.Controls.Add(this.btnUserSetting);
+			this.panelUserSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelUserSetting.Location = new System.Drawing.Point(0, 0);
+			this.panelUserSetting.Name = "panelUserSetting";
+			this.panelUserSetting.Size = new System.Drawing.Size(139, 54);
+			this.panelUserSetting.TabIndex = 10;
+			// 
+			// btnUserSetting
+			// 
+			this.btnUserSetting.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnUserSetting.FlatAppearance.BorderSize = 0;
+			this.btnUserSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnUserSetting.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold);
+			this.btnUserSetting.ForeColor = System.Drawing.Color.Silver;
+			this.btnUserSetting.Image = global::P01_K_DESIGN_WIN.Properties.Resources.user_user;
+			this.btnUserSetting.Location = new System.Drawing.Point(0, 0);
+			this.btnUserSetting.Name = "btnUserSetting";
+			this.btnUserSetting.Size = new System.Drawing.Size(139, 54);
+			this.btnUserSetting.TabIndex = 0;
+			this.btnUserSetting.Text = "USER";
+			this.btnUserSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnUserSetting.UseVisualStyleBackColor = true;
+			// 
+			// panelLogout
+			// 
+			this.panelLogout.AutoSize = true;
+			this.panelLogout.Controls.Add(this.btnCloseChildForm);
+			this.panelLogout.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panelLogout.Location = new System.Drawing.Point(139, 0);
+			this.panelLogout.Name = "panelLogout";
+			this.panelLogout.Size = new System.Drawing.Size(61, 54);
+			this.panelLogout.TabIndex = 9;
+			// 
 			// btnCloseChildForm
 			// 
-			this.btnCloseChildForm.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.btnCloseChildForm.AutoSize = true;
 			this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
 			this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnCloseChildForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseChildForm.Image")));
 			this.btnCloseChildForm.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.btnCloseChildForm.Location = new System.Drawing.Point(0, 664);
+			this.btnCloseChildForm.Location = new System.Drawing.Point(0, 0);
 			this.btnCloseChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.btnCloseChildForm.Name = "btnCloseChildForm";
-			this.btnCloseChildForm.Size = new System.Drawing.Size(200, 44);
+			this.btnCloseChildForm.Size = new System.Drawing.Size(58, 54);
 			this.btnCloseChildForm.TabIndex = 8;
+			this.tip.SetToolTip(this.btnCloseChildForm, "LOGOUT");
 			this.btnCloseChildForm.UseVisualStyleBackColor = true;
 			this.btnCloseChildForm.Click += new System.EventHandler(this.btnCloseChildForm_Click);
+			// 
+			// panelSubMenuBarTop
+			// 
+			this.panelSubMenuBarTop.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelSubMenuBarTop.Location = new System.Drawing.Point(0, 0);
+			this.panelSubMenuBarTop.Name = "panelSubMenuBarTop";
+			this.panelSubMenuBarTop.Size = new System.Drawing.Size(200, 10);
+			this.panelSubMenuBarTop.TabIndex = 0;
 			// 
 			// pnlHeader
 			// 
@@ -407,6 +482,11 @@ namespace P01_K_DESIGN_WIN
 			this.pnlBottomBar.PerformLayout();
 			this.panel1.ResumeLayout(false);
 			this.panelSubMenuBar.ResumeLayout(false);
+			this.panelSubMenuBarBottom.ResumeLayout(false);
+			this.panelSubMenuBarBottom.PerformLayout();
+			this.panelUserSetting.ResumeLayout(false);
+			this.panelLogout.ResumeLayout(false);
+			this.panelLogout.PerformLayout();
 			this.pnlHeader.ResumeLayout(false);
 			this.panelTopMenuBar.ResumeLayout(false);
 			this.pnlTitleBar.ResumeLayout(false);
@@ -445,5 +525,12 @@ namespace P01_K_DESIGN_WIN
 		public Label lblTopMenuCaption;
 		public MetroFramework.Controls.MetroTabControl tabMenuForm;
 		public Panel panel1;
+		public Panel panelSubMenuBarBody;
+		public Panel panelSubMenuBarBottom;
+		public Panel panelSubMenuBarTop;
+		public Panel panelUserSetting;
+		public Panel panelLogout;
+		public Button btnUserSetting;
+		private ToolTip tip;
 	}
 }

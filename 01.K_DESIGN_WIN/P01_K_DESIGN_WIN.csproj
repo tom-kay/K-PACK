@@ -118,6 +118,7 @@
     <Content Include="Resources\btnMaximizar.png" />
     <Content Include="Resources\btnMinimizar.png" />
     <Content Include="Resources\btnRestaurar.png" />
+    <None Include="Resources\user_user.png" />
     <None Include="Resources\question.png" />
     <None Include="Resources\information.png" />
     <None Include="Resources\exclamation.png" />
