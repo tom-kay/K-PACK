@@ -101,5 +101,30 @@ namespace P05_Business.S01_Models.Dao.Base
 
 			return result;
 		}
+
+		internal int UpdateLoginUserInfo(UserMngDto userMng)
+		{
+			RequestContext context = new RequestContext
+			{
+				Scope = "Base.UserMng",
+				SqlId = "updateUser",
+				Request = userMng
+			};
+
+			int result;
+			try
+			{
+				SqlMapper.BeginTransaction();
+				result = SqlMapper.Execute(context);
+				SqlMapper.CommitTransaction();
+			}
+			catch (System.Exception ex)
+			{
+				SqlMapper.RollbackTransaction();
+				throw ex;
+			}
+
+			return result;
+		}
 	}
 }

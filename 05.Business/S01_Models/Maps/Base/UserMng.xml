@@ -245,5 +245,18 @@
 				AND user.LoginPw = SHA2(@LoginPw,512)
 		</Statement>
 
+		<Statement Id="updateUser" >
+			UPDATE tb_user SET
+			UserNameE = @UserNameE
+			, TelNo1 = @TelNo1
+			, TelNo2 = @TelNo2
+			, Email = @Email
+			, Address1 = @Address1
+			, Address2 = @Address2
+			, UpdateId = @UpdateId
+			, UpdateDt = now()
+			WHERE UserId = @UserId
+		</Statement>
+
 	</Statements>
 </SmartSqlMap>

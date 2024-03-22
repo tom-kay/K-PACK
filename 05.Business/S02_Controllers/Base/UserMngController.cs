@@ -50,5 +50,12 @@ namespace P05_Business.S02_Controllers.Base
 
 			return result;
 		}
+
+		internal int ModifyLoginUserInfo(UserMngDto userMng)
+		{
+			int result = dao.UpdateLoginUserInfo(userMng);
+
+			return result;
+		}
 	}
 }

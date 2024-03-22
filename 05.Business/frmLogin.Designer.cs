@@ -37,6 +37,10 @@
 			this.pnlLogin.SuspendLayout();
 			this.SuspendLayout();
 			// 
+			// txtPass
+			// 
+			this.txtPass.PasswordChar = '●';
+			// 
 			// btnlogin
 			// 
 			this.btnlogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));

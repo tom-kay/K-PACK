@@ -2,6 +2,7 @@
 using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
+using P05_Business.S03_Views.Popup.Common;
 using SmartSql.SqlMap.Tags;
 using System;
 using System.Collections.Generic;
@@ -125,7 +126,9 @@ namespace P05_Business
 
 		private void btnUserSetting_Click(object sender, EventArgs e)
 		{
-
+			using (frmUserSetting popup = new frmUserSetting()) {
+				popup.ShowDialog();
+			}
 		}
 	}
 }
