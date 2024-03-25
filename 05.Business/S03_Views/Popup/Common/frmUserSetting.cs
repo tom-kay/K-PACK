@@ -18,6 +18,8 @@ namespace P05_Business.S03_Views.Popup.Common
 {
 	public partial class frmUserSetting : frmPopupFrame
 	{
+		UserMngController ctrl = new UserMngController();
+
 		public frmUserSetting()
 		{
 			InitializeComponent();
@@ -42,7 +44,7 @@ namespace P05_Business.S03_Views.Popup.Common
 					UserId = LoginUserInfo.UserId,
 				};
 
-				UserMngDto dto = new UserMngController().GetUserInfo(param);
+				UserMngDto dto = ctrl.GetUserInfo(param);
 
 				if (dto != null)
 				{
@@ -75,6 +77,7 @@ namespace P05_Business.S03_Views.Popup.Common
 
 				UserMngDto param = new UserMngDto()
 				{
+					CompanyCode = LoginCompany.CompanyCode,
 					UserId = tmp.UserId,
 					UserNameE = tmp.UserNameE,
 					TelNo1 = tmp.TelNo1,
@@ -85,7 +88,7 @@ namespace P05_Business.S03_Views.Popup.Common
 					UpdateId = LoginUserInfo.UserId
 				};
 
-				int result = new UserMngController().ModifyLoginUserInfo(param);
+				int result = ctrl.ModifyLoginUserInfo(param);
 
 				if (result >= 0)
 				{
@@ -113,27 +116,36 @@ namespace P05_Business.S03_Views.Popup.Common
 				if (string.IsNullOrEmpty(txtLoginPw.Texts))
 				{
 					KMessageBox.Show("[현재비밀번호]를 입력 바랍니다.", "비밀번호 변경", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return;
 				}
 				if (string.IsNullOrEmpty(txtLoginPwNew.Texts))
 				{
 					KMessageBox.Show("[새비밀번호]를 입력 바랍니다.", "비밀번호 변경", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return;
 				}
 				if (string.IsNullOrEmpty(txtLoginPwConfirm.Texts))
 				{
 					KMessageBox.Show("[비밀번호확인]을 입력 바랍니다.", "비밀번호 변경", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return;
 				}
 
 				if (!txtLoginPwNew.Texts.Trim().Equals(txtLoginPwConfirm.Texts.Trim()))
 				{
 					KMessageBox.Show("[비밀번호확인]과 일치하지 않습니다.", "비밀번호 변경", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return;
 				}
 
 				//현재 비밀번호 일치 여부확인
+				if (!CheckCurrentPassword())
+				{
+					KMessageBox.Show("[현재비밀번호]가 일치하지 않습니다.", "비밀번호 변경", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return;
+				}
 
-
-				if (KMessageBox.Show("비밀번호를 변경 하시겠습니까?", "비밀번호 변경", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
-
-
+				if (KMessageBox.Show("비밀번호를 변경 하시겠습니까?", "비밀번호 변경", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					SaveNewPassword();
+				}
 
 			}
 			catch (Exception ex)
@@ -141,6 +153,38 @@ namespace P05_Business.S03_Views.Popup.Common
 				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 
+		}
+
+		private void SaveNewPassword()
+		{	
+
+			UserMngDto param = new UserMngDto()
+			{
+				CompanyCode = LoginCompany.CompanyCode,
+				UserId = LoginUserInfo.UserId,
+				LoginPw = txtLoginPwNew.Texts,
+				UpdateId = LoginUserInfo.UserId,
+			};
+
+			int result = ctrl.ModifyLoginUserNewPassword(param);
+
+			if (result >= 0)
+			{
+				MainMessage.Show("비밀번호가 변경되었습니다.");
+			}
+		}
+
+		private bool CheckCurrentPassword()
+		{
+			UserMngDto user = new UserMngDto()
+			{
+				CompanyCode = LoginCompany.CompanyCode,
+				UserId = LoginUserInfo.UserId,
+				LoginPw = txtLoginPw.Texts,
+			};
+			bool isSameCurrentPassword = ctrl.SamePassword(user);
+
+			return isSameCurrentPassword;
 		}
 	}
 }

@@ -255,7 +255,26 @@
 			, Address2 = @Address2
 			, UpdateId = @UpdateId
 			, UpdateDt = now()
-			WHERE UserId = @UserId
+			WHERE CompanyCode = @CompanyCode
+			AND UserId = @UserId
+		</Statement>
+
+
+		<Statement Id="updateUserPassword" >
+			UPDATE tb_user SET
+			LoginPw = SHA2(@LoginPw,512)
+			, UpdateId = @UpdateId
+			, UpdateDt = now()
+			WHERE CompanyCode = @CompanyCode
+			AND UserId = @UserId
+		</Statement>
+
+		<Statement Id="selectUserPassword">
+			SELECT *
+			FROM tb_user AS `user`
+			WHERE user.CompanyCode = @CompanyCode
+			AND user.UserId = @UserId
+			AND user.LoginPw = SHA2(@LoginPw,512)
 		</Statement>
 
 	</Statements>

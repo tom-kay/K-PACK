@@ -126,5 +126,43 @@ namespace P05_Business.S01_Models.Dao.Base
 
 			return result;
 		}
+
+		internal UserMngDto SelectCurrentPassword(UserMngDto userMng)
+		{
+			RequestContext context = new RequestContext
+			{
+				Scope = "Base.UserMng",
+				SqlId = "selectUserPassword",
+				Request = userMng
+			};
+			UserMngDto result = SqlMapper.QuerySingle<UserMngDto>(context);
+
+			return result;
+		}
+
+		internal int UpdateLoginUserPassword(UserMngDto param)
+		{
+			RequestContext context = new RequestContext
+			{
+				Scope = "Base.UserMng",
+				SqlId = "updateUserPassword",
+				Request = param
+			};
+
+			int result;
+			try
+			{
+				SqlMapper.BeginTransaction();
+				result = SqlMapper.Execute(context);
+				SqlMapper.CommitTransaction();
+			}
+			catch (System.Exception ex)
+			{
+				SqlMapper.RollbackTransaction();
+				throw ex;
+			}
+
+			return result;
+		}
 	}
 }

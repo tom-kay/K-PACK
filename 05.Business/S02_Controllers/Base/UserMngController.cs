@@ -57,5 +57,26 @@ namespace P05_Business.S02_Controllers.Base
 
 			return result;
 		}
+
+		internal bool SamePassword(UserMngDto userMng)
+		{
+			bool result = true;
+				
+			UserMngDto dto = dao.SelectCurrentPassword(userMng);
+
+			if (dto == null || dto.UserId.Equals(""))
+			{
+				result = false;
+			}
+
+			return result;
+		}
+
+		internal int ModifyLoginUserNewPassword(UserMngDto param)
+		{
+			int result = dao.UpdateLoginUserPassword(param);
+
+			return result;
+		}
 	}
 }

@@ -834,7 +834,7 @@
 			this.txtLoginPw.Multiline = false;
 			this.txtLoginPw.Name = "txtLoginPw";
 			this.txtLoginPw.OnlyNumber = false;
-			this.txtLoginPw.PasswordChar = false;
+			this.txtLoginPw.PasswordChar = true;
 			this.txtLoginPw.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtLoginPw.PlaceholderText = "";
 			this.txtLoginPw.ReadOnly = false;
@@ -887,7 +887,7 @@
 			this.txtLoginPwNew.Multiline = false;
 			this.txtLoginPwNew.Name = "txtLoginPwNew";
 			this.txtLoginPwNew.OnlyNumber = false;
-			this.txtLoginPwNew.PasswordChar = false;
+			this.txtLoginPwNew.PasswordChar = true;
 			this.txtLoginPwNew.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtLoginPwNew.PlaceholderText = "";
 			this.txtLoginPwNew.ReadOnly = false;
@@ -940,7 +940,7 @@
 			this.txtLoginPwConfirm.Multiline = false;
 			this.txtLoginPwConfirm.Name = "txtLoginPwConfirm";
 			this.txtLoginPwConfirm.OnlyNumber = false;
-			this.txtLoginPwConfirm.PasswordChar = false;
+			this.txtLoginPwConfirm.PasswordChar = true;
 			this.txtLoginPwConfirm.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtLoginPwConfirm.PlaceholderText = "";
 			this.txtLoginPwConfirm.ReadOnly = false;
