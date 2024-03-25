@@ -228,6 +228,7 @@
     <Compile Include="Common\GlobalVariables.cs" />
     <Compile Include="Common\MainMessage.cs" />
     <Compile Include="S01_Models\Dao\Base\CompanyMngDao.cs" />
+    <Compile Include="S01_Models\Dao\Base\CustomerMngDao.cs" />
     <Compile Include="S01_Models\Dao\Base\MenuMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\CodeMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\UserMngDao.cs" />
@@ -240,6 +241,7 @@
     <Compile Include="S01_Models\Dto\DtoBase.cs" />
     <Compile Include="S02_Controllers\Base\CodeMngController.cs" />
     <Compile Include="S02_Controllers\Base\CompanyMngController.cs" />
+    <Compile Include="S02_Controllers\Base\CustomerMngController.cs" />
     <Compile Include="S02_Controllers\Base\MenuMngController.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -283,6 +285,18 @@
     </Compile>
     <Compile Include="S03_Views\Base\frmCompanyInfo.Designer.cs">
       <DependentUpon>frmCompanyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCustomerList.Designer.cs">
+      <DependentUpon>frmCustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCustomerMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCustomerMng.Designer.cs">
+      <DependentUpon>frmCustomerMng.cs</DependentUpon>
     </Compile>
     <Compile Include="S03_Views\Base\frmMenuMasterMng.cs">
       <SubType>Form</SubType>
@@ -562,6 +576,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmCompanyInfo.resx">
       <DependentUpon>frmCompanyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmCustomerList.resx">
+      <DependentUpon>frmCustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmCustomerMng.resx">
+      <DependentUpon>frmCustomerMng.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmMenuMasterMng.resx">
       <DependentUpon>frmMenuMasterMng.cs</DependentUpon>

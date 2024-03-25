@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<SmartSqlMap Scope="CodeMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
-	<Statements>
-		<Statement Id="selectCodeMasterList">
-			SELECT * 
-			FROM TB_CODEMASTER
-		</Statement>
-	</Statements>
-</SmartSqlMap>
