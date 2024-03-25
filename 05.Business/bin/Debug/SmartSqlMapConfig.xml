@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <SmartSqlMapConfig xmlns="http://SmartSql.net/schemas/SmartSqlMapConfig.xsd">
-	<Settings IsWatchConfigFile="true" ParameterPrefix="$" IgnoreParameterCase="false" EnablePropertyChangedTrack="true"/>
+	<Settings IsWatchConfigFile="true" IgnoreParameterCase="false" EnablePropertyChangedTrack="true"/>
 	<Database>
 		<DbProvider Name="MySqlClientFactory" Type="MySql.Data.MySqlClient.MySqlClientFactory, MySql.Data"/>
 		<Write Name="WriteDB" ConnectionString="Server=localhost;Port=3306;Database=soodal;Uid=root;Pwd=root;"/>

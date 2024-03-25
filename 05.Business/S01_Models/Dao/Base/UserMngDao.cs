@@ -1,8 +1,10 @@
-﻿using P05_Business.S01_Models.Dto.Base;
+﻿using log4net;
+using P05_Business.S01_Models.Dto.Base;
 using SmartSql.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +12,8 @@ namespace P05_Business.S01_Models.Dao.Base
 {
 	public class UserMngDao : DaoFactory
 	{
+		public static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
 		public List<UserMngDto> SelectUserList(UserMngDto item)
 		{
 			RequestContext context = new RequestContext
@@ -19,7 +23,8 @@ namespace P05_Business.S01_Models.Dao.Base
 				Request = item
 			};
 			List<UserMngDto> results = SqlMapper.Query<UserMngDto>(context).ToList();
-
+			log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+			
 			return results;
 		}
 
@@ -32,6 +37,7 @@ namespace P05_Business.S01_Models.Dao.Base
 				Request = item
 			};
 			UserMngDto result = SqlMapper.QuerySingle<UserMngDto>(context);
+			log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 
 			return result;
 		}
@@ -51,6 +57,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			{
 				SqlMapper.BeginTransaction();
 				result = SqlMapper.ExecuteScalar<string>(context);
+				log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 				SqlMapper.CommitTransaction();
 
 			}
@@ -78,6 +85,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			{
 				SqlMapper.BeginTransaction();
 				result = SqlMapper.Execute(context);
+				log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 				SqlMapper.CommitTransaction();
 			}
 			catch (System.Exception ex)
@@ -98,6 +106,7 @@ namespace P05_Business.S01_Models.Dao.Base
 				Request = item
 			};
 			UserMngDto result = SqlMapper.QuerySingle<UserMngDto>(context);
+			log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 
 			return result;
 		}
@@ -116,6 +125,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			{
 				SqlMapper.BeginTransaction();
 				result = SqlMapper.Execute(context);
+				log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 				SqlMapper.CommitTransaction();
 			}
 			catch (System.Exception ex)
@@ -136,6 +146,7 @@ namespace P05_Business.S01_Models.Dao.Base
 				Request = userMng
 			};
 			UserMngDto result = SqlMapper.QuerySingle<UserMngDto>(context);
+			log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 
 			return result;
 		}
@@ -154,6 +165,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			{
 				SqlMapper.BeginTransaction();
 				result = SqlMapper.Execute(context);
+				log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 				SqlMapper.CommitTransaction();
 			}
 			catch (System.Exception ex)

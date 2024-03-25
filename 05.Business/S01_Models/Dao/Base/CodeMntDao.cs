@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using P05_Business.S01_Models.Dto.Base;
+using log4net;
+using System.Reflection;
 
 namespace P05_Business.S01_Models.Dao.Base
 {
 	public class CodeMntDao : DaoFactory
 	{
+		public static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
 		#region Code Master
 		public List<CodeMasterDto> SelectCodeMasterList(CodeMasterDto item)
 		{
@@ -17,6 +21,7 @@ namespace P05_Business.S01_Models.Dao.Base
 				Request = item
 			};
 			List<CodeMasterDto> codes = SqlMapper.Query<CodeMasterDto>(context).ToList();
+			log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 
 			return codes;
 		}
@@ -33,6 +38,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			CodeMasterDto code = null;
 
 			code = SqlMapper.QuerySingle<CodeMasterDto>(context);
+			log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 
 			return code;
 
@@ -53,6 +59,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			{
 				SqlMapper.BeginTransaction();
 				int iSave = SqlMapper.Execute(context);
+				log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 				SqlMapper.CommitTransaction();
 
 				result = iSave;
@@ -86,6 +93,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			{
 				SqlMapper.BeginTransaction();
 				result = SqlMapper.Execute(context);
+				log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 				SqlMapper.CommitTransaction();
 			}
 			catch (System.Exception ex)
@@ -109,6 +117,7 @@ namespace P05_Business.S01_Models.Dao.Base
 				Request = item
 			};
 			List<CodeDetailDto> codes = SqlMapper.Query<CodeDetailDto>(context).ToList();
+			log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 
 			return codes;
 		}
@@ -125,6 +134,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			CodeDetailDto code = null;
 
 			code = SqlMapper.QuerySingle<CodeDetailDto>(context);
+			log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 
 			return code;
 
@@ -145,6 +155,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			{
 				SqlMapper.BeginTransaction();
 				int iSave = SqlMapper.Execute(context);
+				log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 				SqlMapper.CommitTransaction();
 
 				result = iSave;
@@ -178,6 +189,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			{
 				SqlMapper.BeginTransaction();
 				result = SqlMapper.Execute(context);
+				log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 				SqlMapper.CommitTransaction();
 			}
 			catch (System.Exception ex)
@@ -199,6 +211,7 @@ namespace P05_Business.S01_Models.Dao.Base
 				Request = item
 			};
 			List<CodeDetailDto> items = SqlMapper.Query<CodeDetailDto>(context).ToList();
+			log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 
 			return items;
 		}
