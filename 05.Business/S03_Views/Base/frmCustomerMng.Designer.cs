@@ -89,7 +89,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 561);
 			this.Name = "frmCustomerMng";
-			this.Text = "frmCustomerMng";
+			this.Text = "거래처등록";
 			this.pnlMain.ResumeLayout(false);
 			this.pnlHeader.ResumeLayout(false);
 			this.pnlHeaderBtns.ResumeLayout(false);

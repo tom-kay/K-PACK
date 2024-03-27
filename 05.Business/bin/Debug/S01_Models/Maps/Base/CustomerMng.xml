@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SmartSqlMap Scope="Base.CustomerMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+	<Statements>
+		<Statement Id="SelectAdd">
+			, cust.CompanyCode
+			, ifnull(`cust`.DelYn,'N') AS DelYn
+			,`cust`.`CreateId`
+			,date_format(`cust`.CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`
+			,`cust`.`UpdateId`
+			,date_format(`cust`.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`
+			,`cust`.`DeleteId`
+			,date_format(`cust`.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+		</Statement>
+
+		<Statement Id="selectCustomerList">
+			SELECT cust.`CustCode`,
+			cust.`CustName`,
+			cust.`CompanyNo`,
+			cust.`Address1`,
+			cust.`Address2`,
+			cust.`TelNo`,
+			cust.`FaxNo`,
+			cust.`Email`,
+			cust.`NationCode`,
+			nat.`Name` AS NationName,
+			cust.`DealTypeSale`,
+			cust.`DealTypeBuy`,
+			cust.`DealTypeProc`,
+			cust.`DealTypeGeneral`,
+			cust.`OwnerName`,
+			cust.`BankName`,
+			cust.`AccountNo`,
+			cust.`Depositor`,
+			cust.`Remark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_customer` AS cust
+			LEFT JOIN tb_CodeDetail AS nat
+			ON nat.MasterCode = 'NATIONALITY'
+			AND cust.NationCode = nat.`Code`
+			WHERE 1=1
+			<IsNotEmpty Prepend="And" Property="CustCode">
+				user.`CompanyCode` = @CompanyCode
+			</IsNotEmpty>
+			<Switch Prepend="And" Property="DelYn">
+				<Case CompareValue="Y">
+					cust.`DelYn` IS NOT NULL AND cust.`DelYn` = 'Y'
+				</Case>
+				<Case CompareValue="N">
+					(cust.`DelYn` IS NULL OR cust.`DelYn` != 'Y')
+				</Case>
+			</Switch>
+		</Statement>
+
+		<Statement Id="selectCustomer">
+			SELECT cust.`CustCode`,
+			cust.`CustName`,
+			cust.`CompanyNo`,
+			cust.`Address1`,
+			cust.`Address2`,
+			cust.`TelNo`,
+			cust.`FaxNo`,
+			cust.`Email`,
+			cust.`NationCode`,
+			nat.`Name` AS NationName,
+			cust.`DealTypeSale`,
+			cust.`DealTypeBuy`,
+			cust.`DealTypeProc`,
+			cust.`DealTypeGeneral`,
+			cust.`OwnerName`,
+			cust.`BankName`,
+			cust.`AccountNo`,
+			cust.`Depositor`,
+			cust.`Remark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_customer` AS cust
+			LEFT JOIN tb_codedetail AS nat
+			ON nat.MasterCode = 'NATIONALITY'
+			AND nat.`code` = cust.Nationality
+			WHERE cust.CustCode = @CustCode
+				AND `cust`.`CompanyCode` = @CompanyCode
+		</Statement>
+
+		<Statement Id="insertCustomer">
+
+			INSERT INTO `TB_COMPANY`
+			(`CompanyCode`,
+			`Nationality`,
+			`HeadOffice`,
+			`CompanyGroup`,
+			`CompanyNameK`,
+			`CompanyNameE`,
+			`TelNo`,
+			`FaxNo`,
+			`AddressK1`,
+			`AddressK2`,
+			`AddressE1`,
+			`AddressE2`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES
+			(@CompanyCode,
+			@Nationality,
+			@HeadOffice,
+			@CompanyGroup,
+			@CompanyNameK,
+			@CompanyNameE,
+			@TelNo,
+			@FaxNo,
+			@AddressK1,
+			@AddressK2,
+			@AddressE1,
+			@AddressE2,
+			@CreateId,
+			now())
+			ON DUPLICATE KEY UPDATE
+			`Nationality` = @Nationality,
+			`HeadOffice` = @HeadOffice,
+			`CompanyGroup` = @CompanyGroup,
+			`CompanyNameK` = @CompanyNameK,
+			`CompanyNameE` = @CompanyNameE,
+			`TelNo` = @TelNo,
+			`FaxNo` = @FaxNo,
+			`AddressK1` = @AddressK1,
+			`AddressK2` = @AddressK2,
+			`AddressE1` = @AddressE1,
+			`AddressE2` = @AddressE2,
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = null
+			;
+		</Statement>
+
+
+		<Statement Id="deleteCustomer" >
+			UPDATE `TB_COMPANY`
+			SET
+			`DelYn` = @DelYn,
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = now()
+			WHERE `CompanyCode` = @CompanyCode
+		</Statement>
+
+
+	</Statements>
+</SmartSqlMap>
