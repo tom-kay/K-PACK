@@ -85,6 +85,7 @@
 			// btnSearch
 			// 
 			this.btnSearch.FlatAppearance.BorderSize = 0;
+			this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
 			// 
 			// btnInit
 			// 
@@ -291,6 +292,8 @@
 			// 
 			this.chkDealGeneral.AutoSize = true;
 			this.chkDealGeneral.BackColor = System.Drawing.Color.Transparent;
+			this.chkDealGeneral.Checked = true;
+			this.chkDealGeneral.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkDealGeneral.Dock = System.Windows.Forms.DockStyle.Left;
 			this.chkDealGeneral.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
 			this.chkDealGeneral.Location = new System.Drawing.Point(173, 0);
@@ -305,6 +308,8 @@
 			// 
 			this.chkDealProc.AutoSize = true;
 			this.chkDealProc.BackColor = System.Drawing.Color.Transparent;
+			this.chkDealProc.Checked = true;
+			this.chkDealProc.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkDealProc.Dock = System.Windows.Forms.DockStyle.Left;
 			this.chkDealProc.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
 			this.chkDealProc.Location = new System.Drawing.Point(106, 0);
@@ -319,6 +324,8 @@
 			// 
 			this.chkDealBuy.AutoSize = true;
 			this.chkDealBuy.BackColor = System.Drawing.Color.Transparent;
+			this.chkDealBuy.Checked = true;
+			this.chkDealBuy.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkDealBuy.Dock = System.Windows.Forms.DockStyle.Left;
 			this.chkDealBuy.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
 			this.chkDealBuy.Location = new System.Drawing.Point(53, 0);
@@ -333,6 +340,8 @@
 			// 
 			this.chkDealSale.AutoSize = true;
 			this.chkDealSale.BackColor = System.Drawing.Color.Transparent;
+			this.chkDealSale.Checked = true;
+			this.chkDealSale.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkDealSale.Dock = System.Windows.Forms.DockStyle.Left;
 			this.chkDealSale.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
 			this.chkDealSale.Location = new System.Drawing.Point(0, 0);
@@ -485,6 +494,7 @@
 			this.dgvList.RowTemplate.Height = 23;
 			this.dgvList.Size = new System.Drawing.Size(891, 426);
 			this.dgvList.TabIndex = 0;
+			this.dgvList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvList_CellMouseDoubleClick);
 			// 
 			// frmCustomerList
 			// 
@@ -493,6 +503,7 @@
 			this.ClientSize = new System.Drawing.Size(891, 561);
 			this.Name = "frmCustomerList";
 			this.Text = "거래처조회";
+			this.Load += new System.EventHandler(this.frmCustomerList_Load);
 			this.pnlClose.ResumeLayout(false);
 			this.pnlSearch.ResumeLayout(false);
 			this.pnlInit.ResumeLayout(false);

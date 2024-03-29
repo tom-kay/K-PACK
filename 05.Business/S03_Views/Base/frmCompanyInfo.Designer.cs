@@ -161,7 +161,7 @@
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
 			this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
 			this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
@@ -176,8 +176,8 @@
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
 			this.tableLayoutPanel1.RowCount = 1;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 49);
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 50);
 			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// panel1
@@ -186,7 +186,7 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(4, 14);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(94, 31);
+			this.panel1.Size = new System.Drawing.Size(94, 32);
 			this.panel1.TabIndex = 0;
 			// 
 			// label1
@@ -197,7 +197,7 @@
 			this.label1.ForeColor = System.Drawing.Color.White;
 			this.label1.Location = new System.Drawing.Point(0, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(94, 31);
+			this.label1.Size = new System.Drawing.Size(94, 32);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "회사코드";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -210,7 +210,7 @@
 			this.panel2.Margin = new System.Windows.Forms.Padding(0);
 			this.panel2.Name = "panel2";
 			this.panel2.Padding = new System.Windows.Forms.Padding(3);
-			this.panel2.Size = new System.Drawing.Size(197, 37);
+			this.panel2.Size = new System.Drawing.Size(196, 38);
 			this.panel2.TabIndex = 0;
 			// 
 			// txtCompanyCode
@@ -224,7 +224,7 @@
 			this.txtCompanyCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtCompanyCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCompanyCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtCompanyCode.Location = new System.Drawing.Point(6, 7);
+			this.txtCompanyCode.Location = new System.Drawing.Point(6, 8);
 			this.txtCompanyCode.MaxLength = 4;
 			this.txtCompanyCode.Multiline = false;
 			this.txtCompanyCode.Name = "txtCompanyCode";
@@ -233,7 +233,7 @@
 			this.txtCompanyCode.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCompanyCode.PlaceholderText = "";
 			this.txtCompanyCode.ReadOnly = false;
-			this.txtCompanyCode.Size = new System.Drawing.Size(185, 22);
+			this.txtCompanyCode.Size = new System.Drawing.Size(184, 22);
 			this.txtCompanyCode.TabIndex = 0;
 			this.txtCompanyCode.Tag = "CompanyCode";
 			this.txtCompanyCode.Texts = "";
@@ -243,9 +243,9 @@
 			// 
 			this.panel3.Controls.Add(this.label2);
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel3.Location = new System.Drawing.Point(303, 14);
+			this.panel3.Location = new System.Drawing.Point(302, 14);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(94, 31);
+			this.panel3.Size = new System.Drawing.Size(94, 32);
 			this.panel3.TabIndex = 2;
 			// 
 			// label2
@@ -256,7 +256,7 @@
 			this.label2.ForeColor = System.Drawing.Color.White;
 			this.label2.Location = new System.Drawing.Point(0, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(94, 31);
+			this.label2.Size = new System.Drawing.Size(94, 32);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "그룹";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -265,11 +265,11 @@
 			// 
 			this.panel4.Controls.Add(this.txtCompanyGroup);
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel4.Location = new System.Drawing.Point(401, 11);
+			this.panel4.Location = new System.Drawing.Point(400, 11);
 			this.panel4.Margin = new System.Windows.Forms.Padding(0);
 			this.panel4.Name = "panel4";
 			this.panel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 0);
-			this.panel4.Size = new System.Drawing.Size(197, 37);
+			this.panel4.Size = new System.Drawing.Size(196, 38);
 			this.panel4.TabIndex = 1;
 			// 
 			// txtCompanyGroup
@@ -283,7 +283,7 @@
 			this.txtCompanyGroup.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
 			this.txtCompanyGroup.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCompanyGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-			this.txtCompanyGroup.Location = new System.Drawing.Point(6, 7);
+			this.txtCompanyGroup.Location = new System.Drawing.Point(6, 8);
 			this.txtCompanyGroup.MaxLength = 30;
 			this.txtCompanyGroup.Multiline = false;
 			this.txtCompanyGroup.Name = "txtCompanyGroup";
@@ -292,7 +292,7 @@
 			this.txtCompanyGroup.PlaceholderColor = System.Drawing.Color.DarkGray;
 			this.txtCompanyGroup.PlaceholderText = "";
 			this.txtCompanyGroup.ReadOnly = false;
-			this.txtCompanyGroup.Size = new System.Drawing.Size(185, 22);
+			this.txtCompanyGroup.Size = new System.Drawing.Size(184, 22);
 			this.txtCompanyGroup.TabIndex = 0;
 			this.txtCompanyGroup.Tag = "CompanyGroup";
 			this.txtCompanyGroup.Texts = "";
@@ -302,9 +302,9 @@
 			// 
 			this.panel17.Controls.Add(this.label9);
 			this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel17.Location = new System.Drawing.Point(602, 14);
+			this.panel17.Location = new System.Drawing.Point(600, 14);
 			this.panel17.Name = "panel17";
-			this.panel17.Size = new System.Drawing.Size(94, 31);
+			this.panel17.Size = new System.Drawing.Size(94, 32);
 			this.panel17.TabIndex = 4;
 			// 
 			// label9
@@ -315,7 +315,7 @@
 			this.label9.ForeColor = System.Drawing.Color.White;
 			this.label9.Location = new System.Drawing.Point(0, 0);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(94, 31);
+			this.label9.Size = new System.Drawing.Size(94, 32);
 			this.label9.TabIndex = 2;
 			this.label9.Text = "국적";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -324,11 +324,11 @@
 			// 
 			this.panel18.Controls.Add(this.cboNationality);
 			this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel18.Location = new System.Drawing.Point(700, 11);
+			this.panel18.Location = new System.Drawing.Point(698, 11);
 			this.panel18.Margin = new System.Windows.Forms.Padding(0);
 			this.panel18.Name = "panel18";
 			this.panel18.Padding = new System.Windows.Forms.Padding(3);
-			this.panel18.Size = new System.Drawing.Size(197, 37);
+			this.panel18.Size = new System.Drawing.Size(196, 38);
 			this.panel18.TabIndex = 2;
 			// 
 			// cboNationality
@@ -346,7 +346,7 @@
 			this.cboNationality.Location = new System.Drawing.Point(3, 3);
 			this.cboNationality.Name = "cboNationality";
 			this.cboNationality.Padding = new System.Windows.Forms.Padding(1);
-			this.cboNationality.Size = new System.Drawing.Size(191, 31);
+			this.cboNationality.Size = new System.Drawing.Size(190, 32);
 			this.cboNationality.TabIndex = 0;
 			this.cboNationality.Tag = "Nationality";
 			this.cboNationality.Texts = "";
@@ -355,9 +355,9 @@
 			// 
 			this.panel23.Controls.Add(this.label12);
 			this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel23.Location = new System.Drawing.Point(901, 14);
+			this.panel23.Location = new System.Drawing.Point(898, 14);
 			this.panel23.Name = "panel23";
-			this.panel23.Size = new System.Drawing.Size(44, 31);
+			this.panel23.Size = new System.Drawing.Size(44, 32);
 			this.panel23.TabIndex = 5;
 			// 
 			// label12
@@ -368,7 +368,7 @@
 			this.label12.ForeColor = System.Drawing.Color.White;
 			this.label12.Location = new System.Drawing.Point(0, 0);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(44, 31);
+			this.label12.Size = new System.Drawing.Size(44, 32);
 			this.label12.TabIndex = 3;
 			this.label12.Text = "본사";
 			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -377,16 +377,17 @@
 			// 
 			this.panel24.Controls.Add(this.tglHeadOffice);
 			this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel24.Location = new System.Drawing.Point(949, 11);
+			this.panel24.Location = new System.Drawing.Point(946, 11);
 			this.panel24.Margin = new System.Windows.Forms.Padding(0);
 			this.panel24.Name = "panel24";
-			this.panel24.Size = new System.Drawing.Size(58, 37);
+			this.panel24.Size = new System.Drawing.Size(61, 38);
 			this.panel24.TabIndex = 6;
 			// 
 			// tglHeadOffice
 			// 
+			this.tglHeadOffice.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.tglHeadOffice.AutoSize = true;
-			this.tglHeadOffice.Location = new System.Drawing.Point(3, 6);
+			this.tglHeadOffice.Location = new System.Drawing.Point(3, 8);
 			this.tglHeadOffice.MinimumSize = new System.Drawing.Size(45, 22);
 			this.tglHeadOffice.Name = "tglHeadOffice";
 			this.tglHeadOffice.OffBackColor = System.Drawing.Color.Gray;
@@ -424,7 +425,7 @@
 			this.tableLayoutPanel2.Controls.Add(this.panel21, 2, 1);
 			this.tableLayoutPanel2.Controls.Add(this.panel22, 3, 1);
 			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 59);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 60);
 			this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
 			this.tableLayoutPanel2.RowCount = 6;

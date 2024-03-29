@@ -64,7 +64,7 @@ namespace P05_Business.S01_Models.Dto.Base
 		public string AccountNo { get; set; }
 
 		[Description("예금주")]
-		public string Depoitor { get; set; }
+		public string Depositor { get; set; }
 
 		[Description("비고")]
 		public string Remark { get; set; }

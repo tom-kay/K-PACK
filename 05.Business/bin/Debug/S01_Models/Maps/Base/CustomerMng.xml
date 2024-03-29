@@ -37,9 +37,15 @@
 			LEFT JOIN tb_CodeDetail AS nat
 			ON nat.MasterCode = 'NATIONALITY'
 			AND cust.NationCode = nat.`Code`
-			WHERE 1=1
+			WHERE CompanyCode = @CompanyCode
 			<IsNotEmpty Prepend="And" Property="CustCode">
-				user.`CompanyCode` = @CompanyCode
+				cust.`CustCode` Like Concat('%', @CustCode, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="CustName">
+				cust.`CustName` Like Concat('%', @CustName, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="NationCode">
+				cust.`NationCode` = @NationCode
 			</IsNotEmpty>
 			<Switch Prepend="And" Property="DelYn">
 				<Case CompareValue="Y">
@@ -49,6 +55,18 @@
 					(cust.`DelYn` IS NULL OR cust.`DelYn` != 'Y')
 				</Case>
 			</Switch>
+			<IsNotEmpty Prepend="OR" Property="DealTypeSale">
+				cust.`DealTypeSale` = @DealTypeSale
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="OR" Property="DealTypeBuy">
+				cust.`DealTypeBuy` = @DealTypeBuy
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="OR" Property="DealTypeProc">
+				cust.`DealTypeProc` = @DealTypeProc
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="OR" Property="DealTypeGeneral">
+				cust.`DealTypeGeneral` = @DealTypeGeneral
+			</IsNotEmpty>
 		</Statement>
 
 		<Statement Id="selectCustomer">
@@ -75,7 +93,7 @@
 			FROM `tb_customer` AS cust
 			LEFT JOIN tb_codedetail AS nat
 			ON nat.MasterCode = 'NATIONALITY'
-			AND nat.`code` = cust.Nationality
+			AND nat.`code` = cust.NationCode
 			WHERE cust.CustCode = @CustCode
 				AND `cust`.`CompanyCode` = @CompanyCode
 		</Statement>

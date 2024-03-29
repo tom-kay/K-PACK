@@ -67,7 +67,8 @@ namespace P01_K_DESIGN_WIN.Classes
 			{
 				if (ctrl is Label)
 				{
-					if (ctrl.Parent is KComboBox) continue;
+					if (ctrl.Parent is KComboBox
+						|| ctrl is MetroLabel) continue;
 
 					Label lbl = (Label)ctrl;
 
