@@ -15,7 +15,7 @@
 		<Statement Id="selectCustomerList">
 			SELECT cust.`CustCode`,
 			cust.`CustName`,
-			cust.`CompanyNo`,
+			AES_DECRYPT(UNHEX(cust.`CompanyNo`), cust.`CustCode`) AS CompanyNo,
 			cust.`Address1`,
 			cust.`Address2`,
 			cust.`TelNo`,
@@ -72,7 +72,7 @@
 		<Statement Id="selectCustomer">
 			SELECT cust.`CustCode`,
 			cust.`CustName`,
-			cust.`CompanyNo`,
+			AES_DECRYPT(UNHEX(cust.`CompanyNo`), cust.`CustCode`) AS CompanyNo,
 			cust.`Address1`,
 			cust.`Address2`,
 			cust.`TelNo`,
@@ -100,64 +100,87 @@
 
 		<Statement Id="insertCustomer">
 
-			INSERT INTO `TB_COMPANY`
-			(`CompanyCode`,
-			`Nationality`,
-			`HeadOffice`,
-			`CompanyGroup`,
-			`CompanyNameK`,
-			`CompanyNameE`,
+			INSERT INTO `soodal`.`tb_customer`
+			(`CustCode`,
+			`CustName`,
+			`CompanyNo`,
+			`Address1`,
+			`Address2`,
 			`TelNo`,
 			`FaxNo`,
-			`AddressK1`,
-			`AddressK2`,
-			`AddressE1`,
-			`AddressE2`,
+			`Email`,
+			`NationCode`,
+			`DealTypeSale`,
+			`DealTypeBuy`,
+			`DealTypeProc`,
+			`DealTypeGeneral`,
+			`OwnerName`,
+			`BankName`,
+			`AccountNo`,
+			`Depositor`,
+			`Remark`,
+			`CompanyCode`,
+			`DelYn`,
 			`CreateId`,
-			`CreateDt`
-			)
+			`CreateDt`)
 			VALUES
-			(@CompanyCode,
-			@Nationality,
-			@HeadOffice,
-			@CompanyGroup,
-			@CompanyNameK,
-			@CompanyNameE,
+			(@CustCode,
+			@CustName,
+			HEX(AES_ENCRYPT(@CompanyNo, @CustCode)),
+			@Address1,
+			@Address2,
 			@TelNo,
 			@FaxNo,
-			@AddressK1,
-			@AddressK2,
-			@AddressE1,
-			@AddressE2,
+			@Email,
+			@NationCode,
+			@DealTypeSale,
+			@DealTypeBuy,
+			@DealTypeProc,
+			@DealTypeGeneral,
+			@OwnerName,
+			@BankName,
+			@AccountNo,
+			@Depositor,
+			@Remark,
+			@CompanyCode,
+			'N',
 			@CreateId,
 			now())
 			ON DUPLICATE KEY UPDATE
-			`Nationality` = @Nationality,
-			`HeadOffice` = @HeadOffice,
-			`CompanyGroup` = @CompanyGroup,
-			`CompanyNameK` = @CompanyNameK,
-			`CompanyNameE` = @CompanyNameE,
+			`CustName` = @CustName,
+			`CompanyNo` = HEX(AES_ENCRYPT(@CompanyNo, CustCode)),
+			`Address1` = @Address1,
+			`Address2` = @Address2,
 			`TelNo` = @TelNo,
 			`FaxNo` = @FaxNo,
-			`AddressK1` = @AddressK1,
-			`AddressK2` = @AddressK2,
-			`AddressE1` = @AddressE1,
-			`AddressE2` = @AddressE2,
+			`Email` = @Email,
+			`NationCode` = @NationCode,
+			`DealTypeSale` = @DealTypeSale,
+			`DealTypeBuy` = @DealTypeBuy,
+			`DealTypeProc` = @DealTypeProc,
+			`DealTypeGeneral` = @DealTypeGeneral,
+			`OwnerName` = @OwnerName,
+			`BankName` = @BankName,
+			`AccountNo` = @AccountNo,
+			`Depositor` = @Depositor,
+			`Remark` = @Remark,
+			`DelYn` = 'N',
 			`UpdateId` = @UpdateId,
 			`UpdateDt` = now(),
-			`DeleteId` = @DeleteId,
+			`DeleteId` = null,
 			`DeleteDt` = null
 			;
 		</Statement>
 
 
 		<Statement Id="deleteCustomer" >
-			UPDATE `TB_COMPANY`
+			UPDATE `soodal`.`tb_customer`
 			SET
 			`DelYn` = @DelYn,
 			`DeleteId` = @DeleteId,
 			`DeleteDt` = now()
-			WHERE `CompanyCode` = @CompanyCode
+			WHERE CustCode = @CustCode
+				AND `CompanyCode` = @CompanyCode
 		</Statement>
 
 

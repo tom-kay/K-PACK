@@ -26,6 +26,7 @@ namespace P05_Business.S03_Views.Base
 		public static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
 		CustomerDto dto = new CustomerDto();
+		BindingList<CustomerEmpDto> dtoEmps = new BindingList<CustomerEmpDto>();
 		CustomerMngController ctrl = new CustomerMngController();
 
 		public frmCustomerMng()
@@ -36,6 +37,8 @@ namespace P05_Business.S03_Views.Base
 
 			//그리드 생성
 			CreateGrid();
+
+			SetInit();
 		}
 
         public frmCustomerMng(string code) : this()
@@ -123,6 +126,10 @@ namespace P05_Business.S03_Views.Base
 			txtCustCode.Enabled = true;
 
 			dto = new CustomerDto();
+			dtoEmps = new BindingList<CustomerEmpDto>();
+
+			//그리드 초기화
+			dgvList.DataSource = dtoEmps;
 
 			InitDto();
 		}
@@ -255,6 +262,7 @@ namespace P05_Business.S03_Views.Base
 			UserDataGrid.AddTextBoxColumn(dgvList, "TaskCharge", "담당업무", false, true, 10, DataGridViewContentAlignment.MiddleCenter);
 			UserDataGrid.AddTextBoxColumn(dgvList, "Remark", "비고", false, true, 20, DataGridViewContentAlignment.MiddleCenter);
 			UserDataGrid.End(dgvList);
+
 		}
 
 		private void InitDto()
@@ -264,6 +272,22 @@ namespace P05_Business.S03_Views.Base
 			base.isFormChagned = false;
 		}
 
-		
+		private void btnAddRow_Click(object sender, EventArgs e)
+		{
+			
+			dtoEmps.Add(new CustomerEmpDto());
+			dgvList.Refresh();
+
+			
+		}
+
+		private void btnDelRow_Click(object sender, EventArgs e)
+		{
+			if (dgvList.Rows.Count > 0)
+			{
+				DataGridViewRow row = dgvList.SelectedRows[0];
+				dgvList.Rows.RemoveAt(row.Index);
+			}
+		}
 	}
 }

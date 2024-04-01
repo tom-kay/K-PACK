@@ -68,5 +68,8 @@ namespace P05_Business.S01_Models.Dto.Base
 
 		[Description("비고")]
 		public string Remark { get; set; }
+
+
+        public List<CustomerEmpDto> Employees { get; set; }
     }
 }
