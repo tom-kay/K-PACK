@@ -353,5 +353,30 @@ namespace P01_K_DESIGN_WIN
 				lblTopMenuCaption.Text = (e.TabPage.Tag as Form).Text; 
 			}
 		}
+
+		private void lblTitleBarCaption_MouseDown(object sender, MouseEventArgs e)
+		{
+			if (e.Clicks == 2)
+			{
+				lblTitleBarCaption_MouseDoubleClick(sender, e);
+			}
+			else if (e.Clicks == 1)
+			{
+				ReleaseCapture();
+				SendMessage(this.Handle, 0x112, 0xf012, 0);
+			}
+		}
+
+		private void lblTitleBarCaption_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			if (this.Size == Screen.PrimaryScreen.WorkingArea.Size)
+			{
+				btnNormal_Click(sender, e);
+			}
+			else
+			{
+				btnMaximum_Click(sender, e);
+			}
+		}
 	}
 }

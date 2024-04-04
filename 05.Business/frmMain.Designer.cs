@@ -31,18 +31,18 @@ namespace P05_Business
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("노드2");
-			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("노드4");
-			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("노드6");
-			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("노드5", new System.Windows.Forms.TreeNode[] {
-            treeNode3});
-			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("노드3", new System.Windows.Forms.TreeNode[] {
-            treeNode2,
-            treeNode4});
-			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("노드0", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode5});
-			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("노드1");
+			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("노드2");
+			System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("노드4");
+			System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("노드6");
+			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("노드5", new System.Windows.Forms.TreeNode[] {
+            treeNode10});
+			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("노드3", new System.Windows.Forms.TreeNode[] {
+            treeNode9,
+            treeNode11});
+			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("노드0", new System.Windows.Forms.TreeNode[] {
+            treeNode8,
+            treeNode12});
+			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("노드1");
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
 			this.trvMenu = new System.Windows.Forms.TreeView();
 			this.imgIconList = new System.Windows.Forms.ImageList(this.components);
@@ -87,13 +87,13 @@ namespace P05_Business
 			// lblTime
 			// 
 			this.lblTime.Location = new System.Drawing.Point(693, 4);
-			this.lblTime.Text = "16:36:32";
+			this.lblTime.Text = "15:59:36";
 			// 
 			// lblDate
 			// 
 			this.lblDate.Location = new System.Drawing.Point(520, 4);
-			this.lblDate.Size = new System.Drawing.Size(156, 20);
-			this.lblDate.Text = "2024년 3월 20일 수요일";
+			this.lblDate.Size = new System.Drawing.Size(147, 20);
+			this.lblDate.Text = "2024년 4월 4일 목요일";
 			// 
 			// btnMaximum
 			// 
@@ -124,25 +124,25 @@ namespace P05_Business
 			this.trvMenu.ImageList = this.imgIconList;
 			this.trvMenu.Location = new System.Drawing.Point(0, 0);
 			this.trvMenu.Name = "trvMenu";
-			treeNode1.Name = "노드2";
-			treeNode1.Text = "노드2";
-			treeNode2.Name = "노드4";
-			treeNode2.Text = "노드4";
-			treeNode3.Name = "노드6";
-			treeNode3.Text = "노드6";
-			treeNode4.Name = "노드5";
-			treeNode4.Text = "노드5";
-			treeNode5.Name = "노드3";
-			treeNode5.Text = "노드3";
-			treeNode6.ImageKey = "(기본값)";
-			treeNode6.Name = "노드0";
-			treeNode6.SelectedImageKey = "(기본값)";
-			treeNode6.Text = "노드0";
-			treeNode7.Name = "노드1";
-			treeNode7.Text = "노드1";
+			treeNode8.Name = "노드2";
+			treeNode8.Text = "노드2";
+			treeNode9.Name = "노드4";
+			treeNode9.Text = "노드4";
+			treeNode10.Name = "노드6";
+			treeNode10.Text = "노드6";
+			treeNode11.Name = "노드5";
+			treeNode11.Text = "노드5";
+			treeNode12.Name = "노드3";
+			treeNode12.Text = "노드3";
+			treeNode13.ImageKey = "(기본값)";
+			treeNode13.Name = "노드0";
+			treeNode13.SelectedImageKey = "(기본값)";
+			treeNode13.Text = "노드0";
+			treeNode14.Name = "노드1";
+			treeNode14.Text = "노드1";
 			this.trvMenu.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode7});
+            treeNode13,
+            treeNode14});
 			this.trvMenu.SelectedImageKey = "folder_folder.png";
 			this.trvMenu.ShowLines = false;
 			this.trvMenu.ShowPlusMinus = false;

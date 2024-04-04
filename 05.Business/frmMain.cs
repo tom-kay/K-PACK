@@ -28,6 +28,8 @@ namespace P05_Business
 
 			base.btnMaximum_Click(null, null);
 
+			string titleBarName = string.Concat(LoginCompany.CompanyNameK, "[", LoginCompany.CompanyGroup, "]");
+			lblTitleBarCaption.Text = titleBarName;
 			lblMainMsg.Text = "READY!!";
 		}
 
