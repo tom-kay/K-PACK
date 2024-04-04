@@ -31,6 +31,8 @@ namespace P05_Business.S03_Views.Base
 			Set_Menu_Button(new EditButtonSettings { isPrint = false });
 
 			InitDto();
+
+			txtCompanyCode.Texts = LoginCompany.CompanyCode;
 			
 		}
 
@@ -47,6 +49,8 @@ namespace P05_Business.S03_Views.Base
 		private void frmUserMng_Load(object sender, EventArgs e)
 		{
 			InitCombo();
+
+
 
 			if (IS_LINK_OPEN) SearchData();
 		}
@@ -171,6 +175,7 @@ namespace P05_Business.S03_Views.Base
 				UserMngDto param = new UserMngDto()
 				{
 					UserId = txtUserId.Texts,
+					CompanyCode = txtCompanyCode.Texts,
 				};
 
 				dto = ctrl.GetUserInfo(param);

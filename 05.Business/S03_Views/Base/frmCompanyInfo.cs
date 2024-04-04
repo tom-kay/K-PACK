@@ -24,6 +24,8 @@ namespace P05_Business.S03_Views.Base
 
 			Set_Menu_Button(new EditButtonSettings { isPrint = false });
 
+			txtCompanyCode.Texts = LoginCompany.CompanyCode;
+
 			InitDto();
 		}
 		#endregion

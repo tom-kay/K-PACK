@@ -40,13 +40,13 @@ namespace P05_Business.S03_Views.Base
 		private void CreateGrid()
 		{
 			UserDataGrid.Create(dgvList, DataGridViewAutoSizeColumnsMode.Fill);
-			UserDataGrid.AddTextBoxColumn(dgvList, "CustCode", "거래처코드", true, true, 10, DataGridViewContentAlignment.MiddleLeft);
-			UserDataGrid.AddTextBoxColumn(dgvList, "CustName", "거래처명", true, true, 15, DataGridViewContentAlignment.MiddleLeft);
-			UserDataGrid.AddTextBoxColumn(dgvList, "NationName", "국가", true, true, 10, DataGridViewContentAlignment.MiddleLeft);
-			UserDataGrid.AddTextBoxColumn(dgvList, "DealTypeSale", "매출", true, true, 15, DataGridViewContentAlignment.MiddleLeft);
-			UserDataGrid.AddTextBoxColumn(dgvList, "DealTypeBuy", "매입", true, true, 5, DataGridViewContentAlignment.MiddleCenter);
-			UserDataGrid.AddTextBoxColumn(dgvList, "DealTypeProc", "임가공", true, true, 5, DataGridViewContentAlignment.MiddleCenter);
-			UserDataGrid.AddTextBoxColumn(dgvList, "DealTypeGeneral", "일반", true, true, 15, DataGridViewContentAlignment.MiddleCenter);
+			UserDataGrid.AddLinkColumn(dgvList, "CustCode", "거래처코드", true, true, 10, DataGridViewContentAlignment.MiddleLeft);
+			UserDataGrid.AddTextBoxColumn(dgvList, "CustName", "거래처명", true, true, 50, DataGridViewContentAlignment.MiddleLeft);
+			UserDataGrid.AddTextBoxColumn(dgvList, "NationName", "국가", true, true, 10, DataGridViewContentAlignment.MiddleCenter);
+			UserDataGrid.AddCheckBoxColumn(dgvList, "DealTypeSale", "매출", true, true, 5, DataGridViewContentAlignment.MiddleCenter);
+			UserDataGrid.AddCheckBoxColumn(dgvList, "DealTypeBuy", "매입", true, true, 5, DataGridViewContentAlignment.MiddleCenter);
+			UserDataGrid.AddCheckBoxColumn(dgvList, "DealTypeProc", "임가공", true, true, 5, DataGridViewContentAlignment.MiddleCenter);
+			UserDataGrid.AddCheckBoxColumn(dgvList, "DealTypeGeneral", "일반", true, true, 5, DataGridViewContentAlignment.MiddleCenter);
 			UserDataGrid.End(dgvList);
 		}
 
@@ -80,10 +80,11 @@ namespace P05_Business.S03_Views.Base
 				CustCode = txtCustCode.Texts,
 				CustName = txtCustName.Texts,
 				NationCode = cboNationality.SelectedValue.ToString(),
-				DealTypeSale = chkDealSale.Checked ? "Y" : "N",
-				DealTypeBuy = chkDealBuy.Checked ? "Y" : "N",
-				DealTypeProc = chkDealProc.Checked ? "Y" : "N",
-				DealTypeGeneral = chkDealGeneral.Checked ? "Y" : "N",
+				DealTypeSale = chkDealSale.Checked,
+				DealTypeBuy = chkDealBuy.Checked,
+				DealTypeProc = chkDealProc.Checked,
+				DealTypeGeneral = chkDealGeneral.Checked,
+				DelYn = rdoDelA.Checked ? "" : rdoDelY.Checked ? "Y" : "N",
 			};
 
 			List<CustomerDto> list = ctrl.GetCustomerList(param);
@@ -101,16 +102,13 @@ namespace P05_Business.S03_Views.Base
 			ComboHelper.InitComboBox(cboNationality, "NATIONALITY", true, false);
 		}
 
-		private void dgvList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+		private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (e.Button == MouseButtons.Left)
-			{
-				string code = dgvList.Rows[e.RowIndex].Cells["CustCode"].Value.ToString();
+			string code = dgvList.Rows[e.RowIndex].Cells["CustCode"].Value.ToString();
 
-				frmCustomerMng frm = new frmCustomerMng(code);
+			frmCustomerMng frm = new frmCustomerMng(code);
 
-				AccessMain.OpenChildForm(frm);
-			}
+			AccessMain.OpenChildForm(frm);
 		}
 	}
 }

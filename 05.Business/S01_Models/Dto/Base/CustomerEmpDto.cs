@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace P05_Business.S01_Models.Dto.Base
         public string CustCode { get; set; }
 
 		[Description("직원 등록 코드")]
-		public int EmpIdx { get; set; }
+		public int? EmpIdx { get; set; }
 
 		[Description("직원명")]
 		public string EmpName { get; set; }
@@ -37,5 +38,7 @@ namespace P05_Business.S01_Models.Dto.Base
 
 		[Description("비고")]
 		public string Remark { get; set; }
-    }
+
+		public DataRowState? DataState { get; set; }
+	}
 }

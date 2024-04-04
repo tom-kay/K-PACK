@@ -8,13 +8,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace P05_Business.Common
-{	
+{
+	public enum ResultCRUD
+	{
+		None,
+		SearchSuccessData,
+		SearchSuccessNoData,
+		SearchFailData,
+		SaveSuccessData,
+		SaveFailData,
+		DeleteSuccessData,
+		DeleteFailData,
+	}
+
 	public class GlobalVariables
-	{	
+	{
 		public static string ExcutePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 		public const string LogoFilePath = "Resource";
 		public const string LogoFile = "Logo.jpg";
 
-        public static string GetLogoFileImage { get { return Path.Combine(GlobalVariables.ExcutePath, GlobalVariables.LogoFilePath, GlobalVariables.LogoFile); } }
-    }
+		public static string GetLogoFileImage { get { return Path.Combine(GlobalVariables.ExcutePath, GlobalVariables.LogoFilePath, GlobalVariables.LogoFile); } }
+
+	}
 }

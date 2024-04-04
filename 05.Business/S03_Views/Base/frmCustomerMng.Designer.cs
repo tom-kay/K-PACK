@@ -109,12 +109,12 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
 			this.panel34 = new System.Windows.Forms.Panel();
-			this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-			this.panel35 = new System.Windows.Forms.Panel();
-			this.dgvList = new System.Windows.Forms.DataGridView();
 			this.panel42 = new System.Windows.Forms.Panel();
 			this.btnAddRow = new P02_K_CONTROL_WIN.KButton();
 			this.btnDelRow = new P02_K_CONTROL_WIN.KButton();
+			this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+			this.panel35 = new System.Windows.Forms.Panel();
+			this.dgvList = new System.Windows.Forms.DataGridView();
 			this.pnlMain.SuspendLayout();
 			this.pnlBody.SuspendLayout();
 			this.pnlHeader.SuspendLayout();
@@ -168,9 +168,9 @@
 			this.panel31.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.panel34.SuspendLayout();
+			this.panel42.SuspendLayout();
 			this.panel35.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-			this.panel42.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pnlMain
@@ -315,11 +315,11 @@
 			this.txtCustCode.BorderFocusColor = System.Drawing.Color.HotPink;
 			this.txtCustCode.BorderRadius = 0;
 			this.txtCustCode.BorderSize = 2;
-			this.txtCustCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+			this.txtCustCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
 			this.txtCustCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtCustCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtCustCode.Location = new System.Drawing.Point(3, 6);
-			this.txtCustCode.MaxLength = 32767;
+			this.txtCustCode.MaxLength = 10;
 			this.txtCustCode.Multiline = false;
 			this.txtCustCode.Name = "txtCustCode";
 			this.txtCustCode.OnlyNumber = false;
@@ -377,7 +377,7 @@
 			this.txtCompanyNo.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtCompanyNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtCompanyNo.Location = new System.Drawing.Point(3, 6);
-			this.txtCompanyNo.MaxLength = 32767;
+			this.txtCompanyNo.MaxLength = 12;
 			this.txtCompanyNo.Multiline = false;
 			this.txtCompanyNo.Name = "txtCompanyNo";
 			this.txtCompanyNo.OnlyNumber = false;
@@ -439,7 +439,7 @@
 			this.cboNationality.Padding = new System.Windows.Forms.Padding(1);
 			this.cboNationality.Size = new System.Drawing.Size(139, 29);
 			this.cboNationality.TabIndex = 1;
-			this.cboNationality.Tag = "Nationality";
+			this.cboNationality.Tag = "NationCode";
 			this.cboNationality.Texts = "";
 			// 
 			// panel8
@@ -487,7 +487,7 @@
 			this.txtCustName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtCustName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtCustName.Location = new System.Drawing.Point(3, 6);
-			this.txtCustName.MaxLength = 32767;
+			this.txtCustName.MaxLength = 100;
 			this.txtCustName.Multiline = false;
 			this.txtCustName.Name = "txtCustName";
 			this.txtCustName.OnlyNumber = false;
@@ -567,7 +567,7 @@
 			this.txtTelNo.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtTelNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtTelNo.Location = new System.Drawing.Point(3, 6);
-			this.txtTelNo.MaxLength = 32767;
+			this.txtTelNo.MaxLength = 30;
 			this.txtTelNo.Multiline = false;
 			this.txtTelNo.Name = "txtTelNo";
 			this.txtTelNo.OnlyNumber = false;
@@ -625,7 +625,7 @@
 			this.txtFaxNo.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtFaxNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtFaxNo.Location = new System.Drawing.Point(3, 6);
-			this.txtFaxNo.MaxLength = 32767;
+			this.txtFaxNo.MaxLength = 30;
 			this.txtFaxNo.Multiline = false;
 			this.txtFaxNo.Name = "txtFaxNo";
 			this.txtFaxNo.OnlyNumber = false;
@@ -683,7 +683,7 @@
 			this.txtEmail.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtEmail.Location = new System.Drawing.Point(4, 6);
-			this.txtEmail.MaxLength = 32767;
+			this.txtEmail.MaxLength = 100;
 			this.txtEmail.Multiline = false;
 			this.txtEmail.Name = "txtEmail";
 			this.txtEmail.OnlyNumber = false;
@@ -742,7 +742,7 @@
 			this.txtAddress1.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtAddress1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtAddress1.Location = new System.Drawing.Point(3, 6);
-			this.txtAddress1.MaxLength = 32767;
+			this.txtAddress1.MaxLength = 255;
 			this.txtAddress1.Multiline = false;
 			this.txtAddress1.Name = "txtAddress1";
 			this.txtAddress1.OnlyNumber = false;
@@ -801,7 +801,7 @@
 			this.txtAddress2.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtAddress2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtAddress2.Location = new System.Drawing.Point(4, 6);
-			this.txtAddress2.MaxLength = 32767;
+			this.txtAddress2.MaxLength = 255;
 			this.txtAddress2.Multiline = false;
 			this.txtAddress2.Name = "txtAddress2";
 			this.txtAddress2.OnlyNumber = false;
@@ -1107,7 +1107,7 @@
 			this.txtRemark.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtRemark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtRemark.Location = new System.Drawing.Point(4, 6);
-			this.txtRemark.MaxLength = 32767;
+			this.txtRemark.MaxLength = 255;
 			this.txtRemark.Multiline = false;
 			this.txtRemark.Name = "txtRemark";
 			this.txtRemark.OnlyNumber = false;
@@ -1143,7 +1143,7 @@
 			this.txtOwnerName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtOwnerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtOwnerName.Location = new System.Drawing.Point(4, 6);
-			this.txtOwnerName.MaxLength = 32767;
+			this.txtOwnerName.MaxLength = 50;
 			this.txtOwnerName.Multiline = false;
 			this.txtOwnerName.Name = "txtOwnerName";
 			this.txtOwnerName.OnlyNumber = false;
@@ -1226,7 +1226,7 @@
 			this.txtBankName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtBankName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtBankName.Location = new System.Drawing.Point(4, 6);
-			this.txtBankName.MaxLength = 32767;
+			this.txtBankName.MaxLength = 50;
 			this.txtBankName.Multiline = false;
 			this.txtBankName.Name = "txtBankName";
 			this.txtBankName.OnlyNumber = false;
@@ -1284,7 +1284,7 @@
 			this.txtDepositor.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtDepositor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtDepositor.Location = new System.Drawing.Point(4, 6);
-			this.txtDepositor.MaxLength = 32767;
+			this.txtDepositor.MaxLength = 50;
 			this.txtDepositor.Multiline = false;
 			this.txtDepositor.Name = "txtDepositor";
 			this.txtDepositor.OnlyNumber = false;
@@ -1343,7 +1343,7 @@
 			this.txtAccountNo.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
 			this.txtAccountNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.txtAccountNo.Location = new System.Drawing.Point(4, 6);
-			this.txtAccountNo.MaxLength = 32767;
+			this.txtAccountNo.MaxLength = 50;
 			this.txtAccountNo.Multiline = false;
 			this.txtAccountNo.Name = "txtAccountNo";
 			this.txtAccountNo.OnlyNumber = false;
@@ -1356,6 +1356,7 @@
 			this.txtAccountNo.Tag = "AccountNo";
 			this.txtAccountNo.Texts = "";
 			this.txtAccountNo.UnderlinedStyle = false;
+			this.txtAccountNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAccountNo_KeyPress);
 			// 
 			// panel1
 			// 
@@ -1388,39 +1389,6 @@
 			this.panel34.Name = "panel34";
 			this.panel34.Size = new System.Drawing.Size(800, 35);
 			this.panel34.TabIndex = 3;
-			// 
-			// metroLabel2
-			// 
-			this.metroLabel2.Dock = System.Windows.Forms.DockStyle.Left;
-			this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-			this.metroLabel2.ForeColor = System.Drawing.Color.MidnightBlue;
-			this.metroLabel2.Location = new System.Drawing.Point(0, 0);
-			this.metroLabel2.Name = "metroLabel2";
-			this.metroLabel2.Size = new System.Drawing.Size(101, 35);
-			this.metroLabel2.Style = MetroFramework.MetroColorStyle.Teal;
-			this.metroLabel2.TabIndex = 0;
-			this.metroLabel2.Text = "◎ 직원정보";
-			this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-			this.metroLabel2.UseCustomForeColor = true;
-			// 
-			// panel35
-			// 
-			this.panel35.Controls.Add(this.dgvList);
-			this.panel35.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel35.Location = new System.Drawing.Point(0, 406);
-			this.panel35.Name = "panel35";
-			this.panel35.Size = new System.Drawing.Size(800, 120);
-			this.panel35.TabIndex = 4;
-			// 
-			// dgvList
-			// 
-			this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dgvList.Location = new System.Drawing.Point(0, 0);
-			this.dgvList.Name = "dgvList";
-			this.dgvList.RowTemplate.Height = 23;
-			this.dgvList.Size = new System.Drawing.Size(800, 120);
-			this.dgvList.TabIndex = 0;
 			// 
 			// panel42
 			// 
@@ -1479,6 +1447,39 @@
 			this.btnDelRow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnDelRow.UseVisualStyleBackColor = false;
 			this.btnDelRow.Click += new System.EventHandler(this.btnDelRow_Click);
+			// 
+			// metroLabel2
+			// 
+			this.metroLabel2.Dock = System.Windows.Forms.DockStyle.Left;
+			this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+			this.metroLabel2.ForeColor = System.Drawing.Color.MidnightBlue;
+			this.metroLabel2.Location = new System.Drawing.Point(0, 0);
+			this.metroLabel2.Name = "metroLabel2";
+			this.metroLabel2.Size = new System.Drawing.Size(101, 35);
+			this.metroLabel2.Style = MetroFramework.MetroColorStyle.Teal;
+			this.metroLabel2.TabIndex = 0;
+			this.metroLabel2.Text = "◎ 직원정보";
+			this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+			this.metroLabel2.UseCustomForeColor = true;
+			// 
+			// panel35
+			// 
+			this.panel35.Controls.Add(this.dgvList);
+			this.panel35.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel35.Location = new System.Drawing.Point(0, 406);
+			this.panel35.Name = "panel35";
+			this.panel35.Size = new System.Drawing.Size(800, 120);
+			this.panel35.TabIndex = 4;
+			// 
+			// dgvList
+			// 
+			this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dgvList.Location = new System.Drawing.Point(0, 0);
+			this.dgvList.Name = "dgvList";
+			this.dgvList.RowTemplate.Height = 23;
+			this.dgvList.Size = new System.Drawing.Size(800, 120);
+			this.dgvList.TabIndex = 0;
 			// 
 			// frmCustomerMng
 			// 
@@ -1545,9 +1546,9 @@
 			this.panel31.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.panel34.ResumeLayout(false);
+			this.panel42.ResumeLayout(false);
 			this.panel35.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-			this.panel42.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}

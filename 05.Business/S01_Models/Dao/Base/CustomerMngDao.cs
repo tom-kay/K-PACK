@@ -29,7 +29,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			return customers;
 		}
 
-		internal CustomerDto selectCustomerSingle(CustomerDto param)
+		internal CustomerDto SelectCustomerSingle(CustomerDto param)
 		{
 			RequestContext context = new RequestContext
 			{
@@ -43,22 +43,57 @@ namespace P05_Business.S01_Models.Dao.Base
 			return customers;
 		}
 
-		internal int insertCustomer(CustomerDto param)
+		internal int InsertCustomer(CustomerDto param)
 		{
 			int save;
-
-			RequestContext context = new RequestContext
-			{
-				Scope = "Base.CustomerMng",
-				SqlId = "insertCustomer",
-				Request = param
-			};
 
 			try
 			{
 				SqlMapper.BeginTransaction();
+
+				RequestContext context = new RequestContext
+				{
+					Scope = "Base.CustomerMng",
+					SqlId = "insertCustomer",
+					Request = param
+				};
+
 				save = SqlMapper.Execute(context);
 				log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+
+				List<CustomerEmpDto> employees = param.Employees;
+				if (save >= 0 && employees != null)
+				{
+                    foreach (CustomerEmpDto employee in employees) 
+					{
+						if ((employee.DataState & (System.Data.DataRowState.Added | System.Data.DataRowState.Modified)) != 0)
+						{
+							context = new RequestContext
+							{
+								Scope = "Base.CustomerMng",
+								SqlId = "insertCustomerEmp",
+								Request = employee
+							};
+
+							save = SqlMapper.Execute(context);
+							log.Info(SqlMapper.SqlBuilder.BuildSql(context)); 
+						} else if (employee.DataState == System.Data.DataRowState.Deleted)
+						{
+							context = new RequestContext
+							{
+								Scope = "Base.CustomerMng",
+								SqlId = "deleteCustomerEmp",
+								Request = employee
+							};
+
+							save = SqlMapper.Execute(context);
+							log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+						}
+
+						if (save < 0) break;
+					}
+                }
+
 				SqlMapper.CommitTransaction();
 
 			}
@@ -72,7 +107,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			return save;
 		}
 
-		internal int deleteCustomer(CustomerDto param)
+		internal int DeleteCustomer(CustomerDto param)
 		{
 			int delete;
 
@@ -99,6 +134,20 @@ namespace P05_Business.S01_Models.Dao.Base
 
 
 			return delete;
+		}
+
+		internal List<CustomerEmpDto> SelectCustomerEmpList(CustomerDto param)
+		{
+			RequestContext context = new RequestContext
+			{
+				Scope = "Base.CustomerMng",
+				SqlId = "selectCustomerEmpList",
+				Request = param
+			};
+			List<CustomerEmpDto> customers = SqlMapper.Query<CustomerEmpDto>(context).ToList();
+			log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+
+			return customers;
 		}
 	}
 }

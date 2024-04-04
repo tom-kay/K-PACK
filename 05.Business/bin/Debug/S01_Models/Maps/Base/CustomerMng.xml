@@ -15,7 +15,7 @@
 		<Statement Id="selectCustomerList">
 			SELECT cust.`CustCode`,
 			cust.`CustName`,
-			AES_DECRYPT(UNHEX(cust.`CompanyNo`), cust.`CustCode`) AS CompanyNo,
+			CAST(AES_DECRYPT(UNHEX(cust.`CompanyNo`), cust.`CustCode`) AS CHAR) AS CompanyNo,
 			cust.`Address1`,
 			cust.`Address2`,
 			cust.`TelNo`,
@@ -38,13 +38,13 @@
 			ON nat.MasterCode = 'NATIONALITY'
 			AND cust.NationCode = nat.`Code`
 			WHERE CompanyCode = @CompanyCode
-			<IsNotEmpty Prepend="And" Property="CustCode">
+			<IsNotEmpty Prepend="And" Property="CustCode" CompareValue="">
 				cust.`CustCode` Like Concat('%', @CustCode, '%')
 			</IsNotEmpty>
-			<IsNotEmpty Prepend="And" Property="CustName">
+			<IsNotEmpty Prepend="And" Property="CustName" CompareValue="">
 				cust.`CustName` Like Concat('%', @CustName, '%')
 			</IsNotEmpty>
-			<IsNotEmpty Prepend="And" Property="NationCode">
+			<IsNotEmpty Prepend="And" Property="NationCode" CompareValue="">
 				cust.`NationCode` = @NationCode
 			</IsNotEmpty>
 			<Switch Prepend="And" Property="DelYn">
@@ -55,24 +55,26 @@
 					(cust.`DelYn` IS NULL OR cust.`DelYn` != 'Y')
 				</Case>
 			</Switch>
-			<IsNotEmpty Prepend="OR" Property="DealTypeSale">
+			AND ( 1=2
+			<IsTrue Prepend="Or" Property="DealTypeSale">
 				cust.`DealTypeSale` = @DealTypeSale
-			</IsNotEmpty>
-			<IsNotEmpty Prepend="OR" Property="DealTypeBuy">
+			</IsTrue>
+			<IsTrue Prepend="Or" Property="DealTypeBuy">
 				cust.`DealTypeBuy` = @DealTypeBuy
-			</IsNotEmpty>
-			<IsNotEmpty Prepend="OR" Property="DealTypeProc">
+			</IsTrue>
+			<IsTrue Prepend="Or" Property="DealTypeProc">
 				cust.`DealTypeProc` = @DealTypeProc
-			</IsNotEmpty>
-			<IsNotEmpty Prepend="OR" Property="DealTypeGeneral">
+			</IsTrue>
+			<IsTrue Prepend="Or" Property="DealTypeGeneral">
 				cust.`DealTypeGeneral` = @DealTypeGeneral
-			</IsNotEmpty>
+			</IsTrue>
+			)
 		</Statement>
 
 		<Statement Id="selectCustomer">
 			SELECT cust.`CustCode`,
 			cust.`CustName`,
-			AES_DECRYPT(UNHEX(cust.`CompanyNo`), cust.`CustCode`) AS CompanyNo,
+			CAST(AES_DECRYPT(UNHEX(cust.`CompanyNo`), cust.`CustCode`) AS CHAR) AS CompanyNo,
 			cust.`Address1`,
 			cust.`Address2`,
 			cust.`TelNo`,
@@ -176,13 +178,86 @@
 		<Statement Id="deleteCustomer" >
 			UPDATE `soodal`.`tb_customer`
 			SET
-			`DelYn` = @DelYn,
+			`DelYn` = 'Y',
 			`DeleteId` = @DeleteId,
 			`DeleteDt` = now()
 			WHERE CustCode = @CustCode
 				AND `CompanyCode` = @CompanyCode
 		</Statement>
 
+
+		<Statement Id="selectCustomerEmpList">
+			SELECT cust.`CustCode`,
+			cust.`EmpIdx`,
+			cust.`EmpName`,
+			cust.`PositionName`,
+			cust.`TelNo`,
+			cust.`MobileNo`,
+			cust.`Email`,
+			cust.`TaskCharge`,
+			cust.`Remark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `soodal`.`tb_customeremp` AS cust
+			WHERE cust.CustCode = @CustCode
+				AND cust.DelYn = 'N'
+		</Statement>
+
+		<Statement Id="insertCustomerEmp">
+
+			INSERT INTO `soodal`.`tb_customeremp`
+			(`CustCode`,
+			`EmpIdx`,
+			`EmpName`,
+			`PositionName`,
+			`TelNo`,
+			`MobileNo`,
+			`Email`,
+			`TaskCharge`,
+			`Remark`,
+			`CompanyCode`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`)
+			VALUES
+			(@CustCode,
+			`FN_CreateCustEmpIdx`(@CompanyCode, @CustCode, @EmpIdx),
+			@EmpName,
+			@PositionName,
+			@TelNo,
+			@MobileNo,
+			@Email,
+			@TaskCharge,
+			@Remark,
+			@CompanyCode,
+			'N',
+			@CreateId,
+			now())
+			ON DUPLICATE KEY UPDATE
+			`EmpName` = @EmpName,
+			`PositionName` = @PositionName,
+			`TelNo` = @TelNo,
+			`MobileNo` = @MobileNo,
+			`Email` = @Email,
+			`TaskCharge` = @TaskCharge,
+			`Remark` = @Remark,
+			`DelYn` = 'N',
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = null,
+			`DeleteDt` = null
+
+		</Statement>
+
+		<Statement Id="deleteCustomerEmp" >
+			UPDATE `soodal`.`tb_customeremp`
+			SET
+			`DelYn` = 'Y',
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = now()
+			WHERE CustCode = @CustCode
+			AND `EmpIdx` = @EmpIdx
+			AND `CompanyCode` = @CompanyCode
+		</Statement>
 
 	</Statements>
 </SmartSqlMap>

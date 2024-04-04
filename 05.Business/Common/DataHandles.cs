@@ -2,7 +2,10 @@
 using P02_K_CONTROL_WIN;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace P05_Business.Common
@@ -201,6 +204,67 @@ namespace P05_Business.Common
 			return results;
 		}
 
+		public static DataTable ConvertToDataTable<T>(IList<T> data)
+		{
+			PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
+			DataTable dt = new DataTable();
+			foreach (PropertyDescriptor prop in properties)
+				dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+			foreach (T item in data)
+			{
+				DataRow row = dt.NewRow();
+				foreach (PropertyDescriptor prop in properties)
+					row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+				dt.Rows.Add(row);
+			}
+			return dt;
+		}
 
+		public static List<T> ConvertToList<T>(DataTable dt) where T : new()
+		{
+			List<T> list = new List<T>();
+
+			foreach (DataRow row in dt.Rows)
+			{
+				T item = new T();
+				foreach (DataColumn column in dt.Columns)
+				{
+					PropertyInfo property = item.GetType().GetProperty(column.ColumnName);
+					if (property != null)
+					{
+						object value = null;
+						if (row.RowState == DataRowState.Deleted)
+						{
+							value = row[column, DataRowVersion.Original];
+						}
+						else if (row[column] != DBNull.Value)
+						{
+							value = row[column];
+						}
+
+						if (value != null && value != DBNull.Value) // DBNull.Value를 체크합니다.
+						{
+							if (property.PropertyType.IsGenericType && property.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
+							{
+								property.SetValue(item, Convert.ChangeType(value, Nullable.GetUnderlyingType(property.PropertyType)), null);
+							}
+							else
+							{
+								property.SetValue(item, Convert.ChangeType(value, property.PropertyType), null);
+							}
+						}
+					}
+				}
+
+				PropertyInfo prop = item.GetType().GetProperty("DataState");
+				if (prop != null)
+				{
+					prop.SetValue(item, row.RowState, null);
+				}
+				list.Add(item);
+			}
+
+			return list;
+		}
 	}
 }

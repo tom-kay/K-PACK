@@ -1,5 +1,7 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -24,7 +26,7 @@ namespace P05_Business.Common
 		/// </summary>
 		/// <param name="dataGrid"></param>
 		/// <param name="sizeColumnsMode"></param>
-		public static void Create(DataGridView dataGrid, DataGridViewAutoSizeColumnsMode sizeColumnsMode)
+		public static void Create(DataGridView dataGrid, DataGridViewAutoSizeColumnsMode sizeColumnsMode, DataGridViewCellBorderStyle borderStyle = DataGridViewCellBorderStyle.None)
 		{
 			dataGrid.Refresh();
 
@@ -33,11 +35,12 @@ namespace P05_Business.Common
 			dataGrid.AllowUserToResizeRows = false;
 			dataGrid.BackgroundColor = SystemColors.Window;
 			dataGrid.BorderStyle = BorderStyle.None;
-			dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
+			dataGrid.CellBorderStyle = borderStyle;
 			dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGrid.AutoGenerateColumns = false;
 			dataGrid.RowHeadersVisible = false;
 			dataGrid.EnableHeadersVisualStyles = false;
+			dataGrid.AllowUserToAddRows = false;
 
 			dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
 			dataGrid.ColumnHeadersHeight = 35;
@@ -80,9 +83,11 @@ namespace P05_Business.Common
 		/// <param name="alignment">컬럼 정렬 설정</param>
 		public static void AddTextBoxColumn(DataGridView dataGrid
 			, string name, string headerText, bool readOnly, bool visible, int columnWidth
-			, DataGridViewContentAlignment alignment, TextType textType = TextType.None)
+			, DataGridViewContentAlignment alignment, TextType textType = TextType.None, Int16 maxInputLength = Int16.MaxValue)
 		{
 			DataGridViewTextBoxColumn text = new DataGridViewTextBoxColumn();
+
+			text.MaxInputLength = maxInputLength;
 
 			dataGrid.Columns.Add(SetGridCommonOption(text, name, headerText, readOnly, visible, columnWidth, alignment, textType));
 
@@ -207,7 +212,8 @@ namespace P05_Business.Common
 			column.DefaultCellStyle.Alignment = alignment;
 			column.SortMode = DataGridViewColumnSortMode.NotSortable;
 			column.DefaultCellStyle.Font = new Font("Microsoft New Tai Lue", 12);
-            if (textType != TextType.None && textType != TextType.Text)
+
+			if (textType != TextType.None && textType != TextType.Text)
             {
 				switch (textType)
 				{
@@ -227,6 +233,31 @@ namespace P05_Business.Common
             }
 
             return column;
+		}
+
+		internal static DataTable GetChangeAll(DataGridView grid)
+		{
+			return (grid.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted);
+		}
+
+		internal static DataTable GetChangeAdded(DataGridView grid)
+		{
+			return (grid.DataSource as DataTable).GetChanges(DataRowState.Added);
+		}
+
+		internal static DataTable GetChangeModified(DataGridView grid)
+		{
+			return (grid.DataSource as DataTable).GetChanges(DataRowState.Modified);
+		}
+
+		internal static DataTable GetChangeDeleted(DataGridView grid)
+		{
+			return (grid.DataSource as DataTable).GetChanges(DataRowState.Deleted);
+		}
+
+		internal static DataTable GetChangesWithoutDeleted(DataGridView grid)
+		{
+			return (grid.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified);
 		}
 	}
 }

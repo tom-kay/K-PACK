@@ -43,16 +43,16 @@ namespace P05_Business.S01_Models.Dto.Base
 		public string NationName { get; set; }
 
 		[Description("거래구분(매출)")]
-		public string DealTypeSale { get; set; }
+		public bool? DealTypeSale { get; set; }
 
 		[Description("거래구분(매입)")]
-		public string DealTypeBuy { get; set; }
+		public bool? DealTypeBuy { get; set; }
 
 		[Description("거래구분(임가공)")]
-		public string DealTypeProc { get; set; }
+		public bool? DealTypeProc { get; set; }
 
 		[Description("거래구분(일반)")]
-		public string DealTypeGeneral { get; set; }
+		public bool? DealTypeGeneral { get; set; }
 
 		[Description("대표자명")]
 		public string OwnerName { get; set; }

@@ -17,6 +17,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.Xml.XPath;
+using static P05_Business.Common.GlobalVariables;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 namespace P05_Business.S03_Views.Base
@@ -26,7 +28,7 @@ namespace P05_Business.S03_Views.Base
 		public static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
 		CustomerDto dto = new CustomerDto();
-		BindingList<CustomerEmpDto> dtoEmps = new BindingList<CustomerEmpDto>();
+		List<CustomerEmpDto> dtoEmps = new List<CustomerEmpDto>();
 		CustomerMngController ctrl = new CustomerMngController();
 
 		public frmCustomerMng()
@@ -79,7 +81,15 @@ namespace P05_Business.S03_Views.Base
 					return;
 				}
 
-				SearchData();
+				var result = SearchData();
+				if (result == ResultCRUD.SearchSuccessData)
+				{
+					MainMessage.Show("조회되었습니다.");
+				}
+				else if (result == ResultCRUD.SearchSuccessNoData)
+				{
+					KMessageBox.Show("자료가 없습니다.", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
 			}
 			catch (Exception ex)
 			{
@@ -93,7 +103,11 @@ namespace P05_Business.S03_Views.Base
 			{
 				if (KMessageBox.Show("저장하시겠습니까?", "SAVE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
-					SaveData();
+					var result = SaveData();
+					if (result == ResultCRUD.SaveSuccessData)
+					{
+						MainMessage.Show("저장되었습니다.");
+					}
 				}
 			}
 			catch (Exception ex)
@@ -126,10 +140,10 @@ namespace P05_Business.S03_Views.Base
 			txtCustCode.Enabled = true;
 
 			dto = new CustomerDto();
-			dtoEmps = new BindingList<CustomerEmpDto>();
+			dtoEmps = new List<CustomerEmpDto>();
 
 			//그리드 초기화
-			dgvList.DataSource = dtoEmps;
+			dgvList.DataSource = DataHandles.ConvertToDataTable<CustomerEmpDto>(dtoEmps);
 
 			InitDto();
 		}
@@ -137,42 +151,55 @@ namespace P05_Business.S03_Views.Base
 		/// <summary>
 		/// 데이터 조회
 		/// </summary>
-		private void SearchData()
+		private ResultCRUD SearchData()
 		{
-			try
+			CustomerDto param = new CustomerDto()
 			{
-				CustomerDto param = new CustomerDto()
-				{
-					CustCode = txtCustCode.Texts,
-					CompanyCode = LoginCompany.CompanyCode,
-				};
+				CustCode = txtCustCode.Texts,
+				CompanyCode = LoginCompany.CompanyCode,
+			};
 
-				dto = ctrl.GetCustomer(param);
+			dto = ctrl.GetCustomer(param);
 
-				if (dto != null)
-				{
-					DataHandles.DtoToControls(this, dto);   //데이터 바인딩
-					InitDto();
-
-					txtCustCode.Enabled = false;
-
-					MainMessage.Show("조회되었습니다.");
-				}
-				else
-				{
-					KMessageBox.Show("자료가 없습니다.", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					btnInit.PerformClick();
-				}
-			}
-			catch (Exception ex)
+			ResultCRUD result;
+			if (dto != null)
 			{
-				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				DataHandles.DtoToControls(this, dto);   //데이터 바인딩
+				dtoEmps = dto.Employees;    //직원정보
+
+				//직원정보 그리드에 바인딩
+				dgvList.DataSource = DataHandles.ConvertToDataTable<CustomerEmpDto>(dtoEmps);
+				(dgvList.DataSource as DataTable).AcceptChanges();
+
+				InitDto();
+
+				txtCustCode.Enabled = false;
+
+				//MainMessage.Show("조회되었습니다.");
+				result = ResultCRUD.SearchSuccessData;
 			}
+			else
+			{
+				result = ResultCRUD.SearchSuccessNoData;
+				//KMessageBox.Show("자료가 없습니다.", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				btnInit.PerformClick();
+			}
+
+			return result;
 		}
 
 
-		private void SaveData()
+		private ResultCRUD SaveData()
 		{
+			//그리드 변경 데이터 수집
+			DataTable dtChanges = UserDataGrid.GetChangeAll(dgvList);
+
+			List<CustomerEmpDto> saveEmps = null;
+			if (dtChanges != null)
+			{
+				saveEmps = DataHandles.ConvertToList<CustomerEmpDto>(dtChanges);
+			}
+
 			CustomerDto saveData = DataHandles.ControlsToDto(this, dto);
 
 			CustomerDto param = new CustomerDto()
@@ -198,21 +225,30 @@ namespace P05_Business.S03_Views.Base
 				CompanyCode = LoginCompany.CompanyCode,
 				CreateId = LoginUserInfo.UserId,
 				UpdateId = LoginUserInfo.UserId,
+				Employees = saveEmps,    //직원정보
 			};
 
 			//유효성 검사
 			var context = new ValidationContext(param, serviceProvider: null, items: null);
 			Validator.ValidateObject(param, context, validateAllProperties: true);
 
-			int save = ctrl.AddCustomer(param);
+			bool isSave = ctrl.AddCustomer(param);
 
-			if (dto != null)
+			ResultCRUD result = ResultCRUD.None;
+			if (isSave)
 			{
 				txtCustCode.Enabled = false;
-				InitDto();
 
-				MainMessage.Show("저장되었습니다.");
+				SearchData();
+
+				//(dgvList.DataSource as DataTable).AcceptChanges();
+
+				//InitDto();
+
+				result = ResultCRUD.SaveSuccessData;
 			}
+
+			return result;
 		}
 
 		/// <summary>
@@ -251,16 +287,16 @@ namespace P05_Business.S03_Views.Base
 
 		private void CreateGrid()
 		{
-			UserDataGrid.Create(dgvList, DataGridViewAutoSizeColumnsMode.Fill);
+			UserDataGrid.Create(dgvList, DataGridViewAutoSizeColumnsMode.Fill, DataGridViewCellBorderStyle.RaisedHorizontal);
 			UserDataGrid.AddTextBoxColumn(dgvList, "CustCode", "거래처코드", true, false, 1, DataGridViewContentAlignment.MiddleLeft);
 			UserDataGrid.AddTextBoxColumn(dgvList, "EmpIdx", "직원코드", true, false, 1, DataGridViewContentAlignment.MiddleLeft);
-			UserDataGrid.AddTextBoxColumn(dgvList, "EmpName", "직원명", false, true, 10, DataGridViewContentAlignment.MiddleLeft);
-			UserDataGrid.AddTextBoxColumn(dgvList, "PositionName", "직위명", false, true, 10, DataGridViewContentAlignment.MiddleLeft);
-			UserDataGrid.AddTextBoxColumn(dgvList, "TelNo", "전화번호", false, true, 10, DataGridViewContentAlignment.MiddleCenter);
-			UserDataGrid.AddTextBoxColumn(dgvList, "MobileNo", "휴대폰번호", false, true, 10, DataGridViewContentAlignment.MiddleCenter);
-			UserDataGrid.AddTextBoxColumn(dgvList, "Email", "이메일", false, true, 10, DataGridViewContentAlignment.MiddleCenter);
-			UserDataGrid.AddTextBoxColumn(dgvList, "TaskCharge", "담당업무", false, true, 10, DataGridViewContentAlignment.MiddleCenter);
-			UserDataGrid.AddTextBoxColumn(dgvList, "Remark", "비고", false, true, 20, DataGridViewContentAlignment.MiddleCenter);
+			UserDataGrid.AddTextBoxColumn(dgvList, "EmpName", "직원명", false, true, 10, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 50);
+			UserDataGrid.AddTextBoxColumn(dgvList, "PositionName", "직위명", false, true, 10, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 30);
+			UserDataGrid.AddTextBoxColumn(dgvList, "TelNo", "전화번호", false, true, 10, DataGridViewContentAlignment.MiddleCenter, maxInputLength: 30);
+			UserDataGrid.AddTextBoxColumn(dgvList, "MobileNo", "모바일", false, true, 10, DataGridViewContentAlignment.MiddleCenter, maxInputLength: 30);
+			UserDataGrid.AddTextBoxColumn(dgvList, "Email", "이메일", false, true, 10, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 100);
+			UserDataGrid.AddTextBoxColumn(dgvList, "TaskCharge", "담당업무", false, true, 10, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 50);
+			UserDataGrid.AddTextBoxColumn(dgvList, "Remark", "비고", false, true, 20, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 255);
 			UserDataGrid.End(dgvList);
 
 		}
@@ -274,19 +310,38 @@ namespace P05_Business.S03_Views.Base
 
 		private void btnAddRow_Click(object sender, EventArgs e)
 		{
-			
-			dtoEmps.Add(new CustomerEmpDto());
-			dgvList.Refresh();
-
-			
+			DataRow dr = (dgvList.DataSource as DataTable).NewRow();
+			dr["CustCode"] = txtCustCode.Texts;
+			(dgvList.DataSource as DataTable).Rows.Add(dr);
 		}
 
 		private void btnDelRow_Click(object sender, EventArgs e)
 		{
-			if (dgvList.Rows.Count > 0)
+			if (dgvList.Rows.Count < 1)
+			{
+				KMessageBox.Show("삭제할 데이터가 없습니다.", "삭제", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return;
+			}
+
+            if (dgvList.SelectedRows.Count < 1)
+            {
+				KMessageBox.Show("삭제할 행을 선택 바랍니다.", "삭제", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				return;
+			}
+
+            if (dgvList.Rows.Count > 0)
 			{
 				DataGridViewRow row = dgvList.SelectedRows[0];
 				dgvList.Rows.RemoveAt(row.Index);
+			}
+		}
+
+		private void txtAccountNo_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			// 숫자와 하이픈, 백스페이스 키만 입력되도록 제한
+			if (!char.IsDigit(e.KeyChar) && e.KeyChar != '-' && e.KeyChar != (char)Keys.Back)
+			{
+				e.Handled = true;
 			}
 		}
 	}

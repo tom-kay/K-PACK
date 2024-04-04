@@ -28,21 +28,28 @@ namespace P05_Business.S02_Controllers.Base
 
 		internal CustomerDto GetCustomer(CustomerDto param)
 		{
-			CustomerDto customer = dao.selectCustomerSingle(param);
+			CustomerDto customer = dao.SelectCustomerSingle(param);
+
+			List<CustomerEmpDto> custEmps = dao.SelectCustomerEmpList(param);
+
+			customer.Employees = custEmps;
 
 			return customer;
 		}
 
-		internal int AddCustomer(CustomerDto param)
+		internal bool AddCustomer(CustomerDto param)
 		{
-			int save = dao.insertCustomer(param);
+			bool isSave = true;
+			int save = dao.InsertCustomer(param);
 
-			return save;
+			if (save < 0) isSave = false;
+
+			return isSave;
 		}
 
 		internal int RemoveCustomer(CustomerDto param)
 		{
-			int delete = dao.deleteCustomer(param);
+			int delete = dao.DeleteCustomer(param);
 
 			return delete;
 		}

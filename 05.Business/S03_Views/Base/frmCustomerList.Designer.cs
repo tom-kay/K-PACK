@@ -494,7 +494,7 @@
 			this.dgvList.RowTemplate.Height = 23;
 			this.dgvList.Size = new System.Drawing.Size(891, 426);
 			this.dgvList.TabIndex = 0;
-			this.dgvList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvList_CellMouseDoubleClick);
+			this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
 			// 
 			// frmCustomerList
 			// 
