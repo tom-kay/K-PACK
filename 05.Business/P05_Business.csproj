@@ -234,6 +234,7 @@
     </Compile>
     <Compile Include="S01_Models\Dao\Base\CompanyMngDao.cs" />
     <Compile Include="S01_Models\Dao\Base\CustomerMngDao.cs" />
+    <Compile Include="S01_Models\Dao\Base\ExchangeMngDao.cs" />
     <Compile Include="S01_Models\Dao\Base\MenuMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\CodeMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\UserMngDao.cs" />
@@ -243,12 +244,14 @@
     <Compile Include="S01_Models\Dto\Base\CompanyInfoDto.cs" />
     <Compile Include="S01_Models\Dto\Base\CustomerDto.cs" />
     <Compile Include="S01_Models\Dto\Base\CustomerEmpDto.cs" />
+    <Compile Include="S01_Models\Dto\Base\ExchangeMngDto.cs" />
     <Compile Include="S01_Models\Dto\Base\MenuMasterDto.cs" />
     <Compile Include="S01_Models\Dto\Base\UserMngDto.cs" />
     <Compile Include="S01_Models\Dto\DtoBase.cs" />
     <Compile Include="S02_Controllers\Base\CodeMngController.cs" />
     <Compile Include="S02_Controllers\Base\CompanyMngController.cs" />
     <Compile Include="S02_Controllers\Base\CustomerMngController.cs" />
+    <Compile Include="S02_Controllers\Base\ExchangeMngController.cs" />
     <Compile Include="S02_Controllers\Base\MenuMngController.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -304,6 +307,12 @@
     </Compile>
     <Compile Include="S03_Views\Base\frmCustomerMng.Designer.cs">
       <DependentUpon>frmCustomerMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmExchangeMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmExchangeMng.Designer.cs">
+      <DependentUpon>frmExchangeMng.cs</DependentUpon>
     </Compile>
     <Compile Include="S03_Views\Base\frmMenuMasterMng.cs">
       <SubType>Form</SubType>
@@ -761,6 +770,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmCustomerMng.resx">
       <DependentUpon>frmCustomerMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmExchangeMng.resx">
+      <DependentUpon>frmExchangeMng.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmMenuMasterMng.resx">
       <DependentUpon>frmMenuMasterMng.cs</DependentUpon>

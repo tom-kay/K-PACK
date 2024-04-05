@@ -7,19 +7,10 @@ using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using System.Xml.XPath;
-using static P05_Business.Common.GlobalVariables;
-using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 namespace P05_Business.S03_Views.Base
 {
