@@ -83,6 +83,16 @@ namespace P05_Business.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_blue_arrow_blue {
+            get {
+                object obj = ResourceManager.GetObject("arrow_blue_arrow_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap blue_blue_add_sub_add_sub {
             get {
                 object obj = ResourceManager.GetObject("blue_blue_add_sub_add_sub", resourceCulture);
@@ -106,6 +116,16 @@ namespace P05_Business.Properties {
         internal static System.Drawing.Bitmap eye {
             get {
                 object obj = ResourceManager.GetObject("eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap inbox_inbox {
+            get {
+                object obj = ResourceManager.GetObject("inbox_inbox", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

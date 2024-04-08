@@ -83,11 +83,12 @@ namespace P05_Business.Common
 		/// <param name="alignment">컬럼 정렬 설정</param>
 		public static void AddTextBoxColumn(DataGridView dataGrid
 			, string name, string headerText, bool readOnly, bool visible, int columnWidth
-			, DataGridViewContentAlignment alignment, TextType textType = TextType.None, Int16 maxInputLength = Int16.MaxValue)
+			, DataGridViewContentAlignment alignment, TextType textType = TextType.None, Int16 maxInputLength = Int16.MaxValue, string format = "")
 		{
 			DataGridViewTextBoxColumn text = new DataGridViewTextBoxColumn();
 
 			text.MaxInputLength = maxInputLength;
+			text.DefaultCellStyle.Format = format;
 
 			dataGrid.Columns.Add(SetGridCommonOption(text, name, headerText, readOnly, visible, columnWidth, alignment, textType));
 

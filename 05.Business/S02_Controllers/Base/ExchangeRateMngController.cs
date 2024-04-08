@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P05_Business.S02_Controllers.Base
 {
-	internal class ExchangeMngController
+	internal class ExchangeRateMngController
 	{
 
 	}

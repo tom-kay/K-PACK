@@ -12,6 +12,11 @@ namespace P03_Framework.Helpers
 {
 	public class ExchangeHelper
 	{
+		/// <summary>
+		/// 하나은행 최초 환율을 가져온다.
+		/// </summary>
+		/// <param name="searchDate"></param>
+		/// <returns></returns>
 		public async Task<DataTable> GetExchangeRateHanaBank(string searchDate)
 		{
 			DataTable dtResult = null;
@@ -57,7 +62,7 @@ namespace P03_Framework.Helpers
 			dataTable.Columns.Add("RemitRecv", typeof(string)); //송금받을때
 			dataTable.Columns.Add("TCBuy", typeof(string));     //T/C 살때
 			dataTable.Columns.Add("Check", typeof(string));     //외화수표팔때
-			dataTable.Columns.Add("Basic", typeof(string));     //매매
+			dataTable.Columns.Add("BasicRate", typeof(string));     //매매기준율
 			dataTable.Columns.Add("Commission", typeof(string));    //환가료율
 			dataTable.Columns.Add("Convert", typeof(string));    //미화환산율
 
@@ -87,7 +92,7 @@ namespace P03_Framework.Helpers
 
 				for (int i = 0; i < cells.Count; i++)
 				{
-					dataRow[i + 1] = cells[i].InnerText.Trim();
+					dataRow[i + 2] = cells[i].InnerText.Trim();
 				}
 
 				dataTable.Rows.Add(dataRow);

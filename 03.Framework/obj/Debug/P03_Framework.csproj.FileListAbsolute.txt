@@ -7,3 +7,6 @@ C:\workspace\K-PACK\K-PACK\03.Framework\obj\Debug\P03_Framework.csproj.CoreCompi
 C:\workspace\K-PACK\K-PACK\03.Framework\obj\Debug\P03_Framework.csproj.CopyComplete
 C:\workspace\K-PACK\K-PACK\03.Framework\obj\Debug\P03_Framework.dll
 C:\workspace\K-PACK\K-PACK\03.Framework\obj\Debug\P03_Framework.pdb
+C:\workspace\K-PACK\K-PACK\03.Framework\bin\Debug\HtmlAgilityPack.dll
+C:\workspace\K-PACK\K-PACK\03.Framework\bin\Debug\HtmlAgilityPack.pdb
+C:\workspace\K-PACK\K-PACK\03.Framework\bin\Debug\HtmlAgilityPack.xml

@@ -72,7 +72,9 @@ namespace P01_K_DESIGN_WIN.Classes
 
 					Label lbl = (Label)ctrl;
 
-					lbl.AutoSize = false;
+					if (lbl.AccessibleDescription != null && lbl.AccessibleDescription.ToUpper().Equals("NONE")) continue;
+
+                    lbl.AutoSize = false;
 					lbl.Dock = DockStyle.Fill;
 					if (lbl.FindForm().GetType().BaseType.Name.Equals("frmSearchContainer"))
 					{
@@ -211,18 +213,24 @@ namespace P01_K_DESIGN_WIN.Classes
 		{
 			if (sender is KTextBox)
 			{
-				((KTextBox)sender).BackColor = Color.Beige;
-				if (((KTextBox)sender).Parent is Panel)
+				if (!((KTextBox)sender).ReadOnly)
 				{
-					((Panel)((KTextBox)sender).Parent).BackColor = Color.Beige;
+					((KTextBox)sender).BackColor = Color.Beige;
+					if (((KTextBox)sender).Parent is Panel)
+					{
+						((Panel)((KTextBox)sender).Parent).BackColor = Color.Beige;
+					} 
 				}
 			}
 			else if (sender is TextBox)
 			{
-				((TextBox)sender).BackColor = Color.Beige;
-				if (((TextBox)sender).Parent is Panel)
+				if (!((TextBox)sender).ReadOnly)
 				{
-					((Panel)((TextBox)sender).Parent).BackColor = Color.Beige;
+					((TextBox)sender).BackColor = Color.Beige;
+					if (((TextBox)sender).Parent is Panel)
+					{
+						((Panel)((TextBox)sender).Parent).BackColor = Color.Beige;
+					} 
 				}
 			}
 		}

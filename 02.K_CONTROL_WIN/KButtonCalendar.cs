@@ -83,12 +83,17 @@ namespace P02_K_CONTROL_WIN
 				var controls = parentForm.Controls.Find(textBoxName, true);
 				if (controls.Length > 0)
 				{
-					var textBox = controls[0] as KTextBox;
-					if (textBox != null)
+					var textBox = controls[0];
+					if (textBox is KTextBox)
 					{
-						textBox.Texts = e.Start.ToShortDateString();
+						((KTextBox)textBox).Texts = e.Start.ToShortDateString();
 					}
-				}
+                    else if (textBox is Label) 
+					{
+						textBox.Text = e.Start.ToShortDateString();
+					}
+                    
+                }
 			}
 		}
 

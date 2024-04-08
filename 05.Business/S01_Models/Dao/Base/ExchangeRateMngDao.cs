@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P05_Business.S01_Models.Dao.Base
 {
-	internal class ExchangeMngDao: DaoFactory
+	internal class ExchangeRateMngDao : DaoFactory
 	{
 
 	}
