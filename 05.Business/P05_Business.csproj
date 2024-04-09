@@ -332,6 +332,12 @@
     <Compile Include="S03_Views\Base\frmUserMng.Designer.cs">
       <DependentUpon>frmUserMng.cs</DependentUpon>
     </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmLoading.Designer.cs">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </Compile>
     <Compile Include="S03_Views\Popup\Common\frmMasterCodePopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,6 +359,9 @@
       <DependentUpon>frmUserSetting.cs</DependentUpon>
     </Compile>
     <Content Include="Logging.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\loading.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\Images\50off_sticker_50off_black_sticker.png" />
@@ -782,6 +791,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmUserMng.resx">
       <DependentUpon>frmUserMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Common\frmLoading.resx">
+      <DependentUpon>frmLoading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Common\frmMasterCodePopup.resx">
       <DependentUpon>frmMasterCodePopup.cs</DependentUpon>

@@ -206,6 +206,8 @@ namespace P05_Business.Common
 
 		public static DataTable ConvertToDataTable<T>(IList<T> data)
 		{
+			if (data == null) return null;
+
 			PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
 			DataTable dt = new DataTable();
 			foreach (PropertyDescriptor prop in properties)
@@ -222,6 +224,8 @@ namespace P05_Business.Common
 
 		public static List<T> ConvertToList<T>(DataTable dt) where T : new()
 		{
+			if (dt == null) return null;
+
 			List<T> list = new List<T>();
 
 			foreach (DataRow row in dt.Rows)

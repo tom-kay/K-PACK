@@ -34,11 +34,11 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.lblExDate = new System.Windows.Forms.Label();
+			this.cboExDate = new P02_K_CONTROL_WIN.KButtonCalendar();
 			this.panel4 = new System.Windows.Forms.Panel();
+			this.btnDownExchangeRate = new P02_K_CONTROL_WIN.KButton();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.dgvList = new System.Windows.Forms.DataGridView();
-			this.cboExDate = new P02_K_CONTROL_WIN.KButtonCalendar();
-			this.btnAddRow = new P02_K_CONTROL_WIN.KButton();
 			this.pnlMain.SuspendLayout();
 			this.pnlBody.SuspendLayout();
 			this.pnlHeader.SuspendLayout();
@@ -86,6 +86,7 @@
 			// btnSave
 			// 
 			this.btnSave.FlatAppearance.BorderSize = 0;
+			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
 			// btnDelete
 			// 
@@ -103,6 +104,7 @@
 			// btnInit
 			// 
 			this.btnInit.FlatAppearance.BorderSize = 0;
+			this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
 			// 
 			// tableLayoutPanel1
 			// 
@@ -167,14 +169,53 @@
 			this.lblExDate.TabIndex = 10;
 			this.lblExDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// cboExDate
+			// 
+			this.cboExDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
+			this.cboExDate.BackColor = System.Drawing.Color.Transparent;
+			this.cboExDate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cboExDate.BackgroundImage")));
+			this.cboExDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.cboExDate.FlatAppearance.BorderSize = 0;
+			this.cboExDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cboExDate.Location = new System.Drawing.Point(130, 6);
+			this.cboExDate.Name = "cboExDate";
+			this.cboExDate.Size = new System.Drawing.Size(22, 22);
+			this.cboExDate.TabIndex = 9;
+			this.cboExDate.Tag = "lblExDate";
+			this.cboExDate.UseVisualStyleBackColor = false;
+			// 
 			// panel4
 			// 
-			this.panel4.Controls.Add(this.btnAddRow);
+			this.panel4.Controls.Add(this.btnDownExchangeRate);
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel4.Location = new System.Drawing.Point(703, 3);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(94, 29);
 			this.panel4.TabIndex = 2;
+			// 
+			// btnDownExchangeRate
+			// 
+			this.btnDownExchangeRate.BackColor = System.Drawing.Color.CadetBlue;
+			this.btnDownExchangeRate.BackgroundColor = System.Drawing.Color.CadetBlue;
+			this.btnDownExchangeRate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.btnDownExchangeRate.BorderColor = System.Drawing.Color.PaleVioletRed;
+			this.btnDownExchangeRate.BorderRadius = 0;
+			this.btnDownExchangeRate.BorderSize = 0;
+			this.btnDownExchangeRate.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnDownExchangeRate.FlatAppearance.BorderSize = 0;
+			this.btnDownExchangeRate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnDownExchangeRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnDownExchangeRate.ForeColor = System.Drawing.Color.White;
+			this.btnDownExchangeRate.Image = global::P05_Business.Properties.Resources.inbox_inbox;
+			this.btnDownExchangeRate.Location = new System.Drawing.Point(0, 0);
+			this.btnDownExchangeRate.Name = "btnDownExchangeRate";
+			this.btnDownExchangeRate.Size = new System.Drawing.Size(94, 29);
+			this.btnDownExchangeRate.TabIndex = 3;
+			this.btnDownExchangeRate.Text = "가져오기";
+			this.btnDownExchangeRate.TextColor = System.Drawing.Color.White;
+			this.btnDownExchangeRate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnDownExchangeRate.UseVisualStyleBackColor = false;
+			this.btnDownExchangeRate.Click += new System.EventHandler(this.btnDownExchangeRate_Click);
 			// 
 			// panel1
 			// 
@@ -195,45 +236,6 @@
 			this.dgvList.RowTemplate.Height = 23;
 			this.dgvList.Size = new System.Drawing.Size(800, 471);
 			this.dgvList.TabIndex = 0;
-			// 
-			// cboExDate
-			// 
-			this.cboExDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
-			this.cboExDate.BackColor = System.Drawing.Color.Transparent;
-			this.cboExDate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cboExDate.BackgroundImage")));
-			this.cboExDate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.cboExDate.FlatAppearance.BorderSize = 0;
-			this.cboExDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.cboExDate.Location = new System.Drawing.Point(130, 6);
-			this.cboExDate.Name = "cboExDate";
-			this.cboExDate.Size = new System.Drawing.Size(22, 22);
-			this.cboExDate.TabIndex = 9;
-			this.cboExDate.Tag = "lblExDate";
-			this.cboExDate.UseVisualStyleBackColor = false;
-			// 
-			// btnAddRow
-			// 
-			this.btnAddRow.BackColor = System.Drawing.Color.CadetBlue;
-			this.btnAddRow.BackgroundColor = System.Drawing.Color.CadetBlue;
-			this.btnAddRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-			this.btnAddRow.BorderColor = System.Drawing.Color.PaleVioletRed;
-			this.btnAddRow.BorderRadius = 0;
-			this.btnAddRow.BorderSize = 0;
-			this.btnAddRow.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.btnAddRow.FlatAppearance.BorderSize = 0;
-			this.btnAddRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAddRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAddRow.ForeColor = System.Drawing.Color.White;
-			this.btnAddRow.Image = global::P05_Business.Properties.Resources.inbox_inbox;
-			this.btnAddRow.Location = new System.Drawing.Point(0, 0);
-			this.btnAddRow.Name = "btnAddRow";
-			this.btnAddRow.Size = new System.Drawing.Size(94, 29);
-			this.btnAddRow.TabIndex = 3;
-			this.btnAddRow.Text = "가져오기";
-			this.btnAddRow.TextColor = System.Drawing.Color.White;
-			this.btnAddRow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnAddRow.UseVisualStyleBackColor = false;
-			this.btnAddRow.Click += new System.EventHandler(this.btnAddRow_Click);
 			// 
 			// frmExchangeRateMng
 			// 
@@ -272,7 +274,7 @@
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Label label6;
-		private P02_K_CONTROL_WIN.KButton btnAddRow;
+		private P02_K_CONTROL_WIN.KButton btnDownExchangeRate;
 		private P02_K_CONTROL_WIN.KButtonCalendar cboExDate;
 		private System.Windows.Forms.Label lblExDate;
 	}

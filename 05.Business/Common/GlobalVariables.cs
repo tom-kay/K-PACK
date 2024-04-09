@@ -11,13 +11,37 @@ namespace P05_Business.Common
 {
 	public enum ResultCRUD
 	{
+		/// <summary>
+		/// 변동 없음.
+		/// </summary>
 		None,
+		/// <summary>
+		/// 조회성공[데이터 존재]
+		/// </summary>
 		SearchSuccessData,
+		/// <summary>
+		/// 조회성공[데이터 없음]
+		/// </summary>
 		SearchSuccessNoData,
+		/// <summary>
+		/// 조회실패
+		/// </summary>
 		SearchFailData,
+		/// <summary>
+		/// 저장성공
+		/// </summary>
 		SaveSuccessData,
+		/// <summary>
+		/// 저장실패
+		/// </summary>
 		SaveFailData,
+		/// <summary>
+		/// 삭제성공
+		/// </summary>
 		DeleteSuccessData,
+		/// <summary>
+		/// 삭제실패
+		/// </summary>
 		DeleteFailData,
 	}
 

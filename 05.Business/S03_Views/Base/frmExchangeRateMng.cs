@@ -4,22 +4,25 @@ using P03_Framework.Helpers;
 using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
+using P05_Business.S03_Views.Popup.Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.XPath;
 
 namespace P05_Business.S03_Views.Base
 {
 	public partial class frmExchangeRateMng : frmEditContainer
 	{
 		private ExchangeRateMngController ctrl;
-		private ExchangeRateMngDto dto;
+		private List<ExchangeRateMngDto> dto;
 		private ExchangeHelper exchange;
 
 		public frmExchangeRateMng()
@@ -38,11 +41,92 @@ namespace P05_Business.S03_Views.Base
 
 		}
 
+
+		private void btnInit_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				SetInit();
+			}
+			catch (Exception ex)
+			{
+				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void btnSearch_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				string exDate = lblExDate.Text.Trim();
+				DateTime date = new DateTime();
+				bool isDate = DateTime.TryParse(exDate, out date);
+				if (!isDate)
+				{
+					KMessageBox.Show("[고시일자]를 선택 바랍니다.", "조회", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				}
+
+                ResultCRUD result = SearchData(exDate.Replace("-",""));
+
+                if (result == ResultCRUD.SearchSuccessData)
+                {
+					MainMessage.Show("조회되었습니다.");
+				}
+				else if (result == ResultCRUD.SearchSuccessNoData)
+				{
+					MainMessage.Show("자료가 없습니다.");
+				}
+				else
+				{
+					KMessageBox.Show("조회 실패하였습니다.", "조회", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+            }
+			catch (Exception ex)
+			{
+				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void btnSave_Click(object sender, EventArgs e)
+		{
+			try
+			{
+
+				if (KMessageBox.Show("저장하시겠습니까?", "SAVE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				{
+					var result = SaveData(); 
+					if (result == ResultCRUD.SaveSuccessData)
+					{
+						MainMessage.Show("저장되었습니다.");
+					}
+				}
+
+			}
+			catch (Exception ex)
+			{
+				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		
+
+		private void btnDownExchangeRate_Click(object sender, EventArgs e)
+		{
+			try
+			{	
+				GetExchangeRateTask();
+			}
+			catch (Exception ex)
+			{
+				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
 		private void SetInit()
 		{
 			lblExDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
-			dto = new ExchangeRateMngDto();
+			dto = new List<ExchangeRateMngDto>();
 			dgvList.DataSource = null;
 
 			InitDto();
@@ -55,9 +139,75 @@ namespace P05_Business.S03_Views.Base
 			base.isFormChagned = false;
 		}
 
+
+		private ResultCRUD SearchData(string exDate)
+		{
+			ExchangeRateMngDto param = new ExchangeRateMngDto()
+			{
+				ExDate = exDate,
+			};
+
+			dto = ctrl.GetExchangeRateList(param);
+
+			dgvList.DataSource = DataHandles.ConvertToDataTable<ExchangeRateMngDto>(dto);
+			(dgvList.DataSource as DataTable).AcceptChanges();
+
+			InitDto();
+
+			dgvList.DataSource = dto;
+			ResultCRUD result = ResultCRUD.None;
+            if (dto == null)
+            {	
+				result = ResultCRUD.SearchFailData;
+            }
+			else if (dto.Count < 1)
+			{	
+				result = ResultCRUD.SearchSuccessNoData;
+			}
+			else if (dto.Count > 0)
+			{
+				result = ResultCRUD.SearchSuccessData;
+			}
+
+			
+
+			return result;
+        }
+
+		private ResultCRUD SaveData()
+		{
+			DataTable dt = UserDataGrid.GetChangeAll(dgvList);
+
+			if (dt == null || dt.Rows.Count < 1) return ResultCRUD.None;
+
+			List<ExchangeRateMngDto> param = DataHandles.ConvertToList<ExchangeRateMngDto>(dt);
+
+			if (param == null && param.Count < 1) return ResultCRUD.None;
+
+			//유효성 검사
+			var context = new ValidationContext(param, serviceProvider: null, items: null);
+			Validator.ValidateObject(param, context, validateAllProperties: true);
+
+			//데이터 저장
+			bool isSave = ctrl.AddExchangeRate(param);
+
+			//결과 처리
+			ResultCRUD result = ResultCRUD.None;
+			if (isSave)
+			{
+
+				SearchData(lblExDate.Text.Trim());
+
+				result = ResultCRUD.SaveSuccessData;
+			}
+
+			return result;
+
+		}
+
 		async void GetExchangeRateTask()
 		{
-			string serachDate = DateTime.Now.ToString("yyyyMMdd");
+			string serachDate = lblExDate.Text.Replace("-", "");
 
 			DataTable result = await exchange.GetExchangeRateHanaBank(serachDate);
 
@@ -111,21 +261,6 @@ namespace P05_Business.S03_Views.Base
 
 		}
 
-		private void btnAddRow_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				GetExchangeRateTask();
-			}
-			catch (Exception ex)
-			{
-				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
-
-		private void btnSearch_Click(object sender, EventArgs e)
-		{
-
-		}
+		
 	}
 }

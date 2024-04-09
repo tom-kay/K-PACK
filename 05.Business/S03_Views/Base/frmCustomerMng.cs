@@ -79,7 +79,7 @@ namespace P05_Business.S03_Views.Base
 				}
 				else if (result == ResultCRUD.SearchSuccessNoData)
 				{
-					KMessageBox.Show("자료가 없습니다.", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MainMessage.Show("자료가 없습니다.");
 				}
 			}
 			catch (Exception ex)

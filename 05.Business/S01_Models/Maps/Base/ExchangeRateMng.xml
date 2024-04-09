@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SmartSqlMap Scope="Base.ExchangeRate" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
 	<Statements>
-		<Statement Id="selectCompanyList">
-			SELECT ex.`ExDate`,
+		<Statement Id="selectExchangeRateList">
+			SELECT date_format(str_to_date(ex.ExDate, '%Y%m%d'),'%Y-%m-%d') AS ExDate,
 			ex.`CurrCode`,
 			ex.`CurrName`,
 			ex.`CashBuy`,
@@ -20,7 +20,7 @@
 			WHERE ex.ExDate = @ExDate
 		</Statement>
 
-		<Statement Id="selectCompany">
+		<Statement Id="selectExchangeRate">
 			SELECT ex.`ExDate`,
 			ex.`CurrCode`,
 			ex.`CurrName`,
@@ -40,7 +40,7 @@
 			AND ex.CurrCode = @CurrCode
 		</Statement>
 
-		<Statement Id="insertCompany">
+		<Statement Id="insertExchangeRate">
 
 			INSERT INTO `soodal`.`tb_exchangerate`
 			(`ExDate`,
@@ -85,11 +85,11 @@
 			`BasicRate` = @BasicRate,
 			`Commission` = @Commission,
 			`Convert` = @Convert
-			;
+			
 		</Statement>
 
 
-		<Statement Id="deleteCompany" >
+		<Statement Id="deleteExchangeRate" >
 			DELETE `soodal`.`tb_exchangerate`
 			WHERE ExDate = @ExDate
 			AND CurrCode = @CurrCode

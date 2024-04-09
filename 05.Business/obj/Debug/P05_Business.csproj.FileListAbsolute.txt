@@ -64,3 +64,5 @@ C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\HtmlAgilityPack.dll
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\HtmlAgilityPack.pdb
 C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\HtmlAgilityPack.xml
 C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmExchangeRateMng.resources
+C:\workspace\K-PACK\K-PACK\05.Business\bin\Debug\Resource\loading.gif
+C:\workspace\K-PACK\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Popup.Common.frmLoading.resources
