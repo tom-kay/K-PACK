@@ -58,11 +58,11 @@ namespace P01_K_DESIGN_WIN
 			this.panelTopMenuBar = new System.Windows.Forms.Panel();
 			this.lblTopMenuCaption = new System.Windows.Forms.Label();
 			this.pnlTitleBar = new System.Windows.Forms.Panel();
-			this.lblTitleBarCaption = new System.Windows.Forms.Label();
 			this.btnMaximum = new System.Windows.Forms.PictureBox();
 			this.btnExit = new System.Windows.Forms.PictureBox();
 			this.btnNormal = new System.Windows.Forms.PictureBox();
 			this.btnMinimum = new System.Windows.Forms.PictureBox();
+			this.lblTitleBarCaption = new System.Windows.Forms.Label();
 			this.panelLogo = new System.Windows.Forms.Panel();
 			this.tmDateTime = new System.Windows.Forms.Timer(this.components);
 			this.tip = new System.Windows.Forms.ToolTip(this.components);
@@ -381,20 +381,6 @@ namespace P01_K_DESIGN_WIN
 			this.pnlTitleBar.TabIndex = 0;
 			this.pnlTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitleBar_MouseDown);
 			// 
-			// lblTitleBarCaption
-			// 
-			this.lblTitleBarCaption.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.lblTitleBarCaption.Font = new System.Drawing.Font("Microsoft New Tai Lue", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTitleBarCaption.ForeColor = System.Drawing.Color.White;
-			this.lblTitleBarCaption.Location = new System.Drawing.Point(0, 0);
-			this.lblTitleBarCaption.Name = "lblTitleBarCaption";
-			this.lblTitleBarCaption.Size = new System.Drawing.Size(824, 30);
-			this.lblTitleBarCaption.TabIndex = 5;
-			this.lblTitleBarCaption.Text = "(주)카이[본사]";
-			this.lblTitleBarCaption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.lblTitleBarCaption.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lblTitleBarCaption_MouseDoubleClick);
-			this.lblTitleBarCaption.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblTitleBarCaption_MouseDown);
-			// 
 			// btnMaximum
 			// 
 			this.btnMaximum.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -459,6 +445,20 @@ namespace P01_K_DESIGN_WIN
 			this.btnMinimum.TabStop = false;
 			this.btnMinimum.Click += new System.EventHandler(this.btnMinimize_Click);
 			// 
+			// lblTitleBarCaption
+			// 
+			this.lblTitleBarCaption.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.lblTitleBarCaption.Font = new System.Drawing.Font("Microsoft New Tai Lue", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblTitleBarCaption.ForeColor = System.Drawing.Color.White;
+			this.lblTitleBarCaption.Location = new System.Drawing.Point(0, 0);
+			this.lblTitleBarCaption.Name = "lblTitleBarCaption";
+			this.lblTitleBarCaption.Size = new System.Drawing.Size(824, 30);
+			this.lblTitleBarCaption.TabIndex = 5;
+			this.lblTitleBarCaption.Text = "(주)카이[본사]";
+			this.lblTitleBarCaption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblTitleBarCaption.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lblTitleBarCaption_MouseDoubleClick);
+			this.lblTitleBarCaption.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblTitleBarCaption_MouseDown);
+			// 
 			// panelLogo
 			// 
 			this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
@@ -476,8 +476,8 @@ namespace P01_K_DESIGN_WIN
 			// 
 			// frmMdiContainer
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
 			this.ClientSize = new System.Drawing.Size(1024, 768);
 			this.ControlBox = false;

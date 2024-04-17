@@ -21,6 +21,10 @@ namespace P01_K_DESIGN_WIN
 		private int tolerance = 12;
 		private const int WM_NCHITTEST = 132;
 		private const int HTBOTTOMRIGHT = 17;
+		private const int WM_NCLBUTTONDOWN = 0xA1;
+		private const int HT_CAPTION = 0x2;
+		private const int WM_NCCALCSIZE = 0x83;
+		private const int WM_NCLBUTTONDBLCLK = 0x00A3; // 마우스 더블 클릭 메시지
 
 		private Rectangle sizeGripRectangle;
 
@@ -28,9 +32,7 @@ namespace P01_K_DESIGN_WIN
 		public frmMdiContainer()
 		{
 			InitializeComponent();
-			//random = new Random();
-			//btnCloseChildForm.Visible = false;
-			//this.Text = string.Empty;
+
 			this.ControlBox = false;
 			this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
@@ -268,14 +270,20 @@ namespace P01_K_DESIGN_WIN
 		}
 		private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
 		{
-			if (e.Clicks == 2)
-			{
-				pnlTitleBar_MouseDoubleClick(sender, e);
-			}
-			else if (e.Clicks == 1)
+			if (e.Clicks == 1)
 			{
 				ReleaseCapture();
-				SendMessage(this.Handle, 0x112, 0xf012, 0);
+				//SendMessage(this.Handle, 0x112, 0xf012, 0);
+				SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+
+				if (this.Location.Y <= 0)
+				{
+					this.WindowState = FormWindowState.Maximized;
+				}
+				else
+				{
+					this.WindowState = FormWindowState.Normal; // original은 창의 원래 크기를 저장한 변수입니다.
+				}
 			}
 		}
 
@@ -354,16 +362,34 @@ namespace P01_K_DESIGN_WIN
 			}
 		}
 
+		private int X, Y;
 		private void lblTitleBarCaption_MouseDown(object sender, MouseEventArgs e)
-		{
-			if (e.Clicks == 2)
+		{	
+			if (e.Button == MouseButtons.Left && e.Clicks == 1)
 			{
-				lblTitleBarCaption_MouseDoubleClick(sender, e);
-			}
-			else if (e.Clicks == 1)
-			{
+				X = this.Location.X; Y = this.Location.Y;
 				ReleaseCapture();
-				SendMessage(this.Handle, 0x112, 0xf012, 0);
+				//SendMessage(this.Handle, 0x112, 0xf012, 0);
+				SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+
+				if (X != this.Location.X || Y != this.Location.Y)
+				{
+					if (this.Location.Y <= 0)
+					{
+						if (this.WindowState != FormWindowState.Maximized)
+						{
+							this.WindowState = FormWindowState.Maximized;
+						}
+					}
+					else
+					{
+						if (this.WindowState != FormWindowState.Normal)
+						{
+							this.WindowState = FormWindowState.Normal;
+						}
+					} 
+				}
+
 			}
 		}
 
