@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -58,6 +59,7 @@ namespace P05_Business.S03_Views.Base
 		{
 			try
 			{
+				AccessMain.ShowLoading();
 				string exDate = lblExDate.Text.Trim();
 				DateTime date = new DateTime();
 				bool isDate = DateTime.TryParse(exDate, out date);
@@ -66,7 +68,9 @@ namespace P05_Business.S03_Views.Base
 					KMessageBox.Show("[고시일자]를 선택 바랍니다.", "조회", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 				}
 
-                ResultCRUD result = SearchData(exDate.Replace("-",""));
+                ResultCRUD result = SearchData(exDate);
+
+				AccessMain.HideLoading();
 
                 if (result == ResultCRUD.SearchSuccessData)
                 {
@@ -112,6 +116,7 @@ namespace P05_Business.S03_Views.Base
 
 		private void btnDownExchangeRate_Click(object sender, EventArgs e)
 		{
+			
 			try
 			{	
 				GetExchangeRateTask();
@@ -120,6 +125,7 @@ namespace P05_Business.S03_Views.Base
 			{
 				KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
+			
 		}
 
 		private void SetInit()
@@ -144,7 +150,7 @@ namespace P05_Business.S03_Views.Base
 		{
 			ExchangeRateMngDto param = new ExchangeRateMngDto()
 			{
-				ExDate = exDate,
+				ExDate = exDate.Replace("-",""),
 			};
 
 			dto = ctrl.GetExchangeRateList(param);
@@ -154,7 +160,6 @@ namespace P05_Business.S03_Views.Base
 
 			InitDto();
 
-			dgvList.DataSource = dto;
 			ResultCRUD result = ResultCRUD.None;
             if (dto == null)
             {	
@@ -207,18 +212,22 @@ namespace P05_Business.S03_Views.Base
 
 		async void GetExchangeRateTask()
 		{
+			AccessMain.ShowLoading();
+
 			string serachDate = lblExDate.Text.Replace("-", "");
 
 			DataTable result = await exchange.GetExchangeRateHanaBank(serachDate);
 
-			DisplayExchange(result);
+			DisplayExchangeRate(result);
+
+			AccessMain.HideLoading();
 		}
 
-		private void DisplayExchange(DataTable result)
+		private void DisplayExchangeRate(DataTable result)
 		{
 			if (this.InvokeRequired)
 			{
-				this.Invoke(new Action<DataTable>(DisplayExchange), result);
+				this.Invoke(new Action<DataTable>(DisplayExchangeRate), result);
 			}
 			else
 			{

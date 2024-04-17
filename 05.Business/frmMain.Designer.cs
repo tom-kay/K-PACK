@@ -87,13 +87,13 @@ namespace P05_Business
 			// lblTime
 			// 
 			this.lblTime.Location = new System.Drawing.Point(693, 4);
-			this.lblTime.Text = "15:59:36";
+			this.lblTime.Text = "13:29:47";
 			// 
 			// lblDate
 			// 
 			this.lblDate.Location = new System.Drawing.Point(520, 4);
-			this.lblDate.Size = new System.Drawing.Size(147, 20);
-			this.lblDate.Text = "2024년 4월 4일 목요일";
+			this.lblDate.Size = new System.Drawing.Size(156, 20);
+			this.lblDate.Text = "2024년 4월 17일 수요일";
 			// 
 			// btnMaximum
 			// 

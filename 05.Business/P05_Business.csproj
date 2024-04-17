@@ -830,6 +830,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resource\loading2.gif" />
     <Content Include="Resource\Logo.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

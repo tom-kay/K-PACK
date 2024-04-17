@@ -1,4 +1,5 @@
 ﻿using log4net;
+using P05_Business.Common;
 using P05_Business.S01_Models.Dao.Base;
 using P05_Business.S01_Models.Dto.Base;
 using System;
@@ -17,12 +18,12 @@ namespace P05_Business.S02_Controllers.Base
 		ExchangeRateMngDao dao;
 
         public ExchangeRateMngController()
-        {
+        {	
             dao = new ExchangeRateMngDao();
         }
 
         internal List<ExchangeRateMngDto> GetExchangeRateList(ExchangeRateMngDto param)
-		{
+		{	
 			List<ExchangeRateMngDto> results = dao.SelectExchangeRateList(param);
 
 			return results; 

@@ -29,49 +29,68 @@
 		private void InitializeComponent()
 		{
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.btnCloseForm = new System.Windows.Forms.Button();
+			this.picLoading1 = new System.Windows.Forms.PictureBox();
+			this.btnCloseForm = new System.Windows.Forms.LinkLabel();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.picLoading1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Image = global::P05_Business.Properties.Resources.loading;
-			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+			this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.pictureBox1.Image = global::P05_Business.Properties.Resources.loading2;
+			this.pictureBox1.Location = new System.Drawing.Point(0, 128);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(128, 128);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-			this.pictureBox1.TabIndex = 0;
+			this.pictureBox1.Size = new System.Drawing.Size(128, 33);
+			this.pictureBox1.TabIndex = 2;
 			this.pictureBox1.TabStop = false;
+			// 
+			// picLoading1
+			// 
+			this.picLoading1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.picLoading1.Image = global::P05_Business.Properties.Resources.loading;
+			this.picLoading1.Location = new System.Drawing.Point(0, 0);
+			this.picLoading1.Name = "picLoading1";
+			this.picLoading1.Size = new System.Drawing.Size(128, 128);
+			this.picLoading1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+			this.picLoading1.TabIndex = 0;
+			this.picLoading1.TabStop = false;
 			// 
 			// btnCloseForm
 			// 
+			this.btnCloseForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.btnCloseForm.AutoSize = true;
-			this.btnCloseForm.BackColor = System.Drawing.Color.Transparent;
-			this.btnCloseForm.FlatAppearance.BorderSize = 0;
-			this.btnCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCloseForm.Location = new System.Drawing.Point(36, 134);
+			this.btnCloseForm.Font = new System.Drawing.Font("Microsoft New Tai Lue", 9F, System.Drawing.FontStyle.Bold);
+			this.btnCloseForm.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+			this.btnCloseForm.Location = new System.Drawing.Point(43, 164);
 			this.btnCloseForm.Name = "btnCloseForm";
-			this.btnCloseForm.Size = new System.Drawing.Size(56, 22);
-			this.btnCloseForm.TabIndex = 1;
+			this.btnCloseForm.Size = new System.Drawing.Size(43, 17);
+			this.btnCloseForm.TabIndex = 3;
+			this.btnCloseForm.TabStop = true;
 			this.btnCloseForm.Text = "CLOSE";
-			this.btnCloseForm.UseVisualStyleBackColor = false;
-			this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
+			this.btnCloseForm.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnCloseForm_LinkClicked);
 			// 
 			// frmLoading
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.ClientSize = new System.Drawing.Size(128, 160);
+			this.BackColor = System.Drawing.Color.White;
+			this.ClientSize = new System.Drawing.Size(128, 179);
 			this.Controls.Add(this.btnCloseForm);
 			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.picLoading1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "frmLoading";
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "frmLoading";
 			this.TopMost = true;
-			this.TransparencyKey = System.Drawing.Color.Transparent;
+			this.TransparencyKey = System.Drawing.Color.White;
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.picLoading1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -79,7 +98,8 @@
 
 		#endregion
 
+		private System.Windows.Forms.PictureBox picLoading1;
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Button btnCloseForm;
+		private System.Windows.Forms.LinkLabel btnCloseForm;
 	}
 }

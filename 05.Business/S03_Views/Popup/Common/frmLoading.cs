@@ -15,9 +15,10 @@ namespace P05_Business.S03_Views.Popup.Common
 		public frmLoading()
 		{
 			InitializeComponent();
+			this.StartPosition = FormStartPosition.CenterScreen;
 		}
 
-		private void btnCloseForm_Click(object sender, EventArgs e)
+		private void btnCloseForm_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			this.Close();
 		}

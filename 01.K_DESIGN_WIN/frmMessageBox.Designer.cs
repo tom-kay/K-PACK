@@ -197,6 +197,7 @@
 			this.MinimumSize = new System.Drawing.Size(424, 110);
 			this.Name = "frmMessageBox";
 			this.Padding = new System.Windows.Forms.Padding(2);
+			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "MessageBox";
 			this.panelTitleBar.ResumeLayout(false);
