@@ -63,6 +63,26 @@ namespace P05_Business.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap _58460_down_arrow_arrow_down {
+            get {
+                object obj = ResourceManager.GetObject("58460_down_arrow_arrow_down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap _58463_up_up_arrow_arrow {
+            get {
+                object obj = ResourceManager.GetObject("58463_up_up_arrow_arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap _58560_add_add {
             get {
                 object obj = ResourceManager.GetObject("58560_add_add", resourceCulture);
@@ -86,26 +106,6 @@ namespace P05_Business.Properties {
         internal static System.Drawing.Bitmap arrow_blue_arrow_blue {
             get {
                 object obj = ResourceManager.GetObject("arrow_blue_arrow_blue", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap blue_blue_add_sub_add_sub {
-            get {
-                object obj = ResourceManager.GetObject("blue_blue_add_sub_add_sub", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap blue_sub_delete_blue_sub_delete {
-            get {
-                object obj = ResourceManager.GetObject("blue_sub_delete_blue_sub_delete", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

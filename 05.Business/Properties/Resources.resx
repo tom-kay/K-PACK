@@ -127,11 +127,8 @@
   <data name="arrow_blue_arrow_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Images\arrow_blue_arrow_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="blue_blue_add_sub_add_sub" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Images\blue_blue_add_sub_add_sub.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inbox_inbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Images\inbox_inbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loading2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\loading2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="58562_remove_remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Images\58562_remove_remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,16 +136,19 @@
   <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Images\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="blue_sub_delete_blue_sub_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Images\blue_sub_delete_blue_sub_delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="58560_add_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Images\58560_add_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loading2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\loading2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Images\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inbox_inbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Images\inbox_inbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="58460_down_arrow_arrow_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Images\58460_down_arrow_arrow_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="58463_up_up_arrow_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Images\58463_up_up_arrow_arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

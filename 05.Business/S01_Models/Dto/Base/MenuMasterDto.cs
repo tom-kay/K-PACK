@@ -16,8 +16,8 @@ namespace P05_Business.S01_Models.Dto.Base
 		public string Namespace { get; set; }
 		[MaxLength(255, ErrorMessage = "[FORM NAME] 최대길이는 255자 입니다.")]
 		public string FormName { get; set; }
-		public int OrderSeq { get; set; }
-		public int DepthNo { get; set; }
+		public int? OrderSeq { get; set; }
+		public int? DepthNo { get; set; }
 		public string UseYn { get; set; }
 	}
 }

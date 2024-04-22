@@ -1,6 +1,8 @@
 ﻿using P01_K_DESIGN_WIN.Classes;
 using P02_K_CONTROL_WIN;
 using System;
+using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace P01_K_DESIGN_WIN
@@ -133,7 +135,8 @@ namespace P01_K_DESIGN_WIN
 							{
 								if ((c as KRadioButton).Checked && !Equals(dto.GetType().GetProperty(tuple.Item1).GetValue(dto, null), tuple.Item2))
 								{
-									return false;
+                                    Debug.Print(string.Concat(c.Name, " : 변경됨"));
+                                    return false;
 								}
 							}
 						}
@@ -144,7 +147,8 @@ namespace P01_K_DESIGN_WIN
 							{
 								if ((c as RadioButton).Checked && !Equals(dto.GetType().GetProperty(tuple.Item1).GetValue(dto, null), tuple.Item2))
 								{
-									return false;
+                                    Debug.Print(string.Concat(c.Name, " : 변경됨"));
+                                    return false;
 								}
 							}
 						} 
@@ -158,6 +162,7 @@ namespace P01_K_DESIGN_WIN
 						{
 							if (!Equals((c as KTextBox).Texts, Convert.ToString( dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null))))
 							{
+								Debug.Print(string.Concat(c.Name, " : 변경됨"));
 								return false;
 							}
 						}
@@ -165,35 +170,40 @@ namespace P01_K_DESIGN_WIN
 						{
 							if (!Equals(c.Text, Convert.ToString(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null))))
 							{
-								return false;
+                                Debug.Print(string.Concat(c.Name, " : 변경됨"));
+                                return false;
 							}
 						}
 						else if (c is KComboBox)
 						{
 							if (!Equals((c as KComboBox).SelectedValue, Convert.ToString(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null))))
 							{
-								return false;
+                                Debug.Print(string.Concat(c.Name, " : 변경됨"));
+                                return false;
 							}
 						}
 						else if (c is ComboBox)
 						{
 							if (!Equals((c as ComboBox).SelectedValue, Convert.ToString(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null))))
 							{
-								return false;
+                                Debug.Print(string.Concat(c.Name, " : 변경됨"));
+                                return false;
 							}
 						}
 						else if (c is KToggleButton)
 						{
 							if (!Equals((c as KToggleButton).Checked, Convert.ToBoolean(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null))))
 							{
-								return false;
+                                Debug.Print(string.Concat(c.Name, " : 변경됨"));
+                                return false;
 							}
 						}
 						else if (c is CheckBox)
 						{
 							if (!Equals((c as CheckBox).Checked, Convert.ToBoolean(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null))))
 							{
-								return false;
+                                Debug.Print(string.Concat(c.Name, " : 변경됨"));
+                                return false;
 							}
 						}
 					}
