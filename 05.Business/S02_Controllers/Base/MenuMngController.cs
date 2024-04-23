@@ -1,6 +1,7 @@
 ﻿using log4net;
 using P05_Business.S01_Models.Dao.Base;
 using P05_Business.S01_Models.Dto.Base;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -10,14 +11,25 @@ namespace P05_Business.S02_Controllers.Base
 	{
 		public static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
+		MenuMntDao dao;
+
 		public List<MenuMasterDto> GetMenuMasterList()
 		{
 
-			MenuMntDao dao = new MenuMntDao();
+			dao = new MenuMntDao();
 			List<MenuMasterDto> list = dao.GetMenuMasterList();
 
 			return list;
 
 		}
-	}
+
+        internal List<MenuMasterDto> GetMenuMasterList(MenuMasterDto param)
+        {
+			dao = new MenuMntDao();
+			List<MenuMasterDto> list = dao.SelectMenuMasterListByKey(param);
+
+			return list;
+
+        }
+    }
 }

@@ -35,5 +35,10 @@ namespace P05_Business.Common
 		{
 			loading.Close();
 		}
+
+		public static void RefreshMenu()
+		{
+			MdiMain.CreateMenu();
+		}
 	}
 }

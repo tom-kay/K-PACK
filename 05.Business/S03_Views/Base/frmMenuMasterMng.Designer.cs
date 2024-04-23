@@ -170,11 +170,13 @@
             // 
             this.trvMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.trvMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trvMenu.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.trvMenu.Location = new System.Drawing.Point(0, 0);
             this.trvMenu.Margin = new System.Windows.Forms.Padding(0);
             this.trvMenu.Name = "trvMenu";
             this.trvMenu.Size = new System.Drawing.Size(502, 682);
             this.trvMenu.TabIndex = 0;
+            this.trvMenu.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvMenu_NodeMouseClick);
             // 
             // tableLayoutPanel2
             // 
@@ -183,7 +185,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
             this.tableLayoutPanel2.Controls.Add(this.panel4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel5, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel6, 0, 1);
@@ -243,7 +245,7 @@
             this.panel5.Location = new System.Drawing.Point(122, 1);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(278, 35);
+            this.panel5.Size = new System.Drawing.Size(277, 35);
             this.panel5.TabIndex = 1;
             // 
             // txtParentId
@@ -267,7 +269,7 @@
             this.txtParentId.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtParentId.PlaceholderText = "";
             this.txtParentId.ReadOnly = false;
-            this.txtParentId.Size = new System.Drawing.Size(272, 22);
+            this.txtParentId.Size = new System.Drawing.Size(271, 22);
             this.txtParentId.TabIndex = 0;
             this.txtParentId.Tag = "ParentId";
             this.txtParentId.Texts = "";
@@ -638,9 +640,9 @@
             // 
             this.panel18.Controls.Add(this.btnNew);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Location = new System.Drawing.Point(404, 4);
+            this.panel18.Location = new System.Drawing.Point(403, 4);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(95, 29);
+            this.panel18.Size = new System.Drawing.Size(96, 29);
             this.panel18.TabIndex = 14;
             // 
             // btnNew
@@ -657,7 +659,7 @@
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Location = new System.Drawing.Point(0, 0);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(95, 29);
+            this.btnNew.Size = new System.Drawing.Size(96, 29);
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "신규";
             this.btnNew.TextColor = System.Drawing.Color.White;

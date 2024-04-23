@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using P05_Business.S01_Models.Dto.Base;
+using System;
 
 namespace P05_Business.S01_Models.Dao.Base
 {
@@ -41,17 +42,31 @@ namespace P05_Business.S01_Models.Dao.Base
 			return menus;
 		}
 
-		//public void insertEmployee(string emp)
-		//{
-		//	DaoFactory.getInstance.Insert("insertEmployee", emp);
-		//}
-		//public void updateEmployee(string emp)
-		//{
-		//	DaoFactory.getInstance.Update("updateEmployee", emp);
-		//}
-		//public void deleteEmployeeByEmpno(int id)
-		//{
-		//	DaoFactory.getInstance.Delete("deleteEmployeeByEmpno", id);
-		//}
-	}
+        internal List<MenuMasterDto> SelectMenuMasterListByKey(MenuMasterDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "MenuMng",
+                SqlId = "selectMenuMasterListByKey",
+                //Request = new { Ids = new long[] { 1, 2, 3, 4 } }
+            };
+            List<MenuMasterDto> menus = SqlMapper.Query<MenuMasterDto>(context).ToList();
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+
+            return menus;
+        }
+
+        //public void insertEmployee(string emp)
+        //{
+        //	DaoFactory.getInstance.Insert("insertEmployee", emp);
+        //}
+        //public void updateEmployee(string emp)
+        //{
+        //	DaoFactory.getInstance.Update("updateEmployee", emp);
+        //}
+        //public void deleteEmployeeByEmpno(int id)
+        //{
+        //	DaoFactory.getInstance.Delete("deleteEmployeeByEmpno", id);
+        //}
+    }
 }

@@ -3,7 +3,6 @@ using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using P05_Business.S03_Views.Popup.Common;
-using SmartSql.SqlMap.Tags;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,7 +10,7 @@ using System.Windows.Forms;
 
 namespace P05_Business
 {
-	public partial class frmMain : frmMdiContainer
+    public partial class frmMain : frmMdiContainer
 	{
 
 		public frmMain()
@@ -38,7 +37,7 @@ namespace P05_Business
 			CreateMenu(); //메뉴가져오기
 		}
 
-		private void CreateMenu()
+		public void CreateMenu()
 		{
 
 			List<MenuMasterDto> menus = new MenuMngController().GetMenuMasterList();

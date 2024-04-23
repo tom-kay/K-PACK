@@ -1,11 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SmartSqlMap Scope="MenuMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
 	<Statements>
+		<Statement Id="SelectAdd">
+			, `menu`.`DelYn`
+			, `menu`.`CreateDt`
+			, `menu`.`UpdateDt`
+			, `menu`.`DeleteDt`
+		</Statement>
+		
 		<Statement Id="selectMenuMasterList">
-			select *
-			from tb_menumaster
+			select `menu`.`MenuId`,
+			`menu`.`ParentId`,
+			`menu`.`MenuName`,
+			`menu`.`MenuType`,
+			`menu`.`Namespace`,
+			`menu`.`FormName`,
+			`menu`.`OrderSeq`,
+			`menu`.`DepthNo`,
+			`menu`.`UseYn`
+			<Include Prepend="" RefId="SelectAdd"/>
+			from tb_menumaster AS menu
 			where UseYn = 'Y'
-				and DelYn != 'Y'
+			and DelYn != 'Y'
+			order by depthNo, orderseq;
+		</Statement>
+
+		<Statement Id="selectMenuMasterListByKey">
+			select `menu`.`MenuId`,
+			`menu`.`ParentId`,
+			`menu`.`MenuName`,
+			`menu`.`MenuType`,
+			`menu`.`Namespace`,
+			`menu`.`FormName`,
+			`menu`.`OrderSeq`,
+			`menu`.`DepthNo`,
+			`menu`.`UseYn`
+			<Include Prepend="" RefId="SelectAdd"/>
+			from tb_menumaster AS menu
+			where 1=1
+			<IsNotEmpty Prepend="And" Property="ParentId">
+				and menu.ParentId = @ParentId
+			</IsNotEmpty>
 			order by depthNo, orderseq;
 		</Statement>
 	</Statements>
