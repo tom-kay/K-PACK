@@ -23,13 +23,31 @@ namespace P05_Business.S02_Controllers.Base
 
 		}
 
-        internal List<MenuMasterDto> GetMenuMasterList(MenuMasterDto param)
+        internal List<MenuMasterDto> GetMenuMasterChildList(MenuMasterDto param)
         {
 			dao = new MenuMntDao();
-			List<MenuMasterDto> list = dao.SelectMenuMasterListByKey(param);
+			List<MenuMasterDto> list = dao.SelectMenuMasterListByParentKey(param);
 
 			return list;
 
+        }
+
+        internal MenuMasterDto GetMenuMasterSingle(MenuMasterDto param)
+        {
+            dao = new MenuMntDao();
+            MenuMasterDto data = dao.SelectMenuMasterByKey(param);
+
+            return data;
+        }
+
+        internal bool SaveMenuMaster(MenuMasterDto param)
+        {
+            bool isSave = true;
+            int save = dao.InsertMenuMaster(param);
+
+            if (save < 0) isSave = false;
+
+            return isSave;
         }
     }
 }

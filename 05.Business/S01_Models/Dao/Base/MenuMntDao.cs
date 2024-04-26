@@ -42,18 +42,61 @@ namespace P05_Business.S01_Models.Dao.Base
 			return menus;
 		}
 
-        internal List<MenuMasterDto> SelectMenuMasterListByKey(MenuMasterDto param)
+        internal List<MenuMasterDto> SelectMenuMasterListByParentKey(MenuMasterDto param)
         {
             RequestContext context = new RequestContext
             {
                 Scope = "MenuMng",
-                SqlId = "selectMenuMasterListByKey",
-                //Request = new { Ids = new long[] { 1, 2, 3, 4 } }
+                SqlId = "selectMenuMasterListByParentKey",
+                Request = param,
             };
-            List<MenuMasterDto> menus = SqlMapper.Query<MenuMasterDto>(context).ToList();
             log.Info(SqlMapper.SqlBuilder.BuildSql(context));
-
+            List<MenuMasterDto> menus = SqlMapper.Query<MenuMasterDto>(context).ToList();
+            
             return menus;
+        }
+
+        internal MenuMasterDto SelectMenuMasterByKey(MenuMasterDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "MenuMng",
+                SqlId = "selectMenuMasterByKey",
+                Request = param,
+            };
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+            MenuMasterDto menu = SqlMapper.QuerySingle<MenuMasterDto>(context);
+
+            return menu;
+        }
+
+        internal int InsertMenuMaster(MenuMasterDto param)
+        {
+            int save;
+
+            RequestContext context = new RequestContext
+            {
+                Scope = "MenuMng",
+                SqlId = "insertMenuMaster",
+                Request = param
+            };
+
+            try
+            {
+                SqlMapper.BeginTransaction();
+                log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+                save = SqlMapper.Execute(context);
+                SqlMapper.CommitTransaction();
+
+            }
+            catch (Exception ex)
+            {
+                SqlMapper.RollbackTransaction();
+                throw ex;
+            }
+
+
+            return save;
         }
 
         //public void insertEmployee(string emp)

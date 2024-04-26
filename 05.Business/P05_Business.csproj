@@ -222,6 +222,7 @@
     <Compile Include="Common\AccessMain.cs" />
     <Compile Include="Common\DataHandles.cs" />
     <Compile Include="Common\Helpers\ComboHelper.cs" />
+    <Compile Include="Common\Helpers\GridHelper.cs" />
     <Compile Include="Common\LoginCompany.cs" />
     <Compile Include="Common\LoginUserInfo.cs" />
     <Compile Include="Common\UserDataGrid.cs" />

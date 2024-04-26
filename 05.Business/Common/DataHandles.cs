@@ -270,5 +270,50 @@ namespace P05_Business.Common
 
 			return list;
 		}
-	}
+
+        public static T ConvertToData<T>(DataTable dt) where T : new()
+        {
+            if (dt == null || dt.Rows.Count == 0) return default(T);
+
+            DataRow row = dt.Rows[0];
+            T item = new T();
+            foreach (DataColumn column in dt.Columns)
+            {
+                PropertyInfo property = item.GetType().GetProperty(column.ColumnName);
+                if (property != null)
+                {
+                    object value = null;
+                    if (row.RowState == DataRowState.Deleted)
+                    {
+                        value = row[column, DataRowVersion.Original];
+                    }
+                    else if (row[column] != DBNull.Value)
+                    {
+                        value = row[column];
+                    }
+
+                    if (value != null && value != DBNull.Value) // DBNull.Value를 체크합니다.
+                    {
+                        if (property.PropertyType.IsGenericType && property.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>))
+                        {
+                            property.SetValue(item, Convert.ChangeType(value, Nullable.GetUnderlyingType(property.PropertyType)), null);
+                        }
+                        else
+                        {
+                            property.SetValue(item, Convert.ChangeType(value, property.PropertyType), null);
+                        }
+                    }
+                }
+            }
+
+            PropertyInfo prop = item.GetType().GetProperty("DataState");
+            if (prop != null)
+            {
+                prop.SetValue(item, row.RowState, null);
+            }
+
+            return item;
+        }
+
+    }
 }

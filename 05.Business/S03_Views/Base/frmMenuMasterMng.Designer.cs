@@ -69,6 +69,9 @@
             this.btnOrderUp = new P02_K_CONTROL_WIN.KButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvList = new System.Windows.Forms.DataGridView();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.txtParentName = new P02_K_CONTROL_WIN.KTextBox();
             this.pnlMain.SuspendLayout();
             this.pnlBody.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -101,6 +104,8 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBody
@@ -185,7 +190,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel2.Controls.Add(this.panel4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel5, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel6, 0, 1);
@@ -240,12 +245,13 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.txtParentId);
+            this.panel5.Controls.Add(this.panel20);
+            this.panel5.Controls.Add(this.panel19);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(122, 1);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(277, 35);
+            this.panel5.Size = new System.Drawing.Size(274, 35);
             this.panel5.TabIndex = 1;
             // 
             // txtParentId
@@ -269,7 +275,7 @@
             this.txtParentId.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtParentId.PlaceholderText = "";
             this.txtParentId.ReadOnly = false;
-            this.txtParentId.Size = new System.Drawing.Size(271, 22);
+            this.txtParentId.Size = new System.Drawing.Size(157, 22);
             this.txtParentId.TabIndex = 0;
             this.txtParentId.Tag = "ParentId";
             this.txtParentId.Texts = "";
@@ -640,9 +646,9 @@
             // 
             this.panel18.Controls.Add(this.btnNew);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Location = new System.Drawing.Point(403, 4);
+            this.panel18.Location = new System.Drawing.Point(400, 4);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(96, 29);
+            this.panel18.Size = new System.Drawing.Size(99, 29);
             this.panel18.TabIndex = 14;
             // 
             // btnNew
@@ -659,11 +665,12 @@
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Location = new System.Drawing.Point(0, 0);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(96, 29);
+            this.btnNew.Size = new System.Drawing.Size(99, 29);
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "신규";
             this.btnNew.TextColor = System.Drawing.Color.White;
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -751,6 +758,52 @@
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(503, 393);
             this.dgvList.TabIndex = 0;
+            this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.txtParentId);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel19.Location = new System.Drawing.Point(0, 0);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(163, 35);
+            this.panel19.TabIndex = 1;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.txtParentName);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel20.Location = new System.Drawing.Point(163, 0);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(111, 35);
+            this.panel20.TabIndex = 2;
+            // 
+            // txtParentName
+            // 
+            this.txtParentName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtParentName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtParentName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtParentName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtParentName.BorderRadius = 0;
+            this.txtParentName.BorderSize = 2;
+            this.txtParentName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtParentName.Enabled = false;
+            this.txtParentName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+            this.txtParentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtParentName.Location = new System.Drawing.Point(3, 6);
+            this.txtParentName.MaxLength = 32767;
+            this.txtParentName.Multiline = false;
+            this.txtParentName.Name = "txtParentName";
+            this.txtParentName.OnlyNumber = false;
+            this.txtParentName.PasswordChar = false;
+            this.txtParentName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtParentName.PlaceholderText = "";
+            this.txtParentName.ReadOnly = false;
+            this.txtParentName.Size = new System.Drawing.Size(105, 22);
+            this.txtParentName.TabIndex = 1;
+            this.txtParentName.Tag = "ParentName";
+            this.txtParentName.Texts = "";
+            this.txtParentName.UnderlinedStyle = false;
             // 
             // frmMenuMasterMng
             // 
@@ -793,6 +846,8 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            this.panel19.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -840,5 +895,8 @@
         private P02_K_CONTROL_WIN.KComboBox cboMenuType;
         private P02_K_CONTROL_WIN.KRadioButton rdoUseN;
         private P02_K_CONTROL_WIN.KRadioButton rdoUseY;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel panel19;
+        private P02_K_CONTROL_WIN.KTextBox txtParentName;
     }
 }
