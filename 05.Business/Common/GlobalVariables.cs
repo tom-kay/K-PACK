@@ -43,6 +43,14 @@ namespace P05_Business.Common
 		/// 삭제실패
 		/// </summary>
 		DeleteFailData,
+		/// <summary>
+		/// 수정성공
+		/// </summary>
+		UpdateSuccessData,
+		/// <summary>
+		/// 수정실패
+		/// </summary>
+		UpdateFailData,
 	}
 
 	public class GlobalVariables

@@ -74,76 +74,57 @@
 		</Statement>
 
 		<Statement Id="insertMenuMaster">
-			INSERT INTO `soodal`.`tb_customer`
-			(`CustCode`,
-			`CustName`,
-			`CompanyNo`,
-			`Address1`,
-			`Address2`,
-			`TelNo`,
-			`FaxNo`,
-			`Email`,
-			`NationCode`,
-			`DealTypeSale`,
-			`DealTypeBuy`,
-			`DealTypeProc`,
-			`DealTypeGeneral`,
-			`OwnerName`,
-			`BankName`,
-			`AccountNo`,
-			`Depositor`,
-			`Remark`,
-			`CompanyCode`,
+			INSERT INTO `soodal`.`tb_menumaster`
+			(`MenuId`,
+			`ParentId`,
+			`MenuName`,
+			`MenuType`,
+			`Namespace`,
+			`FormName`,
+			`OrderSeq`,
+			`DepthNo`,
+			`UseYn`,
 			`DelYn`,
-			`CreateId`,
 			`CreateDt`)
 			VALUES
-			(@CustCode,
-			@CustName,
-			HEX(AES_ENCRYPT(@CompanyNo, @CustCode)),
-			@Address1,
-			@Address2,
-			@TelNo,
-			@FaxNo,
-			@Email,
-			@NationCode,
-			@DealTypeSale,
-			@DealTypeBuy,
-			@DealTypeProc,
-			@DealTypeGeneral,
-			@OwnerName,
-			@BankName,
-			@AccountNo,
-			@Depositor,
-			@Remark,
-			@CompanyCode,
+			(FN_CreateMenuId(@ParentId, @MenuId),
+			@ParentId,
+			@MenuName,
+			@MenuType,
+			@Namespace,
+			@FormName,
+			1,
+			(Length(@ParentId) / 3) + 1,
+			@UseYn,
 			'N',
-			@CreateId,
 			now())
 			ON DUPLICATE KEY UPDATE
-			`CustName` = @CustName,
-			`CompanyNo` = HEX(AES_ENCRYPT(@CompanyNo, CustCode)),
-			`Address1` = @Address1,
-			`Address2` = @Address2,
-			`TelNo` = @TelNo,
-			`FaxNo` = @FaxNo,
-			`Email` = @Email,
-			`NationCode` = @NationCode,
-			`DealTypeSale` = @DealTypeSale,
-			`DealTypeBuy` = @DealTypeBuy,
-			`DealTypeProc` = @DealTypeProc,
-			`DealTypeGeneral` = @DealTypeGeneral,
-			`OwnerName` = @OwnerName,
-			`BankName` = @BankName,
-			`AccountNo` = @AccountNo,
-			`Depositor` = @Depositor,
-			`Remark` = @Remark,
+			`MenuName` = @MenuName,
+			`MenuType` = @MenuType,
+			`Namespace` = @Namespace,
+			`FormName` = @FormName,
+			`UseYn` = @UseYn,
 			`DelYn` = 'N',
-			`UpdateId` = @UpdateId,
 			`UpdateDt` = now(),
-			`DeleteId` = null,
 			`DeleteDt` = null
 			;
 		</Statement>
+
+		<Statement Id="deleteMenuMaster">
+			UPDATE `soodal`.`tb_menumaster`
+			SET
+			`DelYn` = 'Y',
+			`DeleteDt` = now()
+			WHERE `MenuId` = @MenuId;
+		</Statement>
+
+		<Statement Id="updateMenuMasterOrder">
+			UPDATE `soodal`.`tb_menumaster`
+			SET
+			`OrderSeq` = @OrderSeq
+			WHERE `MenuId` = @MenuId;
+		</Statement>
+
+
 	</Statements>
 </SmartSqlMap>

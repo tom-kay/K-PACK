@@ -49,5 +49,25 @@ namespace P05_Business.S02_Controllers.Base
 
             return isSave;
         }
+
+        internal bool DeleteMenuMaster(MenuMasterDto param)
+        {
+            bool isDelete = true;
+            int delete = dao.DeleteMenuMaster(param);
+
+            if (delete < 0) isDelete = false;
+
+            return isDelete;
+        }
+
+        internal bool UpdateMenuMasterOrder(List<MenuMasterDto> param)
+        {
+            bool isUpdate = true;
+            int update = dao.UpdateMenuMasterOrder(param);
+
+            if (update < 0) isUpdate = false;
+
+            return isUpdate;
+        }
     }
 }

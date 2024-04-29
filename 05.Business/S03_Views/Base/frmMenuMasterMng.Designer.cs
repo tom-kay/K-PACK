@@ -35,6 +35,9 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.txtParentName = new P02_K_CONTROL_WIN.KTextBox();
+            this.panel19 = new System.Windows.Forms.Panel();
             this.txtParentId = new P02_K_CONTROL_WIN.KTextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,13 +68,11 @@
             this.btnNew = new P02_K_CONTROL_WIN.KButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSaveOrder = new P02_K_CONTROL_WIN.KButton();
             this.btnOrderDown = new P02_K_CONTROL_WIN.KButton();
             this.btnOrderUp = new P02_K_CONTROL_WIN.KButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvList = new System.Windows.Forms.DataGridView();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.txtParentName = new P02_K_CONTROL_WIN.KTextBox();
             this.pnlMain.SuspendLayout();
             this.pnlBody.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -87,6 +88,8 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -104,8 +107,6 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-            this.panel19.SuspendLayout();
-            this.panel20.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlBody
@@ -190,7 +191,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
             this.tableLayoutPanel2.Controls.Add(this.panel4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel5, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel6, 0, 1);
@@ -251,8 +252,53 @@
             this.panel5.Location = new System.Drawing.Point(122, 1);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(274, 35);
+            this.panel5.Size = new System.Drawing.Size(269, 35);
             this.panel5.TabIndex = 1;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.txtParentName);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel20.Location = new System.Drawing.Point(163, 0);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(106, 35);
+            this.panel20.TabIndex = 2;
+            // 
+            // txtParentName
+            // 
+            this.txtParentName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtParentName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtParentName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtParentName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtParentName.BorderRadius = 0;
+            this.txtParentName.BorderSize = 2;
+            this.txtParentName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtParentName.Enabled = false;
+            this.txtParentName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+            this.txtParentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtParentName.Location = new System.Drawing.Point(3, 6);
+            this.txtParentName.MaxLength = 32767;
+            this.txtParentName.Multiline = false;
+            this.txtParentName.Name = "txtParentName";
+            this.txtParentName.OnlyNumber = false;
+            this.txtParentName.PasswordChar = false;
+            this.txtParentName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtParentName.PlaceholderText = "";
+            this.txtParentName.ReadOnly = false;
+            this.txtParentName.Size = new System.Drawing.Size(100, 22);
+            this.txtParentName.TabIndex = 1;
+            this.txtParentName.Tag = "ParentName";
+            this.txtParentName.Texts = "";
+            this.txtParentName.UnderlinedStyle = false;
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.txtParentId);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel19.Location = new System.Drawing.Point(0, 0);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(163, 35);
+            this.panel19.TabIndex = 1;
             // 
             // txtParentId
             // 
@@ -646,9 +692,9 @@
             // 
             this.panel18.Controls.Add(this.btnNew);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Location = new System.Drawing.Point(400, 4);
+            this.panel18.Location = new System.Drawing.Point(395, 4);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(99, 29);
+            this.panel18.Size = new System.Drawing.Size(104, 29);
             this.panel18.TabIndex = 14;
             // 
             // btnNew
@@ -665,7 +711,7 @@
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Location = new System.Drawing.Point(0, 0);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(99, 29);
+            this.btnNew.Size = new System.Drawing.Size(104, 29);
             this.btnNew.TabIndex = 0;
             this.btnNew.Text = "신규";
             this.btnNew.TextColor = System.Drawing.Color.White;
@@ -683,21 +729,43 @@
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(503, 428);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnSaveOrder);
             this.panel2.Controls.Add(this.btnOrderDown);
             this.panel2.Controls.Add(this.btnOrderUp);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(503, 35);
+            this.panel2.Size = new System.Drawing.Size(503, 25);
             this.panel2.TabIndex = 0;
+            // 
+            // btnSaveOrder
+            // 
+            this.btnSaveOrder.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveOrder.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnSaveOrder.BorderColor = System.Drawing.Color.CadetBlue;
+            this.btnSaveOrder.BorderRadius = 0;
+            this.btnSaveOrder.BorderSize = 0;
+            this.btnSaveOrder.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSaveOrder.FlatAppearance.BorderSize = 0;
+            this.btnSaveOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSaveOrder.ForeColor = System.Drawing.Color.White;
+            this.btnSaveOrder.Image = global::P05_Business.Properties.Resources.save_guardar;
+            this.btnSaveOrder.Location = new System.Drawing.Point(428, 0);
+            this.btnSaveOrder.Name = "btnSaveOrder";
+            this.btnSaveOrder.Size = new System.Drawing.Size(25, 25);
+            this.btnSaveOrder.TabIndex = 2;
+            this.btnSaveOrder.TextColor = System.Drawing.Color.White;
+            this.btnSaveOrder.UseVisualStyleBackColor = false;
+            this.btnSaveOrder.Click += new System.EventHandler(this.btnSaveOrder_Click);
             // 
             // btnOrderDown
             // 
@@ -712,12 +780,13 @@
             this.btnOrderDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnOrderDown.ForeColor = System.Drawing.Color.White;
             this.btnOrderDown.Image = global::P05_Business.Properties.Resources._58460_down_arrow_arrow_down;
-            this.btnOrderDown.Location = new System.Drawing.Point(433, 0);
+            this.btnOrderDown.Location = new System.Drawing.Point(453, 0);
             this.btnOrderDown.Name = "btnOrderDown";
-            this.btnOrderDown.Size = new System.Drawing.Size(35, 35);
+            this.btnOrderDown.Size = new System.Drawing.Size(25, 25);
             this.btnOrderDown.TabIndex = 1;
             this.btnOrderDown.TextColor = System.Drawing.Color.White;
             this.btnOrderDown.UseVisualStyleBackColor = false;
+            this.btnOrderDown.Click += new System.EventHandler(this.btnOrderDown_Click);
             // 
             // btnOrderUp
             // 
@@ -732,21 +801,22 @@
             this.btnOrderUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnOrderUp.ForeColor = System.Drawing.Color.White;
             this.btnOrderUp.Image = global::P05_Business.Properties.Resources._58463_up_up_arrow_arrow;
-            this.btnOrderUp.Location = new System.Drawing.Point(468, 0);
+            this.btnOrderUp.Location = new System.Drawing.Point(478, 0);
             this.btnOrderUp.Name = "btnOrderUp";
-            this.btnOrderUp.Size = new System.Drawing.Size(35, 35);
+            this.btnOrderUp.Size = new System.Drawing.Size(25, 25);
             this.btnOrderUp.TabIndex = 0;
             this.btnOrderUp.TextColor = System.Drawing.Color.White;
             this.btnOrderUp.UseVisualStyleBackColor = false;
+            this.btnOrderUp.Click += new System.EventHandler(this.btnOrderUp_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.dgvList);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 35);
+            this.panel3.Location = new System.Drawing.Point(0, 25);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(503, 393);
+            this.panel3.Size = new System.Drawing.Size(503, 403);
             this.panel3.TabIndex = 1;
             // 
             // dgvList
@@ -756,54 +826,9 @@
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(503, 393);
+            this.dgvList.Size = new System.Drawing.Size(503, 403);
             this.dgvList.TabIndex = 0;
             this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
-            // 
-            // panel19
-            // 
-            this.panel19.Controls.Add(this.txtParentId);
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel19.Location = new System.Drawing.Point(0, 0);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(163, 35);
-            this.panel19.TabIndex = 1;
-            // 
-            // panel20
-            // 
-            this.panel20.Controls.Add(this.txtParentName);
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel20.Location = new System.Drawing.Point(163, 0);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(111, 35);
-            this.panel20.TabIndex = 2;
-            // 
-            // txtParentName
-            // 
-            this.txtParentName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtParentName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtParentName.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtParentName.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtParentName.BorderRadius = 0;
-            this.txtParentName.BorderSize = 2;
-            this.txtParentName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtParentName.Enabled = false;
-            this.txtParentName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
-            this.txtParentName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtParentName.Location = new System.Drawing.Point(3, 6);
-            this.txtParentName.MaxLength = 32767;
-            this.txtParentName.Multiline = false;
-            this.txtParentName.Name = "txtParentName";
-            this.txtParentName.OnlyNumber = false;
-            this.txtParentName.PasswordChar = false;
-            this.txtParentName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtParentName.PlaceholderText = "";
-            this.txtParentName.ReadOnly = false;
-            this.txtParentName.Size = new System.Drawing.Size(105, 22);
-            this.txtParentName.TabIndex = 1;
-            this.txtParentName.Tag = "ParentName";
-            this.txtParentName.Texts = "";
-            this.txtParentName.UnderlinedStyle = false;
             // 
             // frmMenuMasterMng
             // 
@@ -828,6 +853,8 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel20.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -846,8 +873,6 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-            this.panel19.ResumeLayout(false);
-            this.panel20.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -898,5 +923,6 @@
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel19;
         private P02_K_CONTROL_WIN.KTextBox txtParentName;
+        private P02_K_CONTROL_WIN.KButton btnSaveOrder;
     }
 }

@@ -72,5 +72,59 @@
 			and ifnull(menu.MenuId,'') = @MenuId
 			order by depthNo, orderseq;
 		</Statement>
+
+		<Statement Id="insertMenuMaster">
+			INSERT INTO `soodal`.`tb_menumaster`
+			(`MenuId`,
+			`ParentId`,
+			`MenuName`,
+			`MenuType`,
+			`Namespace`,
+			`FormName`,
+			`OrderSeq`,
+			`DepthNo`,
+			`UseYn`,
+			`DelYn`,
+			`CreateDt`)
+			VALUES
+			(FN_CreateMenuId(@ParentId, @MenuId),
+			@ParentId,
+			@MenuName,
+			@MenuType,
+			@Namespace,
+			@FormName,
+			1,
+			(Length(@ParentId) / 3) + 1,
+			@UseYn,
+			'N',
+			now())
+			ON DUPLICATE KEY UPDATE
+			`MenuName` = @MenuName,
+			`MenuType` = @MenuType,
+			`Namespace` = @Namespace,
+			`FormName` = @FormName,
+			`UseYn` = @UseYn,
+			`DelYn` = 'N',
+			`UpdateDt` = now(),
+			`DeleteDt` = null
+			;
+		</Statement>
+
+		<Statement Id="deleteMenuMaster">
+			UPDATE `soodal`.`tb_menumaster`
+			SET
+			`DelYn` = 'Y',
+			`DeleteDt` = now()
+			WHERE `MenuId` = @MenuId;
+		</Statement>
+
+		<Statement Id="updateMenuMasterOrder">
+			UPDATE `soodal`.`tb_menumaster`
+			SET
+			`OrderSeq` = @OrderSeq
+			WHERE `MenuId` = @MenuId;
+		</Statement>
+
+
 	</Statements>
 </SmartSqlMap>

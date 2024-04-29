@@ -28,5 +28,20 @@ namespace P05_Business.Common.Helpers
             dt.AcceptChanges();
             return dt;
         }
+
+        internal static void SwapRows(DataGridView dgv, int row1, int row2)
+        {
+            DataTable dt = dgv.DataSource as DataTable;
+
+            DataRow tempRow = dt.NewRow();
+            tempRow.ItemArray = dt.Rows[row1].ItemArray;
+
+            dt.Rows[row1].ItemArray = dt.Rows[row2].ItemArray;
+            dt.Rows[row2].ItemArray = tempRow.ItemArray;
+
+            dgv.ClearSelection();
+            dgv.Rows[row2].Selected = true; 
+            
+        }
     }
 }

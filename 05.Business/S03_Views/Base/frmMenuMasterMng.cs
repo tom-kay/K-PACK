@@ -108,6 +108,8 @@ namespace P05_Business.S03_Views.Base
                     return;
                 }
 
+                if (KMessageBox.Show("저장하시겠습니까?", "SAVE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes) return;
+
                 //데이터 저장
                 ResultCRUD result = this.SaveData();
 
@@ -118,7 +120,7 @@ namespace P05_Business.S03_Views.Base
                 } 
                 else if (result == ResultCRUD.SaveFailData)
                 {
-                    KMessageBox.Show("저장되지 않았습니다.", "FAILED", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    KMessageBox.Show("저장되지 않았습니다.", "SAVE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -133,6 +135,26 @@ namespace P05_Business.S03_Views.Base
         {
             try
             {
+                if (string.IsNullOrEmpty(txtMenuId.Texts))
+                {
+                    KMessageBox.Show("삭제할 [메뉴]를 선택바랍니다.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (KMessageBox.Show("삭제하시겠습니까?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes) return;
+
+                //데이터 저장
+                ResultCRUD result = this.DeleteData();
+
+                if (result == ResultCRUD.DeleteSuccessData)
+                {
+                    MainMessage.Show("삭제되었습니다.");
+                }
+                else if (result == ResultCRUD.DeleteFailData)
+                {
+                    KMessageBox.Show("삭제되지 않았습니다.", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
             }
             catch (Exception ex)
@@ -140,7 +162,7 @@ namespace P05_Business.S03_Views.Base
                 KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private void trvMenu_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             try
@@ -152,6 +174,43 @@ namespace P05_Business.S03_Views.Base
 
                 //하위 노드 조회 호출
                 BindChildNodes(nodeKey);
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// 메뉴 순번 저장
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSaveOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvList.Rows.Count < 1)
+                {
+                    KMessageBox.Show("변경할 자료가 없습니다.", "UPDATE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (KMessageBox.Show("순번을 변경하겠습니까?", "UPDATE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes) return;
+
+                //데이터 저장
+                ResultCRUD result = this.UpdateDataOrder();
+
+                if (result == ResultCRUD.UpdateSuccessData)
+                {
+                    MainMessage.Show("수정되었습니다.");
+                }
+                else if (result == ResultCRUD.UpdateFailData)
+                {
+                    KMessageBox.Show("수정되지 않았습니다.", "UPDATE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
             }
             catch (Exception ex)
             {
@@ -200,6 +259,7 @@ namespace P05_Business.S03_Views.Base
             DataHandles.DtoToControls<MenuMasterDto>(this, dto);
         }
 
+
         private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // 선택행 데이터 추출
@@ -210,6 +270,46 @@ namespace P05_Business.S03_Views.Base
 
             // dto 값을 control에 바인딩
             DataHandles.DtoToControls<MenuMasterDto>(this, dto);
+        }
+
+        private void btnOrderDown_Click(object sender, EventArgs e)
+        {
+            if (dgvList.Rows.Count < 1) return;
+            
+            if (dgvList.SelectedRows.Count < 1)
+            {
+                KMessageBox.Show("이동할 행을 선택 바랍니다.", "순서변경", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            DataGridViewRow row = dgvList.SelectedRows[0];
+            if (row.Index == dgvList.Rows.Count - 1) return;
+            
+            GridHelper.SwapRows(dgvList, row.Index, row.Index + 1);
+
+            DataTable dt = dgvList.DataSource as DataTable;
+            dt.Rows[row.Index]["OrderSeq"] = row.Index + 1;
+            dt.Rows[row.Index + 1]["OrderSeq"] = row.Index + 2;
+
+        }
+
+        private void btnOrderUp_Click(object sender, EventArgs e)
+        {
+            if (dgvList.Rows.Count < 1) return;
+
+            if (dgvList.SelectedRows.Count < 1)
+            {
+                KMessageBox.Show("이동할 행을 선택 바랍니다.", "순서변경", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            DataGridViewRow row = dgvList.SelectedRows[0];
+            if (row.Index == 0) return;
+
+            GridHelper.SwapRows(dgvList, row.Index, row.Index - 1);
+            DataTable dt = dgvList.DataSource as DataTable;
+            dt.Rows[row.Index]["OrderSeq"] = row.Index + 1;
+            dt.Rows[row.Index - 1]["OrderSeq"] = row.Index;
         }
 
         private void CreateGrid()
@@ -223,6 +323,7 @@ namespace P05_Business.S03_Views.Base
             UserDataGrid.AddTextBoxColumn(dgvList, "Namespace", "Namespace", true, false, 1, DataGridViewContentAlignment.MiddleCenter);
             UserDataGrid.AddTextBoxColumn(dgvList, "FormName", "화면명", true, false, 1, DataGridViewContentAlignment.MiddleCenter);
             UserDataGrid.AddTextBoxColumn(dgvList, "UseYn", "사용유무", true, true, 5, DataGridViewContentAlignment.MiddleCenter);
+            UserDataGrid.AddTextBoxColumn(dgvList, "DelYn", "삭제", true, true, 5, DataGridViewContentAlignment.MiddleCenter);
             UserDataGrid.End(dgvList);
 
         }
@@ -252,6 +353,8 @@ namespace P05_Business.S03_Views.Base
                 DataTable dt = DataHandles.ConvertToDataTable<MenuMasterDto>(dtoMenus);
 
                 dgvList.DataSource = dt;
+
+                dt.AcceptChanges();
             }
         }
 
@@ -332,6 +435,7 @@ namespace P05_Business.S03_Views.Base
 
             bool isSave = ctrl.SaveMenuMaster(param);
 
+
             ResultCRUD result = ResultCRUD.None;
             if (isSave)
             {
@@ -344,6 +448,71 @@ namespace P05_Business.S03_Views.Base
 
             return result;
         }
+
+        /// <summary>
+        /// 데이터 삭제
+        /// </summary>
+        /// <returns></returns>
+        private ResultCRUD DeleteData()
+        {
+            MenuMasterDto deleteData = DataHandles.ControlsToDto<MenuMasterDto>(this, dto);
+
+            MenuMasterDto param = new MenuMasterDto
+            {
+                MenuId = deleteData.MenuId,
+            };
+
+            //유효성 검사
+            //var context = new ValidationContext(param, serviceProvider: null, items: null);
+            //Validator.ValidateObject(param, context, validateAllProperties: true);
+
+            bool isDelete = ctrl.DeleteMenuMaster(param);
+
+            ResultCRUD result = ResultCRUD.None;
+            if (isDelete)
+            {
+                result = ResultCRUD.DeleteSuccessData;
+            }
+            else
+            {
+                result = ResultCRUD.DeleteFailData;
+            }
+
+            return result;
+        }
+
+        private ResultCRUD UpdateDataOrder()
+        {
+            DataTable dtChanges = UserDataGrid.GetChangeAll(dgvList);
+
+            if (dtChanges == null || dtChanges.Rows.Count < 1)
+            {
+                KMessageBox.Show("변경할 자료가 없습니다.", "UPDATE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return ResultCRUD.None;
+            }
+
+            List<MenuMasterDto> param = DataHandles.ConvertToList<MenuMasterDto>(dtChanges);
+
+            //유효성 검사
+            //var context = new ValidationContext(param, serviceProvider: null, items: null);
+            //Validator.ValidateObject(param, context, validateAllProperties: true);
+
+            bool isUpdate = ctrl.UpdateMenuMasterOrder(param);
+
+            ResultCRUD result = ResultCRUD.None;
+            if (isUpdate)
+            {
+                result = ResultCRUD.UpdateSuccessData;
+            }
+            else
+            {
+                result = ResultCRUD.UpdateFailData;
+            }
+
+            return result;
+        }
+
+        
     }
 }
 

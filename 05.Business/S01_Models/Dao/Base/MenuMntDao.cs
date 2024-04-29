@@ -72,7 +72,7 @@ namespace P05_Business.S01_Models.Dao.Base
 
         internal int InsertMenuMaster(MenuMasterDto param)
         {
-            int save;
+            int delete;
 
             RequestContext context = new RequestContext
             {
@@ -85,7 +85,7 @@ namespace P05_Business.S01_Models.Dao.Base
             {
                 SqlMapper.BeginTransaction();
                 log.Info(SqlMapper.SqlBuilder.BuildSql(context));
-                save = SqlMapper.Execute(context);
+                delete = SqlMapper.Execute(context);
                 SqlMapper.CommitTransaction();
 
             }
@@ -96,20 +96,70 @@ namespace P05_Business.S01_Models.Dao.Base
             }
 
 
-            return save;
+            return delete;
         }
 
-        //public void insertEmployee(string emp)
-        //{
-        //	DaoFactory.getInstance.Insert("insertEmployee", emp);
-        //}
-        //public void updateEmployee(string emp)
-        //{
-        //	DaoFactory.getInstance.Update("updateEmployee", emp);
-        //}
-        //public void deleteEmployeeByEmpno(int id)
-        //{
-        //	DaoFactory.getInstance.Delete("deleteEmployeeByEmpno", id);
-        //}
+        internal int DeleteMenuMaster(MenuMasterDto param)
+        {
+            int delete;
+
+            RequestContext context = new RequestContext
+            {
+                Scope = "MenuMng",
+                SqlId = "deleteMenuMaster",
+                Request = param
+            };
+
+            try
+            {
+                SqlMapper.BeginTransaction();
+                log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+                delete = SqlMapper.Execute(context);
+                SqlMapper.CommitTransaction();
+
+            }
+            catch (Exception ex)
+            {
+                SqlMapper.RollbackTransaction();
+                throw ex;
+            }
+
+
+            return delete;
+        }
+
+        internal int UpdateMenuMasterOrder(List<MenuMasterDto> param)
+        {
+            int update = 0;
+
+            try
+            {
+                SqlMapper.BeginTransaction();
+                
+                foreach (MenuMasterDto item in param)
+                {   
+                    RequestContext context = new RequestContext
+                    {
+                        Scope = "MenuMng",
+                        SqlId = "UpdateMenuMasterOrder",
+                        Request = item
+                    };
+
+                    
+                    log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+                    update = SqlMapper.Execute(context);
+                }
+
+                SqlMapper.CommitTransaction();
+            }
+            catch (Exception ex)
+            {
+                SqlMapper.RollbackTransaction();
+                throw ex;
+            }
+
+
+            return update;
+        }
     }
 }
