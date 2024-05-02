@@ -47,7 +47,7 @@ namespace P05_Business.S03_Views.Base
         {
             try
             {
-
+                
             }
             catch (Exception ex)
             {
@@ -116,6 +116,11 @@ namespace P05_Business.S03_Views.Base
                 //메시지 출력
                 if (result == ResultCRUD.SaveSuccessData)
                 {
+                    btnSearch.PerformClick();
+                    //그리드 재조회
+                    string nodeKey = txtParentId.Texts.Trim();
+                    BindChildNodes(nodeKey);
+
                     MainMessage.Show("저장되었습니다.");
                 } 
                 else if (result == ResultCRUD.SaveFailData)
@@ -148,6 +153,12 @@ namespace P05_Business.S03_Views.Base
 
                 if (result == ResultCRUD.DeleteSuccessData)
                 {
+                    //메뉴리스트 재조회
+                    btnSearch.PerformClick();
+                    //그리드 재조회
+                    string nodeKey = txtParentId.Texts.Trim();
+                    BindChildNodes(nodeKey);
+
                     MainMessage.Show("삭제되었습니다.");
                 }
                 else if (result == ResultCRUD.DeleteFailData)
@@ -198,6 +209,9 @@ namespace P05_Business.S03_Views.Base
 
                 if (KMessageBox.Show("순번을 변경하겠습니까?", "UPDATE", MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes) return;
 
+                //메뉴 순번 재부여
+                this.ResetMenuOrderSeq();
+
                 //데이터 저장
                 ResultCRUD result = this.UpdateDataOrder();
 
@@ -247,7 +261,7 @@ namespace P05_Business.S03_Views.Base
             }
 
             //신규 등록시 부모키만 바인딩하고 메뉴키 값은 없는 상태에서 저장시 생성하게 한다.
-            dto = new MenuMasterDto()
+            MenuMasterDto newDto = new MenuMasterDto()
             {   
                 ParentId = nodeKey,
                 ParentName = nodeText,
@@ -256,7 +270,7 @@ namespace P05_Business.S03_Views.Base
             btnInit.PerformClick();// 컨트롤 초기화
 
             //컨트롤에 바인딩 하고 그리드 마지막에 신규한 줄 을 추가한다.
-            DataHandles.DtoToControls<MenuMasterDto>(this, dto);
+            DataHandles.DtoToControls<MenuMasterDto>(this, newDto);
         }
 
 
@@ -287,10 +301,6 @@ namespace P05_Business.S03_Views.Base
             
             GridHelper.SwapRows(dgvList, row.Index, row.Index + 1);
 
-            DataTable dt = dgvList.DataSource as DataTable;
-            dt.Rows[row.Index]["OrderSeq"] = row.Index + 1;
-            dt.Rows[row.Index + 1]["OrderSeq"] = row.Index + 2;
-
         }
 
         private void btnOrderUp_Click(object sender, EventArgs e)
@@ -307,9 +317,7 @@ namespace P05_Business.S03_Views.Base
             if (row.Index == 0) return;
 
             GridHelper.SwapRows(dgvList, row.Index, row.Index - 1);
-            DataTable dt = dgvList.DataSource as DataTable;
-            dt.Rows[row.Index]["OrderSeq"] = row.Index + 1;
-            dt.Rows[row.Index - 1]["OrderSeq"] = row.Index;
+
         }
 
         private void CreateGrid()
@@ -493,6 +501,7 @@ namespace P05_Business.S03_Views.Base
 
             List<MenuMasterDto> param = DataHandles.ConvertToList<MenuMasterDto>(dtChanges);
 
+
             //유효성 검사
             //var context = new ValidationContext(param, serviceProvider: null, items: null);
             //Validator.ValidateObject(param, context, validateAllProperties: true);
@@ -512,7 +521,18 @@ namespace P05_Business.S03_Views.Base
             return result;
         }
 
-        
+        /// <summary>
+        /// 메뉴 순번 재 정의
+        /// </summary>
+        private void ResetMenuOrderSeq()
+        {
+            DataTable dt = dgvList.DataSource as DataTable;
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dt.Rows[i]["OrderSeq"] = i + 1;
+            }
+        }
     }
 }
 

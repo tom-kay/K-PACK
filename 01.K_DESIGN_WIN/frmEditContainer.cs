@@ -82,7 +82,9 @@ namespace P01_K_DESIGN_WIN
 		{
 			FormSettings.Control_Init(this);
 
-		}
+			this.currentData = null;
+
+        }
 
 		private void btnClose_Click(object sender, EventArgs e)
 		{

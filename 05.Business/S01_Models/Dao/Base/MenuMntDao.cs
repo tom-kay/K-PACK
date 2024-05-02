@@ -141,7 +141,7 @@ namespace P05_Business.S01_Models.Dao.Base
                     RequestContext context = new RequestContext
                     {
                         Scope = "MenuMng",
-                        SqlId = "UpdateMenuMasterOrder",
+                        SqlId = "updateMenuMasterOrder",
                         Request = item
                     };
 
