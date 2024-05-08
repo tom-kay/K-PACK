@@ -1,18 +1,12 @@
-﻿using Dapper;
-using log4net;
+﻿using log4net;
 using P05_Business.S01_Models.Dao.Base;
 using P05_Business.S01_Models.Dto.Base;
-using SmartSql.Abstractions;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace P05_Business.S02_Controllers.Base
 {
-	internal class CustomerMngController
+    internal class CustomerMngController
 	{
 		public static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 

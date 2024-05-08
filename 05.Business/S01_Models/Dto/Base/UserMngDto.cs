@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace P05_Business.S01_Models.Dto.Base
 {
-	public class UserMngDto : DtoBase
+    public class UserMngDto : DtoBase
 	{	
         public string UserId { get; set; }
 		public string CompanyNameK { get; set; }

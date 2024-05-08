@@ -1,16 +1,12 @@
 ﻿using log4net;
 using P05_Business.S01_Models.Dao.Base;
 using P05_Business.S01_Models.Dto.Base;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace P05_Business.S02_Controllers.Base
 {
-	public class UserMngController
+    public class UserMngController
 	{
 		public static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 

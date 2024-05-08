@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace P05_Business.S01_Models.Dto.Base
 {
-	internal class CustomerDto : DtoBase
+    internal class CustomerDto : DtoBase
 	{
 		[Required(ErrorMessage ="[거래처코드]는 필수 입니다.")]
 		[MaxLength(10, ErrorMessage = "[거래처코드]는 최대 10자리 입니다.")]

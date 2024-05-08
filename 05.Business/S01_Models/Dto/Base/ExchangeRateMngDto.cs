@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace P05_Business.S01_Models.Dto.Base
 {
-	internal class ExchangeRateMngDto : DtoBase
+    internal class ExchangeRateMngDto : DtoBase
 	{
 		[Required(ErrorMessage ="[고시일자]는 필수 입니다.")]
 		[Description("고시일자")]

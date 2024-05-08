@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SmartSqlMap Scope="Biz.ItemMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+	<Statements>
+		<Statement Id="SelectAdd">
+			,`item`.CompanyCode
+			,ifnull(`item`.DelYn,'N') AS DelYn
+			,`item`.`CreateId`
+			,date_format(`item`.CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`
+			,`item`.`UpdateId`
+			,date_format(`item`.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`
+			,`item`.`DeleteId`
+			,date_format(`item`.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+		</Statement>
+
+		<Statement Id="selectItemGroupList">
+			SELECT `item`.`GroupCode`,
+			`item`.`GroupName`,
+			`item`.`AliasName`,
+			`item`.`DefaultEachUnitCode`,
+			`esch`.`Name` AS `DefaultEachUnitName`,
+			`item`.`DefaultPackingUnitCode`,
+			`pack`.`Name` AS `DefaultPackingUnitName`,
+			`item`.`Remark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `soodal`.`tb_itemgroup` AS item
+			LEFT JOIN `soodal`.`tb_codedetail` AS `each`
+			ON `each`.`MasterCode` = 'ITEMUNIT'
+			AND `each`.`Code` = `item`.`DefaultEachUnitCode`
+			LEFT JOIN `soodal`.`tb_codedetail` AS `pack`
+			ON `each`.`MasterCode` = 'PACKINGUNIT'
+			AND `each`.`Code` = `item`.`DefaultPackingUnitCode`
+			WHERE 1=1
+			AND `item`.`CompanyCode` = @CompanyCode
+		</Statement>
+
+		<Statement Id="selectItemGroup">
+			SELECT `item`.`GroupCode`,
+			`item`.`GroupName`,
+			`item`.`AliasName`,
+			`item`.`DefaultEachUnitCode`,
+			`esch`.`Name` AS `DefaultEachUnitName`,
+			`item`.`DefaultPackingUnitCode`,
+			`pack`.`Name` AS `DefaultPackingUnitName`,
+			`item`.`Remark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `soodal`.`tb_itemgroup` AS item
+			LEFT JOIN `soodal`.`tb_codedetail` AS `each`
+			ON `each`.`MasterCode` = 'ITEMUNIT'
+			AND `each`.`Code` = `item`.`DefaultEachUnitCode`
+			LEFT JOIN `soodal`.`tb_codedetail` AS `pack`
+			ON `each`.`MasterCode` = 'PACKINGUNIT'
+			AND `each`.`Code` = `item`.`DefaultPackingUnitCode`
+			WHERE 1=1
+			AND `item`.`GroupCode` = @GroupCode
+			AND `item`.`CompanyCode` = @CompanyCode
+			LIMIT 1
+		</Statement>
+
+		<Statement Id="insertItemGroup">
+			INSERT INTO `soodal`.`tb_itemgroup`
+			(`GroupCode`,
+			`GroupName`,
+			`AliasName`,
+			`DefaultEachUnitCode`,
+			`DefaultPackingUnitCode`,
+			`Remark`,
+			`CompanyCode`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES
+			(@GroupCode,
+			@GroupName,
+			@AliasName,
+			@DefaultEachUnitCode,
+			@DefaultPackingUnitCode,
+			@Remark,
+			@CompanyCode,
+			'N',
+			@CreateId,
+			now())
+			ON DUPLICATE KEY UPDATE
+			`GroupName` = @GroupName,
+			`AliasName` = @AliasName,
+			`DefaultEachUnitCode` = @DefaultEachUnitCode,
+			`DefaultPackingUnitCode` = @DefaultPackingUnitCode,
+			`Remark` = @Remark,
+			`DelYn` = 'N',
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = null,
+			`DeleteDt` = null
+
+		</Statement>
+
+
+		<Statement Id="deleteItemGroup" >
+			UPDATE `soodal`.`tb_itemgroup`
+			SET
+			`DelYn` = 'Y',
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = now()
+			WHERE `GroupCode` = @GroupCode AND `CompanyCode` = @CompanyCode
+		</Statement>
+
+
+		<Statement Id="selectItemList">
+			SELECT `item`.`GroupCode`,
+			`item`.`ItemCode`,
+			`item`.`ItemNo`,
+			`item`.`ItemName`,
+			`item`.`AliasName`,
+			`item`.`SIze`,
+			`item`.`AliasSize`,
+			`item`.`Description`,
+			`item`.`AliasDescription`,
+			`item`.`UnitCode`,
+			`item`.`Remark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `soodal`.`tb_item` AS `item`
+			WHERE 1=1
+			AND `item`.`CompanyCode` = @CompanyCode
+			AND `item`.`GroupCode` = @GroupCode
+		</Statement>
+
+		<Statement Id="selectItem">
+			SELECT `item`.`GroupCode`,
+			`item`.`ItemCode`,
+			`item`.`ItemNo`,
+			`item`.`ItemName`,
+			`item`.`AliasName`,
+			`item`.`SIze`,
+			`item`.`AliasSize`,
+			`item`.`Description`,
+			`item`.`AliasDescription`,
+			`item`.`UnitCode`,
+			`item`.`Remark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `soodal`.`tb_item` AS `item`
+			WHERE 1=1
+			AND `item`.`GroupCode` = @GroupCode
+			AND `item`.`ItemCode` = @ItemCode
+			AND `item`.`CompanyCode` = @CompanyCode
+			LIMIT 1
+		</Statement>
+
+		<Statement Id="insertItem">
+
+			INSERT INTO `soodal`.`tb_customeremp`
+			(`CustCode`,
+			`EmpIdx`,
+			`EmpName`,
+			`PositionName`,
+			`TelNo`,
+			`MobileNo`,
+			`Email`,
+			`TaskCharge`,
+			`Remark`,
+			`CompanyCode`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`)
+			VALUES
+			(@CustCode,
+			`FN_CreateCustEmpIdx`(@CompanyCode, @CustCode, @EmpIdx),
+			@EmpName,
+			@PositionName,
+			@TelNo,
+			@MobileNo,
+			@Email,
+			@TaskCharge,
+			@Remark,
+			@CompanyCode,
+			'N',
+			@CreateId,
+			now())
+			ON DUPLICATE KEY UPDATE
+			`EmpName` = @EmpName,
+			`PositionName` = @PositionName,
+			`TelNo` = @TelNo,
+			`MobileNo` = @MobileNo,
+			`Email` = @Email,
+			`TaskCharge` = @TaskCharge,
+			`Remark` = @Remark,
+			`DelYn` = 'N',
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = null,
+			`DeleteDt` = null
+
+		</Statement>
+
+		<Statement Id="deleteItem" >
+			UPDATE `soodal`.`tb_item`
+			SET
+			`DelYn` = @DelYn,
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = @DeleteDt
+			WHERE `GroupCode` = @GroupCode AND `ItemCode` = @ItemCode AND `CompanyCode` = @CompanyCode
+		</Statement>
+
+	</Statements>
+</SmartSqlMap>

@@ -239,6 +239,7 @@
     <Compile Include="S01_Models\Dao\Base\MenuMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\CodeMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\UserMngDao.cs" />
+    <Compile Include="S01_Models\Dao\Biz\ItemMngDao.cs" />
     <Compile Include="S01_Models\Dao\DaoFactory.cs" />
     <Compile Include="S01_Models\Dto\Base\CodeDetailDto.cs" />
     <Compile Include="S01_Models\Dto\Base\CodeMasterDto.cs" />
@@ -248,6 +249,8 @@
     <Compile Include="S01_Models\Dto\Base\ExchangeRateMngDto.cs" />
     <Compile Include="S01_Models\Dto\Base\MenuMasterDto.cs" />
     <Compile Include="S01_Models\Dto\Base\UserMngDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\ItemDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\ItemGroupDto.cs" />
     <Compile Include="S01_Models\Dto\DtoBase.cs" />
     <Compile Include="S02_Controllers\Base\CodeMngController.cs" />
     <Compile Include="S02_Controllers\Base\CompanyMngController.cs" />
@@ -267,6 +270,7 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="S02_Controllers\Base\UserMngController.cs" />
+    <Compile Include="S02_Controllers\Biz\ItemMngController.cs" />
     <Compile Include="S03_Views\Base\frmCodeDetailList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -847,6 +851,9 @@
     <Content Include="S01_Models\Maps\Base\ExchangeRateMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="S01_Models\Maps\Biz\ItemMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SmartSqlMapConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -868,6 +875,8 @@
       <Name>P03_Framework</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="S03_Views\Biz\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

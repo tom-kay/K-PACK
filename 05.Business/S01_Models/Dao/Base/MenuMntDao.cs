@@ -1,5 +1,4 @@
-﻿using P05_Business.S01_Models.Dto;
-using log4net;
+﻿using log4net;
 using SmartSql.Abstractions;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using System;
 
 namespace P05_Business.S01_Models.Dao.Base
 {
-	public class MenuMntDao : DaoFactory
+    public class MenuMntDao : DaoFactory
 	{
 		public static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
