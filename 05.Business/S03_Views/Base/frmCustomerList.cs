@@ -1,27 +1,18 @@
 ﻿using log4net;
 using P01_K_DESIGN_WIN;
 using P01_K_DESIGN_WIN.Classes;
-using P02_K_CONTROL_WIN;
 using P05_Business.Common;
 using P05_Business.Common.Helpers;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
-using P05_Business.S03_Views.Popup.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace P05_Business.S03_Views.Base
 {
-	public partial class frmCustomerList : frmSearchContainer
+    public partial class frmCustomerList : frmSearchContainer
 	{
 		public static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 

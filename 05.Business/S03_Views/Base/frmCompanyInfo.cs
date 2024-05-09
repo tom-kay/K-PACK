@@ -1,16 +1,14 @@
 ﻿using P01_K_DESIGN_WIN.Classes;
-using P02_K_CONTROL_WIN;
 using P05_Business.Common;
 using P05_Business.Common.Helpers;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace P05_Business.S03_Views.Base
 {
-	public partial class frmCompanyInfo : P01_K_DESIGN_WIN.frmEditContainer
+    public partial class frmCompanyInfo : P01_K_DESIGN_WIN.frmEditContainer
 	{
 		#region Member Variables
 		CompanyMngController ctrl = new CompanyMngController();

@@ -1,15 +1,12 @@
 ﻿using P01_K_DESIGN_WIN.Classes;
 using P05_Business.Common;
 using P05_Business.Common.Helpers;
-using P05_Business.S01_Models.Dao.Base;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Windows.Forms;
-using static Mysqlx.Expect.Open.Types.Condition.Types;
 
 namespace P05_Business.S03_Views.Base
 {

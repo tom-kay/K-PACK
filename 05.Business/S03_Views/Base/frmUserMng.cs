@@ -1,19 +1,15 @@
 ﻿using P01_K_DESIGN_WIN.Classes;
-using P02_K_CONTROL_WIN;
 using P05_Business.Common;
 using P05_Business.Common.Helpers;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Drawing;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using System.Xml.XPath;
 
 namespace P05_Business.S03_Views.Base
 {
-	public partial class frmUserMng : P01_K_DESIGN_WIN.frmEditContainer
+    public partial class frmUserMng : P01_K_DESIGN_WIN.frmEditContainer
 	{
 		#region Member Variables
 

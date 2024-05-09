@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Workspace\\K-PACK\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|c:\\workspace\\k-pack\\05.business\\s03_views\\biz\\frmitemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\biz\\frmitemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|c:\\workspace\\k-pack\\05.business\\s03_views\\biz\\frmitemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\biz\\frmitemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|c:\\workspace\\k-pack\\05.business\\s02_controllers\\biz\\itemmngcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s02_controllers\\biz\\itemmngcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +31,44 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmItemList.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "C:\\Workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmItemList.cs",
+              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Biz\\frmItemList.cs",
+              "ToolTip": "C:\\Workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmItemList.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "05.Business\\S03_Views\\Biz\\frmItemList.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T03:51:15.062Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmItemList.cs",
+              "DocumentMoniker": "C:\\Workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmItemList.cs",
+              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Biz\\frmItemList.cs",
+              "ToolTip": "C:\\Workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmItemList.cs",
+              "RelativeToolTip": "05.Business\\S03_Views\\Biz\\frmItemList.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T03:45:30.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ItemMngController.cs",
+              "DocumentMoniker": "C:\\Workspace\\K-PACK\\05.Business\\S02_Controllers\\Biz\\ItemMngController.cs",
+              "RelativeDocumentMoniker": "05.Business\\S02_Controllers\\Biz\\ItemMngController.cs",
+              "ToolTip": "C:\\Workspace\\K-PACK\\05.Business\\S02_Controllers\\Biz\\ItemMngController.cs",
+              "RelativeToolTip": "05.Business\\S02_Controllers\\Biz\\ItemMngController.cs",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAAwGcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T03:44:24.421Z",
+              "EditorCaption": ""
             }
           ]
         }

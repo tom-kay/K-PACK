@@ -1,15 +1,13 @@
 ﻿using P01_K_DESIGN_WIN.Classes;
-using P02_K_CONTROL_WIN;
 using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
-using System.Resources;
 using System.Windows.Forms;
 
 namespace P05_Business.S03_Views.Base
 {
-	public partial class frmCodeMasterMng : P01_K_DESIGN_WIN.frmEditContainer
+    public partial class frmCodeMasterMng : P01_K_DESIGN_WIN.frmEditContainer
 	{
 		#region Member Variables
 		CodeMasterDto dto = new CodeMasterDto();  //모델 클래스

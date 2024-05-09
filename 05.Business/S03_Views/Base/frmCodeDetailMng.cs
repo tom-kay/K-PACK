@@ -4,17 +4,11 @@ using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using P05_Business.S03_Views.Popup.Common;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Forms;
 
 namespace P05_Business.S03_Views.Base
 {
-	public partial class frmCodeDetailMng : P01_K_DESIGN_WIN.frmEditContainer
+    public partial class frmCodeDetailMng : P01_K_DESIGN_WIN.frmEditContainer
 	{
 		#region Member Variables
 		CodeDetailDto dto = new CodeDetailDto();

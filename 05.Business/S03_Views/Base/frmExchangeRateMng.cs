@@ -4,23 +4,15 @@ using P03_Framework.Helpers;
 using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
-using P05_Business.S03_Views.Popup.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
-using System.Diagnostics.Eventing.Reader;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.XPath;
 
 namespace P05_Business.S03_Views.Base
 {
-	public partial class frmExchangeRateMng : frmEditContainer
+    public partial class frmExchangeRateMng : frmEditContainer
 	{
 		private ExchangeRateMngController ctrl;
 		private List<ExchangeRateMngDto> dto;
