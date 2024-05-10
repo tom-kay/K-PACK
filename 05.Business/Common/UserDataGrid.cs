@@ -1,4 +1,7 @@
-﻿using System;
+﻿using P05_Business.S01_Models.Dto.Base;
+using P05_Business.S02_Controllers.Base;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Runtime.CompilerServices;
@@ -41,8 +44,9 @@ namespace P05_Business.Common
 			dataGrid.RowHeadersVisible = false;
 			dataGrid.EnableHeadersVisualStyles = false;
 			dataGrid.AllowUserToAddRows = false;
+			dataGrid.EditMode = DataGridViewEditMode.EditOnEnter;
 
-			dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+			dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			dataGrid.ColumnHeadersHeight = 35;
 			dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;			
 			dataGrid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -109,8 +113,9 @@ namespace P05_Business.Common
 			, DataGridViewContentAlignment alignment)
 		{
 			DataGridViewComboBoxColumn combo = new DataGridViewComboBoxColumn();
+			combo.FlatStyle = FlatStyle.Popup;
 
-			dataGrid.Columns.Add(SetGridCommonOption(combo, name, headerText, readOnly, visible, columnWidth, alignment));
+            dataGrid.Columns.Add(SetGridCommonOption(combo, name, headerText, readOnly, visible, columnWidth, alignment));
 		}
 
 		/// <summary>
@@ -208,7 +213,8 @@ namespace P05_Business.Common
 			column.DataPropertyName = name;
 			column.HeaderText = headerText;
 			column.FillWeight = columnWidth;
-			column.ReadOnly = readOnly;
+            column.Width = columnWidth;
+            column.ReadOnly = readOnly;
 			column.Visible = visible;
 			column.DefaultCellStyle.Alignment = alignment;
 			column.SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -239,7 +245,8 @@ namespace P05_Business.Common
 		internal static DataTable GetChangeAll(DataGridView grid)
 		{
 			return (grid.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted);
-		}
+
+        }
 
 		internal static DataTable GetChangeAdded(DataGridView grid)
 		{
@@ -260,5 +267,44 @@ namespace P05_Business.Common
 		{
 			return (grid.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified);
 		}
-	}
+
+		/// <summary>
+		/// 코드 테이블에서 데이터를 조회해서 바인딩한다.
+		/// </summary>
+		/// <param name="combo"></param>
+        internal static void BindComboBoxColumnCommonCode(DataGridViewComboBoxColumn cbo, string masterCode, bool allItem, bool blankItem)
+        {
+            try
+            {
+                cbo.Items.Clear();
+
+                CodeDetailDto param = new CodeDetailDto()
+                {
+                    MasterCode = masterCode,
+                };
+
+                List<CodeDetailDto> items = new CodeMngController().GetUseCodeList(param);
+
+                if (allItem)
+                {
+                    items.Insert(0, new CodeDetailDto() { Code = "", Name = "전체" });
+                }
+
+                if (blankItem)
+                {
+                    items.Insert(0, new CodeDetailDto() { Code = "", Name = "" });
+                }
+
+                cbo.DataSource = items;
+                cbo.ValueMember = "Code";
+                cbo.DisplayMember = "Name";
+
+                cbo.DefaultCellStyle.NullValue = "";
+            }
+            catch
+            {
+                cbo.Items.Clear();
+            }
+        }
+    }
 }

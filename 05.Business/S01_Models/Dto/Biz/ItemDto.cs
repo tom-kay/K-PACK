@@ -9,7 +9,7 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Required(ErrorMessage ="[그룹코드]는 필수 입니다.")]
         public string GroupCode { get; set; }
         [Required(ErrorMessage = "[아이템코드]는 필수 입니다.")]
-        public string ItemCode { get; set; }
+        public int? ItemCode { get; set; }
         [Required(ErrorMessage = "[아이템번호]는 필수 입니다.")]
         public string ItemNo { get; set; }
         [Description("아이템명")]
@@ -31,7 +31,7 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("비고")]
         public string Remark { get; set; }
         [Description("데이터상태값")]
-        public DataRowState DataState { get; set; }
+        public DataRowState? DataState { get; set; }
 
     }
 }

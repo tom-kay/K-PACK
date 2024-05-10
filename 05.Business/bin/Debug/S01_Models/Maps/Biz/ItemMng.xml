@@ -17,7 +17,7 @@
 			`item`.`GroupName`,
 			`item`.`AliasName`,
 			`item`.`DefaultEachUnitCode`,
-			`esch`.`Name` AS `DefaultEachUnitName`,
+			`each`.`Name` AS `DefaultEachUnitName`,
 			`item`.`DefaultPackingUnitCode`,
 			`pack`.`Name` AS `DefaultPackingUnitName`,
 			`item`.`Remark`
@@ -27,10 +27,19 @@
 			ON `each`.`MasterCode` = 'ITEMUNIT'
 			AND `each`.`Code` = `item`.`DefaultEachUnitCode`
 			LEFT JOIN `soodal`.`tb_codedetail` AS `pack`
-			ON `each`.`MasterCode` = 'PACKINGUNIT'
-			AND `each`.`Code` = `item`.`DefaultPackingUnitCode`
+			ON `pack`.`MasterCode` = 'PACKINGUNIT'
+			AND `pack`.`Code` = `item`.`DefaultPackingUnitCode`
 			WHERE 1=1
 			AND `item`.`CompanyCode` = @CompanyCode
+			<IsNotEmpty Prepend="And" Property="GroupCode">
+				`item`.`GroupCode` Like Concat('%', @GroupCode, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="GroupName">
+				`item`.`GroupName` Like Concat('%', @GroupName, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="AliasName">
+				`item`.`AliasName` Like Concat('%', @AliasName, '%')
+			</IsNotEmpty>
 		</Statement>
 
 		<Statement Id="selectItemGroup">
@@ -38,7 +47,7 @@
 			`item`.`GroupName`,
 			`item`.`AliasName`,
 			`item`.`DefaultEachUnitCode`,
-			`esch`.`Name` AS `DefaultEachUnitName`,
+			`each`.`Name` AS `DefaultEachUnitName`,
 			`item`.`DefaultPackingUnitCode`,
 			`pack`.`Name` AS `DefaultPackingUnitName`,
 			`item`.`Remark`
@@ -48,8 +57,8 @@
 			ON `each`.`MasterCode` = 'ITEMUNIT'
 			AND `each`.`Code` = `item`.`DefaultEachUnitCode`
 			LEFT JOIN `soodal`.`tb_codedetail` AS `pack`
-			ON `each`.`MasterCode` = 'PACKINGUNIT'
-			AND `each`.`Code` = `item`.`DefaultPackingUnitCode`
+			ON `pack`.`MasterCode` = 'PACKINGUNIT'
+			AND `pack`.`Code` = `item`.`DefaultPackingUnitCode`
 			WHERE 1=1
 			AND `item`.`GroupCode` = @GroupCode
 			AND `item`.`CompanyCode` = @CompanyCode
@@ -147,41 +156,48 @@
 
 		<Statement Id="insertItem">
 
-			INSERT INTO `soodal`.`tb_customeremp`
-			(`CustCode`,
-			`EmpIdx`,
-			`EmpName`,
-			`PositionName`,
-			`TelNo`,
-			`MobileNo`,
-			`Email`,
-			`TaskCharge`,
+			INSERT INTO `soodal`.`tb_item`
+			(`GroupCode`,
+			`ItemCode`,
+			`ItemNo`,
+			`ItemName`,
+			`AliasName`,
+			`SIze`,
+			`AliasSize`,
+			`Description`,
+			`AliasDescription`,
+			`UnitCode`,
 			`Remark`,
 			`CompanyCode`,
 			`DelYn`,
 			`CreateId`,
-			`CreateDt`)
+			`CreateDt`
+			)
 			VALUES
-			(@CustCode,
-			`FN_CreateCustEmpIdx`(@CompanyCode, @CustCode, @EmpIdx),
-			@EmpName,
-			@PositionName,
-			@TelNo,
-			@MobileNo,
-			@Email,
-			@TaskCharge,
+			(@GroupCode,
+			FN_CreateItemCode(@CompanyCode, @GroupCode, @ItemCode),
+			@ItemNo,
+			@ItemName,
+			@AliasName,
+			@SIze,
+			@AliasSize,
+			@Description,
+			@AliasDescription,
+			@UnitCode,
 			@Remark,
 			@CompanyCode,
 			'N',
 			@CreateId,
 			now())
 			ON DUPLICATE KEY UPDATE
-			`EmpName` = @EmpName,
-			`PositionName` = @PositionName,
-			`TelNo` = @TelNo,
-			`MobileNo` = @MobileNo,
-			`Email` = @Email,
-			`TaskCharge` = @TaskCharge,
+			`ItemNo` = @ItemNo,
+			`ItemName` = @ItemName,
+			`AliasName` = @AliasName,
+			`SIze` = @SIze,
+			`AliasSize` = @AliasSize,
+			`Description` = @Description,
+			`AliasDescription` = @AliasDescription,
+			`UnitCode` = @UnitCode,
 			`Remark` = @Remark,
 			`DelYn` = 'N',
 			`UpdateId` = @UpdateId,
@@ -194,10 +210,12 @@
 		<Statement Id="deleteItem" >
 			UPDATE `soodal`.`tb_item`
 			SET
-			`DelYn` = @DelYn,
+			`DelYn` = 'Y',
 			`DeleteId` = @DeleteId,
 			`DeleteDt` = @DeleteDt
-			WHERE `GroupCode` = @GroupCode AND `ItemCode` = @ItemCode AND `CompanyCode` = @CompanyCode
+			WHERE `GroupCode` = @GroupCode 
+			AND `ItemCode` = @ItemCode 
+			AND `CompanyCode` = @CompanyCode
 		</Statement>
 
 	</Statements>

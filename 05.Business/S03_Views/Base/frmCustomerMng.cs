@@ -159,8 +159,11 @@ namespace P05_Business.S03_Views.Base
 				dtoEmps = dto.Employees;    //직원정보
 
 				//직원정보 그리드에 바인딩
-				dgvList.DataSource = DataHandles.ConvertToDataTable<CustomerEmpDto>(dtoEmps);
-				(dgvList.DataSource as DataTable).AcceptChanges();
+				if (dtoEmps != null)
+				{
+					dgvList.DataSource = DataHandles.ConvertToDataTable<CustomerEmpDto>(dtoEmps);
+					(dgvList.DataSource as DataTable).AcceptChanges(); 
+				}
 
 				InitDto();
 

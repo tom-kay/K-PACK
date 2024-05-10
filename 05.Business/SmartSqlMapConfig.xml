@@ -9,5 +9,6 @@
 	<SmartSqlMaps>
 		<SmartSqlMap Path="S01_Models/Maps" Type="Directory"/>
 		<SmartSqlMap Path="S01_Models/Maps/Base" Type="Directory"/>
+		<SmartSqlMap Path="S01_Models/Maps/Biz" Type="Directory"/>
 	</SmartSqlMaps>
 </SmartSqlMapConfig>

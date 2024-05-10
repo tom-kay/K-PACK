@@ -84,6 +84,8 @@ namespace P01_K_DESIGN_WIN
 
 			this.currentData = null;
 
+			isFormChagned = false;
+
         }
 
 		private void btnClose_Click(object sender, EventArgs e)

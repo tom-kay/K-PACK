@@ -812,6 +812,9 @@
     <EmbeddedResource Include="S03_Views\Biz\frmItemList.resx">
       <DependentUpon>frmItemList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Biz\frmItemMng.resx">
+      <DependentUpon>frmItemMng.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Common\frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </EmbeddedResource>

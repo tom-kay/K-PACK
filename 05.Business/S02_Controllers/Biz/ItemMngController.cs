@@ -3,6 +3,7 @@ using P05_Business.S01_Models.Dao.Biz;
 using P05_Business.S01_Models.Dto.Biz;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace P05_Business.S02_Controllers.Biz
 {
@@ -34,7 +35,7 @@ namespace P05_Business.S02_Controllers.Biz
             ItemGroupDto group = dao.SelectItemGroup(param);
 
             //상세 아이템 조회
-            if (group != null && string.IsNullOrEmpty(group.GroupCode))
+            if (group != null && !string.IsNullOrEmpty(group.GroupCode))
             {
                 ItemDto item = new ItemDto();
                 item.GroupCode = group.GroupCode;
