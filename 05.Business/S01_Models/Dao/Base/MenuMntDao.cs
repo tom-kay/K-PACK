@@ -71,7 +71,7 @@ namespace P05_Business.S01_Models.Dao.Base
 
         internal int InsertMenuMaster(MenuMasterDto param)
         {
-            int delete;
+            int iSave;
 
             RequestContext context = new RequestContext
             {
@@ -84,7 +84,7 @@ namespace P05_Business.S01_Models.Dao.Base
             {
                 SqlMapper.BeginTransaction();
                 log.Info(SqlMapper.SqlBuilder.BuildSql(context));
-                delete = SqlMapper.Execute(context);
+                iSave = SqlMapper.Execute(context);
                 SqlMapper.CommitTransaction();
 
             }
@@ -95,7 +95,7 @@ namespace P05_Business.S01_Models.Dao.Base
             }
 
 
-            return delete;
+            return iSave;
         }
 
         internal int DeleteMenuMaster(MenuMasterDto param)

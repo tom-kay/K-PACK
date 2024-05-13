@@ -398,7 +398,10 @@ namespace P02_K_CONTROL_WIN
 		{
 			if (e.KeyCode == Keys.Enter)
 			{
-				SendKeys.Send("{TAB}");
+                if (!textBox1.Multiline)
+                {
+                    SendKeys.Send("{TAB}");
+                }
 			}
 		}
 

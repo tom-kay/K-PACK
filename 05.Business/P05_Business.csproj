@@ -236,6 +236,7 @@
     <Compile Include="S01_Models\Dao\Base\CompanyMngDao.cs" />
     <Compile Include="S01_Models\Dao\Base\CustomerMngDao.cs" />
     <Compile Include="S01_Models\Dao\Base\ExchangeRateMngDao.cs" />
+    <Compile Include="S01_Models\Dao\Base\MemoMngDao.cs" />
     <Compile Include="S01_Models\Dao\Base\MenuMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\CodeMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\UserMngDao.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="S01_Models\Dto\Base\CustomerDto.cs" />
     <Compile Include="S01_Models\Dto\Base\CustomerEmpDto.cs" />
     <Compile Include="S01_Models\Dto\Base\ExchangeRateMngDto.cs" />
+    <Compile Include="S01_Models\Dto\Base\MemoTemplateDto.cs" />
     <Compile Include="S01_Models\Dto\Base\MenuMasterDto.cs" />
     <Compile Include="S01_Models\Dto\Base\UserMngDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\ItemDto.cs" />
@@ -256,6 +258,7 @@
     <Compile Include="S02_Controllers\Base\CompanyMngController.cs" />
     <Compile Include="S02_Controllers\Base\CustomerMngController.cs" />
     <Compile Include="S02_Controllers\Base\ExchangeRateMngController.cs" />
+    <Compile Include="S02_Controllers\Base\MemoMngController.cs" />
     <Compile Include="S02_Controllers\Base\MenuMngController.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -318,6 +321,18 @@
     </Compile>
     <Compile Include="S03_Views\Base\frmExchangeRateMng.Designer.cs">
       <DependentUpon>frmExchangeRateMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmMemoList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmMemoList.Designer.cs">
+      <DependentUpon>frmMemoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmMemoMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmMemoMng.Designer.cs">
+      <DependentUpon>frmMemoMng.cs</DependentUpon>
     </Compile>
     <Compile Include="S03_Views\Base\frmMenuMasterMng.cs">
       <SubType>Form</SubType>
@@ -800,6 +815,12 @@
     <EmbeddedResource Include="S03_Views\Base\frmExchangeRateMng.resx">
       <DependentUpon>frmExchangeRateMng.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmMemoList.resx">
+      <DependentUpon>frmMemoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmMemoMng.resx">
+      <DependentUpon>frmMemoMng.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmMenuMasterMng.resx">
       <DependentUpon>frmMenuMasterMng.cs</DependentUpon>
     </EmbeddedResource>
@@ -867,6 +888,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="S01_Models\Maps\Base\ExchangeRateMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S01_Models\Maps\Base\MemoMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="S01_Models\Maps\Biz\ItemMng.xml">

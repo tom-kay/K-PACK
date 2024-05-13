@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SmartSqlMap Scope="Base.Memo" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+	<Statements>
+		<Statement Id="SelectAdd">
+			,`memo`.`CompanyCode`
+			,ifnull(`memo`.`DelYn`,'N') AS DelYn
+			,`memo`.`CreateId`
+			,date_format(`memo`.`CreateDt`, '%Y-%m-%d %H:%i:%s') AS `CreateDt`
+			,`memo`.`UpdateId`
+			,date_format(`memo`.`UpdateDt`, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`
+			,`memo`.`DeleteId`
+			,date_format(`memo`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+		</Statement>
+
+		<Statement Id="selectMemoList">
+			
+			SELECT `memo`.`MemoIdx`,
+			`memo`.`Title`,
+			`memo`.`Contents`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `soodal`.`tb_memotemplate` AS `memo`
+			WHERE 1=1
+			AND `memo`.`CompanyCode` = @CompanyCode
+			<IsNotEmpty Prepend="And" Property="Title">
+				`memo`.`Title` Like Concat('%', @Title, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="Contents">
+				`memo`.`Contents` Like Concat('%', @Contents, '%')
+			</IsNotEmpty>
+			
+		</Statement>
+
+		<Statement Id="selectMemoSingle">
+			SELECT `memo`.`MemoIdx`,
+			`memo`.`Title`,
+			`memo`.`Contents`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `soodal`.`tb_memotemplate` AS `memo`
+			WHERE 1=1
+			AND `memo`.`MemoIdx` = @MemoIdx
+			AND `memo`.`CompanyCode` = @CompanyCode
+			LIMIT 1
+		</Statement>
+
+		<Statement Id="insertMemo">
+			INSERT INTO `soodal`.`tb_memotemplate`
+			(`Title`,
+			`Contents`,
+			`CompanyCode`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`)
+			VALUES
+			(@Title,
+			@Contents,
+			@CompanyCode,
+			'N',
+			@CreateId,
+			now()
+			)
+			ON DUPLICATE KEY UPDATE
+			`Title` = @Title,
+			`Contents` = @Contents,
+			`CompanyCode` = @CompanyCode,
+			`DelYn` = 'N',
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = null,
+			`DeleteDt` = null
+		</Statement>
+
+		<Statement Id="deleteMemo">
+			UPDATE `soodal`.`tb_memotemplate`
+			SET
+			`DelYn` = 'Y',
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = now()
+			WHERE `MemoIdx` = @MemoIdx
+			AND `CompanyCode` = @CompanyCode;
+		</Statement>
+
+
+	</Statements>
+</SmartSqlMap>

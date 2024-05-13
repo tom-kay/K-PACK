@@ -58,6 +58,8 @@ namespace P05_Business.S03_Views.Base
 			try
 			{
 				SearchData();
+
+				MainMessage.Show("조회되었습니다.");
 			}
 			catch (Exception ex)
 			{

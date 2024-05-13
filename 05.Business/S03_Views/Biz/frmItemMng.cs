@@ -8,6 +8,7 @@ using P05_Business.S02_Controllers.Biz;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -54,6 +55,11 @@ namespace P05_Business.S03_Views.Biz
         private void btnInit_Click(object sender, System.EventArgs e)
         {
             dgvList.DataSource = null;  //그리드 초기화
+
+            txtGroupCode.Enabled = true;
+
+            btnDuplicate.Visible = true;
+
         }
 
         private void btnSearch_Click(object sender, System.EventArgs e)
@@ -88,9 +94,16 @@ namespace P05_Business.S03_Views.Biz
             try
             {
                 //validation
+                if (btnDuplicate.Visible)
+                {
+                    KMessageBox.Show("[중복체크]바랍니다.", "SAVE", MessageBoxButtons.OK);
+                    return;
+                }
+
                 if (string.IsNullOrEmpty(txtGroupCode.Texts))
                 {
-                    KMessageBox.Show("[제품군코드]를 입력 바랍니다.", "삭제", MessageBoxButtons.OK);
+                    KMessageBox.Show("[제품군코드]를 입력 바랍니다.", "SAVE", MessageBoxButtons.OK);
+                    return; 
                 }
 
                 if (KMessageBox.Show("저장하시겠습니까?", "SAVE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
@@ -115,6 +128,7 @@ namespace P05_Business.S03_Views.Biz
                 if (string.IsNullOrEmpty(txtGroupCode.Texts))
                 {
                     KMessageBox.Show("[제품군코드]를 입력 바랍니다.", "삭제", MessageBoxButtons.OK);
+                    return;
                 }
 
                 if (KMessageBox.Show("저장하시겠습니까?", "SAVE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
@@ -178,6 +192,41 @@ namespace P05_Business.S03_Views.Biz
             }
         }
 
+        private void btnDuplicate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtGroupCode.Texts))
+                {
+                    KMessageBox.Show("[제품군코드]를 입력 바랍니다.", "삭제", MessageBoxButtons.OK);
+                    return;
+                }
+
+                if (CheckDuplication() == false)
+                {
+                    lblDuplicateMsg.Text = "사용 가능합니다.";
+                    lblDuplicateMsg.ForeColor = Color.Black;
+
+                    btnDuplicate.Visible = false;   //중복체크 버튼 숨김
+                }
+                else
+                {
+                    lblDuplicateMsg.Text = "이미 사용 중입니다.";
+                    lblDuplicateMsg.ForeColor = Color.Red;
+                }
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtGroupCode__TextChanged(object sender, EventArgs e)
+        {
+            btnDuplicate.Visible = true;
+            lblDuplicateMsg.Text = string.Empty;
+        }
+
         /// <summary>
         /// 그리드 데이터 변경 이벤트
         /// </summary>
@@ -216,6 +265,8 @@ namespace P05_Business.S03_Views.Biz
                 InitDto();
 
                 txtGroupCode.Enabled = false;
+
+                btnDuplicate.Visible = false;
 
                 result = ResultCRUD.SearchSuccessData;
             }
@@ -284,6 +335,7 @@ namespace P05_Business.S03_Views.Biz
             {
                 GroupCode = txtGroupCode.Texts,
                 CompanyCode = LoginCompany.CompanyCode,
+                DeleteId = LoginUserInfo.UserId,
             };
 
             int iDelete = ctrl.RemoveItemGroup(param);
@@ -304,6 +356,28 @@ namespace P05_Business.S03_Views.Biz
             return result;
         }
 
+        private bool CheckDuplication()
+        {
+            ItemGroupDto param = new ItemGroupDto
+            {
+                GroupCode = txtGroupCode.Texts.Trim(),
+                CompanyCode = LoginCompany.CompanyCode,
+            };
+
+            ItemGroupDto data = ctrl.GetItemGroup(param);
+
+            bool isDuplicastion = false;
+            if (data != null && !string.IsNullOrEmpty(data.GroupCode))
+            {
+                isDuplicastion = true;
+            }
+            else
+            {
+                isDuplicastion = false;
+            }
+
+            return isDuplicastion;
+        }
 
         private void CreateGrid()
         {

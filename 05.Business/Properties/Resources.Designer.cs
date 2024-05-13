@@ -93,6 +93,16 @@ namespace P05_Business.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap _58561_check_check {
+            get {
+                object obj = ResourceManager.GetObject("58561_check_check", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap _58562_remove_remove {
             get {
                 object obj = ResourceManager.GetObject("58562_remove_remove", resourceCulture);

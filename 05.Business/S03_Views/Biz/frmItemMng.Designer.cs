@@ -56,11 +56,15 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel42 = new System.Windows.Forms.Panel();
-            this.btnAddRow = new P02_K_CONTROL_WIN.KButton();
-            this.btnDelRow = new P02_K_CONTROL_WIN.KButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvList = new System.Windows.Forms.DataGridView();
+            this.btnAddRow = new P02_K_CONTROL_WIN.KButton();
+            this.btnDelRow = new P02_K_CONTROL_WIN.KButton();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.btnDuplicate = new P02_K_CONTROL_WIN.KButton();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.lblDuplicateMsg = new MetroFramework.Controls.MetroLabel();
             this.pnlMain.SuspendLayout();
             this.pnlBody.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -89,6 +93,8 @@
             this.panel42.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            this.panel15.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -162,6 +168,8 @@
             this.tableLayoutPanel1.Controls.Add(this.panel14, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.panel15, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel16, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 10);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -197,13 +205,12 @@
             // 
             // panel4
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.panel4, 3);
             this.panel4.Controls.Add(this.txtGroupCode);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(122, 1);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(677, 35);
+            this.panel4.Size = new System.Drawing.Size(277, 35);
             this.panel4.TabIndex = 1;
             // 
             // txtGroupCode
@@ -226,11 +233,12 @@
             this.txtGroupCode.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtGroupCode.PlaceholderText = "";
             this.txtGroupCode.ReadOnly = false;
-            this.txtGroupCode.Size = new System.Drawing.Size(670, 22);
+            this.txtGroupCode.Size = new System.Drawing.Size(270, 22);
             this.txtGroupCode.TabIndex = 2;
             this.txtGroupCode.Tag = "GroupCode";
             this.txtGroupCode.Texts = "";
             this.txtGroupCode.UnderlinedStyle = false;
+            this.txtGroupCode._TextChanged += new System.EventHandler(this.txtGroupCode__TextChanged);
             // 
             // panel7
             // 
@@ -549,6 +557,40 @@
             this.panel42.Size = new System.Drawing.Size(142, 35);
             this.panel42.TabIndex = 4;
             // 
+            // metroLabel2
+            // 
+            this.metroLabel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel2.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.metroLabel2.Location = new System.Drawing.Point(0, 0);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(101, 35);
+            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Teal;
+            this.metroLabel2.TabIndex = 1;
+            this.metroLabel2.Text = "◎ 제품정보";
+            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.metroLabel2.UseCustomForeColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvList);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 48);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(794, 320);
+            this.panel2.TabIndex = 1;
+            // 
+            // dgvList
+            // 
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.Location = new System.Drawing.Point(0, 0);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.Size = new System.Drawing.Size(794, 320);
+            this.dgvList.TabIndex = 0;
+            this.dgvList.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellValueChanged);
+            // 
             // btnAddRow
             // 
             this.btnAddRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -597,39 +639,57 @@
             this.btnDelRow.UseVisualStyleBackColor = false;
             this.btnDelRow.Click += new System.EventHandler(this.btnDelRow_Click);
             // 
-            // metroLabel2
+            // panel15
             // 
-            this.metroLabel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.metroLabel2.Location = new System.Drawing.Point(0, 0);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(101, 35);
-            this.metroLabel2.Style = MetroFramework.MetroColorStyle.Teal;
-            this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "◎ 제품정보";
-            this.metroLabel2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.metroLabel2.UseCustomForeColor = true;
+            this.panel15.Controls.Add(this.btnDuplicate);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel15.Location = new System.Drawing.Point(403, 4);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(114, 29);
+            this.panel15.TabIndex = 14;
             // 
-            // panel2
+            // btnDuplicate
             // 
-            this.panel2.Controls.Add(this.dgvList);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 48);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(794, 320);
-            this.panel2.TabIndex = 1;
+            this.btnDuplicate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnDuplicate.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnDuplicate.BackgroundColor = System.Drawing.Color.CadetBlue;
+            this.btnDuplicate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDuplicate.BorderColor = System.Drawing.Color.CadetBlue;
+            this.btnDuplicate.BorderRadius = 0;
+            this.btnDuplicate.BorderSize = 0;
+            this.btnDuplicate.FlatAppearance.BorderSize = 0;
+            this.btnDuplicate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDuplicate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDuplicate.ForeColor = System.Drawing.Color.White;
+            this.btnDuplicate.Image = global::P05_Business.Properties.Resources._58561_check_check;
+            this.btnDuplicate.Location = new System.Drawing.Point(0, 2);
+            this.btnDuplicate.Name = "btnDuplicate";
+            this.btnDuplicate.Size = new System.Drawing.Size(114, 24);
+            this.btnDuplicate.TabIndex = 4;
+            this.btnDuplicate.Text = "중복체크";
+            this.btnDuplicate.TextColor = System.Drawing.Color.White;
+            this.btnDuplicate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDuplicate.UseVisualStyleBackColor = false;
+            this.btnDuplicate.Click += new System.EventHandler(this.btnDuplicate_Click);
             // 
-            // dgvList
+            // panel16
             // 
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvList.Location = new System.Drawing.Point(0, 0);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(794, 320);
-            this.dgvList.TabIndex = 0;
-            this.dgvList.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellValueChanged);
+            this.panel16.Controls.Add(this.lblDuplicateMsg);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel16.Location = new System.Drawing.Point(524, 4);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(272, 29);
+            this.panel16.TabIndex = 15;
+            // 
+            // lblDuplicateMsg
+            // 
+            this.lblDuplicateMsg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblDuplicateMsg.Location = new System.Drawing.Point(0, 0);
+            this.lblDuplicateMsg.Name = "lblDuplicateMsg";
+            this.lblDuplicateMsg.Size = new System.Drawing.Size(272, 29);
+            this.lblDuplicateMsg.TabIndex = 0;
+            this.lblDuplicateMsg.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDuplicateMsg.UseCustomForeColor = true;
             // 
             // frmItemMng
             // 
@@ -668,6 +728,8 @@
             this.panel42.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            this.panel15.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -707,5 +769,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel6;
         private P02_K_CONTROL_WIN.KTextBox txtRemark;
+        private System.Windows.Forms.Panel panel15;
+        private P02_K_CONTROL_WIN.KButton btnDuplicate;
+        private System.Windows.Forms.Panel panel16;
+        private MetroFramework.Controls.MetroLabel lblDuplicateMsg;
     }
 }

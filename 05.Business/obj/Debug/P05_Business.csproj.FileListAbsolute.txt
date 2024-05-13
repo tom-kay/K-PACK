@@ -136,3 +136,6 @@ C:\Workspace\K-PACK\05.Business\obj\Debug\SOODAL.pdb
 C:\Workspace\K-PACK\05.Business\bin\Debug\S01_Models\Maps\Biz\ItemMng.xml
 C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Biz.frmItemList.resources
 C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Biz.frmItemMng.resources
+C:\Workspace\K-PACK\05.Business\bin\Debug\S01_Models\Maps\Base\MemoMng.xml
+C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmMemoList.resources
+C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmMemoMng.resources
