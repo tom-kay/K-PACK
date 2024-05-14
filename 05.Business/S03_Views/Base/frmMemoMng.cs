@@ -1,24 +1,12 @@
 ﻿using log4net;
-using Mysqlx.Crud;
 using P01_K_DESIGN_WIN;
 using P01_K_DESIGN_WIN.Classes;
 using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 namespace P05_Business.S03_Views.Base
 {
@@ -40,6 +28,8 @@ namespace P05_Business.S03_Views.Base
 
             ctrl = new MemoMngController();
             dto = new MemoTemplateDto();
+
+            Set_Menu_Button(new EditButtonSettings { isPrint = false, isSearch = false });
 
             _MEMO_IDX = 0;
         }
@@ -132,6 +122,8 @@ namespace P05_Business.S03_Views.Base
                     return;
                 }
 
+                if (KMessageBox.Show("저장하시겠습니까?", "저장", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+                
                 if (SaveData() == ResultCRUD.SaveSuccessData)
                 {
                     MainMessage.Show("저장되었습니다.");
@@ -157,6 +149,8 @@ namespace P05_Business.S03_Views.Base
                     KMessageBox.Show("삭제할 대상이 없습니다.", "삭제", MessageBoxButtons.OK);
                     return;
                 }
+
+                if (KMessageBox.Show("삭제하시겠습니까?", "삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
 
                 if (DeleteData() == ResultCRUD.DeleteSuccessData)
                 {
@@ -208,10 +202,10 @@ namespace P05_Business.S03_Views.Base
             MemoTemplateDto param = new MemoTemplateDto
             {
                 MemoIdx = _MEMO_IDX,
-                Title=  txtTitle.Texts.Trim(),
-                Contents = txtContents.Texts.Trim(),
+                Title= saveData.Title,
+                Contents = saveData.Contents,
                 CompanyCode = LoginCompany.CompanyCode,
-                CreateId = LoginUserInfo.UserId,
+                CreateId = LoginUserInfo.UserId, 
                 UpdateId = LoginUserInfo.UserId,
             };
 

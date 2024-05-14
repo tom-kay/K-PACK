@@ -44,14 +44,16 @@
 
 		<Statement Id="insertMemo">
 			INSERT INTO `soodal`.`tb_memotemplate`
-			(`Title`,
+			(`MemoIdx`,
+			`Title`,
 			`Contents`,
 			`CompanyCode`,
 			`DelYn`,
 			`CreateId`,
 			`CreateDt`)
 			VALUES
-			(@Title,
+			(@MemoIdx,
+			@Title,
 			@Contents,
 			@CompanyCode,
 			'N',
@@ -59,15 +61,16 @@
 			now()
 			)
 			ON DUPLICATE KEY UPDATE
+			`MemoIdx` = IF(@MemoIdx = LAST_INSERT_ID(@MemoIdx), LAST_INSERT_ID(), @MemoIdx),
 			`Contents` = @Contents,
 			`CompanyCode` = @CompanyCode,
 			`DelYn` = 'N',
 			`UpdateId` = @UpdateId,
 			`UpdateDt` = now(),
 			`DeleteId` = null,
-			`DeleteDt` = null
-			;
+			`DeleteDt` = null;
 			SELECT LAST_INSERT_ID();
+
 		</Statement>
 
 		<Statement Id="deleteMemo">

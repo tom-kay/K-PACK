@@ -55,7 +55,7 @@ namespace P05_Business.S01_Models.Dao.Base
             {
                 SqlMapper.BeginTransaction();
                 log.Info(SqlMapper.SqlBuilder.BuildSql(context));
-                save = SqlMapper.Execute(context);
+                save = SqlMapper.ExecuteScalar<int>(context);
                 SqlMapper.CommitTransaction();
 
             }

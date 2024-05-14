@@ -246,7 +246,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 561);
             this.Name = "frmMemoList";
-            this.Text = "메모조회";
+            this.Text = "템플릿조회";
             this.Load += new System.EventHandler(this.frmMemoList_Load);
             this.pnlClose.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);

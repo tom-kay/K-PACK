@@ -75,6 +75,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.3.0\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="SmartSql, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SmartSql.2.3.2\lib\net46\SmartSql.dll</HintPath>
     </Reference>
@@ -205,6 +207,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
@@ -217,6 +220,9 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\AccessMain.cs" />
@@ -363,6 +369,18 @@
     </Compile>
     <Compile Include="S03_Views\Biz\frmItemMng.Designer.cs">
       <DependentUpon>frmItemMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmOrderList.Designer.cs">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmOrderMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmOrderMng.Designer.cs">
+      <DependentUpon>frmOrderMng.cs</DependentUpon>
     </Compile>
     <Compile Include="S03_Views\Popup\Common\frmLoading.cs">
       <SubType>Form</SubType>

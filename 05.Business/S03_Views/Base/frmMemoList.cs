@@ -72,11 +72,14 @@ namespace P05_Business.S03_Views.Base
         {
             try
             {
-                string code = dgvList.Rows[e.RowIndex].Cells["MemoIdx"].Value.ToString();
+                if (e.ColumnIndex == dgvList.Columns["Title"].Index)
+                {
+                    string code = dgvList.Rows[e.RowIndex].Cells["MemoIdx"].Value.ToString();
 
-                frmMemoMng frm = new frmMemoMng(code);
+                    frmMemoMng frm = new frmMemoMng(code);
 
-                AccessMain.OpenChildForm(frm);
+                    AccessMain.OpenChildForm(frm); 
+                }
             }
             catch (Exception ex)
             {

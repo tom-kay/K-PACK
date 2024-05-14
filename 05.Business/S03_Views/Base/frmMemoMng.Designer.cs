@@ -194,7 +194,7 @@
             this.txtTitle.ReadOnly = false;
             this.txtTitle.Size = new System.Drawing.Size(672, 22);
             this.txtTitle.TabIndex = 2;
-            this.txtTitle.Tag = "CustName";
+            this.txtTitle.Tag = "Title";
             this.txtTitle.Texts = "";
             this.txtTitle.UnderlinedStyle = false;
             // 
@@ -258,7 +258,7 @@
             this.txtContents.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
             this.txtContents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtContents.Location = new System.Drawing.Point(0, 0);
-            this.txtContents.MaxLength = 65535;
+            this.txtContents.MaxLength = 32767;
             this.txtContents.Multiline = true;
             this.txtContents.Name = "txtContents";
             this.txtContents.OnlyNumber = false;
@@ -268,8 +268,8 @@
             this.txtContents.PlaceholderText = "";
             this.txtContents.ReadOnly = false;
             this.txtContents.Size = new System.Drawing.Size(792, 437);
-            this.txtContents.TabIndex = 2;
-            this.txtContents.Tag = "CustName";
+            this.txtContents.TabIndex = 0;
+            this.txtContents.Tag = "Contents";
             this.txtContents.Texts = "";
             this.txtContents.UnderlinedStyle = false;
             // 
@@ -279,7 +279,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 561);
             this.Name = "frmMemoMng";
-            this.Text = "메모관리";
+            this.Text = "템플릿관리";
             this.Load += new System.EventHandler(this.frmMemoMng_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlBody.ResumeLayout(false);
