@@ -212,7 +212,7 @@
 			SET
 			`DelYn` = 'Y',
 			`DeleteId` = @DeleteId,
-			`DeleteDt` = @DeleteDt
+			`DeleteDt` = now()
 			WHERE `GroupCode` = @GroupCode 
 			AND `ItemCode` = @ItemCode 
 			AND `CompanyCode` = @CompanyCode

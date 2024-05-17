@@ -18,7 +18,7 @@ namespace P05_Business.S03_Views.Base
 		{
 			InitializeComponent();
 
-			Set_Menu_Button(new EditButtonSettings { isPrint = false });
+			Set_Menu_Button(new EditButtonSettings { isPrint = false, isNew = false }); ;
 
 			//그리드 생성
 			CreateGrid();

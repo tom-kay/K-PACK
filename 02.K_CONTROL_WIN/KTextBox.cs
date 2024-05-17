@@ -210,7 +210,14 @@ namespace P02_K_CONTROL_WIN
 			set { textBox1.MaxLength = value; } 
 		}
 
-		[Category("K Code Advance")]
+        [Category("K Code Advance")]
+        public HorizontalAlignment TextAlign
+        {
+            get { return textBox1.TextAlign; }
+            set { textBox1.TextAlign = value; }
+        }
+
+        [Category("K Code Advance")]
 		public bool OnlyNumber { 
 			get { return onlyNumber; }
 			set { onlyNumber = value; } 

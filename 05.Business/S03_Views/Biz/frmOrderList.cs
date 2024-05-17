@@ -17,5 +17,7 @@ namespace P05_Business.S03_Views.Biz
         {
             InitializeComponent();
         }
+
+        
     }
 }

@@ -28,10 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.pnlMain.SuspendLayout();
+            this.pnlHeader.SuspendLayout();
+            this.pnlHeaderBtns.SuspendLayout();
+            this.pnlPrint.SuspendLayout();
+            this.pnlSave.SuspendLayout();
+            this.pnlDelete.SuspendLayout();
+            this.pnlClose.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
+            this.pnlInit.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // pnlMain
+            // 
+            this.pnlMain.Size = new System.Drawing.Size(800, 561);
+            // 
+            // pnlBody
+            // 
+            this.pnlBody.Size = new System.Drawing.Size(800, 526);
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.Size = new System.Drawing.Size(800, 35);
+            // 
+            // pnlHeaderBtns
+            // 
+            this.pnlHeaderBtns.Location = new System.Drawing.Point(263, 0);
+            // 
+            // pnlHeaderBlank
+            // 
+            this.pnlHeaderBlank.Size = new System.Drawing.Size(263, 35);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            // 
+            // btnSave
+            // 
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            // 
+            // btnInit
+            // 
+            this.btnInit.FlatAppearance.BorderSize = 0;
+            // 
+            // frmOrderMng
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "frmOrderMng";
+            this.ClientSize = new System.Drawing.Size(800, 561);
+            this.Name = "frmOrderMng";
+            this.Text = "발주등록";
+            this.pnlMain.ResumeLayout(false);
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlHeaderBtns.ResumeLayout(false);
+            this.pnlPrint.ResumeLayout(false);
+            this.pnlSave.ResumeLayout(false);
+            this.pnlDelete.ResumeLayout(false);
+            this.pnlClose.ResumeLayout(false);
+            this.pnlSearch.ResumeLayout(false);
+            this.pnlInit.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

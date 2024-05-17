@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,36 @@ namespace P05_Business.Common.Helpers
             dgv.ClearSelection();
             dgv.Rows[row2].Selected = true; 
             
+        }
+
+        public void MergeColumnHeaders(DataGridView dgv, string headerText, params string[] columnNames)
+        {
+            // Merge column headers
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgv.ColumnHeadersHeight = dgv.ColumnHeadersHeight * 2;
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter;
+
+            dgv.CellPainting += (sender, e) =>
+            {
+                if (e.RowIndex == -1 && columnNames.Contains(dgv.Columns[e.ColumnIndex].Name))
+                {
+                    e.Graphics.FillRectangle(new SolidBrush(dgv.ColumnHeadersDefaultCellStyle.BackColor), e.CellBounds);
+                    e.Graphics.DrawString(headerText,
+                        dgv.ColumnHeadersDefaultCellStyle.Font,
+                        new SolidBrush(dgv.ColumnHeadersDefaultCellStyle.ForeColor),
+                        e.CellBounds);
+                    e.Handled = true;
+                }
+            };
+        }
+
+        public void SetMultiLineHeaders(DataGridView dgv, params string[] headers)
+        {
+            // Set multi-line headers
+            for (int i = 0; i < headers.Length; i++)
+            {
+                dgv.Columns[i].HeaderText = headers[i];
+            }
         }
     }
 }

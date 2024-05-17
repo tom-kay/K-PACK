@@ -139,3 +139,6 @@ C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Biz.frmItemMng.
 C:\Workspace\K-PACK\05.Business\bin\Debug\S01_Models\Maps\Base\MemoMng.xml
 C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmMemoList.resources
 C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Base.frmMemoMng.resources
+C:\Workspace\K-PACK\05.Business\bin\Debug\S01_Models\Maps\Biz\OrderMng.xml
+C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Biz.frmOrderList.resources
+C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Biz.frmOrderMng.resources

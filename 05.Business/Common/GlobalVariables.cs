@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace P05_Business.Common
 {
+	/// <summary>
+	/// Database 처리 결과
+	/// </summary>
 	public enum ResultCRUD
 	{
 		/// <summary>
@@ -51,6 +54,30 @@ namespace P05_Business.Common
 		/// 수정실패
 		/// </summary>
 		UpdateFailData,
+	}
+
+	/// <summary>
+	/// Database 처리 요청
+	/// </summary>
+	public enum RequestCRUD 
+	{
+		None = 0,
+		/// <summary>
+		/// 생성
+		/// </summary>
+		Create,
+		/// <summary>
+		/// 조회
+		/// </summary>
+		Read,
+		/// <summary>
+		/// 수정
+		/// </summary>
+		Update,
+		/// <summary>
+		/// 삭제
+		/// </summary>
+		Delete,
 	}
 
 	public class GlobalVariables

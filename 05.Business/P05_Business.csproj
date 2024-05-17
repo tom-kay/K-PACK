@@ -247,6 +247,7 @@
     <Compile Include="S01_Models\Dao\Base\CodeMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\UserMngDao.cs" />
     <Compile Include="S01_Models\Dao\Biz\ItemMngDao.cs" />
+    <Compile Include="S01_Models\Dao\Biz\OrderMngDao.cs" />
     <Compile Include="S01_Models\Dao\DaoFactory.cs" />
     <Compile Include="S01_Models\Dto\Base\CodeDetailDto.cs" />
     <Compile Include="S01_Models\Dto\Base\CodeMasterDto.cs" />
@@ -259,6 +260,8 @@
     <Compile Include="S01_Models\Dto\Base\UserMngDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\ItemDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\ItemGroupDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\OrderDetailDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\OrderMasterDto.cs" />
     <Compile Include="S01_Models\Dto\DtoBase.cs" />
     <Compile Include="S02_Controllers\Base\CodeMngController.cs" />
     <Compile Include="S02_Controllers\Base\CompanyMngController.cs" />
@@ -280,6 +283,7 @@
     </Compile>
     <Compile Include="S02_Controllers\Base\UserMngController.cs" />
     <Compile Include="S02_Controllers\Biz\ItemMngController.cs" />
+    <Compile Include="S02_Controllers\Biz\OrderMngController.cs" />
     <Compile Include="S03_Views\Base\frmCodeDetailList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -854,6 +858,12 @@
     <EmbeddedResource Include="S03_Views\Biz\frmItemMng.resx">
       <DependentUpon>frmItemMng.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Biz\frmOrderList.resx">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Biz\frmOrderMng.resx">
+      <DependentUpon>frmOrderMng.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Common\frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </EmbeddedResource>
@@ -912,6 +922,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="S01_Models\Maps\Biz\ItemMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S01_Models\Maps\Biz\OrderMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SmartSqlMapConfig.xml">

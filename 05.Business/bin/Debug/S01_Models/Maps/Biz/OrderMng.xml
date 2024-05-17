@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SmartSqlMap Scope="Biz.OrderMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+	<Statements>
+		<Statement Id="SelectAdd">
+			,`ord`.CompanyCode
+			,ifnull(`ord`.DelYn,'N') AS DelYn
+			,`ord`.`CreateId`
+			,date_format(`ord`.CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`
+			,`ord`.`UpdateId`
+			,date_format(`ord`.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`
+			,`ord`.`DeleteId`
+			,date_format(`ord`.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+		</Statement>
+
+		<!-- 주문 마스터 리스트 조회 -->
+		<Statement Id="selectOrderMasterList">
+			SELECT
+			`ord`.`OrderNo`,
+			`ord`.`RegDt`,
+			`ord`.`ExWorkDt`,
+			`ord`.`BuyerCustCode`,
+			`ord`.`BuyerPoNo`,
+			`ord`.`OrderDt`,
+			`ord`.`WorkCustCode`,
+			`ord`.`Description`,
+			`ord`.`Remark`,
+			`ord`.`TermsAndConditions`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_pomaster` AS `ord`
+			WHERE `ord`.`CompanyCode` = @CompanyCode
+			AND `ord`.`DelYn` = 'N'
+			<Switch Prepend="AND" Property="DatePeriodType">
+				<Case CompareValue="R">
+					`ord`.`RegDt` BETWEEN @PeriodFromDt AND @PeriodToDt
+				</Case>
+				<Case CompareValue="W">
+					`ord`.`ExWorkDt` BETWEEN @PeriodFromDt AND @PeriodToDt
+				</Case>
+				<Case CompareValue="O">
+					`ord`.`OrderDt` BETWEEN @PeriodFromDt AND @PeriodToDt
+				</Case>
+			</Switch>
+		</Statement>
+
+		<!-- 주문 마스터 조회 -->
+		<Statement Id="selectOrderMaster">
+			SELECT
+			`ord`.`OrderNo`,
+			`ord`.`RegDt`,
+			`ord`.`ExWorkDt`,
+			`ord`.`BuyerCustCode`,
+			`ord`.`BuyerPoNo`,
+			`ord`.`OrderDt`,
+			`ord`.`WorkCustCode`,
+			`ord`.`Description`,
+			`ord`.`Remark`,
+			`ord`.`TermsAndConditions`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_pomaster` AS `ord`
+			WHERE `ord`.`OrderNo` = @OrderNo
+			AND `ord`.`CompanyCode` = @CompanyCode
+			AND `ord`.`DelYn` = 'N'
+		</Statement>
+
+		<!-- 주문 마스터 삽입 -->
+		<Statement Id="insertOrderMaster">
+			INSERT INTO `tb_pomaster`
+			(
+			`OrderNo`,
+			`RegDt`,
+			`ExWorkDt`,
+			`BuyerCustCode`,
+			`BuyerPoNo`,
+			`OrderDt`,
+			`WorkCustCode`,
+			`Description`,
+			`Remark`,
+			`TermsAndConditions`,
+			`CompanyCode`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES
+			(
+			@OrderNo,
+			@RegDt,
+			@ExWorkDt,
+			@BuyerCustCode,
+			@BuyerPoNo,
+			@OrderDt,
+			@WorkCustCode,
+			@Description,
+			@Remark,
+			@TermsAndConditions,
+			@CompanyCode,
+			'N',
+			@CreateId,
+			now()
+			)
+		</Statement>
+
+		<!-- 주문 마스터 업데이트 -->
+		<Statement Id="updateOrderMaster">
+			UPDATE `tb_pomaster`
+			SET
+			`RegDt` = @RegDt,
+			`ExWorkDt` = @ExWorkDt,
+			`BuyerCustCode` = @BuyerCustCode,
+			`BuyerPoNo` = @BuyerPoNo,
+			`OrderDt` = @OrderDt,
+			`WorkCustCode` = @WorkCustCode,
+			`Description` = @Description,
+			`Remark` = @Remark,
+			`TermsAndConditions` = @TermsAndConditions,
+			`DelYn` = 'N',
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = NULL,
+			`DeleteDt` = NULL
+			WHERE
+			`OrderNo` = @OrderNo AND
+			`CompanyCode` = @CompanyCode
+		</Statement>
+
+
+		<!-- 주문 마스터 삭제 (실제로는 업데이트) -->
+		<Statement Id="deleteOrderMaster">
+			UPDATE `tb_pomaster` AS `ord`
+			SET
+			`ord`.`DelYn` = 'Y',
+			`ord`.`DeleteId` = @DeleteId,
+			`ord`.`DeleteDt` = now()
+			WHERE
+			`ord`.`OrderNo` = @OrderNo
+			AND `ord`.`CompanyCode` = @CompanyCode
+		</Statement>
+
+		<!-- 주문 상세 리스트 조회 -->
+		<Statement Id="selectOrderDetailList">
+			SELECT
+			`ord`.`OrderNo`,
+			`ord`.`DetailId`,
+			`ord`.`ItemGroupCode`,
+			`ord`.`ItemCode`,
+			`ord`.`SeqNo`,
+			`ord`.`ItemNo`,
+			`ord`.`SizeName`,
+			`ord`.`Description`,
+			`ord`.`Qty`,
+			`ord`.`UnitCode`,
+			`ord`.`MarkingColor`,
+			`ord`.`Remark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_podetail` AS `ord`
+			WHERE
+			`ord`.`OrderNo` = @OrderNo
+			AND `ord`.`CompanyCode` = @CompanyCode
+			AND `ord`.`DelYn` = 'N'
+		</Statement>
+
+		<!-- 주문 상세 조회 -->
+		<Statement Id="selectOrderDetail">
+			SELECT
+			`ord`.`OrderNo`,
+			`ord`.`DetailId`,
+			`ord`.`ItemGroupCode`,
+			`ord`.`ItemCode`,
+			`ord`.`SeqNo`,
+			`ord`.`ItemNo`,
+			`ord`.`SizeName`,
+			`ord`.`Description`,
+			`ord`.`Qty`,
+			`ord`.`UnitCode`,
+			`ord`.`MarkingColor`,
+			`ord`.`Remark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_podetail` AS `ord`
+			WHERE
+			`ord`.`OrderNo` = @OrderNo
+			AND `ord`.`DetailId` = @DetailId
+			AND `ord`.`CompanyCode` = @CompanyCode
+			AND `ord`.`DelYn` = 'N'
+		</Statement>
+
+		<!-- 주문 상세 삽입 또는 업데이트 (Merge Insert) -->
+		<Statement Id="mergeOrderDetail">
+			INSERT INTO `tb_podetail`
+			(
+			`OrderNo`,
+			`DetailId`,
+			`ItemGroupCode`,
+			`ItemCode`,
+			`SeqNo`,
+			`ItemNo`,
+			`SizeName`,
+			`Description`,
+			`Qty`,
+			`UnitCode`,
+			`MarkingColor`,
+			`Remark`,
+			`CompanyCode`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES
+			(
+			@OrderNo,
+			CreateOrderDetailId(@OrderNo, @CompanyCode, @DetailId),
+			@ItemGroupCode,
+			@ItemCode,
+			@SeqNo,
+			@ItemNo,
+			@SizeName,
+			@Description,
+			@Qty,
+			@UnitCode,
+			@MarkingColor,
+			@Remark,
+			@CompanyCode,
+			'N',
+			@CreateId,
+			now()
+			)
+			ON DUPLICATE KEY UPDATE
+			`ItemGroupCode` = @ItemGroupCode,
+			`ItemCode` = @ItemCode,
+			`SeqNo` = @SeqNo,
+			`ItemNo` = @ItemNo,
+			`SizeName` = @SizeName
+			`Description` = @Description,
+			`Qty` = @Qty,
+			`UnitCode` = @UnitCode,
+			`MarkingColor` = @MarkingColor,
+			`Remark` = @Remark,
+			`DelYn` = 'N',
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = NULL,
+			`DeleteDt` = NULL
+		</Statement>
+
+		<!-- 주문 상세 삭제 (실제로는 업데이트) -->
+		<Statement Id="deleteOrderDetail">
+			UPDATE `tb_podetail` AS `ord`
+			SET
+			`ord`.`DelYn` = 'Y',
+			`ord`.`DeleteId` = @DeleteId,
+			`ord`.`DeleteDt` = now()
+			WHERE
+			`ord`.`OrderNo` = @OrderNo
+			AND `ord`.`DetailId` = @DetailId
+			AND `ord`.`CompanyCode` = @CompanyCode
+		</Statement>
+	</Statements>
+</SmartSqlMap>
+

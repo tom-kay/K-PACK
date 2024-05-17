@@ -54,6 +54,7 @@ namespace P01_K_DESIGN_WIN
 			this.pnlPrint.Visible = settings.isPrint;
 			this.pnlSearch.Visible = settings.isSearch;
 			this.pnlInit.Visible = settings.isInit;
+			this.pnlNew.Visible = settings.isNew;
 		}
 
 		#region Custom Events

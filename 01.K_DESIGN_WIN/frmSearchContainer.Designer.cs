@@ -41,6 +41,8 @@
             this.btnSearch = new P02_K_CONTROL_WIN.KButton();
             this.pnlClose = new System.Windows.Forms.Panel();
             this.btnClose = new P02_K_CONTROL_WIN.KButton();
+            this.pnlNew = new System.Windows.Forms.Panel();
+            this.btnNew = new P02_K_CONTROL_WIN.KButton();
             this.pnlSearchMain.SuspendLayout();
             this.pnlSearchButtonBar.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -48,6 +50,7 @@
             this.pnlInit.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             this.pnlClose.SuspendLayout();
+            this.pnlNew.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSearchMain
@@ -94,20 +97,21 @@
             // pnlButtons
             // 
             this.pnlButtons.Controls.Add(this.pnlPrint);
+            this.pnlButtons.Controls.Add(this.pnlNew);
             this.pnlButtons.Controls.Add(this.pnlInit);
             this.pnlButtons.Controls.Add(this.pnlSearch);
             this.pnlButtons.Controls.Add(this.pnlClose);
             this.pnlButtons.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlButtons.Location = new System.Drawing.Point(614, 0);
+            this.pnlButtons.Location = new System.Drawing.Point(587, 0);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(394, 35);
+            this.pnlButtons.Size = new System.Drawing.Size(421, 35);
             this.pnlButtons.TabIndex = 0;
             // 
             // pnlPrint
             // 
             this.pnlPrint.Controls.Add(this.btnPrint);
             this.pnlPrint.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlPrint.Location = new System.Drawing.Point(70, 0);
+            this.pnlPrint.Location = new System.Drawing.Point(16, 0);
             this.pnlPrint.Name = "pnlPrint";
             this.pnlPrint.Padding = new System.Windows.Forms.Padding(3);
             this.pnlPrint.Size = new System.Drawing.Size(81, 35);
@@ -137,7 +141,7 @@
             // 
             this.pnlInit.Controls.Add(this.btnInit);
             this.pnlInit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlInit.Location = new System.Drawing.Point(151, 0);
+            this.pnlInit.Location = new System.Drawing.Point(178, 0);
             this.pnlInit.Name = "pnlInit";
             this.pnlInit.Padding = new System.Windows.Forms.Padding(3);
             this.pnlInit.Size = new System.Drawing.Size(81, 35);
@@ -168,7 +172,7 @@
             // 
             this.pnlSearch.Controls.Add(this.btnSearch);
             this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlSearch.Location = new System.Drawing.Point(232, 0);
+            this.pnlSearch.Location = new System.Drawing.Point(259, 0);
             this.pnlSearch.Name = "pnlSearch";
             this.pnlSearch.Padding = new System.Windows.Forms.Padding(3);
             this.pnlSearch.Size = new System.Drawing.Size(81, 35);
@@ -198,7 +202,7 @@
             // 
             this.pnlClose.Controls.Add(this.btnClose);
             this.pnlClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlClose.Location = new System.Drawing.Point(313, 0);
+            this.pnlClose.Location = new System.Drawing.Point(340, 0);
             this.pnlClose.Name = "pnlClose";
             this.pnlClose.Padding = new System.Windows.Forms.Padding(3);
             this.pnlClose.Size = new System.Drawing.Size(81, 35);
@@ -225,6 +229,36 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // pnlNew
+            // 
+            this.pnlNew.Controls.Add(this.btnNew);
+            this.pnlNew.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlNew.Location = new System.Drawing.Point(97, 0);
+            this.pnlNew.Name = "pnlNew";
+            this.pnlNew.Padding = new System.Windows.Forms.Padding(3);
+            this.pnlNew.Size = new System.Drawing.Size(81, 35);
+            this.pnlNew.TabIndex = 8;
+            // 
+            // btnNew
+            // 
+            this.btnNew.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnNew.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnNew.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnNew.BorderRadius = 0;
+            this.btnNew.BorderSize = 0;
+            this.btnNew.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNew.FlatAppearance.BorderSize = 0;
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnNew.ForeColor = System.Drawing.Color.White;
+            this.btnNew.Location = new System.Drawing.Point(3, 3);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(75, 29);
+            this.btnNew.TabIndex = 0;
+            this.btnNew.Text = "신규";
+            this.btnNew.TextColor = System.Drawing.Color.White;
+            this.btnNew.UseVisualStyleBackColor = false;
+            // 
             // frmSearchContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -242,6 +276,7 @@
             this.pnlInit.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
             this.pnlClose.ResumeLayout(false);
+            this.pnlNew.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -260,5 +295,7 @@
 		public System.Windows.Forms.Panel pnlSearchButtonBar;
 		public System.Windows.Forms.Panel pnlButtons;
 		public System.Windows.Forms.Panel pnlSearchOptional;
-	}
+        public System.Windows.Forms.Panel pnlNew;
+        public P02_K_CONTROL_WIN.KButton btnNew;
+    }
 }
