@@ -11,11 +11,12 @@ namespace P05_Business.S03_Views.Popup.Common
 {
 	public partial class frmMasterCodePopup : frmPopupFrame
 	{
-		#region Member Variables
-		public string ResultCode { get; set; }
-		public string ResultName { get; set; }
+        #region Member Variables
 
-		List<CodeMasterDto> results = null;
+        public string ResultCode { get; set; }
+        public string ResultName { get; set; }
+
+        List<CodeMasterDto> results = null;
 
 		CodeMngController ctrl = new CodeMngController();
 

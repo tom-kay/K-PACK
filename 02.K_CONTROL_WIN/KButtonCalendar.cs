@@ -29,16 +29,41 @@ namespace P02_K_CONTROL_WIN
 		protected override void OnParentChanged(EventArgs e)
 		{
 			base.OnParentChanged(e);
-			parentForm = FindForm();
-			if (parentForm != null && !parentForm.Controls.Contains(calendar))
-			{
-				parentForm.Controls.Add(calendar);
-				parentForm.Controls.SetChildIndex(calendar, 0);
-				parentForm.Resize += ParentForm_Resize;
-			}
+			//parentForm = FindForm();
+			//if (parentForm == null)
+			//{
+			//	parentForm = this.Parent.FindForm();
+			//}
+
+
+			//if (parentForm != null && !parentForm.Controls.Contains(calendar))
+			//{
+			//	parentForm.Controls.Add(calendar);
+			//	parentForm.Controls.SetChildIndex(calendar, 0);
+			//	parentForm.Resize += ParentForm_Resize;
+			//}
 		}
 
-		private void ParentForm_Resize(object sender, EventArgs e)
+        protected override void OnPaint(PaintEventArgs pevent)
+        {
+            base.OnPaint(pevent);
+
+            parentForm = FindForm();
+            if (parentForm == null)
+            {
+                parentForm = this.Parent.FindForm();
+            }
+
+
+            if (parentForm != null && !parentForm.Controls.Contains(calendar))
+            {
+                parentForm.Controls.Add(calendar);
+                parentForm.Controls.SetChildIndex(calendar, 0);
+                parentForm.Resize += ParentForm_Resize;
+            }
+        }
+
+        private void ParentForm_Resize(object sender, EventArgs e)
 		{
 			if (calendar.Visible)
 			{

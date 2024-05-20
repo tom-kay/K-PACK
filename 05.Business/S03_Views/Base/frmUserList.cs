@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using P05_Business.S02_Controllers.Base;
 using P05_Business.Common.Helpers;
+using System.Reflection;
 
 namespace P05_Business.S03_Views.Base
 {
@@ -86,11 +87,13 @@ namespace P05_Business.S03_Views.Base
 				JobCode = cboJobType.SelectedValue.ToString(),
 			};
 
+			AccessMain.ShowLoading();
 			List<UserMngDto> items = ctrl.GetUserInfoList(item);
 
 			dgvList.DataSource = items;
+            AccessMain.HideLoading();
 
-			MainMessage.Show("조회되었습니다.");
+            MainMessage.Show("조회되었습니다.");
 		}
 
 		private void dgvList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

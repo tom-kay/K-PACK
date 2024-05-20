@@ -32,3 +32,6 @@ C:\Workspace\K-PACK\02.K_CONTROL_WIN\obj\Debug\P02_K_CONTROL_WIN.csproj.Generate
 C:\Workspace\K-PACK\02.K_CONTROL_WIN\obj\Debug\P02_K_CONTROL_WIN.csproj.CoreCompileInputs.cache
 C:\Workspace\K-PACK\02.K_CONTROL_WIN\obj\Debug\P02_K_CONTROL_WIN.dll
 C:\Workspace\K-PACK\02.K_CONTROL_WIN\obj\Debug\P02_K_CONTROL_WIN.pdb
+C:\Workspace\K-PACK\02.K_CONTROL_WIN\obj\Debug\P02_K_CONTROL_WIN.KCodeNameBox.resources
+C:\Workspace\K-PACK\02.K_CONTROL_WIN\obj\Debug\P02_K_CONTROL_WIN.KDateBox.resources
+C:\Workspace\K-PACK\02.K_CONTROL_WIN\obj\Debug\P02_K_CONTROL_WIN.KPeriodDateBox.resources

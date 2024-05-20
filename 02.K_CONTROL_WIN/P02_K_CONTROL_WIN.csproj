@@ -57,11 +57,23 @@
     <Compile Include="KCircularPictureBox.Designer.cs">
       <DependentUpon>KCircularPictureBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="KCodeNameBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KCodeNameBox.Designer.cs">
+      <DependentUpon>KCodeNameBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="KComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="KComboBox.Designer.cs">
       <DependentUpon>KComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KDateBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KDateBox.Designer.cs">
+      <DependentUpon>KDateBox.cs</DependentUpon>
     </Compile>
     <Compile Include="KDatePicker.cs">
       <SubType>Component</SubType>
@@ -74,6 +86,12 @@
     </Compile>
     <Compile Include="KDropdownMenu.Designer.cs">
       <DependentUpon>KDropdownMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KPeriodDateBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KPeriodDateBox.Designer.cs">
+      <DependentUpon>KPeriodDateBox.cs</DependentUpon>
     </Compile>
     <Compile Include="KProgressBar.cs">
       <SubType>Component</SubType>
@@ -116,6 +134,7 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\58605_search_search.png" />
     <Content Include="Resources\calendarDark.png" />
     <Content Include="Resources\calendarWhite.png" />
     <None Include="Resources\may_2009_event_calendar_may_2009_event_calendar.png" />
@@ -127,14 +146,23 @@
     <EmbeddedResource Include="KCircularPictureBox.resx">
       <DependentUpon>KCircularPictureBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KCodeNameBox.resx">
+      <DependentUpon>KCodeNameBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KComboBox.resx">
       <DependentUpon>KComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KDateBox.resx">
+      <DependentUpon>KDateBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KDatePicker.resx">
       <DependentUpon>KDatePicker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KDropdownMenu.resx">
       <DependentUpon>KDropdownMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KPeriodDateBox.resx">
+      <DependentUpon>KPeriodDateBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KProgressBar.resx">
       <DependentUpon>KProgressBar.cs</DependentUpon>
