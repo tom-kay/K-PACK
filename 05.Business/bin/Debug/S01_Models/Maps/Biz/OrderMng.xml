@@ -19,14 +19,20 @@
 			`ord`.`RegDt`,
 			`ord`.`ExWorkDt`,
 			`ord`.`BuyerCustCode`,
+			`buyer`,`CustName` AS `BuyerCustName`
 			`ord`.`BuyerPoNo`,
 			`ord`.`OrderDt`,
 			`ord`.`WorkCustCode`,
+			`work`.`CustName` AS `WorkCustName`
 			`ord`.`Description`,
 			`ord`.`Remark`,
 			`ord`.`TermsAndConditions`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `tb_pomaster` AS `ord`
+			FROM `soodal`.`tb_pomaster` AS `ord`
+			LEFT JOIN `soodal`.`tb_customer` AS `buyer`
+			ON `ord`.`BuyerCustCode` = `buyer`.`CustCode`
+			LEFT JOIN `soodal`.`tb_customer` AS `work`
+			ON `ord`.`WorkCustCode` = `work`.`CustCode`
 			WHERE `ord`.`CompanyCode` = @CompanyCode
 			AND `ord`.`DelYn` = 'N'
 			<Switch Prepend="AND" Property="DatePeriodType">
@@ -39,7 +45,22 @@
 				<Case CompareValue="O">
 					`ord`.`OrderDt` BETWEEN @PeriodFromDt AND @PeriodToDt
 				</Case>
+				<Case CompareValue="D">
+					`ord`.`DueDt` BETWEEN @PeriodFromDt AND @PeriodToDt
+				</Case>
 			</Switch>
+			<IsNotEmpty Prepend="And" Property="OrderNo">
+				`ord`.`OrderNo` Like CONCAT('%', @OrderNo, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="BuyerPoNo">
+				`ord`.`BuyerPoNo` Like CONCAT('%', @BuyerPoNo, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="BuyerCustCode">
+				`ord`.`BuyerCustCode` = @BuyerCustCode
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="WorkCustCode">
+				`ord`.`WorkCustCode` = @WorkCustCode
+			</IsNotEmpty>
 		</Statement>
 
 		<!-- 주문 마스터 조회 -->
@@ -49,14 +70,20 @@
 			`ord`.`RegDt`,
 			`ord`.`ExWorkDt`,
 			`ord`.`BuyerCustCode`,
+			`buyer`,`CustName` AS `BuyerCustName`
 			`ord`.`BuyerPoNo`,
 			`ord`.`OrderDt`,
 			`ord`.`WorkCustCode`,
+			`work`.`CustName` AS `WorkCustName`
 			`ord`.`Description`,
 			`ord`.`Remark`,
 			`ord`.`TermsAndConditions`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `tb_pomaster` AS `ord`
+			FROM `soodal`.`tb_pomaster` AS `ord`
+			LEFT JOIN `soodal`.`tb_customer` AS `buyer`
+			ON `ord`.`ButerCustCode` = `buyer`.`CustCode`
+			LEFT JOIN `soodal`.`tb_customer` AS `work`
+			ON `ord`.`WorkCustCode` = `work`.`CustCode`
 			WHERE `ord`.`OrderNo` = @OrderNo
 			AND `ord`.`CompanyCode` = @CompanyCode
 			AND `ord`.`DelYn` = 'N'

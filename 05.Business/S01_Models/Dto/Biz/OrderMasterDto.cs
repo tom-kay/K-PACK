@@ -22,6 +22,9 @@ namespace P05_Business.S01_Models.Dto.Biz
         public string BuyerPoNo { get; set; } // 바이버주문번호
 
         [StringLength(10)]
+        public string DueDt { get; set; }   //납기일자
+
+        [StringLength(10)]
         public string OrderDt { get; set; } // 주문일자
 
         [StringLength(10)]

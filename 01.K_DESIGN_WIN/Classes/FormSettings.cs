@@ -53,6 +53,18 @@ namespace P01_K_DESIGN_WIN.Classes
 				{
 					((RadioButton)ctrl).Checked = false;
 				}
+				else if (ctrl is KCodeNameBox)
+				{
+					((KCodeNameBox)ctrl).CodeValue = ((KCodeNameBox)ctrl).NameValue = string.Empty;
+                }
+				else if (ctrl is KPeriodDateBox)
+				{   
+                    ((KPeriodDateBox)ctrl).DateToValue = ((KPeriodDateBox)ctrl).DateFromValue = DateTime.Now.ToString("yyyy-MM-dd");
+                }
+				else if (ctrl is KDateBox)
+				{
+					((KDateBox)ctrl).DateValue = DateTime.Now.ToString("yyyy-MM-dd");
+				}
 
 				if (ctrl.Controls.Count > 0)
 				{

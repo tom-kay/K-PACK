@@ -12,8 +12,7 @@ using System.Windows.Forms;
 namespace P02_K_CONTROL_WIN
 {
     public partial class KPeriodDateBox : UserControl
-    {
-        
+    {   
 
         [Category("DateFromValue"), Description("시작일자를 설정한거나 가져온다.")]
         public string DateFromValue
@@ -58,8 +57,8 @@ namespace P02_K_CONTROL_WIN
         public KPeriodDateBox()
         {
             InitializeComponent();
-        }
 
+        }
         private void KPeriodDateBox_Load(object sender, EventArgs e)
         {
             lblFromDate.Text = lblToDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
@@ -70,12 +69,15 @@ namespace P02_K_CONTROL_WIN
             DateTime dtFrom;
             DateTime dtTo;
 
-            DateTime.TryParse(lblFromDate.Text, out dtFrom);
-            DateTime.TryParse(lblToDate.Text, out dtTo);
+            bool isFromDate = DateTime.TryParse(lblFromDate.Text, out dtFrom);
+            bool isToDate = DateTime.TryParse(lblToDate.Text, out dtTo);
 
-            if (dtFrom > dtTo)
+            if (isFromDate && isToDate)
             {
-                MessageBox.Show("시작일자가 종료일자보다 클 수 없습니다.");
+                if (dtFrom > dtTo)
+                {
+                    MessageBox.Show("시작일자가 종료일자보다 클 수 없습니다.");
+                }
             }
         }
 
@@ -84,12 +86,15 @@ namespace P02_K_CONTROL_WIN
             DateTime dtFrom;
             DateTime dtTo;
 
-            DateTime.TryParse(lblFromDate.Text, out dtFrom);
-            DateTime.TryParse(lblToDate.Text, out dtTo);
+            bool isFromDate = DateTime.TryParse(lblFromDate.Text, out dtFrom);
+            bool isToDate = DateTime.TryParse(lblToDate.Text, out dtTo);
 
-            if (dtFrom > dtTo)
+            if (isFromDate && isToDate)
             {
-                MessageBox.Show("종료일자가 시작일자보다 작을 수 없습니다.");
+                if (dtFrom > dtTo)
+                {
+                    MessageBox.Show("종료일자가 시작일자보다 작을 수 없습니다.");
+                } 
             }
         }
     }

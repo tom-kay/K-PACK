@@ -2,13 +2,10 @@
 using P01_K_DESIGN_WIN;
 using P01_K_DESIGN_WIN.Classes;
 using P05_Business.Common;
-using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S01_Models.Dto.Biz;
 using P05_Business.S02_Controllers.Biz;
-using P05_Business.S03_Views.Base;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -39,7 +36,7 @@ namespace P05_Business.S03_Views.Biz
 
         private void btnInit_Click(object sender, System.EventArgs e)
         {
-
+            
         }
 
         private void btnSearch_Click(object sender, System.EventArgs e)

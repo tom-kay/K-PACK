@@ -29,7 +29,9 @@ namespace P05_Business.Common
 		/// </summary>
 		/// <param name="dataGrid"></param>
 		/// <param name="sizeColumnsMode"></param>
-		public static void Create(DataGridView dataGrid, DataGridViewAutoSizeColumnsMode sizeColumnsMode, DataGridViewCellBorderStyle borderStyle = DataGridViewCellBorderStyle.None)
+		public static void Create(DataGridView dataGrid, DataGridViewAutoSizeColumnsMode sizeColumnsMode
+			, DataGridViewCellBorderStyle borderStyle = DataGridViewCellBorderStyle.None
+			, DataGridViewHeaderBorderStyle headerStyle = DataGridViewHeaderBorderStyle.None)
 		{
 			dataGrid.Refresh();
 
@@ -48,16 +50,16 @@ namespace P05_Business.Common
 
 			dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			dataGrid.ColumnHeadersHeight = 35;
-			dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;			
+			dataGrid.ColumnHeadersBorderStyle = headerStyle;			
 			dataGrid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-			dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft New Tai Lue", 12f, FontStyle.Bold);
+			dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("맑은 고딕", 12, FontStyle.Bold);
 			dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.CornflowerBlue;
 			dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 			dataGrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
 			dataGrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
 
 			dataGrid.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			dataGrid.DefaultCellStyle.Font = new Font("Microsoft New Tai Lue", 12f);
+			dataGrid.DefaultCellStyle.Font = new Font("맑은 고딕", 12);
 			dataGrid.DefaultCellStyle.BackColor = Color.White;
 			dataGrid.DefaultCellStyle.ForeColor = SystemColors.WindowText;
 			dataGrid.DefaultCellStyle.SelectionBackColor = Color.White;
@@ -218,7 +220,7 @@ namespace P05_Business.Common
 			column.Visible = visible;
 			column.DefaultCellStyle.Alignment = alignment;
 			column.SortMode = DataGridViewColumnSortMode.NotSortable;
-			column.DefaultCellStyle.Font = new Font("Microsoft New Tai Lue", 12);
+			column.DefaultCellStyle.Font = new Font("맑은 고딕", 12);
 
 			if (textType != TextType.None && textType != TextType.Text)
             {

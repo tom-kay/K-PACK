@@ -32,29 +32,24 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.cboPeriodType = new P02_K_CONTROL_WIN.KComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.kPeriodDateBox1 = new P02_K_CONTROL_WIN.KPeriodDateBox();
+            this.pdbDate = new P02_K_CONTROL_WIN.KPeriodDateBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtCompanyCode = new P02_K_CONTROL_WIN.KTextBox();
+            this.txtOrderNo = new P02_K_CONTROL_WIN.KTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.kTextBox1 = new P02_K_CONTROL_WIN.KTextBox();
+            this.txtPoNo = new P02_K_CONTROL_WIN.KTextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.cnbBuyer = new P02_K_CONTROL_WIN.KCodeNameBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.kTextBox3 = new P02_K_CONTROL_WIN.KTextBox();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.kTextBox2 = new P02_K_CONTROL_WIN.KTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.kCodeNameBox1 = new P02_K_CONTROL_WIN.KCodeNameBox();
+            this.cnbWork = new P02_K_CONTROL_WIN.KCodeNameBox();
+            this.dgvList = new System.Windows.Forms.DataGridView();
             this.pnlClose.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             this.pnlInit.SuspendLayout();
@@ -76,15 +71,31 @@
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel16.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnInit
+            // 
+            this.btnInit.FlatAppearance.BorderSize = 0;
+            this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // pnlBody
             // 
-            this.pnlBody.Controls.Add(this.dataGridView1);
+            this.pnlBody.Controls.Add(this.dgvList);
             this.pnlBody.Location = new System.Drawing.Point(0, 125);
             this.pnlBody.Size = new System.Drawing.Size(1135, 436);
             // 
@@ -106,25 +117,10 @@
             this.pnlSearchOptional.Controls.Add(this.tableLayoutPanel1);
             this.pnlSearchOptional.Size = new System.Drawing.Size(1135, 90);
             // 
-            // btnClose
-            // 
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            // 
-            // btnInit
-            // 
-            this.btnInit.FlatAppearance.BorderSize = 0;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            // 
             // btnNew
             // 
             this.btnNew.FlatAppearance.BorderSize = 0;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -187,26 +183,26 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.kPeriodDateBox1);
+            this.panel2.Controls.Add(this.pdbDate);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(123, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(252, 29);
             this.panel2.TabIndex = 1;
             // 
-            // kPeriodDateBox1
+            // pdbDate
             // 
-            this.kPeriodDateBox1.AutoSize = true;
-            this.kPeriodDateBox1.BackColor = System.Drawing.Color.White;
-            this.kPeriodDateBox1.DateFromValue = "9999-99-99";
-            this.kPeriodDateBox1.DateToValue = "9999-99-99";
-            this.kPeriodDateBox1.Location = new System.Drawing.Point(3, 5);
-            this.kPeriodDateBox1.MaximumSize = new System.Drawing.Size(265, 22);
-            this.kPeriodDateBox1.MinimumSize = new System.Drawing.Size(265, 22);
-            this.kPeriodDateBox1.Name = "kPeriodDateBox1";
-            this.kPeriodDateBox1.Size = new System.Drawing.Size(265, 22);
-            this.kPeriodDateBox1.TabIndex = 0;
-            this.kPeriodDateBox1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.pdbDate.AutoSize = true;
+            this.pdbDate.BackColor = System.Drawing.Color.White;
+            this.pdbDate.DateFromValue = "2024-05-21";
+            this.pdbDate.DateToValue = "2024-05-21";
+            this.pdbDate.Location = new System.Drawing.Point(3, 5);
+            this.pdbDate.MaximumSize = new System.Drawing.Size(265, 22);
+            this.pdbDate.MinimumSize = new System.Drawing.Size(265, 22);
+            this.pdbDate.Name = "pdbDate";
+            this.pdbDate.Size = new System.Drawing.Size(265, 22);
+            this.pdbDate.TabIndex = 0;
+            this.pdbDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
@@ -231,39 +227,38 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.txtCompanyCode);
+            this.panel4.Controls.Add(this.txtOrderNo);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(501, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(252, 29);
             this.panel4.TabIndex = 3;
             // 
-            // txtCompanyCode
+            // txtOrderNo
             // 
-            this.txtCompanyCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCompanyCode.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCompanyCode.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCompanyCode.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtCompanyCode.BorderRadius = 0;
-            this.txtCompanyCode.BorderSize = 2;
-            this.txtCompanyCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtCompanyCode.Enabled = false;
-            this.txtCompanyCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
-            this.txtCompanyCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCompanyCode.Location = new System.Drawing.Point(3, 3);
-            this.txtCompanyCode.MaxLength = 32767;
-            this.txtCompanyCode.Multiline = false;
-            this.txtCompanyCode.Name = "txtCompanyCode";
-            this.txtCompanyCode.OnlyNumber = false;
-            this.txtCompanyCode.PasswordChar = false;
-            this.txtCompanyCode.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtCompanyCode.PlaceholderText = "";
-            this.txtCompanyCode.ReadOnly = false;
-            this.txtCompanyCode.Size = new System.Drawing.Size(246, 22);
-            this.txtCompanyCode.TabIndex = 1;
-            this.txtCompanyCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtCompanyCode.Texts = "";
-            this.txtCompanyCode.UnderlinedStyle = false;
+            this.txtOrderNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOrderNo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtOrderNo.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtOrderNo.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtOrderNo.BorderRadius = 0;
+            this.txtOrderNo.BorderSize = 2;
+            this.txtOrderNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtOrderNo.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+            this.txtOrderNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtOrderNo.Location = new System.Drawing.Point(3, 3);
+            this.txtOrderNo.MaxLength = 32767;
+            this.txtOrderNo.Multiline = false;
+            this.txtOrderNo.Name = "txtOrderNo";
+            this.txtOrderNo.OnlyNumber = false;
+            this.txtOrderNo.PasswordChar = false;
+            this.txtOrderNo.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtOrderNo.PlaceholderText = "";
+            this.txtOrderNo.ReadOnly = false;
+            this.txtOrderNo.Size = new System.Drawing.Size(246, 22);
+            this.txtOrderNo.TabIndex = 1;
+            this.txtOrderNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtOrderNo.Texts = "";
+            this.txtOrderNo.UnderlinedStyle = false;
             // 
             // panel5
             // 
@@ -288,39 +283,38 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.kTextBox1);
+            this.panel6.Controls.Add(this.txtPoNo);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(879, 3);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(253, 29);
             this.panel6.TabIndex = 5;
             // 
-            // kTextBox1
+            // txtPoNo
             // 
-            this.kTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.kTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.kTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.kTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.kTextBox1.BorderRadius = 0;
-            this.kTextBox1.BorderSize = 2;
-            this.kTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.kTextBox1.Enabled = false;
-            this.kTextBox1.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
-            this.kTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.kTextBox1.Location = new System.Drawing.Point(3, 3);
-            this.kTextBox1.MaxLength = 32767;
-            this.kTextBox1.Multiline = false;
-            this.kTextBox1.Name = "kTextBox1";
-            this.kTextBox1.OnlyNumber = false;
-            this.kTextBox1.PasswordChar = false;
-            this.kTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.kTextBox1.PlaceholderText = "";
-            this.kTextBox1.ReadOnly = false;
-            this.kTextBox1.Size = new System.Drawing.Size(247, 22);
-            this.kTextBox1.TabIndex = 1;
-            this.kTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.kTextBox1.Texts = "";
-            this.kTextBox1.UnderlinedStyle = false;
+            this.txtPoNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPoNo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPoNo.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtPoNo.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtPoNo.BorderRadius = 0;
+            this.txtPoNo.BorderSize = 2;
+            this.txtPoNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtPoNo.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+            this.txtPoNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPoNo.Location = new System.Drawing.Point(3, 3);
+            this.txtPoNo.MaxLength = 32767;
+            this.txtPoNo.Multiline = false;
+            this.txtPoNo.Name = "txtPoNo";
+            this.txtPoNo.OnlyNumber = false;
+            this.txtPoNo.PasswordChar = false;
+            this.txtPoNo.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPoNo.PlaceholderText = "";
+            this.txtPoNo.ReadOnly = false;
+            this.txtPoNo.Size = new System.Drawing.Size(247, 22);
+            this.txtPoNo.TabIndex = 1;
+            this.txtPoNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPoNo.Texts = "";
+            this.txtPoNo.UnderlinedStyle = false;
             // 
             // panel7
             // 
@@ -345,12 +339,27 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.kCodeNameBox1);
+            this.panel8.Controls.Add(this.cnbBuyer);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(123, 38);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(252, 29);
             this.panel8.TabIndex = 7;
+            // 
+            // cnbBuyer
+            // 
+            this.cnbBuyer.BackColor = System.Drawing.Color.White;
+            this.cnbBuyer.CodeValue = "";
+            this.cnbBuyer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cnbBuyer.FormName = "frmMasterCodePopup";
+            this.cnbBuyer.Location = new System.Drawing.Point(0, 0);
+            this.cnbBuyer.Margin = new System.Windows.Forms.Padding(0);
+            this.cnbBuyer.MinimumSize = new System.Drawing.Size(229, 29);
+            this.cnbBuyer.Name = "cnbBuyer";
+            this.cnbBuyer.Namespace = "P05_Business.S03_Views.Popup.Common";
+            this.cnbBuyer.NameValue = "";
+            this.cnbBuyer.Size = new System.Drawing.Size(252, 29);
+            this.cnbBuyer.TabIndex = 0;
             // 
             // panel9
             // 
@@ -375,136 +384,38 @@
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.panel16);
-            this.panel10.Controls.Add(this.panel14);
-            this.panel10.Controls.Add(this.panel13);
+            this.panel10.Controls.Add(this.cnbWork);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10.Location = new System.Drawing.Point(501, 38);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(252, 29);
             this.panel10.TabIndex = 9;
             // 
-            // panel16
+            // cnbWork
             // 
-            this.panel16.BackColor = System.Drawing.SystemColors.Window;
-            this.panel16.Controls.Add(this.kTextBox3);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel16.Location = new System.Drawing.Point(129, 0);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(123, 29);
-            this.panel16.TabIndex = 104;
+            this.cnbWork.BackColor = System.Drawing.Color.White;
+            this.cnbWork.CodeValue = "";
+            this.cnbWork.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cnbWork.FormName = "";
+            this.cnbWork.Location = new System.Drawing.Point(0, 0);
+            this.cnbWork.Margin = new System.Windows.Forms.Padding(0);
+            this.cnbWork.MinimumSize = new System.Drawing.Size(229, 29);
+            this.cnbWork.Name = "cnbWork";
+            this.cnbWork.Namespace = "";
+            this.cnbWork.NameValue = "";
+            this.cnbWork.Size = new System.Drawing.Size(252, 29);
+            this.cnbWork.TabIndex = 0;
             // 
-            // kTextBox3
+            // dgvList
             // 
-            this.kTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.kTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.kTextBox3.BorderColor = System.Drawing.Color.Empty;
-            this.kTextBox3.BorderFocusColor = System.Drawing.Color.Empty;
-            this.kTextBox3.BorderRadius = 0;
-            this.kTextBox3.BorderSize = 2;
-            this.kTextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.kTextBox3.Enabled = false;
-            this.kTextBox3.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.kTextBox3.Location = new System.Drawing.Point(3, 3);
-            this.kTextBox3.MaxLength = 32767;
-            this.kTextBox3.Multiline = false;
-            this.kTextBox3.Name = "kTextBox3";
-            this.kTextBox3.OnlyNumber = false;
-            this.kTextBox3.PasswordChar = false;
-            this.kTextBox3.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.kTextBox3.PlaceholderText = "";
-            this.kTextBox3.ReadOnly = false;
-            this.kTextBox3.Size = new System.Drawing.Size(117, 22);
-            this.kTextBox3.TabIndex = 0;
-            this.kTextBox3.Tag = "MasterName";
-            this.kTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.kTextBox3.Texts = "";
-            this.kTextBox3.UnderlinedStyle = false;
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.button1);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel14.Location = new System.Drawing.Point(100, 0);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(29, 29);
-            this.panel14.TabIndex = 103;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.PowderBlue;
-            this.button1.BackgroundImage = global::P05_Business.Properties.Resources.search_search;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Tag = "txtMasterCode";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.SystemColors.Window;
-            this.panel13.Controls.Add(this.kTextBox2);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel13.Location = new System.Drawing.Point(0, 0);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(100, 29);
-            this.panel13.TabIndex = 3;
-            // 
-            // kTextBox2
-            // 
-            this.kTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.kTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.kTextBox2.BorderColor = System.Drawing.Color.Empty;
-            this.kTextBox2.BorderFocusColor = System.Drawing.Color.Empty;
-            this.kTextBox2.BorderRadius = 0;
-            this.kTextBox2.BorderSize = 2;
-            this.kTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.kTextBox2.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.kTextBox2.Location = new System.Drawing.Point(3, 3);
-            this.kTextBox2.MaxLength = 32767;
-            this.kTextBox2.Multiline = false;
-            this.kTextBox2.Name = "kTextBox2";
-            this.kTextBox2.OnlyNumber = false;
-            this.kTextBox2.PasswordChar = false;
-            this.kTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.kTextBox2.PlaceholderText = "";
-            this.kTextBox2.ReadOnly = false;
-            this.kTextBox2.Size = new System.Drawing.Size(94, 22);
-            this.kTextBox2.TabIndex = 0;
-            this.kTextBox2.Tag = "MasterCode";
-            this.kTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.kTextBox2.Texts = "";
-            this.kTextBox2.UnderlinedStyle = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 10);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1135, 426);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // kCodeNameBox1
-            // 
-            this.kCodeNameBox1.BackColor = System.Drawing.Color.White;
-            this.kCodeNameBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kCodeNameBox1.FormName = "frmMasterCodePopup";
-            this.kCodeNameBox1.Location = new System.Drawing.Point(0, 0);
-            this.kCodeNameBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.kCodeNameBox1.MinimumSize = new System.Drawing.Size(229, 29);
-            this.kCodeNameBox1.Name = "kCodeNameBox1";
-            this.kCodeNameBox1.Namespace = "P05_Business.S03_Views.Popup.Common";
-            this.kCodeNameBox1.Size = new System.Drawing.Size(252, 29);
-            this.kCodeNameBox1.TabIndex = 0;
-            this.kCodeNameBox1.ValueCode = "";
-            this.kCodeNameBox1.ValueName = "";
+            this.dgvList.ColumnHeadersHeight = 70;
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.Location = new System.Drawing.Point(0, 10);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.Size = new System.Drawing.Size(1135, 426);
+            this.dgvList.TabIndex = 0;
             // 
             // frmOrderList
             // 
@@ -513,6 +424,7 @@
             this.ClientSize = new System.Drawing.Size(1135, 561);
             this.Name = "frmOrderList";
             this.Text = "발주조회";
+            this.Load += new System.EventHandler(this.frmOrderList_Load);
             this.Controls.SetChildIndex(this.pnlSearchMain, 0);
             this.pnlClose.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
@@ -538,10 +450,7 @@
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -549,7 +458,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvList;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
@@ -564,16 +473,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private P02_K_CONTROL_WIN.KComboBox cboPeriodType;
-        private P02_K_CONTROL_WIN.KTextBox txtCompanyCode;
-        private P02_K_CONTROL_WIN.KTextBox kTextBox1;
-        private System.Windows.Forms.Panel panel16;
-        private P02_K_CONTROL_WIN.KTextBox kTextBox3;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel13;
-        private P02_K_CONTROL_WIN.KTextBox kTextBox2;
+        private P02_K_CONTROL_WIN.KTextBox txtOrderNo;
+        private P02_K_CONTROL_WIN.KTextBox txtPoNo;
         private System.Windows.Forms.Panel panel2;
-        private P02_K_CONTROL_WIN.KPeriodDateBox kPeriodDateBox1;
-        private P02_K_CONTROL_WIN.KCodeNameBox kCodeNameBox1;
+        private P02_K_CONTROL_WIN.KPeriodDateBox pdbDate;
+        private P02_K_CONTROL_WIN.KCodeNameBox cnbBuyer;
+        private P02_K_CONTROL_WIN.KCodeNameBox cnbWork;
     }
 }

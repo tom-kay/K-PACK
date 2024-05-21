@@ -66,10 +66,12 @@
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClose
             // 
@@ -78,10 +80,12 @@
             // btnSearch
             // 
             this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnInit
             // 
             this.btnInit.FlatAppearance.BorderSize = 0;
+            this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
             // 
             // frmOrderMng
             // 
@@ -90,6 +94,7 @@
             this.ClientSize = new System.Drawing.Size(800, 561);
             this.Name = "frmOrderMng";
             this.Text = "발주등록";
+            this.Load += new System.EventHandler(this.frmOrderMng_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeaderBtns.ResumeLayout(false);

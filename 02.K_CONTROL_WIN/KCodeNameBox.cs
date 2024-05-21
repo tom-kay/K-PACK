@@ -26,8 +26,8 @@ namespace P02_K_CONTROL_WIN
         Type _FORMTYPE;
         Form _FORMINSTANCE;
 
-        [Category("ValueCode"), Description("코드 값을 설정하거나 거져온다.")]
-        public string ValueCode
+        [Category("CodeValue"), Description("코드 값을 설정하거나 거져온다.")]
+        public string CodeValue
         {
             get
             {
@@ -39,8 +39,8 @@ namespace P02_K_CONTROL_WIN
             }
         }
 
-        [Category("ValueName"), Description("네임 값을 설정하거나 거져온다.")]
-        public string ValueName
+        [Category("NameValue"), Description("네임 값을 설정하거나 거져온다.")]
+        public string NameValue
         {
             get
             {
