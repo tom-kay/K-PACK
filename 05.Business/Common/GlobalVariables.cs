@@ -80,6 +80,13 @@ namespace P05_Business.Common
 		Delete,
 	}
 
+	public enum SAVE_MODE
+	{
+		None = 0,
+		New,
+		Update,
+	}
+
 	public class GlobalVariables
 	{
 		public static string ExcutePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);

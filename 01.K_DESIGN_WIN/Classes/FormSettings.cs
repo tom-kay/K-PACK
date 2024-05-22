@@ -138,8 +138,13 @@ namespace P01_K_DESIGN_WIN.Classes
 					rdo.ForeColor = SystemColors.WindowText;
 					rdo.Font = new Font(FORM_FONT_NAME, FORM_FONT_SIZE);
 				}
+				else if (ctrl is KDateBox
+					|| ctrl is KPeriodDateBox)
+                {
+					continue;
+                }
 
-				if (ctrl.Controls.Count > 0)
+                if (ctrl.Controls.Count > 0)
 				{
 					Control_SetDesign(ctrl);
 				}

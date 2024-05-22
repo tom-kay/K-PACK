@@ -222,6 +222,9 @@
     </Reference>
     <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsControlLibrary1">
+      <HintPath>..\..\..\Users\Administrator\source\repos\WindowsFormsControlLibrary1\bin\Debug\WindowsFormsControlLibrary1.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>

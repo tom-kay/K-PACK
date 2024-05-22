@@ -105,21 +105,32 @@ namespace P02_K_CONTROL_WIN
 			calendar.Visible = false;
 			if (Tag is string textBoxName)
 			{
-				var controls = parentForm.Controls.Find(textBoxName, true);
-				if (controls.Length > 0)
+				Control[] controls;
+				if (this.GetContainerControl() is KDateBox)
 				{
-					var textBox = controls[0];
-					if (textBox is KTextBox)
-					{
-						((KTextBox)textBox).Texts = e.Start.ToShortDateString();
-					}
-                    else if (textBox is Label) 
-					{
-						textBox.Text = e.Start.ToShortDateString();
-					}
+                    controls = (this.GetContainerControl() as Control).Controls.Find(textBoxName, true);
+				}
+				else 
+				{
+                    controls = parentForm.Controls.Find(textBoxName, true);
                     
                 }
-			}
+
+                if (controls.Length > 0)
+                {
+                    var textBox = controls[0];
+                    if (textBox is KTextBox)
+                    {
+                        ((KTextBox)textBox).Texts = e.Start.ToShortDateString();
+                    }
+                    else if (textBox is Label)
+                    {
+                        textBox.Text = e.Start.ToShortDateString();
+                    }
+
+                }
+            }
+			
 		}
 
 		protected override void OnLostFocus(EventArgs e)

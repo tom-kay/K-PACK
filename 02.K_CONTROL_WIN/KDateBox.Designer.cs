@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCalendar = new P02_K_CONTROL_WIN.KButtonCalendar();
             this.lblDate = new System.Windows.Forms.Label();
+            this.btnCalendar = new P02_K_CONTROL_WIN.KButtonCalendar();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +46,19 @@
             this.panel1.Size = new System.Drawing.Size(122, 22);
             this.panel1.TabIndex = 11;
             // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDate.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(0, 0);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(100, 22);
+            this.lblDate.TabIndex = 2;
+            this.lblDate.Tag = "NONE";
+            this.lblDate.Text = "9999-99-99";
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnCalendar
             // 
             this.btnCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -60,19 +73,6 @@
             this.btnCalendar.TabIndex = 16;
             this.btnCalendar.Tag = "lblDate";
             this.btnCalendar.UseVisualStyleBackColor = true;
-            // 
-            // lblDate
-            // 
-            this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDate.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(0, 0);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(100, 22);
-            this.lblDate.TabIndex = 2;
-            this.lblDate.Tag = "NONE";
-            this.lblDate.Text = "9999-99-99";
-            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // KDateBox
             // 

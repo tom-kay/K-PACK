@@ -60,6 +60,7 @@ namespace P05_Business.S03_Views.Biz
 
             btnDuplicate.Visible = true;
 
+            SetInit();
         }
 
         private void btnSearch_Click(object sender, System.EventArgs e)
