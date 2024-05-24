@@ -194,8 +194,8 @@
             // 
             this.pdbDate.AutoSize = true;
             this.pdbDate.BackColor = System.Drawing.Color.White;
-            this.pdbDate.DateFromValue = "2024-05-21";
-            this.pdbDate.DateToValue = "2024-05-21";
+            this.pdbDate.DateFromValue = "2024-05-24";
+            this.pdbDate.DateToValue = "2024-05-24";
             this.pdbDate.Location = new System.Drawing.Point(3, 5);
             this.pdbDate.MaximumSize = new System.Drawing.Size(265, 22);
             this.pdbDate.MinimumSize = new System.Drawing.Size(265, 22);
@@ -348,15 +348,17 @@
             // 
             // cnbBuyer
             // 
+            this.cnbBuyer.AddParams = null;
             this.cnbBuyer.BackColor = System.Drawing.Color.White;
             this.cnbBuyer.CodeValue = "";
             this.cnbBuyer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cnbBuyer.FormName = "frmMasterCodePopup";
+            this.cnbBuyer.FormName = "frmCustomerPopup";
+            this.cnbBuyer.FormTitle = "BUYER 조회";
             this.cnbBuyer.Location = new System.Drawing.Point(0, 0);
             this.cnbBuyer.Margin = new System.Windows.Forms.Padding(0);
             this.cnbBuyer.MinimumSize = new System.Drawing.Size(229, 29);
             this.cnbBuyer.Name = "cnbBuyer";
-            this.cnbBuyer.Namespace = "P05_Business.S03_Views.Popup.Common";
+            this.cnbBuyer.Namespace = "P05_Business.S03_Views.Popup.Biz";
             this.cnbBuyer.NameValue = "";
             this.cnbBuyer.Size = new System.Drawing.Size(252, 29);
             this.cnbBuyer.TabIndex = 0;
@@ -393,15 +395,17 @@
             // 
             // cnbWork
             // 
+            this.cnbWork.AddParams = null;
             this.cnbWork.BackColor = System.Drawing.Color.White;
             this.cnbWork.CodeValue = "";
             this.cnbWork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cnbWork.FormName = "";
+            this.cnbWork.FormName = "frmCustomerPopup";
+            this.cnbWork.FormTitle = "발주처 조회";
             this.cnbWork.Location = new System.Drawing.Point(0, 0);
             this.cnbWork.Margin = new System.Windows.Forms.Padding(0);
             this.cnbWork.MinimumSize = new System.Drawing.Size(229, 29);
             this.cnbWork.Name = "cnbWork";
-            this.cnbWork.Namespace = "";
+            this.cnbWork.Namespace = "P05_Business.S03_Views.Popup.Biz";
             this.cnbWork.NameValue = "";
             this.cnbWork.Size = new System.Drawing.Size(252, 29);
             this.cnbWork.TabIndex = 0;
@@ -416,6 +420,7 @@
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(1135, 426);
             this.dgvList.TabIndex = 0;
+            this.dgvList.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvList_CellMouseClick);
             // 
             // frmOrderList
             // 

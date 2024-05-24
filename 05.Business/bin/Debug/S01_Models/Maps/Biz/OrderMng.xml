@@ -19,11 +19,12 @@
 			`ord`.`RegDt`,
 			`ord`.`ExWorkDt`,
 			`ord`.`BuyerCustCode`,
-			`buyer`,`CustName` AS `BuyerCustName`
+			`buyer`.`CustName` AS `BuyerCustName`,
 			`ord`.`BuyerPoNo`,
+			`ord`.`DueDt`,
 			`ord`.`OrderDt`,
 			`ord`.`WorkCustCode`,
-			`work`.`CustName` AS `WorkCustName`
+			`work`.`CustName` AS `WorkCustName`,
 			`ord`.`Description`,
 			`ord`.`Remark`,
 			`ord`.`TermsAndConditions`
@@ -70,18 +71,19 @@
 			`ord`.`RegDt`,
 			`ord`.`ExWorkDt`,
 			`ord`.`BuyerCustCode`,
-			`buyer`,`CustName` AS `BuyerCustName`
+			`buyer`.`CustName` AS `BuyerCustName`,
 			`ord`.`BuyerPoNo`,
+			`ord`.`DueDt`,
 			`ord`.`OrderDt`,
 			`ord`.`WorkCustCode`,
-			`work`.`CustName` AS `WorkCustName`
+			`work`.`CustName` AS `WorkCustName`,
 			`ord`.`Description`,
 			`ord`.`Remark`,
 			`ord`.`TermsAndConditions`
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `soodal`.`tb_pomaster` AS `ord`
 			LEFT JOIN `soodal`.`tb_customer` AS `buyer`
-			ON `ord`.`ButerCustCode` = `buyer`.`CustCode`
+			ON `ord`.`BuyerCustCode` = `buyer`.`CustCode`
 			LEFT JOIN `soodal`.`tb_customer` AS `work`
 			ON `ord`.`WorkCustCode` = `work`.`CustCode`
 			WHERE `ord`.`OrderNo` = @OrderNo
@@ -98,6 +100,7 @@
 			`ExWorkDt`,
 			`BuyerCustCode`,
 			`BuyerPoNo`,
+			`DueDt`,
 			`OrderDt`,
 			`WorkCustCode`,
 			`Description`,
@@ -111,10 +114,11 @@
 			VALUES
 			(
 			@OrderNo,
-			@RegDt,
+			date_format(now(), '%Y-%m-%d'),
 			@ExWorkDt,
 			@BuyerCustCode,
 			@BuyerPoNo,
+			@DueDt,
 			@OrderDt,
 			@WorkCustCode,
 			@Description,
@@ -131,10 +135,10 @@
 		<Statement Id="updateOrderMaster">
 			UPDATE `tb_pomaster`
 			SET
-			`RegDt` = @RegDt,
 			`ExWorkDt` = @ExWorkDt,
 			`BuyerCustCode` = @BuyerCustCode,
 			`BuyerPoNo` = @BuyerPoNo,
+			`DueDt` = @DueDt,
 			`OrderDt` = @OrderDt,
 			`WorkCustCode` = @WorkCustCode,
 			`Description` = @Description,
@@ -145,9 +149,8 @@
 			`UpdateDt` = now(),
 			`DeleteId` = NULL,
 			`DeleteDt` = NULL
-			WHERE
-			`OrderNo` = @OrderNo AND
-			`CompanyCode` = @CompanyCode
+			WHERE `OrderNo` = @OrderNo
+			AND `CompanyCode` = @CompanyCode
 		</Statement>
 
 
@@ -251,8 +254,6 @@
 			now()
 			)
 			ON DUPLICATE KEY UPDATE
-			`ItemGroupCode` = @ItemGroupCode,
-			`ItemCode` = @ItemCode,
 			`SeqNo` = @SeqNo,
 			`ItemNo` = @ItemNo,
 			`SizeName` = @SizeName

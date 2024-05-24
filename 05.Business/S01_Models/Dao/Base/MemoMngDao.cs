@@ -98,5 +98,18 @@ namespace P05_Business.S01_Models.Dao.Base
             return delete;
         }
 
+        internal List<MemoTemplateDto> SelectTemplatePopupList(MemoTemplateDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "Base.Memo",
+                SqlId = "selectTemplatePopupList",
+                Request = param,
+            };
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+            List<MemoTemplateDto> templates = SqlMapper.Query<MemoTemplateDto>(context).ToList();
+
+            return templates;
+        }
     }
 }

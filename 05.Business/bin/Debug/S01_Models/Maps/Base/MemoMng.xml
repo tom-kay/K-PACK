@@ -83,6 +83,23 @@
 			AND `CompanyCode` = @CompanyCode;
 		</Statement>
 
+		<Statement Id="selectTemplatePopupList">
+
+			SELECT `tmp`.`MemoIdx`,
+			`tmp`.`Title`,
+			`tmp`.`Contents`
+			FROM `soodal`.`tb_memotemplate` AS `tmp`
+			WHERE 1=1
+			AND `tmp`.`CompanyCode` = @CompanyCode
+			AND (`tmp`.`DelYn` IS NULL OR `tmp`.`DelYn` != 'Y')
+			<IsNotEmpty Prepend="And" Property="Title">
+				`tmp`.`Title` Like Concat('%', @Title, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="Contents">
+				`tmp`.`Contents` Like Concat('%', @Contents, '%')
+			</IsNotEmpty>
+
+		</Statement>
 
 	</Statements>
 </SmartSqlMap>

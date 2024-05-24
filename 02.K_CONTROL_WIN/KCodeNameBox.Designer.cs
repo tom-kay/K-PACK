@@ -41,6 +41,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.txtCode);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -51,6 +52,7 @@
             // 
             // txtCode
             // 
+            this.txtCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCode.Location = new System.Drawing.Point(3, 3);
@@ -62,6 +64,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel2.Controls.Add(this.btnFind);
             this.panel2.Location = new System.Drawing.Point(100, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
@@ -71,6 +74,7 @@
             // 
             // btnFind
             // 
+            this.btnFind.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnFind.BackColor = System.Drawing.Color.PowderBlue;
             this.btnFind.BackgroundImage = global::P02_K_CONTROL_WIN.Properties.Resources._58605_search_search;
             this.btnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -85,21 +89,19 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.txtName);
             this.panel3.Location = new System.Drawing.Point(129, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(112, 29);
+            this.panel3.Size = new System.Drawing.Size(100, 29);
             this.panel3.TabIndex = 3;
             // 
             // txtName
             // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.BackColor = System.Drawing.SystemColors.Control;
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.Enabled = false;

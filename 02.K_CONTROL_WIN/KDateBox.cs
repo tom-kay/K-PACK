@@ -16,7 +16,16 @@ namespace P02_K_CONTROL_WIN
         public string DateValue
         {
             get { return lblDate.Text; }
-            set { lblDate.Text = value; }
+            set {
+                DateTime dt;
+                bool isDate = DateTime.TryParse(value, out dt);
+                if (!isDate)
+                {
+                    value = DateTime.MinValue.ToString("yyyy-MM-dd");
+                }
+
+                lblDate.Text = value; 
+            }
         }
 
         [Category("TextAlign"), Description("콘텐츠의 맞춤을 설정한다.")]

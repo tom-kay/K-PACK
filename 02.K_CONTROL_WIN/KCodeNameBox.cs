@@ -17,11 +17,11 @@ using System.Xml.Linq;
 namespace P02_K_CONTROL_WIN
 {
     public partial class KCodeNameBox : UserControl
-    {
-        private string _CODE = string.Empty;
-        private string _NAME = string.Empty;
+    {   
         private string _NAMESPACE = string.Empty;
         private string _FORMNAME = string.Empty;
+        private string _FORMTITLE = string.Empty;
+        private object _ADDPARAMS = null;
 
         Type _FORMTYPE;
         Form _FORMINSTANCE;
@@ -31,11 +31,11 @@ namespace P02_K_CONTROL_WIN
         {
             get
             {
-                return _CODE;
+                return txtCode.Text;
             }
             set
             {
-                _CODE = value;
+                txtCode.Text = value;
             }
         }
 
@@ -44,11 +44,11 @@ namespace P02_K_CONTROL_WIN
         {
             get
             {
-                return _NAME;
+                return txtName.Text;
             }
             set
             {
-                _NAME = value;
+                txtName.Text = value;
             }
         }
 
@@ -78,6 +78,32 @@ namespace P02_K_CONTROL_WIN
             }
         }
 
+        [Category("FormTitle"), Description("FormTitle 값을 설정하거나 거져온다.")]
+        public string FormTitle
+        {
+            get
+            {
+                return _FORMTITLE;
+            }
+            set
+            {
+                _FORMTITLE = value;
+            }
+        }
+
+        [Category("AddParams"), Description("AddParams 값을 설정하거나 거져온다.")]
+        public object AddParams
+        {
+            get
+            {
+                return _ADDPARAMS;
+            }
+            set
+            {
+                _ADDPARAMS = value;
+            }
+        }
+
         public KCodeNameBox()
         {
             InitializeComponent();
@@ -103,6 +129,8 @@ namespace P02_K_CONTROL_WIN
 
                 LoadPopupForm(txtCode.Text.Trim());
 
+                txtCode.Tag = null;
+
             }
             catch { }
         }
@@ -122,7 +150,9 @@ namespace P02_K_CONTROL_WIN
 
             object[] args = { };
             Array.Resize(ref args, args.Length + 1);
-            args[args.Length - 1] = "CODE MASTER";
+            args[args.Length - 1] = _FORMTITLE;
+            Array.Resize(ref args, args.Length + 1);
+            args[args.Length - 1] = _ADDPARAMS;
             if (!string.IsNullOrEmpty(codeValue))
             {
                 Array.Resize(ref args, args.Length + 1);

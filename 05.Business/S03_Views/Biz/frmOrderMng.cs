@@ -1,5 +1,4 @@
 ﻿using log4net;
-using Microsoft.VisualBasic;
 using Mysqlx.Crud;
 using P01_K_DESIGN_WIN;
 using P01_K_DESIGN_WIN.Classes;
@@ -7,20 +6,13 @@ using P05_Business.Common;
 using P05_Business.Common.Helpers;
 using P05_Business.S01_Models.Dto.Biz;
 using P05_Business.S02_Controllers.Biz;
+using P05_Business.S03_Views.Popup.Common;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static log4net.Appender.RollingFileAppender;
-using static SmartSql.SqlMap.Tags.Switch;
-using static System.Net.Mime.MediaTypeNames;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace P05_Business.S03_Views.Biz
 {
@@ -51,6 +43,8 @@ namespace P05_Business.S03_Views.Biz
             _MODE = SAVE_MODE.New;
 
             InitGrid();
+
+            InitControls();
         }
 
         public frmOrderMng(string code) : this()
@@ -58,6 +52,10 @@ namespace P05_Business.S03_Views.Biz
             IS_LINK_OPEN = true;
 
             _MODE = SAVE_MODE.Update;
+
+            txtOrderNo.Texts = code;
+
+            
         }
         #endregion -- Constructor
 
@@ -66,7 +64,8 @@ namespace P05_Business.S03_Views.Biz
         {
             try
             {
-                InitControls();
+             
+                if (IS_LINK_OPEN) SearchData();
             }
             catch (Exception ex)
             {
@@ -90,7 +89,23 @@ namespace P05_Business.S03_Views.Biz
         {
             try
             {
+                if (string.IsNullOrEmpty(txtOrderNo.Texts.Trim()))
+                {
+                    KMessageBox.Show("[발주번호]를 입력 바랍니다.", "조회", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 ResultCRUD search = SearchData();
+
+                if (search == ResultCRUD.SearchSuccessData)
+                {
+                    MainMessage.Show("조회되었습니다.");
+                }
+                else
+                {
+                    MainMessage.Show("자료가 없습니다.");
+                }
+
             }
             catch (Exception ex)
             {
@@ -102,7 +117,33 @@ namespace P05_Business.S03_Views.Biz
         {
             try
             {
+                //validation
+                if (string.IsNullOrEmpty(txtOrderNo.Texts.Trim()))
+                {
+                    KMessageBox.Show("[발주번호]를 입력 바랍니다.", "저장", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(cnbWorker.CodeValue.Trim()))
+                {
+                    KMessageBox.Show("[발주처]를 입력 바랍니다.", "저장", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (KMessageBox.Show("저장 하시겠습니까?", "저장", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+
                 ResultCRUD save = SaveData();
+
+                if (save == ResultCRUD.SaveSuccessData)
+                {
+                    SearchData();   //저장된 데이터 조회
+
+                    MainMessage.Show("저장되었습니다.");
+                }
+                else
+                {
+                    MainMessage.Show("저장되지 않았습니다.");
+                }
             }
             catch (Exception ex)
             {
@@ -115,7 +156,44 @@ namespace P05_Business.S03_Views.Biz
         {
             try
             {
-                ResultCRUD delete =  DeleteData();
+                //validation
+                if (string.IsNullOrEmpty(txtOrderNo.Texts.Trim()))
+                {
+                    KMessageBox.Show("[발주번호]를 입력 바랍니다.", "삭제", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (KMessageBox.Show("삭제 하시겠습니까?", "삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
+
+
+                ResultCRUD delete = DeleteData();
+
+                if (delete == ResultCRUD.DeleteSuccessData)
+                {
+                    MainMessage.Show("삭제 되었습니다.");
+                }
+                else
+                {
+                    MainMessage.Show("삭제되지 않았습니다.");
+                }
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLoadTemplate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (frmTemplatePopup popup = new frmTemplatePopup("템플릿 조회", null))
+                {
+                    if (popup.ShowDialog() == DialogResult.OK)
+                    {
+                        txtTAC.SetValue(popup.ResultName);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -126,9 +204,56 @@ namespace P05_Business.S03_Views.Biz
 
         private void dgvList_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+
             isFormChagned = true;
+
         }
 
+        private void btnAddRow_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //DataRow dr = (dgvList.DataSource as DataTable).NewRow();
+                //dr["OrderNo"] = txtOrderNo.Texts;
+                //(dgvList.DataSource as DataTable).Rows.Add(dr);
+
+                base.isFormChagned = true;
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDelRow_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvList.Rows.Count < 1)
+                {
+                    KMessageBox.Show("삭제할 데이터가 없습니다.", "삭제", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (dgvList.SelectedRows.Count < 1)
+                {
+                    KMessageBox.Show("삭제할 행을 선택 바랍니다.", "삭제", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (dgvList.Rows.Count > 0)
+                {
+                    DataGridViewRow row = dgvList.SelectedRows[0];
+                    dgvList.Rows.RemoveAt(row.Index);
+
+                    base.isFormChagned = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         #endregion -- Control Event
 
@@ -136,15 +261,54 @@ namespace P05_Business.S03_Views.Biz
 
         private ResultCRUD SearchData()
         {
+            OrderMasterDto param = new OrderMasterDto
+            {
+                OrderNo = txtOrderNo.Texts.Trim(),
+                CompanyCode = LoginCompany.CompanyCode,
+            };
+
+            dtoMaster = ctrl.GetOrderMaster(param);
+
+            ResultCRUD search;
+            if (dtoMaster != null && !string.IsNullOrEmpty(dtoMaster.OrderNo))
+            {
+                search = ResultCRUD.SearchSuccessData;
+
+                isFormChagned = false;
+
+                _MODE = SAVE_MODE.Update;   //수정모드로 변경
+
+                DataHandles.DtoToControls(this, dtoMaster); //바이딩
+
+                txtOrderNo.Enabled = false;
+
+                //그리드 바인딩
+                dtoDetails = dtoMaster.Details;
+
+                dgvList.DataSource = dtoDetails;
+            }
+            else
+            {
+                search = ResultCRUD.SearchSuccessNoData;
+            }
+
+            InitDto();
+
+
+            return search;
+        }
+
+        private ResultCRUD SaveData()
+        {
             //Master 정보 수집
             OrderMasterDto saveMaster = DataHandles.ControlsToDto<OrderMasterDto>(this, dtoMaster);
 
             //Detail 정보 수집
-            DataTable dtDetail = UserDataGrid.GetChangeAll(dgvList);
+            DataTable dtDetail = UserDataGrid.GetAllData(dgvList);
             List<OrderDetailDto> saveDetails = null;
             if (dtDetail != null)
             {
-                saveDetails = DataHandles.ConvertToList<OrderDetailDto>(dtDetail); 
+                saveDetails = DataHandles.ConvertToList<OrderDetailDto>(dtDetail);
             }
 
             OrderMasterDto param = new OrderMasterDto
@@ -163,18 +327,55 @@ namespace P05_Business.S03_Views.Biz
                 CreateId = LoginUserInfo.UserId,
                 UpdateId = LoginUserInfo.UserId,
                 DeleteId = LoginUserInfo.UserId,
+                Details = saveDetails,
             };
 
-        }
+            RequestCRUD request;
+            if (_MODE == SAVE_MODE.New)
+            {
+                request = RequestCRUD.Create;
+            }
+            else
+            {
+                request = RequestCRUD.Update;
+            }
 
-        private ResultCRUD SaveData()
-        {
-            throw new NotImplementedException();
+            bool isSave = ctrl.AddOrderMaster(param, request);
+
+            ResultCRUD result;
+            if (isSave)
+            {
+                result = ResultCRUD.SaveSuccessData;
+            }
+            else
+            {
+                result = ResultCRUD.SaveFailData;
+            }
+
+            return result;
         }
 
         private ResultCRUD DeleteData()
         {
-            throw new NotImplementedException();
+            OrderMasterDto param = new OrderMasterDto
+            {
+                OrderNo = txtOrderNo.Texts.Trim(),
+                CompanyCode = LoginCompany.CompanyCode,
+            };
+
+            bool isDelete = ctrl.RemoveOrderMaster(param);
+
+            ResultCRUD result;
+            if (isDelete)
+            {
+                result = ResultCRUD.DeleteSuccessData;
+            }
+            else
+            {
+                result = ResultCRUD.DeleteFailData;
+            }
+
+            return result;
         }
 
         private void InitControls()
@@ -185,6 +386,8 @@ namespace P05_Business.S03_Views.Biz
 
             txtOrderNo.Enabled = true;
             tabOptions.SelectedIndex = 0;
+            cnbWorker.AddParams = new object[] { "B", "P" };
+            cnbBuyer.AddParams = new object[] { "S" };
 
             dtoMaster = new OrderMasterDto();
             dtoDetails = new List<OrderDetailDto>();
@@ -227,5 +430,6 @@ namespace P05_Business.S03_Views.Biz
         }
         #endregion -- Method
 
+        
     }
 }

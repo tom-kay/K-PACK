@@ -26,7 +26,7 @@ namespace P05_Business.S01_Models.Dao.Base
 			return customers;
 		}
 
-		internal CustomerDto SelectCustomerSingle(CustomerDto param)
+        internal CustomerDto SelectCustomerSingle(CustomerDto param)
 		{
 			RequestContext context = new RequestContext
 			{
@@ -146,5 +146,19 @@ namespace P05_Business.S01_Models.Dao.Base
 
 			return customers;
 		}
-	}
+
+        internal List<CustomerDto> SelectCustomerPopupList(CustomerDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "Base.CustomerMng",
+                SqlId = "selectCustomerPopupList",
+                Request = param
+            };
+            List<CustomerDto> customers = SqlMapper.Query<CustomerDto>(context).ToList();
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+
+            return customers;
+        }
+    }
 }

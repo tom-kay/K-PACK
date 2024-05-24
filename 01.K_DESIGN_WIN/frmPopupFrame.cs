@@ -19,7 +19,7 @@ namespace P01_K_DESIGN_WIN
     {
         private int borderRadius = 20;
         private int borderSize = 2;
-        private Color borderColor = Color.FromArgb(128, 128, 255);
+        private Color borderColor = Color.FromArgb(39, 57, 80);
 
         public frmPopupFrame()
         {

@@ -30,7 +30,7 @@
         {
             this.tabOptions = new MetroFramework.Controls.MetroTabControl();
             this.pageItems = new MetroFramework.Controls.MetroTabPage();
-            this.pnlItems = new MetroFramework.Controls.MetroPanel();
+            this.pnlItemsBody = new MetroFramework.Controls.MetroPanel();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.pageTAC = new MetroFramework.Controls.MetroTabPage();
             this.pnlTAC = new MetroFramework.Controls.MetroPanel();
@@ -75,6 +75,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
             this.txtRemark = new P02_K_CONTROL_WIN.KTextBox();
+            this.pnlItemsHead = new MetroFramework.Controls.MetroPanel();
+            this.panel42 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.btnDelRow = new P02_K_CONTROL_WIN.KButton();
+            this.btnAddRow = new P02_K_CONTROL_WIN.KButton();
             this.pnlMain.SuspendLayout();
             this.pnlBody.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -87,7 +92,7 @@
             this.pnlInit.SuspendLayout();
             this.tabOptions.SuspendLayout();
             this.pageItems.SuspendLayout();
-            this.pnlItems.SuspendLayout();
+            this.pnlItemsBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.pageTAC.SuspendLayout();
             this.pnlTAC.SuspendLayout();
@@ -112,6 +117,9 @@
             this.panel16.SuspendLayout();
             this.panel17.SuspendLayout();
             this.panel18.SuspendLayout();
+            this.pnlItemsHead.SuspendLayout();
+            this.panel42.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -181,7 +189,8 @@
             // pageItems
             // 
             this.pageItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pageItems.Controls.Add(this.pnlItems);
+            this.pageItems.Controls.Add(this.pnlItemsBody);
+            this.pageItems.Controls.Add(this.pnlItemsHead);
             this.pageItems.HorizontalScrollbarBarColor = false;
             this.pageItems.HorizontalScrollbarHighlightOnWheel = false;
             this.pageItems.HorizontalScrollbarSize = 0;
@@ -194,20 +203,20 @@
             this.pageItems.VerticalScrollbarHighlightOnWheel = false;
             this.pageItems.VerticalScrollbarSize = 0;
             // 
-            // pnlItems
+            // pnlItemsBody
             // 
-            this.pnlItems.Controls.Add(this.dgvList);
-            this.pnlItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlItems.HorizontalScrollbarBarColor = false;
-            this.pnlItems.HorizontalScrollbarHighlightOnWheel = false;
-            this.pnlItems.HorizontalScrollbarSize = 0;
-            this.pnlItems.Location = new System.Drawing.Point(0, 0);
-            this.pnlItems.Name = "pnlItems";
-            this.pnlItems.Size = new System.Drawing.Size(790, 255);
-            this.pnlItems.TabIndex = 2;
-            this.pnlItems.VerticalScrollbarBarColor = false;
-            this.pnlItems.VerticalScrollbarHighlightOnWheel = false;
-            this.pnlItems.VerticalScrollbarSize = 0;
+            this.pnlItemsBody.Controls.Add(this.dgvList);
+            this.pnlItemsBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlItemsBody.HorizontalScrollbarBarColor = false;
+            this.pnlItemsBody.HorizontalScrollbarHighlightOnWheel = false;
+            this.pnlItemsBody.HorizontalScrollbarSize = 0;
+            this.pnlItemsBody.Location = new System.Drawing.Point(0, 35);
+            this.pnlItemsBody.Name = "pnlItemsBody";
+            this.pnlItemsBody.Size = new System.Drawing.Size(790, 220);
+            this.pnlItemsBody.TabIndex = 2;
+            this.pnlItemsBody.VerticalScrollbarBarColor = false;
+            this.pnlItemsBody.VerticalScrollbarHighlightOnWheel = false;
+            this.pnlItemsBody.VerticalScrollbarSize = 0;
             // 
             // dgvList
             // 
@@ -218,7 +227,7 @@
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(790, 255);
+            this.dgvList.Size = new System.Drawing.Size(790, 220);
             this.dgvList.TabIndex = 2;
             this.dgvList.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellValueChanged);
             // 
@@ -231,7 +240,7 @@
             this.pageTAC.HorizontalScrollbarSize = 0;
             this.pageTAC.Location = new System.Drawing.Point(4, 38);
             this.pageTAC.Name = "pageTAC";
-            this.pageTAC.Size = new System.Drawing.Size(1000, 425);
+            this.pageTAC.Size = new System.Drawing.Size(792, 257);
             this.pageTAC.TabIndex = 1;
             this.pageTAC.Text = "TERMS AND CONDITIONS";
             this.pageTAC.VerticalScrollbarBarColor = false;
@@ -248,7 +257,7 @@
             this.pnlTAC.HorizontalScrollbarSize = 0;
             this.pnlTAC.Location = new System.Drawing.Point(0, 0);
             this.pnlTAC.Name = "pnlTAC";
-            this.pnlTAC.Size = new System.Drawing.Size(998, 423);
+            this.pnlTAC.Size = new System.Drawing.Size(790, 255);
             this.pnlTAC.TabIndex = 2;
             this.pnlTAC.VerticalScrollbarBarColor = false;
             this.pnlTAC.VerticalScrollbarHighlightOnWheel = false;
@@ -265,7 +274,7 @@
             this.pnlTACBody.Location = new System.Drawing.Point(0, 35);
             this.pnlTACBody.Name = "pnlTACBody";
             this.pnlTACBody.Padding = new System.Windows.Forms.Padding(3);
-            this.pnlTACBody.Size = new System.Drawing.Size(998, 388);
+            this.pnlTACBody.Size = new System.Drawing.Size(790, 220);
             this.pnlTACBody.TabIndex = 3;
             this.pnlTACBody.VerticalScrollbarBarColor = true;
             this.pnlTACBody.VerticalScrollbarHighlightOnWheel = false;
@@ -291,12 +300,14 @@
             this.txtTAC.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtTAC.PlaceholderText = "";
             this.txtTAC.ReadOnly = false;
-            this.txtTAC.Size = new System.Drawing.Size(990, 380);
+            this.txtTAC.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtTAC.Size = new System.Drawing.Size(782, 212);
             this.txtTAC.TabIndex = 2;
             this.txtTAC.Tag = "TermsAndConditions";
             this.txtTAC.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTAC.Texts = "";
             this.txtTAC.UnderlinedStyle = false;
+            this.txtTAC.WordWrap = false;
             // 
             // pnlTACHead
             // 
@@ -307,8 +318,8 @@
             this.pnlTACHead.HorizontalScrollbarSize = 10;
             this.pnlTACHead.Location = new System.Drawing.Point(0, 0);
             this.pnlTACHead.Name = "pnlTACHead";
-            this.pnlTACHead.Padding = new System.Windows.Forms.Padding(3);
-            this.pnlTACHead.Size = new System.Drawing.Size(998, 35);
+            this.pnlTACHead.Padding = new System.Windows.Forms.Padding(6);
+            this.pnlTACHead.Size = new System.Drawing.Size(790, 35);
             this.pnlTACHead.TabIndex = 2;
             this.pnlTACHead.VerticalScrollbarBarColor = true;
             this.pnlTACHead.VerticalScrollbarHighlightOnWheel = false;
@@ -327,15 +338,16 @@
             this.btnLoadTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadTemplate.ForeColor = System.Drawing.Color.White;
             this.btnLoadTemplate.Image = global::P05_Business.Properties.Resources.inbox_inbox;
-            this.btnLoadTemplate.Location = new System.Drawing.Point(885, 3);
+            this.btnLoadTemplate.Location = new System.Drawing.Point(674, 6);
             this.btnLoadTemplate.Name = "btnLoadTemplate";
-            this.btnLoadTemplate.Size = new System.Drawing.Size(110, 29);
+            this.btnLoadTemplate.Size = new System.Drawing.Size(110, 23);
             this.btnLoadTemplate.TabIndex = 2;
             this.btnLoadTemplate.Text = "불러오기";
             this.btnLoadTemplate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLoadTemplate.TextColor = System.Drawing.Color.White;
             this.btnLoadTemplate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLoadTemplate.UseVisualStyleBackColor = false;
+            this.btnLoadTemplate.Click += new System.EventHandler(this.btnLoadTemplate_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -345,7 +357,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 158F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
@@ -406,7 +418,7 @@
             this.panel2.Location = new System.Drawing.Point(122, 1);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(403, 35);
+            this.panel2.Size = new System.Drawing.Size(397, 35);
             this.panel2.TabIndex = 1;
             // 
             // txtOrderNo
@@ -429,18 +441,20 @@
             this.txtOrderNo.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtOrderNo.PlaceholderText = "";
             this.txtOrderNo.ReadOnly = false;
-            this.txtOrderNo.Size = new System.Drawing.Size(396, 22);
+            this.txtOrderNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtOrderNo.Size = new System.Drawing.Size(390, 22);
             this.txtOrderNo.TabIndex = 3;
             this.txtOrderNo.Tag = "OrderNo";
             this.txtOrderNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtOrderNo.Texts = "";
             this.txtOrderNo.UnderlinedStyle = false;
+            this.txtOrderNo.WordWrap = true;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(529, 4);
+            this.panel3.Location = new System.Drawing.Point(523, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(114, 29);
             this.panel3.TabIndex = 2;
@@ -462,16 +476,16 @@
             // 
             this.panel4.Controls.Add(this.dtbOrderDt);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(647, 1);
+            this.panel4.Location = new System.Drawing.Point(641, 1);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(152, 35);
+            this.panel4.Size = new System.Drawing.Size(158, 35);
             this.panel4.TabIndex = 3;
             // 
             // dtbOrderDt
             // 
             this.dtbOrderDt.BackColor = System.Drawing.Color.White;
-            this.dtbOrderDt.DateValue = "2024-05-22";
+            this.dtbOrderDt.DateValue = "2024-05-24";
             this.dtbOrderDt.Location = new System.Drawing.Point(3, 6);
             this.dtbOrderDt.MaximumSize = new System.Drawing.Size(122, 22);
             this.dtbOrderDt.MinimumSize = new System.Drawing.Size(122, 22);
@@ -509,23 +523,25 @@
             this.panel6.Location = new System.Drawing.Point(122, 37);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(403, 35);
+            this.panel6.Size = new System.Drawing.Size(397, 35);
             this.panel6.TabIndex = 5;
             // 
             // cnbWorker
             // 
+            this.cnbWorker.AddParams = null;
             this.cnbWorker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cnbWorker.BackColor = System.Drawing.Color.White;
             this.cnbWorker.CodeValue = "";
-            this.cnbWorker.FormName = "";
+            this.cnbWorker.FormName = "frmCustomerPopup";
+            this.cnbWorker.FormTitle = "발주처 조회";
             this.cnbWorker.Location = new System.Drawing.Point(3, 3);
             this.cnbWorker.Margin = new System.Windows.Forms.Padding(0);
             this.cnbWorker.MinimumSize = new System.Drawing.Size(229, 29);
             this.cnbWorker.Name = "cnbWorker";
-            this.cnbWorker.Namespace = "";
+            this.cnbWorker.Namespace = "P05_Business.S03_Views.Popup.Biz";
             this.cnbWorker.NameValue = "";
-            this.cnbWorker.Size = new System.Drawing.Size(396, 29);
+            this.cnbWorker.Size = new System.Drawing.Size(390, 29);
             this.cnbWorker.TabIndex = 0;
             this.cnbWorker.Tag = "WorkCustCode";
             // 
@@ -533,7 +549,7 @@
             // 
             this.panel7.Controls.Add(this.label4);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(529, 40);
+            this.panel7.Location = new System.Drawing.Point(523, 40);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(114, 29);
             this.panel7.TabIndex = 6;
@@ -555,16 +571,16 @@
             // 
             this.panel8.Controls.Add(this.dtbExWorkDt);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(647, 37);
+            this.panel8.Location = new System.Drawing.Point(641, 37);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(152, 35);
+            this.panel8.Size = new System.Drawing.Size(158, 35);
             this.panel8.TabIndex = 7;
             // 
             // dtbExWorkDt
             // 
             this.dtbExWorkDt.BackColor = System.Drawing.Color.White;
-            this.dtbExWorkDt.DateValue = "2024-05-22";
+            this.dtbExWorkDt.DateValue = "2024-05-24";
             this.dtbExWorkDt.Location = new System.Drawing.Point(3, 6);
             this.dtbExWorkDt.MaximumSize = new System.Drawing.Size(122, 22);
             this.dtbExWorkDt.MinimumSize = new System.Drawing.Size(122, 22);
@@ -602,7 +618,7 @@
             this.panel10.Location = new System.Drawing.Point(122, 73);
             this.panel10.Margin = new System.Windows.Forms.Padding(0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(403, 35);
+            this.panel10.Size = new System.Drawing.Size(397, 35);
             this.panel10.TabIndex = 9;
             // 
             // txtPoNo
@@ -625,18 +641,20 @@
             this.txtPoNo.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtPoNo.PlaceholderText = "";
             this.txtPoNo.ReadOnly = false;
-            this.txtPoNo.Size = new System.Drawing.Size(396, 22);
+            this.txtPoNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtPoNo.Size = new System.Drawing.Size(390, 22);
             this.txtPoNo.TabIndex = 4;
             this.txtPoNo.Tag = "BuyerPoNo";
             this.txtPoNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPoNo.Texts = "";
             this.txtPoNo.UnderlinedStyle = false;
+            this.txtPoNo.WordWrap = true;
             // 
             // panel11
             // 
             this.panel11.Controls.Add(this.label6);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(529, 76);
+            this.panel11.Location = new System.Drawing.Point(523, 76);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(114, 29);
             this.panel11.TabIndex = 10;
@@ -658,16 +676,16 @@
             // 
             this.panel12.Controls.Add(this.dtbDueDt);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(647, 73);
+            this.panel12.Location = new System.Drawing.Point(641, 73);
             this.panel12.Margin = new System.Windows.Forms.Padding(0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(152, 35);
+            this.panel12.Size = new System.Drawing.Size(158, 35);
             this.panel12.TabIndex = 11;
             // 
             // dtbDueDt
             // 
             this.dtbDueDt.BackColor = System.Drawing.Color.White;
-            this.dtbDueDt.DateValue = "2024-05-22";
+            this.dtbDueDt.DateValue = "2024-05-24";
             this.dtbDueDt.Location = new System.Drawing.Point(3, 6);
             this.dtbDueDt.MaximumSize = new System.Drawing.Size(122, 22);
             this.dtbDueDt.MinimumSize = new System.Drawing.Size(122, 22);
@@ -711,16 +729,18 @@
             // 
             // cnbBuyer
             // 
+            this.cnbBuyer.AddParams = null;
             this.cnbBuyer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cnbBuyer.BackColor = System.Drawing.Color.White;
             this.cnbBuyer.CodeValue = "";
-            this.cnbBuyer.FormName = "";
+            this.cnbBuyer.FormName = "frmCustomerPopup";
+            this.cnbBuyer.FormTitle = "BUYER 조회";
             this.cnbBuyer.Location = new System.Drawing.Point(3, 3);
             this.cnbBuyer.Margin = new System.Windows.Forms.Padding(0);
             this.cnbBuyer.MinimumSize = new System.Drawing.Size(229, 29);
             this.cnbBuyer.Name = "cnbBuyer";
-            this.cnbBuyer.Namespace = "";
+            this.cnbBuyer.Namespace = "P05_Business.S03_Views.Popup.Biz";
             this.cnbBuyer.NameValue = "";
             this.cnbBuyer.Size = new System.Drawing.Size(670, 29);
             this.cnbBuyer.TabIndex = 1;
@@ -779,12 +799,14 @@
             this.txtDescription.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtDescription.PlaceholderText = "";
             this.txtDescription.ReadOnly = false;
+            this.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtDescription.Size = new System.Drawing.Size(670, 22);
             this.txtDescription.TabIndex = 6;
             this.txtDescription.Tag = "Description";
             this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtDescription.Texts = "";
             this.txtDescription.UnderlinedStyle = false;
+            this.txtDescription.WordWrap = true;
             // 
             // panel17
             // 
@@ -839,12 +861,100 @@
             this.txtRemark.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtRemark.PlaceholderText = "";
             this.txtRemark.ReadOnly = false;
+            this.txtRemark.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtRemark.Size = new System.Drawing.Size(670, 22);
             this.txtRemark.TabIndex = 6;
             this.txtRemark.Tag = "Remark";
             this.txtRemark.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtRemark.Texts = "";
             this.txtRemark.UnderlinedStyle = false;
+            this.txtRemark.WordWrap = true;
+            // 
+            // pnlItemsHead
+            // 
+            this.pnlItemsHead.Controls.Add(this.panel19);
+            this.pnlItemsHead.Controls.Add(this.panel42);
+            this.pnlItemsHead.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlItemsHead.HorizontalScrollbarBarColor = true;
+            this.pnlItemsHead.HorizontalScrollbarHighlightOnWheel = false;
+            this.pnlItemsHead.HorizontalScrollbarSize = 10;
+            this.pnlItemsHead.Location = new System.Drawing.Point(0, 0);
+            this.pnlItemsHead.Name = "pnlItemsHead";
+            this.pnlItemsHead.Size = new System.Drawing.Size(790, 35);
+            this.pnlItemsHead.TabIndex = 3;
+            this.pnlItemsHead.VerticalScrollbarBarColor = true;
+            this.pnlItemsHead.VerticalScrollbarHighlightOnWheel = false;
+            this.pnlItemsHead.VerticalScrollbarSize = 10;
+            // 
+            // panel42
+            // 
+            this.panel42.BackColor = System.Drawing.Color.Transparent;
+            this.panel42.Controls.Add(this.btnDelRow);
+            this.panel42.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel42.Location = new System.Drawing.Point(723, 0);
+            this.panel42.Name = "panel42";
+            this.panel42.Padding = new System.Windows.Forms.Padding(6);
+            this.panel42.Size = new System.Drawing.Size(67, 35);
+            this.panel42.TabIndex = 5;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.Transparent;
+            this.panel19.Controls.Add(this.btnAddRow);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel19.Location = new System.Drawing.Point(656, 0);
+            this.panel19.Name = "panel19";
+            this.panel19.Padding = new System.Windows.Forms.Padding(6);
+            this.panel19.Size = new System.Drawing.Size(67, 35);
+            this.panel19.TabIndex = 6;
+            // 
+            // btnDelRow
+            // 
+            this.btnDelRow.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnDelRow.BackgroundColor = System.Drawing.Color.CadetBlue;
+            this.btnDelRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDelRow.BorderColor = System.Drawing.Color.White;
+            this.btnDelRow.BorderRadius = 0;
+            this.btnDelRow.BorderSize = 0;
+            this.btnDelRow.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDelRow.FlatAppearance.BorderSize = 0;
+            this.btnDelRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelRow.ForeColor = System.Drawing.Color.White;
+            this.btnDelRow.Image = global::P05_Business.Properties.Resources._58562_remove_remove;
+            this.btnDelRow.Location = new System.Drawing.Point(1, 6);
+            this.btnDelRow.Name = "btnDelRow";
+            this.btnDelRow.Size = new System.Drawing.Size(60, 23);
+            this.btnDelRow.TabIndex = 1;
+            this.btnDelRow.Text = "제거";
+            this.btnDelRow.TextColor = System.Drawing.Color.White;
+            this.btnDelRow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelRow.UseVisualStyleBackColor = false;
+            this.btnDelRow.Click += new System.EventHandler(this.btnDelRow_Click);
+            // 
+            // btnAddRow
+            // 
+            this.btnAddRow.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnAddRow.BackgroundColor = System.Drawing.Color.CadetBlue;
+            this.btnAddRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddRow.BorderColor = System.Drawing.Color.White;
+            this.btnAddRow.BorderRadius = 0;
+            this.btnAddRow.BorderSize = 0;
+            this.btnAddRow.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAddRow.FlatAppearance.BorderSize = 0;
+            this.btnAddRow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddRow.ForeColor = System.Drawing.Color.White;
+            this.btnAddRow.Image = global::P05_Business.Properties.Resources._58560_add_add;
+            this.btnAddRow.Location = new System.Drawing.Point(1, 6);
+            this.btnAddRow.Name = "btnAddRow";
+            this.btnAddRow.Size = new System.Drawing.Size(60, 23);
+            this.btnAddRow.TabIndex = 3;
+            this.btnAddRow.Text = "추가";
+            this.btnAddRow.TextColor = System.Drawing.Color.White;
+            this.btnAddRow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAddRow.UseVisualStyleBackColor = false;
+            this.btnAddRow.Click += new System.EventHandler(this.btnAddRow_Click);
             // 
             // frmOrderMng
             // 
@@ -868,7 +978,7 @@
             this.pnlInit.ResumeLayout(false);
             this.tabOptions.ResumeLayout(false);
             this.pageItems.ResumeLayout(false);
-            this.pnlItems.ResumeLayout(false);
+            this.pnlItemsBody.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.pageTAC.ResumeLayout(false);
             this.pnlTAC.ResumeLayout(false);
@@ -893,6 +1003,9 @@
             this.panel16.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
+            this.pnlItemsHead.ResumeLayout(false);
+            this.panel42.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -902,7 +1015,7 @@
         private MetroFramework.Controls.MetroTabControl tabOptions;
         private MetroFramework.Controls.MetroTabPage pageItems;
         private MetroFramework.Controls.MetroTabPage pageTAC;
-        private MetroFramework.Controls.MetroPanel pnlItems;
+        private MetroFramework.Controls.MetroPanel pnlItemsBody;
         private MetroFramework.Controls.MetroPanel pnlTAC;
         private MetroFramework.Controls.MetroPanel pnlTACBody;
         private MetroFramework.Controls.MetroPanel pnlTACHead;
@@ -946,5 +1059,10 @@
         private P02_K_CONTROL_WIN.KDateBox dtbExWorkDt;
         private P02_K_CONTROL_WIN.KDateBox dtbOrderDt;
         private P02_K_CONTROL_WIN.KDateBox dtbDueDt;
+        private MetroFramework.Controls.MetroPanel pnlItemsHead;
+        private System.Windows.Forms.Panel panel42;
+        private System.Windows.Forms.Panel panel19;
+        private P02_K_CONTROL_WIN.KButton btnAddRow;
+        private P02_K_CONTROL_WIN.KButton btnDelRow;
     }
 }

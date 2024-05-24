@@ -389,6 +389,12 @@
     <Compile Include="S03_Views\Biz\frmOrderMng.Designer.cs">
       <DependentUpon>frmOrderMng.cs</DependentUpon>
     </Compile>
+    <Compile Include="S03_Views\Popup\Biz\frmCustomerPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Biz\frmCustomerPopup.Designer.cs">
+      <DependentUpon>frmCustomerPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="S03_Views\Popup\Common\frmLoading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,6 +415,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="S03_Views\Popup\Common\frmTemplatePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmTemplatePopup.Designer.cs">
+      <DependentUpon>frmTemplatePopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="S03_Views\Popup\Common\frmUserSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -867,6 +879,9 @@
     <EmbeddedResource Include="S03_Views\Biz\frmOrderMng.resx">
       <DependentUpon>frmOrderMng.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Biz\frmCustomerPopup.resx">
+      <DependentUpon>frmCustomerPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Common\frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </EmbeddedResource>
@@ -887,6 +902,9 @@
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="S03_Views\Popup\Common\frmTemplatePopup.resx">
+      <DependentUpon>frmTemplatePopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Common\frmUserSetting.resx">
       <DependentUpon>frmUserSetting.cs</DependentUpon>
     </EmbeddedResource>

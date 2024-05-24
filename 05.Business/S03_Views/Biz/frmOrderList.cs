@@ -76,7 +76,9 @@ namespace P05_Business.S03_Views.Biz
         {
             try
             {
+                frmOrderMng frm = new frmOrderMng();
 
+                AccessMain.OpenChildForm(frm);
             }
             catch (Exception ex)
             {
@@ -186,9 +188,26 @@ namespace P05_Business.S03_Views.Biz
         private void InitControls()
         {
             dgvList.DataSource = null;
+
+            cnbBuyer.AddParams = new object[] { "S" };
+            cnbWork.AddParams = new object[] { "B", "P" };
         }
+
         #endregion -- Methods
 
+        private void dgvList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (e.ColumnIndex == dgvList.Columns["OrderNo"].Index)
+                {
+                    string code = dgvList.Rows[e.RowIndex].Cells["OrderNo"].Value.ToString();
 
+                    frmOrderMng frm = new frmOrderMng(code);
+
+                    AccessMain.OpenChildForm(frm);
+                }
+            }
+        }
     }
 }

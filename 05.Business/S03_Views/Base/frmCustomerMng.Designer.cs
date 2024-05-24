@@ -330,6 +330,7 @@
             this.txtCustCode.Size = new System.Drawing.Size(138, 22);
             this.txtCustCode.TabIndex = 0;
             this.txtCustCode.Tag = "CustCode";
+            this.txtCustCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCustCode.Texts = "";
             this.txtCustCode.UnderlinedStyle = false;
             // 
@@ -388,6 +389,7 @@
             this.txtCompanyNo.Size = new System.Drawing.Size(138, 22);
             this.txtCompanyNo.TabIndex = 1;
             this.txtCompanyNo.Tag = "CompanyNo";
+            this.txtCompanyNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCompanyNo.Texts = "";
             this.txtCompanyNo.UnderlinedStyle = false;
             // 
@@ -498,6 +500,7 @@
             this.txtCustName.Size = new System.Drawing.Size(404, 22);
             this.txtCustName.TabIndex = 1;
             this.txtCustName.Tag = "CustName";
+            this.txtCustName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCustName.Texts = "";
             this.txtCustName.UnderlinedStyle = false;
             // 
@@ -578,6 +581,7 @@
             this.txtTelNo.Size = new System.Drawing.Size(138, 22);
             this.txtTelNo.TabIndex = 1;
             this.txtTelNo.Tag = "TelNo";
+            this.txtTelNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTelNo.Texts = "";
             this.txtTelNo.UnderlinedStyle = false;
             // 
@@ -636,6 +640,7 @@
             this.txtFaxNo.Size = new System.Drawing.Size(138, 22);
             this.txtFaxNo.TabIndex = 1;
             this.txtFaxNo.Tag = "FaxNo";
+            this.txtFaxNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtFaxNo.Texts = "";
             this.txtFaxNo.UnderlinedStyle = false;
             // 
@@ -694,6 +699,7 @@
             this.txtEmail.Size = new System.Drawing.Size(137, 22);
             this.txtEmail.TabIndex = 1;
             this.txtEmail.Tag = "Email";
+            this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtEmail.Texts = "";
             this.txtEmail.UnderlinedStyle = false;
             // 
@@ -753,6 +759,7 @@
             this.txtAddress1.Size = new System.Drawing.Size(670, 22);
             this.txtAddress1.TabIndex = 1;
             this.txtAddress1.Tag = "Address1";
+            this.txtAddress1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAddress1.Texts = "";
             this.txtAddress1.UnderlinedStyle = false;
             // 
@@ -812,6 +819,7 @@
             this.txtAddress2.Size = new System.Drawing.Size(670, 22);
             this.txtAddress2.TabIndex = 2;
             this.txtAddress2.Tag = "Address2";
+            this.txtAddress2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAddress2.Texts = "";
             this.txtAddress2.UnderlinedStyle = false;
             // 
@@ -1118,6 +1126,7 @@
             this.txtRemark.Size = new System.Drawing.Size(670, 22);
             this.txtRemark.TabIndex = 2;
             this.txtRemark.Tag = "Remark";
+            this.txtRemark.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtRemark.Texts = "";
             this.txtRemark.UnderlinedStyle = false;
             // 
@@ -1154,6 +1163,7 @@
             this.txtOwnerName.Size = new System.Drawing.Size(137, 22);
             this.txtOwnerName.TabIndex = 1;
             this.txtOwnerName.Tag = "OwnerName";
+            this.txtOwnerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtOwnerName.Texts = "";
             this.txtOwnerName.UnderlinedStyle = false;
             // 
@@ -1237,6 +1247,7 @@
             this.txtBankName.Size = new System.Drawing.Size(270, 22);
             this.txtBankName.TabIndex = 2;
             this.txtBankName.Tag = "BankName";
+            this.txtBankName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtBankName.Texts = "";
             this.txtBankName.UnderlinedStyle = false;
             // 
@@ -1295,6 +1306,7 @@
             this.txtDepositor.Size = new System.Drawing.Size(271, 22);
             this.txtDepositor.TabIndex = 3;
             this.txtDepositor.Tag = "Depositor";
+            this.txtDepositor.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtDepositor.Texts = "";
             this.txtDepositor.UnderlinedStyle = false;
             // 
@@ -1354,6 +1366,7 @@
             this.txtAccountNo.Size = new System.Drawing.Size(670, 22);
             this.txtAccountNo.TabIndex = 3;
             this.txtAccountNo.Tag = "AccountNo";
+            this.txtAccountNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAccountNo.Texts = "";
             this.txtAccountNo.UnderlinedStyle = false;
             this.txtAccountNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAccountNo_KeyPress);

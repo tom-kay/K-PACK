@@ -63,22 +63,10 @@ namespace P05_Business.S01_Models.Dao.Biz
 
                 if (save >= 0 && details != null)
                 {
+                    int seqNo = 0;
                     foreach (OrderDetailDto detail in details)
                     {
-                        if ((detail.DataState & (System.Data.DataRowState.Added | System.Data.DataRowState.Modified)) != 0)
-                        {
-                            context = new RequestContext
-                            {
-                                Scope = "Biz.OrderMng",
-                                SqlId = "insertOrderDetail",
-                                Request = detail
-                            };
-
-                            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
-                            save = SqlMapper.Execute(context);
-
-                        }
-                        else if (detail.DataState == System.Data.DataRowState.Deleted)
+                        if (detail.DataState == System.Data.DataRowState.Deleted)
                         {
                             context = new RequestContext
                             {
@@ -90,6 +78,20 @@ namespace P05_Business.S01_Models.Dao.Biz
                             log.Info(SqlMapper.SqlBuilder.BuildSql(context));
                             save = SqlMapper.Execute(context);
 
+                        }
+                        else
+                        {
+                            detail.SeqNo = ++seqNo;
+
+                            context = new RequestContext
+                            {
+                                Scope = "Biz.OrderMng",
+                                SqlId = "mergeOrderDetail",
+                                Request = detail
+                            };
+
+                            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+                            save = SqlMapper.Execute(context);
                         }
 
                         if (save < 0) break;

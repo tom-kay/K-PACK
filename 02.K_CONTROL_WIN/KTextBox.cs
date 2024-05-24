@@ -223,6 +223,20 @@ namespace P02_K_CONTROL_WIN
 			set { onlyNumber = value; } 
 		}
 
+        [Category("K Code Advance")]
+        public ScrollBars ScrollBars
+        {
+            get { return textBox1.ScrollBars; }
+            set { textBox1.ScrollBars = value; }
+        }
+
+        [Category("K Code Advance")]
+        public bool WordWrap
+        {
+            get { return textBox1.WordWrap; }
+            set { textBox1.WordWrap = value; }
+        }
+
         #endregion
 
         #region -> Overridden methods

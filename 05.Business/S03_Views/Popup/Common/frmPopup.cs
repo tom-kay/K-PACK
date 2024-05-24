@@ -18,25 +18,30 @@ namespace P05_Business
         public string ResultCode { get; set; }
         public string ResultName { get; set; }
 
-        //List<CodeMasterDto> results = null;
+        //List<CodeMasterDto> dtos;
 
-        //CodeMngController ctrl = new CodeMngController();
+        //CodeMngController ctrl;
 
         #endregion
 
         #region -- Constructor
-        public frmPopup(string title)
+        public frmPopup(string title, object[] args)
         {
             InitializeComponent();
+
+            //dtos = new List<CodeMasterDto>();
+            //ctrl = new CodeMngController();
 
             this.Load += FrmPopup_Load;
             this.btnInit.Click += btnInit_Click;
             this.btnSearch.Click += btnSearch_Click;
 
             lblPopupTitle.Text = title;
+
+            InitGrid();
         }
 
-        public frmPopup(string title, string code) : this(title)
+        public frmPopup(string title, object[] args, string code) : this(title, args)
         {
 
             SearchPopup(code);
@@ -47,8 +52,7 @@ namespace P05_Business
         #region -- Control Events
         private void FrmPopup_Load(object sender, System.EventArgs e)
         {
-            CreateGrid();
-
+            
             //if (results != null)
             //{
             //    dgvList.DataSource = results;
@@ -123,7 +127,7 @@ namespace P05_Business
 
         }
 
-        private void CreateGrid()
+        private void InitGrid()
         {
             //UserDataGrid.Create(dgvList, DataGridViewAutoSizeColumnsMode.Fill);
             //UserDataGrid.AddTextBoxColumn(dgvList, "CODE", "CODE", true, true, 20, DataGridViewContentAlignment.MiddleLeft);

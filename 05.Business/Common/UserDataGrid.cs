@@ -244,7 +244,12 @@ namespace P05_Business.Common
             return column;
 		}
 
-		internal static DataTable GetChangeAll(DataGridView grid)
+        internal static DataTable GetAllData(DataGridView grid)
+        {   
+            return (grid.DataSource as DataTable);
+        }
+
+        internal static DataTable GetChangeAll(DataGridView grid)
 		{
 			return (grid.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted);
 

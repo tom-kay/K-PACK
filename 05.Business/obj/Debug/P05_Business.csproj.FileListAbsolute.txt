@@ -144,3 +144,5 @@ C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Biz.frmOrderLis
 C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Biz.frmOrderMng.resources
 C:\Workspace\K-PACK\05.Business\bin\Debug\WindowsFormsControlLibrary1.dll
 C:\Workspace\K-PACK\05.Business\bin\Debug\WindowsFormsControlLibrary1.pdb
+C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Popup.Biz.frmCustomerPopup.resources
+C:\Workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Popup.Common.frmTemplatePopup.resources

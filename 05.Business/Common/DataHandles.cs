@@ -72,7 +72,15 @@ namespace P05_Business.Common
 						{
 							(c as CheckBox).Checked = Convert.ToBoolean(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null));
 						}
-						else
+						else if (c is KCodeNameBox)
+						{
+                            (c as KCodeNameBox).CodeValue = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null).ToString();
+                        }
+                        else if (c is KDateBox)
+                        {
+                            (c as KDateBox).DateValue = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null).ToString();
+                        }
+                        else
 						{
 							c.Text = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null).ToString();
 						}
@@ -170,7 +178,15 @@ namespace P05_Business.Common
 						{
 							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as CheckBox).Checked);
 						}
-						else
+						else if (c is KCodeNameBox)
+						{
+                            dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as KCodeNameBox).CodeValue);
+                        }
+                        else if (c is KDateBox)
+                        {
+                            dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as KDateBox).DateValue);
+                        }
+                        else
 						{
 							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, c.Text);
 						}

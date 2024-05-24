@@ -55,5 +55,12 @@ namespace P05_Business.S02_Controllers.Base
 
             return isDelete;
         }
+
+        internal List<MemoTemplateDto> GetTemplatePopup(MemoTemplateDto param)
+        {
+            List<MemoTemplateDto> list = dao.SelectTemplatePopupList(param);
+
+            return list;
+        }
     }
 }

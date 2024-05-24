@@ -259,5 +259,37 @@
 			AND `CompanyCode` = @CompanyCode
 		</Statement>
 
+
+		<Statement Id="selectCustomerPopupList">
+			SELECT cust.`CustCode`,
+			cust.`CustName`
+			FROM `tb_customer` AS cust
+			LEFT JOIN tb_CodeDetail AS nat
+			ON nat.MasterCode = 'NATIONALITY'
+			AND cust.NationCode = nat.`Code`
+			WHERE CompanyCode = @CompanyCode
+			AND (cust.`DelYn` IS NULL OR cust.`DelYn` != 'Y')
+			<IsNotEmpty Prepend="And" Property="CustCode" CompareValue="">
+				cust.`CustCode` Like Concat('%', @CustCode, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="CustName" CompareValue="">
+				cust.`CustName` Like Concat('%', @CustName, '%')
+			</IsNotEmpty>
+			AND ( 1=2
+			<IsTrue Prepend="Or" Property="DealTypeSale">
+				cust.`DealTypeSale` = @DealTypeSale
+			</IsTrue>
+			<IsTrue Prepend="Or" Property="DealTypeBuy">
+				cust.`DealTypeBuy` = @DealTypeBuy
+			</IsTrue>
+			<IsTrue Prepend="Or" Property="DealTypeProc">
+				cust.`DealTypeProc` = @DealTypeProc
+			</IsTrue>
+			<IsTrue Prepend="Or" Property="DealTypeGeneral">
+				cust.`DealTypeGeneral` = @DealTypeGeneral
+			</IsTrue>
+			)
+		</Statement>
+
 	</Statements>
 </SmartSqlMap>
