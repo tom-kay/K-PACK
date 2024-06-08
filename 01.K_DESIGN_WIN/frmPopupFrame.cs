@@ -17,7 +17,7 @@ namespace P01_K_DESIGN_WIN
 {
     public partial class frmPopupFrame : Form
     {
-        private int borderRadius = 20;
+        private int borderRadius = 10;
         private int borderSize = 2;
         private Color borderColor = Color.FromArgb(39, 57, 80);
 

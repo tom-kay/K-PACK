@@ -1,6 +1,8 @@
 ﻿using P02_K_CONTROL_WIN;
 using P05_Business.S01_Models.Dto.Base;
+using P05_Business.S01_Models.Dto.Biz;
 using P05_Business.S02_Controllers.Base;
+using P05_Business.S02_Controllers.Biz;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -96,5 +98,52 @@ namespace P05_Business.Common.Helpers
 				cbo.Items.Clear();
 			}
 		}
+
+		/// <summary>
+		/// 제품그룹 콤보박스 초기화 설정
+		/// </summary>
+		/// <param name="cbo"></param>
+		/// <param name="delYn"></param>
+		/// <param name="allItem"></param>
+		/// <param name="blankItem"></param>
+		public static void InitComboBoxItemGroup(KComboBox cbo, bool allItem = false, bool blankItem = false)
+		{
+            try
+            {
+                cbo.Items.Clear();
+
+				ItemGroupDto param = new ItemGroupDto
+				{
+					DelYn = "N",
+					CompanyCode = LoginCompany.CompanyCode,
+				};
+
+				List<ItemGroupDto> items = new ItemMngController().GetItemGroupList(param);
+
+
+                if (allItem)
+                {
+                    items.Insert(0, new ItemGroupDto() { GroupCode = "", GroupName = "전체" });
+                }
+
+                if (blankItem)
+                {
+                    items.Insert(0, new ItemGroupDto() { GroupCode = "", GroupName = "" });
+                }
+
+                cbo.DataSource = items;
+                cbo.ValueMember = "GroupCode";
+                cbo.DisplayMember = "GroupName";
+
+				if (cbo.Items.Count > 0)
+				{
+					cbo.SelectedIndex = 0; 
+				}
+            }
+            catch
+            {
+                cbo.Items.Clear();
+            }
+        }
 	}
 }

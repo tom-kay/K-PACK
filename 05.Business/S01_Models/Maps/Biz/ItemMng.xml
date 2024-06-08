@@ -40,6 +40,10 @@
 			<IsNotEmpty Prepend="And" Property="AliasName">
 				`item`.`AliasName` Like Concat('%', @AliasName, '%')
 			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="DelYn">
+				`item`.`DelYn` = @DelYn
+			</IsNotEmpty>
+			ORDER BY `item`.`GroupName`
 		</Statement>
 
 		<Statement Id="selectItemGroup">
@@ -131,6 +135,9 @@
 			WHERE 1=1
 			AND `item`.`CompanyCode` = @CompanyCode
 			AND `item`.`GroupCode` = @GroupCode
+			<IsNotEmpty Prepend="And" Property="DelYn">
+				`item`.`DelYn` = @DelYn
+			</IsNotEmpty>
 		</Statement>
 
 		<Statement Id="selectItem">

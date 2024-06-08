@@ -395,6 +395,12 @@
     <Compile Include="S03_Views\Popup\Biz\frmCustomerPopup.Designer.cs">
       <DependentUpon>frmCustomerPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmItemFindPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmItemFindPopup.Designer.cs">
+      <DependentUpon>frmItemFindPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="S03_Views\Popup\Common\frmLoading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -881,6 +887,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Biz\frmCustomerPopup.resx">
       <DependentUpon>frmCustomerPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Common\frmItemFindPopup.resx">
+      <DependentUpon>frmItemFindPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Common\frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>

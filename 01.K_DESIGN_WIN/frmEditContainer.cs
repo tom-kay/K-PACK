@@ -1,6 +1,7 @@
 ﻿using P01_K_DESIGN_WIN.Classes;
 using P02_K_CONTROL_WIN;
 using System;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
@@ -210,6 +211,18 @@ namespace P01_K_DESIGN_WIN
                                 return false;
 							}
 						}
+						else if (c is DataGridView)
+						{
+							DataTable dt = (c as DataGridView).DataSource as DataTable;
+
+                            DataTable dtChanges = dt.GetChanges();
+
+                            if (dtChanges != null && dtChanges.Rows.Count > 0)
+                            {
+                                Debug.Print(string.Concat(c.Name, " : 변경됨"));
+                                return false;
+                            }
+                        }
 					}
 				}
 

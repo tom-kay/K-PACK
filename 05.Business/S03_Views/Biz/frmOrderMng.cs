@@ -213,9 +213,16 @@ namespace P05_Business.S03_Views.Biz
         {
             try
             {
-                //DataRow dr = (dgvList.DataSource as DataTable).NewRow();
-                //dr["OrderNo"] = txtOrderNo.Texts;
-                //(dgvList.DataSource as DataTable).Rows.Add(dr);
+                using (frmItemFindPopup popup = new frmItemFindPopup("제품 조회", null))
+                {
+                    if (popup.ShowDialog(this) == DialogResult.OK)
+                    {
+                        if (popup.ResultItems != null)
+                        {
+                            dgvList.DataSource = popup.ResultItems;
+                        }
+                    }
+                }
 
                 base.isFormChagned = true;
             }
