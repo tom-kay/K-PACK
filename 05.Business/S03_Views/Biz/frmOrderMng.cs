@@ -213,18 +213,30 @@ namespace P05_Business.S03_Views.Biz
         {
             try
             {
-                using (frmItemFindPopup popup = new frmItemFindPopup("제품 조회", null))
+                List<ItemDto> addItems = null;
+
+                //기존에 있는 아이템을 팝업으로 넘긴다.
+                List<ItemDto> listItems = dgvList.DataSource as List<ItemDto>;
+                object[] param = { listItems };
+
+                using (frmItemFindPopup popup = new frmItemFindPopup("제품 조회", param))
                 {
                     if (popup.ShowDialog(this) == DialogResult.OK)
                     {
                         if (popup.ResultItems != null)
                         {
-                            dgvList.DataSource = popup.ResultItems;
+                            addItems = popup.ResultItems;
                         }
                     }
                 }
 
-                base.isFormChagned = true;
+                // 팝업에서 받은 아이템을 그리드에 바인딩한다.
+                if (addItems != null)
+                {
+                    this.SetBindAddItems(addItems);
+
+                    base.isFormChagned = true;
+                }
             }
             catch (Exception ex)
             {
@@ -435,8 +447,27 @@ namespace P05_Business.S03_Views.Biz
             base.currentData = dtoMaster;         //원본 데이터
             base.isFormChagned = false;
         }
+
+        private void SetBindAddItems(List<ItemDto> addItems)
+        {
+            List<ItemDto> listItems = dgvList.DataSource as List<ItemDto>;
+
+            if (listItems == null) listItems = new List<ItemDto>();
+
+            foreach (ItemDto item in addItems)
+            {
+                int index = listItems.FindIndex(i => i.GroupCode == item.GroupCode && i.ItemCode == item.ItemCode);
+
+                if (index >= 0) continue;
+
+                listItems.Add(item);
+            }
+
+            dgvList.DataSource = null;
+            dgvList.DataSource = listItems;
+        }
         #endregion -- Method
 
-        
+
     }
 }

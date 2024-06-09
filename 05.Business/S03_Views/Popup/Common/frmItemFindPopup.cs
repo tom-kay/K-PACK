@@ -52,7 +52,8 @@ namespace P05_Business.S03_Views.Popup.Common
             InitGrid(dgvList);      //좌측 그리드
             InitGrid(dgvChoice);    //우측 그리드
 
-            
+            //부모화면에서 넘어온 ITEM을 dgvChoice 그리드에 바인딩 한다.
+            dgvChoice.DataSource = args[0];
         }
 
         public frmItemFindPopup(string title, object[] args, string code) : this(title, args)
@@ -101,7 +102,16 @@ namespace P05_Business.S03_Views.Popup.Common
         {
             try
             {
-                
+                if (dgvChoice.Rows.Count < 0)
+                {
+                    KMessageBox.Show("추가할 자료가 없습니다.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                ResultItems = dgvChoice.DataSource as List<ItemDto>;
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -156,6 +166,7 @@ namespace P05_Business.S03_Views.Popup.Common
                         KMessageBox.Show(msg, "중복", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         continue;
                     }
+                    dr.Remark = ""; //비고란은 비우기
                     choiceItems.Add(dr);   //기존 데이터에 신규 아이템 추가
                 }
                 dgvChoice.DataSource = null;
