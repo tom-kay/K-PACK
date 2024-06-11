@@ -1,4 +1,5 @@
 ﻿using log4net;
+using log4net.Util.TypeConverters;
 using Mysqlx.Crud;
 using P01_K_DESIGN_WIN;
 using P01_K_DESIGN_WIN.Classes;
@@ -11,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -216,7 +218,7 @@ namespace P05_Business.S03_Views.Biz
                 List<ItemDto> addItems = null;
 
                 //기존에 있는 아이템을 팝업으로 넘긴다.
-                List<ItemDto> listItems = dgvList.DataSource as List<ItemDto>;
+                List<ItemDto> listItems = DataHandles.ConvertToList<ItemDto>(dgvList.DataSource as DataTable);
                 object[] param = { listItems };
 
                 using (frmItemFindPopup popup = new frmItemFindPopup("제품 조회", param))
@@ -263,6 +265,7 @@ namespace P05_Business.S03_Views.Biz
                 if (dgvList.Rows.Count > 0)
                 {
                     DataGridViewRow row = dgvList.SelectedRows[0];
+                    
                     dgvList.Rows.RemoveAt(row.Index);
 
                     base.isFormChagned = true;
@@ -460,11 +463,19 @@ namespace P05_Business.S03_Views.Biz
 
                 if (index >= 0) continue;
 
-                listItems.Add(item);
+                DataRow addDr = DataHandles.ConvertToDataRow<ItemDto>(item);
+                DataRow newDr = (dgvList.DataSource as DataTable).NewRow();
+                newDr["OrderNo"] = txtOrderNo.Texts;
+                newDr["ItemGroupCode"] = addDr["GroupCode"];
+                newDr["ItemCode"] = addDr["ItemCode"];
+                newDr["ItemNo"] = addDr["ItemNo"];
+                newDr["SizeName"] = addDr["Size"];
+                newDr["Description"] = addDr["Description"];
+                newDr["UnitCode"] = addDr["UnitCode"];
+                (dgvList.DataSource as DataTable).Rows.Add(newDr);
             }
 
-            dgvList.DataSource = null;
-            dgvList.DataSource = listItems;
+            
         }
         #endregion -- Method
 

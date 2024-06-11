@@ -238,7 +238,49 @@ namespace P05_Business.Common
 			return dt;
 		}
 
-		public static List<T> ConvertToList<T>(DataTable dt) where T : new()
+        public static DataRow ConvertToDataRow<T>(T data, DataTable dt)
+        {
+            if (data == null || dt == null) return null;
+
+            // 새로운 DataRow 객체를 생성합니다.
+            DataRow row = dt.NewRow();
+
+            // T 객체의 프로퍼티 값을 DataRow에 설정합니다.
+            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
+            foreach (PropertyDescriptor prop in properties)
+                row[prop.Name] = prop.GetValue(data) ?? DBNull.Value;
+
+            // 생성된 DataRow를 반환합니다.
+            return row;
+        }
+
+
+        public static DataRow ConvertToDataRow<T>(T data)
+        {
+            if (data == null) return null;
+
+            // 새로운 DataTable을 생성합니다.
+            DataTable dt = new DataTable();
+            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
+            foreach (PropertyDescriptor prop in properties)
+                dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+
+            // 새로운 DataRow 객체를 생성합니다.
+            DataRow row = dt.NewRow();
+
+            // T 객체의 프로퍼티 값을 DataRow에 설정합니다.
+            foreach (PropertyDescriptor prop in properties)
+                row[prop.Name] = prop.GetValue(data) ?? DBNull.Value;
+
+            // 생성된 DataRow를 반환하기 전에 DataTable에 추가합니다.
+            dt.Rows.Add(row);
+
+            // 생성된 DataRow를 반환합니다.
+            return row;
+        }
+
+
+        public static List<T> ConvertToList<T>(DataTable dt) where T : new()
 		{
 			if (dt == null) return null;
 
