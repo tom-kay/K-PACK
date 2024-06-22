@@ -7,6 +7,7 @@ using P05_Business.Common;
 using P05_Business.Common.Helpers;
 using P05_Business.S01_Models.Dto.Biz;
 using P05_Business.S02_Controllers.Biz;
+using P05_Business.S03_Views.Popup.Biz;
 using P05_Business.S03_Views.Popup.Common;
 using System;
 using System.Collections.Generic;
@@ -307,7 +308,11 @@ namespace P05_Business.S03_Views.Biz
                 //그리드 바인딩
                 dtoDetails = dtoMaster.Details;
 
-                dgvList.DataSource = dtoDetails;
+                if (dtoDetails != null)
+                {
+                    dgvList.DataSource = DataHandles.ConvertToDataTable<OrderDetailDto>(dtoDetails);
+                    (dgvList.DataSource as DataTable).AcceptChanges();
+                }
             }
             else
             {
@@ -431,7 +436,7 @@ namespace P05_Business.S03_Views.Biz
             UserDataGrid.AddTextBoxColumn(dgvList, "ItemNo", "제품번호", true, true, 100, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 20);
             UserDataGrid.AddTextBoxColumn(dgvList, "SizeName", "사이즈", true, true, 250, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 100);
             UserDataGrid.AddTextBoxColumn(dgvList, "Description", "설명", true, true, 250, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 200);
-            UserDataGrid.AddTextBoxColumn(dgvList, "Qty", "수량", false, true, 80, DataGridViewContentAlignment.MiddleRight, maxInputLength: 18);
+            UserDataGrid.AddTextBoxColumn(dgvList, "Qty", "수량", false, true, 80, DataGridViewContentAlignment.MiddleRight, maxInputLength: 18, format: "N2", nullValue:0);
             UserDataGrid.AddComboBoxColumn(dgvList, "UnitCode", "단위", false, true, 100, DataGridViewContentAlignment.MiddleCenter);
             UserDataGrid.AddTextBoxColumn(dgvList, "MarkingColor", "마킹컬러", false, true, 100, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 50);
             UserDataGrid.AddTextBoxColumn(dgvList, "Remark", "비고", false, true, 300, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 255);
@@ -475,7 +480,6 @@ namespace P05_Business.S03_Views.Biz
                 (dgvList.DataSource as DataTable).Rows.Add(newDr);
             }
 
-            
         }
         #endregion -- Method
 

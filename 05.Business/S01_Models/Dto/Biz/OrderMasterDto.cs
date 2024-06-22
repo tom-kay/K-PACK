@@ -18,6 +18,8 @@ namespace P05_Business.S01_Models.Dto.Biz
         [StringLength(10)]
         public string BuyerCustCode { get; set; } // 바이어코드
 
+        public string BuyerCustName { get; set; } // 바이어명
+
         [StringLength(50)]
         public string BuyerPoNo { get; set; } // 바이버주문번호
 

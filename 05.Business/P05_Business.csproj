@@ -43,6 +43,18 @@
     <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="FarPoint.CalcEngine, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Excel, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Localization, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.PDF, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.PluginCalendar.WinForms, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Win, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Win.Chart, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Win.Spread, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL" />
+    <Reference Include="GrapeCity.CalcEngine, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="GrapeCity.Spreadsheet, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="GrapeCity.Spreadsheet.Win, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="GrapeCity.Win.PluginInputMan, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL" />
     <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
     </Reference>
@@ -395,10 +407,10 @@
     <Compile Include="S03_Views\Popup\Biz\frmCustomerPopup.Designer.cs">
       <DependentUpon>frmCustomerPopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="S03_Views\Popup\Common\frmItemFindPopup.cs">
+    <Compile Include="S03_Views\Popup\Biz\frmItemFindPopup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="S03_Views\Popup\Common\frmItemFindPopup.Designer.cs">
+    <Compile Include="S03_Views\Popup\Biz\frmItemFindPopup.Designer.cs">
       <DependentUpon>frmItemFindPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="S03_Views\Popup\Common\frmLoading.cs">
@@ -825,6 +837,7 @@
     <Content Include="Resource\Images\windows_windows.png" />
     <Content Include="Resource\Images\yuan_yuan_currency_blue_blue_currency.png" />
     <Content Include="Resource\k_icon.ico" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="S01_Models\Maps\Base\MenuMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -888,7 +901,7 @@
     <EmbeddedResource Include="S03_Views\Popup\Biz\frmCustomerPopup.resx">
       <DependentUpon>frmCustomerPopup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="S03_Views\Popup\Common\frmItemFindPopup.resx">
+    <EmbeddedResource Include="S03_Views\Popup\Biz\frmItemFindPopup.resx">
       <DependentUpon>frmItemFindPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Common\frmLoading.resx">

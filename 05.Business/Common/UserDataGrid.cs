@@ -1,4 +1,5 @@
-﻿using P05_Business.S01_Models.Dto.Base;
+﻿using FarPoint.Win;
+using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
 using System.Collections.Generic;
@@ -89,28 +90,29 @@ namespace P05_Business.Common
 		/// <param name="alignment">컬럼 정렬 설정</param>
 		public static void AddTextBoxColumn(DataGridView dataGrid
 			, string name, string headerText, bool readOnly, bool visible, int columnWidth
-			, DataGridViewContentAlignment alignment, TextType textType = TextType.None, Int16 maxInputLength = Int16.MaxValue, string format = "")
+			, DataGridViewContentAlignment alignment, TextType textType = TextType.None, Int16 maxInputLength = Int16.MaxValue, string format = "", object nullValue = null)
 		{
 			DataGridViewTextBoxColumn text = new DataGridViewTextBoxColumn();
 
 			text.MaxInputLength = maxInputLength;
 			text.DefaultCellStyle.Format = format;
+			text.DefaultCellStyle.NullValue = nullValue;
 
 			dataGrid.Columns.Add(SetGridCommonOption(text, name, headerText, readOnly, visible, columnWidth, alignment, textType));
 
 		}
 
-		/// <summary>
-		/// 콤보박스 컬럼 추가
-		/// </summary>
-		/// <param name="dataGrid">DataGridView</param>
-		/// <param name="name">컬럼명</param>
-		/// <param name="headerText">컬럼헤더 텍스트</param>
-		/// <param name="readOnly">컬럼 읽기 전용 설정</param>
-		/// <param name="visible">컬럼 노출 설정</param>
-		/// <param name="columnWidth">컬럼 넓이 설정</param>
-		/// <param name="alignment">컬럼 정렬 설정</param>
-		public static void AddComboBoxColumn(DataGridView dataGrid
+        /// <summary>
+        /// 콤보박스 컬럼 추가
+        /// </summary>
+        /// <param name="dataGrid">DataGridView</param>
+        /// <param name="name">컬럼명</param>
+        /// <param name="headerText">컬럼헤더 텍스트</param>
+        /// <param name="readOnly">컬럼 읽기 전용 설정</param>
+        /// <param name="visible">컬럼 노출 설정</param>
+        /// <param name="columnWidth">컬럼 넓이 설정</param>
+        /// <param name="alignment">컬럼 정렬 설정</param>
+        public static void AddComboBoxColumn(DataGridView dataGrid
 			, string name, string headerText, bool readOnly, bool visible, int columnWidth
 			, DataGridViewContentAlignment alignment)
 		{
@@ -245,8 +247,8 @@ namespace P05_Business.Common
 		}
 
         internal static DataTable GetAllData(DataGridView grid)
-        {   
-            return (grid.DataSource as DataTable);
+        {
+			return (grid.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted | DataRowState.Unchanged);
         }
 
         internal static DataTable GetChangeAll(DataGridView grid)
@@ -314,4 +316,5 @@ namespace P05_Business.Common
             }
         }
     }
+
 }

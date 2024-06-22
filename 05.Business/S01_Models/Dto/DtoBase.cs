@@ -1,6 +1,8 @@
 ﻿using P05_Business.Common;
 using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 
 namespace P05_Business.S01_Models.Dto
 {
@@ -22,8 +24,10 @@ namespace P05_Business.S01_Models.Dto
 		public string DeleteId { get; set; } = LoginUserInfo.UserId;
 		[Display(Name = "삭제일자")]
 		public DateTime? DeleteDt { get; set; }
+        [Description("데이터상태값")]
+        public DataRowState? DataState { get; set; }
 
-		public object Clone()
+        public object Clone()
 		{	
 			return this.MemberwiseClone();
 		}

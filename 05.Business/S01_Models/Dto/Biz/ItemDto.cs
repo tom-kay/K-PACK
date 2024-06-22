@@ -30,8 +30,7 @@ namespace P05_Business.S01_Models.Dto.Biz
         public string UnitName { get; set; }
         [Description("비고")]
         public string Remark { get; set; }
-        [Description("데이터상태값")]
-        public DataRowState? DataState { get; set; }
+        
 
     }
 }

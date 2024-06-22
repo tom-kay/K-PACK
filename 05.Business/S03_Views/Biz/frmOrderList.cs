@@ -191,6 +191,9 @@ namespace P05_Business.S03_Views.Biz
 
             cnbBuyer.AddParams = new object[] { "S" };
             cnbWork.AddParams = new object[] { "B", "P" };
+
+            pdbDate.DateFromValue = DateTime.Now.AddYears(-1).ToString();
+            pdbDate.DateToValue = DateTime.Now.ToString();
         }
 
         #endregion -- Methods

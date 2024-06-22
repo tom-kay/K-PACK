@@ -187,6 +187,7 @@
 			`ord`.`OrderNo` = @OrderNo
 			AND `ord`.`CompanyCode` = @CompanyCode
 			AND `ord`.`DelYn` = 'N'
+			ORDER BY `ord`.`ItemGroupCode`, `ord`.`ItemCode`
 		</Statement>
 
 		<!-- 주문 상세 조회 -->
@@ -237,7 +238,7 @@
 			VALUES
 			(
 			@OrderNo,
-			CreateOrderDetailId(@OrderNo, @CompanyCode, @DetailId),
+			FN_CreateOrderDetailId(@OrderNo, @CompanyCode, @DetailId),
 			@ItemGroupCode,
 			@ItemCode,
 			@SeqNo,
@@ -256,7 +257,7 @@
 			ON DUPLICATE KEY UPDATE
 			`SeqNo` = @SeqNo,
 			`ItemNo` = @ItemNo,
-			`SizeName` = @SizeName
+			`SizeName` = @SizeName,
 			`Description` = @Description,
 			`Qty` = @Qty,
 			`UnitCode` = @UnitCode,

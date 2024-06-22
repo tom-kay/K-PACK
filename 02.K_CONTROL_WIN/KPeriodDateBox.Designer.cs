@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFromCalendar = new P02_K_CONTROL_WIN.KButtonCalendar();
             this.lblFromDate = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblToDate = new System.Windows.Forms.Label();
             this.btnToCalendar = new P02_K_CONTROL_WIN.KButtonCalendar();
-            this.btnFromCalendar = new P02_K_CONTROL_WIN.KButtonCalendar();
+            this.lblToDate = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -50,6 +50,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(122, 22);
             this.panel1.TabIndex = 12;
+            // 
+            // btnFromCalendar
+            // 
+            this.btnFromCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFromCalendar.BackgroundImage = global::P02_K_CONTROL_WIN.Properties.Resources.may_2009_event_calendar_may_2009_event_calendar;
+            this.btnFromCalendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFromCalendar.FlatAppearance.BorderSize = 0;
+            this.btnFromCalendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFromCalendar.Location = new System.Drawing.Point(100, 0);
+            this.btnFromCalendar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnFromCalendar.Name = "btnFromCalendar";
+            this.btnFromCalendar.Size = new System.Drawing.Size(22, 22);
+            this.btnFromCalendar.TabIndex = 15;
+            this.btnFromCalendar.Tag = "lblFromDate";
+            this.btnFromCalendar.UseVisualStyleBackColor = true;
             // 
             // lblFromDate
             // 
@@ -78,12 +93,14 @@
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGray;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 22);
             this.label1.TabIndex = 0;
             this.label1.Tag = "NONE";
-            this.label1.Text = "─";
+            this.label1.Text = "~";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel3
@@ -96,21 +113,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(122, 22);
             this.panel3.TabIndex = 14;
-            // 
-            // lblToDate
-            // 
-            this.lblToDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblToDate.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToDate.Location = new System.Drawing.Point(0, 0);
-            this.lblToDate.Margin = new System.Windows.Forms.Padding(0);
-            this.lblToDate.Name = "lblToDate";
-            this.lblToDate.Size = new System.Drawing.Size(100, 22);
-            this.lblToDate.TabIndex = 14;
-            this.lblToDate.Tag = "NONE";
-            this.lblToDate.Text = "9999-99-99";
-            this.lblToDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblToDate.TextChanged += new System.EventHandler(this.lblToDate_TextChanged);
             // 
             // btnToCalendar
             // 
@@ -127,20 +129,20 @@
             this.btnToCalendar.Tag = "lblToDate";
             this.btnToCalendar.UseVisualStyleBackColor = true;
             // 
-            // btnFromCalendar
+            // lblToDate
             // 
-            this.btnFromCalendar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFromCalendar.BackgroundImage = global::P02_K_CONTROL_WIN.Properties.Resources.may_2009_event_calendar_may_2009_event_calendar;
-            this.btnFromCalendar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFromCalendar.FlatAppearance.BorderSize = 0;
-            this.btnFromCalendar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFromCalendar.Location = new System.Drawing.Point(100, 0);
-            this.btnFromCalendar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnFromCalendar.Name = "btnFromCalendar";
-            this.btnFromCalendar.Size = new System.Drawing.Size(22, 22);
-            this.btnFromCalendar.TabIndex = 15;
-            this.btnFromCalendar.Tag = "lblFromDate";
-            this.btnFromCalendar.UseVisualStyleBackColor = true;
+            this.lblToDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblToDate.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToDate.Location = new System.Drawing.Point(0, 0);
+            this.lblToDate.Margin = new System.Windows.Forms.Padding(0);
+            this.lblToDate.Name = "lblToDate";
+            this.lblToDate.Size = new System.Drawing.Size(100, 22);
+            this.lblToDate.TabIndex = 14;
+            this.lblToDate.Tag = "NONE";
+            this.lblToDate.Text = "9999-99-99";
+            this.lblToDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblToDate.TextChanged += new System.EventHandler(this.lblToDate_TextChanged);
             // 
             // KPeriodDateBox
             // 
