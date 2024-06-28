@@ -19,6 +19,6 @@ F:\workspace\K-PACK\03.Framework\bin\Debug\HtmlAgilityPack.xml
 F:\workspace\K-PACK\03.Framework\bin\Debug\log4net.xml
 F:\workspace\K-PACK\03.Framework\obj\Debug\P03_Framework.csproj.AssemblyReference.cache
 F:\workspace\K-PACK\03.Framework\obj\Debug\P03_Framework.csproj.CoreCompileInputs.cache
-F:\workspace\K-PACK\03.Framework\obj\Debug\P03_Framework.csproj.CopyComplete
 F:\workspace\K-PACK\03.Framework\obj\Debug\P03_Framework.dll
 F:\workspace\K-PACK\03.Framework\obj\Debug\P03_Framework.pdb
+F:\workspace\K-PACK\03.Framework\obj\Debug\P03_Fram.AB0B56A1.Up2Date

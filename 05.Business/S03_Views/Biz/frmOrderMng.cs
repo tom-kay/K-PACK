@@ -1,4 +1,5 @@
-﻿using log4net;
+﻿using FarPoint.Win;
+using log4net;
 using log4net.Util.TypeConverters;
 using Mysqlx.Crud;
 using P01_K_DESIGN_WIN;
@@ -9,6 +10,8 @@ using P05_Business.S01_Models.Dto.Biz;
 using P05_Business.S02_Controllers.Biz;
 using P05_Business.S03_Views.Popup.Biz;
 using P05_Business.S03_Views.Popup.Common;
+using P05_Business.S04_Reports.Xsd;
+using P05_Business.S04_Reports.Xsd.OrderDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -81,6 +84,27 @@ namespace P05_Business.S03_Views.Biz
             try
             {
                 InitControls();
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 데이터 조회
+
+
+                // 레포트 출력
+                OrderDataSet orderDataSet = new OrderDataSet();
+                orderDataSet.Tables.Add();
+
+                PurchaseOrderReport
+
+
             }
             catch (Exception ex)
             {
@@ -481,8 +505,9 @@ namespace P05_Business.S03_Views.Biz
             }
 
         }
+
         #endregion -- Method
 
-
+        
     }
 }

@@ -93,6 +93,12 @@
     <Compile Include="frmMdiContainer.Designer.cs">
       <DependentUpon>frmMdiContainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBlank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBlank.Designer.cs">
+      <DependentUpon>frmBlank.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPopupFrame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMdiContainer.resx">
       <DependentUpon>frmMdiContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBlank.resx">
+      <DependentUpon>frmBlank.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPopupFrame.resx">
       <DependentUpon>frmPopupFrame.cs</DependentUpon>

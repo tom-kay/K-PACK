@@ -61,6 +61,7 @@ F:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.frmSearchContaine
 F:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.Properties.Resources.resources
 F:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.csproj.GenerateResource.cache
 F:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.csproj.CoreCompileInputs.cache
-F:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.csproj.CopyComplete
 F:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.dll
 F:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.pdb
+F:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.frmBlank.resources
+F:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DE.5A9BE153.Up2Date

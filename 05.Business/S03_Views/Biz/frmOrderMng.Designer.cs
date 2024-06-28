@@ -147,6 +147,7 @@
             // btnPrint
             // 
             this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnSave
             // 
@@ -326,7 +327,7 @@
             this.pageTAC.HorizontalScrollbarSize = 0;
             this.pageTAC.Location = new System.Drawing.Point(4, 38);
             this.pageTAC.Name = "pageTAC";
-            this.pageTAC.Size = new System.Drawing.Size(792, 257);
+            this.pageTAC.Size = new System.Drawing.Size(1000, 425);
             this.pageTAC.TabIndex = 1;
             this.pageTAC.Text = "TERMS AND CONDITIONS";
             this.pageTAC.VerticalScrollbarBarColor = false;
@@ -343,7 +344,7 @@
             this.pnlTAC.HorizontalScrollbarSize = 0;
             this.pnlTAC.Location = new System.Drawing.Point(0, 0);
             this.pnlTAC.Name = "pnlTAC";
-            this.pnlTAC.Size = new System.Drawing.Size(790, 255);
+            this.pnlTAC.Size = new System.Drawing.Size(998, 423);
             this.pnlTAC.TabIndex = 2;
             this.pnlTAC.VerticalScrollbarBarColor = false;
             this.pnlTAC.VerticalScrollbarHighlightOnWheel = false;
@@ -360,7 +361,7 @@
             this.pnlTACBody.Location = new System.Drawing.Point(0, 35);
             this.pnlTACBody.Name = "pnlTACBody";
             this.pnlTACBody.Padding = new System.Windows.Forms.Padding(3);
-            this.pnlTACBody.Size = new System.Drawing.Size(790, 220);
+            this.pnlTACBody.Size = new System.Drawing.Size(998, 388);
             this.pnlTACBody.TabIndex = 3;
             this.pnlTACBody.VerticalScrollbarBarColor = true;
             this.pnlTACBody.VerticalScrollbarHighlightOnWheel = false;
@@ -387,7 +388,7 @@
             this.txtTAC.PlaceholderText = "";
             this.txtTAC.ReadOnly = false;
             this.txtTAC.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtTAC.Size = new System.Drawing.Size(782, 212);
+            this.txtTAC.Size = new System.Drawing.Size(990, 380);
             this.txtTAC.TabIndex = 2;
             this.txtTAC.Tag = "TermsAndConditions";
             this.txtTAC.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -405,7 +406,7 @@
             this.pnlTACHead.Location = new System.Drawing.Point(0, 0);
             this.pnlTACHead.Name = "pnlTACHead";
             this.pnlTACHead.Padding = new System.Windows.Forms.Padding(6);
-            this.pnlTACHead.Size = new System.Drawing.Size(790, 35);
+            this.pnlTACHead.Size = new System.Drawing.Size(998, 35);
             this.pnlTACHead.TabIndex = 2;
             this.pnlTACHead.VerticalScrollbarBarColor = true;
             this.pnlTACHead.VerticalScrollbarHighlightOnWheel = false;
@@ -424,7 +425,7 @@
             this.btnLoadTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadTemplate.ForeColor = System.Drawing.Color.White;
             this.btnLoadTemplate.Image = global::P05_Business.Properties.Resources.inbox_inbox;
-            this.btnLoadTemplate.Location = new System.Drawing.Point(674, 6);
+            this.btnLoadTemplate.Location = new System.Drawing.Point(882, 6);
             this.btnLoadTemplate.Name = "btnLoadTemplate";
             this.btnLoadTemplate.Size = new System.Drawing.Size(110, 23);
             this.btnLoadTemplate.TabIndex = 2;
@@ -443,7 +444,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
@@ -504,7 +505,7 @@
             this.panel2.Location = new System.Drawing.Point(122, 1);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(394, 35);
+            this.panel2.Size = new System.Drawing.Size(393, 35);
             this.panel2.TabIndex = 1;
             // 
             // txtOrderNo
@@ -528,7 +529,7 @@
             this.txtOrderNo.PlaceholderText = "";
             this.txtOrderNo.ReadOnly = false;
             this.txtOrderNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtOrderNo.Size = new System.Drawing.Size(387, 22);
+            this.txtOrderNo.Size = new System.Drawing.Size(386, 22);
             this.txtOrderNo.TabIndex = 3;
             this.txtOrderNo.Tag = "OrderNo";
             this.txtOrderNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -540,7 +541,7 @@
             // 
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(520, 4);
+            this.panel3.Location = new System.Drawing.Point(519, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(114, 29);
             this.panel3.TabIndex = 2;
@@ -562,16 +563,16 @@
             // 
             this.panel4.Controls.Add(this.dtbOrderDt);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(638, 1);
+            this.panel4.Location = new System.Drawing.Point(637, 1);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(161, 35);
+            this.panel4.Size = new System.Drawing.Size(162, 35);
             this.panel4.TabIndex = 3;
             // 
             // dtbOrderDt
             // 
             this.dtbOrderDt.BackColor = System.Drawing.Color.White;
-            this.dtbOrderDt.DateValue = "2024-06-23";
+            this.dtbOrderDt.DateValue = "2024-06-25";
             this.dtbOrderDt.Location = new System.Drawing.Point(3, 6);
             this.dtbOrderDt.MaximumSize = new System.Drawing.Size(122, 22);
             this.dtbOrderDt.MinimumSize = new System.Drawing.Size(122, 22);
@@ -609,7 +610,7 @@
             this.panel6.Location = new System.Drawing.Point(122, 37);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(394, 35);
+            this.panel6.Size = new System.Drawing.Size(393, 35);
             this.panel6.TabIndex = 5;
             // 
             // cnbWorker
@@ -627,7 +628,7 @@
             this.cnbWorker.Name = "cnbWorker";
             this.cnbWorker.Namespace = "P05_Business.S03_Views.Popup.Biz";
             this.cnbWorker.NameValue = "";
-            this.cnbWorker.Size = new System.Drawing.Size(387, 29);
+            this.cnbWorker.Size = new System.Drawing.Size(386, 29);
             this.cnbWorker.TabIndex = 0;
             this.cnbWorker.Tag = "WorkCustCode|WorkCustName";
             // 
@@ -635,7 +636,7 @@
             // 
             this.panel7.Controls.Add(this.label4);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(520, 40);
+            this.panel7.Location = new System.Drawing.Point(519, 40);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(114, 29);
             this.panel7.TabIndex = 6;
@@ -657,16 +658,16 @@
             // 
             this.panel8.Controls.Add(this.dtbExWorkDt);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(638, 37);
+            this.panel8.Location = new System.Drawing.Point(637, 37);
             this.panel8.Margin = new System.Windows.Forms.Padding(0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(161, 35);
+            this.panel8.Size = new System.Drawing.Size(162, 35);
             this.panel8.TabIndex = 7;
             // 
             // dtbExWorkDt
             // 
             this.dtbExWorkDt.BackColor = System.Drawing.Color.White;
-            this.dtbExWorkDt.DateValue = "2024-06-23";
+            this.dtbExWorkDt.DateValue = "2024-06-25";
             this.dtbExWorkDt.Location = new System.Drawing.Point(3, 6);
             this.dtbExWorkDt.MaximumSize = new System.Drawing.Size(122, 22);
             this.dtbExWorkDt.MinimumSize = new System.Drawing.Size(122, 22);
@@ -704,7 +705,7 @@
             this.panel10.Location = new System.Drawing.Point(122, 73);
             this.panel10.Margin = new System.Windows.Forms.Padding(0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(394, 35);
+            this.panel10.Size = new System.Drawing.Size(393, 35);
             this.panel10.TabIndex = 9;
             // 
             // txtPoNo
@@ -728,7 +729,7 @@
             this.txtPoNo.PlaceholderText = "";
             this.txtPoNo.ReadOnly = false;
             this.txtPoNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtPoNo.Size = new System.Drawing.Size(387, 22);
+            this.txtPoNo.Size = new System.Drawing.Size(386, 22);
             this.txtPoNo.TabIndex = 4;
             this.txtPoNo.Tag = "BuyerPoNo";
             this.txtPoNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -740,7 +741,7 @@
             // 
             this.panel11.Controls.Add(this.label6);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(520, 76);
+            this.panel11.Location = new System.Drawing.Point(519, 76);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(114, 29);
             this.panel11.TabIndex = 10;
@@ -762,16 +763,16 @@
             // 
             this.panel12.Controls.Add(this.dtbDueDt);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(638, 73);
+            this.panel12.Location = new System.Drawing.Point(637, 73);
             this.panel12.Margin = new System.Windows.Forms.Padding(0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(161, 35);
+            this.panel12.Size = new System.Drawing.Size(162, 35);
             this.panel12.TabIndex = 11;
             // 
             // dtbDueDt
             // 
             this.dtbDueDt.BackColor = System.Drawing.Color.White;
-            this.dtbDueDt.DateValue = "2024-06-23";
+            this.dtbDueDt.DateValue = "2024-06-25";
             this.dtbDueDt.Location = new System.Drawing.Point(3, 6);
             this.dtbDueDt.MaximumSize = new System.Drawing.Size(122, 22);
             this.dtbDueDt.MinimumSize = new System.Drawing.Size(122, 22);
