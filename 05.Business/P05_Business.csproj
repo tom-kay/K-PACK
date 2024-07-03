@@ -373,6 +373,20 @@
     <Compile Include="Common\UserDataGrid.cs" />
     <Compile Include="Common\GlobalVariables.cs" />
     <Compile Include="Common\MainMessage.cs" />
+    <Compile Include="S04_Reports\Rpt\rptOrderDucu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptOrderDucu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="S04_Reports\Xsd\OrderDs.cs">
+      <DependentUpon>OrderDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="S04_Reports\Xsd\OrderDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDs.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1077,6 +1091,21 @@
     <EmbeddedResource Include="S04_Reports\frmReportMain.resx">
       <DependentUpon>frmReportMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="S04_Reports\Rpt\rptOrderDucu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOrderDucu.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="S04_Reports\Xsd\OrderDs.xsc">
+      <DependentUpon>OrderDs.xsd</DependentUpon>
+    </None>
+    <None Include="S04_Reports\Xsd\OrderDs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrderDs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="S04_Reports\Xsd\OrderDs.xss">
+      <DependentUpon>OrderDs.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -1141,9 +1170,9 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="S04_Reports\Rpt\" />
-    <Folder Include="S04_Reports\Xsd\" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

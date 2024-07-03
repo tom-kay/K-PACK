@@ -1,7 +1,4 @@
-﻿using FarPoint.Win;
-using log4net;
-using log4net.Util.TypeConverters;
-using Mysqlx.Crud;
+﻿using log4net;
 using P01_K_DESIGN_WIN;
 using P01_K_DESIGN_WIN.Classes;
 using P05_Business.Common;
@@ -10,13 +7,14 @@ using P05_Business.S01_Models.Dto.Biz;
 using P05_Business.S02_Controllers.Biz;
 using P05_Business.S03_Views.Popup.Biz;
 using P05_Business.S03_Views.Popup.Common;
+using P05_Business.S04_Reports;
+using P05_Business.S04_Reports.Rpt;
 using P05_Business.S04_Reports.Xsd;
-using P05_Business.S04_Reports.Xsd.OrderDataSetTableAdapters;
+using P05_Business.S04_Reports.Xsd.OrderDsTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
@@ -44,7 +42,7 @@ namespace P05_Business.S03_Views.Biz
             dtoMaster = new OrderMasterDto();
             dtoDetails = new List<OrderDetailDto>();
 
-            Set_Menu_Button(new EditButtonSettings { isPrint = false, isSearch = false });
+            Set_Menu_Button(new EditButtonSettings { isSearch = false });
 
             _MODE = SAVE_MODE.New;
 
@@ -96,14 +94,41 @@ namespace P05_Business.S03_Views.Biz
             try
             {
                 // 데이터 조회
+                //OrderMasterDto param = new OrderMasterDto
+                //{
+                //    OrderNo = txtOrderNo.Texts.Trim(),
+                //    CompanyCode = LoginCompany.CompanyCode,
+                //};
 
+                //DataTable dt = ctrl.GetReportOrderData(param);
+                //dt.TableName = "PR_PurchaseOrderReport";
 
-                // 레포트 출력
-                OrderDataSet orderDataSet = new OrderDataSet();
-                orderDataSet.Tables.Add();
+                DataTable dt = DataHandles.ConvertToDataTable(dtoDetails);
+                dt.TableName = "OrderDt";
 
-                PurchaseOrderReport
+                dt.Columns.Add("WorkCustName", typeof(string));
+                dt.Rows[0]["WorkCustName"] = "우리집";
+                dt.Rows[1]["WorkCustName"] = "우리집";
 
+                DataTable dtCom = new DataTable();
+                dtCom.Columns.Add("CompanyAddr1", typeof(string));
+                DataRow dr = dtCom.NewRow();
+                dr["CompanyAddr1"] = "회사주소야";
+                dtCom.Rows.Add(dr);
+                dtCom.TableName = "CompanyInfo";
+
+                DataSet ds = new DataSet();
+                ds.Tables.Add(dt);
+                ds.Tables.Add(dtCom);
+
+                rptOrderDucu rpt = new rptOrderDucu();
+                rpt.SetDataSource(ds);
+
+                frmReportMain frmReport = new frmReportMain();
+                frmReport.reportViewer.ReportSource = rpt;
+                frmReport.reportViewer.RefreshReport();
+
+                frmReport.ShowDialog(this);
 
             }
             catch (Exception ex)

@@ -1,9 +1,11 @@
-﻿using log4net;
+﻿using Dapper;
+using log4net;
 using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Biz;
 using SmartSql.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 
@@ -154,6 +156,22 @@ namespace P05_Business.S01_Models.Dao.Biz
             List<OrderDetailDto> orders = SqlMapper.Query<OrderDetailDto>(context).ToList();
 
             return orders;
+        }
+
+        internal DataTable SelectReportOrderData(OrderMasterDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "Biz.OrderMng",
+                SqlId = "selectReportOrderData",
+                Request = param
+            };
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+
+            List<OrderDetailDto> datas = SqlMapper.Query<OrderDetailDto>(context).ToList();
+
+
+            return null;
         }
     }
 }

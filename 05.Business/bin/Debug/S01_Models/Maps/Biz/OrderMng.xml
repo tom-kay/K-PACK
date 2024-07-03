@@ -282,6 +282,10 @@
 			AND `ord`.`DetailId` = @DetailId
 			AND `ord`.`CompanyCode` = @CompanyCode
 		</Statement>
+
+		<Statement Id="selectReportOrderData" resultType="DataTable">
+			CALL PR_PurchaseOrderReport(@OrderNo)
+		</Statement>
 	</Statements>
 </SmartSqlMap>
 

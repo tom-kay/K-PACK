@@ -5,6 +5,7 @@ using P05_Business.S01_Models.Dto.Biz;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -71,5 +72,11 @@ namespace P05_Business.S02_Controllers.Biz
             return isDelete;
         }
 
+        internal DataTable GetReportOrderData(OrderMasterDto param)
+        {
+            DataTable dt = dao.SelectReportOrderData(param);
+
+            return dt;
+        }
     }
 }
