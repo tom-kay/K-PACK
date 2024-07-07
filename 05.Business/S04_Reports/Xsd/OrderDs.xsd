@@ -9,53 +9,60 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrderDtTableAdapter" GeneratorDataComponentClassName="OrderDtTableAdapter" Name="OrderDt" UserDataComponentName="OrderDtTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="soodalConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="soodalConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="false" Modifier="Public" Name="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT pm.OrderNo
-	, pm.RegDt
-	, pm.ExWorkDt
-	, pm.BuyerCustCode
-    , cust1.CustName as BuyerCustName
-	, pm.BuyerPoNo
-	, pm.DueDt
-	, pm.OrderDt
-	, pm.WorkCustCode
-    , cust2.CustName as WorkCustName
-    , cust2.Address1 as WorkAddr1
-    , cust2.Address2 as WorkAddr2
-    , cust2.TelNo as WorkTelNo
-    , cust2.FaxNo as WorkFaxNo
-	, pm.`Description` as OrderDesc
-	, pm.TermsAndConditions
-	, pd.DetailId
-	, pd.ItemGroupCode
-    , tg.GroupName as ItemGroupName
-	, pd.ItemCode
-	, pd.SeqNo
-	, pd.ItemNo
-	, pd.SizeName
-	, pd.`Description` as ItemDesc
-	, pd.Qty
-	, pd.UnitCode
-	, pd.MarkingColor
-FROM tb_pomaster pm
-	left join tb_podetail pd
-    on pm.orderno = pd.orderno
-		and pm.CompanyCode = pd.CompanyCode
-    left join tb_item td
-    on td.GroupCode = pd.ItemGroupCode
-		and td.ItemCode = pd.ItemCode
-		and td.CompanyCode = pd.CompanyCode
-    left join tb_itemgroup tg
-    on tg.GroupCode = td.GroupCode
-		and tg.CompanyCode = td.CompanyCode
-	left join tb_customer cust1
-    on cust1.CustCode = pm.BuyerCustCode
-		and cust1.CompanyCode = pm.CompanyCode
-	left join tb_customer cust2
-	on cust2.CustCode = pm.WorkCustCode
-		and cust2.CompanyCode = pm.CompanyCode</CommandText>
+                    <CommandText>SELECT 
+    pm.OrderNo,
+    pm.RegDt,
+    pm.ExWorkDt,
+    pm.BuyerCustCode,
+    cust1.CustName AS BuyerCustName,
+    pm.BuyerPoNo,
+    pm.DueDt,
+    pm.OrderDt,
+    pm.WorkCustCode,
+    cust2.CustName AS WorkCustName,
+    cust2.Address1 AS WorkAddr1,
+    cust2.Address2 AS WorkAddr2,
+    cust2.TelNo AS WorkTelNo,
+    cust2.FaxNo AS WorkFaxNo,
+    pm.Description AS OrderDesc,
+    pm.TermsAndConditions,
+    pd.DetailId,
+    pd.ItemGroupCode,
+    tg.GroupName AS ItemGroupName,
+    pd.ItemCode,
+    pd.SeqNo,
+    pd.ItemNo,
+    pd.SizeName,
+    pd.Description AS ItemDesc,
+    pd.Qty,
+    pd.UnitCode,
+    cd1.Option1 AS UnitName,
+    pd.MarkingColor
+FROM
+    tb_pomaster pm
+        LEFT OUTER JOIN
+    tb_podetail pd ON pm.OrderNo = pd.OrderNo
+        AND pm.CompanyCode = pd.CompanyCode
+        LEFT OUTER JOIN
+    tb_item td ON td.GroupCode = pd.ItemGroupCode
+        AND td.ItemCode = pd.ItemCode
+        AND td.CompanyCode = pd.CompanyCode
+        LEFT OUTER JOIN
+    tb_itemgroup tg ON tg.GroupCode = td.GroupCode
+        AND tg.CompanyCode = td.CompanyCode
+        LEFT OUTER JOIN
+    tb_customer cust1 ON cust1.CustCode = pm.BuyerCustCode
+        AND cust1.CompanyCode = pm.CompanyCode
+        LEFT OUTER JOIN
+    tb_customer cust2 ON cust2.CustCode = pm.WorkCustCode
+        AND cust2.CompanyCode = pm.CompanyCode
+        LEFT OUTER JOIN
+	tb_codedetail cd1 ON cd1.MasterCode = 'ITEMUNIT'
+		AND cd1.`Code` = pd.UnitCode
+</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -89,6 +96,7 @@ FROM tb_pomaster pm
               <Mapping SourceColumn="WorkAddr2" DataSetColumn="WorkAddr2" />
               <Mapping SourceColumn="WorkTelNo" DataSetColumn="WorkTelNo" />
               <Mapping SourceColumn="WorkFaxNo" DataSetColumn="WorkFaxNo" />
+              <Mapping SourceColumn="UnitName" DataSetColumn="UnitName" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -126,21 +134,37 @@ FROM tb_pomaster pm
               <xs:element name="Qty" msprop:Generator_ColumnPropNameInTable="QtyColumn" msprop:Generator_ColumnPropNameInRow="Qty" msprop:Generator_UserColumnName="Qty" msprop:Generator_ColumnVarNameInTable="columnQty" type="xs:decimal" minOccurs="0" />
               <xs:element name="UnitCode" msprop:Generator_ColumnPropNameInTable="UnitCodeColumn" msprop:Generator_ColumnPropNameInRow="UnitCode" msprop:Generator_UserColumnName="UnitCode" msprop:Generator_ColumnVarNameInTable="columnUnitCode" type="xs:string" minOccurs="0" />
               <xs:element name="MarkingColor" msprop:Generator_ColumnPropNameInTable="MarkingColorColumn" msprop:Generator_ColumnPropNameInRow="MarkingColor" msprop:Generator_UserColumnName="MarkingColor" msprop:Generator_ColumnVarNameInTable="columnMarkingColor" type="xs:string" minOccurs="0" />
-              <xs:element name="WorkAddr1" msprop:Generator_UserColumnName="WorkAddr1" msprop:Generator_ColumnPropNameInTable="WorkAddr1Column" msprop:Generator_ColumnPropNameInRow="WorkAddr1" msprop:Generator_ColumnVarNameInTable="columnWorkAddr1" type="xs:string" minOccurs="0" />
-              <xs:element name="WorkAddr2" msprop:Generator_UserColumnName="WorkAddr2" msprop:Generator_ColumnPropNameInTable="WorkAddr2Column" msprop:Generator_ColumnPropNameInRow="WorkAddr2" msprop:Generator_ColumnVarNameInTable="columnWorkAddr2" type="xs:string" minOccurs="0" />
-              <xs:element name="WorkTelNo" msprop:Generator_UserColumnName="WorkTelNo" msprop:Generator_ColumnPropNameInTable="WorkTelNoColumn" msprop:Generator_ColumnPropNameInRow="WorkTelNo" msprop:Generator_ColumnVarNameInTable="columnWorkTelNo" type="xs:string" minOccurs="0" />
-              <xs:element name="WorkFaxNo" msprop:Generator_UserColumnName="WorkFaxNo" msprop:Generator_ColumnPropNameInTable="WorkFaxNoColumn" msprop:Generator_ColumnPropNameInRow="WorkFaxNo" msprop:Generator_ColumnVarNameInTable="columnWorkFaxNo" type="xs:string" minOccurs="0" />
+              <xs:element name="WorkAddr1" msprop:Generator_ColumnPropNameInTable="WorkAddr1Column" msprop:Generator_ColumnPropNameInRow="WorkAddr1" msprop:Generator_UserColumnName="WorkAddr1" msprop:Generator_ColumnVarNameInTable="columnWorkAddr1" type="xs:string" minOccurs="0" />
+              <xs:element name="WorkAddr2" msprop:Generator_ColumnPropNameInTable="WorkAddr2Column" msprop:Generator_ColumnPropNameInRow="WorkAddr2" msprop:Generator_UserColumnName="WorkAddr2" msprop:Generator_ColumnVarNameInTable="columnWorkAddr2" type="xs:string" minOccurs="0" />
+              <xs:element name="WorkTelNo" msprop:Generator_ColumnPropNameInTable="WorkTelNoColumn" msprop:Generator_ColumnPropNameInRow="WorkTelNo" msprop:Generator_UserColumnName="WorkTelNo" msprop:Generator_ColumnVarNameInTable="columnWorkTelNo" type="xs:string" minOccurs="0" />
+              <xs:element name="WorkFaxNo" msprop:Generator_ColumnPropNameInTable="WorkFaxNoColumn" msprop:Generator_ColumnPropNameInRow="WorkFaxNo" msprop:Generator_UserColumnName="WorkFaxNo" msprop:Generator_ColumnVarNameInTable="columnWorkFaxNo" type="xs:string" minOccurs="0" />
+              <xs:element name="UnitName" msprop:Generator_ColumnPropNameInTable="UnitNameColumn" msprop:Generator_ColumnPropNameInRow="UnitName" msprop:Generator_UserColumnName="UnitName" msprop:Generator_ColumnVarNameInTable="columnUnitName" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CompanyInfo" msprop:Generator_RowEvHandlerName="CompanyInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="CompanyInfoRowDeleted" msprop:Generator_RowDeletingName="CompanyInfoRowDeleting" msprop:Generator_RowEvArgName="CompanyInfoRowChangeEvent" msprop:Generator_TablePropName="CompanyInfo" msprop:Generator_RowChangedName="CompanyInfoRowChanged" msprop:Generator_RowChangingName="CompanyInfoRowChanging" msprop:Generator_TableClassName="CompanyInfoDataTable" msprop:Generator_RowClassName="CompanyInfoRow" msprop:Generator_TableVarName="tableCompanyInfo" msprop:Generator_UserTableName="CompanyInfo">
+        <xs:element name="CompanyInfo" msprop:Generator_RowEvHandlerName="CompanyInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="CompanyInfoRowDeleted" msprop:Generator_RowDeletingName="CompanyInfoRowDeleting" msprop:Generator_RowEvArgName="CompanyInfoRowChangeEvent" msprop:Generator_TablePropName="CompanyInfo" msprop:Generator_RowChangedName="CompanyInfoRowChanged" msprop:Generator_UserTableName="CompanyInfo" msprop:Generator_RowChangingName="CompanyInfoRowChanging" msprop:Generator_RowClassName="CompanyInfoRow" msprop:Generator_TableClassName="CompanyInfoDataTable" msprop:Generator_TableVarName="tableCompanyInfo">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CompanyAddr1" msprop:Generator_ColumnPropNameInRow="CompanyAddr1" msprop:Generator_ColumnPropNameInTable="CompanyAddr1Column" msprop:Generator_ColumnVarNameInTable="columnCompanyAddr1" msprop:Generator_UserColumnName="CompanyAddr1" type="xs:string" minOccurs="0" />
+              <xs:element name="AddressE2" msprop:Generator_ColumnPropNameInTable="AddressE2Column" msprop:Generator_ColumnPropNameInRow="AddressE2" msprop:Generator_UserColumnName="AddressE2" msprop:Generator_ColumnVarNameInTable="columnAddressE2" type="xs:string" minOccurs="0" />
+              <xs:element name="AddressE1" msprop:Generator_ColumnPropNameInTable="AddressE1Column" msprop:Generator_ColumnPropNameInRow="AddressE1" msprop:Generator_UserColumnName="AddressE1" msprop:Generator_ColumnVarNameInTable="columnAddressE1" type="xs:string" minOccurs="0" />
+              <xs:element name="AddressK2" msprop:Generator_ColumnPropNameInTable="AddressK2Column" msprop:Generator_ColumnPropNameInRow="AddressK2" msprop:Generator_UserColumnName="AddressK2" msprop:Generator_ColumnVarNameInTable="columnAddressK2" type="xs:string" minOccurs="0" />
+              <xs:element name="AddressK1" msprop:Generator_ColumnPropNameInTable="AddressK1Column" msprop:Generator_ColumnPropNameInRow="AddressK1" msprop:Generator_UserColumnName="AddressK1" msprop:Generator_ColumnVarNameInTable="columnAddressK1" type="xs:string" minOccurs="0" />
+              <xs:element name="FaxNo" msprop:Generator_ColumnPropNameInTable="FaxNoColumn" msprop:Generator_ColumnPropNameInRow="FaxNo" msprop:Generator_UserColumnName="FaxNo" msprop:Generator_ColumnVarNameInTable="columnFaxNo" type="xs:string" minOccurs="0" />
+              <xs:element name="TelNo" msprop:Generator_ColumnPropNameInTable="TelNoColumn" msprop:Generator_ColumnPropNameInRow="TelNo" msprop:Generator_UserColumnName="TelNo" msprop:Generator_ColumnVarNameInTable="columnTelNo" type="xs:string" minOccurs="0" />
+              <xs:element name="CompanyNameE" msprop:Generator_ColumnPropNameInTable="CompanyNameEColumn" msprop:Generator_ColumnPropNameInRow="CompanyNameE" msprop:Generator_UserColumnName="CompanyNameE" msprop:Generator_ColumnVarNameInTable="columnCompanyNameE" type="xs:string" minOccurs="0" />
+              <xs:element name="CompanyNameK" msprop:Generator_ColumnPropNameInTable="CompanyNameKColumn" msprop:Generator_ColumnPropNameInRow="CompanyNameK" msprop:Generator_UserColumnName="CompanyNameK" msprop:Generator_ColumnVarNameInTable="columnCompanyNameK" type="xs:string" minOccurs="0" />
+              <xs:element name="CompanyGroup" msprop:Generator_ColumnPropNameInTable="CompanyGroupColumn" msprop:Generator_ColumnPropNameInRow="CompanyGroup" msprop:Generator_UserColumnName="CompanyGroup" msprop:Generator_ColumnVarNameInTable="columnCompanyGroup" type="xs:string" minOccurs="0" />
+              <xs:element name="HeadOffice" msprop:Generator_ColumnPropNameInTable="HeadOfficeColumn" msprop:Generator_ColumnPropNameInRow="HeadOffice" msprop:Generator_UserColumnName="HeadOffice" msprop:Generator_ColumnVarNameInTable="columnHeadOffice" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Nationality" msprop:Generator_ColumnPropNameInTable="NationalityColumn" msprop:Generator_ColumnPropNameInRow="Nationality" msprop:Generator_UserColumnName="Nationality" msprop:Generator_ColumnVarNameInTable="columnNationality" type="xs:string" minOccurs="0" />
+              <xs:element name="CompanyCode" msprop:Generator_ColumnPropNameInTable="CompanyCodeColumn" msprop:Generator_ColumnPropNameInRow="CompanyCode" msprop:Generator_UserColumnName="CompanyCode" msprop:Generator_ColumnVarNameInTable="columnCompanyCode" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CompanyInfo" />
+      <xs:field xpath="mstns:CompanyCode" />
+    </xs:unique>
   </xs:element>
 </xs:schema>

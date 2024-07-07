@@ -283,8 +283,59 @@
 			AND `ord`.`CompanyCode` = @CompanyCode
 		</Statement>
 
-		<Statement Id="selectReportOrderData" resultType="DataTable">
-			CALL PR_PurchaseOrderReport(@OrderNo)
+		<Statement Id="selectReportOrderData">
+			SELECT
+			pm.OrderNo,
+			pm.RegDt,
+			pm.ExWorkDt,
+			pm.BuyerCustCode,
+			cust1.CustName AS BuyerCustName,
+			pm.BuyerPoNo,
+			pm.DueDt,
+			pm.OrderDt,
+			pm.WorkCustCode,
+			cust2.CustName AS WorkCustName,
+			cust2.Address1 AS WorkAddr1,
+			cust2.Address2 AS WorkAddr2,
+			cust2.TelNo AS WorkTelNo,
+			cust2.FaxNo AS WorkFaxNo,
+			pm.Description AS OrderDesc,
+			pm.TermsAndConditions,
+			pd.DetailId,
+			pd.ItemGroupCode,
+			tg.GroupName AS ItemGroupName,
+			pd.ItemCode,
+			pd.SeqNo,
+			pd.ItemNo,
+			pd.SizeName,
+			pd.Description AS ItemDesc,
+			pd.Qty,
+			pd.UnitCode,
+			cd1.Option1 AS UnitName,
+			pd.MarkingColor
+			FROM
+			tb_pomaster pm
+			LEFT OUTER JOIN
+			tb_podetail pd ON pm.OrderNo = pd.OrderNo
+			AND pm.CompanyCode = pd.CompanyCode
+			LEFT OUTER JOIN
+			tb_item td ON td.GroupCode = pd.ItemGroupCode
+			AND td.ItemCode = pd.ItemCode
+			AND td.CompanyCode = pd.CompanyCode
+			LEFT OUTER JOIN
+			tb_itemgroup tg ON tg.GroupCode = td.GroupCode
+			AND tg.CompanyCode = td.CompanyCode
+			LEFT OUTER JOIN
+			tb_customer cust1 ON cust1.CustCode = pm.BuyerCustCode
+			AND cust1.CompanyCode = pm.CompanyCode
+			LEFT OUTER JOIN
+			tb_customer cust2 ON cust2.CustCode = pm.WorkCustCode
+			AND cust2.CompanyCode = pm.CompanyCode
+			LEFT OUTER JOIN
+			tb_codedetail cd1 ON cd1.MasterCode = 'ITEMUNIT'
+			AND cd1.Code = pd.UnitCode
+			WHERE pm.OrderNo = @OrderNo
+			AND pm.CompanyCode = @CompanyCode
 		</Statement>
 	</Statements>
 </SmartSqlMap>

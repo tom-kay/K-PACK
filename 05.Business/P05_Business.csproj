@@ -373,6 +373,7 @@
     <Compile Include="Common\UserDataGrid.cs" />
     <Compile Include="Common\GlobalVariables.cs" />
     <Compile Include="Common\MainMessage.cs" />
+    <Compile Include="S01_Models\Dto\Biz\OrderReportDto.cs" />
     <Compile Include="S04_Reports\Rpt\rptOrderDucu.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -93,40 +93,64 @@ namespace P05_Business.S03_Views.Biz
         {
             try
             {
+                AccessMain.ShowLoading();
+
                 // 데이터 조회
-                //OrderMasterDto param = new OrderMasterDto
-                //{
-                //    OrderNo = txtOrderNo.Texts.Trim(),
-                //    CompanyCode = LoginCompany.CompanyCode,
-                //};
+                OrderMasterDto param = new OrderMasterDto
+                {
+                    OrderNo = txtOrderNo.Texts.Trim(),
+                    CompanyCode = LoginCompany.CompanyCode,
+                };
 
-                //DataTable dt = ctrl.GetReportOrderData(param);
-                //dt.TableName = "PR_PurchaseOrderReport";
+                List<OrderReportDto> reportDtos = ctrl.GetReportOrderData(param);
 
-                DataTable dt = DataHandles.ConvertToDataTable(dtoDetails);
-                dt.TableName = "OrderDt";
-
-                dt.Columns.Add("WorkCustName", typeof(string));
-                dt.Rows[0]["WorkCustName"] = "우리집";
-                dt.Rows[1]["WorkCustName"] = "우리집";
+                DataTable dtReport = DataHandles.ConvertToDataTable(reportDtos);
+                dtReport.TableName = "OrderDt";
 
                 DataTable dtCom = new DataTable();
-                dtCom.Columns.Add("CompanyAddr1", typeof(string));
-                DataRow dr = dtCom.NewRow();
-                dr["CompanyAddr1"] = "회사주소야";
-                dtCom.Rows.Add(dr);
+                dtCom.Columns.Add("CompanyCode", typeof(string));
+                dtCom.Columns.Add("Nationality", typeof(string));
+                dtCom.Columns.Add("HeadOffice", typeof(string));
+                dtCom.Columns.Add("CompanyGroup", typeof(string));
+                dtCom.Columns.Add("CompanyNameK", typeof(string));
+                dtCom.Columns.Add("CompanyNameE", typeof(string));
+                dtCom.Columns.Add("TelNo", typeof(string));
+                dtCom.Columns.Add("FaxNo", typeof(string));
+                dtCom.Columns.Add("AddressK1", typeof(string));
+                dtCom.Columns.Add("AddressK2", typeof(string));
+                dtCom.Columns.Add("AddressE1", typeof(string));
+                dtCom.Columns.Add("AddressE2", typeof(string));
+                
+                DataRow drCom = dtCom.NewRow();
+                drCom["CompanyCode"] = LoginCompany.CompanyCode;
+                drCom["Nationality"] = LoginCompany.NationalityCode;
+                drCom["HeadOffice"] = LoginCompany.HeadOffice;
+                drCom["CompanyGroup"] = LoginCompany.CompanyGroup;
+                drCom["CompanyNameK"] = LoginCompany.CompanyNameK;
+                drCom["CompanyNameE"] = LoginCompany.CompanyNameE;
+                drCom["TelNo"] = LoginCompany.TelNo;
+                drCom["FaxNo"] = LoginCompany.FaxNo;
+                drCom["AddressK1"] = LoginCompany.AddressK1;
+                drCom["AddressK2"] = LoginCompany.AddressK2;
+                drCom["AddressE1"] = LoginCompany.AddressE1;
+                drCom["AddressE2"] = LoginCompany.AddressE2;
+                dtCom.Rows.Add(drCom);
                 dtCom.TableName = "CompanyInfo";
 
                 DataSet ds = new DataSet();
-                ds.Tables.Add(dt);
+                ds.Tables.Add(dtReport);
                 ds.Tables.Add(dtCom);
 
                 rptOrderDucu rpt = new rptOrderDucu();
                 rpt.SetDataSource(ds);
+                //rpt.SetParameterValue("MyParameter", "Hello");    //파라미터 설정
+                //rpt.DataDefinition.FormulaFields["MyFormula"].Text = "'" + textBox1.Text + "'";       //포뮬러 설정
 
                 frmReportMain frmReport = new frmReportMain();
                 frmReport.reportViewer.ReportSource = rpt;
                 frmReport.reportViewer.RefreshReport();
+
+                AccessMain.HideLoading();
 
                 frmReport.ShowDialog(this);
 

@@ -158,7 +158,7 @@ namespace P05_Business.S01_Models.Dao.Biz
             return orders;
         }
 
-        internal DataTable SelectReportOrderData(OrderMasterDto param)
+        internal List<OrderReportDto> SelectReportOrderData(OrderMasterDto param)
         {
             RequestContext context = new RequestContext
             {
@@ -168,10 +168,10 @@ namespace P05_Business.S01_Models.Dao.Biz
             };
             log.Info(SqlMapper.SqlBuilder.BuildSql(context));
 
-            List<OrderDetailDto> datas = SqlMapper.Query<OrderDetailDto>(context).ToList();
+            List<OrderReportDto> datas = SqlMapper.Query<OrderReportDto>(context).ToList();
 
 
-            return null;
+            return datas;
         }
     }
 }

@@ -368,6 +368,8 @@ namespace P05_Business.S04_Reports.Xsd {
             
             private global::System.Data.DataColumn columnWorkFaxNo;
             
+            private global::System.Data.DataColumn columnUnitName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public OrderDtDataTable() {
@@ -619,6 +621,14 @@ namespace P05_Business.S04_Reports.Xsd {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn UnitNameColumn {
+                get {
+                    return this.columnUnitName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -681,7 +691,8 @@ namespace P05_Business.S04_Reports.Xsd {
                         string WorkAddr1, 
                         string WorkAddr2, 
                         string WorkTelNo, 
-                        string WorkFaxNo) {
+                        string WorkFaxNo, 
+                        string UnitName) {
                 OrderDtRow rowOrderDtRow = ((OrderDtRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OrderNo,
@@ -710,7 +721,8 @@ namespace P05_Business.S04_Reports.Xsd {
                         WorkAddr1,
                         WorkAddr2,
                         WorkTelNo,
-                        WorkFaxNo};
+                        WorkFaxNo,
+                        UnitName};
                 rowOrderDtRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOrderDtRow);
                 return rowOrderDtRow;
@@ -760,6 +772,7 @@ namespace P05_Business.S04_Reports.Xsd {
                 this.columnWorkAddr2 = base.Columns["WorkAddr2"];
                 this.columnWorkTelNo = base.Columns["WorkTelNo"];
                 this.columnWorkFaxNo = base.Columns["WorkFaxNo"];
+                this.columnUnitName = base.Columns["UnitName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -819,6 +832,8 @@ namespace P05_Business.S04_Reports.Xsd {
                 base.Columns.Add(this.columnWorkTelNo);
                 this.columnWorkFaxNo = new global::System.Data.DataColumn("WorkFaxNo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWorkFaxNo);
+                this.columnUnitName = new global::System.Data.DataColumn("UnitName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnitName);
                 this.columnOrderNo.AllowDBNull = false;
             }
             
@@ -953,7 +968,29 @@ namespace P05_Business.S04_Reports.Xsd {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class CompanyInfoDataTable : global::System.Data.TypedTableBase<CompanyInfoRow> {
             
-            private global::System.Data.DataColumn columnCompanyAddr1;
+            private global::System.Data.DataColumn columnAddressE2;
+            
+            private global::System.Data.DataColumn columnAddressE1;
+            
+            private global::System.Data.DataColumn columnAddressK2;
+            
+            private global::System.Data.DataColumn columnAddressK1;
+            
+            private global::System.Data.DataColumn columnFaxNo;
+            
+            private global::System.Data.DataColumn columnTelNo;
+            
+            private global::System.Data.DataColumn columnCompanyNameE;
+            
+            private global::System.Data.DataColumn columnCompanyNameK;
+            
+            private global::System.Data.DataColumn columnCompanyGroup;
+            
+            private global::System.Data.DataColumn columnHeadOffice;
+            
+            private global::System.Data.DataColumn columnNationality;
+            
+            private global::System.Data.DataColumn columnCompanyCode;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -990,9 +1027,97 @@ namespace P05_Business.S04_Reports.Xsd {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CompanyAddr1Column {
+            public global::System.Data.DataColumn AddressE2Column {
                 get {
-                    return this.columnCompanyAddr1;
+                    return this.columnAddressE2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AddressE1Column {
+                get {
+                    return this.columnAddressE1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AddressK2Column {
+                get {
+                    return this.columnAddressK2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AddressK1Column {
+                get {
+                    return this.columnAddressK1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FaxNoColumn {
+                get {
+                    return this.columnFaxNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TelNoColumn {
+                get {
+                    return this.columnTelNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CompanyNameEColumn {
+                get {
+                    return this.columnCompanyNameE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CompanyNameKColumn {
+                get {
+                    return this.columnCompanyNameK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CompanyGroupColumn {
+                get {
+                    return this.columnCompanyGroup;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn HeadOfficeColumn {
+                get {
+                    return this.columnHeadOffice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NationalityColumn {
+                get {
+                    return this.columnNationality;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CompanyCodeColumn {
+                get {
+                    return this.columnCompanyCode;
                 }
             }
             
@@ -1033,13 +1158,31 @@ namespace P05_Business.S04_Reports.Xsd {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CompanyInfoRow AddCompanyInfoRow(string CompanyAddr1) {
+            public CompanyInfoRow AddCompanyInfoRow(string AddressE2, string AddressE1, string AddressK2, string AddressK1, string FaxNo, string TelNo, string CompanyNameE, string CompanyNameK, string CompanyGroup, bool HeadOffice, string Nationality, string CompanyCode) {
                 CompanyInfoRow rowCompanyInfoRow = ((CompanyInfoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        CompanyAddr1};
+                        AddressE2,
+                        AddressE1,
+                        AddressK2,
+                        AddressK1,
+                        FaxNo,
+                        TelNo,
+                        CompanyNameE,
+                        CompanyNameK,
+                        CompanyGroup,
+                        HeadOffice,
+                        Nationality,
+                        CompanyCode};
                 rowCompanyInfoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCompanyInfoRow);
                 return rowCompanyInfoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CompanyInfoRow FindByCompanyCode(string CompanyCode) {
+                return ((CompanyInfoRow)(this.Rows.Find(new object[] {
+                            CompanyCode})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1059,14 +1202,51 @@ namespace P05_Business.S04_Reports.Xsd {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnCompanyAddr1 = base.Columns["CompanyAddr1"];
+                this.columnAddressE2 = base.Columns["AddressE2"];
+                this.columnAddressE1 = base.Columns["AddressE1"];
+                this.columnAddressK2 = base.Columns["AddressK2"];
+                this.columnAddressK1 = base.Columns["AddressK1"];
+                this.columnFaxNo = base.Columns["FaxNo"];
+                this.columnTelNo = base.Columns["TelNo"];
+                this.columnCompanyNameE = base.Columns["CompanyNameE"];
+                this.columnCompanyNameK = base.Columns["CompanyNameK"];
+                this.columnCompanyGroup = base.Columns["CompanyGroup"];
+                this.columnHeadOffice = base.Columns["HeadOffice"];
+                this.columnNationality = base.Columns["Nationality"];
+                this.columnCompanyCode = base.Columns["CompanyCode"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnCompanyAddr1 = new global::System.Data.DataColumn("CompanyAddr1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCompanyAddr1);
+                this.columnAddressE2 = new global::System.Data.DataColumn("AddressE2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAddressE2);
+                this.columnAddressE1 = new global::System.Data.DataColumn("AddressE1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAddressE1);
+                this.columnAddressK2 = new global::System.Data.DataColumn("AddressK2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAddressK2);
+                this.columnAddressK1 = new global::System.Data.DataColumn("AddressK1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAddressK1);
+                this.columnFaxNo = new global::System.Data.DataColumn("FaxNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFaxNo);
+                this.columnTelNo = new global::System.Data.DataColumn("TelNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelNo);
+                this.columnCompanyNameE = new global::System.Data.DataColumn("CompanyNameE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCompanyNameE);
+                this.columnCompanyNameK = new global::System.Data.DataColumn("CompanyNameK", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCompanyNameK);
+                this.columnCompanyGroup = new global::System.Data.DataColumn("CompanyGroup", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCompanyGroup);
+                this.columnHeadOffice = new global::System.Data.DataColumn("HeadOffice", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHeadOffice);
+                this.columnNationality = new global::System.Data.DataColumn("Nationality", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNationality);
+                this.columnCompanyCode = new global::System.Data.DataColumn("CompanyCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCompanyCode);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCompanyCode}, true));
+                this.columnCompanyCode.AllowDBNull = false;
+                this.columnCompanyCode.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1636,6 +1816,22 @@ namespace P05_Business.S04_Reports.Xsd {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string UnitName {
+                get {
+                    try {
+                        return ((string)(this[this.tableOrderDt.UnitNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'OrderDt\' 테이블의 \'UnitName\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableOrderDt.UnitNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsRegDtNull() {
                 return this.IsNull(this.tableOrderDt.RegDtColumn);
             }
@@ -1945,6 +2141,18 @@ namespace P05_Business.S04_Reports.Xsd {
             public void SetWorkFaxNoNull() {
                 this[this.tableOrderDt.WorkFaxNoColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsUnitNameNull() {
+                return this.IsNull(this.tableOrderDt.UnitNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetUnitNameNull() {
+                this[this.tableOrderDt.UnitNameColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1963,30 +2171,321 @@ namespace P05_Business.S04_Reports.Xsd {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string CompanyAddr1 {
+            public string AddressE2 {
                 get {
                     try {
-                        return ((string)(this[this.tableCompanyInfo.CompanyAddr1Column]));
+                        return ((string)(this[this.tableCompanyInfo.AddressE2Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'CompanyInfo\' 테이블의 \'CompanyAddr1\' 열의 값이 DBNull입니다.", e);
+                        throw new global::System.Data.StrongTypingException("\'CompanyInfo\' 테이블의 \'AddressE2\' 열의 값이 DBNull입니다.", e);
                     }
                 }
                 set {
-                    this[this.tableCompanyInfo.CompanyAddr1Column] = value;
+                    this[this.tableCompanyInfo.AddressE2Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCompanyAddr1Null() {
-                return this.IsNull(this.tableCompanyInfo.CompanyAddr1Column);
+            public string AddressE1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCompanyInfo.AddressE1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'CompanyInfo\' 테이블의 \'AddressE1\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompanyInfo.AddressE1Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCompanyAddr1Null() {
-                this[this.tableCompanyInfo.CompanyAddr1Column] = global::System.Convert.DBNull;
+            public string AddressK2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCompanyInfo.AddressK2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'CompanyInfo\' 테이블의 \'AddressK2\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompanyInfo.AddressK2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string AddressK1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableCompanyInfo.AddressK1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'CompanyInfo\' 테이블의 \'AddressK1\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompanyInfo.AddressK1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string FaxNo {
+                get {
+                    try {
+                        return ((string)(this[this.tableCompanyInfo.FaxNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'CompanyInfo\' 테이블의 \'FaxNo\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompanyInfo.FaxNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TelNo {
+                get {
+                    try {
+                        return ((string)(this[this.tableCompanyInfo.TelNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'CompanyInfo\' 테이블의 \'TelNo\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompanyInfo.TelNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CompanyNameE {
+                get {
+                    try {
+                        return ((string)(this[this.tableCompanyInfo.CompanyNameEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'CompanyInfo\' 테이블의 \'CompanyNameE\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompanyInfo.CompanyNameEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CompanyNameK {
+                get {
+                    try {
+                        return ((string)(this[this.tableCompanyInfo.CompanyNameKColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'CompanyInfo\' 테이블의 \'CompanyNameK\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompanyInfo.CompanyNameKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CompanyGroup {
+                get {
+                    try {
+                        return ((string)(this[this.tableCompanyInfo.CompanyGroupColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'CompanyInfo\' 테이블의 \'CompanyGroup\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompanyInfo.CompanyGroupColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool HeadOffice {
+                get {
+                    try {
+                        return ((bool)(this[this.tableCompanyInfo.HeadOfficeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'CompanyInfo\' 테이블의 \'HeadOffice\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompanyInfo.HeadOfficeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Nationality {
+                get {
+                    try {
+                        return ((string)(this[this.tableCompanyInfo.NationalityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'CompanyInfo\' 테이블의 \'Nationality\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompanyInfo.NationalityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string CompanyCode {
+                get {
+                    return ((string)(this[this.tableCompanyInfo.CompanyCodeColumn]));
+                }
+                set {
+                    this[this.tableCompanyInfo.CompanyCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAddressE2Null() {
+                return this.IsNull(this.tableCompanyInfo.AddressE2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAddressE2Null() {
+                this[this.tableCompanyInfo.AddressE2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAddressE1Null() {
+                return this.IsNull(this.tableCompanyInfo.AddressE1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAddressE1Null() {
+                this[this.tableCompanyInfo.AddressE1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAddressK2Null() {
+                return this.IsNull(this.tableCompanyInfo.AddressK2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAddressK2Null() {
+                this[this.tableCompanyInfo.AddressK2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAddressK1Null() {
+                return this.IsNull(this.tableCompanyInfo.AddressK1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAddressK1Null() {
+                this[this.tableCompanyInfo.AddressK1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFaxNoNull() {
+                return this.IsNull(this.tableCompanyInfo.FaxNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFaxNoNull() {
+                this[this.tableCompanyInfo.FaxNoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTelNoNull() {
+                return this.IsNull(this.tableCompanyInfo.TelNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTelNoNull() {
+                this[this.tableCompanyInfo.TelNoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCompanyNameENull() {
+                return this.IsNull(this.tableCompanyInfo.CompanyNameEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCompanyNameENull() {
+                this[this.tableCompanyInfo.CompanyNameEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCompanyNameKNull() {
+                return this.IsNull(this.tableCompanyInfo.CompanyNameKColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCompanyNameKNull() {
+                this[this.tableCompanyInfo.CompanyNameKColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCompanyGroupNull() {
+                return this.IsNull(this.tableCompanyInfo.CompanyGroupColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCompanyGroupNull() {
+                this[this.tableCompanyInfo.CompanyGroupColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsHeadOfficeNull() {
+                return this.IsNull(this.tableCompanyInfo.HeadOfficeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetHeadOfficeNull() {
+                this[this.tableCompanyInfo.HeadOfficeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNationalityNull() {
+                return this.IsNull(this.tableCompanyInfo.NationalityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNationalityNull() {
+                this[this.tableCompanyInfo.NationalityColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2210,6 +2709,7 @@ namespace P05_Business.S04_Reports.Xsd.OrderDsTableAdapters {
             tableMapping.ColumnMappings.Add("WorkAddr2", "WorkAddr2");
             tableMapping.ColumnMappings.Add("WorkTelNo", "WorkTelNo");
             tableMapping.ColumnMappings.Add("WorkFaxNo", "WorkFaxNo");
+            tableMapping.ColumnMappings.Add("UnitName", "UnitName");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -2226,50 +2726,57 @@ namespace P05_Business.S04_Reports.Xsd.OrderDsTableAdapters {
             this._commandCollection = new global::Devart.Data.MySql.MySqlCommand[1];
             this._commandCollection[0] = new global::Devart.Data.MySql.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT pm.OrderNo
-	, pm.RegDt
-	, pm.ExWorkDt
-	, pm.BuyerCustCode
-    , cust1.CustName as BuyerCustName
-	, pm.BuyerPoNo
-	, pm.DueDt
-	, pm.OrderDt
-	, pm.WorkCustCode
-    , cust2.CustName as WorkCustName
-    , cust2.Address1 as WorkAddr1
-    , cust2.Address2 as WorkAddr2
-    , cust2.TelNo as WorkTelNo
-    , cust2.FaxNo as WorkFaxNo
-	, pm.`Description` as OrderDesc
-	, pm.TermsAndConditions
-	, pd.DetailId
-	, pd.ItemGroupCode
-    , tg.GroupName as ItemGroupName
-	, pd.ItemCode
-	, pd.SeqNo
-	, pd.ItemNo
-	, pd.SizeName
-	, pd.`Description` as ItemDesc
-	, pd.Qty
-	, pd.UnitCode
-	, pd.MarkingColor
-FROM tb_pomaster pm
-	left join tb_podetail pd
-    on pm.orderno = pd.orderno
-		and pm.CompanyCode = pd.CompanyCode
-    left join tb_item td
-    on td.GroupCode = pd.ItemGroupCode
-		and td.ItemCode = pd.ItemCode
-		and td.CompanyCode = pd.CompanyCode
-    left join tb_itemgroup tg
-    on tg.GroupCode = td.GroupCode
-		and tg.CompanyCode = td.CompanyCode
-	left join tb_customer cust1
-    on cust1.CustCode = pm.BuyerCustCode
-		and cust1.CompanyCode = pm.CompanyCode
-	left join tb_customer cust2
-	on cust2.CustCode = pm.WorkCustCode
-		and cust2.CompanyCode = pm.CompanyCode";
+            this._commandCollection[0].CommandText = @"SELECT 
+    pm.OrderNo,
+    pm.RegDt,
+    pm.ExWorkDt,
+    pm.BuyerCustCode,
+    cust1.CustName AS BuyerCustName,
+    pm.BuyerPoNo,
+    pm.DueDt,
+    pm.OrderDt,
+    pm.WorkCustCode,
+    cust2.CustName AS WorkCustName,
+    cust2.Address1 AS WorkAddr1,
+    cust2.Address2 AS WorkAddr2,
+    cust2.TelNo AS WorkTelNo,
+    cust2.FaxNo AS WorkFaxNo,
+    pm.Description AS OrderDesc,
+    pm.TermsAndConditions,
+    pd.DetailId,
+    pd.ItemGroupCode,
+    tg.GroupName AS ItemGroupName,
+    pd.ItemCode,
+    pd.SeqNo,
+    pd.ItemNo,
+    pd.SizeName,
+    pd.Description AS ItemDesc,
+    pd.Qty,
+    pd.UnitCode,
+    cd1.Option1 AS UnitName,
+    pd.MarkingColor
+FROM
+    tb_pomaster pm
+        LEFT OUTER JOIN
+    tb_podetail pd ON pm.OrderNo = pd.OrderNo
+        AND pm.CompanyCode = pd.CompanyCode
+        LEFT OUTER JOIN
+    tb_item td ON td.GroupCode = pd.ItemGroupCode
+        AND td.ItemCode = pd.ItemCode
+        AND td.CompanyCode = pd.CompanyCode
+        LEFT OUTER JOIN
+    tb_itemgroup tg ON tg.GroupCode = td.GroupCode
+        AND tg.CompanyCode = td.CompanyCode
+        LEFT OUTER JOIN
+    tb_customer cust1 ON cust1.CustCode = pm.BuyerCustCode
+        AND cust1.CompanyCode = pm.CompanyCode
+        LEFT OUTER JOIN
+    tb_customer cust2 ON cust2.CustCode = pm.WorkCustCode
+        AND cust2.CompanyCode = pm.CompanyCode
+        LEFT OUTER JOIN
+	tb_codedetail cd1 ON cd1.MasterCode = 'ITEMUNIT'
+		AND cd1.`Code` = pd.UnitCode
+";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

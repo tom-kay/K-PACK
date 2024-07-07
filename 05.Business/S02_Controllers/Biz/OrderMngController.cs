@@ -72,11 +72,11 @@ namespace P05_Business.S02_Controllers.Biz
             return isDelete;
         }
 
-        internal DataTable GetReportOrderData(OrderMasterDto param)
+        internal List<OrderReportDto> GetReportOrderData(OrderMasterDto param)
         {
-            DataTable dt = dao.SelectReportOrderData(param);
+            List<OrderReportDto> dtos = dao.SelectReportOrderData(param);
 
-            return dt;
+            return dtos;
         }
     }
 }

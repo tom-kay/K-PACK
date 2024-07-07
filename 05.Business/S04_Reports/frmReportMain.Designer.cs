@@ -36,30 +36,30 @@
             // 
             // pnlContainer
             // 
-            this.pnlContainer.Size = new System.Drawing.Size(796, 446);
+            this.pnlContainer.Size = new System.Drawing.Size(996, 796);
             // 
             // pnlTitleBar
             // 
-            this.pnlTitleBar.Size = new System.Drawing.Size(796, 35);
+            this.pnlTitleBar.Size = new System.Drawing.Size(996, 35);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.Location = new System.Drawing.Point(746, 0);
+            this.btnClose.Location = new System.Drawing.Point(946, 0);
             // 
             // btnMinimize
             // 
             this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.Location = new System.Drawing.Point(696, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(896, 0);
             // 
             // lblPopupTitle
             // 
-            this.lblPopupTitle.Size = new System.Drawing.Size(696, 35);
+            this.lblPopupTitle.Size = new System.Drawing.Size(896, 35);
             // 
             // pnlBody
             // 
             this.pnlBody.Controls.Add(this.reportViewer);
-            this.pnlBody.Size = new System.Drawing.Size(796, 411);
+            this.pnlBody.Size = new System.Drawing.Size(996, 761);
             // 
             // reportViewer
             // 
@@ -71,14 +71,16 @@
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ShowLogo = false;
-            this.reportViewer.Size = new System.Drawing.Size(796, 411);
+            this.reportViewer.Size = new System.Drawing.Size(996, 761);
             this.reportViewer.TabIndex = 0;
+            this.reportViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // frmReportMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1000, 800);
+            this.MinimumSize = new System.Drawing.Size(1000, 800);
             this.Name = "frmReportMain";
             this.Text = "frmReportMain";
             this.Load += new System.EventHandler(this.frmReportMain_Load);
