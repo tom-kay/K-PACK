@@ -22,3 +22,15 @@ F:\workspace\K-PACK\03.Framework\obj\Debug\P03_Framework.csproj.CoreCompileInput
 F:\workspace\K-PACK\03.Framework\obj\Debug\P03_Framework.dll
 F:\workspace\K-PACK\03.Framework\obj\Debug\P03_Framework.pdb
 F:\workspace\K-PACK\03.Framework\obj\Debug\P03_Fram.AB0B56A1.Up2Date
+G:\workspace\K-PACK\03.Framework\bin\Debug\P03_Framework.dll
+G:\workspace\K-PACK\03.Framework\bin\Debug\P03_Framework.pdb
+G:\workspace\K-PACK\03.Framework\bin\Debug\HtmlAgilityPack.dll
+G:\workspace\K-PACK\03.Framework\bin\Debug\log4net.dll
+G:\workspace\K-PACK\03.Framework\bin\Debug\HtmlAgilityPack.pdb
+G:\workspace\K-PACK\03.Framework\bin\Debug\HtmlAgilityPack.xml
+G:\workspace\K-PACK\03.Framework\bin\Debug\log4net.xml
+G:\workspace\K-PACK\03.Framework\obj\Debug\P03_Framework.csproj.AssemblyReference.cache
+G:\workspace\K-PACK\03.Framework\obj\Debug\P03_Framework.csproj.CoreCompileInputs.cache
+G:\workspace\K-PACK\03.Framework\obj\Debug\P03_Fram.AB0B56A1.Up2Date
+G:\workspace\K-PACK\03.Framework\obj\Debug\P03_Framework.dll
+G:\workspace\K-PACK\03.Framework\obj\Debug\P03_Framework.pdb

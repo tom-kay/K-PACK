@@ -13,7 +13,8 @@ namespace P05_Business.S04_Reports
 
         private void frmReportMain_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Normal;
+            this.StartPosition = FormStartPosition.CenterScreen;
             
         }
     }

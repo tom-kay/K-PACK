@@ -9,8 +9,6 @@ using P05_Business.S03_Views.Popup.Biz;
 using P05_Business.S03_Views.Popup.Common;
 using P05_Business.S04_Reports;
 using P05_Business.S04_Reports.Rpt;
-using P05_Business.S04_Reports.Xsd;
-using P05_Business.S04_Reports.Xsd.OrderDsTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -509,7 +507,7 @@ namespace P05_Business.S03_Views.Biz
             UserDataGrid.AddTextBoxColumn(dgvList, "ItemNo", "제품번호", true, true, 100, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 20);
             UserDataGrid.AddTextBoxColumn(dgvList, "SizeName", "사이즈", true, true, 250, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 100);
             UserDataGrid.AddTextBoxColumn(dgvList, "Description", "설명", true, true, 250, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 200);
-            UserDataGrid.AddTextBoxColumn(dgvList, "Qty", "수량", false, true, 80, DataGridViewContentAlignment.MiddleRight, maxInputLength: 18, format: "N2", nullValue:0);
+            UserDataGrid.AddTextBoxColumn(dgvList, "Qty", "수량", false, true, 80, DataGridViewContentAlignment.MiddleRight, maxInputLength: 18, format: "N2", nullValue: 0);
             UserDataGrid.AddComboBoxColumn(dgvList, "UnitCode", "단위", false, true, 100, DataGridViewContentAlignment.MiddleCenter);
             UserDataGrid.AddTextBoxColumn(dgvList, "MarkingColor", "마킹컬러", false, true, 100, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 50);
             UserDataGrid.AddTextBoxColumn(dgvList, "Remark", "비고", false, true, 300, DataGridViewContentAlignment.MiddleLeft, maxInputLength: 255);
@@ -550,6 +548,7 @@ namespace P05_Business.S03_Views.Biz
                 newDr["SizeName"] = addDr["Size"];
                 newDr["Description"] = addDr["Description"];
                 newDr["UnitCode"] = addDr["UnitCode"];
+                newDr["Qty"] = 0;
                 (dgvList.DataSource as DataTable).Rows.Add(newDr);
             }
 

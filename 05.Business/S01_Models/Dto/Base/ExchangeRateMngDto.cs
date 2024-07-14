@@ -36,8 +36,5 @@ namespace P05_Business.S01_Models.Dto.Base
 		public decimal Commission { get; set; }
 		[Description("미화환산율")]
 		public decimal Convert { get; set; }
-
-		[Description("데이터 상태")]
-		DataRowState DataState { get; set; }
 	}
 }
