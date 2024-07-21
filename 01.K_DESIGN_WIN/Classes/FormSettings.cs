@@ -12,7 +12,7 @@ namespace P01_K_DESIGN_WIN.Classes
 {
 	public class FormSettings
 	{
-		private const string FORM_FONT_NAME = "Microsoft New Tai Lue";
+		private const string FORM_FONT_NAME = "D2Coding";
 		private const float FORM_FONT_SIZE = 12f;
 
 		private static string DISABLE_COLOR_HEX = "#F0F0F0";
@@ -21,8 +21,9 @@ namespace P01_K_DESIGN_WIN.Classes
 		public static void Control_Init(Control control)
 		{
 			foreach (Control ctrl in control.Controls)
-			{
-				if (ctrl is KTextBox)
+			{	
+
+                if (ctrl is KTextBox)
 				{
 					((KTextBox)ctrl).Texts = string.Empty;
 				}
@@ -88,9 +89,10 @@ namespace P01_K_DESIGN_WIN.Classes
 
                     lbl.AutoSize = false;
 					lbl.Dock = DockStyle.Fill;
-					if (lbl.FindForm().GetType().BaseType.Name.Equals("frmSearchContainer"))
+					if (lbl.FindForm().GetType().BaseType.Name.Equals("frmSearchContainer")
+						|| lbl.FindForm().GetType().BaseType.Name.Equals("frmPopupFrame"))
 					{
-						lbl.ForeColor = SystemColors.WindowText;
+                        lbl.ForeColor = SystemColors.WindowText;
 						lbl.BackColor = Color.Transparent;
 					} 
 					else

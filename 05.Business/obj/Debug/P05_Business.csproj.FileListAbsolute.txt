@@ -414,8 +414,6 @@ G:\workspace\K-PACK\05.Business\bin\Debug\P02_K_CONTROL_WIN.pdb
 G:\workspace\K-PACK\05.Business\bin\Debug\P03_Framework.pdb
 G:\workspace\K-PACK\05.Business\bin\Debug\BouncyCastle.Cryptography.xml
 G:\workspace\K-PACK\05.Business\bin\Debug\Dapper.xml
-G:\workspace\K-PACK\05.Business\bin\Debug\Devart.Data.xml
-G:\workspace\K-PACK\05.Business\bin\Debug\Devart.Data.MySql.xml
 G:\workspace\K-PACK\05.Business\bin\Debug\FarPoint.CalcEngine.xml
 G:\workspace\K-PACK\05.Business\bin\Debug\FarPoint.Excel.xml
 G:\workspace\K-PACK\05.Business\bin\Debug\FarPoint.PDF.xml
@@ -442,7 +440,6 @@ G:\workspace\K-PACK\05.Business\bin\Debug\System.Memory.xml
 G:\workspace\K-PACK\05.Business\bin\Debug\System.Numerics.Vectors.xml
 G:\workspace\K-PACK\05.Business\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 G:\workspace\K-PACK\05.Business\bin\Debug\System.Threading.Tasks.Extensions.xml
-G:\workspace\K-PACK\05.Business\bin\Debug\WindowsFormsControlLibrary1.pdb
 G:\workspace\K-PACK\05.Business\bin\Debug\HtmlAgilityPack.pdb
 G:\workspace\K-PACK\05.Business\bin\Debug\HtmlAgilityPack.xml
 G:\workspace\K-PACK\05.Business\bin\Debug\cs\CrystalDecisions.CrystalReports.Engine.resources.dll
@@ -608,3 +605,5 @@ G:\workspace\K-PACK\05.Business\obj\Debug\P05_Business.csproj.CoreCompileInputs.
 G:\workspace\K-PACK\05.Business\obj\Debug\P05_Busi.7380CC3C.Up2Date
 G:\workspace\K-PACK\05.Business\obj\Debug\SOODAL.exe
 G:\workspace\K-PACK\05.Business\obj\Debug\SOODAL.pdb
+G:\workspace\K-PACK\05.Business\bin\Debug\Resource\Font\D2Coding-Ver1.3.2-20180524-all.ttc
+G:\workspace\K-PACK\05.Business\bin\Debug\stdole.dll

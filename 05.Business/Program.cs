@@ -1,5 +1,9 @@
-﻿using System;
+﻿using P02_K_CONTROL_WIN;
+using System;
 using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Text;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -13,7 +17,10 @@ namespace P05_Business
 		[STAThread]
 		static void Main()
 		{
-			if (IsExistProcessMutex(Process.GetCurrentProcess().ProcessName))
+			SystemHelper.SetupSystemFont();	//프로그램에서 사용할 폰트 설치
+
+
+            if (IsExistProcessMutex(Process.GetCurrentProcess().ProcessName))
 			{
 				MessageBox.Show("이미실행중입니다.");
 			}

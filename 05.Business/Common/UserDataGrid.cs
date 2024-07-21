@@ -1,4 +1,5 @@
 ﻿using FarPoint.Win;
+using P02_K_CONTROL_WIN;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
 using System;
@@ -53,14 +54,14 @@ namespace P05_Business.Common
 			dataGrid.ColumnHeadersHeight = 35;
 			dataGrid.ColumnHeadersBorderStyle = headerStyle;			
 			dataGrid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-			dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("맑은 고딕", 12, FontStyle.Bold);
+			dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font(SystemHelper._FONT_NAME, 12, FontStyle.Bold);
 			dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.CornflowerBlue;
 			dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 			dataGrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
 			dataGrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
 
 			dataGrid.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			dataGrid.DefaultCellStyle.Font = new Font("맑은 고딕", 12);
+			dataGrid.DefaultCellStyle.Font = new Font(SystemHelper._FONT_NAME, 12);
 			dataGrid.DefaultCellStyle.BackColor = Color.White;
 			dataGrid.DefaultCellStyle.ForeColor = SystemColors.WindowText;
 			dataGrid.DefaultCellStyle.SelectionBackColor = Color.White;
@@ -222,7 +223,7 @@ namespace P05_Business.Common
 			column.Visible = visible;
 			column.DefaultCellStyle.Alignment = alignment;
 			column.SortMode = DataGridViewColumnSortMode.NotSortable;
-			column.DefaultCellStyle.Font = new Font("맑은 고딕", 12);
+			column.DefaultCellStyle.Font = new Font(SystemHelper._FONT_NAME, 12);
 
 			if (textType != TextType.None && textType != TextType.Text)
             {

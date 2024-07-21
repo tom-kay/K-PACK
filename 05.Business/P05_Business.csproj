@@ -1096,6 +1096,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptOrderDucu.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Resource\Font\D2Coding-Ver1.3.2-20180524-all.ttc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="S04_Reports\Xsd\OrderDs.xsc">
       <DependentUpon>OrderDs.xsd</DependentUpon>
     </None>

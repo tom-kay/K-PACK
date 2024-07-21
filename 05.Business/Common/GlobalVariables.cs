@@ -96,4 +96,5 @@ namespace P05_Business.Common
 		public static string GetLogoFileImage { get { return Path.Combine(GlobalVariables.ExcutePath, GlobalVariables.LogoFilePath, GlobalVariables.LogoFile); } }
 
 	}
+
 }

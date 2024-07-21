@@ -1,4 +1,6 @@
-﻿namespace P05_Business.S03_Views.Popup.Biz
+﻿using P02_K_CONTROL_WIN;
+
+namespace P05_Business.S03_Views.Popup.Biz
 {
     partial class frmItemFindPopup
     {
@@ -225,7 +227,7 @@
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAdd.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAdd.Font = new System.Drawing.Font(SystemHelper._FONT_NAME, 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnAdd.Location = new System.Drawing.Point(0, 0);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(50, 35);
@@ -250,7 +252,7 @@
             this.btnDel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDel.FlatAppearance.BorderSize = 0;
             this.btnDel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDel.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnDel.Font = new System.Drawing.Font(SystemHelper._FONT_NAME, 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnDel.Location = new System.Drawing.Point(0, 0);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(50, 35);

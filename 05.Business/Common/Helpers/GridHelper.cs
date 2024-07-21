@@ -1,4 +1,5 @@
-﻿using System;
+﻿using P02_K_CONTROL_WIN;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -135,7 +136,7 @@ namespace P05_Business.Common.Helpers
                     r.Height = gv.ColumnHeadersHeight;
 
                     e.Graphics.FillRectangle(new SolidBrush(gv.ColumnHeadersDefaultCellStyle.BackColor), r);
-                    e.Graphics.DrawString(strHeader, new Font("맑은 고딕", 12, System.Drawing.FontStyle.Bold), new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r, format);
+                    e.Graphics.DrawString(strHeader, new Font(SystemHelper._FONT_NAME, 12, System.Drawing.FontStyle.Bold), new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r, format);
                 };
             }
             catch

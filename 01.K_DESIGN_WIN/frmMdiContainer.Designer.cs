@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using P02_K_CONTROL_WIN;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace P01_K_DESIGN_WIN
@@ -180,7 +181,7 @@ namespace P01_K_DESIGN_WIN
 			// lblMainMsg
 			// 
 			this.lblMainMsg.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.lblMainMsg.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblMainMsg.Font = new System.Drawing.Font(SystemHelper._FONT_NAME, 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblMainMsg.ForeColor = System.Drawing.Color.White;
 			this.lblMainMsg.Location = new System.Drawing.Point(0, 0);
 			this.lblMainMsg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
