@@ -3,68 +3,20 @@
   "WorkspaceRootPath": "G:\\workspace\\K-PACK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71F6E26D-8061-4E84-97DA-5777776E6D57}|01.K_DESIGN_WIN\\P01_K_DESIGN_WIN.csproj|g:\\workspace\\k-pack\\01.k_design_win\\classes\\formsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71F6E26D-8061-4E84-97DA-5777776E6D57}|01.K_DESIGN_WIN\\P01_K_DESIGN_WIN.csproj|solutionrelative:01.k_design_win\\classes\\formsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\dto\\biz\\exportinvoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\dto\\biz\\exportinvoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\popup\\common\\frmtemplatepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\popup\\common\\frmtemplatepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\dto\\biz\\exportpackingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\dto\\biz\\exportpackingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{71F6E26D-8061-4E84-97DA-5777776E6D57}|01.K_DESIGN_WIN\\P01_K_DESIGN_WIN.csproj|g:\\workspace\\k-pack\\01.k_design_win\\frmsearchcontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71F6E26D-8061-4E84-97DA-5777776E6D57}|01.K_DESIGN_WIN\\P01_K_DESIGN_WIN.csproj|solutionrelative:01.k_design_win\\frmsearchcontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\dto\\biz\\exportcontainerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\dto\\biz\\exportcontainerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\common\\helpers\\gridhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\common\\helpers\\gridhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\popup\\common\\frmusersetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\popup\\common\\frmusersetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71F6E26D-8061-4E84-97DA-5777776E6D57}|01.K_DESIGN_WIN\\P01_K_DESIGN_WIN.csproj|g:\\workspace\\k-pack\\01.k_design_win\\frmpopupframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71F6E26D-8061-4E84-97DA-5777776E6D57}|01.K_DESIGN_WIN\\P01_K_DESIGN_WIN.csproj|solutionrelative:01.k_design_win\\frmpopupframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\popup\\common\\frmusersetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\popup\\common\\frmusersetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\popup\\common\\frmtemplatepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\popup\\common\\frmtemplatepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71F6E26D-8061-4E84-97DA-5777776E6D57}|01.K_DESIGN_WIN\\P01_K_DESIGN_WIN.csproj|g:\\workspace\\k-pack\\01.k_design_win\\frmmdicontainer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71F6E26D-8061-4E84-97DA-5777776E6D57}|01.K_DESIGN_WIN\\P01_K_DESIGN_WIN.csproj|solutionrelative:01.k_design_win\\frmmdicontainer.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\biz\\frmorderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\biz\\frmorderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\biz\\frmorderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\biz\\frmorderlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\common\\userdatagrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\common\\userdatagrid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\biz\\frmordermng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\biz\\frmordermng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5815AF69-7BA4-4078-93C6-1858678AE33E}|02.K_CONTROL_WIN\\P02_K_CONTROL_WIN.csproj|g:\\workspace\\k-pack\\02.k_control_win\\systemhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5815AF69-7BA4-4078-93C6-1858678AE33E}|02.K_CONTROL_WIN\\P02_K_CONTROL_WIN.csproj|solutionrelative:02.k_control_win\\systemhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\biz\\frmordermng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\biz\\frmordermng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\dto\\biz\\exportmasterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\dto\\biz\\exportmasterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,206 +42,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmPopupFrame.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\01.K_DESIGN_WIN\\frmPopupFrame.cs",
-              "RelativeDocumentMoniker": "01.K_DESIGN_WIN\\frmPopupFrame.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\01.K_DESIGN_WIN\\frmPopupFrame.cs",
-              "RelativeToolTip": "01.K_DESIGN_WIN\\frmPopupFrame.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:28:54.009Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmUserSetting.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Popup\\Common\\frmUserSetting.cs",
-              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Popup\\Common\\frmUserSetting.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Popup\\Common\\frmUserSetting.cs",
-              "RelativeToolTip": "05.Business\\S03_Views\\Popup\\Common\\frmUserSetting.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAEwBIAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:28:44.088Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmUserSetting.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Popup\\Common\\frmUserSetting.cs",
-              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Popup\\Common\\frmUserSetting.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Popup\\Common\\frmUserSetting.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "05.Business\\S03_Views\\Popup\\Common\\frmUserSetting.cs [\uB514\uC790\uC778]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:28:43.016Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormSettings.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\01.K_DESIGN_WIN\\Classes\\FormSettings.cs",
-              "RelativeDocumentMoniker": "01.K_DESIGN_WIN\\Classes\\FormSettings.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\01.K_DESIGN_WIN\\Classes\\FormSettings.cs",
-              "RelativeToolTip": "01.K_DESIGN_WIN\\Classes\\FormSettings.cs",
-              "ViewState": "AQIAAIQAAAAAAAAAAAASwJUAAAAFAAAA",
+              "Title": "ExportInvoiceDto.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportInvoiceDto.cs",
+              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Dto\\Biz\\ExportInvoiceDto.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportInvoiceDto.cs",
+              "RelativeToolTip": "05.Business\\S01_Models\\Dto\\Biz\\ExportInvoiceDto.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAA1wBkAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:01:45.833Z",
+              "WhenOpened": "2024-07-21T15:15:32.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmTemplatePopup.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Popup\\Common\\frmTemplatePopup.cs",
-              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Popup\\Common\\frmTemplatePopup.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Popup\\Common\\frmTemplatePopup.cs",
-              "RelativeToolTip": "05.Business\\S03_Views\\Popup\\Common\\frmTemplatePopup.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAzwBEAAAA5AAAA",
+              "Title": "ExportPackingDto.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportPackingDto.cs",
+              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Dto\\Biz\\ExportPackingDto.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportPackingDto.cs",
+              "RelativeToolTip": "05.Business\\S01_Models\\Dto\\Biz\\ExportPackingDto.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAqwCYAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:30:27.617Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\Program.cs",
-              "RelativeDocumentMoniker": "05.Business\\Program.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\Program.cs",
-              "RelativeToolTip": "05.Business\\Program.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABIAAAACAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-18T16:16:29.327Z",
+              "WhenOpened": "2024-07-21T15:14:23.415Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "frmSearchContainer.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\01.K_DESIGN_WIN\\frmSearchContainer.cs",
-              "RelativeDocumentMoniker": "01.K_DESIGN_WIN\\frmSearchContainer.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\01.K_DESIGN_WIN\\frmSearchContainer.cs",
-              "RelativeToolTip": "01.K_DESIGN_WIN\\frmSearchContainer.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Title": "ExportContainerDto.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportContainerDto.cs",
+              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Dto\\Biz\\ExportContainerDto.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportContainerDto.cs",
+              "RelativeToolTip": "05.Business\\S01_Models\\Dto\\Biz\\ExportContainerDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:38:09.235Z",
+              "WhenOpened": "2024-07-21T15:11:22.8Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GridHelper.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\Common\\Helpers\\GridHelper.cs",
-              "RelativeDocumentMoniker": "05.Business\\Common\\Helpers\\GridHelper.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\Common\\Helpers\\GridHelper.cs",
-              "RelativeToolTip": "05.Business\\Common\\Helpers\\GridHelper.cs",
-              "ViewState": "AQIAAH0AAAAAAAAAAAAswIoAAABVAAAA",
+              "Title": "ExportMasterDto.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportMasterDto.cs",
+              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Dto\\Biz\\ExportMasterDto.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportMasterDto.cs",
+              "RelativeToolTip": "05.Business\\S01_Models\\Dto\\Biz\\ExportMasterDto.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAxwDAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:25:06.88Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "frmTemplatePopup.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Popup\\Common\\frmTemplatePopup.cs",
-              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Popup\\Common\\frmTemplatePopup.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Popup\\Common\\frmTemplatePopup.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "05.Business\\S03_Views\\Popup\\Common\\frmTemplatePopup.cs [\uB514\uC790\uC778]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:30:24.98Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "frmMdiContainer.Designer.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\01.K_DESIGN_WIN\\frmMdiContainer.Designer.cs",
-              "RelativeDocumentMoniker": "01.K_DESIGN_WIN\\frmMdiContainer.Designer.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\01.K_DESIGN_WIN\\frmMdiContainer.Designer.cs",
-              "RelativeToolTip": "01.K_DESIGN_WIN\\frmMdiContainer.Designer.cs",
-              "ViewState": "AQIAAKoAAAAAAAAAAAAswLcAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:26:10.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "frmOrderList.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmOrderList.cs",
-              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Biz\\frmOrderList.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmOrderList.cs",
-              "RelativeToolTip": "05.Business\\S03_Views\\Biz\\frmOrderList.cs",
-              "ViewState": "AQIAAI0AAAAAAAAAAAAAAKAAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:24:50.244Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "frmOrderList.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmOrderList.cs",
-              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Biz\\frmOrderList.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmOrderList.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "05.Business\\S03_Views\\Biz\\frmOrderList.cs [\uB514\uC790\uC778]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:24:48.106Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UserDataGrid.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\Common\\UserDataGrid.cs",
-              "RelativeDocumentMoniker": "05.Business\\Common\\UserDataGrid.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\Common\\UserDataGrid.cs",
-              "RelativeToolTip": "05.Business\\Common\\UserDataGrid.cs",
-              "ViewState": "AQIAANIAAAAAAAAAAAAcwNwAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:20:12.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "frmOrderMng.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmOrderMng.cs",
-              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Biz\\frmOrderMng.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmOrderMng.cs",
-              "RelativeToolTip": "05.Business\\S03_Views\\Biz\\frmOrderMng.cs",
-              "ViewState": "AQIAAOgBAAAAAAAAAAAcwPUBAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:20:05.497Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "frmOrderMng.cs [\uB514\uC790\uC778]",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmOrderMng.cs",
-              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Biz\\frmOrderMng.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmOrderMng.cs [\uB514\uC790\uC778]",
-              "RelativeToolTip": "05.Business\\S03_Views\\Biz\\frmOrderMng.cs [\uB514\uC790\uC778]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:20:04.211Z",
-              "EditorCaption": " [\uB514\uC790\uC778]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "SystemHelper.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\02.K_CONTROL_WIN\\SystemHelper.cs",
-              "RelativeDocumentMoniker": "02.K_CONTROL_WIN\\SystemHelper.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\02.K_CONTROL_WIN\\SystemHelper.cs",
-              "RelativeToolTip": "02.K_CONTROL_WIN\\SystemHelper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T13:34:20.053Z",
+              "WhenOpened": "2024-07-21T15:07:33.918Z",
               "EditorCaption": ""
             }
           ]
