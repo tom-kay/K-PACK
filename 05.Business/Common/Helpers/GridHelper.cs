@@ -136,7 +136,7 @@ namespace P05_Business.Common.Helpers
                     r.Height = gv.ColumnHeadersHeight;
 
                     e.Graphics.FillRectangle(new SolidBrush(gv.ColumnHeadersDefaultCellStyle.BackColor), r);
-                    e.Graphics.DrawString(strHeader, new Font(SystemHelper._FONT_NAME, 12, System.Drawing.FontStyle.Bold), new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r, format);
+                    e.Graphics.DrawString(strHeader, new Font(SystemHelper._FONT_NAME, 12f, System.Drawing.FontStyle.Bold), new SolidBrush(gv.ColumnHeadersDefaultCellStyle.ForeColor), r, format);
                 };
             }
             catch

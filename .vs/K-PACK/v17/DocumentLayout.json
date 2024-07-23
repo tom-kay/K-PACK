@@ -1,24 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "G:\\workspace\\K-PACK\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\dto\\biz\\exportinvoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\dto\\biz\\exportinvoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\dto\\biz\\exportpackingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\dto\\biz\\exportpackingdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\dto\\biz\\exportcontainerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\dto\\biz\\exportcontainerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\dto\\biz\\exportmasterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\dto\\biz\\exportmasterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -26,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,58 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ExportInvoiceDto.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportInvoiceDto.cs",
-              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Dto\\Biz\\ExportInvoiceDto.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportInvoiceDto.cs",
-              "RelativeToolTip": "05.Business\\S01_Models\\Dto\\Biz\\ExportInvoiceDto.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAA1wBkAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T15:15:32.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExportPackingDto.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportPackingDto.cs",
-              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Dto\\Biz\\ExportPackingDto.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportPackingDto.cs",
-              "RelativeToolTip": "05.Business\\S01_Models\\Dto\\Biz\\ExportPackingDto.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAqwCYAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T15:14:23.415Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ExportContainerDto.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportContainerDto.cs",
-              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Dto\\Biz\\ExportContainerDto.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportContainerDto.cs",
-              "RelativeToolTip": "05.Business\\S01_Models\\Dto\\Biz\\ExportContainerDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T15:11:22.8Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ExportMasterDto.cs",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportMasterDto.cs",
-              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Dto\\Biz\\ExportMasterDto.cs",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Biz\\ExportMasterDto.cs",
-              "RelativeToolTip": "05.Business\\S01_Models\\Dto\\Biz\\ExportMasterDto.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAxwDAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T15:07:33.918Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -18,7 +18,7 @@ namespace P05_Business
 		static void Main()
 		{
 			SystemHelper.SetupSystemFont();	//프로그램에서 사용할 폰트 설치
-
+			
 
             if (IsExistProcessMutex(Process.GetCurrentProcess().ProcessName))
 			{

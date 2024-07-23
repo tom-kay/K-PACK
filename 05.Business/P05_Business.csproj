@@ -39,6 +39,15 @@
     <Win32Resource>
     </Win32Resource>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
@@ -373,11 +382,24 @@
     <Compile Include="Common\UserDataGrid.cs" />
     <Compile Include="Common\GlobalVariables.cs" />
     <Compile Include="Common\MainMessage.cs" />
+    <Compile Include="S01_Models\Dao\Biz\ExportMngDao.cs" />
     <Compile Include="S01_Models\Dto\Biz\ExportContainerDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\ExportInvoiceDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\ExportMasterDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\ExportPackingDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\OrderReportDto.cs" />
+    <Compile Include="S03_Views\Biz\frmExportList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmExportList.Designer.cs">
+      <DependentUpon>frmExportList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmExportMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmExportMng.Designer.cs">
+      <DependentUpon>frmExportMng.cs</DependentUpon>
+    </Compile>
     <Compile Include="S04_Reports\Rpt\rptOrderDucu.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -987,6 +1009,7 @@
     <Content Include="Resource\Images\windows_windows.png" />
     <Content Include="Resource\Images\yuan_yuan_currency_blue_blue_currency.png" />
     <Content Include="Resource\k_icon.ico" />
+    <Content Include="S01_Models\Maps\Biz\ExportMng.xml" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1049,6 +1072,12 @@
     <EmbeddedResource Include="S03_Views\Base\frmUserMng.resx">
       <DependentUpon>frmUserMng.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Biz\frmExportList.resx">
+      <DependentUpon>frmExportList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Biz\frmExportMng.resx">
+      <DependentUpon>frmExportMng.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Biz\frmItemList.resx">
       <DependentUpon>frmItemList.cs</DependentUpon>
     </EmbeddedResource>
@@ -1100,6 +1129,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptOrderDucu.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Properties\app.manifest" />
     <None Include="Resource\Font\D2Coding-Ver1.3.2-20180524-all.ttc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

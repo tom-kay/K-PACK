@@ -14,6 +14,7 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("인보이스번호")]
         public string InvoiceNo { get; set; }
 
+        [Required]
         [Description("팩킹리스트ID")]
         public int? PackingId { get; set; }
 

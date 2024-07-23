@@ -41,7 +41,7 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("Buyer주소")]
         public string BuyerAddress { get; set; }
 
-        
+        [Description("출발일자")]
         public string DepartureDate { get; set; }
 
         [Description("운송수단(항공기/선박)이름")]
@@ -76,6 +76,13 @@ namespace P05_Business.S01_Models.Dto.Biz
 
         [Description("Invoice 비고")]
         public string InvoiceRemark { get; set; }
+
+        public List<ExportContainerDto> ExportContainers { get; set; }
+
+        public List<ExportPackingDto> ExportPackings { get; set; }
+
+        public List<ExportInvoiceDto> ExportInvoices { get; set; }
+
 
     }
 }

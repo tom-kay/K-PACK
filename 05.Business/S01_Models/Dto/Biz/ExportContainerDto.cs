@@ -14,6 +14,10 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("인보이스번호")]
         public string InvoiceNo { get; set; }
 
+        [Required]
+        [Description("컨테이너ID")]
+        public string ContainerId { get; set; }
+
         [Description("컨테이너번호")]
         public string ContainerNo { get; set; }
 

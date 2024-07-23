@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System;
+using Microsoft.Win32;
 
 namespace P02_K_CONTROL_WIN
 {
@@ -15,6 +16,12 @@ namespace P02_K_CONTROL_WIN
 
         [DllImport("gdi32.dll")]
         private static extern int AddFontResource(string lpszFilename);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern int SendMessage(int hWnd, uint Msg, int wParam, int lParam);
+
+        private const int HWND_BROADCAST = 0xffff;
+        private const int WM_FONTCHANGE = 0x001D;
 
         public static Font GetSystemFont()
         {
@@ -51,6 +58,16 @@ namespace P02_K_CONTROL_WIN
                 {
                     return false;
                 }
+
+                // 레지스트리에 폰트 등록
+                using (RegistryKey key = Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts", true))
+                {
+                    key.SetValue(Path.GetFileNameWithoutExtension(fontFileName) + " (TrueType)", fontFileName);
+                }
+
+                // 시스템에 폰트 변경 알림
+                SendMessage(HWND_BROADCAST, WM_FONTCHANGE, 0, 0);
+
                 return true;
             }
             catch (Exception ex)
