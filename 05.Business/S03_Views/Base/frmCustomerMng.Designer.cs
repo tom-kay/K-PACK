@@ -327,12 +327,14 @@
             this.txtCustCode.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCustCode.PlaceholderText = "";
             this.txtCustCode.ReadOnly = false;
+            this.txtCustCode.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtCustCode.Size = new System.Drawing.Size(138, 22);
             this.txtCustCode.TabIndex = 0;
             this.txtCustCode.Tag = "CustCode";
             this.txtCustCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCustCode.Texts = "";
             this.txtCustCode.UnderlinedStyle = false;
+            this.txtCustCode.WordWrap = true;
             // 
             // panel4
             // 
@@ -386,12 +388,14 @@
             this.txtCompanyNo.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCompanyNo.PlaceholderText = "";
             this.txtCompanyNo.ReadOnly = false;
+            this.txtCompanyNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtCompanyNo.Size = new System.Drawing.Size(138, 22);
             this.txtCompanyNo.TabIndex = 1;
             this.txtCompanyNo.Tag = "CompanyNo";
             this.txtCompanyNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCompanyNo.Texts = "";
             this.txtCompanyNo.UnderlinedStyle = false;
+            this.txtCompanyNo.WordWrap = true;
             // 
             // panel6
             // 
@@ -497,12 +501,14 @@
             this.txtCustName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCustName.PlaceholderText = "";
             this.txtCustName.ReadOnly = false;
+            this.txtCustName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtCustName.Size = new System.Drawing.Size(404, 22);
             this.txtCustName.TabIndex = 1;
             this.txtCustName.Tag = "CustName";
             this.txtCustName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCustName.Texts = "";
             this.txtCustName.UnderlinedStyle = false;
+            this.txtCustName.WordWrap = true;
             // 
             // panel10
             // 
@@ -578,12 +584,14 @@
             this.txtTelNo.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtTelNo.PlaceholderText = "";
             this.txtTelNo.ReadOnly = false;
+            this.txtTelNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtTelNo.Size = new System.Drawing.Size(138, 22);
             this.txtTelNo.TabIndex = 1;
             this.txtTelNo.Tag = "TelNo";
             this.txtTelNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTelNo.Texts = "";
             this.txtTelNo.UnderlinedStyle = false;
+            this.txtTelNo.WordWrap = true;
             // 
             // panel13
             // 
@@ -637,12 +645,14 @@
             this.txtFaxNo.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtFaxNo.PlaceholderText = "";
             this.txtFaxNo.ReadOnly = false;
+            this.txtFaxNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtFaxNo.Size = new System.Drawing.Size(138, 22);
             this.txtFaxNo.TabIndex = 1;
             this.txtFaxNo.Tag = "FaxNo";
             this.txtFaxNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtFaxNo.Texts = "";
             this.txtFaxNo.UnderlinedStyle = false;
+            this.txtFaxNo.WordWrap = true;
             // 
             // panel15
             // 
@@ -696,12 +706,14 @@
             this.txtEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtEmail.PlaceholderText = "";
             this.txtEmail.ReadOnly = false;
+            this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtEmail.Size = new System.Drawing.Size(137, 22);
             this.txtEmail.TabIndex = 1;
             this.txtEmail.Tag = "Email";
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtEmail.Texts = "";
             this.txtEmail.UnderlinedStyle = false;
+            this.txtEmail.WordWrap = true;
             // 
             // panel17
             // 
@@ -756,12 +768,14 @@
             this.txtAddress1.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtAddress1.PlaceholderText = "";
             this.txtAddress1.ReadOnly = false;
+            this.txtAddress1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAddress1.Size = new System.Drawing.Size(670, 22);
             this.txtAddress1.TabIndex = 1;
             this.txtAddress1.Tag = "Address1";
             this.txtAddress1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAddress1.Texts = "";
             this.txtAddress1.UnderlinedStyle = false;
+            this.txtAddress1.WordWrap = true;
             // 
             // panel19
             // 
@@ -816,12 +830,14 @@
             this.txtAddress2.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtAddress2.PlaceholderText = "";
             this.txtAddress2.ReadOnly = false;
+            this.txtAddress2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAddress2.Size = new System.Drawing.Size(670, 22);
             this.txtAddress2.TabIndex = 2;
             this.txtAddress2.Tag = "Address2";
             this.txtAddress2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAddress2.Texts = "";
             this.txtAddress2.UnderlinedStyle = false;
+            this.txtAddress2.WordWrap = true;
             // 
             // panel21
             // 
@@ -1123,12 +1139,14 @@
             this.txtRemark.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtRemark.PlaceholderText = "";
             this.txtRemark.ReadOnly = false;
+            this.txtRemark.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtRemark.Size = new System.Drawing.Size(670, 22);
             this.txtRemark.TabIndex = 2;
             this.txtRemark.Tag = "Remark";
             this.txtRemark.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtRemark.Texts = "";
             this.txtRemark.UnderlinedStyle = false;
+            this.txtRemark.WordWrap = true;
             // 
             // panel25
             // 
@@ -1160,12 +1178,14 @@
             this.txtOwnerName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtOwnerName.PlaceholderText = "";
             this.txtOwnerName.ReadOnly = false;
+            this.txtOwnerName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtOwnerName.Size = new System.Drawing.Size(137, 22);
             this.txtOwnerName.TabIndex = 1;
             this.txtOwnerName.Tag = "OwnerName";
             this.txtOwnerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtOwnerName.Texts = "";
             this.txtOwnerName.UnderlinedStyle = false;
+            this.txtOwnerName.WordWrap = true;
             // 
             // tableLayoutPanel2
             // 
@@ -1244,12 +1264,14 @@
             this.txtBankName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtBankName.PlaceholderText = "";
             this.txtBankName.ReadOnly = false;
+            this.txtBankName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtBankName.Size = new System.Drawing.Size(270, 22);
             this.txtBankName.TabIndex = 2;
             this.txtBankName.Tag = "BankName";
             this.txtBankName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtBankName.Texts = "";
             this.txtBankName.UnderlinedStyle = false;
+            this.txtBankName.WordWrap = true;
             // 
             // panel28
             // 
@@ -1303,12 +1325,14 @@
             this.txtDepositor.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtDepositor.PlaceholderText = "";
             this.txtDepositor.ReadOnly = false;
+            this.txtDepositor.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtDepositor.Size = new System.Drawing.Size(271, 22);
             this.txtDepositor.TabIndex = 3;
             this.txtDepositor.Tag = "Depositor";
             this.txtDepositor.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtDepositor.Texts = "";
             this.txtDepositor.UnderlinedStyle = false;
+            this.txtDepositor.WordWrap = true;
             // 
             // panel30
             // 
@@ -1363,12 +1387,14 @@
             this.txtAccountNo.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtAccountNo.PlaceholderText = "";
             this.txtAccountNo.ReadOnly = false;
+            this.txtAccountNo.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAccountNo.Size = new System.Drawing.Size(670, 22);
             this.txtAccountNo.TabIndex = 3;
             this.txtAccountNo.Tag = "AccountNo";
             this.txtAccountNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtAccountNo.Texts = "";
             this.txtAccountNo.UnderlinedStyle = false;
+            this.txtAccountNo.WordWrap = true;
             this.txtAccountNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAccountNo_KeyPress);
             // 
             // panel1

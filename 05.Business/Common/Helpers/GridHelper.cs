@@ -1,12 +1,11 @@
-﻿using P02_K_CONTROL_WIN;
+﻿using FarPoint.Win.Spread;
+using FarPoint.Win.Spread.CellType;
+using P02_K_CONTROL_WIN;
+using SmartSql.SqlMap.Tags;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Forms;
 
 namespace P05_Business.Common.Helpers
@@ -145,6 +144,222 @@ namespace P05_Business.Common.Helpers
             }
         }
 
+        internal static void CreateGrid(FpSpread spread)
+        {
+            FpSpread grid = spread;
+            grid.BorderStyle = BorderStyle.None;
+            grid.TabStripInsertTab = false;
+            grid.TabStripPolicy = TabStripPolicy.Never;
+            grid.ColumnSplitBoxPolicy = SplitBoxPolicy.Never;
+            grid.RowSplitBoxPolicy = SplitBoxPolicy.Never;
+            grid.PaintSelectionHeader = false;
+            grid.RetainSelectionBlock = false;
 
+            SheetView sheet = grid.Sheets[0];
+
+            sheet.Rows.Clear();
+            sheet.Columns.Clear();
+
+            sheet.AlternatingRows.Count = 2;
+            sheet.AlternatingRows[0].BackColor = Color.White;
+            sheet.AlternatingRows[1].BackColor = Color.FromArgb(183, 231, 255);
+
+            sheet.OperationMode = OperationMode.RowMode;
+            sheet.SelectionPolicy = FarPoint.Win.Spread.Model.SelectionPolicy.Single;
+            sheet.AutoGenerateColumns = false;
+            sheet.DataAutoSizeColumns = false;
+
+            foreach (Row hRow in sheet.ColumnHeader.Rows)
+            {
+                hRow.Height = 35f;
+                hRow.Font = new Font("D2Coding", 12f, System.Drawing.FontStyle.Bold);
+                hRow.BackColor = Color.CornflowerBlue;
+                hRow.ForeColor = Color.White;
+            }
+
+            sheet.Rows.Default.Height = 35f;
+            sheet.RowHeader.Visible = false;
+
+            // Enter 키 입력 시 다음 셀로 이동
+            InputMap inputMap = grid.GetInputMap(FarPoint.Win.Spread.InputMapMode.WhenAncestorOfFocused);
+            inputMap.Put(new FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextColumn);
+
+            // Enter 키 입력 시 다음 행의 첫 번째 셀로 이동
+            inputMap.Put(new FarPoint.Win.Spread.Keystroke(Keys.Enter, Keys.None), FarPoint.Win.Spread.SpreadActions.MoveToNextRow);
+        }
+
+        internal static void EndGrid(FpSpread spread)
+        {
+            FpSpread grid = spread;
+            SheetView sheet = grid.Sheets[0];
+            sheet.DataSource = null;
+        }
+
+        internal static void AddTextColumn(FpSpread spread
+            , string name, string text, bool readOnly, bool visible, int width
+            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign)
+        {
+            TextCellType textCellType = new TextCellType();
+
+            SheetView sheet = spread.Sheets[0];
+            sheet.ColumnCount++;
+
+            Column col = sheet.Columns[sheet.ColumnCount - 1];
+            col.CellType = textCellType;
+
+            SetBasicColumn(sheet, col, name, text, readOnly, visible, width, hAlign, vAlign);
+        }
+
+        internal static void AddNumberColumn(FpSpread spread
+            , string name, string text, bool readOnly, bool visible, int width
+            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign)
+        {
+            NumberCellType numberCellType = new NumberCellType();
+
+            SheetView sheet = spread.Sheets[0];
+            sheet.ColumnCount++;
+
+            Column col = sheet.Columns[sheet.ColumnCount - 1];
+            col.CellType = numberCellType;
+
+            SetBasicColumn(sheet, col, name, text, readOnly, visible, width, hAlign, vAlign);
+        }
+
+        internal static void AddCurrencyColumn(FpSpread spread
+            , string name, string text, bool readOnly, bool visible, int width
+            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign)
+        {
+            CurrencyCellType currencyCellType = new CurrencyCellType();
+
+            SheetView sheet = spread.Sheets[0];
+            sheet.ColumnCount++;
+
+            Column col = sheet.Columns[sheet.ColumnCount - 1];
+            col.CellType = currencyCellType;
+
+            SetBasicColumn(sheet, col, name, text, readOnly, visible, width, hAlign, vAlign);
+        }
+
+        internal static void AddPercentColumn(FpSpread spread
+            , string name, string text, bool readOnly, bool visible, int width
+            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign)
+        {
+            PercentCellType percentCellType = new PercentCellType();
+
+            SheetView sheet = spread.Sheets[0];
+            sheet.ColumnCount++;
+
+            Column col = sheet.Columns[sheet.ColumnCount - 1];
+            col.CellType = percentCellType;
+
+            SetBasicColumn(sheet, col, name, text, readOnly, visible, width, hAlign, vAlign);
+        }
+
+        internal static void AddDateTimeColumn(FpSpread spread
+            , string name, string text, bool readOnly, bool visible, int width
+            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign)
+        {
+            DateTimeCellType dateTimeCellType = new DateTimeCellType();
+
+            SheetView sheet = spread.Sheets[0];
+            sheet.ColumnCount++;
+
+            Column col = sheet.Columns[sheet.ColumnCount - 1];
+            col.CellType = dateTimeCellType;
+
+            SetBasicColumn(sheet, col, name, text, readOnly, visible, width, hAlign, vAlign);
+        }
+
+        internal static void AddCheckBoxColumn(FpSpread spread
+            , string name, string text, bool readOnly, bool visible, int width
+            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign)
+        {
+            CheckBoxCellType checkBoxCellType = new CheckBoxCellType();
+
+            SheetView sheet = spread.Sheets[0];
+            sheet.ColumnCount++;
+
+            Column col = sheet.Columns[sheet.ColumnCount - 1];
+            col.CellType = checkBoxCellType;
+
+            SetBasicColumn(sheet, col, name, text, readOnly, visible, width, hAlign, vAlign);
+        }
+
+        internal static void AddComboBoxColumn(FpSpread spread
+            , string name, string text, bool readOnly, bool visible, int width
+            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign, string[] items)
+        {
+            ComboBoxCellType comboBoxCellType = new ComboBoxCellType();
+            comboBoxCellType.Items = items;
+
+            SheetView sheet = spread.Sheets[0];
+            sheet.ColumnCount++;
+
+            Column col = sheet.Columns[sheet.ColumnCount - 1];
+            col.CellType = comboBoxCellType;
+
+            SetBasicColumn(sheet, col, name, text, readOnly, visible, width, hAlign, vAlign);
+
+
+        }
+
+        internal static void AddButtonColumn(FpSpread spread
+            , string name, string text, bool readOnly, bool visible, int width
+            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign)
+        {
+            ButtonCellType buttonCellType = new ButtonCellType();
+
+            SheetView sheet = spread.Sheets[0];
+            sheet.ColumnCount++;
+
+            Column col = sheet.Columns[sheet.ColumnCount - 1];
+            col.CellType = buttonCellType;
+
+            SetBasicColumn(sheet, col, name, text, readOnly, visible, width, hAlign, vAlign);
+        }
+
+        internal static void AddImageColumn(FpSpread spread
+            , string name, string text, bool readOnly, bool visible, int width
+            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign)
+        {
+            ImageCellType imageCellType = new ImageCellType();
+
+            SheetView sheet = spread.Sheets[0];
+            sheet.ColumnCount++;
+
+            Column col = sheet.Columns[sheet.ColumnCount - 1];
+            col.CellType = imageCellType;
+
+            SetBasicColumn(sheet, col, name, text, readOnly, visible, width, hAlign, vAlign);
+        }
+
+        internal static void AddHyperLinkColumn(FpSpread spread
+            , string name, string text, bool readOnly, bool visible, int width
+            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign)
+        {
+            HyperLinkCellType hyperLinkCellType = new HyperLinkCellType();
+
+            SheetView sheet = spread.Sheets[0];
+            sheet.ColumnCount++;
+
+            Column col = sheet.Columns[sheet.ColumnCount - 1];
+            col.CellType = hyperLinkCellType;
+
+            SetBasicColumn(sheet, col, name, text, readOnly, visible, width, hAlign, vAlign);
+        }
+
+        private static void SetBasicColumn(SheetView sheet, Column col
+            , string name, string text
+            , bool readOnly, bool visible, int width
+            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign)
+        {
+            col.Tag = name;
+            sheet.ColumnHeader.Cells[0, col.Index].Text = text;
+            col.Locked = readOnly;
+            col.Visible = visible;
+            col.Width = width;
+            col.HorizontalAlignment = hAlign;
+            col.VerticalAlignment = vAlign;
+        }
     }
 }
