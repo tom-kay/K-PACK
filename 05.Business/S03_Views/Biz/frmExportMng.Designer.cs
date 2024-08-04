@@ -38,7 +38,7 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.tabExportSub = new MetroFramework.Controls.MetroTabControl();
             this.tabBasic = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -46,6 +46,7 @@
             this.panel55 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.panel56 = new System.Windows.Forms.Panel();
+            this.txtShippingMark = new P02_K_CONTROL_WIN.KTextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.panel57 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
@@ -62,7 +63,9 @@
             this.panel18 = new System.Windows.Forms.Panel();
             this.cnbBuyer = new P02_K_CONTROL_WIN.KCodeNameBox();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.txtShipperAddress = new P02_K_CONTROL_WIN.KTextBox();
             this.panel22 = new System.Windows.Forms.Panel();
+            this.txtBuyerAddress = new P02_K_CONTROL_WIN.KTextBox();
             this.panel23 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
@@ -72,19 +75,25 @@
             this.panel26 = new System.Windows.Forms.Panel();
             this.cnbNotify = new P02_K_CONTROL_WIN.KCodeNameBox();
             this.panel28 = new System.Windows.Forms.Panel();
+            this.txtConsigneeAddress = new P02_K_CONTROL_WIN.KTextBox();
             this.panel30 = new System.Windows.Forms.Panel();
+            this.txtNotifyAddress = new P02_K_CONTROL_WIN.KTextBox();
             this.panel31 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.panel32 = new System.Windows.Forms.Panel();
+            this.dtbDepartureDate = new P02_K_CONTROL_WIN.KDateBox();
             this.panel35 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel36 = new System.Windows.Forms.Panel();
+            this.cnbPol = new P02_K_CONTROL_WIN.KCodeNameBox();
             this.panel37 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.panel38 = new System.Windows.Forms.Panel();
+            this.txtCarrierName = new P02_K_CONTROL_WIN.KTextBox();
             this.panel39 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.panel40 = new System.Windows.Forms.Panel();
+            this.txtDestinationName = new P02_K_CONTROL_WIN.KTextBox();
             this.panel43 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.panel45 = new System.Windows.Forms.Panel();
@@ -92,6 +101,17 @@
             this.panel47 = new System.Windows.Forms.Panel();
             this.label19 = new System.Windows.Forms.Label();
             this.panel48 = new System.Windows.Forms.Panel();
+            this.txtRemark = new P02_K_CONTROL_WIN.KTextBox();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.cboDeliveryTerm = new P02_K_CONTROL_WIN.KComboBox();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.cnbDelivery = new P02_K_CONTROL_WIN.KCodeNameBox();
+            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel33 = new System.Windows.Forms.Panel();
+            this.cboPaymentTerm = new P02_K_CONTROL_WIN.KComboBox();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.txtPaymentDesc = new P02_K_CONTROL_WIN.KTextBox();
             this.tabPackingList = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -110,27 +130,7 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.txtShipperAddress = new P02_K_CONTROL_WIN.KTextBox();
-            this.txtBuyerAddress = new P02_K_CONTROL_WIN.KTextBox();
-            this.txtConsigneeAddress = new P02_K_CONTROL_WIN.KTextBox();
-            this.txtNotifyAddress = new P02_K_CONTROL_WIN.KTextBox();
-            this.txtCarrierName = new P02_K_CONTROL_WIN.KTextBox();
-            this.txtDestinationName = new P02_K_CONTROL_WIN.KTextBox();
-            this.txtRemark = new P02_K_CONTROL_WIN.KTextBox();
-            this.txtShippingMark = new P02_K_CONTROL_WIN.KTextBox();
-            this.txtInvoiceDate = new P02_K_CONTROL_WIN.KTextBox();
-            this.dtbDepartureDate = new P02_K_CONTROL_WIN.KDateBox();
-            this.cnbPol = new P02_K_CONTROL_WIN.KCodeNameBox();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel27 = new System.Windows.Forms.Panel();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.cboDeliveryTerm = new P02_K_CONTROL_WIN.KComboBox();
-            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel33 = new System.Windows.Forms.Panel();
-            this.panel34 = new System.Windows.Forms.Panel();
-            this.cboPaymentTerm = new P02_K_CONTROL_WIN.KComboBox();
-            this.cnbDelivery = new P02_K_CONTROL_WIN.KCodeNameBox();
-            this.txtPaymentDesc = new P02_K_CONTROL_WIN.KTextBox();
+            this.txtInvoiceDate = new P02_K_CONTROL_WIN.KDateBox();
             this.pnlMain.SuspendLayout();
             this.pnlBody.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -147,7 +147,7 @@
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
-            this.metroTabControl1.SuspendLayout();
+            this.tabExportSub.SuspendLayout();
             this.tabBasic.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
@@ -183,6 +183,12 @@
             this.panel45.SuspendLayout();
             this.panel47.SuspendLayout();
             this.panel48.SuspendLayout();
+            this.tableLayoutPanel12.SuspendLayout();
+            this.panel27.SuspendLayout();
+            this.panel29.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
+            this.panel33.SuspendLayout();
+            this.panel34.SuspendLayout();
             this.tabPackingList.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -193,12 +199,6 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
-            this.panel27.SuspendLayout();
-            this.panel29.SuspendLayout();
-            this.tableLayoutPanel13.SuspendLayout();
-            this.panel33.SuspendLayout();
-            this.panel34.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -207,7 +207,7 @@
             // 
             // pnlBody
             // 
-            this.pnlBody.Controls.Add(this.metroTabControl1);
+            this.pnlBody.Controls.Add(this.tabExportSub);
             this.pnlBody.Controls.Add(this.panel1);
             this.pnlBody.Size = new System.Drawing.Size(1101, 726);
             // 
@@ -226,26 +226,32 @@
             // btnPrint
             // 
             this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnSave
             // 
             this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSearch
             // 
             this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnInit
             // 
             this.btnInit.FlatAppearance.BorderSize = 0;
+            this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
             // 
             // panel1
             // 
@@ -255,7 +261,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 10);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.panel1.Size = new System.Drawing.Size(1101, 47);
+            this.panel1.Size = new System.Drawing.Size(1101, 49);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -275,8 +281,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1101, 37);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1101, 39);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel11
@@ -285,7 +291,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(4, 4);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(114, 29);
+            this.panel11.Size = new System.Drawing.Size(114, 31);
             this.panel11.TabIndex = 0;
             // 
             // label3
@@ -296,7 +302,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 29);
+            this.label3.Size = new System.Drawing.Size(114, 31);
             this.label3.TabIndex = 5;
             this.label3.Text = "INV NO.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -307,7 +313,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(125, 4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(422, 29);
+            this.panel12.Size = new System.Drawing.Size(422, 31);
             this.panel12.TabIndex = 1;
             // 
             // txtInvoiceNo
@@ -321,7 +327,7 @@
             this.txtInvoiceNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtInvoiceNo.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
             this.txtInvoiceNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtInvoiceNo.Location = new System.Drawing.Point(3, 3);
+            this.txtInvoiceNo.Location = new System.Drawing.Point(3, 4);
             this.txtInvoiceNo.MaxLength = 50;
             this.txtInvoiceNo.Multiline = false;
             this.txtInvoiceNo.Name = "txtInvoiceNo";
@@ -345,7 +351,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(554, 4);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(114, 29);
+            this.panel13.Size = new System.Drawing.Size(114, 31);
             this.panel13.TabIndex = 2;
             // 
             // label1
@@ -356,7 +362,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 29);
+            this.label1.Size = new System.Drawing.Size(114, 31);
             this.label1.TabIndex = 5;
             this.label1.Text = "INV DATE";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -367,23 +373,23 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(675, 4);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(422, 29);
+            this.panel14.Size = new System.Drawing.Size(422, 31);
             this.panel14.TabIndex = 3;
             // 
-            // metroTabControl1
+            // tabExportSub
             // 
-            this.metroTabControl1.Controls.Add(this.tabBasic);
-            this.metroTabControl1.Controls.Add(this.tabPackingList);
-            this.metroTabControl1.Controls.Add(this.tabInvoice);
-            this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTabControl1.ItemSize = new System.Drawing.Size(68, 34);
-            this.metroTabControl1.Location = new System.Drawing.Point(0, 57);
-            this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
-            this.metroTabControl1.Size = new System.Drawing.Size(1101, 669);
-            this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Lime;
-            this.metroTabControl1.TabIndex = 1;
-            this.metroTabControl1.UseSelectable = true;
+            this.tabExportSub.Controls.Add(this.tabBasic);
+            this.tabExportSub.Controls.Add(this.tabPackingList);
+            this.tabExportSub.Controls.Add(this.tabInvoice);
+            this.tabExportSub.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabExportSub.ItemSize = new System.Drawing.Size(68, 34);
+            this.tabExportSub.Location = new System.Drawing.Point(0, 59);
+            this.tabExportSub.Name = "tabExportSub";
+            this.tabExportSub.SelectedIndex = 0;
+            this.tabExportSub.Size = new System.Drawing.Size(1101, 667);
+            this.tabExportSub.Style = MetroFramework.MetroColorStyle.Lime;
+            this.tabExportSub.TabIndex = 1;
+            this.tabExportSub.UseSelectable = true;
             // 
             // tabBasic
             // 
@@ -391,7 +397,7 @@
             this.tabBasic.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tabBasic.Location = new System.Drawing.Point(4, 38);
             this.tabBasic.Name = "tabBasic";
-            this.tabBasic.Size = new System.Drawing.Size(1093, 627);
+            this.tabBasic.Size = new System.Drawing.Size(1093, 625);
             this.tabBasic.TabIndex = 0;
             this.tabBasic.Text = "기본정보";
             // 
@@ -403,7 +409,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1093, 627);
+            this.panel2.Size = new System.Drawing.Size(1093, 625);
             this.panel2.TabIndex = 0;
             // 
             // tableLayoutPanel7
@@ -419,7 +425,7 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1093, 165);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1093, 163);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // tableLayoutPanel8
@@ -434,7 +440,7 @@
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(212, 157);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(212, 155);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
             // panel55
@@ -465,8 +471,39 @@
             this.panel56.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel56.Location = new System.Drawing.Point(3, 38);
             this.panel56.Name = "panel56";
-            this.panel56.Size = new System.Drawing.Size(206, 116);
+            this.panel56.Size = new System.Drawing.Size(206, 114);
             this.panel56.TabIndex = 1;
+            // 
+            // txtShippingMark
+            // 
+            this.txtShippingMark.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtShippingMark.BackColor = System.Drawing.SystemColors.Window;
+            this.txtShippingMark.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtShippingMark.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtShippingMark.BorderRadius = 0;
+            this.txtShippingMark.BorderSize = 2;
+            this.txtShippingMark.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtShippingMark.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+            this.txtShippingMark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtShippingMark.Location = new System.Drawing.Point(3, 3);
+            this.txtShippingMark.MaxLength = 32767;
+            this.txtShippingMark.Multiline = true;
+            this.txtShippingMark.Name = "txtShippingMark";
+            this.txtShippingMark.OnlyNumber = false;
+            this.txtShippingMark.PasswordChar = false;
+            this.txtShippingMark.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtShippingMark.PlaceholderText = "";
+            this.txtShippingMark.ReadOnly = false;
+            this.txtShippingMark.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtShippingMark.Size = new System.Drawing.Size(200, 108);
+            this.txtShippingMark.TabIndex = 2;
+            this.txtShippingMark.Tag = "ShippingMark";
+            this.txtShippingMark.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtShippingMark.Texts = "";
+            this.txtShippingMark.UnderlinedStyle = false;
+            this.txtShippingMark.WordWrap = true;
             // 
             // tableLayoutPanel9
             // 
@@ -481,7 +518,7 @@
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(866, 157);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(866, 155);
             this.tableLayoutPanel9.TabIndex = 1;
             // 
             // panel57
@@ -512,7 +549,7 @@
             this.panel58.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel58.Location = new System.Drawing.Point(3, 38);
             this.panel58.Name = "panel58";
-            this.panel58.Size = new System.Drawing.Size(860, 116);
+            this.panel58.Size = new System.Drawing.Size(860, 114);
             this.panel58.TabIndex = 1;
             // 
             // spdContainerList
@@ -522,7 +559,7 @@
             this.spdContainerList.Font = new System.Drawing.Font("D2Coding", 12F);
             this.spdContainerList.Location = new System.Drawing.Point(0, 0);
             this.spdContainerList.Name = "spdContainerList";
-            this.spdContainerList.Size = new System.Drawing.Size(860, 116);
+            this.spdContainerList.Size = new System.Drawing.Size(860, 114);
             this.spdContainerList.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -698,6 +735,37 @@
             this.panel20.Size = new System.Drawing.Size(414, 102);
             this.panel20.TabIndex = 5;
             // 
+            // txtShipperAddress
+            // 
+            this.txtShipperAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtShipperAddress.BackColor = System.Drawing.SystemColors.Window;
+            this.txtShipperAddress.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtShipperAddress.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtShipperAddress.BorderRadius = 0;
+            this.txtShipperAddress.BorderSize = 2;
+            this.txtShipperAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtShipperAddress.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+            this.txtShipperAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtShipperAddress.Location = new System.Drawing.Point(3, 3);
+            this.txtShipperAddress.MaxLength = 32767;
+            this.txtShipperAddress.Multiline = true;
+            this.txtShipperAddress.Name = "txtShipperAddress";
+            this.txtShipperAddress.OnlyNumber = false;
+            this.txtShipperAddress.PasswordChar = false;
+            this.txtShipperAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtShipperAddress.PlaceholderText = "";
+            this.txtShipperAddress.ReadOnly = false;
+            this.txtShipperAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtShipperAddress.Size = new System.Drawing.Size(413, 96);
+            this.txtShipperAddress.TabIndex = 0;
+            this.txtShipperAddress.Tag = "ShipperAddress";
+            this.txtShipperAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtShipperAddress.Texts = "";
+            this.txtShipperAddress.UnderlinedStyle = false;
+            this.txtShipperAddress.WordWrap = true;
+            // 
             // panel22
             // 
             this.panel22.Controls.Add(this.txtBuyerAddress);
@@ -708,6 +776,37 @@
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(414, 102);
             this.panel22.TabIndex = 7;
+            // 
+            // txtBuyerAddress
+            // 
+            this.txtBuyerAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuyerAddress.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBuyerAddress.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtBuyerAddress.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtBuyerAddress.BorderRadius = 0;
+            this.txtBuyerAddress.BorderSize = 2;
+            this.txtBuyerAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtBuyerAddress.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+            this.txtBuyerAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtBuyerAddress.Location = new System.Drawing.Point(3, 1);
+            this.txtBuyerAddress.MaxLength = 32767;
+            this.txtBuyerAddress.Multiline = true;
+            this.txtBuyerAddress.Name = "txtBuyerAddress";
+            this.txtBuyerAddress.OnlyNumber = false;
+            this.txtBuyerAddress.PasswordChar = false;
+            this.txtBuyerAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtBuyerAddress.PlaceholderText = "";
+            this.txtBuyerAddress.ReadOnly = false;
+            this.txtBuyerAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtBuyerAddress.Size = new System.Drawing.Size(412, 98);
+            this.txtBuyerAddress.TabIndex = 1;
+            this.txtBuyerAddress.Tag = "BuyerAddress";
+            this.txtBuyerAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtBuyerAddress.Texts = "";
+            this.txtBuyerAddress.UnderlinedStyle = false;
+            this.txtBuyerAddress.WordWrap = true;
             // 
             // panel23
             // 
@@ -828,6 +927,37 @@
             this.panel28.Size = new System.Drawing.Size(414, 105);
             this.panel28.TabIndex = 13;
             // 
+            // txtConsigneeAddress
+            // 
+            this.txtConsigneeAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtConsigneeAddress.BackColor = System.Drawing.SystemColors.Window;
+            this.txtConsigneeAddress.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtConsigneeAddress.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtConsigneeAddress.BorderRadius = 0;
+            this.txtConsigneeAddress.BorderSize = 2;
+            this.txtConsigneeAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtConsigneeAddress.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+            this.txtConsigneeAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtConsigneeAddress.Location = new System.Drawing.Point(3, 3);
+            this.txtConsigneeAddress.MaxLength = 32767;
+            this.txtConsigneeAddress.Multiline = true;
+            this.txtConsigneeAddress.Name = "txtConsigneeAddress";
+            this.txtConsigneeAddress.OnlyNumber = false;
+            this.txtConsigneeAddress.PasswordChar = false;
+            this.txtConsigneeAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtConsigneeAddress.PlaceholderText = "";
+            this.txtConsigneeAddress.ReadOnly = false;
+            this.txtConsigneeAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtConsigneeAddress.Size = new System.Drawing.Size(413, 99);
+            this.txtConsigneeAddress.TabIndex = 1;
+            this.txtConsigneeAddress.Tag = "ConsigneeAddress";
+            this.txtConsigneeAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtConsigneeAddress.Texts = "";
+            this.txtConsigneeAddress.UnderlinedStyle = false;
+            this.txtConsigneeAddress.WordWrap = true;
+            // 
             // panel30
             // 
             this.panel30.Controls.Add(this.txtNotifyAddress);
@@ -838,6 +968,37 @@
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(414, 105);
             this.panel30.TabIndex = 15;
+            // 
+            // txtNotifyAddress
+            // 
+            this.txtNotifyAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNotifyAddress.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNotifyAddress.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtNotifyAddress.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtNotifyAddress.BorderRadius = 0;
+            this.txtNotifyAddress.BorderSize = 2;
+            this.txtNotifyAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtNotifyAddress.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+            this.txtNotifyAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNotifyAddress.Location = new System.Drawing.Point(3, 3);
+            this.txtNotifyAddress.MaxLength = 32767;
+            this.txtNotifyAddress.Multiline = true;
+            this.txtNotifyAddress.Name = "txtNotifyAddress";
+            this.txtNotifyAddress.OnlyNumber = false;
+            this.txtNotifyAddress.PasswordChar = false;
+            this.txtNotifyAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtNotifyAddress.PlaceholderText = "";
+            this.txtNotifyAddress.ReadOnly = false;
+            this.txtNotifyAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNotifyAddress.Size = new System.Drawing.Size(412, 99);
+            this.txtNotifyAddress.TabIndex = 1;
+            this.txtNotifyAddress.Tag = "NotifyAddress";
+            this.txtNotifyAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNotifyAddress.Texts = "";
+            this.txtNotifyAddress.UnderlinedStyle = false;
+            this.txtNotifyAddress.WordWrap = true;
             // 
             // panel31
             // 
@@ -874,6 +1035,18 @@
             this.panel32.Size = new System.Drawing.Size(960, 35);
             this.panel32.TabIndex = 17;
             // 
+            // dtbDepartureDate
+            // 
+            this.dtbDepartureDate.BackColor = System.Drawing.Color.White;
+            this.dtbDepartureDate.DateValue = "2024-08-04";
+            this.dtbDepartureDate.Location = new System.Drawing.Point(3, 6);
+            this.dtbDepartureDate.MaximumSize = new System.Drawing.Size(122, 22);
+            this.dtbDepartureDate.MinimumSize = new System.Drawing.Size(122, 22);
+            this.dtbDepartureDate.Name = "dtbDepartureDate";
+            this.dtbDepartureDate.Size = new System.Drawing.Size(122, 22);
+            this.dtbDepartureDate.TabIndex = 2;
+            this.dtbDepartureDate.Tag = "DepartureDate";
+            // 
             // panel35
             // 
             this.panel35.Controls.Add(this.label13);
@@ -907,6 +1080,24 @@
             this.panel36.Size = new System.Drawing.Size(414, 35);
             this.panel36.TabIndex = 21;
             // 
+            // cnbPol
+            // 
+            this.cnbPol.AddParams = null;
+            this.cnbPol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cnbPol.BackColor = System.Drawing.Color.White;
+            this.cnbPol.CodeValue = "";
+            this.cnbPol.FormName = "frmCodeDetailPopup";
+            this.cnbPol.FormTitle = "발주처 조회";
+            this.cnbPol.Location = new System.Drawing.Point(2, 3);
+            this.cnbPol.Margin = new System.Windows.Forms.Padding(0);
+            this.cnbPol.MinimumSize = new System.Drawing.Size(229, 29);
+            this.cnbPol.Name = "cnbPol";
+            this.cnbPol.Namespace = "P05_Business.S03_Views.Popup.Biz";
+            this.cnbPol.NameValue = "";
+            this.cnbPol.Size = new System.Drawing.Size(410, 29);
+            this.cnbPol.TabIndex = 2;
+            this.cnbPol.Tag = "PolCode|PolName";
+            // 
             // panel37
             // 
             this.panel37.Controls.Add(this.label14);
@@ -939,6 +1130,35 @@
             this.panel38.Name = "panel38";
             this.panel38.Size = new System.Drawing.Size(414, 35);
             this.panel38.TabIndex = 23;
+            // 
+            // txtCarrierName
+            // 
+            this.txtCarrierName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCarrierName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCarrierName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtCarrierName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCarrierName.BorderRadius = 0;
+            this.txtCarrierName.BorderSize = 2;
+            this.txtCarrierName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCarrierName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+            this.txtCarrierName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtCarrierName.Location = new System.Drawing.Point(3, 6);
+            this.txtCarrierName.MaxLength = 50;
+            this.txtCarrierName.Multiline = false;
+            this.txtCarrierName.Name = "txtCarrierName";
+            this.txtCarrierName.OnlyNumber = false;
+            this.txtCarrierName.PasswordChar = false;
+            this.txtCarrierName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtCarrierName.PlaceholderText = "";
+            this.txtCarrierName.ReadOnly = false;
+            this.txtCarrierName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCarrierName.Size = new System.Drawing.Size(408, 22);
+            this.txtCarrierName.TabIndex = 6;
+            this.txtCarrierName.Tag = "CarrierName";
+            this.txtCarrierName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCarrierName.Texts = "";
+            this.txtCarrierName.UnderlinedStyle = false;
+            this.txtCarrierName.WordWrap = true;
             // 
             // panel39
             // 
@@ -974,6 +1194,35 @@
             this.panel40.Padding = new System.Windows.Forms.Padding(3);
             this.panel40.Size = new System.Drawing.Size(960, 35);
             this.panel40.TabIndex = 25;
+            // 
+            // txtDestinationName
+            // 
+            this.txtDestinationName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDestinationName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDestinationName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtDestinationName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDestinationName.BorderRadius = 0;
+            this.txtDestinationName.BorderSize = 2;
+            this.txtDestinationName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtDestinationName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+            this.txtDestinationName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtDestinationName.Location = new System.Drawing.Point(6, 6);
+            this.txtDestinationName.MaxLength = 50;
+            this.txtDestinationName.Multiline = false;
+            this.txtDestinationName.Name = "txtDestinationName";
+            this.txtDestinationName.OnlyNumber = false;
+            this.txtDestinationName.PasswordChar = false;
+            this.txtDestinationName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtDestinationName.PlaceholderText = "";
+            this.txtDestinationName.ReadOnly = false;
+            this.txtDestinationName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDestinationName.Size = new System.Drawing.Size(948, 22);
+            this.txtDestinationName.TabIndex = 6;
+            this.txtDestinationName.Tag = "DestinationName";
+            this.txtDestinationName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtDestinationName.Texts = "";
+            this.txtDestinationName.UnderlinedStyle = false;
+            this.txtDestinationName.WordWrap = true;
             // 
             // panel43
             // 
@@ -1054,388 +1303,6 @@
             this.panel48.Size = new System.Drawing.Size(960, 35);
             this.panel48.TabIndex = 33;
             // 
-            // tabPackingList
-            // 
-            this.tabPackingList.Controls.Add(this.panel3);
-            this.tabPackingList.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabPackingList.Location = new System.Drawing.Point(4, 38);
-            this.tabPackingList.Name = "tabPackingList";
-            this.tabPackingList.Size = new System.Drawing.Size(1093, 627);
-            this.tabPackingList.TabIndex = 1;
-            this.tabPackingList.Text = "PACKING LIST";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.tableLayoutPanel3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1093, 627);
-            this.panel3.TabIndex = 0;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel10, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 478F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1093, 627);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.panel6, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.panel7, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(194, 619);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(3, 38);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(188, 578);
-            this.panel6.TabIndex = 0;
-            // 
-            // panel7
-            // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(3, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(188, 29);
-            this.panel7.TabIndex = 1;
-            // 
-            // tableLayoutPanel10
-            // 
-            this.tableLayoutPanel10.ColumnCount = 1;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Controls.Add(this.panel5, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.panel19, 0, 1);
-            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(205, 4);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 2;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(884, 619);
-            this.tableLayoutPanel10.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(878, 29);
-            this.panel5.TabIndex = 0;
-            // 
-            // panel19
-            // 
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel19.Location = new System.Drawing.Point(3, 38);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(878, 578);
-            this.panel19.TabIndex = 1;
-            // 
-            // tabInvoice
-            // 
-            this.tabInvoice.Controls.Add(this.panel4);
-            this.tabInvoice.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tabInvoice.Location = new System.Drawing.Point(4, 38);
-            this.tabInvoice.Name = "tabInvoice";
-            this.tabInvoice.Size = new System.Drawing.Size(1093, 627);
-            this.tabInvoice.TabIndex = 2;
-            this.tabInvoice.Text = "INVOICE";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.tableLayoutPanel2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1093, 627);
-            this.panel4.TabIndex = 0;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel11, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 478F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1093, 627);
-            this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.panel8, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.panel9, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(194, 619);
-            this.tableLayoutPanel6.TabIndex = 0;
-            // 
-            // panel8
-            // 
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(3, 38);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(188, 578);
-            this.panel8.TabIndex = 0;
-            // 
-            // panel9
-            // 
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(3, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(188, 29);
-            this.panel9.TabIndex = 1;
-            // 
-            // tableLayoutPanel11
-            // 
-            this.tableLayoutPanel11.ColumnCount = 1;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel11.Controls.Add(this.panel10, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.panel21, 0, 1);
-            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(205, 4);
-            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.RowCount = 2;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(884, 619);
-            this.tableLayoutPanel11.TabIndex = 1;
-            // 
-            // panel10
-            // 
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(3, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(878, 29);
-            this.panel10.TabIndex = 0;
-            // 
-            // panel21
-            // 
-            this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel21.Location = new System.Drawing.Point(3, 38);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(878, 578);
-            this.panel21.TabIndex = 1;
-            // 
-            // txtShipperAddress
-            // 
-            this.txtShipperAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtShipperAddress.BackColor = System.Drawing.SystemColors.Window;
-            this.txtShipperAddress.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtShipperAddress.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtShipperAddress.BorderRadius = 0;
-            this.txtShipperAddress.BorderSize = 2;
-            this.txtShipperAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtShipperAddress.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
-            this.txtShipperAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtShipperAddress.Location = new System.Drawing.Point(3, 3);
-            this.txtShipperAddress.MaxLength = 32767;
-            this.txtShipperAddress.Multiline = true;
-            this.txtShipperAddress.Name = "txtShipperAddress";
-            this.txtShipperAddress.OnlyNumber = false;
-            this.txtShipperAddress.PasswordChar = false;
-            this.txtShipperAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtShipperAddress.PlaceholderText = "";
-            this.txtShipperAddress.ReadOnly = false;
-            this.txtShipperAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtShipperAddress.Size = new System.Drawing.Size(413, 96);
-            this.txtShipperAddress.TabIndex = 0;
-            this.txtShipperAddress.Tag = "ShipperAddress";
-            this.txtShipperAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtShipperAddress.Texts = "";
-            this.txtShipperAddress.UnderlinedStyle = false;
-            this.txtShipperAddress.WordWrap = true;
-            // 
-            // txtBuyerAddress
-            // 
-            this.txtBuyerAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBuyerAddress.BackColor = System.Drawing.SystemColors.Window;
-            this.txtBuyerAddress.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtBuyerAddress.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtBuyerAddress.BorderRadius = 0;
-            this.txtBuyerAddress.BorderSize = 2;
-            this.txtBuyerAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtBuyerAddress.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
-            this.txtBuyerAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtBuyerAddress.Location = new System.Drawing.Point(3, 1);
-            this.txtBuyerAddress.MaxLength = 32767;
-            this.txtBuyerAddress.Multiline = true;
-            this.txtBuyerAddress.Name = "txtBuyerAddress";
-            this.txtBuyerAddress.OnlyNumber = false;
-            this.txtBuyerAddress.PasswordChar = false;
-            this.txtBuyerAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtBuyerAddress.PlaceholderText = "";
-            this.txtBuyerAddress.ReadOnly = false;
-            this.txtBuyerAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtBuyerAddress.Size = new System.Drawing.Size(412, 98);
-            this.txtBuyerAddress.TabIndex = 1;
-            this.txtBuyerAddress.Tag = "BuyerAddress";
-            this.txtBuyerAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtBuyerAddress.Texts = "";
-            this.txtBuyerAddress.UnderlinedStyle = false;
-            this.txtBuyerAddress.WordWrap = true;
-            // 
-            // txtConsigneeAddress
-            // 
-            this.txtConsigneeAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtConsigneeAddress.BackColor = System.Drawing.SystemColors.Window;
-            this.txtConsigneeAddress.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtConsigneeAddress.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtConsigneeAddress.BorderRadius = 0;
-            this.txtConsigneeAddress.BorderSize = 2;
-            this.txtConsigneeAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtConsigneeAddress.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
-            this.txtConsigneeAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtConsigneeAddress.Location = new System.Drawing.Point(3, 3);
-            this.txtConsigneeAddress.MaxLength = 32767;
-            this.txtConsigneeAddress.Multiline = true;
-            this.txtConsigneeAddress.Name = "txtConsigneeAddress";
-            this.txtConsigneeAddress.OnlyNumber = false;
-            this.txtConsigneeAddress.PasswordChar = false;
-            this.txtConsigneeAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtConsigneeAddress.PlaceholderText = "";
-            this.txtConsigneeAddress.ReadOnly = false;
-            this.txtConsigneeAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtConsigneeAddress.Size = new System.Drawing.Size(413, 99);
-            this.txtConsigneeAddress.TabIndex = 1;
-            this.txtConsigneeAddress.Tag = "ConsigneeAddress";
-            this.txtConsigneeAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtConsigneeAddress.Texts = "";
-            this.txtConsigneeAddress.UnderlinedStyle = false;
-            this.txtConsigneeAddress.WordWrap = true;
-            // 
-            // txtNotifyAddress
-            // 
-            this.txtNotifyAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNotifyAddress.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNotifyAddress.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtNotifyAddress.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtNotifyAddress.BorderRadius = 0;
-            this.txtNotifyAddress.BorderSize = 2;
-            this.txtNotifyAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtNotifyAddress.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
-            this.txtNotifyAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNotifyAddress.Location = new System.Drawing.Point(3, 3);
-            this.txtNotifyAddress.MaxLength = 32767;
-            this.txtNotifyAddress.Multiline = true;
-            this.txtNotifyAddress.Name = "txtNotifyAddress";
-            this.txtNotifyAddress.OnlyNumber = false;
-            this.txtNotifyAddress.PasswordChar = false;
-            this.txtNotifyAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtNotifyAddress.PlaceholderText = "";
-            this.txtNotifyAddress.ReadOnly = false;
-            this.txtNotifyAddress.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtNotifyAddress.Size = new System.Drawing.Size(412, 99);
-            this.txtNotifyAddress.TabIndex = 1;
-            this.txtNotifyAddress.Tag = "NotifyAddress";
-            this.txtNotifyAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNotifyAddress.Texts = "";
-            this.txtNotifyAddress.UnderlinedStyle = false;
-            this.txtNotifyAddress.WordWrap = true;
-            // 
-            // txtCarrierName
-            // 
-            this.txtCarrierName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCarrierName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCarrierName.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtCarrierName.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtCarrierName.BorderRadius = 0;
-            this.txtCarrierName.BorderSize = 2;
-            this.txtCarrierName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCarrierName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
-            this.txtCarrierName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCarrierName.Location = new System.Drawing.Point(3, 6);
-            this.txtCarrierName.MaxLength = 50;
-            this.txtCarrierName.Multiline = false;
-            this.txtCarrierName.Name = "txtCarrierName";
-            this.txtCarrierName.OnlyNumber = false;
-            this.txtCarrierName.PasswordChar = false;
-            this.txtCarrierName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtCarrierName.PlaceholderText = "";
-            this.txtCarrierName.ReadOnly = false;
-            this.txtCarrierName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtCarrierName.Size = new System.Drawing.Size(408, 22);
-            this.txtCarrierName.TabIndex = 6;
-            this.txtCarrierName.Tag = "CarrierName";
-            this.txtCarrierName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtCarrierName.Texts = "";
-            this.txtCarrierName.UnderlinedStyle = false;
-            this.txtCarrierName.WordWrap = true;
-            // 
-            // txtDestinationName
-            // 
-            this.txtDestinationName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDestinationName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDestinationName.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtDestinationName.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtDestinationName.BorderRadius = 0;
-            this.txtDestinationName.BorderSize = 2;
-            this.txtDestinationName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDestinationName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
-            this.txtDestinationName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDestinationName.Location = new System.Drawing.Point(6, 6);
-            this.txtDestinationName.MaxLength = 50;
-            this.txtDestinationName.Multiline = false;
-            this.txtDestinationName.Name = "txtDestinationName";
-            this.txtDestinationName.OnlyNumber = false;
-            this.txtDestinationName.PasswordChar = false;
-            this.txtDestinationName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtDestinationName.PlaceholderText = "";
-            this.txtDestinationName.ReadOnly = false;
-            this.txtDestinationName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDestinationName.Size = new System.Drawing.Size(948, 22);
-            this.txtDestinationName.TabIndex = 6;
-            this.txtDestinationName.Tag = "DestinationName";
-            this.txtDestinationName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtDestinationName.Texts = "";
-            this.txtDestinationName.UnderlinedStyle = false;
-            this.txtDestinationName.WordWrap = true;
-            // 
             // txtRemark
             // 
             this.txtRemark.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -1465,96 +1332,6 @@
             this.txtRemark.UnderlinedStyle = false;
             this.txtRemark.WordWrap = true;
             // 
-            // txtShippingMark
-            // 
-            this.txtShippingMark.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtShippingMark.BackColor = System.Drawing.SystemColors.Window;
-            this.txtShippingMark.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtShippingMark.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtShippingMark.BorderRadius = 0;
-            this.txtShippingMark.BorderSize = 2;
-            this.txtShippingMark.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtShippingMark.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
-            this.txtShippingMark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtShippingMark.Location = new System.Drawing.Point(3, 3);
-            this.txtShippingMark.MaxLength = 32767;
-            this.txtShippingMark.Multiline = true;
-            this.txtShippingMark.Name = "txtShippingMark";
-            this.txtShippingMark.OnlyNumber = false;
-            this.txtShippingMark.PasswordChar = false;
-            this.txtShippingMark.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtShippingMark.PlaceholderText = "";
-            this.txtShippingMark.ReadOnly = false;
-            this.txtShippingMark.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtShippingMark.Size = new System.Drawing.Size(200, 110);
-            this.txtShippingMark.TabIndex = 2;
-            this.txtShippingMark.Tag = "ShippingMark";
-            this.txtShippingMark.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtShippingMark.Texts = "";
-            this.txtShippingMark.UnderlinedStyle = false;
-            this.txtShippingMark.WordWrap = true;
-            // 
-            // txtInvoiceDate
-            // 
-            this.txtInvoiceDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtInvoiceDate.BackColor = System.Drawing.SystemColors.Window;
-            this.txtInvoiceDate.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtInvoiceDate.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtInvoiceDate.BorderRadius = 0;
-            this.txtInvoiceDate.BorderSize = 2;
-            this.txtInvoiceDate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtInvoiceDate.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
-            this.txtInvoiceDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtInvoiceDate.Location = new System.Drawing.Point(3, 3);
-            this.txtInvoiceDate.MaxLength = 50;
-            this.txtInvoiceDate.Multiline = false;
-            this.txtInvoiceDate.Name = "txtInvoiceDate";
-            this.txtInvoiceDate.OnlyNumber = false;
-            this.txtInvoiceDate.PasswordChar = false;
-            this.txtInvoiceDate.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtInvoiceDate.PlaceholderText = "";
-            this.txtInvoiceDate.ReadOnly = false;
-            this.txtInvoiceDate.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtInvoiceDate.Size = new System.Drawing.Size(416, 22);
-            this.txtInvoiceDate.TabIndex = 5;
-            this.txtInvoiceDate.Tag = "InvoiceDate";
-            this.txtInvoiceDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtInvoiceDate.Texts = "";
-            this.txtInvoiceDate.UnderlinedStyle = false;
-            this.txtInvoiceDate.WordWrap = true;
-            // 
-            // dtbDepartureDate
-            // 
-            this.dtbDepartureDate.BackColor = System.Drawing.Color.White;
-            this.dtbDepartureDate.DateValue = "2024-08-04";
-            this.dtbDepartureDate.Location = new System.Drawing.Point(3, 6);
-            this.dtbDepartureDate.MaximumSize = new System.Drawing.Size(122, 22);
-            this.dtbDepartureDate.MinimumSize = new System.Drawing.Size(122, 22);
-            this.dtbDepartureDate.Name = "dtbDepartureDate";
-            this.dtbDepartureDate.Size = new System.Drawing.Size(122, 22);
-            this.dtbDepartureDate.TabIndex = 2;
-            this.dtbDepartureDate.Tag = "DepartureDate";
-            // 
-            // cnbPol
-            // 
-            this.cnbPol.AddParams = null;
-            this.cnbPol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cnbPol.BackColor = System.Drawing.Color.White;
-            this.cnbPol.CodeValue = "";
-            this.cnbPol.FormName = "frmCodeDetailPopup";
-            this.cnbPol.FormTitle = "발주처 조회";
-            this.cnbPol.Location = new System.Drawing.Point(2, 3);
-            this.cnbPol.Margin = new System.Windows.Forms.Padding(0);
-            this.cnbPol.MinimumSize = new System.Drawing.Size(229, 29);
-            this.cnbPol.Name = "cnbPol";
-            this.cnbPol.Namespace = "P05_Business.S03_Views.Popup.Biz";
-            this.cnbPol.NameValue = "";
-            this.cnbPol.Size = new System.Drawing.Size(410, 29);
-            this.cnbPol.TabIndex = 2;
-            this.cnbPol.Tag = "PolCode|PolName";
-            // 
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.ColumnCount = 2;
@@ -1568,7 +1345,7 @@
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(414, 35);
             this.tableLayoutPanel12.TabIndex = 34;
             // 
@@ -1581,16 +1358,6 @@
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(100, 35);
             this.panel27.TabIndex = 0;
-            // 
-            // panel29
-            // 
-            this.panel29.Controls.Add(this.cnbDelivery);
-            this.panel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel29.Location = new System.Drawing.Point(100, 0);
-            this.panel29.Margin = new System.Windows.Forms.Padding(0);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(314, 35);
-            this.panel29.TabIndex = 1;
             // 
             // cboDeliveryTerm
             // 
@@ -1612,6 +1379,34 @@
             this.cboDeliveryTerm.Tag = "DeliveryTermCode";
             this.cboDeliveryTerm.Texts = "";
             // 
+            // panel29
+            // 
+            this.panel29.Controls.Add(this.cnbDelivery);
+            this.panel29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel29.Location = new System.Drawing.Point(100, 0);
+            this.panel29.Margin = new System.Windows.Forms.Padding(0);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(314, 35);
+            this.panel29.TabIndex = 1;
+            // 
+            // cnbDelivery
+            // 
+            this.cnbDelivery.AddParams = null;
+            this.cnbDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cnbDelivery.BackColor = System.Drawing.Color.White;
+            this.cnbDelivery.CodeValue = "";
+            this.cnbDelivery.FormName = "frmCustomerPopup";
+            this.cnbDelivery.FormTitle = "발주처 조회";
+            this.cnbDelivery.Location = new System.Drawing.Point(3, 3);
+            this.cnbDelivery.Margin = new System.Windows.Forms.Padding(0);
+            this.cnbDelivery.MinimumSize = new System.Drawing.Size(229, 29);
+            this.cnbDelivery.Name = "cnbDelivery";
+            this.cnbDelivery.Namespace = "P05_Business.S03_Views.Popup.Biz";
+            this.cnbDelivery.NameValue = "";
+            this.cnbDelivery.Size = new System.Drawing.Size(310, 29);
+            this.cnbDelivery.TabIndex = 3;
+            this.cnbDelivery.Tag = "DeliveryTermCode|DeliveryTermName";
+            // 
             // tableLayoutPanel13
             // 
             this.tableLayoutPanel13.ColumnCount = 2;
@@ -1625,7 +1420,7 @@
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel13.Size = new System.Drawing.Size(414, 35);
             this.tableLayoutPanel13.TabIndex = 35;
             // 
@@ -1638,16 +1433,6 @@
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(100, 35);
             this.panel33.TabIndex = 0;
-            // 
-            // panel34
-            // 
-            this.panel34.Controls.Add(this.txtPaymentDesc);
-            this.panel34.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel34.Location = new System.Drawing.Point(100, 0);
-            this.panel34.Margin = new System.Windows.Forms.Padding(0);
-            this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(314, 35);
-            this.panel34.TabIndex = 1;
             // 
             // cboPaymentTerm
             // 
@@ -1669,23 +1454,15 @@
             this.cboPaymentTerm.Tag = "PaymentTermCode";
             this.cboPaymentTerm.Texts = "";
             // 
-            // cnbDelivery
+            // panel34
             // 
-            this.cnbDelivery.AddParams = null;
-            this.cnbDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cnbDelivery.BackColor = System.Drawing.Color.White;
-            this.cnbDelivery.CodeValue = "";
-            this.cnbDelivery.FormName = "frmCustomerPopup";
-            this.cnbDelivery.FormTitle = "발주처 조회";
-            this.cnbDelivery.Location = new System.Drawing.Point(3, 3);
-            this.cnbDelivery.Margin = new System.Windows.Forms.Padding(0);
-            this.cnbDelivery.MinimumSize = new System.Drawing.Size(229, 29);
-            this.cnbDelivery.Name = "cnbDelivery";
-            this.cnbDelivery.Namespace = "P05_Business.S03_Views.Popup.Biz";
-            this.cnbDelivery.NameValue = "";
-            this.cnbDelivery.Size = new System.Drawing.Size(310, 29);
-            this.cnbDelivery.TabIndex = 3;
-            this.cnbDelivery.Tag = "DeliveryTermCode|DeliveryTermName";
+            this.panel34.Controls.Add(this.txtPaymentDesc);
+            this.panel34.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel34.Location = new System.Drawing.Point(100, 0);
+            this.panel34.Margin = new System.Windows.Forms.Padding(0);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(314, 35);
+            this.panel34.TabIndex = 1;
             // 
             // txtPaymentDesc
             // 
@@ -1716,6 +1493,218 @@
             this.txtPaymentDesc.UnderlinedStyle = false;
             this.txtPaymentDesc.WordWrap = true;
             // 
+            // tabPackingList
+            // 
+            this.tabPackingList.Controls.Add(this.panel3);
+            this.tabPackingList.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabPackingList.Location = new System.Drawing.Point(4, 38);
+            this.tabPackingList.Name = "tabPackingList";
+            this.tabPackingList.Size = new System.Drawing.Size(1000, 594);
+            this.tabPackingList.TabIndex = 1;
+            this.tabPackingList.Text = "PACKING LIST";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.tableLayoutPanel3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1000, 594);
+            this.panel3.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel10, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 625F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1000, 594);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.panel6, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.panel7, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(194, 586);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(3, 38);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(188, 545);
+            this.panel6.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(3, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(188, 29);
+            this.panel7.TabIndex = 1;
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 1;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.Controls.Add(this.panel5, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.panel19, 0, 1);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(205, 4);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 2;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(791, 586);
+            this.tableLayoutPanel10.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(785, 29);
+            this.panel5.TabIndex = 0;
+            // 
+            // panel19
+            // 
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel19.Location = new System.Drawing.Point(3, 38);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(785, 545);
+            this.panel19.TabIndex = 1;
+            // 
+            // tabInvoice
+            // 
+            this.tabInvoice.Controls.Add(this.panel4);
+            this.tabInvoice.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabInvoice.Location = new System.Drawing.Point(4, 38);
+            this.tabInvoice.Name = "tabInvoice";
+            this.tabInvoice.Size = new System.Drawing.Size(1000, 594);
+            this.tabInvoice.TabIndex = 2;
+            this.tabInvoice.Text = "INVOICE";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.tableLayoutPanel2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1000, 594);
+            this.panel4.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel6, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel11, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 625F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1000, 594);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.panel8, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.panel9, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(194, 586);
+            this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(3, 38);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(188, 545);
+            this.panel8.TabIndex = 0;
+            // 
+            // panel9
+            // 
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(3, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(188, 29);
+            this.panel9.TabIndex = 1;
+            // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.ColumnCount = 1;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel11.Controls.Add(this.panel10, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.panel21, 0, 1);
+            this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(205, 4);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(791, 586);
+            this.tableLayoutPanel11.TabIndex = 1;
+            // 
+            // panel10
+            // 
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(3, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(785, 29);
+            this.panel10.TabIndex = 0;
+            // 
+            // panel21
+            // 
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel21.Location = new System.Drawing.Point(3, 38);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(785, 545);
+            this.panel21.TabIndex = 1;
+            // 
+            // txtInvoiceDate
+            // 
+            this.txtInvoiceDate.BackColor = System.Drawing.Color.White;
+            this.txtInvoiceDate.DateValue = "2024-08-04";
+            this.txtInvoiceDate.Location = new System.Drawing.Point(3, 4);
+            this.txtInvoiceDate.MaximumSize = new System.Drawing.Size(122, 22);
+            this.txtInvoiceDate.MinimumSize = new System.Drawing.Size(122, 22);
+            this.txtInvoiceDate.Name = "txtInvoiceDate";
+            this.txtInvoiceDate.Size = new System.Drawing.Size(122, 22);
+            this.txtInvoiceDate.TabIndex = 3;
+            this.txtInvoiceDate.Tag = "InvoiceDate";
+            // 
             // frmExportMng
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1743,7 +1732,7 @@
             this.panel12.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
-            this.metroTabControl1.ResumeLayout(false);
+            this.tabExportSub.ResumeLayout(false);
             this.tabBasic.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -1780,6 +1769,12 @@
             this.panel45.ResumeLayout(false);
             this.panel47.ResumeLayout(false);
             this.panel48.ResumeLayout(false);
+            this.tableLayoutPanel12.ResumeLayout(false);
+            this.panel27.ResumeLayout(false);
+            this.panel29.ResumeLayout(false);
+            this.tableLayoutPanel13.ResumeLayout(false);
+            this.panel33.ResumeLayout(false);
+            this.panel34.ResumeLayout(false);
             this.tabPackingList.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1790,12 +1785,6 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
-            this.tableLayoutPanel12.ResumeLayout(false);
-            this.panel27.ResumeLayout(false);
-            this.panel29.ResumeLayout(false);
-            this.tableLayoutPanel13.ResumeLayout(false);
-            this.panel33.ResumeLayout(false);
-            this.panel34.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1804,7 +1793,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private MetroFramework.Controls.MetroTabControl metroTabControl1;
+        private MetroFramework.Controls.MetroTabControl tabExportSub;
         private System.Windows.Forms.TabPage tabBasic;
         private System.Windows.Forms.TabPage tabPackingList;
         private System.Windows.Forms.TabPage tabInvoice;
@@ -1891,7 +1880,6 @@
         private P02_K_CONTROL_WIN.KTextBox txtDestinationName;
         private P02_K_CONTROL_WIN.KTextBox txtRemark;
         private P02_K_CONTROL_WIN.KTextBox txtShippingMark;
-        private P02_K_CONTROL_WIN.KTextBox txtInvoiceDate;
         private P02_K_CONTROL_WIN.KDateBox dtbDepartureDate;
         private P02_K_CONTROL_WIN.KCodeNameBox cnbPol;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
@@ -1904,5 +1892,6 @@
         private P02_K_CONTROL_WIN.KComboBox cboPaymentTerm;
         private System.Windows.Forms.Panel panel34;
         private P02_K_CONTROL_WIN.KTextBox txtPaymentDesc;
+        private P02_K_CONTROL_WIN.KDateBox txtInvoiceDate;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FarPoint.Win;
+using FarPoint.Win.Spread;
 using P02_K_CONTROL_WIN;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
@@ -278,10 +279,40 @@ namespace P05_Business.Common
 			return (grid.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified);
 		}
 
-		/// <summary>
-		/// 코드 테이블에서 데이터를 조회해서 바인딩한다.
-		/// </summary>
-		/// <param name="combo"></param>
+        internal static DataTable GetAllData(FpSpread spd)
+        {
+            return (spd.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted | DataRowState.Unchanged);
+        }
+
+        internal static DataTable GetChangeAll(FpSpread spd)
+        {
+            return (spd.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted);
+        }
+
+        internal static DataTable GetChangeAdded(FpSpread spd)
+        {
+            return (spd.DataSource as DataTable).GetChanges(DataRowState.Added);
+        }
+
+        internal static DataTable GetChangeModified(FpSpread spd)
+        {
+            return (spd.DataSource as DataTable).GetChanges(DataRowState.Modified);
+        }
+
+        internal static DataTable GetChangeDeleted(FpSpread spd)
+        {
+            return (spd.DataSource as DataTable).GetChanges(DataRowState.Deleted);
+        }
+
+        internal static DataTable GetChangesWithoutDeleted(FpSpread spd)
+        {
+            return (spd.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified);
+        }
+
+        /// <summary>
+        /// 코드 테이블에서 데이터를 조회해서 바인딩한다.
+        /// </summary>
+        /// <param name="combo"></param>
         internal static void BindComboBoxColumnCommonCode(DataGridViewComboBoxColumn cbo, string masterCode, bool allItem, bool blankItem)
         {
             try

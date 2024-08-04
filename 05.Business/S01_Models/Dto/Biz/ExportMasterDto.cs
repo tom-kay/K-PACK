@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace P05_Business.S01_Models.Dto.Biz
 {
-    internal class ExportMasterDto
+    internal class ExportMasterDto : DtoBase
     {
         [Required]
         [Description("인보이스 번호")]
@@ -53,9 +53,15 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("배송조건코드")]
         public string DeliveryTermCode { get; set; }
 
+        [Description("최종도착지")]
+        public string DestinationName { get; set; }
+
         [Description("지불조건코드")]
         public string PaymentTermCode { get; set; }
 
+        [Description("결제조건내용")]
+        public string PaymentDesc { get; set; }
+        
         [Description("부피")]
         public decimal? Measurement { get; set; }
 

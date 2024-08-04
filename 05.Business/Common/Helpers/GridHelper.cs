@@ -287,10 +287,11 @@ namespace P05_Business.Common.Helpers
 
         internal static void AddComboBoxColumn(FpSpread spread
             , string name, string text, bool readOnly, bool visible, int width
-            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign, string[] items)
+            , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign, string[] items, string[] itemDatas)
         {
             ComboBoxCellType comboBoxCellType = new ComboBoxCellType();
             comboBoxCellType.Items = items;
+            comboBoxCellType.ItemData = itemDatas;
 
             SheetView sheet = spread.Sheets[0];
             sheet.ColumnCount++;

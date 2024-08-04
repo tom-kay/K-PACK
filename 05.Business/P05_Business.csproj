@@ -388,6 +388,7 @@
     <Compile Include="S01_Models\Dto\Biz\ExportMasterDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\ExportPackingDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\OrderReportDto.cs" />
+    <Compile Include="S02_Controllers\Biz\ExportMngController.cs" />
     <Compile Include="S03_Views\Biz\frmExportList.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace P05_Business.S01_Models.Dto.Biz
 {
-    internal class ExportInvoiceDto
+    internal class ExportInvoiceDto : DtoBase
     {
         [Required]
         [Description("인보이스번호")]

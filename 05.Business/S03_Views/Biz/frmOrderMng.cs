@@ -66,7 +66,6 @@ namespace P05_Business.S03_Views.Biz
         {
             try
             {
-             
                 if (IS_LINK_OPEN) SearchData();
             }
             catch (Exception ex)

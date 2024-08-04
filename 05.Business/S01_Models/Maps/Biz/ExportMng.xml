@@ -29,7 +29,9 @@
 			`exp`.`CarrierName`,
 			`exp`.`PolCode`,
 			`exp`.`DeliveryTermCode`,
+			`exp`.`DestinationName`,
 			`exp`.`PaymentTermCode`,
+			`exp`.`PaymentDesc`,
 			`exp`.`Measurement`,
 			`exp`.`NetWeight`,
 			`exp`.`GrossWeight`,
@@ -59,7 +61,9 @@
 			`exp`.`CarrierName`,
 			`exp`.`PolCode`,
 			`exp`.`DeliveryTermCode`,
+			`exp`.`DestinationName`,
 			`exp`.`PaymentTermCode`,
+			`exp`.`PaymentDesc`,
 			`exp`.`Measurement`,
 			`exp`.`NetWeight`,
 			`exp`.`GrossWeight`,
@@ -92,7 +96,9 @@
 			`CarrierName`,
 			`PolCode`,
 			`DeliveryTermCode`,
+			`DestinationName`,
 			`PaymentTermCode`,
+			`PaymentDesc`,
 			`Measurement`,
 			`NetWeight`,
 			`GrossWeight`,
@@ -121,7 +127,9 @@
 			@CarrierName,
 			@PolCode,
 			@DeliveryTermCode,
+			@DestinationName,
 			@PaymentTermCode,
+			@PaymentDesc,
 			@Measurement,
 			@NetWeight,
 			@GrossWeight,
@@ -152,7 +160,9 @@
 			`CarrierName` = @CarrierName,
 			`PolCode` = @PolCode,
 			`DeliveryTermCode` = @DeliveryTermCode,
+			`DestinationName` = @DestinationName,
 			`PaymentTermCode` = @PaymentTermCode,
+			`PaymentDesc` = @PaymentDesc,
 			`Measurement` = @Measurement,
 			`NetWeight` = @NetWeight,
 			`GrossWeight` = @GrossWeight,
@@ -165,7 +175,7 @@
 			`UpdateDt` = now(),
 			`DeleteId` = null,
 			`DeleteDt` = null
-			WHERE `InvoiceNo` = @InvoiceNo 
+			WHERE `InvoiceNo` = @InvoiceNo
 			AND `CompanyCode` = @CompanyCode
 		</Statement>
 
@@ -207,9 +217,36 @@
 			LIMIT 1
 		</Statement>
 
-		<Statement Id="insertExportContainer">
-			INSERT INTO `tb_export_container`
-			(
+		<Statement Id="mergeExportContainer">
+			MERGE INTO `tb_export_container` AS target
+			USING (
+			SELECT
+			@InvoiceNo AS `InvoiceNo`,
+			@ContainerNo AS `ContainerNo`,
+			@SealNo1 AS `SealNo1`,
+			@SealNo2 AS `SealNo2`,
+			@SealNo3 AS `SealNo3`,
+			@CompanyCode AS `CompanyCode`,
+			@CreateId AS `CreateId`,
+			@UpdateId AS `UpdateId`
+			) AS source
+			ON (
+			target.`InvoiceNo` = source.`InvoiceNo`
+			AND target.`ContainerNo` = source.`ContainerNo`
+			AND target.`CompanyCode` = source.`CompanyCode`
+			)
+			WHEN MATCHED THEN
+			UPDATE SET
+			target.`SealNo1` = source.`SealNo1`,
+			target.`SealNo2` = source.`SealNo2`,
+			target.`SealNo3` = source.`SealNo3`,
+			target.`DelYn` = 'N',
+			target.`UpdateId` = source.`UpdateId`,
+			target.`UpdateDt` = now(),
+			target.`DeleteId` = null,
+			target.`DeleteDt` = null
+			WHEN NOT MATCHED THEN
+			INSERT (
 			`InvoiceNo`,
 			`ContainerNo`,
 			`SealNo1`,
@@ -220,35 +257,17 @@
 			`CreateId`,
 			`CreateDt`
 			)
-			VALUES
-			(
-			@InvoiceNo,
-			@ContainerNo,
-			@SealNo1,
-			@SealNo2,
-			@SealNo3,
-			@CompanyCode,
+			VALUES (
+			source.`InvoiceNo`,
+			source.`ContainerNo`,
+			source.`SealNo1`,
+			source.`SealNo2`,
+			source.`SealNo3`,
+			source.`CompanyCode`,
 			'N',
-			@CreateId,
+			source.`CreateId`,
 			now()
-			)
-		</Statement>
-
-		<Statement Id="updateExportContainer">
-			UPDATE `tb_export_container`
-			SET
-			`ContainerNo` = @ContainerNo,
-			`SealNo1` = @SealNo1,
-			`SealNo2` = @SealNo2,
-			`SealNo3` = @SealNo3,
-			`DelYn` = 'N',
-			`UpdateId` = @UpdateId,
-			`UpdateDt` = now(),
-			`DeleteId` = null,
-			`DeleteDt` = null
-			WHERE `InvoiceNo` = @InvoiceNo 
-			AND `ContainerNo` = @ContainerNo
-			AND `CompanyCode` = @CompanyCode
+			);
 		</Statement>
 
 		<Statement Id="deleteExportContainer">
@@ -314,9 +333,44 @@
 			LIMIT 1
 		</Statement>
 
-		<Statement Id="insertExportPacking">
-			INSERT INTO `tb_export_packing`
-			(
+		<Statement Id="mergeExportPacking">
+			MERGE INTO `tb_export_packing` AS target
+			USING (
+			SELECT
+			@InvoiceNo AS `InvoiceNo`,
+			@PackingId AS `PackingId`,
+			@OrderNo AS `OrderNo`,
+			@OrderDetailId AS `OrderDetailId`,
+			@PkgUnitCode AS `PkgUnitCode`,
+			@PkgStartNo AS `PkgStartNo`,
+			@PkgEndNo AS `PkgEndNo`,
+			@Qty AS `Qty`,
+			@PkgQty AS `PkgQty`,
+			@CompanyCode AS `CompanyCode`,
+			@CreateId AS `CreateId`,
+			@UpdateId AS `UpdateId`
+			) AS source
+			ON (
+			target.`InvoiceNo` = source.`InvoiceNo`
+			AND target.`PackingId` = source.`PackingId`
+			AND target.`CompanyCode` = source.`CompanyCode`
+			)
+			WHEN MATCHED THEN
+			UPDATE SET
+			target.`OrderNo` = source.`OrderNo`,
+			target.`OrderDetailId` = source.`OrderDetailId`,
+			target.`PkgUnitCode` = source.`PkgUnitCode`,
+			target.`PkgStartNo` = source.`PkgStartNo`,
+			target.`PkgEndNo` = source.`PkgEndNo`,
+			target.`Qty` = source.`Qty`,
+			target.`PkgQty` = source.`PkgQty`,
+			target.`DelYn` = 'N',
+			target.`UpdateId` = source.`UpdateId`,
+			target.`UpdateDt` = now(),
+			target.`DeleteId` = null,
+			target.`DeleteDt` = null
+			WHEN NOT MATCHED THEN
+			INSERT (
 			`InvoiceNo`,
 			`PackingId`,
 			`OrderNo`,
@@ -331,43 +385,21 @@
 			`CreateId`,
 			`CreateDt`
 			)
-			VALUES
-			(
-			@InvoiceNo,
-			@PackingId,
-			@OrderNo,
-			@OrderDetailId,
-			@PkgUnitCode,
-			@PkgStartNo,
-			@PkgEndNo,
-			@Qty,
-			@PkgQty,
-			@CompanyCode,
+			VALUES (
+			source.`InvoiceNo`,
+			source.`PackingId`,
+			source.`OrderNo`,
+			source.`OrderDetailId`,
+			source.`PkgUnitCode`,
+			source.`PkgStartNo`,
+			source.`PkgEndNo`,
+			source.`Qty`,
+			source.`PkgQty`,
+			source.`CompanyCode`,
 			'N',
-			@CreateId,
+			source.`CreateId`,
 			now()
-			)
-		</Statement>
-
-		<Statement Id="updateExportPacking">
-			UPDATE `tb_export_packing`
-			SET
-			`PackingId` = @PackingId,
-			`OrderNo` = @OrderNo,
-			`OrderDetailId` = @OrderDetailId,
-			`PkgUnitCode` = @PkgUnitCode,
-			`PkgStartNo` = @PkgStartNo,
-			`PkgEndNo` = @PkgEndNo,
-			`Qty` = @Qty,
-			`PkgQty` = @PkgQty,
-			`DelYn` = 'N',
-			`UpdateId` = @UpdateId,
-			`UpdateDt` = now(),
-			`DeleteId` = null,
-			`DeleteDt` = null
-			WHERE `InvoiceNo` = @InvoiceNo 
-			AND `PackingId` = @PackingId
-			AND `CompanyCode` = @CompanyCode
+			);
 		</Statement>
 
 		<Statement Id="deleteExportPacking">
@@ -433,9 +465,42 @@
 			LIMIT 1
 		</Statement>
 
-		<Statement Id="insertExportInvoice">
-			INSERT INTO `tb_export_invoice`
-			(
+		<Statement Id="mergeExportInvoice">
+			MERGE INTO `tb_export_invoice` AS target
+			USING (
+			SELECT
+			@InvoiceNo AS `InvoiceNo`,
+			@InvoiceId AS `InvoiceId`,
+			@OrderNo AS `OrderNo`,
+			@OrderDetailId AS `OrderDetailId`,
+			@ProdLength AS `ProdLength`,
+			@UsQty AS `UsQty`,
+			@Qty AS `Qty`,
+			@Price AS `Price`,
+			@Amount AS `Amount`,
+			@CompanyCode AS `CompanyCode`,
+			@CreateId AS `CreateId`,
+			@UpdateId AS `UpdateId`
+			) AS source
+			ON (
+			target.`InvoiceNo` = source.`InvoiceNo`
+			AND target.`InvoiceId` = source.`InvoiceId`
+			AND target.`CompanyCode` = source.`CompanyCode`
+			)
+			WHEN MATCHED THEN
+			UPDATE SET
+			target.`OrderNo` = source.`OrderNo`,
+			target.`OrderDetailId` = source.`OrderDetailId`,
+			target.`ProdLength` = source.`ProdLength`,
+			target.`UsQty` = source.`UsQty`,
+			target.`Qty` = source.`Qty`,
+			target.`Price` = source.`Price`,
+			target.`Amount` = source.`Amount`,
+			target.`DelYn` = 'N',
+			target.`UpdateId` = source.`UpdateId`,
+			target.`UpdateDt` = now()
+			WHEN NOT MATCHED THEN
+			INSERT (
 			`InvoiceNo`,
 			`InvoiceId`,
 			`OrderNo`,
@@ -450,41 +515,21 @@
 			`CreateId`,
 			`CreateDt`
 			)
-			VALUES
-			(
-			@InvoiceNo,
-			@InvoiceId,
-			@OrderNo,
-			@OrderDetailId,
-			@ProdLength,
-			@UsQty,
-			@Qty,
-			@Price,
-			@Amount,
-			@CompanyCode,
+			VALUES (
+			source.`InvoiceNo`,
+			source.`InvoiceId`,
+			source.`OrderNo`,
+			source.`OrderDetailId`,
+			source.`ProdLength`,
+			source.`UsQty`,
+			source.`Qty`,
+			source.`Price`,
+			source.`Amount`,
+			source.`CompanyCode`,
 			'N',
-			@CreateId,
+			source.`CreateId`,
 			now()
-			)
-		</Statement>
-
-		<Statement Id="updateExportInvoice">
-			UPDATE `tb_export_invoice`
-			SET
-			`InvoiceId` = @InvoiceId,
-			`OrderNo` = @OrderNo,
-			`OrderDetailId` = @OrderDetailId,
-			`ProdLength` = @ProdLength,
-			`UsQty` = @UsQty,
-			`Qty` = @Qty,
-			`Price` = @Price,
-			`Amount` = @Amount,
-			`DelYn` = 'N',
-			`UpdateId` = @UpdateId,
-			`UpdateDt` = now()
-			WHERE `InvoiceNo` = @InvoiceNo 
-			AND `InvoiceId` = @InvoiceId
-			AND `CompanyCode` = @CompanyCode
+			);
 		</Statement>
 
 		<Statement Id="deleteExportInvoice">
