@@ -1,5 +1,4 @@
 ﻿using FarPoint.Win.Spread;
-using FarPoint.Win.Spread.CellType;
 using log4net;
 using P01_K_DESIGN_WIN;
 using P01_K_DESIGN_WIN.Classes;
@@ -7,22 +6,11 @@ using P05_Business.Common;
 using P05_Business.Common.Helpers;
 using P05_Business.S01_Models.Dto.Biz;
 using P05_Business.S02_Controllers.Biz;
-using P05_Business.S04_Reports.Rpt;
-using P05_Business.S04_Reports;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Mysqlx.Crud;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Diagnostics.Metrics;
-using System.Reflection.Emit;
 
 namespace P05_Business.S03_Views.Biz
 {
@@ -75,6 +63,7 @@ namespace P05_Business.S03_Views.Biz
 
             try
             {
+                InitCombo();
 
                 if (IS_LINK_OPEN) SearchData();
             }
@@ -445,12 +434,12 @@ namespace P05_Business.S03_Views.Biz
         }
 
         private void InitGrid()
-        {
+        {   
             GridHelper.CreateGrid(spdContainerList);
-            GridHelper.AddTextColumn(spdContainerList, "ContainerNo", "Cntr No.", true, true, 150, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            GridHelper.AddTextColumn(spdContainerList, "SealNo1", "Seal No.1", true, true, 100, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            GridHelper.AddTextColumn(spdContainerList, "SealNo2", "Seal No.2", true, true, 100, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            GridHelper.AddTextColumn(spdContainerList, "SealNo3", "Seal No.3", true, true, 100, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            GridHelper.AddTextColumn(spdContainerList, "ContainerNo", "Cntr No.", true, true, 250, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            GridHelper.AddTextColumn(spdContainerList, "SealNo1", "Seal No.1", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            GridHelper.AddTextColumn(spdContainerList, "SealNo2", "Seal No.2", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            GridHelper.AddTextColumn(spdContainerList, "SealNo3", "Seal No.3", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
             GridHelper.EndGrid(spdContainerList);
         }
 
@@ -462,10 +451,8 @@ namespace P05_Business.S03_Views.Biz
 
             txtInvoiceNo.Enabled = true;
             tabExportSub.SelectedIndex = 0;
-            cnbBuyer.AddParams = new object[] { "S" };
-            cnbShipper.AddParams = new object[] { "C" };
-            cnbConsignee.AddParams = new object[] { "S" };
-            cnbNotify.AddParams = new object[] { "S" };
+            cnbBuyer.AddParams = cnbShipper.AddParams = cnbConsignee.AddParams = cnbNotify.AddParams = new object[] { "A" };    //기본값 : 전체
+            cnbPol.AddParams = cnbDelivery.AddParams = new object[] { "S" };  //기본값 : 해운
 
             dtoMaster = new ExportMasterDto();
             dtoContainers = new List<ExportContainerDto>();
@@ -485,8 +472,17 @@ namespace P05_Business.S03_Views.Biz
             base.isFormChagned = false;
         }
 
+        /// <summary>
+		/// 콤보박스 초기설정
+		/// </summary>
+		private void InitCombo()
+        {
+            ComboHelper.InitComboBox(cboDeliveryTerm, "DELIVERYTERMS", false, true);
+            ComboHelper.InitComboBox(cboPaymentTerm, "PAYMENTTERMS", false, true);
+        }
+
         #endregion -- Method
 
-        
+
     }
 }

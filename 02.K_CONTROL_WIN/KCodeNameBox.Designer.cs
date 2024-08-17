@@ -55,7 +55,7 @@
             this.txtCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtCode.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(3, 3);
+            this.txtCode.Location = new System.Drawing.Point(3, 4);
             this.txtCode.Margin = new System.Windows.Forms.Padding(0);
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(95, 21);
@@ -106,7 +106,7 @@
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.Enabled = false;
             this.txtName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(3, 3);
+            this.txtName.Location = new System.Drawing.Point(3, 4);
             this.txtName.Margin = new System.Windows.Forms.Padding(0);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(95, 21);

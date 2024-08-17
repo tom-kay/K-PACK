@@ -99,7 +99,6 @@
 			WHERE `Code` = @Code;
 		</Statement>
 
-
 		<Statement Id="selectCodeDetailList">
 			SELECT CM.`Code` AS MasterCode,
 			CM.`Name` AS MasterName,
@@ -130,7 +129,7 @@
 			ON CD.MasterCode = CM.`Code`
 			WHERE 1=1
 			<IsNotEmpty Prepend="And" Property="MasterCode">
-				CD.`MasterCode` Like Concat('%', @MasterCode, '%')
+				CD.`MasterCode` = @MasterCode
 			</IsNotEmpty>
 			<IsNotEmpty Prepend="And" Property="Code">
 				CD.`Code` Like Concat('%', @Code, '%')
@@ -273,6 +272,54 @@
 			AND CM.USEYN = 'Y'
 			AND IFNULL(CM.DELYN,'N') = 'N'
 			ORDER BY CD.OrderSeq
+		</Statement>
+
+		<Statement Id="selectShipportCodeList" >
+			SELECT `port`.`PortCode`,
+			`port`.`CountryCode`,
+			`port`.`PortClass`,
+			`port`.`CountryName`,
+			`port`.`PortName`,
+			`port`.`CompanyCode`,
+			`port`.`DelYn`,
+			`port`.`CreateId`,
+			`port`.`CreateDt`,
+			`port`.`UpdateId`,
+			`port`.`UpdateDt`,
+			`port`.`DeleteId`,
+			`port`.`DeleteDt`
+			FROM `soodal`.`tb_shipport_code` AS `port`
+			WHERE 1=1
+			<IsNotEmpty Prepend="And" Property="PortCode">
+				`port`.`PortCode` = @PortCode
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="PortName">
+				`port`.`PortName` LIKE CONCAT('%', @PortName, '%')
+			</IsNotEmpty>
+		</Statement>
+
+		<Statement Id="selectAirportCodeList" >
+			SELECT `port`.`IataCode`,
+			`port`.`IcaoCode`,
+			`port`.`NameE`,
+			`port`.`NameK`,
+			`port`.`StatusName`,
+			`port`.`CompanyCode`,
+			`port`.`DelYn`,
+			`port`.`CreateId`,
+			`port`.`CreateDt`,
+			`port`.`UpdateId`,
+			`port`.`UpdateDt`,
+			`port`.`DeleteId`,
+			`port`.`DeleteDt`
+			FROM `soodal`.`tb_airport_code` AS `port`
+			WHERE 1=1
+			<IsNotEmpty Prepend="And" Property="IataCode">
+				`port`.`IataCode` = @IataCode
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="NameE">
+				`port`.`NameE` LIKE CONCAT('%', @NameE, '%')
+			</IsNotEmpty>
 		</Statement>
 	</Statements>
 </SmartSqlMap>

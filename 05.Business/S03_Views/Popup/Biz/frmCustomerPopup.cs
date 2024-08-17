@@ -172,6 +172,9 @@ namespace P05_Business.S03_Views.Popup.Biz
                         case "G":
                             chkDealTypeGeneral.Checked = true;
                             break;
+                        default:
+                            chkDealTypeSale.Checked = chkDealTypeBuy.Checked = chkDealTypeProc.Checked = chkDealTypeGeneral.Checked = true;
+                            break;
                     }
                 }
             }

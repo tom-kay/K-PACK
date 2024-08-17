@@ -1,6 +1,8 @@
 ﻿using log4net;
 using P05_Business.S01_Models.Dao.Base;
 using P05_Business.S01_Models.Dto.Base;
+using P05_Business.S01_Models.Dto.Biz;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -101,8 +103,24 @@ namespace P05_Business.S02_Controllers.Base
 
 			return list;
 		}
-		#endregion
+
+        internal List<ShipportCodeDto> GetShipportList(ShipportCodeDto param)
+        {	
+            CodeMntDao dao = new CodeMntDao();
+            List<ShipportCodeDto> list = dao.selectShipportCodeList(param);
+
+            return list;
+        }
+
+        internal List<AirportCodeDto> GetAirportList(AirportCodeDto param)
+        {
+            CodeMntDao dao = new CodeMntDao();
+            List<AirportCodeDto> list = dao.selectAirportCodeList(param);
+
+            return list;
+        }
+        #endregion
 
 
-	}
+    }
 }

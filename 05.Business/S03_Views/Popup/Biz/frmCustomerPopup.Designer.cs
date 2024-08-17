@@ -67,7 +67,6 @@
             // 
             this.pnlPopupOptional.AutoSize = true;
             this.pnlPopupOptional.Controls.Add(this.tableLayoutPanel1);
-            this.pnlPopupOptional.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.pnlPopupOptional.Size = new System.Drawing.Size(796, 90);
             // 
             // pnlContainer
@@ -96,6 +95,8 @@
             // 
             // lblPopupTitle
             // 
+            this.lblPopupTitle.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.lblPopupTitle.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold);
             this.lblPopupTitle.Size = new System.Drawing.Size(696, 35);
             // 
             // pnlPopupButtonBar
@@ -166,11 +167,13 @@
             this.txtCode.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCode.PlaceholderText = "";
             this.txtCode.ReadOnly = false;
+            this.txtCode.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtCode.Size = new System.Drawing.Size(286, 22);
             this.txtCode.TabIndex = 0;
             this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCode.Texts = "";
             this.txtCode.UnderlinedStyle = false;
+            this.txtCode.WordWrap = true;
             // 
             // panel2
             // 
@@ -201,11 +204,13 @@
             this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtName.PlaceholderText = "";
             this.txtName.ReadOnly = false;
+            this.txtName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtName.Size = new System.Drawing.Size(286, 22);
             this.txtName.TabIndex = 0;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtName.Texts = "";
             this.txtName.UnderlinedStyle = false;
+            this.txtName.WordWrap = true;
             // 
             // panel3
             // 
@@ -290,7 +295,6 @@
             // 
             this.chkDealTypeGeneral.AutoSize = true;
             this.chkDealTypeGeneral.BackColor = System.Drawing.Color.Transparent;
-            this.chkDealTypeGeneral.Enabled = false;
             this.chkDealTypeGeneral.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkDealTypeGeneral.Location = new System.Drawing.Point(182, 5);
             this.chkDealTypeGeneral.Name = "chkDealTypeGeneral";
@@ -304,7 +308,6 @@
             // 
             this.chkDealTypeProc.AutoSize = true;
             this.chkDealTypeProc.BackColor = System.Drawing.Color.Transparent;
-            this.chkDealTypeProc.Enabled = false;
             this.chkDealTypeProc.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkDealTypeProc.Location = new System.Drawing.Point(113, 5);
             this.chkDealTypeProc.Name = "chkDealTypeProc";
@@ -318,7 +321,6 @@
             // 
             this.chkDealTypeBuy.AutoSize = true;
             this.chkDealTypeBuy.BackColor = System.Drawing.Color.Transparent;
-            this.chkDealTypeBuy.Enabled = false;
             this.chkDealTypeBuy.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkDealTypeBuy.Location = new System.Drawing.Point(58, 5);
             this.chkDealTypeBuy.Name = "chkDealTypeBuy";
@@ -332,7 +334,6 @@
             // 
             this.chkDealTypeSale.AutoSize = true;
             this.chkDealTypeSale.BackColor = System.Drawing.Color.Transparent;
-            this.chkDealTypeSale.Enabled = false;
             this.chkDealTypeSale.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chkDealTypeSale.Location = new System.Drawing.Point(3, 5);
             this.chkDealTypeSale.Name = "chkDealTypeSale";

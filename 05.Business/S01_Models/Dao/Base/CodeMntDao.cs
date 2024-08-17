@@ -4,6 +4,8 @@ using System.Linq;
 using P05_Business.S01_Models.Dto.Base;
 using log4net;
 using System.Reflection;
+using P05_Business.S01_Models.Dto.Biz;
+using System;
 
 namespace P05_Business.S01_Models.Dao.Base
 {
@@ -215,7 +217,35 @@ namespace P05_Business.S01_Models.Dao.Base
 
 			return items;
 		}
-		#endregion
 
-	}
+        internal List<ShipportCodeDto> selectShipportCodeList(ShipportCodeDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "CodeMng",
+                SqlId = "selectShipportCodeList",
+                Request = param
+            };
+            List<ShipportCodeDto> datas = SqlMapper.Query<ShipportCodeDto>(context).ToList();
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+
+            return datas;
+        }
+
+        internal List<AirportCodeDto> selectAirportCodeList(AirportCodeDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "CodeMng",
+                SqlId = "selectAirportCodeList",
+                Request = param
+            };
+            List<AirportCodeDto> datas = SqlMapper.Query<AirportCodeDto>(context).ToList();
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+
+            return datas;
+        }
+        #endregion
+
+    }
 }

@@ -383,11 +383,13 @@
     <Compile Include="Common\GlobalVariables.cs" />
     <Compile Include="Common\MainMessage.cs" />
     <Compile Include="S01_Models\Dao\Biz\ExportMngDao.cs" />
+    <Compile Include="S01_Models\Dto\Base\AirportCodeDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\ExportContainerDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\ExportInvoiceDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\ExportMasterDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\ExportPackingDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\OrderReportDto.cs" />
+    <Compile Include="S01_Models\Dto\Base\ShipportCodeDto.cs" />
     <Compile Include="S02_Controllers\Biz\ExportMngController.cs" />
     <Compile Include="S03_Views\Biz\frmExportList.cs">
       <SubType>Form</SubType>
@@ -400,6 +402,18 @@
     </Compile>
     <Compile Include="S03_Views\Biz\frmExportMng.Designer.cs">
       <DependentUpon>frmExportMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmDetailCodePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmDetailCodePopup.Designer.cs">
+      <DependentUpon>frmDetailCodePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmPortCodePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmPortCodePopup.Designer.cs">
+      <DependentUpon>frmPortCodePopup.cs</DependentUpon>
     </Compile>
     <Compile Include="S04_Reports\Rpt\rptOrderDucu.cs">
       <AutoGen>True</AutoGen>
@@ -1097,6 +1111,9 @@
     <EmbeddedResource Include="S03_Views\Popup\Biz\frmItemFindPopup.resx">
       <DependentUpon>frmItemFindPopup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Common\frmDetailCodePopup.resx">
+      <DependentUpon>frmDetailCodePopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Common\frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
     </EmbeddedResource>
@@ -1117,6 +1134,9 @@
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="S03_Views\Popup\Common\frmPortCodePopup.resx">
+      <DependentUpon>frmPortCodePopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Common\frmTemplatePopup.resx">
       <DependentUpon>frmTemplatePopup.cs</DependentUpon>
     </EmbeddedResource>

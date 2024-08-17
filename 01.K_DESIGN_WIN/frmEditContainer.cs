@@ -1,4 +1,5 @@
-﻿using P01_K_DESIGN_WIN.Classes;
+﻿using FarPoint.Win.Spread;
+using P01_K_DESIGN_WIN.Classes;
 using P02_K_CONTROL_WIN;
 using System;
 using System.Data;
@@ -223,7 +224,19 @@ namespace P01_K_DESIGN_WIN
                                 return false;
                             }
                         }
-					}
+                        else if (c is FpSpread)
+                        {   
+                            DataTable dt = (c as FpSpread).Sheets[0].DataSource as DataTable;
+
+                            DataTable dtChanges = dt.GetChanges();
+
+                            if (dtChanges != null && dtChanges.Rows.Count > 0)
+                            {
+                                Debug.Print(string.Concat(c.Name, " : 변경됨"));
+                                return false;
+                            }
+                        }
+                    }
 				}
 
 				

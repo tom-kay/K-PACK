@@ -3,8 +3,44 @@
   "WorkspaceRootPath": "G:\\workspace\\K-PACK\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\biz\\frmexportmng.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\biz\\frmexportmng.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\biz\\frmexportmng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\biz\\frmexportmng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\biz\\frmexportmng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\biz\\frmexportmng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\popup\\common\\frmportcodepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\popup\\common\\frmportcodepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\dto\\base\\airportcodedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\dto\\base\\airportcodedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\maps\\base\\codemng.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\maps\\base\\codemng.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s03_views\\popup\\common\\frmportcodepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\popup\\common\\frmportcodepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s02_controllers\\base\\codemngcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s02_controllers\\base\\codemngcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\dto\\base\\shipportcodedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\dto\\base\\shipportcodedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\dao\\base\\codemntdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\dao\\base\\codemntdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,14 +67,129 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frmExportMng.Designer.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmExportMng.Designer.cs",
+              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Biz\\frmExportMng.Designer.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmExportMng.Designer.cs",
+              "RelativeToolTip": "05.Business\\S03_Views\\Biz\\frmExportMng.Designer.cs",
+              "ViewState": "AQIAADQCAAAAAAAAAAAYwEoCAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T18:33:51.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmExportMng.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmExportMng.cs",
+              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Biz\\frmExportMng.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmExportMng.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "05.Business\\S03_Views\\Biz\\frmExportMng.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T17:44:03.565Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CodeMng.xml",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Maps\\Base\\CodeMng.xml",
+              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Maps\\Base\\CodeMng.xml",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Maps\\Base\\CodeMng.xml",
+              "RelativeToolTip": "05.Business\\S01_Models\\Maps\\Base\\CodeMng.xml",
+              "ViewState": "AQIAACcBAAAAAAAAAAAAADsBAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-08-17T17:34:20.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CodeMntDao.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dao\\Base\\CodeMntDao.cs",
+              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Dao\\Base\\CodeMntDao.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dao\\Base\\CodeMntDao.cs",
+              "RelativeToolTip": "05.Business\\S01_Models\\Dao\\Base\\CodeMntDao.cs",
+              "ViewState": "AQIAAN0AAAAAAAAAAAAAwOEAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T17:31:15.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CodeMngController.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S02_Controllers\\Base\\CodeMngController.cs",
+              "RelativeDocumentMoniker": "05.Business\\S02_Controllers\\Base\\CodeMngController.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S02_Controllers\\Base\\CodeMngController.cs",
+              "RelativeToolTip": "05.Business\\S02_Controllers\\Base\\CodeMngController.cs",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAswHUAAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T17:29:14.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "frmExportMng.cs",
               "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmExportMng.cs",
               "RelativeDocumentMoniker": "05.Business\\S03_Views\\Biz\\frmExportMng.cs",
               "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmExportMng.cs",
               "RelativeToolTip": "05.Business\\S03_Views\\Biz\\frmExportMng.cs",
-              "ViewState": "AQIAAL8AAAAAAAAAAAASwNEAAABGAAAA",
+              "ViewState": "AQIAALkBAAAAAAAAAAAywMoBAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T14:36:16.667Z",
+              "WhenOpened": "2024-08-17T16:42:22.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmPortCodePopup.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Popup\\Common\\frmPortCodePopup.cs",
+              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Popup\\Common\\frmPortCodePopup.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Popup\\Common\\frmPortCodePopup.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "05.Business\\S03_Views\\Popup\\Common\\frmPortCodePopup.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T16:30:29.811Z",
+              "EditorCaption": " [\uB514\uC790\uC778]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ShipportCodeDto.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Base\\ShipportCodeDto.cs",
+              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Dto\\Base\\ShipportCodeDto.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Base\\ShipportCodeDto.cs",
+              "RelativeToolTip": "05.Business\\S01_Models\\Dto\\Base\\ShipportCodeDto.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAuwBQAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T16:27:13.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AirportCodeDto.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Base\\AirportCodeDto.cs",
+              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Dto\\Base\\AirportCodeDto.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Dto\\Base\\AirportCodeDto.cs",
+              "RelativeToolTip": "05.Business\\S01_Models\\Dto\\Base\\AirportCodeDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T16:14:31.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmPortCodePopup.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Popup\\Common\\frmPortCodePopup.cs",
+              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Popup\\Common\\frmPortCodePopup.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Popup\\Common\\frmPortCodePopup.cs",
+              "RelativeToolTip": "05.Business\\S03_Views\\Popup\\Common\\frmPortCodePopup.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAgwGcAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T11:27:41.323Z",
               "EditorCaption": ""
             }
           ]
