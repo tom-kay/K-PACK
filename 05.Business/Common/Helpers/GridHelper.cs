@@ -193,6 +193,8 @@ namespace P05_Business.Common.Helpers
             FpSpread grid = spread;
             SheetView sheet = grid.Sheets[0];
             sheet.DataSource = null;
+
+            grid.ResizeZeroIndicator = ResizeZeroIndicator.Default;
         }
 
         internal static void AddTextColumn(FpSpread spread
@@ -355,12 +357,17 @@ namespace P05_Business.Common.Helpers
             , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign)
         {
             col.Tag = name;
-            sheet.ColumnHeader.Cells[0, col.Index].Text = text;
+            col.Label = text;
             col.Locked = readOnly;
             col.Visible = visible;
             col.Width = width;
             col.HorizontalAlignment = hAlign;
             col.VerticalAlignment = vAlign;
+
+            if (!col.Visible)
+            {
+                col.Resizable = false;
+            }
         }
     }
 }

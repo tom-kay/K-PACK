@@ -1,4 +1,5 @@
-﻿using FarPoint.Win.Spread;
+﻿using FarPoint.Excel.EntityClassLibrary.SpreadsheetML;
+using FarPoint.Win.Spread;
 using log4net;
 using P01_K_DESIGN_WIN;
 using P01_K_DESIGN_WIN.Classes;
@@ -10,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace P05_Business.S03_Views.Biz
@@ -39,8 +41,6 @@ namespace P05_Business.S03_Views.Biz
 
             _MODE = SAVE_MODE.New;
 
-            InitGrid();
-
             InitControls();
         }
 
@@ -63,9 +63,12 @@ namespace P05_Business.S03_Views.Biz
 
             try
             {
+                InitGrid();
+
                 InitCombo();
 
                 if (IS_LINK_OPEN) SearchData();
+
             }
             catch (Exception ex)
             {
@@ -272,6 +275,53 @@ namespace P05_Business.S03_Views.Biz
             }
         }
 
+        private void btnCntrAddRow_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = spdContainerList.ActiveSheet.DataSource as DataTable;
+
+                if (dt != null)
+                {
+                    DataRow drNew = dt.NewRow();
+                    drNew["InvoiceNo"] = txtInvoiceNo.Texts;
+                    dt.Rows.Add(drNew);
+                }
+
+                base.isFormChagned = true;
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCntrDelRow_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (spdContainerList.ActiveSheet.Rows.Count < 1)
+                {
+                    KMessageBox.Show("삭제할 데이터가 없습니다.", "삭제", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                int activeRowIdx = spdContainerList.ActiveSheet.ActiveRowIndex;
+                if (activeRowIdx >= 0)
+                {
+                    DataTable dt = spdContainerList.ActiveSheet.DataSource as DataTable;
+                    dt.Rows.RemoveAt(activeRowIdx);
+
+                    base.isFormChagned = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         #endregion -- Control Event
 
         #region -- Method
@@ -351,7 +401,7 @@ namespace P05_Business.S03_Views.Biz
 
             ExportMasterDto param = new ExportMasterDto
             {
-                InvoiceNo = saveMaster.InvoiceDate,
+                InvoiceNo = saveMaster.InvoiceNo,
                 InvoiceDate = saveMaster.InvoiceDate,
                 ShipperCode = saveMaster.ShipperCode,
                 ShipperAddress = saveMaster.ShipperAddress,
@@ -436,11 +486,16 @@ namespace P05_Business.S03_Views.Biz
         private void InitGrid()
         {   
             GridHelper.CreateGrid(spdContainerList);
-            GridHelper.AddTextColumn(spdContainerList, "ContainerNo", "Cntr No.", true, true, 250, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            GridHelper.AddTextColumn(spdContainerList, "InvoiceNo", "INV.NO", true, false, 0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
+            GridHelper.AddTextColumn(spdContainerList, "ContainerId", "CNTR.ID", true, false, 0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
+            GridHelper.AddTextColumn(spdContainerList, "ContainerNo", "CNTR No.", true, true, 250, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
             GridHelper.AddTextColumn(spdContainerList, "SealNo1", "Seal No.1", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
             GridHelper.AddTextColumn(spdContainerList, "SealNo2", "Seal No.2", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
             GridHelper.AddTextColumn(spdContainerList, "SealNo3", "Seal No.3", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
             GridHelper.EndGrid(spdContainerList);
+
+            //그리드 초기화
+            spdContainerList.ActiveSheet.DataSource = DataHandles.ConvertToDataTable<ExportContainerDto>(dtoContainers);
         }
 
         private void InitControls()
@@ -453,6 +508,8 @@ namespace P05_Business.S03_Views.Biz
             tabExportSub.SelectedIndex = 0;
             cnbBuyer.AddParams = cnbShipper.AddParams = cnbConsignee.AddParams = cnbNotify.AddParams = new object[] { "A" };    //기본값 : 전체
             cnbPol.AddParams = cnbDelivery.AddParams = new object[] { "S" };  //기본값 : 해운
+
+            ctrl = new ExportMngController();
 
             dtoMaster = new ExportMasterDto();
             dtoContainers = new List<ExportContainerDto>();
@@ -481,8 +538,9 @@ namespace P05_Business.S03_Views.Biz
             ComboHelper.InitComboBox(cboPaymentTerm, "PAYMENTTERMS", false, true);
         }
 
+
         #endregion -- Method
 
-
+        
     }
 }

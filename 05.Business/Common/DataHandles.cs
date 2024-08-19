@@ -137,7 +137,15 @@ namespace P05_Business.Common
 						}
 					}
 				}
-				else
+                else if (c is KCodeNameBox)
+                {
+					string[] tags = c.Tag.ToString().Split('|');
+					if (c.Tag != null && dto.GetType().GetProperty(tags[0]) != null)
+					{
+						dto.GetType().GetProperty(tags[0]).SetValue(dto, (c as KCodeNameBox).CodeValue);
+					}
+                }
+                else
 				{
 					if (c.Tag != null && dto.GetType().GetProperty(c.Tag.ToString()) != null)
 					{
@@ -187,10 +195,6 @@ namespace P05_Business.Common
 						{
 							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as CheckBox).Checked);
 						}
-						else if (c is KCodeNameBox)
-						{
-                            dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as KCodeNameBox).CodeValue);
-                        }
                         else if (c is KDateBox)
                         {
                             dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as KDateBox).DateValue);

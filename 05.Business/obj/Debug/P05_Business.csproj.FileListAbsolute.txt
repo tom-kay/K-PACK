@@ -611,3 +611,4 @@ G:\workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Biz.frmExportLi
 G:\workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Biz.frmExportMng.resources
 G:\workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Popup.Common.frmDetailCodePopup.resources
 G:\workspace\K-PACK\05.Business\obj\Debug\P05_Business.S03_Views.Popup.Common.frmPortCodePopup.resources
+G:\workspace\K-PACK\05.Business\bin\Debug\S01_Models\Maps\Biz\ExportMng.xml

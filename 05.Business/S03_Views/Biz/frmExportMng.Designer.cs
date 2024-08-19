@@ -56,7 +56,7 @@
             this.btnCntrDelRow = new P02_K_CONTROL_WIN.KButton();
             this.label24 = new System.Windows.Forms.Label();
             this.panel58 = new System.Windows.Forms.Panel();
-            this.spdContainerList = new FarPoint.Win.Spread.FpSpread(FarPoint.Win.Spread.LegacyBehaviors.None, ((object)(resources.GetObject("panel58.Controls"))));
+            this.spdContainerList = new FarPoint.Win.Spread.FpSpread(FarPoint.Win.Spread.LegacyBehaviors.None, ((System.IO.MemoryStream)(resources.GetObject("resource1"))));
             this.spdContainerList_Container = this.spdContainerList.GetSheet(0);
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -113,6 +113,10 @@
             this.cboPaymentTerm = new P02_K_CONTROL_WIN.KComboBox();
             this.panel34 = new System.Windows.Forms.Panel();
             this.txtPaymentDesc = new P02_K_CONTROL_WIN.KTextBox();
+            this.panel44 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel46 = new System.Windows.Forms.Panel();
+            this.txtDestinationName = new P02_K_CONTROL_WIN.KTextBox();
             this.tabPackingList = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -131,10 +135,6 @@
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.panel44 = new System.Windows.Forms.Panel();
-            this.panel46 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDestinationName = new P02_K_CONTROL_WIN.KTextBox();
             this.pnlMain.SuspendLayout();
             this.pnlBody.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -193,6 +193,8 @@
             this.tableLayoutPanel13.SuspendLayout();
             this.panel33.SuspendLayout();
             this.panel34.SuspendLayout();
+            this.panel44.SuspendLayout();
+            this.panel46.SuspendLayout();
             this.tabPackingList.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -203,8 +205,6 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
-            this.panel44.SuspendLayout();
-            this.panel46.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -267,7 +267,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 10);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.panel1.Size = new System.Drawing.Size(1101, 53);
+            this.panel1.Size = new System.Drawing.Size(1101, 55);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -287,8 +287,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1101, 43);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1101, 45);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel11
@@ -297,7 +297,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(4, 4);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(114, 35);
+            this.panel11.Size = new System.Drawing.Size(114, 37);
             this.panel11.TabIndex = 0;
             // 
             // label3
@@ -308,7 +308,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 35);
+            this.label3.Size = new System.Drawing.Size(114, 37);
             this.label3.TabIndex = 5;
             this.label3.Text = "INV NO.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -319,7 +319,7 @@
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(125, 4);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(422, 35);
+            this.panel12.Size = new System.Drawing.Size(422, 37);
             this.panel12.TabIndex = 1;
             // 
             // txtInvoiceNo
@@ -333,7 +333,7 @@
             this.txtInvoiceNo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtInvoiceNo.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
             this.txtInvoiceNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtInvoiceNo.Location = new System.Drawing.Point(3, 6);
+            this.txtInvoiceNo.Location = new System.Drawing.Point(3, 7);
             this.txtInvoiceNo.MaxLength = 50;
             this.txtInvoiceNo.Multiline = false;
             this.txtInvoiceNo.Name = "txtInvoiceNo";
@@ -357,7 +357,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(554, 4);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(114, 35);
+            this.panel13.Size = new System.Drawing.Size(114, 37);
             this.panel13.TabIndex = 2;
             // 
             // label1
@@ -368,7 +368,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 35);
+            this.label1.Size = new System.Drawing.Size(114, 37);
             this.label1.TabIndex = 5;
             this.label1.Text = "INV DATE";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -379,13 +379,13 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(675, 4);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(422, 35);
+            this.panel14.Size = new System.Drawing.Size(422, 37);
             this.panel14.TabIndex = 3;
             // 
             // txtInvoiceDate
             // 
             this.txtInvoiceDate.BackColor = System.Drawing.Color.White;
-            this.txtInvoiceDate.DateValue = "2024-08-18";
+            this.txtInvoiceDate.DateValue = "2024-08-19";
             this.txtInvoiceDate.Location = new System.Drawing.Point(3, 4);
             this.txtInvoiceDate.MaximumSize = new System.Drawing.Size(122, 22);
             this.txtInvoiceDate.MinimumSize = new System.Drawing.Size(122, 22);
@@ -401,10 +401,10 @@
             this.tabExportSub.Controls.Add(this.tabInvoice);
             this.tabExportSub.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabExportSub.ItemSize = new System.Drawing.Size(68, 34);
-            this.tabExportSub.Location = new System.Drawing.Point(0, 63);
+            this.tabExportSub.Location = new System.Drawing.Point(0, 65);
             this.tabExportSub.Name = "tabExportSub";
             this.tabExportSub.SelectedIndex = 0;
-            this.tabExportSub.Size = new System.Drawing.Size(1101, 663);
+            this.tabExportSub.Size = new System.Drawing.Size(1101, 661);
             this.tabExportSub.Style = MetroFramework.MetroColorStyle.Lime;
             this.tabExportSub.TabIndex = 1;
             this.tabExportSub.UseSelectable = true;
@@ -415,7 +415,7 @@
             this.tabBasic.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tabBasic.Location = new System.Drawing.Point(4, 38);
             this.tabBasic.Name = "tabBasic";
-            this.tabBasic.Size = new System.Drawing.Size(1093, 621);
+            this.tabBasic.Size = new System.Drawing.Size(1093, 619);
             this.tabBasic.TabIndex = 0;
             this.tabBasic.Text = "기본정보";
             // 
@@ -427,7 +427,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1093, 621);
+            this.panel2.Size = new System.Drawing.Size(1093, 619);
             this.panel2.TabIndex = 0;
             // 
             // tableLayoutPanel7
@@ -443,7 +443,7 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1093, 159);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1093, 157);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // tableLayoutPanel8
@@ -458,7 +458,7 @@
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(212, 151);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(212, 149);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
             // panel55
@@ -489,7 +489,7 @@
             this.panel56.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel56.Location = new System.Drawing.Point(3, 38);
             this.panel56.Name = "panel56";
-            this.panel56.Size = new System.Drawing.Size(206, 110);
+            this.panel56.Size = new System.Drawing.Size(206, 108);
             this.panel56.TabIndex = 1;
             // 
             // txtShippingMark
@@ -515,7 +515,7 @@
             this.txtShippingMark.PlaceholderText = "";
             this.txtShippingMark.ReadOnly = false;
             this.txtShippingMark.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtShippingMark.Size = new System.Drawing.Size(200, 104);
+            this.txtShippingMark.Size = new System.Drawing.Size(200, 102);
             this.txtShippingMark.TabIndex = 2;
             this.txtShippingMark.Tag = "ShippingMark";
             this.txtShippingMark.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -536,7 +536,7 @@
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(866, 151);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(866, 149);
             this.tableLayoutPanel9.TabIndex = 1;
             // 
             // panel57
@@ -564,8 +564,8 @@
             // 
             // btnCntrAddRow
             // 
-            this.btnCntrAddRow.BackColor = System.Drawing.Color.CadetBlue;
-            this.btnCntrAddRow.BackgroundColor = System.Drawing.Color.CadetBlue;
+            this.btnCntrAddRow.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCntrAddRow.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.btnCntrAddRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCntrAddRow.BorderColor = System.Drawing.Color.White;
             this.btnCntrAddRow.BorderRadius = 0;
@@ -584,6 +584,7 @@
             this.btnCntrAddRow.TextColor = System.Drawing.Color.White;
             this.btnCntrAddRow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCntrAddRow.UseVisualStyleBackColor = false;
+            this.btnCntrAddRow.Click += new System.EventHandler(this.btnCntrAddRow_Click);
             // 
             // panel42
             // 
@@ -598,8 +599,8 @@
             // 
             // btnCntrDelRow
             // 
-            this.btnCntrDelRow.BackColor = System.Drawing.Color.CadetBlue;
-            this.btnCntrDelRow.BackgroundColor = System.Drawing.Color.CadetBlue;
+            this.btnCntrDelRow.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnCntrDelRow.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.btnCntrDelRow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCntrDelRow.BorderColor = System.Drawing.Color.White;
             this.btnCntrDelRow.BorderRadius = 0;
@@ -618,6 +619,7 @@
             this.btnCntrDelRow.TextColor = System.Drawing.Color.White;
             this.btnCntrDelRow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCntrDelRow.UseVisualStyleBackColor = false;
+            this.btnCntrDelRow.Click += new System.EventHandler(this.btnCntrDelRow_Click);
             // 
             // label24
             // 
@@ -638,7 +640,7 @@
             this.panel58.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel58.Location = new System.Drawing.Point(3, 38);
             this.panel58.Name = "panel58";
-            this.panel58.Size = new System.Drawing.Size(860, 110);
+            this.panel58.Size = new System.Drawing.Size(860, 108);
             this.panel58.TabIndex = 1;
             // 
             // spdContainerList
@@ -648,7 +650,7 @@
             this.spdContainerList.Font = new System.Drawing.Font("D2Coding", 12F);
             this.spdContainerList.Location = new System.Drawing.Point(0, 0);
             this.spdContainerList.Name = "spdContainerList";
-            this.spdContainerList.Size = new System.Drawing.Size(860, 110);
+            this.spdContainerList.Size = new System.Drawing.Size(860, 108);
             this.spdContainerList.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -822,7 +824,7 @@
             this.panel20.Margin = new System.Windows.Forms.Padding(0);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(414, 102);
-            this.panel20.TabIndex = 5;
+            this.panel20.TabIndex = 2;
             // 
             // txtShipperAddress
             // 
@@ -864,7 +866,7 @@
             this.panel22.Margin = new System.Windows.Forms.Padding(0);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(414, 102);
-            this.panel22.TabIndex = 7;
+            this.panel22.TabIndex = 4;
             // 
             // txtBuyerAddress
             // 
@@ -931,7 +933,7 @@
             this.panel24.Margin = new System.Windows.Forms.Padding(0);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(414, 35);
-            this.panel24.TabIndex = 9;
+            this.panel24.TabIndex = 5;
             // 
             // cnbConsignee
             // 
@@ -985,7 +987,7 @@
             this.panel26.Margin = new System.Windows.Forms.Padding(0);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(414, 35);
-            this.panel26.TabIndex = 11;
+            this.panel26.TabIndex = 7;
             // 
             // cnbNotify
             // 
@@ -1014,7 +1016,7 @@
             this.panel28.Margin = new System.Windows.Forms.Padding(0);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(414, 105);
-            this.panel28.TabIndex = 13;
+            this.panel28.TabIndex = 6;
             // 
             // txtConsigneeAddress
             // 
@@ -1056,7 +1058,7 @@
             this.panel30.Margin = new System.Windows.Forms.Padding(0);
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(414, 105);
-            this.panel30.TabIndex = 15;
+            this.panel30.TabIndex = 8;
             // 
             // txtNotifyAddress
             // 
@@ -1122,12 +1124,12 @@
             this.panel32.Name = "panel32";
             this.panel32.Padding = new System.Windows.Forms.Padding(3);
             this.panel32.Size = new System.Drawing.Size(960, 35);
-            this.panel32.TabIndex = 17;
+            this.panel32.TabIndex = 9;
             // 
             // dtbDepartureDate
             // 
             this.dtbDepartureDate.BackColor = System.Drawing.Color.White;
-            this.dtbDepartureDate.DateValue = "2024-08-18";
+            this.dtbDepartureDate.DateValue = "2024-08-19";
             this.dtbDepartureDate.Location = new System.Drawing.Point(3, 6);
             this.dtbDepartureDate.MaximumSize = new System.Drawing.Size(122, 22);
             this.dtbDepartureDate.MinimumSize = new System.Drawing.Size(122, 22);
@@ -1167,7 +1169,7 @@
             this.panel36.Margin = new System.Windows.Forms.Padding(0);
             this.panel36.Name = "panel36";
             this.panel36.Size = new System.Drawing.Size(414, 35);
-            this.panel36.TabIndex = 21;
+            this.panel36.TabIndex = 18;
             // 
             // cnbPol
             // 
@@ -1218,7 +1220,7 @@
             this.panel38.Margin = new System.Windows.Forms.Padding(0);
             this.panel38.Name = "panel38";
             this.panel38.Size = new System.Drawing.Size(414, 35);
-            this.panel38.TabIndex = 23;
+            this.panel38.TabIndex = 19;
             // 
             // txtCarrierName
             // 
@@ -1231,7 +1233,7 @@
             this.txtCarrierName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCarrierName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
             this.txtCarrierName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtCarrierName.Location = new System.Drawing.Point(3, 6);
+            this.txtCarrierName.Location = new System.Drawing.Point(3, 7);
             this.txtCarrierName.MaxLength = 50;
             this.txtCarrierName.Multiline = false;
             this.txtCarrierName.Name = "txtCarrierName";
@@ -1278,7 +1280,7 @@
             this.panel45.Location = new System.Drawing.Point(550, 357);
             this.panel45.Name = "panel45";
             this.panel45.Size = new System.Drawing.Size(124, 29);
-            this.panel45.TabIndex = 30;
+            this.panel45.TabIndex = 20;
             // 
             // label18
             // 
@@ -1326,7 +1328,7 @@
             this.panel48.Name = "panel48";
             this.panel48.Padding = new System.Windows.Forms.Padding(3);
             this.panel48.Size = new System.Drawing.Size(960, 35);
-            this.panel48.TabIndex = 33;
+            this.panel48.TabIndex = 23;
             // 
             // txtRemark
             // 
@@ -1336,10 +1338,10 @@
             this.txtRemark.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtRemark.BorderRadius = 0;
             this.txtRemark.BorderSize = 2;
-            this.txtRemark.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtRemark.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtRemark.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
             this.txtRemark.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtRemark.Location = new System.Drawing.Point(3, 6);
+            this.txtRemark.Location = new System.Drawing.Point(3, 7);
             this.txtRemark.MaxLength = 50;
             this.txtRemark.Multiline = false;
             this.txtRemark.Name = "txtRemark";
@@ -1350,7 +1352,7 @@
             this.txtRemark.ReadOnly = false;
             this.txtRemark.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtRemark.Size = new System.Drawing.Size(955, 22);
-            this.txtRemark.TabIndex = 7;
+            this.txtRemark.TabIndex = 56;
             this.txtRemark.Tag = "Remark";
             this.txtRemark.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtRemark.Texts = "";
@@ -1372,7 +1374,7 @@
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(414, 35);
-            this.tableLayoutPanel12.TabIndex = 34;
+            this.tableLayoutPanel12.TabIndex = 20;
             // 
             // panel27
             // 
@@ -1400,7 +1402,7 @@
             this.cboDeliveryTerm.Name = "cboDeliveryTerm";
             this.cboDeliveryTerm.Padding = new System.Windows.Forms.Padding(3);
             this.cboDeliveryTerm.Size = new System.Drawing.Size(100, 35);
-            this.cboDeliveryTerm.TabIndex = 3;
+            this.cboDeliveryTerm.TabIndex = 51;
             this.cboDeliveryTerm.Tag = "DeliveryTermCode";
             this.cboDeliveryTerm.Texts = "";
             // 
@@ -1429,7 +1431,7 @@
             this.cnbDelivery.Namespace = "P05_Business.S03_Views.Popup.Common";
             this.cnbDelivery.NameValue = "";
             this.cnbDelivery.Size = new System.Drawing.Size(310, 29);
-            this.cnbDelivery.TabIndex = 3;
+            this.cnbDelivery.TabIndex = 52;
             this.cnbDelivery.Tag = "DeliveryTermCode|DeliveryTermName";
             // 
             // tableLayoutPanel13
@@ -1447,7 +1449,7 @@
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel13.Size = new System.Drawing.Size(414, 35);
-            this.tableLayoutPanel13.TabIndex = 35;
+            this.tableLayoutPanel13.TabIndex = 21;
             // 
             // panel33
             // 
@@ -1475,7 +1477,7 @@
             this.cboPaymentTerm.Name = "cboPaymentTerm";
             this.cboPaymentTerm.Padding = new System.Windows.Forms.Padding(3);
             this.cboPaymentTerm.Size = new System.Drawing.Size(100, 35);
-            this.cboPaymentTerm.TabIndex = 4;
+            this.cboPaymentTerm.TabIndex = 53;
             this.cboPaymentTerm.Tag = "PaymentTermCode";
             this.cboPaymentTerm.Texts = "";
             // 
@@ -1500,7 +1502,7 @@
             this.txtPaymentDesc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPaymentDesc.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
             this.txtPaymentDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPaymentDesc.Location = new System.Drawing.Point(3, 6);
+            this.txtPaymentDesc.Location = new System.Drawing.Point(3, 7);
             this.txtPaymentDesc.MaxLength = 50;
             this.txtPaymentDesc.Multiline = false;
             this.txtPaymentDesc.Name = "txtPaymentDesc";
@@ -1511,12 +1513,74 @@
             this.txtPaymentDesc.ReadOnly = false;
             this.txtPaymentDesc.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPaymentDesc.Size = new System.Drawing.Size(308, 22);
-            this.txtPaymentDesc.TabIndex = 7;
+            this.txtPaymentDesc.TabIndex = 54;
             this.txtPaymentDesc.Tag = "PaymentDesc";
             this.txtPaymentDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPaymentDesc.Texts = "";
             this.txtPaymentDesc.UnderlinedStyle = false;
             this.txtPaymentDesc.WordWrap = true;
+            // 
+            // panel44
+            // 
+            this.panel44.Controls.Add(this.label5);
+            this.panel44.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel44.Location = new System.Drawing.Point(4, 393);
+            this.panel44.Name = "panel44";
+            this.panel44.Size = new System.Drawing.Size(124, 29);
+            this.panel44.TabIndex = 36;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(124, 29);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "DESTINATION";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel46
+            // 
+            this.tableLayoutPanel4.SetColumnSpan(this.panel46, 3);
+            this.panel46.Controls.Add(this.txtDestinationName);
+            this.panel46.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel46.Location = new System.Drawing.Point(132, 390);
+            this.panel46.Margin = new System.Windows.Forms.Padding(0);
+            this.panel46.Name = "panel46";
+            this.panel46.Size = new System.Drawing.Size(960, 35);
+            this.panel46.TabIndex = 22;
+            // 
+            // txtDestinationName
+            // 
+            this.txtDestinationName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDestinationName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDestinationName.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtDestinationName.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDestinationName.BorderRadius = 0;
+            this.txtDestinationName.BorderSize = 2;
+            this.txtDestinationName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtDestinationName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
+            this.txtDestinationName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtDestinationName.Location = new System.Drawing.Point(6, 7);
+            this.txtDestinationName.MaxLength = 50;
+            this.txtDestinationName.Multiline = false;
+            this.txtDestinationName.Name = "txtDestinationName";
+            this.txtDestinationName.OnlyNumber = false;
+            this.txtDestinationName.PasswordChar = false;
+            this.txtDestinationName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtDestinationName.PlaceholderText = "";
+            this.txtDestinationName.ReadOnly = false;
+            this.txtDestinationName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtDestinationName.Size = new System.Drawing.Size(948, 22);
+            this.txtDestinationName.TabIndex = 55;
+            this.txtDestinationName.Tag = "DestinationName";
+            this.txtDestinationName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtDestinationName.Texts = "";
+            this.txtDestinationName.UnderlinedStyle = false;
+            this.txtDestinationName.WordWrap = true;
             // 
             // tabPackingList
             // 
@@ -1524,7 +1588,7 @@
             this.tabPackingList.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tabPackingList.Location = new System.Drawing.Point(4, 38);
             this.tabPackingList.Name = "tabPackingList";
-            this.tabPackingList.Size = new System.Drawing.Size(1000, 590);
+            this.tabPackingList.Size = new System.Drawing.Size(1000, 588);
             this.tabPackingList.TabIndex = 1;
             this.tabPackingList.Text = "PACKING LIST";
             // 
@@ -1535,7 +1599,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1000, 590);
+            this.panel3.Size = new System.Drawing.Size(1000, 588);
             this.panel3.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -1551,8 +1615,8 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 621F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1000, 590);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 619F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1000, 588);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -1567,7 +1631,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(194, 582);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(194, 580);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // panel6
@@ -1575,7 +1639,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 38);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(188, 541);
+            this.panel6.Size = new System.Drawing.Size(188, 539);
             this.panel6.TabIndex = 0;
             // 
             // panel7
@@ -1599,7 +1663,7 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(791, 582);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(791, 580);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
             // panel5
@@ -1615,7 +1679,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel19.Location = new System.Drawing.Point(3, 38);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(785, 541);
+            this.panel19.Size = new System.Drawing.Size(785, 539);
             this.panel19.TabIndex = 1;
             // 
             // tabInvoice
@@ -1624,7 +1688,7 @@
             this.tabInvoice.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tabInvoice.Location = new System.Drawing.Point(4, 38);
             this.tabInvoice.Name = "tabInvoice";
-            this.tabInvoice.Size = new System.Drawing.Size(1000, 590);
+            this.tabInvoice.Size = new System.Drawing.Size(1000, 588);
             this.tabInvoice.TabIndex = 2;
             this.tabInvoice.Text = "INVOICE";
             // 
@@ -1635,7 +1699,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1000, 590);
+            this.panel4.Size = new System.Drawing.Size(1000, 588);
             this.panel4.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -1651,8 +1715,8 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 621F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1000, 590);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 619F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1000, 588);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // tableLayoutPanel6
@@ -1667,7 +1731,7 @@
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(194, 582);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(194, 580);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panel8
@@ -1675,7 +1739,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(3, 38);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(188, 541);
+            this.panel8.Size = new System.Drawing.Size(188, 539);
             this.panel8.TabIndex = 0;
             // 
             // panel9
@@ -1699,7 +1763,7 @@
             this.tableLayoutPanel11.RowCount = 2;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(791, 582);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(791, 580);
             this.tableLayoutPanel11.TabIndex = 1;
             // 
             // panel10
@@ -1715,70 +1779,8 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel21.Location = new System.Drawing.Point(3, 38);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(785, 541);
+            this.panel21.Size = new System.Drawing.Size(785, 539);
             this.panel21.TabIndex = 1;
-            // 
-            // panel44
-            // 
-            this.panel44.Controls.Add(this.label5);
-            this.panel44.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel44.Location = new System.Drawing.Point(4, 393);
-            this.panel44.Name = "panel44";
-            this.panel44.Size = new System.Drawing.Size(124, 29);
-            this.panel44.TabIndex = 36;
-            // 
-            // panel46
-            // 
-            this.tableLayoutPanel4.SetColumnSpan(this.panel46, 3);
-            this.panel46.Controls.Add(this.txtDestinationName);
-            this.panel46.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel46.Location = new System.Drawing.Point(132, 390);
-            this.panel46.Margin = new System.Windows.Forms.Padding(0);
-            this.panel46.Name = "panel46";
-            this.panel46.Size = new System.Drawing.Size(960, 35);
-            this.panel46.TabIndex = 37;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(124, 29);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "DESTINATION";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtDestinationName
-            // 
-            this.txtDestinationName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDestinationName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDestinationName.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtDestinationName.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtDestinationName.BorderRadius = 0;
-            this.txtDestinationName.BorderSize = 2;
-            this.txtDestinationName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDestinationName.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F);
-            this.txtDestinationName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtDestinationName.Location = new System.Drawing.Point(6, 6);
-            this.txtDestinationName.MaxLength = 50;
-            this.txtDestinationName.Multiline = false;
-            this.txtDestinationName.Name = "txtDestinationName";
-            this.txtDestinationName.OnlyNumber = false;
-            this.txtDestinationName.PasswordChar = false;
-            this.txtDestinationName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtDestinationName.PlaceholderText = "";
-            this.txtDestinationName.ReadOnly = false;
-            this.txtDestinationName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDestinationName.Size = new System.Drawing.Size(948, 22);
-            this.txtDestinationName.TabIndex = 7;
-            this.txtDestinationName.Tag = "DestinationName";
-            this.txtDestinationName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtDestinationName.Texts = "";
-            this.txtDestinationName.UnderlinedStyle = false;
-            this.txtDestinationName.WordWrap = true;
             // 
             // frmExportMng
             // 
@@ -1850,6 +1852,8 @@
             this.tableLayoutPanel13.ResumeLayout(false);
             this.panel33.ResumeLayout(false);
             this.panel34.ResumeLayout(false);
+            this.panel44.ResumeLayout(false);
+            this.panel46.ResumeLayout(false);
             this.tabPackingList.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1860,8 +1864,6 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
-            this.panel44.ResumeLayout(false);
-            this.panel46.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

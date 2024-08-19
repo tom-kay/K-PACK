@@ -1024,7 +1024,9 @@
     <Content Include="Resource\Images\windows_windows.png" />
     <Content Include="Resource\Images\yuan_yuan_currency_blue_blue_currency.png" />
     <Content Include="Resource\k_icon.ico" />
-    <Content Include="S01_Models\Maps\Biz\ExportMng.xml" />
+    <Content Include="S01_Models\Maps\Biz\ExportMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
