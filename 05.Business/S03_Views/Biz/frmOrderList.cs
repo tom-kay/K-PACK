@@ -33,15 +33,8 @@ namespace P05_Business.S03_Views.Biz
             //그리드 생성
             CreateGrid();
 
-            dgvList.Paint += DgvList_Paint;
-
             //Date Type 초기화
             InitDateType();
-        }
-
-        private void DgvList_Paint(object sender, PaintEventArgs e)
-        {   
-            
         }
 
         #endregion -- Constructor

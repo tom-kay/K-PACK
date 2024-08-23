@@ -50,6 +50,9 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("출발지코드")]
         public string PolCode { get; set; }
 
+        [Description("도착지코드")]
+        public string PodCode { get; set; }
+
         [Description("배송조건코드")]
         public string DeliveryTermCode { get; set; }
 

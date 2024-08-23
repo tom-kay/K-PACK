@@ -279,6 +279,7 @@ namespace P05_Business.S03_Views.Biz
         {
             try
             {
+
                 DataTable dt = spdContainerList.ActiveSheet.DataSource as DataTable;
 
                 if (dt != null)
@@ -310,7 +311,7 @@ namespace P05_Business.S03_Views.Biz
                 if (activeRowIdx >= 0)
                 {
                     DataTable dt = spdContainerList.ActiveSheet.DataSource as DataTable;
-                    dt.Rows.RemoveAt(activeRowIdx);
+                    dt.Rows[activeRowIdx].Delete();
 
                     base.isFormChagned = true;
                 }
@@ -354,8 +355,8 @@ namespace P05_Business.S03_Views.Biz
                 dtoContainers = dtoMaster.ExportContainers;
                 if (dtoContainers != null)
                 {
-                    spdContainerList.DataSource = DataHandles.ConvertToDataTable<ExportContainerDto>(dtoContainers);
-                    (spdContainerList.DataSource as DataTable).AcceptChanges();
+                    spdContainerList.ActiveSheet.DataSource = DataHandles.ConvertToDataTable<ExportContainerDto>(dtoContainers);
+                    (spdContainerList.ActiveSheet.DataSource as DataTable).AcceptChanges();
                 }
 
                 //PackingList 정보 바인딩
@@ -414,6 +415,7 @@ namespace P05_Business.S03_Views.Biz
                 DepartureDate = saveMaster.DepartureDate,
                 CarrierName = saveMaster.CarrierName,
                 PolCode = saveMaster.PolCode,
+                PodCode = saveMaster.PodCode,
                 DestinationName = saveMaster.DestinationName,
                 DeliveryTermCode = saveMaster.DeliveryTermCode,
                 PaymentTermCode = saveMaster.PaymentTermCode,
@@ -488,14 +490,14 @@ namespace P05_Business.S03_Views.Biz
             GridHelper.CreateGrid(spdContainerList);
             GridHelper.AddTextColumn(spdContainerList, "InvoiceNo", "INV.NO", true, false, 0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
             GridHelper.AddTextColumn(spdContainerList, "ContainerId", "CNTR.ID", true, false, 0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
-            GridHelper.AddTextColumn(spdContainerList, "ContainerNo", "CNTR No.", true, true, 250, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            GridHelper.AddTextColumn(spdContainerList, "SealNo1", "Seal No.1", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            GridHelper.AddTextColumn(spdContainerList, "SealNo2", "Seal No.2", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            GridHelper.AddTextColumn(spdContainerList, "SealNo3", "Seal No.3", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            GridHelper.AddTextColumn(spdContainerList, "ContainerNo", "CNTR NO.", true, true, 250, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            GridHelper.AddTextColumn(spdContainerList, "SealNo1", "SEAL NO.1", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            GridHelper.AddTextColumn(spdContainerList, "SealNo2", "SEAL NO.2", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            GridHelper.AddTextColumn(spdContainerList, "SealNo3", "SEAL NO.3", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
             GridHelper.EndGrid(spdContainerList);
 
             //그리드 초기화
-            spdContainerList.ActiveSheet.DataSource = DataHandles.ConvertToDataTable<ExportContainerDto>(dtoContainers);
+            spdContainerList.DataSource = DataHandles.ConvertToDataTable<ExportContainerDto>(dtoContainers);
         }
 
         private void InitControls()
@@ -507,7 +509,7 @@ namespace P05_Business.S03_Views.Biz
             txtInvoiceNo.Enabled = true;
             tabExportSub.SelectedIndex = 0;
             cnbBuyer.AddParams = cnbShipper.AddParams = cnbConsignee.AddParams = cnbNotify.AddParams = new object[] { "A" };    //기본값 : 전체
-            cnbPol.AddParams = cnbDelivery.AddParams = new object[] { "S" };  //기본값 : 해운
+            cnbPol.AddParams = cnbPod.AddParams = new object[] { "S" };  //기본값 : 해운
 
             ctrl = new ExportMngController();
 

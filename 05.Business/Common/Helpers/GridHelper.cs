@@ -1,5 +1,6 @@
 ﻿using FarPoint.Win.Spread;
 using FarPoint.Win.Spread.CellType;
+using FarPoint.Win.Spread.Model;
 using P02_K_CONTROL_WIN;
 using SmartSql.SqlMap.Tags;
 using System;
@@ -154,7 +155,7 @@ namespace P05_Business.Common.Helpers
             grid.RowSplitBoxPolicy = SplitBoxPolicy.Never;
             grid.PaintSelectionHeader = false;
             grid.RetainSelectionBlock = false;
-
+            
             SheetView sheet = grid.Sheets[0];
 
             sheet.Rows.Clear();
@@ -176,6 +177,8 @@ namespace P05_Business.Common.Helpers
                 hRow.BackColor = Color.CornflowerBlue;
                 hRow.ForeColor = Color.White;
             }
+
+            sheet.DefaultStyle.Font = new Font("D2Coding", 12f);
 
             sheet.Rows.Default.Height = 35f;
             sheet.RowHeader.Visible = false;
@@ -357,17 +360,20 @@ namespace P05_Business.Common.Helpers
             , CellHorizontalAlignment hAlign, CellVerticalAlignment vAlign)
         {
             col.Tag = name;
+            col.DataField = name;
             col.Label = text;
             col.Locked = readOnly;
             col.Visible = visible;
             col.Width = width;
             col.HorizontalAlignment = hAlign;
             col.VerticalAlignment = vAlign;
+            col.Font = new Font("D2Coding", 12f);
 
             if (!col.Visible)
             {
                 col.Resizable = false;
             }
         }
+
     }
 }

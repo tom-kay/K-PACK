@@ -281,6 +281,7 @@ namespace P05_Business.Common
 
         internal static DataTable GetAllData(FpSpread spd)
         {
+			//UpdateDataSourceFromSpread(spd);
             return (spd.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted | DataRowState.Unchanged);
         }
 
@@ -347,6 +348,44 @@ namespace P05_Business.Common
                 cbo.Items.Clear();
             }
         }
+
+        private static void UpdateDataSourceFromSpread(FpSpread spread)
+        {
+            var dataSource = spread.ActiveSheet.DataSource as DataTable;
+            if (dataSource == null) return;
+
+            for (int rowIndex = 0; rowIndex < spread.ActiveSheet.RowCount; rowIndex++)
+            {
+                for (int colIndex = 0; colIndex < spread.ActiveSheet.ColumnCount; colIndex++)
+                {
+                    var cell = spread.ActiveSheet.Cells[rowIndex, colIndex];
+                    var cellType = cell.CellType;
+
+                    if (cellType is FarPoint.Win.Spread.CellType.TextCellType)
+                    {
+                        dataSource.Rows[rowIndex][colIndex] = cell.Text;
+                    }
+                    else if (cellType is FarPoint.Win.Spread.CellType.ComboBoxCellType)
+                    {
+                        dataSource.Rows[rowIndex][colIndex] = cell.Value;
+                    }
+                    else if (cellType is FarPoint.Win.Spread.CellType.ImageCellType)
+                    {
+                        dataSource.Rows[rowIndex][colIndex] = cell.Value; // 이미지 데이터 처리
+                    }
+                    else if (cellType is FarPoint.Win.Spread.CellType.CheckBoxCellType)
+                    {
+                        dataSource.Rows[rowIndex][colIndex] = cell.Value;
+                    }
+                    else if (cellType is FarPoint.Win.Spread.CellType.ButtonCellType)
+                    {
+                        dataSource.Rows[rowIndex][colIndex] = cell.Text; // 버튼 셀의 텍스트 처리
+                    }
+                    // 다른 셀 유형에 대한 처리 추가
+                }
+            }
+        }
+
     }
 
 }

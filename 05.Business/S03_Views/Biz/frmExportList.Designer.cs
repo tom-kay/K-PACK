@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvList = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pdbDate = new P02_K_CONTROL_WIN.KPeriodDateBox();
             this.cboPeriodType = new P02_K_CONTROL_WIN.KComboBox();
-            this.cnbBuyer = new P02_K_CONTROL_WIN.KCodeNameBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pdbDate = new P02_K_CONTROL_WIN.KPeriodDateBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.txtInvoiceNo = new P02_K_CONTROL_WIN.KTextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.cnbBuyer = new P02_K_CONTROL_WIN.KCodeNameBox();
+            this.dgvList = new System.Windows.Forms.DataGridView();
             this.pnlClose.SuspendLayout();
             this.pnlSearch.SuspendLayout();
             this.pnlInit.SuspendLayout();
@@ -53,13 +53,13 @@
             this.pnlSearchOptional.SuspendLayout();
             this.pnlNew.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -69,14 +69,17 @@
             // btnSearch
             // 
             this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnInit
             // 
             this.btnInit.FlatAppearance.BorderSize = 0;
+            this.btnInit.Click += new System.EventHandler(this.btnInit_Click);
             // 
             // btnPrint
             // 
             this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // pnlBody
             // 
@@ -105,6 +108,7 @@
             // btnNew
             // 
             this.btnNew.FlatAppearance.BorderSize = 0;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -130,16 +134,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1135, 35);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // dgvList
-            // 
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvList.Location = new System.Drawing.Point(0, 10);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(1135, 461);
-            this.dgvList.TabIndex = 0;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.cboPeriodType);
@@ -148,89 +142,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(114, 29);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pdbDate);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(123, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(252, 29);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(381, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(114, 29);
-            this.panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.txtInvoiceNo);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(501, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(252, 29);
-            this.panel4.TabIndex = 3;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(759, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(114, 29);
-            this.panel5.TabIndex = 4;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.cnbBuyer);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(879, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(253, 29);
-            this.panel6.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 29);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "INVOICE NO";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 29);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "BUYER";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pdbDate
-            // 
-            this.pdbDate.AutoSize = true;
-            this.pdbDate.BackColor = System.Drawing.Color.White;
-            this.pdbDate.DateFromValue = "2024-07-27";
-            this.pdbDate.DateToValue = "2024-07-27";
-            this.pdbDate.Location = new System.Drawing.Point(3, 4);
-            this.pdbDate.MaximumSize = new System.Drawing.Size(265, 22);
-            this.pdbDate.MinimumSize = new System.Drawing.Size(265, 22);
-            this.pdbDate.Name = "pdbDate";
-            this.pdbDate.Size = new System.Drawing.Size(265, 22);
-            this.pdbDate.TabIndex = 1;
-            this.pdbDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cboPeriodType
             // 
@@ -252,22 +163,58 @@
             this.cboPeriodType.Tag = "";
             this.cboPeriodType.Texts = "";
             // 
-            // cnbBuyer
+            // panel2
             // 
-            this.cnbBuyer.AddParams = null;
-            this.cnbBuyer.BackColor = System.Drawing.Color.White;
-            this.cnbBuyer.CodeValue = "";
-            this.cnbBuyer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cnbBuyer.FormName = "frmCustomerPopup";
-            this.cnbBuyer.FormTitle = "BUYER 조회";
-            this.cnbBuyer.Location = new System.Drawing.Point(0, 0);
-            this.cnbBuyer.Margin = new System.Windows.Forms.Padding(0);
-            this.cnbBuyer.MinimumSize = new System.Drawing.Size(229, 29);
-            this.cnbBuyer.Name = "cnbBuyer";
-            this.cnbBuyer.Namespace = "P05_Business.S03_Views.Popup.Biz";
-            this.cnbBuyer.NameValue = "";
-            this.cnbBuyer.Size = new System.Drawing.Size(253, 29);
-            this.cnbBuyer.TabIndex = 1;
+            this.panel2.Controls.Add(this.pdbDate);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(123, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(252, 29);
+            this.panel2.TabIndex = 1;
+            // 
+            // pdbDate
+            // 
+            this.pdbDate.AutoSize = true;
+            this.pdbDate.BackColor = System.Drawing.Color.White;
+            this.pdbDate.DateFromValue = "2024-08-24";
+            this.pdbDate.DateToValue = "2024-08-24";
+            this.pdbDate.Location = new System.Drawing.Point(3, 4);
+            this.pdbDate.MaximumSize = new System.Drawing.Size(265, 22);
+            this.pdbDate.MinimumSize = new System.Drawing.Size(265, 22);
+            this.pdbDate.Name = "pdbDate";
+            this.pdbDate.Size = new System.Drawing.Size(265, 22);
+            this.pdbDate.TabIndex = 1;
+            this.pdbDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(381, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(114, 29);
+            this.panel3.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 29);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "INVOICE NO";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.txtInvoiceNo);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(501, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(252, 29);
+            this.panel4.TabIndex = 3;
             // 
             // txtInvoiceNo
             // 
@@ -297,6 +244,63 @@
             this.txtInvoiceNo.UnderlinedStyle = false;
             this.txtInvoiceNo.WordWrap = true;
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(759, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(114, 29);
+            this.panel5.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Font = new System.Drawing.Font("Microsoft New Tai Lue", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 29);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "BUYER";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.cnbBuyer);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(879, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(253, 29);
+            this.panel6.TabIndex = 5;
+            // 
+            // cnbBuyer
+            // 
+            this.cnbBuyer.AddParams = null;
+            this.cnbBuyer.BackColor = System.Drawing.Color.White;
+            this.cnbBuyer.CodeValue = "";
+            this.cnbBuyer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cnbBuyer.FormName = "frmCustomerPopup";
+            this.cnbBuyer.FormTitle = "BUYER 조회";
+            this.cnbBuyer.Location = new System.Drawing.Point(0, 0);
+            this.cnbBuyer.Margin = new System.Windows.Forms.Padding(0);
+            this.cnbBuyer.MinimumSize = new System.Drawing.Size(229, 29);
+            this.cnbBuyer.Name = "cnbBuyer";
+            this.cnbBuyer.Namespace = "P05_Business.S03_Views.Popup.Biz";
+            this.cnbBuyer.NameValue = "";
+            this.cnbBuyer.Size = new System.Drawing.Size(253, 29);
+            this.cnbBuyer.TabIndex = 1;
+            // 
+            // dgvList
+            // 
+            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvList.Location = new System.Drawing.Point(0, 10);
+            this.dgvList.Name = "dgvList";
+            this.dgvList.RowTemplate.Height = 23;
+            this.dgvList.Size = new System.Drawing.Size(1135, 461);
+            this.dgvList.TabIndex = 0;
+            // 
             // frmExportList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -304,6 +308,7 @@
             this.ClientSize = new System.Drawing.Size(1135, 561);
             this.Name = "frmExportList";
             this.Text = "frmExportList";
+            this.Load += new System.EventHandler(this.frmExportList_Load);
             this.Controls.SetChildIndex(this.pnlSearchMain, 0);
             this.pnlClose.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
@@ -318,7 +323,6 @@
             this.pnlSearchOptional.PerformLayout();
             this.pnlNew.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -326,6 +330,7 @@
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
 
         }

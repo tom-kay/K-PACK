@@ -71,15 +71,30 @@ namespace P05_Business.S01_Models.Dao.Biz
                     {
                         foreach (ExportContainerDto container in containers)
                         {
-                            context = new RequestContext
+                            if (container.DataState == System.Data.DataRowState.Deleted)
                             {
-                                Scope = "Biz.ExportMng",
-                                SqlId = "mergeExportContainer",
-                                Request = container
-                            };
+                                context = new RequestContext
+                                {
+                                    Scope = "Biz.ExportMng",
+                                    SqlId = "deleteExportContainer",
+                                    Request = container
+                                };
 
-                            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
-                            save = SqlMapper.Execute(context);
+                                log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+                                save = SqlMapper.Execute(context);
+                            }
+                            else
+                            {
+                                context = new RequestContext
+                                {
+                                    Scope = "Biz.ExportMng",
+                                    SqlId = "mergeExportContainer",
+                                    Request = container
+                                };
+
+                                log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+                                save = SqlMapper.Execute(context);
+                            }
 
                             if (save < 0) break;
                         }

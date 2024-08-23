@@ -28,6 +28,7 @@
 			`exp`.`DepartureDate`,
 			`exp`.`CarrierName`,
 			`exp`.`PolCode`,
+			`exp`.`PodCode`,
 			`exp`.`DeliveryTermCode`,
 			`exp`.`DestinationName`,
 			`exp`.`PaymentTermCode`,
@@ -60,6 +61,7 @@
 			`exp`.`DepartureDate`,
 			`exp`.`CarrierName`,
 			`exp`.`PolCode`,
+			`exp`.`PodCode`,
 			`exp`.`DeliveryTermCode`,
 			`exp`.`DestinationName`,
 			`exp`.`PaymentTermCode`,
@@ -95,6 +97,7 @@
 			`DepartureDate`,
 			`CarrierName`,
 			`PolCode`,
+			`PodCode`,
 			`DeliveryTermCode`,
 			`DestinationName`,
 			`PaymentTermCode`,
@@ -126,6 +129,7 @@
 			@DepartureDate,
 			@CarrierName,
 			@PolCode,
+			@PodCode,
 			@DeliveryTermCode,
 			@DestinationName,
 			@PaymentTermCode,
@@ -159,6 +163,7 @@
 			`DepartureDate` = @DepartureDate,
 			`CarrierName` = @CarrierName,
 			`PolCode` = @PolCode,
+			`PodCode` = @PodCode,
 			`DeliveryTermCode` = @DeliveryTermCode,
 			`DestinationName` = @DestinationName,
 			`PaymentTermCode` = @PaymentTermCode,
@@ -192,6 +197,7 @@
 		<Statement Id="selectExportContainerList">
 			SELECT
 			`cntr`.`InvoiceNo`,
+			`cntr`.`ContainerId`,
 			`cntr`.`ContainerNo`,
 			`cntr`.`SealNo1`,
 			`cntr`.`SealNo2`,
@@ -205,6 +211,7 @@
 		<Statement Id="selectExportContainer">
 			SELECT
 			`cntr`.`InvoiceNo`,
+			`cntr`.`ContainerId`,
 			`cntr`.`ContainerNo`,
 			`cntr`.`SealNo1`,
 			`cntr`.`SealNo2`,
@@ -218,36 +225,9 @@
 		</Statement>
 
 		<Statement Id="mergeExportContainer">
-			MERGE INTO `tb_export_container` AS target
-			USING (
-			SELECT
-			@InvoiceNo AS `InvoiceNo`,
-			@ContainerNo AS `ContainerNo`,
-			@SealNo1 AS `SealNo1`,
-			@SealNo2 AS `SealNo2`,
-			@SealNo3 AS `SealNo3`,
-			@CompanyCode AS `CompanyCode`,
-			@CreateId AS `CreateId`,
-			@UpdateId AS `UpdateId`
-			) AS source
-			ON (
-			target.`InvoiceNo` = source.`InvoiceNo`
-			AND target.`ContainerNo` = source.`ContainerNo`
-			AND target.`CompanyCode` = source.`CompanyCode`
-			)
-			WHEN MATCHED THEN
-			UPDATE SET
-			target.`SealNo1` = source.`SealNo1`,
-			target.`SealNo2` = source.`SealNo2`,
-			target.`SealNo3` = source.`SealNo3`,
-			target.`DelYn` = 'N',
-			target.`UpdateId` = source.`UpdateId`,
-			target.`UpdateDt` = now(),
-			target.`DeleteId` = null,
-			target.`DeleteDt` = null
-			WHEN NOT MATCHED THEN
-			INSERT (
+			INSERT INTO `tb_export_container` (
 			`InvoiceNo`,
+			`ContainerId`,
 			`ContainerNo`,
 			`SealNo1`,
 			`SealNo2`,
@@ -256,18 +236,27 @@
 			`DelYn`,
 			`CreateId`,
 			`CreateDt`
-			)
-			VALUES (
-			source.`InvoiceNo`,
-			source.`ContainerNo`,
-			source.`SealNo1`,
-			source.`SealNo2`,
-			source.`SealNo3`,
-			source.`CompanyCode`,
+			) VALUES (
+			@InvoiceNo,
+			FN_CreateExpCntrId(@CompanyCode, @InvoiceNo, @ContainerId),
+			@ContainerNo,
+			@SealNo1,
+			@SealNo2,
+			@SealNo3,
+			@CompanyCode,
 			'N',
-			source.`CreateId`,
-			now()
-			);
+			@CreateId,
+			NOW()
+			) ON DUPLICATE KEY UPDATE
+			`ContainerNo` = VALUES(`ContainerNo`),
+			`SealNo1` = VALUES(`SealNo1`),
+			`SealNo2` = VALUES(`SealNo2`),
+			`SealNo3` = VALUES(`SealNo3`),
+			`DelYn` = 'N',
+			`UpdateId` = VALUES(`UpdateId`),
+			`UpdateDt` = NOW(),
+			`DeleteId` = NULL,
+			`DeleteDt` = NULL;
 		</Statement>
 
 		<Statement Id="deleteExportContainer">
@@ -276,7 +265,7 @@
 			`DeleteId` = @DeleteId,
 			`DeleteDt` = now()
 			WHERE `InvoiceNo` = @InvoiceNo 
-			AND `ContainerNo` = @ContainerNo
+			AND `ContainerId` = @ContainerId
 			AND `CompanyCode` = @CompanyCode
 		</Statement>
 
