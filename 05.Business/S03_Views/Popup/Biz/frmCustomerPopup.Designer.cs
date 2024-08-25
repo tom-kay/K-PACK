@@ -67,45 +67,45 @@
             // 
             this.pnlPopupOptional.AutoSize = true;
             this.pnlPopupOptional.Controls.Add(this.tableLayoutPanel1);
-            this.pnlPopupOptional.Size = new System.Drawing.Size(796, 90);
+            this.pnlPopupOptional.Size = new System.Drawing.Size(782, 90);
             // 
             // pnlContainer
             // 
-            this.pnlContainer.Size = new System.Drawing.Size(796, 446);
+            this.pnlContainer.Size = new System.Drawing.Size(782, 628);
             // 
             // pnlTitleBar
             // 
-            this.pnlTitleBar.Size = new System.Drawing.Size(796, 35);
+            this.pnlTitleBar.Size = new System.Drawing.Size(782, 35);
             // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.Location = new System.Drawing.Point(746, 0);
+            this.btnClose.Location = new System.Drawing.Point(732, 0);
             // 
             // btnMinimize
             // 
             this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.Location = new System.Drawing.Point(696, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(682, 0);
             // 
             // pnlBody
             // 
             this.pnlBody.Controls.Add(this.dgvList);
             this.pnlBody.Location = new System.Drawing.Point(0, 160);
-            this.pnlBody.Size = new System.Drawing.Size(796, 286);
+            this.pnlBody.Size = new System.Drawing.Size(782, 468);
             // 
             // lblPopupTitle
             // 
             this.lblPopupTitle.BackColor = System.Drawing.Color.CornflowerBlue;
             this.lblPopupTitle.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Bold);
-            this.lblPopupTitle.Size = new System.Drawing.Size(696, 35);
+            this.lblPopupTitle.Size = new System.Drawing.Size(682, 35);
             // 
             // pnlPopupButtonBar
             // 
-            this.pnlPopupButtonBar.Size = new System.Drawing.Size(796, 35);
+            this.pnlPopupButtonBar.Size = new System.Drawing.Size(782, 35);
             // 
             // pnlButtons
             // 
-            this.pnlButtons.Location = new System.Drawing.Point(562, 0);
+            this.pnlButtons.Location = new System.Drawing.Point(548, 0);
             // 
             // btnInit
             // 
@@ -135,7 +135,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(796, 70);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(782, 70);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel1
@@ -145,7 +145,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(103, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(292, 29);
+            this.panel1.Size = new System.Drawing.Size(285, 29);
             this.panel1.TabIndex = 2;
             // 
             // txtCode
@@ -180,9 +180,9 @@
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
             this.panel2.Controls.Add(this.txtName);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(501, 3);
+            this.panel2.Location = new System.Drawing.Point(494, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(292, 29);
+            this.panel2.Size = new System.Drawing.Size(285, 29);
             this.panel2.TabIndex = 3;
             // 
             // txtName
@@ -238,7 +238,7 @@
             // 
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(401, 3);
+            this.panel4.Location = new System.Drawing.Point(394, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(94, 29);
             this.panel4.TabIndex = 7;
@@ -288,7 +288,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(103, 38);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(690, 29);
+            this.panel6.Size = new System.Drawing.Size(676, 29);
             this.panel6.TabIndex = 9;
             // 
             // chkDealTypeGeneral
@@ -351,7 +351,7 @@
             this.dgvList.Location = new System.Drawing.Point(0, 0);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowTemplate.Height = 23;
-            this.dgvList.Size = new System.Drawing.Size(796, 286);
+            this.dgvList.Size = new System.Drawing.Size(782, 468);
             this.dgvList.TabIndex = 1;
             this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             // 
@@ -359,7 +359,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(786, 632);
             this.Name = "frmCustomerPopup";
             this.Text = "frmCustomerPopup";
             this.pnlPopupOptional.ResumeLayout(false);

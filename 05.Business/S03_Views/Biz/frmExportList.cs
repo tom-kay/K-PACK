@@ -51,31 +51,99 @@ namespace P05_Business.S03_Views.Biz
         #region Events
         private void frmExportList_Load(object sender, EventArgs e)
         {
-            InitControlData();
+            InitControl();
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnNew_Click(object sender, EventArgs e)
-        {
+        {   
+            try
+            {
+                frmExportMng frm = new frmExportMng();
 
+                AccessMain.OpenChildForm(frm);
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnInit_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SearchData();
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvList.Columns["InvoiceNo"].Index)
+            {
+                string code = dgvList.Rows[e.RowIndex].Cells["InvoiceNo"].Value.ToString();
 
+                frmExportMng frm = new frmExportMng(code);
+
+                AccessMain.OpenChildForm(frm);
+            }
         }
         #endregion
 
         #region Custom Methods
+
+        /// <summary>
+        /// 데이터 조회
+        /// </summary>
+        private void SearchData()
+        {
+            ExportMasterDto param = new ExportMasterDto
+            {
+                CompanyCode = LoginCompany.CompanyCode,
+                DatePeriodType = ((KeyValuePair<string, string>)cboPeriodType.SelectedItem).Key,
+                PeriodFromDt = pdbDate.DateFromValue,
+                PeriodToDt = pdbDate.DateToValue,
+                InvoiceNo = txtInvoiceNo.Texts.Trim(),
+                BuyerCode = cnbBuyer.CodeValue,
+            };
+
+            AccessMain.ShowLoading();
+
+            List<ExportMasterDto> list = ctrl.GetExportMasterList(param);
+            
+            dgvList.DataSource = list;
+
+            AccessMain.HideLoading();
+            
+        }
+
         /// <summary>
         /// Date Type 초기화
         /// </summary>
@@ -100,21 +168,25 @@ namespace P05_Business.S03_Views.Biz
         private void CreateGrid()
         {
             UserDataGrid.Create(dgvList, DataGridViewAutoSizeColumnsMode.Fill);
-            UserDataGrid.AddCheckBoxColumn(dgvList, "CHK", "선택", false, true, 20, DataGridViewContentAlignment.MiddleCenter);
+            UserDataGrid.AddCheckBoxColumn(dgvList, "CHK", "선택", false, false, 20, DataGridViewContentAlignment.MiddleCenter);
             UserDataGrid.AddLinkColumn(dgvList, "InvoiceNo", "INV.NO", true, true, 80, DataGridViewContentAlignment.MiddleCenter);
             UserDataGrid.AddTextBoxColumn(dgvList, "InvoiceDate", "INV.DATE", true, true, 80, DataGridViewContentAlignment.MiddleLeft);
             UserDataGrid.AddTextBoxColumn(dgvList, "BuyerName", "BUYER.NAME", true, true, 80, DataGridViewContentAlignment.MiddleLeft);
             UserDataGrid.AddTextBoxColumn(dgvList, "ShipperName", "SHIPPER.NAME", true, true, 80, DataGridViewContentAlignment.MiddleLeft);
             UserDataGrid.AddTextBoxColumn(dgvList, "ConsigneeName", "CONSIGNEE.NAME", true, true, 80, DataGridViewContentAlignment.MiddleLeft);
             UserDataGrid.AddTextBoxColumn(dgvList, "NotifyName", "NOTIFY.NAME", true, true, 80, DataGridViewContentAlignment.MiddleLeft);
-            UserDataGrid.AddTextBoxColumn(dgvList, "DepartureDate", "DEPARTURE DATE", true, true, 80, DataGridViewContentAlignment.MiddleLeft);
+            UserDataGrid.AddTextBoxColumn(dgvList, "DepartureDate", "DEPARTURE DATE", true, true, 80, DataGridViewContentAlignment.MiddleCenter);
             UserDataGrid.End(dgvList);
         }
 
-        private void InitControlData()
+        private void InitControl()
         {
             pdbDate.DateFromValue = DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd");
+
+            cnbBuyer.AddParams = new object[] { "A" };
         }
         #endregion
+
+        
     }
 }

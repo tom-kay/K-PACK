@@ -18,12 +18,16 @@
 			`exp`.`InvoiceNo`,
 			`exp`.`InvoiceDate`,
 			`exp`.`ShipperCode`,
+			`shp`.`CustName` AS ShipperName,
 			`exp`.`ShipperAddress`,
 			`exp`.`ConsigneeCode`,
+			`csn`.`CustName` AS ConsigneeName,
 			`exp`.`ConsigneeAddress`,
 			`exp`.`NotifyCode`,
+			`nty`.`CustName` AS NotifyName,
 			`exp`.`NotifyAddress`,
 			`exp`.`BuyerCode`,
+			`byr`.`CustName` AS BuyerName,
 			`exp`.`BuyerAddress`,
 			`exp`.`DepartureDate`,
 			`exp`.`CarrierName`,
@@ -42,9 +46,27 @@
 			`exp`.`InvoiceRemark`
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `tb_export_master` exp
-			WHERE `CompanyCode` = @CompanyCode
-			AND `DelYn` != 'Y'
-		</Statement>
+			LEFT JOIN `soodal`.`tb_customer` shp
+			ON shp.CustCode = exp.ShipperCode
+			LEFT JOIN `soodal`.`tb_customer` csn
+			ON csn.CustCode = exp.ConsigneeCode
+			LEFT JOIN `soodal`.`tb_customer` nty
+			ON nty.CustCode = exp.NotifyCode
+			LEFT JOIN `soodal`.`tb_customer` byr
+			ON byr.CustCode = exp.BuyerCode
+			WHERE `exp`.`CompanyCode` = @CompanyCode
+			AND `exp`.`DelYn` != 'Y'
+			<IsEqual Prepend="And" Property="DatePeriodType" CompareValue="I">
+				`exp`.`InvoiceDate` BETWEEN @PeriodFromDt AND @PeriodToDt
+			</IsEqual>
+			<IsNotEqual  Prepend="And" Property="InvoiceNo" CompareValue="">
+				`exp`.`InvoiceNo` Like Concat("%",@InvoiceNo "%")
+			</IsNotEqual >
+			<IsNotEqual Prepend="And" Property="BuyerCode" CompareValue="">
+				`exp`.`BuyerCode` = @BuyerCode
+			</IsNotEqual>
+			
+	</Statement>
 
 		<Statement Id="selectExportMaster">
 			SELECT

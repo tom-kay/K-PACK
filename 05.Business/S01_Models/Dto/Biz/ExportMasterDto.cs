@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace P05_Business.S01_Models.Dto.Biz
 {
@@ -20,11 +16,17 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("Shipper코드")]
         public string ShipperCode { get; set; }
 
+        [Description("Shipper명")]
+        public string ShipperName { get; set; }
+
         [Description("Shipper주소")]
         public string ShipperAddress { get; set; }
 
         [Description("Consignee코드")]
         public string ConsigneeCode { get; set; }
+
+        [Description("Consignee명")]
+        public string ConsigneeName { get; set; }
 
         [Description("Consignee주소")]
         public string ConsigneeAddress { get; set; }
@@ -32,11 +34,17 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("Notify코드")]
         public string NotifyCode { get; set; }
 
+        [Description("Notify명")]
+        public string NotifyName { get; set; }
+
         [Description("Notify주소")]
         public string NotifyAddress { get; set; }
 
         [Description("Buyer코드")]
         public string BuyerCode { get; set; }
+
+        [Description("Buyer명")]
+        public string BuyerName { get; set; }
 
         [Description("Buyer주소")]
         public string BuyerAddress { get; set; }
@@ -85,11 +93,23 @@ namespace P05_Business.S01_Models.Dto.Biz
 
         [Description("Invoice 비고")]
         public string InvoiceRemark { get; set; }
+        [Description("조회일자타입")]
+        public string DatePeriodType { get; set; }
 
+        [Description("조회시작일자")]
+
+        public string PeriodFromDt { get; set; }
+
+        [Description("조회종료일자")]
+        public string PeriodToDt { get; set; }
+
+        [Description("컨테이너 정보")]
         public List<ExportContainerDto> ExportContainers { get; set; }
 
+        [Description("팩킹리스트 정보")]
         public List<ExportPackingDto> ExportPackings { get; set; }
 
+        [Description("인보이스 정보")]
         public List<ExportInvoiceDto> ExportInvoices { get; set; }
 
 

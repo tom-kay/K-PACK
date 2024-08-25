@@ -50,7 +50,7 @@ namespace P05_Business.Common
                     {
 						string[] tags = c.Tag.ToString().Split('|');
 
-                        (c as KCodeNameBox).CodeValue = dto.GetType().GetProperty(tags[0]).GetValue(dto, null).ToString();
+                        (c as KCodeNameBox).CodeValue = Convert.ToString(dto.GetType().GetProperty(tags[0]).GetValue(dto, null));
                         if (tags.Length > 1 && dto.GetType().GetProperty(tags[1]) != null && dto.GetType().GetProperty(tags[1]).GetValue(dto, null) != null)
 						{	
 							(c as KCodeNameBox).NameValue = dto.GetType().GetProperty(tags[1]).GetValue(dto, null).ToString();

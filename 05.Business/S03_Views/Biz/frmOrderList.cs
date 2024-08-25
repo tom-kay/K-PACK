@@ -103,6 +103,21 @@ namespace P05_Business.S03_Views.Biz
             }
 
         }
+
+        private void dgvList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (e.ColumnIndex == dgvList.Columns["OrderNo"].Index)
+                {
+                    string code = dgvList.Rows[e.RowIndex].Cells["OrderNo"].Value.ToString();
+
+                    frmOrderMng frm = new frmOrderMng(code);
+
+                    AccessMain.OpenChildForm(frm);
+                }
+            }
+        }
         #endregion -- Control Events
 
         #region -- Methods
@@ -138,7 +153,7 @@ namespace P05_Business.S03_Views.Biz
         private void CreateGrid()
         {
             UserDataGrid.Create(dgvList, DataGridViewAutoSizeColumnsMode.Fill);
-            UserDataGrid.AddCheckBoxColumn(dgvList, "CHK", "선택", false, true, 20, DataGridViewContentAlignment.MiddleCenter);
+            UserDataGrid.AddCheckBoxColumn(dgvList, "CHK", "선택", false, false, 20, DataGridViewContentAlignment.MiddleCenter);
             UserDataGrid.AddLinkColumn(dgvList, "OrderNo", "발주번호", true, true, 50, DataGridViewContentAlignment.MiddleCenter);
             UserDataGrid.AddTextBoxColumn(dgvList, "RegDt", "등록일자", true, true, 30, DataGridViewContentAlignment.MiddleLeft);
             UserDataGrid.AddTextBoxColumn(dgvList, "ExWorkDt", "출고일자", true, true, 30, DataGridViewContentAlignment.MiddleLeft);
@@ -191,19 +206,5 @@ namespace P05_Business.S03_Views.Biz
 
         #endregion -- Methods
 
-        private void dgvList_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                if (e.ColumnIndex == dgvList.Columns["OrderNo"].Index)
-                {
-                    string code = dgvList.Rows[e.RowIndex].Cells["OrderNo"].Value.ToString();
-
-                    frmOrderMng frm = new frmOrderMng(code);
-
-                    AccessMain.OpenChildForm(frm);
-                }
-            }
-        }
     }
 }

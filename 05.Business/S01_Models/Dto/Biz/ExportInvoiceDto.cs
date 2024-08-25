@@ -38,5 +38,6 @@ namespace P05_Business.S01_Models.Dto.Biz
 
         [Description("가격")]
         public decimal? Amount { get; set; }
+
     }
 }

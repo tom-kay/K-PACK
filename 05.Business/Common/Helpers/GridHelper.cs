@@ -163,7 +163,7 @@ namespace P05_Business.Common.Helpers
 
             sheet.AlternatingRows.Count = 2;
             sheet.AlternatingRows[0].BackColor = Color.White;
-            sheet.AlternatingRows[1].BackColor = Color.FromArgb(183, 231, 255);
+            sheet.AlternatingRows[1].BackColor = Color.AliceBlue;
 
             sheet.OperationMode = OperationMode.RowMode;
             sheet.SelectionPolicy = FarPoint.Win.Spread.Model.SelectionPolicy.Single;

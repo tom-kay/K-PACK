@@ -71,10 +71,10 @@
             this.lblFromDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFromDate.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFromDate.Location = new System.Drawing.Point(0, 0);
+            this.lblFromDate.Location = new System.Drawing.Point(0, 3);
             this.lblFromDate.Margin = new System.Windows.Forms.Padding(0);
             this.lblFromDate.Name = "lblFromDate";
-            this.lblFromDate.Size = new System.Drawing.Size(100, 22);
+            this.lblFromDate.Size = new System.Drawing.Size(100, 18);
             this.lblFromDate.TabIndex = 14;
             this.lblFromDate.Tag = "NONE";
             this.lblFromDate.Text = "9999-99-99";
@@ -134,10 +134,10 @@
             this.lblToDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblToDate.Font = new System.Drawing.Font("Microsoft New Tai Lue", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToDate.Location = new System.Drawing.Point(0, 0);
+            this.lblToDate.Location = new System.Drawing.Point(0, 2);
             this.lblToDate.Margin = new System.Windows.Forms.Padding(0);
             this.lblToDate.Name = "lblToDate";
-            this.lblToDate.Size = new System.Drawing.Size(100, 22);
+            this.lblToDate.Size = new System.Drawing.Size(100, 19);
             this.lblToDate.TabIndex = 14;
             this.lblToDate.Tag = "NONE";
             this.lblToDate.Text = "9999-99-99";

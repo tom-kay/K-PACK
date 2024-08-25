@@ -165,6 +165,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.pdbDate);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(123, 3);
@@ -176,8 +177,8 @@
             // 
             this.pdbDate.AutoSize = true;
             this.pdbDate.BackColor = System.Drawing.Color.White;
-            this.pdbDate.DateFromValue = "2024-08-24";
-            this.pdbDate.DateToValue = "2024-08-24";
+            this.pdbDate.DateFromValue = "2024-08-25";
+            this.pdbDate.DateToValue = "2024-08-25";
             this.pdbDate.Location = new System.Drawing.Point(3, 4);
             this.pdbDate.MaximumSize = new System.Drawing.Size(265, 22);
             this.pdbDate.MinimumSize = new System.Drawing.Size(265, 22);
@@ -209,6 +210,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.txtInvoiceNo);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(501, 3);
@@ -267,6 +269,7 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.cnbBuyer);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(879, 3);
@@ -300,6 +303,7 @@
             this.dgvList.RowTemplate.Height = 23;
             this.dgvList.Size = new System.Drawing.Size(1135, 461);
             this.dgvList.TabIndex = 0;
+            this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             // 
             // frmExportList
             // 
