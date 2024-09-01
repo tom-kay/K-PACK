@@ -26,6 +26,9 @@ namespace P02_K_CONTROL_WIN
         Type _FORMTYPE;
         Form _FORMINSTANCE;
 
+        //Events
+        public event EventHandler OnCodeChanged;//Default event
+
         [Category("CodeValue"), Description("코드 값을 설정하거나 거져온다.")]
         public string CodeValue
         {
@@ -131,6 +134,13 @@ namespace P02_K_CONTROL_WIN
 
                 txtCode.Tag = null;
 
+                //이벤트 발생
+                if (!string.IsNullOrEmpty(txtCode.Text))
+                {
+                    if (OnCodeChanged != null)
+                        OnCodeChanged.Invoke(this, e); 
+                }
+
             }
             catch { }
         }
@@ -140,6 +150,13 @@ namespace P02_K_CONTROL_WIN
             try
             {
                 LoadPopupForm();
+
+                //이벤트 발생
+                if (!string.IsNullOrEmpty(txtCode.Text))
+                {
+                    if (OnCodeChanged != null)
+                        OnCodeChanged.Invoke(this, e);
+                }
             }
             catch{ }
         }

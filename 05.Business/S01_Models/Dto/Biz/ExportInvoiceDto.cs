@@ -25,7 +25,7 @@ namespace P05_Business.S01_Models.Dto.Biz
         public int? OrderDetailId { get; set; }
 
         [Description("제품길이")]
-        public decimal? ProdLength { get; set; }
+        public decimal? ItemLength { get; set; }
 
         [Description("미국 전용 수량(제품길이 X 수량)")]
         public decimal? UsQty { get; set; }
@@ -34,7 +34,7 @@ namespace P05_Business.S01_Models.Dto.Biz
         public decimal? Qty { get; set; }
 
         [Description("단가")]
-        public decimal? Price { get; set; }
+        public decimal? UnitPrice { get; set; }
 
         [Description("가격")]
         public decimal? Amount { get; set; }

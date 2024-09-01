@@ -3,14 +3,18 @@ using FarPoint.Win.Spread;
 using log4net;
 using P01_K_DESIGN_WIN;
 using P01_K_DESIGN_WIN.Classes;
+using P02_K_CONTROL_WIN;
 using P05_Business.Common;
 using P05_Business.Common.Helpers;
+using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S01_Models.Dto.Biz;
+using P05_Business.S02_Controllers.Base;
 using P05_Business.S02_Controllers.Biz;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
+using System.Text;
 using System.Windows;
 using System.Windows.Forms;
 
@@ -40,6 +44,11 @@ namespace P05_Business.S03_Views.Biz
             Set_Menu_Button(new EditButtonSettings { isSearch = false });
 
             _MODE = SAVE_MODE.New;
+
+            cnbBuyer.OnCodeChanged += CnbCode_OnCodeChanged;
+            cnbConsignee.OnCodeChanged += CnbCode_OnCodeChanged;
+            cnbNotify.OnCodeChanged += CnbCode_OnCodeChanged;
+            cnbShipper.OnCodeChanged += CnbCode_OnCodeChanged;
 
             InitControls();
         }
@@ -310,6 +319,11 @@ namespace P05_Business.S03_Views.Biz
                 int activeRowIdx = spdContainerList.ActiveSheet.ActiveRowIndex;
                 if (activeRowIdx >= 0)
                 {
+                    if (KMessageBox.Show($"[{activeRowIdx + 1}]행을 삭제 하시겠습니까? ", "삭제", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                    {
+                        return;
+                    }
+
                     DataTable dt = spdContainerList.ActiveSheet.DataSource as DataTable;
                     dt.Rows[activeRowIdx].Delete();
 
@@ -322,6 +336,42 @@ namespace P05_Business.S03_Views.Biz
                 KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// 거래처 코드 변경 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CnbCode_OnCodeChanged(object sender, EventArgs e)
+        {
+            string custCode = string.Empty;
+            string custAddr = string.Empty;
+            //이벤트가 발생한 거래처의 주고를 가져와서 주소란에 바인딩한다.
+            switch ((sender as KCodeNameBox).Name)
+            {
+                case "cnbBuyer":
+                    custCode = cnbBuyer.CodeValue;
+                    custAddr = GetCustomerAddr(custCode, false);
+                    txtBuyerAddress.Texts = custAddr;
+                    break;
+                case "cnbShipper":
+                    custCode = cnbShipper.CodeValue;
+                    custAddr = GetCustomerAddr(custCode, false);
+                    txtShipperAddress.Texts = custAddr;
+                    break;
+                case "cnbConsignee":
+                    custCode = cnbConsignee.CodeValue;
+                    custAddr = GetCustomerAddr(custCode, false);
+                    txtConsigneeAddress.Texts = custAddr;
+                    break;
+                case "cnbNotify":
+                    custCode = cnbNotify.CodeValue;
+                    custAddr = GetCustomerAddr(custCode, true);
+                    txtNotifyAddress.Texts = custAddr;
+                    break;
+            }
+        }
+
 
         #endregion -- Control Event
 
@@ -486,18 +536,63 @@ namespace P05_Business.S03_Views.Biz
         }
 
         private void InitGrid()
-        {   
-            GridHelper.CreateGrid(spdContainerList);
-            GridHelper.AddTextColumn(spdContainerList, "InvoiceNo", "INV.NO", true, false, 0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
-            GridHelper.AddTextColumn(spdContainerList, "ContainerId", "CNTR.ID", true, false, 0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
-            GridHelper.AddTextColumn(spdContainerList, "ContainerNo", "CNTR NO.", true, true, 250, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            GridHelper.AddTextColumn(spdContainerList, "SealNo1", "SEAL NO.1", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            GridHelper.AddTextColumn(spdContainerList, "SealNo2", "SEAL NO.2", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            GridHelper.AddTextColumn(spdContainerList, "SealNo3", "SEAL NO.3", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            GridHelper.EndGrid(spdContainerList);
+        {
+            // Container List
+            SpreadHelper.CreateSpread(spdContainerList, "ContainerList");
+            SpreadHelper.AddTextColumn(spdContainerList, "InvoiceNo", "INV.NO", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdContainerList, "ContainerId", "CNTR.ID", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdContainerList, "ContainerNo", "CNTR.NO", true, true, 250, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdContainerList, "SealNo1", "SEAL.NO.1", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdContainerList, "SealNo2", "SEAL.NO.2", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdContainerList, "SealNo3", "SEAL.NO.3", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.EndSpread(spdContainerList);
 
             //그리드 초기화
             spdContainerList.DataSource = DataHandles.ConvertToDataTable<ExportContainerDto>(dtoContainers);
+
+            //GridHelper.CreateGrid(spdContainerList);
+            //GridHelper.AddTextColumn(spdContainerList, "InvoiceNo", "INV.NO", true, false, 0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
+            //GridHelper.AddTextColumn(spdContainerList, "ContainerId", "CNTR.ID", true, false, 0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
+            //GridHelper.AddTextColumn(spdContainerList, "ContainerNo", "CNTR NO.", true, true, 250, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            //GridHelper.AddTextColumn(spdContainerList, "SealNo1", "SEAL NO.1", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            //GridHelper.AddTextColumn(spdContainerList, "SealNo2", "SEAL NO.2", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            //GridHelper.AddTextColumn(spdContainerList, "SealNo3", "SEAL NO.3", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
+            //GridHelper.EndGrid(spdContainerList);
+
+            // Packing List
+            SpreadHelper.CreateSpread(spdPackingList, "PackingList");
+            SpreadHelper.AddTextColumn(spdPackingList, "InvoiceNo", "INV.NO", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PackingId", "PACK.ID", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "OrderNo", "ORD.NO", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "OrderDetailId", "ORD.DTL.ID", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "ItemNo", "ITEM.NO", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PkgUnitCode", "PKG.UNIT.CODE", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PkgUnitName", "PKG.UNIT.NAME", true, true, 300, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PkgStartNo", "PKG.NO", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PkgEndNo", "PKG.NO", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "Qty", "Q'TY", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PkgQty", "PKG.Q'TY", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.MergeColumnHeader(spdPackingList, "PkgStartNo", 2);
+            SpreadHelper.EndSpread(spdPackingList);
+
+            spdPackingList.DataSource = DataHandles.ConvertToDataTable<ExportPackingDto>(dtoPackings);
+
+            // Invoice List
+            SpreadHelper.CreateSpread(spdInvoiceList, "InvoiceList");
+            SpreadHelper.AddTextColumn(spdInvoiceList, "InvoiceNo", "INV.NO", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdInvoiceList, "InvoiceId", "INV.ID", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdInvoiceList, "OrderNo", "ORD.NO", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdInvoiceList, "OrderDetailId", "ORD.ID", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddNumberColumn(spdInvoiceList, "ItemLength", "제품 길이", true, true, 300, 0, true);
+            SpreadHelper.AddNumberColumn(spdInvoiceList, "UsQty", "미환산 수량", true, true, 300, 0, true);
+            SpreadHelper.AddNumberColumn(spdInvoiceList, "Qty", "수량", true, true, 300, 0, true);
+            SpreadHelper.AddNumberColumn(spdInvoiceList, "UnitPrice", "단가", true, true, 300, 4, true);
+            SpreadHelper.AddNumberColumn(spdInvoiceList, "Amount", "금액", true, true, 300, 0, true);
+            SpreadHelper.EndSpread(spdInvoiceList);
+
+            spdInvoiceList.DataSource = DataHandles.ConvertToDataTable<ExportInvoiceDto>(dtoInvoices);
+
+
         }
 
         private void InitControls()
@@ -540,6 +635,38 @@ namespace P05_Business.S03_Views.Biz
             ComboHelper.InitComboBox(cboPaymentTerm, "PAYMENTTERMS", false, true);
         }
 
+        /// <summary>
+        /// 거래처 주소를 가져온다.
+        /// </summary>
+        /// <param name="custCode"></param>
+        /// <param name="isOption"></param>
+        /// <returns></returns>
+        private string GetCustomerAddr(string custCode, bool isOption)
+        {
+            CustomerDto param = new CustomerDto()
+            {
+                CustCode = custCode,
+                CompanyCode = LoginCompany.CompanyCode,
+            };
+
+            CustomerDto custDto = new CustomerMngController().GetCustomer(param);
+
+            StringBuilder sb = new StringBuilder();
+            if (custDto != null)
+            {   
+                sb.AppendLine(custDto.Address1);
+                sb.AppendLine(custDto.Address2);
+                if (isOption)
+                {
+                    sb.Append($"TEL: {custDto.TelNo}");
+                    sb.Append(", ");
+                    sb.AppendLine($"FAX: {custDto.FaxNo}");
+                    sb.Append("ATTN: ");
+                }
+            }
+
+            return sb.ToString();
+        }
 
         #endregion -- Method
 

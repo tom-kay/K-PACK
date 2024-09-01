@@ -2,6 +2,7 @@
 using FarPoint.Win.Spread;
 using FarPoint.Win.Spread.CellType;
 using FarPoint.Win.Spread.Model;
+using SmartSql.SqlMap.Tags;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -74,70 +75,26 @@ namespace P05_Business.Common.Helpers
             General = 3
         }
 
-        /// <summary>
-        /// 그리드 스타일 설정
-        /// </summary>
-        /// <param name="fpSpread"></param>
-        /// <param name="style"></param>
-        //public static void SetGridStyle(FpSpread fpSpread, GridStyle style)
-        //{
-        //    // Skin 설정
-        //    fpSpread.Skin = DefaultSpreadSkins.Classic;
-        //    fpSpread.ActiveSheet.DefaultStyle.VisualStyles = VisualStyles.On;
-        //    fpSpread.InterfaceRenderer = null;
-
-        //    // BackColor, ForeColor 설정
-        //    //fpSpread.ActiveSheet.GrayAreaBackColor = GridBackColor.GrayArea;
-        //    //fpSpread.ActiveSheet.Columns.Default.BackColor = GridBackColor.Background;
-        //    //fpSpread.ActiveSheet.ColumnHeader.DefaultStyle.BackColor = GridBackColor.Header;
-        //    //fpSpread.ActiveSheet.RowHeader.DefaultStyle.BackColor = GridBackColor.Header;
-        //    //fpSpread.ActiveSheet.SheetCornerStyle.BackColor = GridBackColor.Header;
-        //    //fpSpread.ActiveSheet.SelectionBackColor = GridBackColor.Selection;
-        //    //fpSpread.ActiveSheet.SelectionForeColor = GridForeColor.Selection;
-
-        //    // 스크롤바 관련 설정
-        //    fpSpread.ColumnSplitBoxPolicy = SplitBoxPolicy.Never;
-        //    fpSpread.RowSplitBoxPolicy = SplitBoxPolicy.Never;
-        //    fpSpread.HorizontalScrollBarPolicy = ScrollBarPolicy.AsNeeded;
-        //    fpSpread.VerticalScrollBarPolicy = ScrollBarPolicy.AsNeeded;
-        //    fpSpread.ScrollTipPolicy = ScrollTipPolicy.Vertical;
-
-        //    // Column, Row 관련 설정
-        //    fpSpread.AllowColumnMove = true;
-        //    fpSpread.AllowRowMove = false;
-        //    fpSpread.RetainSelectionBlock = false;
-        //    fpSpread.EditModeReplace = true;
-
-        //    fpSpread.ActiveSheet.AutoGenerateColumns = false;
-        //    fpSpread.ActiveSheet.DataAutoSizeColumns = false;
-        //    fpSpread.ActiveSheet.DataAutoCellTypes = false;
-
-        //    // OperationMode (선택모드) 설정
-        //    //fpSpread.ActiveSheet.OperationMode = OperationMode.Normal;
-        //    //fpSpread.ActiveSheet.SelectionStyle = SelectionStyles.SelectionColors;
-        //    //fpSpread.ActiveSheet.SelectionPolicy = SelectionPolicy.MultiRange;
-        //    //fpSpread.ActiveSheet.SelectionUnit = SelectionUnit.Cell;
-
-        //    fpSpread.ActiveSheet.Rows.Default.Height = 24;
-
-        //    // 그리드의 모든 행열 삭제
-        //    fpSpread.ActiveSheet.ColumnCount = 0;
-        //    fpSpread.ActiveSheet.RowCount = 0;
-
-        //    //fpSpread.Enter += new EventHandler(fpSpread_Enter);
-        //}
 
         /// <summary>
         /// 그리드 스타일 설정
         /// </summary>
         /// <param name="fpSpread"></param>
         /// <param name="style"></param>
-        public static void SetGridStyle(FpSpread fpSpread, string style)
+        public static void CreateSpread(FpSpread fpSpread, string name)
         {
             // Skin 설정
             fpSpread.Skin = DefaultSpreadSkins.Classic;
             fpSpread.ActiveSheet.DefaultStyle.VisualStyles = VisualStyles.Off;
             fpSpread.InterfaceRenderer = null;
+
+            fpSpread.BorderStyle = BorderStyle.None;
+            fpSpread.TabStripPolicy = TabStripPolicy.Never;
+            fpSpread.ColumnSplitBoxPolicy = SplitBoxPolicy.Never;
+            fpSpread.RowSplitBoxPolicy = SplitBoxPolicy.Never;
+            fpSpread.TabStripInsertTab = false;
+            fpSpread.PaintSelectionHeader = false;
+            fpSpread.RetainSelectionBlock = false;
 
             // BackColor, ForeColor 설정
             fpSpread.ActiveSheet.GrayAreaBackColor = GridBackColor.Background;
@@ -147,16 +104,16 @@ namespace P05_Business.Common.Helpers
             fpSpread.ActiveSheet.SheetCornerStyle.BackColor = GridBackColor.Header;
             //fpSpread.ActiveSheet.SelectionBackColor = GridBackColor.Selection;
             //fpSpread.ActiveSheet.SelectionForeColor = GridForeColor.Selection;
-            fpSpread.Tag = style.ToString();
+            fpSpread.Tag = name.ToString();
 
             BevelBorder bevelBorder1 = new BevelBorder(BevelBorderType.Lowered, Color.FromArgb(182, 214, 245), System.Drawing.Color.Empty);
             fpSpread.ActiveSheet.DefaultStyle.Border = bevelBorder1;
 
             //if (style.ToString().Equals(style))
             //{
-            //    fpSpread.ActiveSheet.AlternatingRows.Count = 2;
-            //    fpSpread.ActiveSheet.AlternatingRows.Get(0).BackColor = Color.White;
-            //    fpSpread.ActiveSheet.AlternatingRows.Get(1).BackColor = Color.Azure;
+            fpSpread.ActiveSheet.AlternatingRows.Count = 2;
+            fpSpread.ActiveSheet.AlternatingRows.Get(0).BackColor = Color.White;
+            fpSpread.ActiveSheet.AlternatingRows.Get(1).BackColor = Color.Azure;
             //}
 
             // 스크롤바 관련 설정
@@ -172,6 +129,9 @@ namespace P05_Business.Common.Helpers
             fpSpread.RetainSelectionBlock = false;
             fpSpread.EditModeReplace = true;
 
+            fpSpread.ActiveSheet.OperationMode = OperationMode.RowMode;
+            fpSpread.ActiveSheet.SelectionPolicy = FarPoint.Win.Spread.Model.SelectionPolicy.Single;
+
             fpSpread.ActiveSheet.AutoGenerateColumns = false;
             fpSpread.ActiveSheet.DataAutoSizeColumns = false;
             fpSpread.ActiveSheet.DataAutoCellTypes = false;
@@ -186,11 +146,21 @@ namespace P05_Business.Common.Helpers
             //}
             //else
             //{
-            //    fpSpread.ActiveSheet.SelectionUnit = SelectionUnit.Row;
-            //    fpSpread.ActiveSheet.SelectionPolicy = SelectionPolicy.Single;
+            fpSpread.ActiveSheet.SelectionUnit = SelectionUnit.Row;
+            fpSpread.ActiveSheet.SelectionPolicy = SelectionPolicy.Single;
             //}
 
             fpSpread.ActiveSheet.Rows.Default.Height = 22;
+
+            foreach (Row hRow in fpSpread.ActiveSheet.ColumnHeader.Rows)
+            {
+                hRow.Height = 35f;
+                hRow.Font = new Font("D2Coding", 12f, System.Drawing.FontStyle.Bold);
+                hRow.BackColor = Color.CornflowerBlue;
+                hRow.ForeColor = Color.White;
+            }
+            fpSpread.ActiveSheet.Rows.Default.Height = 35f;
+            fpSpread.ActiveSheet.RowHeader.Visible = false;
 
             // 그리드의 모든 행열 삭제
             fpSpread.ActiveSheet.ColumnCount = 0;
@@ -223,7 +193,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="width"></param>
         /// <param name="cellAlignment"></param>
         /// <param name="enabled"></param>
-        public static void AddColumn(FpSpread fpSpread, string fieldName, string label, int width, GridHorizontalAlignment cellAlignment, bool enabled)
+        public static void AddColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible,  int width, GridHorizontalAlignment cellAlignment)
         {
             fpSpread.ActiveSheet.Columns.Add(fpSpread.ActiveSheet.Columns.Count, 1);
 
@@ -237,6 +207,7 @@ namespace P05_Business.Common.Helpers
             column.HorizontalAlignment = ToCellHorizontalAlignment(cellAlignment);
             column.Locked = !enabled;
             column.BackColor = enabled ? GridBackColor.Edit : GridBackColor.Readonly;
+            column.Visible = visible;
         }
 
         /// <summary>
@@ -248,9 +219,9 @@ namespace P05_Business.Common.Helpers
         /// <param name="width"></param>
         /// <param name="maxLength"></param>
         /// <param name="enabled"></param>
-        public static void AddTextColumn(FpSpread fpSpread, string fieldName, string label, int width, int maxLength, bool enabled)
+        public static void AddTextColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, int maxLength)
         {
-            AddTextColumn(fpSpread, fieldName, label, width, maxLength, GridHorizontalAlignment.Left, enabled);
+            AddTextColumn(fpSpread, fieldName, label, enabled, visible, width, maxLength, GridHorizontalAlignment.Left);
 
         }
 
@@ -264,9 +235,9 @@ namespace P05_Business.Common.Helpers
         /// <param name="maxLength"></param>
         /// <param name="cellAlignment"></param>
         /// <param name="enabled"></param>
-        public static void AddTextColumn(FpSpread fpSpread, string fieldName, string label, int width, int maxLength, GridHorizontalAlignment cellAlignment, bool enabled)
+        public static void AddTextColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, int maxLength, GridHorizontalAlignment cellAlignment)
         {
-            AddColumn(fpSpread, fieldName, label, width, cellAlignment, enabled);
+            AddColumn(fpSpread, fieldName, label, enabled, visible, width, cellAlignment);
 
             FarPoint.Win.Spread.Column column = fpSpread.ActiveSheet.Columns[fpSpread.ActiveSheet.Columns.Count - 1];
 
@@ -285,9 +256,9 @@ namespace P05_Business.Common.Helpers
         /// <param name="decimalPlaces"></param>
         /// <param name="showSeparator"></param>
         /// <param name="enabled"></param>
-        public static void AddNumberColumn(FpSpread fpSpread, string fieldName, string label, int width, int decimalPlaces, bool showSeparator, bool enabled)
+        public static void AddNumberColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, int decimalPlaces, bool showSeparator)
         {
-            AddNumberColumn(fpSpread, fieldName, label, width, decimalPlaces, showSeparator, GridHorizontalAlignment.Right, enabled);
+            AddNumberColumn(fpSpread, fieldName, label, enabled, visible, width, decimalPlaces, showSeparator, GridHorizontalAlignment.Right);
         }
 
         /// <summary>
@@ -301,9 +272,9 @@ namespace P05_Business.Common.Helpers
         /// <param name="showSeparator"></param>
         /// <param name="cellAlignment"></param>
         /// <param name="enabled"></param>
-        public static void AddNumberColumn(FpSpread fpSpread, string fieldName, string label, int width, int decimalPlaces, bool showSeparator, GridHorizontalAlignment cellAlignment, bool enabled)
+        public static void AddNumberColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, int decimalPlaces, bool showSeparator, GridHorizontalAlignment cellAlignment)
         {
-            AddColumn(fpSpread, fieldName, label, width, cellAlignment, enabled);
+            AddColumn(fpSpread, fieldName, label, enabled, visible, width, cellAlignment);
 
             FarPoint.Win.Spread.Column column = fpSpread.ActiveSheet.Columns[fpSpread.ActiveSheet.Columns.Count - 1];
 
@@ -325,9 +296,9 @@ namespace P05_Business.Common.Helpers
         /// <param name="label"></param>
         /// <param name="width"></param>
         /// <param name="enabled"></param>
-        public static void AddDateColumn(FpSpread fpSpread, string fieldName, string label, int width, bool enabled)
+        public static void AddDateColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
         {
-            AddDateTimeColumn(fpSpread, fieldName, label, width, DEFAULT_DATE_FORMAT, enabled);
+            AddDateTimeColumn(fpSpread, fieldName, label, enabled, visible, width, DEFAULT_DATE_FORMAT);
         }
 
         /// <summary>
@@ -338,9 +309,9 @@ namespace P05_Business.Common.Helpers
         /// <param name="label"></param>
         /// <param name="width"></param>
         /// <param name="enabled"></param>
-        public static void AddTimeColumn(FpSpread fpSpread, string fieldName, string label, int width, bool enabled)
+        public static void AddTimeColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
         {
-            AddDateTimeColumn(fpSpread, fieldName, label, width, DEFAULT_TIME_FORMAT, enabled);
+            AddDateTimeColumn(fpSpread, fieldName, label, enabled, visible, width, DEFAULT_TIME_FORMAT);
         }
 
         /// <summary>
@@ -351,9 +322,9 @@ namespace P05_Business.Common.Helpers
         /// <param name="label"></param>
         /// <param name="width"></param>
         /// <param name="enabled"></param>
-        public static void AddDateTimeColumn(FpSpread fpSpread, string fieldName, string label, int width, bool enabled)
+        public static void AddDateTimeColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
         {
-            AddDateTimeColumn(fpSpread, fieldName, label, width, DEFAULT_DATETIME_FORMAT, enabled);
+            AddDateTimeColumn(fpSpread, fieldName, label, enabled, visible, width, DEFAULT_DATETIME_FORMAT);
         }
 
         /// <summary>
@@ -365,9 +336,9 @@ namespace P05_Business.Common.Helpers
         /// <param name="width"></param>
         /// <param name="dateTimeFormat"></param>
         /// <param name="enabled"></param>
-        public static void AddDateTimeColumn(FpSpread fpSpread, string fieldName, string label, int width, string dateTimeFormat, bool enabled)
+        public static void AddDateTimeColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, string dateTimeFormat)
         {
-            AddColumn(fpSpread, fieldName, label, width, GridHorizontalAlignment.Center, enabled);
+            AddColumn(fpSpread, fieldName, label, enabled, visible, width, GridHorizontalAlignment.Center);
 
             FarPoint.Win.Spread.Column column = fpSpread.ActiveSheet.Columns[fpSpread.ActiveSheet.Columns.Count - 1];
 
@@ -385,9 +356,9 @@ namespace P05_Business.Common.Helpers
         /// <param name="label"></param>
         /// <param name="width"></param>
         /// <param name="enabled"></param>
-        public static void AddCheckBoxColumn(FpSpread fpSpread, string fieldName, string label, int width, bool enabled)
+        public static void AddCheckBoxColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
         {
-            AddColumn(fpSpread, fieldName, label, width, GridHorizontalAlignment.Center, enabled);
+            AddColumn(fpSpread, fieldName, label, enabled, visible, width, GridHorizontalAlignment.Center);
 
             FarPoint.Win.Spread.Column column = fpSpread.ActiveSheet.Columns[fpSpread.ActiveSheet.Columns.Count - 1];
 
@@ -404,9 +375,9 @@ namespace P05_Business.Common.Helpers
         /// <param name="width"></param>
         /// <param name="buttonText"></param>
         /// <param name="enabled"></param>
-        public static void AddButtonColumn(FpSpread fpSpread, string fieldName, string label, int width, string buttonText, bool enabled)
+        public static void AddButtonColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, string buttonText)
         {
-            AddColumn(fpSpread, fieldName, label, width, GridHorizontalAlignment.Center, enabled);
+            AddColumn(fpSpread, fieldName, label, enabled, visible, width, GridHorizontalAlignment.Center);
 
             FarPoint.Win.Spread.Column column = fpSpread.ActiveSheet.Columns[fpSpread.ActiveSheet.Columns.Count - 1];
 
@@ -426,9 +397,9 @@ namespace P05_Business.Common.Helpers
         /// <param name="valueField"></param>
         /// <param name="displayField"></param>
         /// <param name="enabled"></param>
-        public static void AddComboBoxColumn(FpSpread fpSpread, string fieldName, string label, int width, DataTable dtCombo, string valueField, string displayField, bool enabled)
+        public static void AddComboBoxColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, DataTable dtCombo, string valueField, string displayField)
         {
-            AddColumn(fpSpread, fieldName, label, width, GridHorizontalAlignment.Center, enabled);
+            AddColumn(fpSpread, fieldName, label, enabled, visible, width, GridHorizontalAlignment.Center);
 
             Column column = fpSpread.ActiveSheet.Columns[fpSpread.ActiveSheet.Columns.Count - 1];
 
@@ -446,9 +417,9 @@ namespace P05_Business.Common.Helpers
             column.CellType = cellType;
         }
 
-        public static void AddImageColumn(FpSpread fpSpread, string fieldName, string label, int width)
+        public static void AddImageColumn(FpSpread fpSpread, string fieldName, string label, bool visible, int width)
         {
-            AddColumn(fpSpread, fieldName, label, width, GridHorizontalAlignment.Center, false);
+            AddColumn(fpSpread, fieldName, label, false, visible, width, GridHorizontalAlignment.Center);
 
             Column column = fpSpread.ActiveSheet.Columns[fpSpread.ActiveSheet.Columns.Count - 1];
 
@@ -894,6 +865,40 @@ namespace P05_Business.Common.Helpers
             fpSpread.ActiveSheet.Cells[row, column].ColumnSpan = colSpan;
         }
 
+        /// <summary>
+        /// 그리드의 특정 컬럼 헤더를 머지한다.
+        /// </summary>
+        /// <param name="fpSpread"></param>
+        /// <param name="fieldName"></param>
+        /// <param name="colSpan"></param>
+        public static void MergeColumnHeader(FpSpread fpSpread, string columnName, int colSpan)
+        {
+            int column = GetColumnIndex(fpSpread, columnName);
+            for (int i = 0; i < fpSpread.ActiveSheet.ColumnHeader.Rows.Count; i++)
+            {
+                MergeColumnHeader(fpSpread, i, column, colSpan);
+            }
+        }
+
+        public static void MergeColumnHeader(FpSpread fpSpread, int row, string columnName, int colSpan)
+        {
+            int column = GetColumnIndex(fpSpread, columnName);
+            MergeColumnHeader(fpSpread, row, column, colSpan);
+        }
+
+        /// <summary>
+        /// 그리드의 특정 컬럼 헤더를 머지한다.
+        /// </summary>
+        /// <param name="fpSpread"></param>
+        /// <param name="fieldName"></param>
+        /// <param name="colSpan"></param>
+        public static void MergeColumnHeader(FpSpread fpSpread, int row, int column, int colSpan)
+        {   
+            CheckColumnBounds(fpSpread, column);
+            fpSpread.ActiveSheet.ColumnHeader.Cells[row, column].ColumnSpan = colSpan;
+        }
+
+
         private static void CheckRowBounds(FpSpread fpSpread, int row)
         {
             if (row < 0 || row >= fpSpread.ActiveSheet.RowCount)
@@ -1039,6 +1044,15 @@ namespace P05_Business.Common.Helpers
                 return "False";
             }
             return value.ToString();
+        }
+
+
+        internal static void EndSpread(FpSpread spread)
+        {   
+            SheetView sheet = spread.Sheets[0];
+            sheet.DataSource = null;
+
+            spread.ResizeZeroIndicator = ResizeZeroIndicator.Default;
         }
 
     }
