@@ -204,6 +204,8 @@ namespace P01_K_DESIGN_WIN
 		private void frmPopupFrame_Load(object sender, EventArgs e)
 		{
             FormSettings.Control_SetDesign(this);
+            lblPopupTitle.ForeColor = Color.White;
+
             Control_SetEvents(this);    //이벤트 할당
 
 		}

@@ -404,6 +404,12 @@
     <Compile Include="S03_Views\Biz\frmExportMng.Designer.cs">
       <DependentUpon>frmExportMng.cs</DependentUpon>
     </Compile>
+    <Compile Include="S03_Views\Popup\Biz\frmPoFindPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Biz\frmPoFindPopup.Designer.cs">
+      <DependentUpon>frmPoFindPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="S03_Views\Popup\Common\frmDetailCodePopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1110,6 +1116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Biz\frmCustomerPopup.resx">
       <DependentUpon>frmCustomerPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Biz\frmPoFindPopup.resx">
+      <DependentUpon>frmPoFindPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Biz\frmItemFindPopup.resx">
       <DependentUpon>frmItemFindPopup.cs</DependentUpon>

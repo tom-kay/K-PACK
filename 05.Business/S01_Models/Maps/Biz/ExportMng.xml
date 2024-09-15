@@ -18,16 +18,16 @@
 			`exp`.`InvoiceNo`,
 			`exp`.`InvoiceDate`,
 			`exp`.`ShipperCode`,
-			`shp`.`CustName` AS ShipperName,
+			`shp`.`CustName` AS `ShipperName`,
 			`exp`.`ShipperAddress`,
 			`exp`.`ConsigneeCode`,
-			`csn`.`CustName` AS ConsigneeName,
+			`csn`.`CustName` AS `ConsigneeName`,
 			`exp`.`ConsigneeAddress`,
 			`exp`.`NotifyCode`,
-			`nty`.`CustName` AS NotifyName,
+			`nty`.`CustName` AS `NotifyName`,
 			`exp`.`NotifyAddress`,
 			`exp`.`BuyerCode`,
-			`byr`.`CustName` AS BuyerName,
+			`byr`.`CustName` AS `BuyerName`,
 			`exp`.`BuyerAddress`,
 			`exp`.`DepartureDate`,
 			`exp`.`CarrierName`,
@@ -48,12 +48,16 @@
 			FROM `tb_export_master` exp
 			LEFT JOIN `soodal`.`tb_customer` shp
 			ON shp.CustCode = exp.ShipperCode
+			AND shp.CompanyCode = exp.CompanyCode
 			LEFT JOIN `soodal`.`tb_customer` csn
 			ON csn.CustCode = exp.ConsigneeCode
+			AND csn.CompanyCode = exp.CompanyCode
 			LEFT JOIN `soodal`.`tb_customer` nty
 			ON nty.CustCode = exp.NotifyCode
+			AND nty.CompanyCode = exp.CompanyCode
 			LEFT JOIN `soodal`.`tb_customer` byr
 			ON byr.CustCode = exp.BuyerCode
+			AND byr.CompanyCode = exp.CompanyCode
 			WHERE `exp`.`CompanyCode` = @CompanyCode
 			AND `exp`.`DelYn` != 'Y'
 			<IsEqual Prepend="And" Property="DatePeriodType" CompareValue="I">
@@ -73,12 +77,16 @@
 			`exp`.`InvoiceNo`,
 			`exp`.`InvoiceDate`,
 			`exp`.`ShipperCode`,
+			`shp`.`CustName` AS `ShipperName`,
 			`exp`.`ShipperAddress`,
 			`exp`.`ConsigneeCode`,
+			`csn`.`CustName` AS `ConsigneeName`,
 			`exp`.`ConsigneeAddress`,
 			`exp`.`NotifyCode`,
+			`nty`.`CustName` AS `NotifyName`,
 			`exp`.`NotifyAddress`,
 			`exp`.`BuyerCode`,
+			`byr`.`CustName` AS `BuyerName`,
 			`exp`.`BuyerAddress`,
 			`exp`.`DepartureDate`,
 			`exp`.`CarrierName`,
@@ -97,9 +105,21 @@
 			`exp`.`InvoiceRemark`
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `tb_export_master` exp
-			WHERE `InvoiceNo` = @InvoiceNo
-			AND `CompanyCode` = @CompanyCode
-			AND `DelYn` != 'Y'
+			LEFT JOIN `soodal`.`tb_customer` shp
+			ON shp.CustCode = exp.ShipperCode
+			AND shp.CompanyCode = exp.CompanyCode
+			LEFT JOIN `soodal`.`tb_customer` csn
+			ON csn.CustCode = exp.ConsigneeCode
+			AND csn.CompanyCode = exp.CompanyCode
+			LEFT JOIN `soodal`.`tb_customer` nty
+			ON nty.CustCode = exp.NotifyCode
+			AND nty.CompanyCode = exp.CompanyCode
+			LEFT JOIN `soodal`.`tb_customer` byr
+			ON byr.CustCode = exp.BuyerCode
+			AND byr.CompanyCode = exp.CompanyCode
+			WHERE `exp`.`InvoiceNo` = @InvoiceNo
+			AND `exp`.`CompanyCode` = @CompanyCode
+			AND `exp`.`DelYn` != 'Y'
 			LIMIT 1
 		</Statement>
 

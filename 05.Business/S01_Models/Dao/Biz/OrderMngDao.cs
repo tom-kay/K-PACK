@@ -173,5 +173,37 @@ namespace P05_Business.S01_Models.Dao.Biz
 
             return datas;
         }
+
+        internal List<OrderDetailDto> SelectOrderDetailPopupList(OrderMasterDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "Biz.OrderMng",
+                SqlId = "selectOrderDetailPopupList",
+                Request = param
+            };
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+
+            List<OrderDetailDto> datas = SqlMapper.Query<OrderDetailDto>(context).ToList();
+
+
+            return datas;
+        }
+
+        internal List<OrderMasterDto> SelectOrderNoPopupList(OrderMasterDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "Biz.OrderMng",
+                SqlId = "selectOrderNoPopupList",
+                Request = param
+            };
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+
+            List<OrderMasterDto> datas = SqlMapper.Query<OrderMasterDto>(context).ToList();
+
+
+            return datas;
+        }
     }
 }

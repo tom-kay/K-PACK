@@ -18,16 +18,16 @@
 			`exp`.`InvoiceNo`,
 			`exp`.`InvoiceDate`,
 			`exp`.`ShipperCode`,
-			`shp`.`CustName` AS ShipperName,
+			`shp`.`CustName` AS `ShipperName`,
 			`exp`.`ShipperAddress`,
 			`exp`.`ConsigneeCode`,
-			`csn`.`CustName` AS ConsigneeName,
+			`csn`.`CustName` AS `ConsigneeName`,
 			`exp`.`ConsigneeAddress`,
 			`exp`.`NotifyCode`,
-			`nty`.`CustName` AS NotifyName,
+			`nty`.`CustName` AS `NotifyName`,
 			`exp`.`NotifyAddress`,
 			`exp`.`BuyerCode`,
-			`byr`.`CustName` AS BuyerName,
+			`byr`.`CustName` AS `BuyerName`,
 			`exp`.`BuyerAddress`,
 			`exp`.`DepartureDate`,
 			`exp`.`CarrierName`,
@@ -48,12 +48,16 @@
 			FROM `tb_export_master` exp
 			LEFT JOIN `soodal`.`tb_customer` shp
 			ON shp.CustCode = exp.ShipperCode
+			AND shp.CompanyCode = exp.CompanyCode
 			LEFT JOIN `soodal`.`tb_customer` csn
 			ON csn.CustCode = exp.ConsigneeCode
+			AND csn.CompanyCode = exp.CompanyCode
 			LEFT JOIN `soodal`.`tb_customer` nty
 			ON nty.CustCode = exp.NotifyCode
+			AND nty.CompanyCode = exp.CompanyCode
 			LEFT JOIN `soodal`.`tb_customer` byr
 			ON byr.CustCode = exp.BuyerCode
+			AND byr.CompanyCode = exp.CompanyCode
 			WHERE `exp`.`CompanyCode` = @CompanyCode
 			AND `exp`.`DelYn` != 'Y'
 			<IsEqual Prepend="And" Property="DatePeriodType" CompareValue="I">
@@ -73,12 +77,16 @@
 			`exp`.`InvoiceNo`,
 			`exp`.`InvoiceDate`,
 			`exp`.`ShipperCode`,
+			`shp`.`CustName` AS `ShipperName`,
 			`exp`.`ShipperAddress`,
 			`exp`.`ConsigneeCode`,
+			`csn`.`CustName` AS `ConsigneeName`,
 			`exp`.`ConsigneeAddress`,
 			`exp`.`NotifyCode`,
+			`nty`.`CustName` AS `NotifyName`,
 			`exp`.`NotifyAddress`,
 			`exp`.`BuyerCode`,
+			`byr`.`CustName` AS `BuyerName`,
 			`exp`.`BuyerAddress`,
 			`exp`.`DepartureDate`,
 			`exp`.`CarrierName`,
@@ -97,9 +105,21 @@
 			`exp`.`InvoiceRemark`
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `tb_export_master` exp
-			WHERE `InvoiceNo` = @InvoiceNo
-			AND `CompanyCode` = @CompanyCode
-			AND `DelYn` != 'Y'
+			LEFT JOIN `soodal`.`tb_customer` shp
+			ON shp.CustCode = exp.ShipperCode
+			AND shp.CompanyCode = exp.CompanyCode
+			LEFT JOIN `soodal`.`tb_customer` csn
+			ON csn.CustCode = exp.ConsigneeCode
+			AND csn.CompanyCode = exp.CompanyCode
+			LEFT JOIN `soodal`.`tb_customer` nty
+			ON nty.CustCode = exp.NotifyCode
+			AND nty.CompanyCode = exp.CompanyCode
+			LEFT JOIN `soodal`.`tb_customer` byr
+			ON byr.CustCode = exp.BuyerCode
+			AND byr.CompanyCode = exp.CompanyCode
+			WHERE `exp`.`InvoiceNo` = @InvoiceNo
+			AND `exp`.`CompanyCode` = @CompanyCode
+			AND `exp`.`DelYn` != 'Y'
 			LIMIT 1
 		</Statement>
 
@@ -430,10 +450,10 @@
 			`inv`.`InvoiceId`,
 			`inv`.`OrderNo`,
 			`inv`.`OrderDetailId`,
-			`inv`.`ProdLength`,
+			`inv`.`ItemLength`,
 			`inv`.`UsQty`,
 			`inv`.`Qty`,
-			`inv`.`Price`,
+			`inv`.`UnitPrice`,
 			`inv`.`Amount`,
 			`inv`.`CompanyCode`,
 			`inv`.`DelYn`,
@@ -455,10 +475,10 @@
 			`inv`.`InvoiceId`,
 			`inv`.`OrderNo`,
 			`inv`.`OrderDetailId`,
-			`inv`.`ProdLength`,
+			`inv`.`ItemLength`,
 			`inv`.`UsQty`,
 			`inv`.`Qty`,
-			`inv`.`Price`,
+			`inv`.`UnitPrice`,
 			`inv`.`Amount`,
 			`inv`.`CompanyCode`,
 			`inv`.`DelYn`,
@@ -469,7 +489,7 @@
 			`inv`.`DeleteId`,
 			date_format(`inv`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
 			FROM `tb_export_invoice` inv
-			WHERE `InvoiceNo` = @InvoiceNo 
+			WHERE `InvoiceNo` = @InvoiceNo
 			AND `InvoiceId` = @InvoiceId
 			AND `CompanyCode` = @CompanyCode
 			AND `DelYn` != 'Y'
@@ -484,10 +504,10 @@
 			@InvoiceId AS `InvoiceId`,
 			@OrderNo AS `OrderNo`,
 			@OrderDetailId AS `OrderDetailId`,
-			@ProdLength AS `ProdLength`,
+			@ItemLength AS `ItemLength`,
 			@UsQty AS `UsQty`,
 			@Qty AS `Qty`,
-			@Price AS `Price`,
+			@UnitPrice AS `UnitPrice`,
 			@Amount AS `Amount`,
 			@CompanyCode AS `CompanyCode`,
 			@CreateId AS `CreateId`,
@@ -502,10 +522,10 @@
 			UPDATE SET
 			target.`OrderNo` = source.`OrderNo`,
 			target.`OrderDetailId` = source.`OrderDetailId`,
-			target.`ProdLength` = source.`ProdLength`,
+			target.`ItemLength` = source.`ItemLength`,
 			target.`UsQty` = source.`UsQty`,
 			target.`Qty` = source.`Qty`,
-			target.`Price` = source.`Price`,
+			target.`UnitPrice` = source.`UnitPrice`,
 			target.`Amount` = source.`Amount`,
 			target.`DelYn` = 'N',
 			target.`UpdateId` = source.`UpdateId`,
@@ -516,10 +536,10 @@
 			`InvoiceId`,
 			`OrderNo`,
 			`OrderDetailId`,
-			`ProdLength`,
+			`ItemLength`,
 			`UsQty`,
 			`Qty`,
-			`Price`,
+			`UnitPrice`,
 			`Amount`,
 			`CompanyCode`,
 			`DelYn`,
@@ -531,10 +551,10 @@
 			source.`InvoiceId`,
 			source.`OrderNo`,
 			source.`OrderDetailId`,
-			source.`ProdLength`,
+			source.`ItemLength`,
 			source.`UsQty`,
 			source.`Qty`,
-			source.`Price`,
+			source.`UnitPrice`,
 			source.`Amount`,
 			source.`CompanyCode`,
 			'N',

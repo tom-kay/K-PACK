@@ -337,6 +337,53 @@
 			WHERE pm.OrderNo = @OrderNo
 			AND pm.CompanyCode = @CompanyCode
 		</Statement>
+
+		<Statement Id="selectOrderNoPopupList">
+			SELECT
+			`ord`.`OrderNo`
+			FROM `tb_pomaster` AS `ord`
+			WHERE `ord`.`CompanyCode` = @CompanyCode
+			AND `ord`.`DelYn` = 'N'
+			<IsNotEqual Prepend="And" Property="ExCustCode" CompareValue="">
+				`ord`.`ExCustCode` = @ExCustCode
+			</IsNotEqual>
+			<IsNotEqual Prepend="And" Property="BuyerCustCode" CompareValue="">
+				`ord`.`BuyerCustCode` = @BuyerCustCode
+			</IsNotEqual>
+			<IsNotEqual Prepend="And" Property="BuyerPoNo" CompareValue="">
+				`ord`.`BuyerPoNo` LIKE concat('%', @BuyerPoNo, '%')
+			</IsNotEqual>
+			ORDER BY `ord`.`OrderNo`;
+		</Statement>
+		
+		<Statement Id="selectOrderDetailPopupList">
+			SELECT
+			`ord`.`OrderNo`,
+			`dtl`.`DetailId`,
+			`dtl`.`ItemGroupCode`,
+			`dtl`.`ItemCode`,
+			`dtl`.`SeqNo`,
+			`dtl`.`ItemNo`,
+			`dtl`.`SizeName`,
+			`dtl`.`Description`,
+			`dtl`.`Qty`,
+			`dtl`.`UnitCode`,
+			`cd1`.`Option1` AS `UnitName`,
+			`dtl`.`MarkingColor`,
+			`dtl`.`Remark`
+			FROM `tb_pomaster` AS `ord`
+			JOIN `tb_podetail` AS `dtl`
+			ON `ord`.`OrderNo` = `dtl`.`OrderNo`
+			AND `ord`.`CompanyCode` = `dtl`.`CompanyCode`
+			AND `dtl`.`DelYn` = 'N'
+			LEFT JOIN tb_codedetail cd1
+			ON `cd1`.`MasterCode` = 'ITEMUNIT'
+			AND `cd1`.`Code` = `dtl`.`UnitCode`
+			WHERE`ord`.`CompanyCode` = @CompanyCode
+			AND `ord`.`DelYn` = 'N'
+			AND `ord`.`OrderNo` = @OrderNo
+			ORDER BY `dtl`.`ItemGroupCode`, `dtl`.`ItemCode`;
+		</Statement>
 	</Statements>
 </SmartSqlMap>
 

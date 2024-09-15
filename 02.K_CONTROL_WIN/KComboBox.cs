@@ -27,6 +27,8 @@ namespace P02_K_CONTROL_WIN
 
         //Events
         public event EventHandler OnSelectedIndexChanged;//Default event
+        public event EventHandler OnSelectedValueChanged;//Default event
+        public event EventHandler OnTextChanged;//Default event
         #endregion
 
         #region -> Constructor
@@ -44,6 +46,7 @@ namespace P02_K_CONTROL_WIN
 			cmbList.Font = new Font(this.Font.Name, 10F);
             cmbList.ForeColor = listTextColor;
             cmbList.SelectedIndexChanged += new EventHandler(ComboBox_SelectedIndexChanged);//Default event
+            cmbList.SelectedValueChanged += new EventHandler(ComboBox_SelectedValueChanged);
             cmbList.TextChanged += new EventHandler(ComboBox_TextChanged);//Refresh text
 
             //Button: Icon
@@ -82,6 +85,7 @@ namespace P02_K_CONTROL_WIN
             this.ResumeLayout();
             AdjustComboBoxDimensions();
         }
+
         #endregion
 
         //Properties
@@ -274,7 +278,7 @@ namespace P02_K_CONTROL_WIN
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public string SelectedText
 		{
-			get { return cmbList.SelectedText; }
+			get { return cmbList.Text; }
 			set { cmbList.SelectedText = value; }
 		}
 
@@ -329,9 +333,17 @@ namespace P02_K_CONTROL_WIN
 
         //-> Default event
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {   
             if (OnSelectedIndexChanged != null)
                 OnSelectedIndexChanged.Invoke(sender, e);
+            //Refresh text
+            lblText.Text = cmbList.Text;
+        }
+
+        private void ComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (OnSelectedValueChanged != null)
+                OnSelectedValueChanged.Invoke(sender, e);
             //Refresh text
             lblText.Text = cmbList.Text;
         }
@@ -374,6 +386,8 @@ namespace P02_K_CONTROL_WIN
         }
         private void ComboBox_TextChanged(object sender, EventArgs e)
         {
+            if (OnTextChanged != null)
+                OnTextChanged.Invoke(sender, e);
             //Refresh text
             lblText.Text = cmbList.Text;
         }

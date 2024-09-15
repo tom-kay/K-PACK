@@ -78,5 +78,19 @@ namespace P05_Business.S02_Controllers.Biz
 
             return dtos;
         }
+
+        internal List<OrderDetailDto> GetOrderDetailPopupList(OrderMasterDto param)
+        {
+            List<OrderDetailDto> dtos = dao.SelectOrderDetailPopupList(param);
+
+            return dtos;
+        }
+
+        internal List<OrderMasterDto> GetOrderNoPopupList(OrderMasterDto param)
+        {
+            List<OrderMasterDto> dtos = dao.SelectOrderNoPopupList(param);
+
+            return dtos;
+        }
     }
 }

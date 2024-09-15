@@ -1,5 +1,6 @@
 ﻿using FarPoint.Excel.EntityClassLibrary.SpreadsheetML;
 using FarPoint.Win.Spread;
+using GrapeCity.Spreadsheet;
 using log4net;
 using P01_K_DESIGN_WIN;
 using P01_K_DESIGN_WIN.Classes;
@@ -10,9 +11,11 @@ using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S01_Models.Dto.Biz;
 using P05_Business.S02_Controllers.Base;
 using P05_Business.S02_Controllers.Biz;
+using P05_Business.S03_Views.Popup.Biz;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows;
@@ -372,6 +375,71 @@ namespace P05_Business.S03_Views.Biz
             }
         }
 
+        private void btnPkgAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<OrderDetailDto> addOrderDetails = null;
+
+                //기존에 있는 아이템을 팝업으로 넘긴다.
+                List<ExportPackingDto> listOrderDetail = DataHandles.ConvertToList<ExportPackingDto>(spdPackingList.DataSource as DataTable);
+                object[] param = { 
+                    cnbBuyer.CodeValue,
+                    cnbBuyer.NameValue,
+                    listOrderDetail,
+                };
+
+                using (frmPoFindPopup popup = new frmPoFindPopup("발주조회", param))
+                {
+                    if (popup.ShowDialog(this) == DialogResult.OK)
+                    {
+                        if (popup.ResultItems != null)
+                        {
+                            addOrderDetails = popup.ResultItems;
+                        }
+                    }
+                }
+
+                // 팝업에서 받은 아이템을 그리드에 바인딩한다.
+                if (addOrderDetails != null)
+                {
+                    this.SetBindAddItems(addOrderDetails);
+
+                    base.isFormChagned = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                KMessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SetBindAddItems(List<OrderDetailDto> addOrderItems)
+        {
+            List<ExportPackingDto> listPackings = DataHandles.ConvertToList<ExportPackingDto>(spdPackingList.DataSource as DataTable);
+
+            foreach (OrderDetailDto item in addOrderItems)
+            {
+                int index = listPackings.FindIndex(i => i.OrderNo == item.OrderNo && i.OrderDetailId == item.DetailId);
+
+                if (index >= 0) continue;
+
+                DataTable dt = spdPackingList.DataSource as DataTable;
+                DataRow newDr = dt.NewRow();
+                newDr["InvoiceNo"] = txtInvoiceNo.Texts;
+                newDr["OrderNo"] = item.OrderNo;
+                newDr["OrderDetailId"] = item.DetailId;
+                newDr["ItemNo"] = item.ItemNo;
+                newDr["ItemDescription"] = item.Description;
+                dt.Rows.Add(newDr);
+            }
+        }
+
+        private void btnInvAdd_Click(object sender, EventArgs e)
+        {
+            
+
+        }
 
         #endregion -- Control Event
 
@@ -413,16 +481,16 @@ namespace P05_Business.S03_Views.Biz
                 dtoPackings = dtoMaster.ExportPackings;
                 if (dtoPackings != null)
                 {
-                    //spdContainerList.DataSource = DataHandles.ConvertToDataTable<ExportContainerDto>(dtoPackings);
-                    //(spdContainerList.DataSource as DataTable).AcceptChanges();
+                    spdPackingList.DataSource = DataHandles.ConvertToDataTable<ExportPackingDto>(dtoPackings);
+                    (spdPackingList.DataSource as DataTable).AcceptChanges();
                 }
 
                 //Invoice 정보 바인딩
                 dtoInvoices = dtoMaster.ExportInvoices;
                 if (dtoInvoices != null)
                 {
-                    //spdContainerList.DataSource = DataHandles.ConvertToDataTable<ExportContainerDto>(dtoInvoices);
-                    //(spdContainerList.DataSource as DataTable).AcceptChanges();
+                    spdInvoiceList.DataSource = DataHandles.ConvertToDataTable<ExportInvoiceDto>(dtoInvoices);
+                    (spdInvoiceList.DataSource as DataTable).AcceptChanges();
                 }
 
             }
@@ -448,6 +516,20 @@ namespace P05_Business.S03_Views.Biz
             if (dtContainer != null)
             {
                 saveContainers = DataHandles.ConvertToList<ExportContainerDto>(dtContainer);
+            }
+
+            DataTable dtPacking = UserDataGrid.GetAllData(spdPackingList);
+            List<ExportPackingDto> savePackings = null;
+            if(dtPacking != null)
+            {
+                savePackings = DataHandles.ConvertToList<ExportPackingDto>(dtPacking);
+            }
+
+            DataTable dtInvoice = UserDataGrid.GetAllData(spdInvoiceList);
+            List<ExportInvoiceDto> saveInvoices = null;
+            if (dtInvoice != null)
+            {
+                saveInvoices = DataHandles.ConvertToList<ExportInvoiceDto>(dtInvoice);
             }
 
             ExportMasterDto param = new ExportMasterDto
@@ -482,8 +564,8 @@ namespace P05_Business.S03_Views.Biz
                 UpdateId = LoginUserInfo.UserId,
                 DeleteId = LoginUserInfo.UserId,
                 ExportContainers = saveContainers,
-                //ExportPackings = savePackings,
-                //ExportInvoices = saveInvoices,
+                ExportPackings = savePackings,
+                ExportInvoices = saveInvoices,
             };
 
             RequestCRUD request;
@@ -550,28 +632,21 @@ namespace P05_Business.S03_Views.Biz
             //그리드 초기화
             spdContainerList.DataSource = DataHandles.ConvertToDataTable<ExportContainerDto>(dtoContainers);
 
-            //GridHelper.CreateGrid(spdContainerList);
-            //GridHelper.AddTextColumn(spdContainerList, "InvoiceNo", "INV.NO", true, false, 0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
-            //GridHelper.AddTextColumn(spdContainerList, "ContainerId", "CNTR.ID", true, false, 0, CellHorizontalAlignment.Center, CellVerticalAlignment.Center);
-            //GridHelper.AddTextColumn(spdContainerList, "ContainerNo", "CNTR NO.", true, true, 250, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            //GridHelper.AddTextColumn(spdContainerList, "SealNo1", "SEAL NO.1", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            //GridHelper.AddTextColumn(spdContainerList, "SealNo2", "SEAL NO.2", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            //GridHelper.AddTextColumn(spdContainerList, "SealNo3", "SEAL NO.3", true, true, 200, CellHorizontalAlignment.Left, CellVerticalAlignment.Center);
-            //GridHelper.EndGrid(spdContainerList);
-
             // Packing List
             SpreadHelper.CreateSpread(spdPackingList, "PackingList");
             SpreadHelper.AddTextColumn(spdPackingList, "InvoiceNo", "INV.NO", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "PackingId", "PACK.ID", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "OrderNo", "ORD.NO", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "OrderNo", "ORD.NO", true, false, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "OrderDetailId", "ORD.DTL.ID", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "ItemNo", "ITEM.NO", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "BuyerPoNo", "P/O.NO", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "ItemNo", "ITEM.NO", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Left);
+            SpreadHelper.AddTextColumn(spdPackingList, "ItemDescription", "ITEM.DESC", true, true, 300, 100, SpreadHelper.GridHorizontalAlignment.Left);
             SpreadHelper.AddTextColumn(spdPackingList, "PkgUnitCode", "PKG.UNIT.CODE", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "PkgUnitName", "PKG.UNIT.NAME", true, true, 300, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "PkgStartNo", "PKG.NO", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "PkgEndNo", "PKG.NO", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "Qty", "Q'TY", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "PkgQty", "PKG.Q'TY", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PkgUnitName", "PKG.UNIT.NAME", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PkgStartNo", "PKG.NO", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PkgEndNo", "PKG.NO", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "Qty", "Q'TY", true, true, 100, 200, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PkgQty", "PKG.Q'TY", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.MergeColumnHeader(spdPackingList, "PkgStartNo", 2);
             SpreadHelper.EndSpread(spdPackingList);
 

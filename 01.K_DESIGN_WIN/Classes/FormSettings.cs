@@ -108,7 +108,7 @@ namespace P01_K_DESIGN_WIN.Classes
 					txt.ForeColor = SystemColors.WindowText;
 					txt.Font = new Font(FORM_FONT_NAME, FORM_FONT_SIZE);
 					TextBox_EnabledChanged(ctrl, null);
-				}
+                }
 				else if (ctrl is TextBox)
 				{
 					TextBox txt = (TextBox)ctrl;
