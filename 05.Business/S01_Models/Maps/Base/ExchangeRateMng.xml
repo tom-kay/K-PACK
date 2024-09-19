@@ -16,7 +16,7 @@
 			ex.`BasicRate`,
 			ex.`Commission`,
 			ex.`Convert`
-			FROM `soodal`.`tb_exchangerate` as ex
+			FROM `soodal`.`tb_exchange_rate` as ex
 			WHERE ex.ExDate = @ExDate
 		</Statement>
 
@@ -35,14 +35,14 @@
 			ex.`BasicRate`,
 			ex.`Commission`,
 			ex.`Convert`
-			FROM `soodal`.`tb_exchangerate` as ex
+			FROM `soodal`.`tb_exchange_rate` as ex
 			WHERE ex.ExDate = @ExDate
 			AND ex.CurrCode = @CurrCode
 		</Statement>
 
 		<Statement Id="insertExchangeRate">
 
-			INSERT INTO `soodal`.`tb_exchangerate`
+			INSERT INTO `soodal`.`tb_exchange_rate`
 			(`ExDate`,
 			`CurrCode`,
 			`CurrName`,
@@ -85,12 +85,12 @@
 			`BasicRate` = @BasicRate,
 			`Commission` = @Commission,
 			`Convert` = @Convert
-			
+
 		</Statement>
 
 
 		<Statement Id="deleteExchangeRate" >
-			DELETE `soodal`.`tb_exchangerate`
+			DELETE `soodal`.`tb_exchange_rate`
 			WHERE ExDate = @ExDate
 			AND CurrCode = @CurrCode
 		</Statement>

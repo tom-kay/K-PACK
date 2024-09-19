@@ -53,7 +53,7 @@
 			, `com`.`AddressE2`
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `TB_COMPANY` AS com
-			LEFT JOIN tb_codedetail AS nat
+			LEFT JOIN TB_CODE_DETAIL AS nat
 			ON nat.MasterCode = 'NATIONALITY'
 			AND nat.`code` = com.Nationality
 			WHERE `com`.`CompanyCode` = @CompanyCode

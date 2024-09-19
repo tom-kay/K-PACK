@@ -124,7 +124,7 @@
 			date_format(CD.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
 			CD.`DeleteId`,
 			date_format(CD.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
-			FROM `TB_CODEDETAIL` AS CD
+			FROM `TB_CODE_DETAIL` AS CD
 			INNER JOIN TB_CODEMASTER AS CM
 			ON CD.MasterCode = CM.`Code`
 			WHERE 1=1
@@ -181,7 +181,7 @@
 			date_format(CD.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
 			CD.`DeleteId`,
 			date_format(CD.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
-			FROM `TB_CODEDETAIL` AS CD
+			FROM `TB_CODE_DETAIL` AS CD
 			INNER JOIN TB_CODEMASTER AS CM
 			ON CD.MasterCode = CM.`Code`
 			WHERE CD.`MasterCode` = @MasterCode
@@ -189,7 +189,7 @@
 		</Statement>
 
 		<Statement Id="insertCodeDetail">
-			INSERT INTO `TB_CODEDETAIL`
+			INSERT INTO `TB_CODE_DETAIL`
 			(`Code`,
 			`MasterCode`,
 			`Name`,
@@ -252,7 +252,7 @@
 		</Statement>
 
 		<Statement Id="deleteCodeDetail" >
-			UPDATE `TB_CODEDETAIL` SET
+			UPDATE `TB_CODE_DETAIL` SET
 			`DelYn` = 'Y',
 			`DeleteDt` = now()
 			WHERE `MasterCode` = @MasterCode
@@ -263,7 +263,7 @@
 			SELECT CD.`Code`
 			, CD.`Name`
 			, CM.`Name` AS MasterName
-			FROM TB_CODEDETAIL AS CD
+			FROM TB_CODE_DETAIL AS CD
 			JOIN TB_CODEMASTER AS CM
 			ON CD.MASTERCODE = CM.`CODE`
 			WHERE CD.MASTERCODE = @MasterCode

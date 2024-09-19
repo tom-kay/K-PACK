@@ -18,7 +18,7 @@
 			`memo`.`Title`,
 			`memo`.`Contents`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `soodal`.`tb_memotemplate` AS `memo`
+			FROM `soodal`.`tb_memo_template` AS `memo`
 			WHERE 1=1
 			AND `memo`.`CompanyCode` = @CompanyCode
 			<IsNotEmpty Prepend="And" Property="Title">
@@ -35,7 +35,7 @@
 			`memo`.`Title`,
 			`memo`.`Contents`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `soodal`.`tb_memotemplate` AS `memo`
+			FROM `soodal`.`tb_memo_template` AS `memo`
 			WHERE 1=1
 			AND `memo`.`MemoIdx` = @MemoIdx
 			AND `memo`.`CompanyCode` = @CompanyCode
@@ -43,7 +43,7 @@
 		</Statement>
 
 		<Statement Id="insertMemo">
-			INSERT INTO `soodal`.`tb_memotemplate`
+			INSERT INTO `soodal`.`tb_memo_template`
 			(`MemoIdx`,
 			`Title`,
 			`Contents`,
@@ -74,7 +74,7 @@
 		</Statement>
 
 		<Statement Id="deleteMemo">
-			UPDATE `soodal`.`tb_memotemplate`
+			UPDATE `soodal`.`tb_memo_template`
 			SET
 			`DelYn` = 'Y',
 			`DeleteId` = @DeleteId,
@@ -88,7 +88,7 @@
 			SELECT `tmp`.`MemoIdx`,
 			`tmp`.`Title`,
 			`tmp`.`Contents`
-			FROM `soodal`.`tb_memotemplate` AS `tmp`
+			FROM `soodal`.`tb_memo_template` AS `tmp`
 			WHERE 1=1
 			AND `tmp`.`CompanyCode` = @CompanyCode
 			AND (`tmp`.`DelYn` IS NULL OR `tmp`.`DelYn` != 'Y')

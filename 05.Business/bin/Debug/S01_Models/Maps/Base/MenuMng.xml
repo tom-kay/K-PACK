@@ -41,7 +41,7 @@
 			from tb_menumaster AS menu
 			left join tb_menumaster AS pmenu
 			on pmenu.MenuId = menu.ParentId
-			left join tb_codedetail	AS typecd
+			left join TB_CODE_DETAIL	AS typecd
 			on typecd.MasterCode = 'MENUTYPE'
 			and typecd.code = menu.menutype
 			where 1=1
@@ -65,7 +65,7 @@
 			from tb_menumaster AS menu
 			left join tb_menumaster AS pmenu
 			on pmenu.MenuId = menu.ParentId
-			left join tb_codedetail	AS typecd
+			left join TB_CODE_DETAIL	AS typecd
 			on typecd.MasterCode = 'MENUTYPE'
 			and typecd.code = menu.menutype
 			where 1=1

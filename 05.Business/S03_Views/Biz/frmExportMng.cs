@@ -428,6 +428,7 @@ namespace P05_Business.S03_Views.Biz
                 DataRow newDr = dt.NewRow();
                 newDr["InvoiceNo"] = txtInvoiceNo.Texts;
                 newDr["OrderNo"] = item.OrderNo;
+                newDr["BuyerPoNo"] = item.BuyerPoNo;
                 newDr["OrderDetailId"] = item.DetailId;
                 newDr["ItemNo"] = item.ItemNo;
                 newDr["ItemDescription"] = item.Description;
@@ -636,15 +637,14 @@ namespace P05_Business.S03_Views.Biz
             SpreadHelper.CreateSpread(spdPackingList, "PackingList");
             SpreadHelper.AddTextColumn(spdPackingList, "InvoiceNo", "INV.NO", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "PackingId", "PACK.ID", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "OrderNo", "ORD.NO", true, false, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "OrderNo", "ORD.NO", false, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "OrderDetailId", "ORD.DTL.ID", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "BuyerPoNo", "P/O.NO", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "ItemNo", "ITEM.NO", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Left);
             SpreadHelper.AddTextColumn(spdPackingList, "ItemDescription", "ITEM.DESC", true, true, 300, 100, SpreadHelper.GridHorizontalAlignment.Left);
             SpreadHelper.AddTextColumn(spdPackingList, "PkgUnitCode", "PKG.UNIT.CODE", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "PkgUnitName", "PKG.UNIT.NAME", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "PkgStartNo", "PKG.NO", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "PkgEndNo", "PKG.NO", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PkgStartNo", "PKG.NO", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PkgEndNo", "PKG.NO", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "Qty", "Q'TY", true, true, 100, 200, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "PkgQty", "PKG.Q'TY", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.MergeColumnHeader(spdPackingList, "PkgStartNo", 2);
@@ -656,8 +656,9 @@ namespace P05_Business.S03_Views.Biz
             SpreadHelper.CreateSpread(spdInvoiceList, "InvoiceList");
             SpreadHelper.AddTextColumn(spdInvoiceList, "InvoiceNo", "INV.NO", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdInvoiceList, "InvoiceId", "INV.ID", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdInvoiceList, "OrderNo", "ORD.NO", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdInvoiceList, "OrderNo", "ORD.NO", true, false, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdInvoiceList, "OrderDetailId", "ORD.ID", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "BuyerPoNo", "P/O.NO", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddNumberColumn(spdInvoiceList, "ItemLength", "제품 길이", true, true, 300, 0, true);
             SpreadHelper.AddNumberColumn(spdInvoiceList, "UsQty", "미환산 수량", true, true, 300, 0, true);
             SpreadHelper.AddNumberColumn(spdInvoiceList, "Qty", "수량", true, true, 300, 0, true);
@@ -690,6 +691,8 @@ namespace P05_Business.S03_Views.Biz
 
             //그리드 초기화
             spdContainerList.DataSource = DataHandles.ConvertToDataTable<ExportContainerDto>(dtoContainers);
+            spdPackingList.DataSource = DataHandles.ConvertToDataTable<ExportPackingDto>(dtoPackings);
+            spdInvoiceList.DataSource = DataHandles.ConvertToDataTable<ExportInvoiceDto>(dtoInvoices);
             
             InitDto();
         }

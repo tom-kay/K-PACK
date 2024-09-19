@@ -13,7 +13,7 @@
 			,date_format(UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`
 			,`DeleteId`
 			,date_format(DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
-			FROM TB_CODEMASTER
+			FROM TB_CODE_MASTER
 			WHERE 1 = 1
 			<IsNotEmpty Prepend="And" Property="Code">
 				`Code` Like Concat('%', @Code,'%')
@@ -42,22 +42,22 @@
 
 		<Statement Id="selectCodeMaster">
 			SELECT `Code`
-				, `Name`
-				, Remark
-				, UseYn
-				, DelYn
-				`CreateId`,
-				date_format(CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`,
-				`UpdateId`,
-				date_format(UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
-				`DeleteId`,
+			, `Name`
+			, Remark
+			, UseYn
+			, DelYn
+			`CreateId`,
+			date_format(CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`,
+			`UpdateId`,
+			date_format(UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
+			`DeleteId`,
 			date_format(DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
-			FROM TB_CODEMASTER
+			FROM TB_CODE_MASTER
 			WHERE `Code` = @Code
 		</Statement>
 
 		<Statement Id="insertCodeMaster">
-			INSERT INTO TB_CODEMASTER
+			INSERT INTO TB_CODE_MASTER
 			(
 			`Code`,
 			`Name`,
@@ -92,7 +92,7 @@
 		
 
 		<Statement Id="deleteCodeMaster" >
-			UPDATE TB_CODEMASTER
+			UPDATE TB_CODE_MASTER
 			SET
 			`DelYn` = 'Y',
 			`DeleteDt` = now()
@@ -124,8 +124,8 @@
 			date_format(CD.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
 			CD.`DeleteId`,
 			date_format(CD.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
-			FROM `TB_CODEDETAIL` AS CD
-			INNER JOIN TB_CODEMASTER AS CM
+			FROM `TB_CODE_DETAIL` AS CD
+			INNER JOIN TB_CODE_MASTER AS CM
 			ON CD.MasterCode = CM.`Code`
 			WHERE 1=1
 			<IsNotEmpty Prepend="And" Property="MasterCode">
@@ -181,15 +181,15 @@
 			date_format(CD.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
 			CD.`DeleteId`,
 			date_format(CD.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
-			FROM `TB_CODEDETAIL` AS CD
-			INNER JOIN TB_CODEMASTER AS CM
+			FROM `TB_CODE_DETAIL` AS CD
+			INNER JOIN TB_CODE_MASTER AS CM
 			ON CD.MasterCode = CM.`Code`
 			WHERE CD.`MasterCode` = @MasterCode
 			AND CD.`Code` = @Code
 		</Statement>
 
 		<Statement Id="insertCodeDetail">
-			INSERT INTO `TB_CODEDETAIL`
+			INSERT INTO `TB_CODE_DETAIL`
 			(`Code`,
 			`MasterCode`,
 			`Name`,
@@ -252,7 +252,7 @@
 		</Statement>
 
 		<Statement Id="deleteCodeDetail" >
-			UPDATE `TB_CODEDETAIL` SET
+			UPDATE `TB_CODE_DETAIL` SET
 			`DelYn` = 'Y',
 			`DeleteDt` = now()
 			WHERE `MasterCode` = @MasterCode
@@ -263,8 +263,8 @@
 			SELECT CD.`Code`
 			, CD.`Name`
 			, CM.`Name` AS MasterName
-			FROM TB_CODEDETAIL AS CD
-			JOIN TB_CODEMASTER AS CM
+			FROM TB_CODE_DETAIL AS CD
+			JOIN TB_CODE_MASTER AS CM
 			ON CD.MASTERCODE = CM.`CODE`
 			WHERE CD.MASTERCODE = @MasterCode
 			AND CD.USEYN = 'Y'

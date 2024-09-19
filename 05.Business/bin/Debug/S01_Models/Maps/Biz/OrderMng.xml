@@ -332,7 +332,7 @@
 			tb_customer cust2 ON cust2.CustCode = pm.WorkCustCode
 			AND cust2.CompanyCode = pm.CompanyCode
 			LEFT OUTER JOIN
-			tb_codedetail cd1 ON cd1.MasterCode = 'ITEMUNIT'
+			TB_CODE_DETAIL cd1 ON cd1.MasterCode = 'ITEMUNIT'
 			AND cd1.Code = pd.UnitCode
 			WHERE pm.OrderNo = @OrderNo
 			AND pm.CompanyCode = @CompanyCode
@@ -359,6 +359,7 @@
 		<Statement Id="selectOrderDetailPopupList">
 			SELECT
 			`ord`.`OrderNo`,
+			`ord`.`BuyerPoNo`,
 			`dtl`.`DetailId`,
 			`dtl`.`ItemGroupCode`,
 			`dtl`.`ItemCode`,
@@ -376,7 +377,7 @@
 			ON `ord`.`OrderNo` = `dtl`.`OrderNo`
 			AND `ord`.`CompanyCode` = `dtl`.`CompanyCode`
 			AND `dtl`.`DelYn` = 'N'
-			LEFT JOIN tb_codedetail cd1
+			LEFT JOIN TB_CODE_DETAIL cd1
 			ON `cd1`.`MasterCode` = 'ITEMUNIT'
 			AND `cd1`.`Code` = `dtl`.`UnitCode`
 			WHERE`ord`.`CompanyCode` = @CompanyCode

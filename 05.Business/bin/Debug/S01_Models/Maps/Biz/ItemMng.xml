@@ -23,10 +23,10 @@
 			`item`.`Remark`
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `soodal`.`tb_itemgroup` AS item
-			LEFT JOIN `soodal`.`tb_codedetail` AS `each`
+			LEFT JOIN `soodal`.`TB_CODE_DETAIL` AS `each`
 			ON `each`.`MasterCode` = 'ITEMUNIT'
 			AND `each`.`Code` = `item`.`DefaultEachUnitCode`
-			LEFT JOIN `soodal`.`tb_codedetail` AS `pack`
+			LEFT JOIN `soodal`.`TB_CODE_DETAIL` AS `pack`
 			ON `pack`.`MasterCode` = 'PACKINGUNIT'
 			AND `pack`.`Code` = `item`.`DefaultPackingUnitCode`
 			WHERE 1=1
@@ -57,10 +57,10 @@
 			`item`.`Remark`
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `soodal`.`tb_itemgroup` AS item
-			LEFT JOIN `soodal`.`tb_codedetail` AS `each`
+			LEFT JOIN `soodal`.`TB_CODE_DETAIL` AS `each`
 			ON `each`.`MasterCode` = 'ITEMUNIT'
 			AND `each`.`Code` = `item`.`DefaultEachUnitCode`
-			LEFT JOIN `soodal`.`tb_codedetail` AS `pack`
+			LEFT JOIN `soodal`.`TB_CODE_DETAIL` AS `pack`
 			ON `pack`.`MasterCode` = 'PACKINGUNIT'
 			AND `pack`.`Code` = `item`.`DefaultPackingUnitCode`
 			WHERE 1=1

@@ -331,6 +331,7 @@ namespace P05_Business.S03_Views.Popup.Biz
             UserDataGrid.AddTextBoxColumn(dgv, "Description", "규격", true, true, 200, DataGridViewContentAlignment.MiddleLeft);
             UserDataGrid.AddTextBoxColumn(dgv, "Qty", "수량", true, true, 80, DataGridViewContentAlignment.MiddleLeft);
             UserDataGrid.AddTextBoxColumn(dgv, "UnitName", "단위", true, true, 100, DataGridViewContentAlignment.MiddleLeft);
+            UserDataGrid.AddTextBoxColumn(dgv, "BuyerPoNo", "수주번호", true, false, 100, DataGridViewContentAlignment.MiddleLeft);
             UserDataGrid.End(dgv);
 
             dgv.Columns["OrderNo"].Frozen = true;

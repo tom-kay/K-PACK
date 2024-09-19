@@ -29,7 +29,7 @@
 			`ord`.`Remark`,
 			`ord`.`TermsAndConditions`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `soodal`.`tb_pomaster` AS `ord`
+			FROM `soodal`.`tb_po_master` AS `ord`
 			LEFT JOIN `soodal`.`tb_customer` AS `buyer`
 			ON `ord`.`BuyerCustCode` = `buyer`.`CustCode`
 			LEFT JOIN `soodal`.`tb_customer` AS `work`
@@ -81,7 +81,7 @@
 			`ord`.`Remark`,
 			`ord`.`TermsAndConditions`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `soodal`.`tb_pomaster` AS `ord`
+			FROM `soodal`.`tb_po_master` AS `ord`
 			LEFT JOIN `soodal`.`tb_customer` AS `buyer`
 			ON `ord`.`BuyerCustCode` = `buyer`.`CustCode`
 			LEFT JOIN `soodal`.`tb_customer` AS `work`
@@ -93,7 +93,7 @@
 
 		<!-- 주문 마스터 삽입 -->
 		<Statement Id="insertOrderMaster">
-			INSERT INTO `tb_pomaster`
+			INSERT INTO `tb_po_master`
 			(
 			`OrderNo`,
 			`RegDt`,
@@ -133,7 +133,7 @@
 
 		<!-- 주문 마스터 업데이트 -->
 		<Statement Id="updateOrderMaster">
-			UPDATE `tb_pomaster`
+			UPDATE `tb_po_master`
 			SET
 			`ExWorkDt` = @ExWorkDt,
 			`BuyerCustCode` = @BuyerCustCode,
@@ -156,7 +156,7 @@
 
 		<!-- 주문 마스터 삭제 (실제로는 업데이트) -->
 		<Statement Id="deleteOrderMaster">
-			UPDATE `tb_pomaster` AS `ord`
+			UPDATE `tb_po_master` AS `ord`
 			SET
 			`ord`.`DelYn` = 'Y',
 			`ord`.`DeleteId` = @DeleteId,
@@ -182,7 +182,7 @@
 			`ord`.`MarkingColor`,
 			`ord`.`Remark`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `tb_podetail` AS `ord`
+			FROM `tb_po_detail` AS `ord`
 			WHERE
 			`ord`.`OrderNo` = @OrderNo
 			AND `ord`.`CompanyCode` = @CompanyCode
@@ -206,7 +206,7 @@
 			`ord`.`MarkingColor`,
 			`ord`.`Remark`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `tb_podetail` AS `ord`
+			FROM `tb_po_detail` AS `ord`
 			WHERE
 			`ord`.`OrderNo` = @OrderNo
 			AND `ord`.`DetailId` = @DetailId
@@ -216,7 +216,7 @@
 
 		<!-- 주문 상세 삽입 또는 업데이트 (Merge Insert) -->
 		<Statement Id="mergeOrderDetail">
-			INSERT INTO `tb_podetail`
+			INSERT INTO `tb_po_detail`
 			(
 			`OrderNo`,
 			`DetailId`,
@@ -272,7 +272,7 @@
 
 		<!-- 주문 상세 삭제 (실제로는 업데이트) -->
 		<Statement Id="deleteOrderDetail">
-			UPDATE `tb_podetail` AS `ord`
+			UPDATE `tb_po_detail` AS `ord`
 			SET
 			`ord`.`DelYn` = 'Y',
 			`ord`.`DeleteId` = @DeleteId,
@@ -314,16 +314,16 @@
 			cd1.Option1 AS UnitName,
 			pd.MarkingColor
 			FROM
-			tb_pomaster pm
+			tb_po_master pm
 			LEFT OUTER JOIN
-			tb_podetail pd ON pm.OrderNo = pd.OrderNo
+			tb_po_detail pd ON pm.OrderNo = pd.OrderNo
 			AND pm.CompanyCode = pd.CompanyCode
 			LEFT OUTER JOIN
 			tb_item td ON td.GroupCode = pd.ItemGroupCode
 			AND td.ItemCode = pd.ItemCode
 			AND td.CompanyCode = pd.CompanyCode
 			LEFT OUTER JOIN
-			tb_itemgroup tg ON tg.GroupCode = td.GroupCode
+			tb_item_group tg ON tg.GroupCode = td.GroupCode
 			AND tg.CompanyCode = td.CompanyCode
 			LEFT OUTER JOIN
 			tb_customer cust1 ON cust1.CustCode = pm.BuyerCustCode
@@ -332,7 +332,7 @@
 			tb_customer cust2 ON cust2.CustCode = pm.WorkCustCode
 			AND cust2.CompanyCode = pm.CompanyCode
 			LEFT OUTER JOIN
-			tb_codedetail cd1 ON cd1.MasterCode = 'ITEMUNIT'
+			TB_CODE_DETAIL cd1 ON cd1.MasterCode = 'ITEMUNIT'
 			AND cd1.Code = pd.UnitCode
 			WHERE pm.OrderNo = @OrderNo
 			AND pm.CompanyCode = @CompanyCode
@@ -341,7 +341,7 @@
 		<Statement Id="selectOrderNoPopupList">
 			SELECT
 			`ord`.`OrderNo`
-			FROM `tb_pomaster` AS `ord`
+			FROM `tb_po_master` AS `ord`
 			WHERE `ord`.`CompanyCode` = @CompanyCode
 			AND `ord`.`DelYn` = 'N'
 			<IsNotEqual Prepend="And" Property="ExCustCode" CompareValue="">
@@ -359,6 +359,7 @@
 		<Statement Id="selectOrderDetailPopupList">
 			SELECT
 			`ord`.`OrderNo`,
+			`ord`.`BuyerPoNo`,
 			`dtl`.`DetailId`,
 			`dtl`.`ItemGroupCode`,
 			`dtl`.`ItemCode`,
@@ -371,12 +372,12 @@
 			`cd1`.`Option1` AS `UnitName`,
 			`dtl`.`MarkingColor`,
 			`dtl`.`Remark`
-			FROM `tb_pomaster` AS `ord`
-			JOIN `tb_podetail` AS `dtl`
+			FROM `tb_po_master` AS `ord`
+			JOIN `tb_po_detail` AS `dtl`
 			ON `ord`.`OrderNo` = `dtl`.`OrderNo`
 			AND `ord`.`CompanyCode` = `dtl`.`CompanyCode`
 			AND `dtl`.`DelYn` = 'N'
-			LEFT JOIN tb_codedetail cd1
+			LEFT JOIN TB_CODE_DETAIL cd1
 			ON `cd1`.`MasterCode` = 'ITEMUNIT'
 			AND `cd1`.`Code` = `dtl`.`UnitCode`
 			WHERE`ord`.`CompanyCode` = @CompanyCode

@@ -34,7 +34,7 @@
 			cust.`Remark`
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `tb_customer` AS cust
-			LEFT JOIN tb_CodeDetail AS nat
+			LEFT JOIN TB_CODE_DETAIL AS nat
 			ON nat.MasterCode = 'NATIONALITY'
 			AND cust.NationCode = nat.`Code`
 			WHERE CompanyCode = @CompanyCode
@@ -93,11 +93,11 @@
 			cust.`Remark`
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `tb_customer` AS cust
-			LEFT JOIN tb_codedetail AS nat
+			LEFT JOIN TB_CODE_DETAIL AS nat
 			ON nat.MasterCode = 'NATIONALITY'
 			AND nat.`code` = cust.NationCode
 			WHERE cust.CustCode = @CustCode
-				AND `cust`.`CompanyCode` = @CompanyCode
+			AND `cust`.`CompanyCode` = @CompanyCode
 		</Statement>
 
 		<Statement Id="insertCustomer">
@@ -264,7 +264,7 @@
 			SELECT cust.`CustCode`,
 			cust.`CustName`
 			FROM `tb_customer` AS cust
-			LEFT JOIN tb_CodeDetail AS nat
+			LEFT JOIN TB_CODE_DETAIL AS nat
 			ON nat.MasterCode = 'NATIONALITY'
 			AND cust.NationCode = nat.`Code`
 			WHERE CompanyCode = @CompanyCode

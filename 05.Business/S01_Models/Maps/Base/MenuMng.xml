@@ -19,7 +19,7 @@
 			`menu`.`DepthNo`,
 			`menu`.`UseYn`
 			<Include Prepend="" RefId="SelectAdd"/>
-			from tb_menumaster AS menu
+			from tb_menu_master AS menu
 			where UseYn = 'Y'
 			and DelYn != 'Y'
 			order by depthNo, orderseq;
@@ -38,10 +38,10 @@
 			`menu`.`DepthNo`,
 			`menu`.`UseYn`
 			<Include Prepend="" RefId="SelectAdd"/>
-			from tb_menumaster AS menu
-			left join tb_menumaster AS pmenu
+			from tb_menu_master AS menu
+			left join tb_menu_master AS pmenu
 			on pmenu.MenuId = menu.ParentId
-			left join tb_codedetail	AS typecd
+			left join TB_CODE_DETAIL	AS typecd
 			on typecd.MasterCode = 'MENUTYPE'
 			and typecd.code = menu.menutype
 			where 1=1
@@ -62,10 +62,10 @@
 			`menu`.`DepthNo`,
 			`menu`.`UseYn`
 			<Include Prepend="" RefId="SelectAdd"/>
-			from tb_menumaster AS menu
-			left join tb_menumaster AS pmenu
+			from tb_menu_master AS menu
+			left join tb_menu_master AS pmenu
 			on pmenu.MenuId = menu.ParentId
-			left join tb_codedetail	AS typecd
+			left join TB_CODE_DETAIL	AS typecd
 			on typecd.MasterCode = 'MENUTYPE'
 			and typecd.code = menu.menutype
 			where 1=1
@@ -74,7 +74,7 @@
 		</Statement>
 
 		<Statement Id="insertMenuMaster">
-			INSERT INTO `soodal`.`tb_menumaster`
+			INSERT INTO `soodal`.`tb_menu_master`
 			(`MenuId`,
 			`ParentId`,
 			`MenuName`,
@@ -111,7 +111,7 @@
 		</Statement>
 
 		<Statement Id="deleteMenuMaster">
-			UPDATE `soodal`.`tb_menumaster`
+			UPDATE `soodal`.`tb_menu_master`
 			SET
 			`DelYn` = 'Y',
 			`DeleteDt` = now()
@@ -119,7 +119,7 @@
 		</Statement>
 
 		<Statement Id="updateMenuMasterOrder">
-			UPDATE `soodal`.`tb_menumaster`
+			UPDATE `soodal`.`tb_menu_master`
 			SET
 			`OrderSeq` = @OrderSeq
 			WHERE `MenuId` = @MenuId;

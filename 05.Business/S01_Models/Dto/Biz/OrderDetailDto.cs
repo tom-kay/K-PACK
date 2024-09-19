@@ -41,6 +41,7 @@ namespace P05_Business.S01_Models.Dto.Biz
         [StringLength(255)]
         public string Remark { get; set; } // 비고
 
-        
+        public string BuyerPoNo { get; set; } // 수주번호
+
     }
 }

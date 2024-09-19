@@ -431,11 +431,6 @@
     <Compile Include="S04_Reports\Xsd\OrderDs.cs">
       <DependentUpon>OrderDs.xsd</DependentUpon>
     </Compile>
-    <Compile Include="S04_Reports\Xsd\OrderDs.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OrderDs.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1171,7 +1166,6 @@
     </None>
     <None Include="S04_Reports\Xsd\OrderDs.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>OrderDs.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="S04_Reports\Xsd\OrderDs.xss">
