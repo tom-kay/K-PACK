@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SmartSqlMap Scope="Biz.ExportMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+	<Statements>
+		<Statement Id="SelectAdd">
+			,`exp`.CompanyCode
+			,ifnull(`exp`.DelYn,'N') AS DelYn
+			,`exp`.`CreateId`
+			,date_format(`exp`.CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`
+			,`exp`.`UpdateId`
+			,date_format(`exp`.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`
+			,`exp`.`DeleteId`
+			,date_format(`exp`.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+		</Statement>
+		
+		<!-- ExportMaster 관련 쿼리 -->
+		<Statement Id="selectExportMasterList">
+			SELECT
+			`exp`.`InvoiceNo`,
+			`exp`.`InvoiceDate`,
+			`exp`.`ShipperCode`,
+			`shp`.`CustName` AS `ShipperName`,
+			`exp`.`ShipperAddress`,
+			`exp`.`ConsigneeCode`,
+			`csn`.`CustName` AS `ConsigneeName`,
+			`exp`.`ConsigneeAddress`,
+			`exp`.`NotifyCode`,
+			`nty`.`CustName` AS `NotifyName`,
+			`exp`.`NotifyAddress`,
+			`exp`.`BuyerCode`,
+			`byr`.`CustName` AS `BuyerName`,
+			`exp`.`BuyerAddress`,
+			`exp`.`DepartureDate`,
+			`exp`.`CarrierName`,
+			`exp`.`PolCode`,
+			`exp`.`PodCode`,
+			`exp`.`DeliveryTermCode`,
+			`exp`.`DestinationName`,
+			`exp`.`PaymentTermCode`,
+			`exp`.`PaymentDesc`,
+			`exp`.`Measurement`,
+			`exp`.`NetWeight`,
+			`exp`.`GrossWeight`,
+			`exp`.`ShippingMark`,
+			`exp`.`Remark`,
+			`exp`.`PackingRemark`,
+			`exp`.`InvoiceRemark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_export_master` exp
+			LEFT JOIN `soodal`.`tb_customer` shp
+			ON shp.CustCode = exp.ShipperCode
+			AND shp.CompanyCode = exp.CompanyCode
+			LEFT JOIN `soodal`.`tb_customer` csn
+			ON csn.CustCode = exp.ConsigneeCode
+			AND csn.CompanyCode = exp.CompanyCode
+			LEFT JOIN `soodal`.`tb_customer` nty
+			ON nty.CustCode = exp.NotifyCode
+			AND nty.CompanyCode = exp.CompanyCode
+			LEFT JOIN `soodal`.`tb_customer` byr
+			ON byr.CustCode = exp.BuyerCode
+			AND byr.CompanyCode = exp.CompanyCode
+			WHERE `exp`.`CompanyCode` = @CompanyCode
+			AND `exp`.`DelYn` != 'Y'
+			<IsEqual Prepend="And" Property="DatePeriodType" CompareValue="I">
+				`exp`.`InvoiceDate` BETWEEN @PeriodFromDt AND @PeriodToDt
+			</IsEqual>
+			<IsNotEqual  Prepend="And" Property="InvoiceNo" CompareValue="">
+				`exp`.`InvoiceNo` Like Concat("%",@InvoiceNo "%")
+			</IsNotEqual >
+			<IsNotEqual Prepend="And" Property="BuyerCode" CompareValue="">
+				`exp`.`BuyerCode` = @BuyerCode
+			</IsNotEqual>
+			
+	</Statement>
+
+		<Statement Id="selectExportMaster">
+			SELECT
+			`exp`.`InvoiceNo`,
+			`exp`.`InvoiceDate`,
+			`exp`.`ShipperCode`,
+			`shp`.`CustName` AS `ShipperName`,
+			`exp`.`ShipperAddress`,
+			`exp`.`ConsigneeCode`,
+			`csn`.`CustName` AS `ConsigneeName`,
+			`exp`.`ConsigneeAddress`,
+			`exp`.`NotifyCode`,
+			`nty`.`CustName` AS `NotifyName`,
+			`exp`.`NotifyAddress`,
+			`exp`.`BuyerCode`,
+			`byr`.`CustName` AS `BuyerName`,
+			`exp`.`BuyerAddress`,
+			`exp`.`DepartureDate`,
+			`exp`.`CarrierName`,
+			`exp`.`PolCode`,
+			`exp`.`PodCode`,
+			`exp`.`DeliveryTermCode`,
+			`exp`.`DestinationName`,
+			`exp`.`PaymentTermCode`,
+			`exp`.`PaymentDesc`,
+			`exp`.`Measurement`,
+			`exp`.`NetWeight`,
+			`exp`.`GrossWeight`,
+			`exp`.`ShippingMark`,
+			`exp`.`Remark`,
+			`exp`.`PackingRemark`,
+			`exp`.`InvoiceRemark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_export_master` exp
+			LEFT JOIN `soodal`.`tb_customer` shp
+			ON shp.CustCode = exp.ShipperCode
+			AND shp.CompanyCode = exp.CompanyCode
+			LEFT JOIN `soodal`.`tb_customer` csn
+			ON csn.CustCode = exp.ConsigneeCode
+			AND csn.CompanyCode = exp.CompanyCode
+			LEFT JOIN `soodal`.`tb_customer` nty
+			ON nty.CustCode = exp.NotifyCode
+			AND nty.CompanyCode = exp.CompanyCode
+			LEFT JOIN `soodal`.`tb_customer` byr
+			ON byr.CustCode = exp.BuyerCode
+			AND byr.CompanyCode = exp.CompanyCode
+			WHERE `exp`.`InvoiceNo` = @InvoiceNo
+			AND `exp`.`CompanyCode` = @CompanyCode
+			AND `exp`.`DelYn` != 'Y'
+			LIMIT 1
+		</Statement>
+
+		<Statement Id="insertExportMaster">
+			INSERT INTO `tb_export_master`
+			(
+			`InvoiceNo`,
+			`InvoiceDate`,
+			`ShipperCode`,
+			`ShipperAddress`,
+			`ConsigneeCode`,
+			`ConsigneeAddress`,
+			`NotifyCode`,
+			`NotifyAddress`,
+			`BuyerCode`,
+			`BuyerAddress`,
+			`DepartureDate`,
+			`CarrierName`,
+			`PolCode`,
+			`PodCode`,
+			`DeliveryTermCode`,
+			`DestinationName`,
+			`PaymentTermCode`,
+			`PaymentDesc`,
+			`Measurement`,
+			`NetWeight`,
+			`GrossWeight`,
+			`ShippingMark`,
+			`Remark`,
+			`PackingRemark`,
+			`InvoiceRemark`,
+			`CompanyCode`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES
+			(
+			@InvoiceNo,
+			@InvoiceDate,
+			@ShipperCode,
+			@ShipperAddress,
+			@ConsigneeCode,
+			@ConsigneeAddress,
+			@NotifyCode,
+			@NotifyAddress,
+			@BuyerCode,
+			@BuyerAddress,
+			@DepartureDate,
+			@CarrierName,
+			@PolCode,
+			@PodCode,
+			@DeliveryTermCode,
+			@DestinationName,
+			@PaymentTermCode,
+			@PaymentDesc,
+			@Measurement,
+			@NetWeight,
+			@GrossWeight,
+			@ShippingMark,
+			@Remark,
+			@PackingRemark,
+			@InvoiceRemark,
+			@CompanyCode,
+			'N',
+			@CreateId,
+			now()
+			)
+		</Statement>
+
+		<Statement Id="updateExportMaster">
+			UPDATE `tb_export_master`
+			SET
+			`InvoiceDate` = @InvoiceDate,
+			`ShipperCode` = @ShipperCode,
+			`ShipperAddress` = @ShipperAddress,
+			`ConsigneeCode` = @ConsigneeCode,
+			`ConsigneeAddress` = @ConsigneeAddress,
+			`NotifyCode` = @NotifyCode,
+			`NotifyAddress` = @NotifyAddress,
+			`BuyerCode` = @BuyerCode,
+			`BuyerAddress` = @BuyerAddress,
+			`DepartureDate` = @DepartureDate,
+			`CarrierName` = @CarrierName,
+			`PolCode` = @PolCode,
+			`PodCode` = @PodCode,
+			`DeliveryTermCode` = @DeliveryTermCode,
+			`DestinationName` = @DestinationName,
+			`PaymentTermCode` = @PaymentTermCode,
+			`PaymentDesc` = @PaymentDesc,
+			`Measurement` = @Measurement,
+			`NetWeight` = @NetWeight,
+			`GrossWeight` = @GrossWeight,
+			`ShippingMark` = @ShippingMark,
+			`Remark` = @Remark,
+			`PackingRemark` = @PackingRemark,
+			`InvoiceRemark` = @InvoiceRemark,
+			`DelYn` = 'N',
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = null,
+			`DeleteDt` = null
+			WHERE `InvoiceNo` = @InvoiceNo
+			AND `CompanyCode` = @CompanyCode
+		</Statement>
+
+		<Statement Id="deleteExportMaster">
+			UPDATE `tb_export_master` SET
+			`DelYn` = 'Y',
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = now()
+			WHERE `InvoiceNo` = @InvoiceNo
+			AND `CompanyCode` = @CompanyCode
+		</Statement>
+
+		<!-- ExportContainer 관련 쿼리 -->
+		<Statement Id="selectExportContainerList">
+			SELECT
+			`cntr`.`InvoiceNo`,
+			`cntr`.`ContainerId`,
+			`cntr`.`ContainerNo`,
+			`cntr`.`SealNo1`,
+			`cntr`.`SealNo2`,
+			`cntr`.`SealNo3`
+			FROM `tb_export_container` cntr
+			WHERE `InvoiceNo` = @InvoiceNo
+			AND `CompanyCode` = @CompanyCode
+			AND `DelYn` != 'Y'
+		</Statement>
+
+		<Statement Id="selectExportContainer">
+			SELECT
+			`cntr`.`InvoiceNo`,
+			`cntr`.`ContainerId`,
+			`cntr`.`ContainerNo`,
+			`cntr`.`SealNo1`,
+			`cntr`.`SealNo2`,
+			`cntr`.`SealNo3`
+			FROM `tb_export_container` cntr
+			WHERE `InvoiceNo` = @InvoiceNo
+			AND `ContainerId` = @ContainerId
+			AND `CompanyCode` = @CompanyCode
+			AND `DelYn` != 'Y'
+			LIMIT 1
+		</Statement>
+
+		<Statement Id="mergeExportContainer">
+			INSERT INTO `tb_export_container` (
+			`InvoiceNo`,
+			`ContainerId`,
+			`ContainerNo`,
+			`SealNo1`,
+			`SealNo2`,
+			`SealNo3`,
+			`CompanyCode`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`
+			) VALUES (
+			@InvoiceNo,
+			FN_CreateExpCntrId(@CompanyCode, @InvoiceNo, @ContainerId),
+			@ContainerNo,
+			@SealNo1,
+			@SealNo2,
+			@SealNo3,
+			@CompanyCode,
+			'N',
+			@CreateId,
+			NOW()
+			) ON DUPLICATE KEY UPDATE
+			`ContainerNo` = VALUES(`ContainerNo`),
+			`SealNo1` = VALUES(`SealNo1`),
+			`SealNo2` = VALUES(`SealNo2`),
+			`SealNo3` = VALUES(`SealNo3`),
+			`DelYn` = 'N',
+			`UpdateId` = VALUES(`UpdateId`),
+			`UpdateDt` = NOW(),
+			`DeleteId` = NULL,
+			`DeleteDt` = NULL;
+		</Statement>
+
+		<Statement Id="deleteExportContainer">
+			UPDATE `tb_export_container` SET
+			`DelYn` = 'Y',
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = now()
+			WHERE `InvoiceNo` = @InvoiceNo 
+			AND `ContainerId` = @ContainerId
+			AND `CompanyCode` = @CompanyCode
+		</Statement>
+
+		<!-- ExportPacking 관련 쿼리 -->
+		<Statement Id="selectExportPackingList">
+			SELECT
+			`pack`.`InvoiceNo`,
+			`pack`.`PackingId`,
+			`pack`.`OrderNo`,
+			`pack`.`OrderDetailId`,
+			`pack`.`PkgUnitCode`,
+			`pack`.`PkgStartNo`,
+			`pack`.`PkgEndNo`,
+			`pack`.`Qty`,
+			`pack`.`PkgQty`,
+			`pack`.`CompanyCode`,
+			`pack`.`DelYn`,
+			`pack`.`CreateId`,
+			date_format(`pack`.`CreateDt`, '%Y-%m-%d %H:%i:%s') AS `CreateDt`,
+			`pack`.`UpdateId`,
+			date_format(`pack`.`UpdateDt`, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
+			`pack`.`DeleteId`,
+			date_format(`pack`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+			FROM `tb_export_packing` pack
+			WHERE `InvoiceNo` = @InvoiceNo
+			AND `CompanyCode` = @CompanyCode
+			AND `DelYn` != 'Y'
+		</Statement>
+
+		<Statement Id="selectExportPacking">
+			SELECT
+			`pack`.`InvoiceNo`,
+			`pack`.`PackingId`,
+			`pack`.`OrderNo`,
+			`pack`.`OrderDetailId`,
+			`pack`.`PkgUnitCode`,
+			`pack`.`PkgStartNo`,
+			`pack`.`PkgEndNo`,
+			`pack`.`Qty`,
+			`pack`.`PkgQty`,
+			`pack`.`CompanyCode`,
+			`pack`.`DelYn`,
+			`pack`.`CreateId`,
+			date_format(`pack`.`CreateDt`, '%Y-%m-%d %H:%i:%s') AS `CreateDt`,
+			`pack`.`UpdateId`,
+			date_format(`pack`.`UpdateDt`, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
+			`pack`.`DeleteId`,
+			date_format(`pack`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+			FROM `tb_export_packing` pack
+			WHERE `InvoiceNo` = @InvoiceNo
+			AND `PackingId` = @PackingId
+			AND `CompanyCode` = @CompanyCode
+			AND `DelYn` != 'Y'
+			LIMIT 1
+		</Statement>
+
+		<Statement Id="mergeExportPacking">
+			MERGE INTO `tb_export_packing` AS target
+			USING (
+			SELECT
+			@InvoiceNo AS `InvoiceNo`,
+			@PackingId AS `PackingId`,
+			@OrderNo AS `OrderNo`,
+			@OrderDetailId AS `OrderDetailId`,
+			@PkgUnitCode AS `PkgUnitCode`,
+			@PkgStartNo AS `PkgStartNo`,
+			@PkgEndNo AS `PkgEndNo`,
+			@Qty AS `Qty`,
+			@PkgQty AS `PkgQty`,
+			@CompanyCode AS `CompanyCode`,
+			@CreateId AS `CreateId`,
+			@UpdateId AS `UpdateId`
+			) AS source
+			ON (
+			target.`InvoiceNo` = source.`InvoiceNo`
+			AND target.`PackingId` = source.`PackingId`
+			AND target.`CompanyCode` = source.`CompanyCode`
+			)
+			WHEN MATCHED THEN
+			UPDATE SET
+			target.`OrderNo` = source.`OrderNo`,
+			target.`OrderDetailId` = source.`OrderDetailId`,
+			target.`PkgUnitCode` = source.`PkgUnitCode`,
+			target.`PkgStartNo` = source.`PkgStartNo`,
+			target.`PkgEndNo` = source.`PkgEndNo`,
+			target.`Qty` = source.`Qty`,
+			target.`PkgQty` = source.`PkgQty`,
+			target.`DelYn` = 'N',
+			target.`UpdateId` = source.`UpdateId`,
+			target.`UpdateDt` = now(),
+			target.`DeleteId` = null,
+			target.`DeleteDt` = null
+			WHEN NOT MATCHED THEN
+			INSERT (
+			`InvoiceNo`,
+			`PackingId`,
+			`OrderNo`,
+			`OrderDetailId`,
+			`PkgUnitCode`,
+			`PkgStartNo`,
+			`PkgEndNo`,
+			`Qty`,
+			`PkgQty`,
+			`CompanyCode`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES (
+			source.`InvoiceNo`,
+			source.`PackingId`,
+			source.`OrderNo`,
+			source.`OrderDetailId`,
+			source.`PkgUnitCode`,
+			source.`PkgStartNo`,
+			source.`PkgEndNo`,
+			source.`Qty`,
+			source.`PkgQty`,
+			source.`CompanyCode`,
+			'N',
+			source.`CreateId`,
+			now()
+			);
+		</Statement>
+
+		<Statement Id="deleteExportPacking">
+			UPDATE `tb_export_packing` SET
+			`DelYn` = 'Y',
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = now()
+			WHERE `InvoiceNo` = @InvoiceNo 
+			AND `PackingId` = @PackingId
+			AND `CompanyCode` = @CompanyCode
+		</Statement>
+
+		<!-- ExportInvoice 관련 쿼리 -->
+		<Statement Id="selectExportInvoiceList">
+			SELECT
+			`inv`.`InvoiceNo`,
+			`inv`.`InvoiceId`,
+			`inv`.`OrderNo`,
+			`inv`.`OrderDetailId`,
+			`inv`.`ItemLength`,
+			`inv`.`UsQty`,
+			`inv`.`Qty`,
+			`inv`.`UnitPrice`,
+			`inv`.`Amount`,
+			`inv`.`CompanyCode`,
+			`inv`.`DelYn`,
+			`inv`.`CreateId`,
+			date_format(`inv`.`CreateDt`, '%Y-%m-%d %H:%i:%s') AS `CreateDt`,
+			`inv`.`UpdateId`,
+			date_format(`inv`.`UpdateDt`, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
+			`inv`.`DeleteId`,
+			date_format(`inv`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+			FROM `tb_export_invoice` inv
+			WHERE `CompanyCode` = @CompanyCode
+			AND `InvoiceNo` = @InvoiceNo
+			AND `DelYn` != 'Y'
+		</Statement>
+
+		<Statement Id="selectExportInvoice">
+			SELECT
+			`inv`.`InvoiceNo`,
+			`inv`.`InvoiceId`,
+			`inv`.`OrderNo`,
+			`inv`.`OrderDetailId`,
+			`inv`.`ItemLength`,
+			`inv`.`UsQty`,
+			`inv`.`Qty`,
+			`inv`.`UnitPrice`,
+			`inv`.`Amount`,
+			`inv`.`CompanyCode`,
+			`inv`.`DelYn`,
+			`inv`.`CreateId`,
+			date_format(`inv`.`CreateDt`, '%Y-%m-%d %H:%i:%s') AS `CreateDt`,
+			`inv`.`UpdateId`,
+			date_format(`inv`.`UpdateDt`, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
+			`inv`.`DeleteId`,
+			date_format(`inv`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+			FROM `tb_export_invoice` inv
+			WHERE `InvoiceNo` = @InvoiceNo
+			AND `InvoiceId` = @InvoiceId
+			AND `CompanyCode` = @CompanyCode
+			AND `DelYn` != 'Y'
+			LIMIT 1
+		</Statement>
+
+		<Statement Id="mergeExportInvoice">
+			MERGE INTO `tb_export_invoice` AS target
+			USING (
+			SELECT
+			@InvoiceNo AS `InvoiceNo`,
+			@InvoiceId AS `InvoiceId`,
+			@OrderNo AS `OrderNo`,
+			@OrderDetailId AS `OrderDetailId`,
+			@ItemLength AS `ItemLength`,
+			@UsQty AS `UsQty`,
+			@Qty AS `Qty`,
+			@UnitPrice AS `UnitPrice`,
+			@Amount AS `Amount`,
+			@CompanyCode AS `CompanyCode`,
+			@CreateId AS `CreateId`,
+			@UpdateId AS `UpdateId`
+			) AS source
+			ON (
+			target.`InvoiceNo` = source.`InvoiceNo`
+			AND target.`InvoiceId` = source.`InvoiceId`
+			AND target.`CompanyCode` = source.`CompanyCode`
+			)
+			WHEN MATCHED THEN
+			UPDATE SET
+			target.`OrderNo` = source.`OrderNo`,
+			target.`OrderDetailId` = source.`OrderDetailId`,
+			target.`ItemLength` = source.`ItemLength`,
+			target.`UsQty` = source.`UsQty`,
+			target.`Qty` = source.`Qty`,
+			target.`UnitPrice` = source.`UnitPrice`,
+			target.`Amount` = source.`Amount`,
+			target.`DelYn` = 'N',
+			target.`UpdateId` = source.`UpdateId`,
+			target.`UpdateDt` = now()
+			WHEN NOT MATCHED THEN
+			INSERT (
+			`InvoiceNo`,
+			`InvoiceId`,
+			`OrderNo`,
+			`OrderDetailId`,
+			`ItemLength`,
+			`UsQty`,
+			`Qty`,
+			`UnitPrice`,
+			`Amount`,
+			`CompanyCode`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES (
+			source.`InvoiceNo`,
+			source.`InvoiceId`,
+			source.`OrderNo`,
+			source.`OrderDetailId`,
+			source.`ItemLength`,
+			source.`UsQty`,
+			source.`Qty`,
+			source.`UnitPrice`,
+			source.`Amount`,
+			source.`CompanyCode`,
+			'N',
+			source.`CreateId`,
+			now()
+			);
+		</Statement>
+
+		<Statement Id="deleteExportInvoice">
+			UPDATE `tb_export_invoice` SET
+			`DelYn` = 'Y',
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = now()
+			WHERE `InvoiceNo` = @InvoiceNo 
+			AND `InvoiceId` = @InvoiceId
+			AND `CompanyCode` = @CompanyCode
+		</Statement>
+
+	</Statements>
+</SmartSqlMap>
+

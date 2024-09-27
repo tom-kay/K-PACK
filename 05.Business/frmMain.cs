@@ -2,7 +2,7 @@
 using P05_Business.Common;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S02_Controllers.Base;
-using SmartSql.SqlMap.Tags;
+using P05_Business.S03_Views.Popup.Common;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace P05_Business
 {
-	public partial class frmMain : frmMdiContainer
+    public partial class frmMain : frmMdiContainer
 	{
 
 		public frmMain()
@@ -27,6 +27,8 @@ namespace P05_Business
 
 			base.btnMaximum_Click(null, null);
 
+			string titleBarName = string.Concat(LoginCompany.CompanyNameK, "[", LoginCompany.CompanyGroup, "]");
+			lblTitleBarCaption.Text = titleBarName;
 			lblMainMsg.Text = "READY!!";
 		}
 
@@ -35,7 +37,7 @@ namespace P05_Business
 			CreateMenu(); //메뉴가져오기
 		}
 
-		private void CreateMenu()
+		public void CreateMenu()
 		{
 
 			List<MenuMasterDto> menus = new MenuMngController().GetMenuMasterList();
@@ -121,6 +123,13 @@ namespace P05_Business
 		public new void OpenChildForm(Form form)
 		{
 			base.LinkOpenMenu(form);
+		}
+
+		private void btnUserSetting_Click(object sender, EventArgs e)
+		{
+			using (frmUserSetting popup = new frmUserSetting()) {
+				popup.ShowDialog();
+			}
 		}
 	}
 }

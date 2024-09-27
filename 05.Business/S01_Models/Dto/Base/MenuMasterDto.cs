@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace P05_Business.S01_Models.Dto.Base
 {
@@ -9,15 +10,20 @@ namespace P05_Business.S01_Models.Dto.Base
 		public string MenuId { get; set; }
 		[MaxLength(255, ErrorMessage = "[Parent ID] 최대길이는 255자 입니다.")]
 		public string ParentId { get; set; }
-		[MaxLength(255, ErrorMessage = "[ID] 최대길이는 255자 입니다.")]
+		[Description("상위메뉴명")]
+		public string ParentName { get; set; }
+        [MaxLength(255, ErrorMessage = "[ID] 최대길이는 255자 입니다.")]
 		public string MenuName { get; set; }
+		[Description("메뉴유형코드")]
 		public string MenuType { get; set; }
-		[MaxLength(255, ErrorMessage = "[NAMESPACE] 최대길이는 255자 입니다.")]
-		public string Namespace { get; set; }
+        [Description("메뉴유형명")]
+        public string MenuTypeName { get; set; }
+        [MaxLength(255, ErrorMessage = "[NAMESPACE] 최대길이는 255자 입니다.")]
+        public string Namespace { get; set; }
 		[MaxLength(255, ErrorMessage = "[FORM NAME] 최대길이는 255자 입니다.")]
 		public string FormName { get; set; }
-		public int OrderSeq { get; set; }
-		public int DepthNo { get; set; }
+		public int? OrderSeq { get; set; }
+		public int? DepthNo { get; set; }
 		public string UseYn { get; set; }
 	}
 }

@@ -61,6 +61,10 @@ namespace P05_Business
 			this.pnlBody.SuspendLayout();
 			this.pnlDesktop.SuspendLayout();
 			this.panel1.SuspendLayout();
+			this.panelSubMenuBarBody.SuspendLayout();
+			this.panelSubMenuBarBottom.SuspendLayout();
+			this.panelUserSetting.SuspendLayout();
+			this.panelLogout.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -80,22 +84,16 @@ namespace P05_Business
 			// 
 			this.panelLogo.Controls.Add(this.picLogo);
 			// 
-			// panelSubMenuBar
-			// 
-			this.panelSubMenuBar.Controls.Add(this.trvMenu);
-			this.panelSubMenuBar.Controls.SetChildIndex(this.btnCloseChildForm, 0);
-			this.panelSubMenuBar.Controls.SetChildIndex(this.trvMenu, 0);
-			// 
 			// lblTime
 			// 
 			this.lblTime.Location = new System.Drawing.Point(693, 4);
-			this.lblTime.Text = "13:37:55";
+			this.lblTime.Text = "13:29:47";
 			// 
 			// lblDate
 			// 
 			this.lblDate.Location = new System.Drawing.Point(520, 4);
 			this.lblDate.Size = new System.Drawing.Size(156, 20);
-			this.lblDate.Text = "2024년 2월 21일 수요일";
+			this.lblDate.Text = "2024년 4월 17일 수요일";
 			// 
 			// btnMaximum
 			// 
@@ -104,6 +102,15 @@ namespace P05_Business
 			// btnCloseChildForm
 			// 
 			this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
+			// 
+			// panelSubMenuBarBody
+			// 
+			this.panelSubMenuBarBody.Controls.Add(this.trvMenu);
+			// 
+			// btnUserSetting
+			// 
+			this.btnUserSetting.FlatAppearance.BorderSize = 0;
+			this.btnUserSetting.Click += new System.EventHandler(this.btnUserSetting_Click);
 			// 
 			// trvMenu
 			// 
@@ -140,7 +147,7 @@ namespace P05_Business
 			this.trvMenu.ShowLines = false;
 			this.trvMenu.ShowPlusMinus = false;
 			this.trvMenu.ShowRootLines = false;
-			this.trvMenu.Size = new System.Drawing.Size(200, 664);
+			this.trvMenu.Size = new System.Drawing.Size(200, 644);
 			this.trvMenu.TabIndex = 9;
 			this.trvMenu.AfterCollapse += new System.Windows.Forms.TreeViewEventHandler(this.trvMenu_AfterCollapse);
 			this.trvMenu.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.trvMenu_AfterExpand);
@@ -192,6 +199,12 @@ namespace P05_Business
 			this.pnlBody.ResumeLayout(false);
 			this.pnlDesktop.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
+			this.panelSubMenuBarBody.ResumeLayout(false);
+			this.panelSubMenuBarBottom.ResumeLayout(false);
+			this.panelSubMenuBarBottom.PerformLayout();
+			this.panelUserSetting.ResumeLayout(false);
+			this.panelLogout.ResumeLayout(false);
+			this.panelLogout.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
 			this.ResumeLayout(false);
 

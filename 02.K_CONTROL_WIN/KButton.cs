@@ -71,6 +71,7 @@ namespace P02_K_CONTROL_WIN
             this.BackColor = Color.MediumSlateBlue;
             this.ForeColor = Color.White;
             this.Resize += new EventHandler(Button_Resize);
+			this.Font = new Font("Microsoft Sans Serif", 12f, FontStyle.Bold);
         }
 
         //Methods

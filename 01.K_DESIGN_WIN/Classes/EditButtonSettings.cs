@@ -19,5 +19,7 @@ namespace P01_K_DESIGN_WIN.Classes
 		public bool isDelete { get; set; } = true;
 
 		public bool isClose { get; set; } = true;
-	}
+
+		public bool isNew { get; set; } = true;
+    }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using P01_K_DESIGN_WIN.Classes;
 
 namespace P01_K_DESIGN_WIN
 {
@@ -21,6 +22,8 @@ namespace P01_K_DESIGN_WIN
         {
             InitializeComponent();
 
+            FormSettings.Control_Init(this);
+
             txtList = new TextBox[] { txtUser, txtPass };
             foreach (var txt in txtList)
             {
@@ -32,6 +35,8 @@ namespace P01_K_DESIGN_WIN
                 txt.GotFocus += RemovePlaceholder;
                 txt.LostFocus += SetPlaceholder;
             }
+
+
         }
 
         #region Drag Form/ Move Drag Form
@@ -89,5 +94,12 @@ namespace P01_K_DESIGN_WIN
 
         }
 
-    }
+		private void frmLoginFrame_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				SendKeys.Send("{TAB}");
+			}
+		}
+	}
 }
