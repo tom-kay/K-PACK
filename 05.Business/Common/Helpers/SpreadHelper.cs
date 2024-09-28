@@ -1,22 +1,17 @@
-﻿using FarPoint.Win;
+﻿using CrystalDecisions.ReportAppServer.Prompting;
+using FarPoint.Win;
 using FarPoint.Win.Spread;
 using FarPoint.Win.Spread.CellType;
 using FarPoint.Win.Spread.Model;
-using SmartSql.SqlMap.Tags;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace P05_Business.Common.Helpers
 {
-    internal class SpreadHelper
+    public static class SpreadHelper
     {
         /// <summary>
         /// 날짜 포맷
@@ -81,7 +76,7 @@ namespace P05_Business.Common.Helpers
         /// </summary>
         /// <param name="fpSpread"></param>
         /// <param name="style"></param>
-        public static void CreateSpread(FpSpread fpSpread, string name)
+        public static void CreateSpread(this FpSpread fpSpread, string name)
         {
             // Skin 설정
             fpSpread.Skin = DefaultSpreadSkins.Classic;
@@ -193,12 +188,13 @@ namespace P05_Business.Common.Helpers
         /// <param name="width"></param>
         /// <param name="cellAlignment"></param>
         /// <param name="enabled"></param>
-        public static void AddColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible,  int width, GridHorizontalAlignment cellAlignment)
+        public static void AddColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible,  int width, GridHorizontalAlignment cellAlignment)
         {
             fpSpread.ActiveSheet.Columns.Add(fpSpread.ActiveSheet.Columns.Count, 1);
 
             FarPoint.Win.Spread.Column column = fpSpread.ActiveSheet.Columns[fpSpread.ActiveSheet.Columns.Count - 1];
 
+            column.Font = new Font("D2Coding", 12);
             column.Tag = fieldName;
             column.DataField = fieldName;
             column.Label = label;
@@ -219,7 +215,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="width"></param>
         /// <param name="maxLength"></param>
         /// <param name="enabled"></param>
-        public static void AddTextColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, int maxLength)
+        public static void AddTextColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, int maxLength)
         {
             AddTextColumn(fpSpread, fieldName, label, enabled, visible, width, maxLength, GridHorizontalAlignment.Left);
 
@@ -235,7 +231,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="maxLength"></param>
         /// <param name="cellAlignment"></param>
         /// <param name="enabled"></param>
-        public static void AddTextColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, int maxLength, GridHorizontalAlignment cellAlignment)
+        public static void AddTextColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, int maxLength, GridHorizontalAlignment cellAlignment)
         {
             AddColumn(fpSpread, fieldName, label, enabled, visible, width, cellAlignment);
 
@@ -245,6 +241,23 @@ namespace P05_Business.Common.Helpers
             cellType.MaxLength = maxLength;
             column.CellType = cellType;
         }
+
+
+        public static void AddGeneralColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
+        {
+            AddGeneralColumn(fpSpread, fieldName, label, enabled, visible, width, GridHorizontalAlignment.Left);
+        }
+
+        public static void AddGeneralColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, GridHorizontalAlignment cellAlignment)
+        {
+            AddColumn(fpSpread, fieldName, label, enabled, visible, width, cellAlignment);
+
+            FarPoint.Win.Spread.Column column = fpSpread.ActiveSheet.Columns[fpSpread.ActiveSheet.Columns.Count - 1];
+            
+            GeneralCellType cellType = new GeneralCellType();
+            column.CellType = cellType;
+        }
+
 
         /// <summary>
         /// 숫자 컬럼 추가
@@ -256,7 +269,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="decimalPlaces"></param>
         /// <param name="showSeparator"></param>
         /// <param name="enabled"></param>
-        public static void AddNumberColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, int decimalPlaces, bool showSeparator)
+        public static void AddNumberColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, int decimalPlaces, bool showSeparator)
         {
             AddNumberColumn(fpSpread, fieldName, label, enabled, visible, width, decimalPlaces, showSeparator, GridHorizontalAlignment.Right);
         }
@@ -272,7 +285,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="showSeparator"></param>
         /// <param name="cellAlignment"></param>
         /// <param name="enabled"></param>
-        public static void AddNumberColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, int decimalPlaces, bool showSeparator, GridHorizontalAlignment cellAlignment)
+        public static void AddNumberColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, int decimalPlaces, bool showSeparator, GridHorizontalAlignment cellAlignment)
         {
             AddColumn(fpSpread, fieldName, label, enabled, visible, width, cellAlignment);
 
@@ -296,7 +309,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="label"></param>
         /// <param name="width"></param>
         /// <param name="enabled"></param>
-        public static void AddDateColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
+        public static void AddDateColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
         {
             AddDateTimeColumn(fpSpread, fieldName, label, enabled, visible, width, DEFAULT_DATE_FORMAT);
         }
@@ -309,7 +322,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="label"></param>
         /// <param name="width"></param>
         /// <param name="enabled"></param>
-        public static void AddTimeColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
+        public static void AddTimeColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
         {
             AddDateTimeColumn(fpSpread, fieldName, label, enabled, visible, width, DEFAULT_TIME_FORMAT);
         }
@@ -322,7 +335,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="label"></param>
         /// <param name="width"></param>
         /// <param name="enabled"></param>
-        public static void AddDateTimeColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
+        public static void AddDateTimeColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
         {
             AddDateTimeColumn(fpSpread, fieldName, label, enabled, visible, width, DEFAULT_DATETIME_FORMAT);
         }
@@ -336,7 +349,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="width"></param>
         /// <param name="dateTimeFormat"></param>
         /// <param name="enabled"></param>
-        public static void AddDateTimeColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, string dateTimeFormat)
+        public static void AddDateTimeColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, string dateTimeFormat)
         {
             AddColumn(fpSpread, fieldName, label, enabled, visible, width, GridHorizontalAlignment.Center);
 
@@ -356,7 +369,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="label"></param>
         /// <param name="width"></param>
         /// <param name="enabled"></param>
-        public static void AddCheckBoxColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
+        public static void AddCheckBoxColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width)
         {
             AddColumn(fpSpread, fieldName, label, enabled, visible, width, GridHorizontalAlignment.Center);
 
@@ -375,7 +388,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="width"></param>
         /// <param name="buttonText"></param>
         /// <param name="enabled"></param>
-        public static void AddButtonColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, string buttonText)
+        public static void AddButtonColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, string buttonText)
         {
             AddColumn(fpSpread, fieldName, label, enabled, visible, width, GridHorizontalAlignment.Center);
 
@@ -397,7 +410,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="valueField"></param>
         /// <param name="displayField"></param>
         /// <param name="enabled"></param>
-        public static void AddComboBoxColumn(FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, DataTable dtCombo, string valueField, string displayField)
+        public static void AddComboBoxColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, DataTable dtCombo, string valueField, string displayField)
         {
             AddColumn(fpSpread, fieldName, label, enabled, visible, width, GridHorizontalAlignment.Center);
 
@@ -417,7 +430,7 @@ namespace P05_Business.Common.Helpers
             column.CellType = cellType;
         }
 
-        public static void AddImageColumn(FpSpread fpSpread, string fieldName, string label, bool visible, int width)
+        public static void AddImageColumn(this FpSpread fpSpread, string fieldName, string label, bool visible, int width)
         {
             AddColumn(fpSpread, fieldName, label, false, visible, width, GridHorizontalAlignment.Center);
 
@@ -430,7 +443,7 @@ namespace P05_Business.Common.Helpers
             column.CellType = cellType;
         }
 
-        public static void SetColumnHeaders(FpSpread fpSpread, string[,] headers)
+        public static void SetColumnHeaders(this    FpSpread fpSpread, string[,] headers)
         {
             if (headers == null) throw new ArgumentException("Headers is null.");
 
@@ -479,13 +492,13 @@ namespace P05_Business.Common.Helpers
             }
         }
 
-        public static int[] GetCheckedRows(FpSpread fpSpread, string columnName)
+        public static int[] GetCheckedRows(this FpSpread fpSpread, string columnName)
         {
             int column = GetColumnIndex(fpSpread, columnName);
             return GetCheckedRows(fpSpread, column);
         }
 
-        public static int[] GetCheckedRows(FpSpread fpSpread, int column)
+        public static int[] GetCheckedRows(this FpSpread fpSpread, int column)
         {
             CheckColumnBounds(fpSpread, column);
 
@@ -508,7 +521,7 @@ namespace P05_Business.Common.Helpers
         /// </summary>
         /// <param name="fpSpread"></param>
         /// <param name="dataSource"></param>
-        public static void SetDataSource(FpSpread fpSpread, object dataSource)
+        public static void SetDataSource(this FpSpread fpSpread, object dataSource)
         {
             try
             {
@@ -534,7 +547,7 @@ namespace P05_Business.Common.Helpers
         /// 바인드된 데이터소스 클리어
         /// </summary>
         /// <param name="fpSpread"></param>
-        public static void ClearDataSource(FpSpread fpSpread)
+        public static void ClearDataSource(this FpSpread fpSpread)
         {
             try
             {
@@ -564,7 +577,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="fpSpread"></param>
         /// <param name="columnName"></param>
         /// <returns></returns>
-        public static int GetColumnIndex(FpSpread fpSpread, string columnName)
+        public static int GetColumnIndex(this FpSpread fpSpread, string columnName)
         {
             if (string.IsNullOrEmpty(columnName)) return -1;
 
@@ -580,14 +593,14 @@ namespace P05_Business.Common.Helpers
             }
         }
 
-        public static string GetText(FpSpread fpSpread, int row, string columnName)
+        public static string GetText(this FpSpread fpSpread, int row, string columnName)
         {
             int column = GetColumnIndex(fpSpread, columnName);
 
             return GetText(fpSpread, row, column);
         }
 
-        public static string GetText(FpSpread fpSpread, int row, int column)
+        public static string GetText(this FpSpread fpSpread, int row, int column)
         {
             CheckRowBounds(fpSpread, row);
             CheckColumnBounds(fpSpread, column);
@@ -618,14 +631,52 @@ namespace P05_Business.Common.Helpers
         //            return GridRowState.Unchanged;
         //    }
         //}
+        public static void RowCopyTo(this FpSpread fpSpread, int sourceIndex, int targetIndex)
+        {
+            var sourceRow = fpSpread.ActiveSheet.Rows[sourceIndex];
+            var targetRow = fpSpread.ActiveSheet.Rows[targetIndex];
 
-        public static void AddRow(FpSpread fpSpread)
+            for (int col = 0; col < fpSpread.ActiveSheet.ColumnCount; col++)
+            {
+                fpSpread.ActiveSheet.Cells[targetIndex, col].Value = fpSpread.ActiveSheet.Cells[sourceIndex, col].Value;
+            }
+        }
+
+        public static void AddRowAt(this FpSpread fpSpread, int rowIndex)
+        {
+            int row = fpSpread.ActiveSheet.ActiveRow.Index;
+            AddRowAt(fpSpread, rowIndex, 1);
+        }
+
+        public static void AddRowAt(this FpSpread fpSpread, int rowIndex, int rowCount)
+        {
+            if (rowIndex < 0)
+            {
+                throw new ArgumentException("Row Index Out Of Range");
+            }
+
+            if (fpSpread.ActiveSheet.DataSource == null || !(fpSpread.ActiveSheet.DataSource is DataTable))
+            {
+                fpSpread.ActiveSheet.Rows.Add(rowIndex, 1);
+            }
+            else
+            {
+                DataTable dt = (DataTable)fpSpread.ActiveSheet.DataSource;
+                for (global::System.Int32 i = 0; i < rowCount; i++)
+                {
+                    DataRow dr = dt.NewRow();
+                    dt.Rows.InsertAt(dr, rowIndex);
+                }
+            }
+        }
+
+        public static void AddRow(this FpSpread fpSpread)
         {
             int row = fpSpread.ActiveSheet.Rows.Count;
             AddRow(fpSpread, row);
         }
 
-        public static void AddRow(FpSpread fpSpread, int row)
+        public static void AddRow(this FpSpread fpSpread, int row)
         {
             if (row < 0)
             {
@@ -645,7 +696,7 @@ namespace P05_Business.Common.Helpers
             //SetRowStatus(fpSpread, row, RowStatus.New);
         }
 
-        public static void RemoveRows(FpSpread fpSpread, int[] rows)
+        public static void RemoveRows(this FpSpread fpSpread, int[] rows)
         {
             for (int i = rows.Length - 1; i >= 0; i--)
             {
@@ -653,7 +704,7 @@ namespace P05_Business.Common.Helpers
             }
         }
 
-        public static void RemoveRow(FpSpread fpSpread, int row)
+        public static void RemoveRow(this FpSpread fpSpread, int row)
         {
             CheckRowBounds(fpSpread, row);
 
@@ -668,14 +719,14 @@ namespace P05_Business.Common.Helpers
             }
         }
 
-        public static object GetValue(FpSpread fpSpread, int row, string columnName)
+        public static object GetValue(this FpSpread fpSpread, int row, string columnName)
         {
             int column = GetColumnIndex(fpSpread, columnName);
 
             return GetValue(fpSpread, row, column);
         }
 
-        public static object GetValue(FpSpread fpSpread, int row, int column)
+        public static object GetValue(this FpSpread fpSpread, int row, int column)
         {
             CheckRowBounds(fpSpread, row);
             CheckColumnBounds(fpSpread, column);
@@ -683,14 +734,14 @@ namespace P05_Business.Common.Helpers
             return fpSpread.ActiveSheet.Cells[row, column].Value;
         }
 
-        public static void SetValue(FpSpread fpSpread, int row, string columnName, object value)
+        public static void SetValue(this FpSpread fpSpread, int row, string columnName, object value)
         {
             int column = GetColumnIndex(fpSpread, columnName);
 
             SetValue(fpSpread, row, column, value);
         }
 
-        public static void SetValue(FpSpread fpSpread, int row, int column, object value)
+        public static void SetValue(this FpSpread fpSpread, int row, int column, object value)
         {
             CheckRowBounds(fpSpread, row);
             CheckColumnBounds(fpSpread, column);
@@ -699,17 +750,17 @@ namespace P05_Business.Common.Helpers
             //SetRowStatus(fpSpread, row, RowStatus.Modified);
         }
 
-        public static int GetActiveRow(FpSpread fpSpread)
+        public static int GetActiveRow(this FpSpread fpSpread)
         {
             return fpSpread.ActiveSheet.ActiveRowIndex;
         }
 
-        public static int GetActiveColumn(FpSpread fpSpread)
+        public static int GetActiveColumn(this FpSpread fpSpread)
         {
             return fpSpread.ActiveSheet.ActiveColumnIndex;
         }
 
-        public static void MergeRowByColumn(FpSpread fpSpread, string columnName)
+        public static void MergeRowByColumn(this FpSpread fpSpread, string columnName)
         {
             MergeRowByColumns(fpSpread, new string[] { columnName }, GridVerticalAlignment.Middle);
         }
@@ -719,31 +770,31 @@ namespace P05_Business.Common.Helpers
         /// </summary>
         /// <param name="fpSpread"></param>
         /// <param name="fieldName"></param>
-        public static void MergeRowByColumn(FpSpread fpSpread, string columnName, GridVerticalAlignment vertAlignment)
+        public static void MergeRowByColumn(this FpSpread fpSpread, string columnName, GridVerticalAlignment vertAlignment)
         {
             MergeRowByColumns(fpSpread, new string[] { columnName }, vertAlignment);
         }
 
-        public static void MergeRowByColumns(FpSpread fpSpread, string[] columnNames)
+        public static void MergeRowByColumns(this FpSpread fpSpread, string[] columnNames)
         {
             MergeRowByColumns(fpSpread, columnNames, GridVerticalAlignment.Top);
         }
 
-        public static void MergeRowByColumns(FpSpread fpSpread, string[] columnNames, GridVerticalAlignment vertAlignment)
+        public static void MergeRowByColumns(this FpSpread fpSpread, string[] columnNames, GridVerticalAlignment vertAlignment)
         {
             if (columnNames == null || columnNames.Length == 0) return;
 
             MergeRowByColumns(fpSpread, ToColumnIndex(fpSpread, columnNames), vertAlignment);
         }
 
-        public static void MergeRowByColumns(FpSpread fpSpread, int[] columns, GridVerticalAlignment vertAlignment)
+        public static void MergeRowByColumns(this FpSpread fpSpread, int[] columns, GridVerticalAlignment vertAlignment)
         {
             if (columns == null || columns.Length == 0) return;
 
             MergeRows(fpSpread, columns, 0, 0, fpSpread.ActiveSheet.Rows.Count, vertAlignment);
         }
 
-        private static void MergeRows(FpSpread fpSpread, int[] columns, int colPos, int rowPos, int rowLength, GridVerticalAlignment vertAlignment)
+        private static void MergeRows(this FpSpread fpSpread, int[] columns, int colPos, int rowPos, int rowLength, GridVerticalAlignment vertAlignment)
         {
             if (colPos >= columns.Length) return;
 
@@ -763,7 +814,7 @@ namespace P05_Business.Common.Helpers
             }
         }
 
-        private static int CountSameRows(FpSpread fpSpread, int column, int start, int length)
+        private static int CountSameRows(this FpSpread fpSpread, int column, int start, int length)
         {
             object value1 = GetValue(fpSpread, start, column);
 
@@ -787,7 +838,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="fpSpread"></param>
         /// <param name="fieldName"></param>
         /// <param name="otherFields"></param>
-        public static void MergeRowByColumns(FpSpread fpSpread, string columnName, string[] otherColumns)
+        public static void MergeRowByColumns(this FpSpread fpSpread, string columnName, string[] otherColumns)
         {
             // columnName의 컬럼 인덱스 찾기
             int column = GetColumnIndex(fpSpread, columnName);
@@ -837,7 +888,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="fpSpread"></param>
         /// <param name="fieldName"></param>
         /// <param name="colSpan"></param>
-        public static void MergeColumn(FpSpread fpSpread, string columnName, int colSpan)
+        public static void MergeColumn(this FpSpread fpSpread, string columnName, int colSpan)
         {
             int column = GetColumnIndex(fpSpread, columnName);
             for (int i = 0; i < fpSpread.ActiveSheet.Rows.Count; i++)
@@ -846,7 +897,7 @@ namespace P05_Business.Common.Helpers
             }
         }
 
-        public static void MergeColumn(FpSpread fpSpread, int row, string columnName, int colSpan)
+        public static void MergeColumn(this FpSpread fpSpread, int row, string columnName, int colSpan)
         {
             int column = GetColumnIndex(fpSpread, columnName);
             MergeColumn(fpSpread, row, column, colSpan);
@@ -858,7 +909,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="fpSpread"></param>
         /// <param name="fieldName"></param>
         /// <param name="colSpan"></param>
-        public static void MergeColumn(FpSpread fpSpread, int row, int column, int colSpan)
+        public static void MergeColumn(this FpSpread fpSpread, int row, int column, int colSpan)
         {
             CheckRowBounds(fpSpread, row);
             CheckColumnBounds(fpSpread, column);
@@ -871,7 +922,7 @@ namespace P05_Business.Common.Helpers
         /// <param name="fpSpread"></param>
         /// <param name="fieldName"></param>
         /// <param name="colSpan"></param>
-        public static void MergeColumnHeader(FpSpread fpSpread, string columnName, int colSpan)
+        public static void MergeColumnHeader(this FpSpread fpSpread, string columnName, int colSpan)
         {
             int column = GetColumnIndex(fpSpread, columnName);
             for (int i = 0; i < fpSpread.ActiveSheet.ColumnHeader.Rows.Count; i++)
@@ -880,7 +931,7 @@ namespace P05_Business.Common.Helpers
             }
         }
 
-        public static void MergeColumnHeader(FpSpread fpSpread, int row, string columnName, int colSpan)
+        public static void MergeColumnHeader(this FpSpread fpSpread, int row, string columnName, int colSpan)
         {
             int column = GetColumnIndex(fpSpread, columnName);
             MergeColumnHeader(fpSpread, row, column, colSpan);
@@ -892,14 +943,14 @@ namespace P05_Business.Common.Helpers
         /// <param name="fpSpread"></param>
         /// <param name="fieldName"></param>
         /// <param name="colSpan"></param>
-        public static void MergeColumnHeader(FpSpread fpSpread, int row, int column, int colSpan)
+        public static void MergeColumnHeader(this FpSpread fpSpread, int row, int column, int colSpan)
         {   
             CheckColumnBounds(fpSpread, column);
             fpSpread.ActiveSheet.ColumnHeader.Cells[row, column].ColumnSpan = colSpan;
         }
 
 
-        private static void CheckRowBounds(FpSpread fpSpread, int row)
+        private static void CheckRowBounds(this FpSpread fpSpread, int row)
         {
             if (row < 0 || row >= fpSpread.ActiveSheet.RowCount)
             {
@@ -907,7 +958,7 @@ namespace P05_Business.Common.Helpers
             }
         }
 
-        private static void CheckColumnBounds(FpSpread fpSpread, int column)
+        private static void CheckColumnBounds(this FpSpread fpSpread, int column)
         {
             if (column < 0 || column >= fpSpread.ActiveSheet.ColumnCount)
             {
@@ -945,7 +996,7 @@ namespace P05_Business.Common.Helpers
             }
         }
 
-        private static int[] ToColumnIndex(FpSpread fpSpread, string[] columnNames)
+        private static int[] ToColumnIndex(this FpSpread fpSpread, string[] columnNames)
         {
             if (columnNames == null || columnNames.Length == 0) return new int[0];
 
@@ -963,7 +1014,7 @@ namespace P05_Business.Common.Helpers
             //Console.WriteLine(string.Format("Row Changed = {0}", e.Row.));
         }
 
-        private static void SetTotal(FpSpread fpSpread, string[] keyColumns, string[] valueColumns)
+        private static void SetTotal(this FpSpread fpSpread, string[] keyColumns, string[] valueColumns)
         {
             if (keyColumns == null || keyColumns.Length == 0) return;
             if (valueColumns == null || valueColumns.Length == 0) return;
@@ -971,12 +1022,12 @@ namespace P05_Business.Common.Helpers
             SetTotal(fpSpread, ToColumnIndex(fpSpread, keyColumns), ToColumnIndex(fpSpread, valueColumns));
         }
 
-        private static void SetTotal(FpSpread fpSpread, int[] keyColumns, int[] valueColumns)
+        private static void SetTotal(this FpSpread fpSpread, int[] keyColumns, int[] valueColumns)
         {
             CalcTotal(fpSpread, keyColumns, 0, 0, fpSpread.ActiveSheet.Rows.Count, valueColumns);
         }
 
-        private static void CalcTotal(FpSpread fpSpread, int[] columns, int colPos, int rowPos, int rowLength, int[] valueColumns)
+        private static void CalcTotal(this FpSpread fpSpread, int[] columns, int colPos, int rowPos, int rowLength, int[] valueColumns)
         {
             if (colPos >= columns.Length) return;
 

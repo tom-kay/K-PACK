@@ -365,43 +365,7 @@
 		</Statement>
 
 		<Statement Id="mergeExportPacking">
-			MERGE INTO `tb_export_packing` AS target
-			USING (
-			SELECT
-			@InvoiceNo AS `InvoiceNo`,
-			@PackingId AS `PackingId`,
-			@OrderNo AS `OrderNo`,
-			@OrderDetailId AS `OrderDetailId`,
-			@PkgUnitCode AS `PkgUnitCode`,
-			@PkgStartNo AS `PkgStartNo`,
-			@PkgEndNo AS `PkgEndNo`,
-			@Qty AS `Qty`,
-			@PkgQty AS `PkgQty`,
-			@CompanyCode AS `CompanyCode`,
-			@CreateId AS `CreateId`,
-			@UpdateId AS `UpdateId`
-			) AS source
-			ON (
-			target.`InvoiceNo` = source.`InvoiceNo`
-			AND target.`PackingId` = source.`PackingId`
-			AND target.`CompanyCode` = source.`CompanyCode`
-			)
-			WHEN MATCHED THEN
-			UPDATE SET
-			target.`OrderNo` = source.`OrderNo`,
-			target.`OrderDetailId` = source.`OrderDetailId`,
-			target.`PkgUnitCode` = source.`PkgUnitCode`,
-			target.`PkgStartNo` = source.`PkgStartNo`,
-			target.`PkgEndNo` = source.`PkgEndNo`,
-			target.`Qty` = source.`Qty`,
-			target.`PkgQty` = source.`PkgQty`,
-			target.`DelYn` = 'N',
-			target.`UpdateId` = source.`UpdateId`,
-			target.`UpdateDt` = now(),
-			target.`DeleteId` = null,
-			target.`DeleteDt` = null
-			WHEN NOT MATCHED THEN
-			INSERT (
+			INSERT INTO `tb_export_packing` (
 			`InvoiceNo`,
 			`PackingId`,
 			`OrderNo`,
@@ -415,22 +379,33 @@
 			`DelYn`,
 			`CreateId`,
 			`CreateDt`
-			)
-			VALUES (
-			source.`InvoiceNo`,
-			source.`PackingId`,
-			source.`OrderNo`,
-			source.`OrderDetailId`,
-			source.`PkgUnitCode`,
-			source.`PkgStartNo`,
-			source.`PkgEndNo`,
-			source.`Qty`,
-			source.`PkgQty`,
-			source.`CompanyCode`,
+			) VALUES (
+			@InvoiceNo,
+			`soodal`.`FN_CreateExpPkgId`(@CompanyCode, @InvoiceNo, @PackingId),
+			@OrderNo,
+			@OrderDetailId,
+			@PkgUnitCode,
+			@PkgStartNo,
+			@PkgEndNo,
+			@Qty,
+			@PkgQty,
+			@CompanyCode,
 			'N',
-			source.`CreateId`,
-			now()
-			);
+			@CreateId,
+			NOW()
+			) ON DUPLICATE KEY UPDATE
+			`OrderNo` = VALUES(`OrderNo`),
+			`OrderDetailId` = VALUES(`OrderDetailId`),
+			`PkgUnitCode` = VALUES(`PkgUnitCode`),
+			`PkgStartNo` = VALUES(`PkgStartNo`),
+			`PkgEndNo` = VALUES(`PkgEndNo`),
+			`Qty` = VALUES(`Qty`),
+			`PkgQty` = VALUES(`PkgQty`),
+			`DelYn` = 'N',
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = NOW(),
+			`DeleteId` = NULL,
+			`DeleteDt` = NULL
 		</Statement>
 
 		<Statement Id="deleteExportPacking">
@@ -462,11 +437,14 @@
 			`inv`.`UpdateId`,
 			date_format(`inv`.`UpdateDt`, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
 			`inv`.`DeleteId`,
-			date_format(`inv`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+			date_format(`inv`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`,
+			`ord`.`BuyerPoNo`
 			FROM `tb_export_invoice` inv
-			WHERE `CompanyCode` = @CompanyCode
-			AND `InvoiceNo` = @InvoiceNo
-			AND `DelYn` != 'Y'
+			JOIN `soodal`.`tb_po_master` ord
+			ON `ord`.`OrderNo` = `inv`.`OrderNo`
+			WHERE `inv`.`CompanyCode` = @CompanyCode
+			AND `inv`.`InvoiceNo` = @InvoiceNo
+			AND `inv`.`DelYn` != 'Y'
 		</Statement>
 
 		<Statement Id="selectExportInvoice">
@@ -487,8 +465,11 @@
 			`inv`.`UpdateId`,
 			date_format(`inv`.`UpdateDt`, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
 			`inv`.`DeleteId`,
-			date_format(`inv`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+			date_format(`inv`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`,
+			`ord`.`BuyerPoNo`
 			FROM `tb_export_invoice` inv
+			JOIN `soodal`.`tb_po_master` ord
+			ON `ord`.`OrderNo` = `inv`.`OrderNo`
 			WHERE `InvoiceNo` = @InvoiceNo
 			AND `InvoiceId` = @InvoiceId
 			AND `CompanyCode` = @CompanyCode
@@ -497,70 +478,45 @@
 		</Statement>
 
 		<Statement Id="mergeExportInvoice">
-			MERGE INTO `tb_export_invoice` AS target
-			USING (
-			SELECT
-			@InvoiceNo AS `InvoiceNo`,
-			@InvoiceId AS `InvoiceId`,
-			@OrderNo AS `OrderNo`,
-			@OrderDetailId AS `OrderDetailId`,
-			@ItemLength AS `ItemLength`,
-			@UsQty AS `UsQty`,
-			@Qty AS `Qty`,
-			@UnitPrice AS `UnitPrice`,
-			@Amount AS `Amount`,
-			@CompanyCode AS `CompanyCode`,
-			@CreateId AS `CreateId`,
-			@UpdateId AS `UpdateId`
-			) AS source
-			ON (
-			target.`InvoiceNo` = source.`InvoiceNo`
-			AND target.`InvoiceId` = source.`InvoiceId`
-			AND target.`CompanyCode` = source.`CompanyCode`
-			)
-			WHEN MATCHED THEN
-			UPDATE SET
-			target.`OrderNo` = source.`OrderNo`,
-			target.`OrderDetailId` = source.`OrderDetailId`,
-			target.`ItemLength` = source.`ItemLength`,
-			target.`UsQty` = source.`UsQty`,
-			target.`Qty` = source.`Qty`,
-			target.`UnitPrice` = source.`UnitPrice`,
-			target.`Amount` = source.`Amount`,
-			target.`DelYn` = 'N',
-			target.`UpdateId` = source.`UpdateId`,
-			target.`UpdateDt` = now()
-			WHEN NOT MATCHED THEN
-			INSERT (
-			`InvoiceNo`,
-			`InvoiceId`,
-			`OrderNo`,
-			`OrderDetailId`,
-			`ItemLength`,
-			`UsQty`,
-			`Qty`,
-			`UnitPrice`,
-			`Amount`,
-			`CompanyCode`,
-			`DelYn`,
-			`CreateId`,
-			`CreateDt`
-			)
-			VALUES (
-			source.`InvoiceNo`,
-			source.`InvoiceId`,
-			source.`OrderNo`,
-			source.`OrderDetailId`,
-			source.`ItemLength`,
-			source.`UsQty`,
-			source.`Qty`,
-			source.`UnitPrice`,
-			source.`Amount`,
-			source.`CompanyCode`,
+			INSERT INTO tb_export_invoice (
+			InvoiceNo,
+			InvoiceId,
+			OrderNo,
+			OrderDetailId,
+			ItemLength,
+			UsQty,
+			Qty,
+			UnitPrice,
+			Amount,
+			CompanyCode,
+			DelYn,
+			CreateId,
+			CreateDt
+			) VALUES (
+			@InvoiceNo,
+			`soodal`.`FN_CreateExpInvId`(@CompanyCode, @InvoiceNo, @InvoiceId),
+			@OrderNo,
+			@OrderDetailId,
+			@ItemLength,
+			@UsQty,
+			@Qty,
+			@UnitPrice,
+			@Amount,
+			@CompanyCode,
 			'N',
-			source.`CreateId`,
-			now()
-			);
+			@CreateId,
+			NOW()
+			) ON DUPLICATE KEY UPDATE
+			OrderNo = VALUES(OrderNo),
+			OrderDetailId = VALUES(OrderDetailId),
+			ItemLength = VALUES(ItemLength),
+			UsQty = VALUES(UsQty),
+			Qty = VALUES(Qty),
+			UnitPrice = VALUES(UnitPrice),
+			Amount = VALUES(Amount),
+			DelYn = 'N',
+			UpdateId = VALUES(UpdateId),
+			UpdateDt = NOW();
 		</Statement>
 
 		<Statement Id="deleteExportInvoice">

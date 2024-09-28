@@ -197,14 +197,14 @@
 			cust.`TaskCharge`,
 			cust.`Remark`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `soodal`.`tb_customeremp` AS cust
+			FROM `soodal`.`TB_CUSTOMER_EMP` AS cust
 			WHERE cust.CustCode = @CustCode
-				AND cust.DelYn = 'N'
+			AND cust.DelYn = 'N'
 		</Statement>
 
 		<Statement Id="insertCustomerEmp">
 
-			INSERT INTO `soodal`.`tb_customeremp`
+			INSERT INTO `soodal`.`TB_CUSTOMER_EMP`
 			(`CustCode`,
 			`EmpIdx`,
 			`EmpName`,
@@ -249,7 +249,7 @@
 		</Statement>
 
 		<Statement Id="deleteCustomerEmp" >
-			UPDATE `soodal`.`tb_customeremp`
+			UPDATE `soodal`.`TB_CUSTOMER_EMP`
 			SET
 			`DelYn` = 'Y',
 			`DeleteId` = @DeleteId,

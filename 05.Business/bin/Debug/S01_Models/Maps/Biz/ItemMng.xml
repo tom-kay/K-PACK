@@ -22,7 +22,7 @@
 			`pack`.`Name` AS `DefaultPackingUnitName`,
 			`item`.`Remark`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `soodal`.`tb_itemgroup` AS item
+			FROM `soodal`.`tb_item_group` AS item
 			LEFT JOIN `soodal`.`TB_CODE_DETAIL` AS `each`
 			ON `each`.`MasterCode` = 'ITEMUNIT'
 			AND `each`.`Code` = `item`.`DefaultEachUnitCode`
@@ -56,7 +56,7 @@
 			`pack`.`Name` AS `DefaultPackingUnitName`,
 			`item`.`Remark`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `soodal`.`tb_itemgroup` AS item
+			FROM `soodal`.`tb_item_group` AS item
 			LEFT JOIN `soodal`.`TB_CODE_DETAIL` AS `each`
 			ON `each`.`MasterCode` = 'ITEMUNIT'
 			AND `each`.`Code` = `item`.`DefaultEachUnitCode`
@@ -70,7 +70,7 @@
 		</Statement>
 
 		<Statement Id="insertItemGroup">
-			INSERT INTO `soodal`.`tb_itemgroup`
+			INSERT INTO `soodal`.`tb_item_group`
 			(`GroupCode`,
 			`GroupName`,
 			`AliasName`,
@@ -109,7 +109,7 @@
 
 
 		<Statement Id="deleteItemGroup" >
-			UPDATE `soodal`.`tb_itemgroup`
+			UPDATE `soodal`.`tb_item_group`
 			SET
 			`DelYn` = 'Y',
 			`DeleteId` = @DeleteId,

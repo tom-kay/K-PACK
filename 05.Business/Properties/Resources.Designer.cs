@@ -83,6 +83,16 @@ namespace P05_Business.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap _58476_button_add_add {
+            get {
+                object obj = ResourceManager.GetObject("58476_button_add_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap _58560_add_add {
             get {
                 object obj = ResourceManager.GetObject("58560_add_add", resourceCulture);

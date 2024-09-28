@@ -37,10 +37,10 @@ namespace P05_Business.S01_Models.Dto.Biz
         public string PkgUnitCode { get; set; }
 
         [Description("포장시작번호")]
-        public int? PkgStartNo { get; set; }
+        public string PkgStartNo { get; set; }
 
         [Description("포장끝번호")]
-        public int? PkgEndNo { get; set; }
+        public string PkgEndNo { get; set; }
 
         [Description("수량")]
         public decimal? Qty { get; set; }

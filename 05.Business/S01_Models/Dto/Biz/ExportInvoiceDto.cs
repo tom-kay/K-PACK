@@ -39,5 +39,8 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("가격")]
         public decimal? Amount { get; set; }
 
+        [Description("수주번호")]
+        public string BuyerPoNo {  get; set; }
+
     }
 }
