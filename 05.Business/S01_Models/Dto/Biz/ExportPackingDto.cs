@@ -24,7 +24,7 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("발주목록ID")]
         public int? OrderDetailId { get; set; }
 
-        [Description("바이어 P/O No")]
+        [Description("수주번호")]
         public string BuyerPoNo { get; set; }
 
         [Description("제품번호")]

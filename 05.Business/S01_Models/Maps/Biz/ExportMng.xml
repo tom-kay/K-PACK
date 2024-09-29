@@ -318,6 +318,7 @@
 			`pack`.`PackingId`,
 			`pack`.`OrderNo`,
 			`pack`.`OrderDetailId`,
+			`ord`.`BuyerPoNo`,
 			`pack`.`PkgUnitCode`,
 			`pack`.`PkgStartNo`,
 			`pack`.`PkgEndNo`,
@@ -332,9 +333,11 @@
 			`pack`.`DeleteId`,
 			date_format(`pack`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
 			FROM `tb_export_packing` pack
-			WHERE `InvoiceNo` = @InvoiceNo
-			AND `CompanyCode` = @CompanyCode
-			AND `DelYn` != 'Y'
+			LEFT JOIN `soodal`.`tb_po_master` `ord`
+			ON `ord`.`OrderNo` = `pack`.`OrderNo`
+			WHERE `pack`.`InvoiceNo` = @InvoiceNo
+			AND `pack`.`CompanyCode` = @CompanyCode
+			AND `pack`.`DelYn` != 'Y'
 		</Statement>
 
 		<Statement Id="selectExportPacking">
@@ -343,6 +346,7 @@
 			`pack`.`PackingId`,
 			`pack`.`OrderNo`,
 			`pack`.`OrderDetailId`,
+			`ord`.`BuyerPoNo`,
 			`pack`.`PkgUnitCode`,
 			`pack`.`PkgStartNo`,
 			`pack`.`PkgEndNo`,
@@ -356,11 +360,13 @@
 			date_format(`pack`.`UpdateDt`, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
 			`pack`.`DeleteId`,
 			date_format(`pack`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
-			FROM `tb_export_packing` pack
-			WHERE `InvoiceNo` = @InvoiceNo
-			AND `PackingId` = @PackingId
-			AND `CompanyCode` = @CompanyCode
-			AND `DelYn` != 'Y'
+			FROM `tb_export_packing` `pack`
+			LEFT JOIN `soodal`.`tb_po_master` `ord`
+			ON `ord`.`OrderNo` = `pack`.`OrderNo`
+			WHERE `pack`.`InvoiceNo` = @InvoiceNo
+			AND `pack`.`PackingId` = @PackingId
+			AND `pack`.`CompanyCode` = @CompanyCode
+			AND `pack`.`DelYn` != 'Y'
 			LIMIT 1
 		</Statement>
 

@@ -554,6 +554,7 @@ namespace P05_Business.S03_Views.Biz
                     (spdInvoiceList.DataSource as DataTable).AcceptChanges();
                 }
 
+
             }
             else
             {
@@ -706,8 +707,8 @@ namespace P05_Business.S03_Views.Biz
             SpreadHelper.AddTextColumn(spdPackingList, "ItemDescription", "ITEM.DESC", false, true, 300, 100, SpreadHelper.GridHorizontalAlignment.Left);
             SpreadHelper.AddTextColumn(spdPackingList, "PkgUnitCode", "PKG.UNIT.CODE", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "PkgUnitName", "PKG.UNIT.NAME", false, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "Qty", "Q'TY", true, true, 100, 200, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "PkgQty", "PKG.Q'TY", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "Qty", "Q'TY", true, true, 100, 200, SpreadHelper.GridHorizontalAlignment.Right);
+            SpreadHelper.AddTextColumn(spdPackingList, "PkgQty", "PKG.Q'TY", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Right);
             SpreadHelper.MergeColumnHeader(spdPackingList, "PkgStartNo", 2);
             SpreadHelper.EndSpread(spdPackingList);
 

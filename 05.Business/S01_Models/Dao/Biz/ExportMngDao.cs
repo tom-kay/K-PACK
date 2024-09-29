@@ -4,10 +4,12 @@ using P05_Business.S01_Models.Dto.Biz;
 using SmartSql.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace P05_Business.S01_Models.Dao.Biz
 {
@@ -79,9 +81,6 @@ namespace P05_Business.S01_Models.Dao.Biz
                                     SqlId = "deleteExportContainer",
                                     Request = container
                                 };
-
-                                log.Info(SqlMapper.SqlBuilder.BuildSql(context));
-                                save = SqlMapper.Execute(context);
                             }
                             else
                             {
@@ -91,10 +90,10 @@ namespace P05_Business.S01_Models.Dao.Biz
                                     SqlId = "mergeExportContainer",
                                     Request = container
                                 };
-
-                                log.Info(SqlMapper.SqlBuilder.BuildSql(context));
-                                save = SqlMapper.Execute(context);
                             }
+
+                            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+                            save = SqlMapper.Execute(context);
 
                             if (save < 0) break;
                         }
@@ -104,12 +103,24 @@ namespace P05_Business.S01_Models.Dao.Biz
                     {
                         foreach (ExportPackingDto packing in packings)
                         {
-                            context = new RequestContext
+                            if (packing.DataState == System.Data.DataRowState.Deleted)
                             {
-                                Scope = "Biz.ExportMng",
-                                SqlId = "mergeExportPacking",
-                                Request = packing
-                            };
+                                context = new RequestContext
+                                {
+                                    Scope = "Biz.ExportMng",
+                                    SqlId = "deleteExportPacking",
+                                    Request = packing
+                                };
+                            }
+                            else
+                            {
+                                context = new RequestContext
+                                {
+                                    Scope = "Biz.ExportMng",
+                                    SqlId = "mergeExportPacking",
+                                    Request = packing
+                                };
+                            }
 
                             log.Info(SqlMapper.SqlBuilder.BuildSql(context));
                             save = SqlMapper.Execute(context);
@@ -122,12 +133,24 @@ namespace P05_Business.S01_Models.Dao.Biz
                     {
                         foreach (ExportInvoiceDto invoice in invoices)
                         {
-                            context = new RequestContext
+                            if (invoice.DataState == System.Data.DataRowState.Deleted)
                             {
-                                Scope = "Biz.ExportMng",
-                                SqlId = "mergeExportInvoice",
-                                Request = invoice
-                            };
+                                context = new RequestContext
+                                {
+                                    Scope = "Biz.ExportMng",
+                                    SqlId = "deleteExportInvoice",
+                                    Request = invoice
+                                };
+                            }
+                            else
+                            {
+                                context = new RequestContext
+                                {
+                                    Scope = "Biz.ExportMng",
+                                    SqlId = "mergeExportInvoice",
+                                    Request = invoice
+                                };
+                            }
 
                             log.Info(SqlMapper.SqlBuilder.BuildSql(context));
                             save = SqlMapper.Execute(context);

@@ -32,7 +32,7 @@ namespace P05_Business.Common.Helpers
             public static readonly Color AlternateRow = Color.GhostWhite;
             public static readonly Color Selection = Color.Blue;
             public static readonly Color Edit = Color.White;
-            public static readonly Color Readonly = Color.White;
+            public static readonly Color Readonly = Color.FromArgb(240,240,240);
             public static readonly Color Mandatory = SystemColors.Info;
             public static readonly Color SubTotal = Color.Azure;
             public static readonly Color GrandTotal = Color.Blue;
@@ -78,11 +78,12 @@ namespace P05_Business.Common.Helpers
         /// <param name="style"></param>
         public static void CreateSpread(this FpSpread fpSpread, string name)
         {
+            fpSpread.LegacyBehaviors = LegacyBehaviors.All;
+
             // Skin 설정
             fpSpread.Skin = DefaultSpreadSkins.Classic;
-            fpSpread.ActiveSheet.DefaultStyle.VisualStyles = VisualStyles.Off;
-            fpSpread.InterfaceRenderer = null;
-
+            fpSpread.ActiveSheet.DefaultStyle.VisualStyles = VisualStyles.On;
+            
             fpSpread.BorderStyle = BorderStyle.None;
             fpSpread.TabStripPolicy = TabStripPolicy.Never;
             fpSpread.ColumnSplitBoxPolicy = SplitBoxPolicy.Never;
@@ -97,7 +98,7 @@ namespace P05_Business.Common.Helpers
             fpSpread.ActiveSheet.ColumnHeader.DefaultStyle.BackColor = GridBackColor.Header;
             fpSpread.ActiveSheet.RowHeader.DefaultStyle.BackColor = GridBackColor.Header;
             fpSpread.ActiveSheet.SheetCornerStyle.BackColor = GridBackColor.Header;
-            //fpSpread.ActiveSheet.SelectionBackColor = GridBackColor.Selection;
+            fpSpread.ActiveSheet.SelectionBackColor = GridBackColor.Selection;
             //fpSpread.ActiveSheet.SelectionForeColor = GridForeColor.Selection;
             fpSpread.Tag = name.ToString();
 
@@ -145,8 +146,6 @@ namespace P05_Business.Common.Helpers
             fpSpread.ActiveSheet.SelectionPolicy = SelectionPolicy.Single;
             //}
 
-            fpSpread.ActiveSheet.Rows.Default.Height = 22;
-
             foreach (Row hRow in fpSpread.ActiveSheet.ColumnHeader.Rows)
             {
                 hRow.Height = 35f;
@@ -154,7 +153,7 @@ namespace P05_Business.Common.Helpers
                 hRow.BackColor = Color.CornflowerBlue;
                 hRow.ForeColor = Color.White;
             }
-            fpSpread.ActiveSheet.Rows.Default.Height = 35f;
+            fpSpread.ActiveSheet.Rows.Default.Height = 22f;
             fpSpread.ActiveSheet.RowHeader.Visible = false;
 
             // 그리드의 모든 행열 삭제
