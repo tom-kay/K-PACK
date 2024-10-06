@@ -641,3 +641,8 @@ G:\workspace\K-PACK\05.Business\bin\Debug\Microsoft.Extensions.Primitives.xml
 G:\workspace\K-PACK\05.Business\bin\Debug\System.Text.Encodings.Web.xml
 G:\workspace\K-PACK\05.Business\bin\Debug\System.Text.Json.xml
 G:\workspace\K-PACK\05.Business\bin\Debug\System.ValueTuple.xml
+G:\workspace\K-PACK\05.Business\obj\Debug\SOODAL.TrustInfo.xml
+G:\workspace\K-PACK\05.Business\obj\Debug\SOODAL.exe.manifest
+G:\workspace\K-PACK\05.Business\bin\Debug\SOODAL.exe.manifest
+G:\workspace\K-PACK\05.Business\bin\Debug\SOODAL.application
+G:\workspace\K-PACK\05.Business\obj\Debug\SOODAL.application

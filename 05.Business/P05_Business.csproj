@@ -12,6 +12,27 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>ftp://kayroot.dothome.co.kr/html/soodal/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://kayroot.dothome.co.kr/soodal/</InstallUrl>
+    <TargetCulture>ko-KR</TargetCulture>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,10 +64,20 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>false</GenerateManifests>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>408B70941F8DFDAD9523D0A9C22D16C26305C3B3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
@@ -716,14 +747,6 @@
     <Content Include="Resource\Images\58490_remove_remove_button.png" />
     <Content Include="Resource\Images\58491_button_rss_rss_feed_feed.png" />
     <Content Include="Resource\Images\58492_stop_button_stop.png" />
-    <Content Include="Resource\Images\58493_add_add_button_white_white.png" />
-    <Content Include="Resource\Images\58494_active_white_check_active_button_white_check.png" />
-    <Content Include="Resource\Images\58495_white_white_help_help_button.png" />
-    <Content Include="Resource\Images\58496_info_white_info_button_white.png" />
-    <Content Include="Resource\Images\58497_white_load_button_load_white.png" />
-    <Content Include="Resource\Images\58498_white_remove_button_white_remove.png" />
-    <Content Include="Resource\Images\58499_white_rss_feed_white_button_feed_rss.png" />
-    <Content Include="Resource\Images\58500_white_stop_white_stop_button.png" />
     <Content Include="Resource\Images\58501_calendar_2_calendar.png" />
     <Content Include="Resource\Images\58502_calendar_calendar.png" />
     <Content Include="Resource\Images\58503_camera_camera.png" />
@@ -853,8 +876,6 @@
     <Content Include="Resource\Images\58627_window_move_window_move.png" />
     <Content Include="Resource\Images\58628_resize_window_window_resize.png" />
     <Content Include="Resource\Images\58629_window_window.png" />
-    <Content Include="Resource\Images\minus_icon.ico" />
-    <Content Include="Resource\Images\plus_icon.ico" />
     <Content Include="Resource\Images\accept_sub_sub_accept_black.png" />
     <Content Include="Resource\Images\access_black_access.png" />
     <Content Include="Resource\Images\active_database_database_active.png" />
@@ -1199,6 +1220,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptOrderDucu.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="P05_Business_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Resource\Font\D2Coding-Ver1.3.2-20180524-all.ttc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1277,7 +1299,18 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>

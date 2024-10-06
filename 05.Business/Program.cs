@@ -1,4 +1,5 @@
-﻿using P02_K_CONTROL_WIN;
+﻿using Microsoft.Win32;
+using P02_K_CONTROL_WIN;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -17,8 +18,8 @@ namespace P05_Business
 		[STAThread]
 		static void Main()
 		{
-			SystemHelper.SetupSystemFont();	//프로그램에서 사용할 폰트 설치
-			
+            
+            SystemHelper.SetupSystemFont();	//프로그램에서 사용할 폰트 설치
 
             if (IsExistProcessMutex(Process.GetCurrentProcess().ProcessName))
 			{

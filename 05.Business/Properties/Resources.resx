@@ -118,17 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="58562_remove_remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Images\58562_remove_remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\loading.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="58560_add_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Images\58560_add_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="may_2009_event_calendar_may_2009_event_calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Images\may_2009_event_calendar_may_2009_event_calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save_guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Images\save_guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="search_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Images\search_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="58476_button_add_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Images\58476_button_add_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="arrow_blue_arrow_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Images\arrow_blue_arrow_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,22 +148,16 @@
   <data name="loading2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\loading2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="may_2009_event_calendar_may_2009_event_calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Images\may_2009_event_calendar_may_2009_event_calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="58561_check_check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Images\58561_check_check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="inbox_inbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Images\inbox_inbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="58562_remove_remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Images\58562_remove_remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="58460_down_arrow_arrow_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resource\Images\58460_down_arrow_arrow_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="58560_add_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Images\58560_add_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="58476_button_add_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resource\Images\58476_button_add_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="inbox_inbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resource\Images\inbox_inbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
