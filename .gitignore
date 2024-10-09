@@ -3,3 +3,5 @@
 ################################################################################
 
 /05.Business/SmartSqlMapConfig.xml
+/05.Business/bin/*
+/05.Business/obj/*

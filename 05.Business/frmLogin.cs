@@ -21,9 +21,12 @@ namespace P05_Business
         public frmLogin()
         {
             InitializeComponent();
-			
-			//회사로고 표시
-			picLogo.Image = Image.FromFile(GlobalVariables.GetLogoFileImage);
+
+			//파일 경로가 없으면 경로 생성
+			FileHelper.CreateDirectoryIfNotExists(GlobalVariables.GetLogoFileImage);
+
+            //회사로고 표시
+            picLogo.Image = Image.FromFile(GlobalVariables.GetLogoFileImage);
 
 		}
 

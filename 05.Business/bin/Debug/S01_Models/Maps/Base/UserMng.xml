@@ -41,16 +41,16 @@
 			FROM `tb_user` AS user
 			JOIN `tb_company` AS com
 			ON user.CompanyCode = com.CompanyCode
-			LEFT JOIN TB_CODE_DETAIL AS dept
+			LEFT JOIN tb_code_detail AS dept
 			ON dept.MasterCode = 'DEPARTMENT'
 			AND dept.`Code` = `user`.`DepartmentCode`
-			LEFT JOIN TB_CODE_DETAIL AS team
+			LEFT JOIN tb_code_detail AS team
 			ON team.MasterCode = 'TEAM'
 			AND team.`Code` = `user`.`TeamCode`
-			LEFT JOIN TB_CODE_DETAIL AS pos
+			LEFT JOIN tb_code_detail AS pos
 			ON pos.MasterCode = 'POSITION'
 			AND pos.`Code` = `user`.`PositionCode`
-			LEFT JOIN TB_CODE_DETAIL AS job
+			LEFT JOIN tb_code_detail AS job
 			ON job.MasterCode = 'JOBTYPE'
 			AND job.`Code` = `user`.`JobCode`
 			WHERE 1=1
@@ -226,18 +226,18 @@
 			user.`TaskCharge`,
 			user.`LoginId`
 			FROM `tb_user` AS user
-			JOIN `tb_Company` AS com
+			JOIN `tb_company` AS com
 			ON user.CompanyCode = com.CompanyCode
-			LEFT JOIN TB_CODE_DETAIL AS dept
+			LEFT JOIN tb_code_detail AS dept
 			ON dept.MasterCode = 'DEPARTMENT'
 			AND dept.`Code` = `user`.`DepartmentCode`
-			LEFT JOIN TB_CODE_DETAIL AS team
+			LEFT JOIN tb_code_detail AS team
 			ON team.MasterCode = 'TEAM'
 			AND team.`Code` = `user`.`TeamCode`
-			LEFT JOIN TB_CODE_DETAIL AS pos
+			LEFT JOIN tb_code_detail AS pos
 			ON pos.MasterCode = 'POSITION'
 			AND pos.`Code` = `user`.`PositionCode`
-			LEFT JOIN TB_CODE_DETAIL AS job
+			LEFT JOIN tb_code_detail AS job
 			ON job.MasterCode = 'JOBTYPE'
 			AND job.`Code` = `user`.`JobCode`
 			WHERE user.CompanyCode = @CompanyCode

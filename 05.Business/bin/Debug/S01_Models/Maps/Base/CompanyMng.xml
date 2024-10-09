@@ -25,7 +25,7 @@
 			, `com`.`AddressE1`
 			, `com`.`AddressE2`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `TB_COMPANY` AS com
+			FROM `tb_company` AS com
 			WHERE 1=1
 			<Switch Prepend="And" Property="DelYn">
 				<Case CompareValue="Y">
@@ -52,8 +52,8 @@
 			, `com`.`AddressE1`
 			, `com`.`AddressE2`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `TB_COMPANY` AS com
-			LEFT JOIN TB_CODE_DETAIL AS nat
+			FROM `tb_company` AS com
+			LEFT JOIN tb_code_detail AS nat
 			ON nat.MasterCode = 'NATIONALITY'
 			AND nat.`code` = com.Nationality
 			WHERE `com`.`CompanyCode` = @CompanyCode
@@ -61,7 +61,7 @@
 
 		<Statement Id="insertCompany">
 
-			INSERT INTO `TB_COMPANY`
+			INSERT INTO `tb_company`
 			(`CompanyCode`,
 			`Nationality`,
 			`HeadOffice`,
@@ -113,7 +113,7 @@
 		
 
 		<Statement Id="deleteCompany" >
-			UPDATE `TB_COMPANY`
+			UPDATE `tb_company`
 			SET
 			`DelYn` = @DelYn,
 			`DeleteId` = @DeleteId,

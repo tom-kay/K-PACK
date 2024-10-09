@@ -34,7 +34,7 @@
 			cust.`Remark`
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `tb_customer` AS cust
-			LEFT JOIN TB_CODE_DETAIL AS nat
+			LEFT JOIN tb_code_detail AS nat
 			ON nat.MasterCode = 'NATIONALITY'
 			AND cust.NationCode = nat.`Code`
 			WHERE CompanyCode = @CompanyCode
@@ -93,7 +93,7 @@
 			cust.`Remark`
 			<Include Prepend="" RefId="SelectAdd"/>
 			FROM `tb_customer` AS cust
-			LEFT JOIN TB_CODE_DETAIL AS nat
+			LEFT JOIN tb_code_detail AS nat
 			ON nat.MasterCode = 'NATIONALITY'
 			AND nat.`code` = cust.NationCode
 			WHERE cust.CustCode = @CustCode
@@ -197,14 +197,14 @@
 			cust.`TaskCharge`,
 			cust.`Remark`
 			<Include Prepend="" RefId="SelectAdd"/>
-			FROM `soodal`.`TB_CUSTOMER_EMP` AS cust
+			FROM `soodal`.`tb_customer_emp` AS cust
 			WHERE cust.CustCode = @CustCode
 			AND cust.DelYn = 'N'
 		</Statement>
 
 		<Statement Id="insertCustomerEmp">
 
-			INSERT INTO `soodal`.`TB_CUSTOMER_EMP`
+			INSERT INTO `soodal`.`tb_customer_emp`
 			(`CustCode`,
 			`EmpIdx`,
 			`EmpName`,
@@ -249,7 +249,7 @@
 		</Statement>
 
 		<Statement Id="deleteCustomerEmp" >
-			UPDATE `soodal`.`TB_CUSTOMER_EMP`
+			UPDATE `soodal`.`tb_customer_emp`
 			SET
 			`DelYn` = 'Y',
 			`DeleteId` = @DeleteId,
@@ -264,7 +264,7 @@
 			SELECT cust.`CustCode`,
 			cust.`CustName`
 			FROM `tb_customer` AS cust
-			LEFT JOIN TB_CODE_DETAIL AS nat
+			LEFT JOIN tb_code_detail AS nat
 			ON nat.MasterCode = 'NATIONALITY'
 			AND cust.NationCode = nat.`Code`
 			WHERE CompanyCode = @CompanyCode

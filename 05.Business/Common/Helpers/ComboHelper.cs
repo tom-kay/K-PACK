@@ -1,23 +1,27 @@
-﻿using P02_K_CONTROL_WIN;
+﻿using log4net;
+using P02_K_CONTROL_WIN;
 using P05_Business.S01_Models.Dto.Base;
 using P05_Business.S01_Models.Dto.Biz;
 using P05_Business.S02_Controllers.Base;
 using P05_Business.S02_Controllers.Biz;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace P05_Business.Common.Helpers
 {
     public class ComboHelper
 	{
-		/// <summary>
-		/// 콤보박스 초기설정
-		/// </summary>
-		/// <param name="cbo">콤보박스</param>
-		/// <param name="masterCode">조회대상 MasterCode</param>
-		/// <param name="allItem">전체 항목 추가</param>
-		/// <param name="blankItem">빈 항목 추가</param>
-		public static void InitComboBox(KComboBox cbo, string masterCode, bool allItem = false, bool blankItem = false)
+        private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
+        /// <summary>
+        /// 콤보박스 초기설정
+        /// </summary>
+        /// <param name="cbo">콤보박스</param>
+        /// <param name="masterCode">조회대상 MasterCode</param>
+        /// <param name="allItem">전체 항목 추가</param>
+        /// <param name="blankItem">빈 항목 추가</param>
+        public static void InitComboBox(KComboBox cbo, string masterCode, bool allItem = false, bool blankItem = false)
 		{
 			try
 			{
@@ -72,7 +76,9 @@ namespace P05_Business.Common.Helpers
 
 				List<CompanyInfoDto> items = new CompanyMngController().GetCompanyInfoList(param);
 
-				if (allItem)
+                log.Info($"ITEMS : {items}");
+
+                if (allItem)
 				{
 					items.Insert(0, new CompanyInfoDto() { CompanyCode = "", CompanyGroup = "전체" });
 				}

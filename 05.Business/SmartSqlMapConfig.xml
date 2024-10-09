@@ -3,8 +3,8 @@
 	<Settings IsWatchConfigFile="true" IgnoreParameterCase="false" EnablePropertyChangedTrack="true"/>
 	<Database>
 		<DbProvider Name="MySqlClientFactory" Type="MySql.Data.MySqlClient.MySqlClientFactory, MySql.Data"/>
-		<Write Name="WriteDB" ConnectionString="Server=localhost;Port=3306;Database=soodal;Uid=root;Pwd=root;"/>
-		<Read Name="ReadDB" ConnectionString="Server=localhost;Port=3306;Database=soodal;Uid=root;Pwd=root;" Weight="100"/>
+		<Write Name="WriteDB" ConnectionString="Server=127.0.0.1;Port=3306;Database=soodal;Uid=root;Pwd=root;"/>
+		<Read Name="ReadDB" ConnectionString="Server=127.0.0.1;Port=3306;Database=soodal;Uid=root;Pwd=root;" Weight="100"/>
 	</Database>
 	<SmartSqlMaps>
 		<SmartSqlMap Path="S01_Models/Maps" Type="Directory"/>

@@ -377,7 +377,7 @@
 			ON `ord`.`OrderNo` = `dtl`.`OrderNo`
 			AND `ord`.`CompanyCode` = `dtl`.`CompanyCode`
 			AND `dtl`.`DelYn` = 'N'
-			LEFT JOIN TB_CODE_DETAIL cd1
+			LEFT JOIN tb_code_detail cd1
 			ON `cd1`.`MasterCode` = 'ITEMUNIT'
 			AND `cd1`.`Code` = `dtl`.`UnitCode`
 			WHERE`ord`.`CompanyCode` = @CompanyCode

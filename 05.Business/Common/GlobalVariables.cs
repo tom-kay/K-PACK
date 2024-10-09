@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Logging;
+using System;
 using System.Collections.Generic;
+using System.Deployment.Application;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -87,14 +89,22 @@ namespace P05_Business.Common
 		Update,
 	}
 
-	public class GlobalVariables
+	public static class GlobalVariables
 	{
-		public static string ExcutePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-		public const string LogoFilePath = "Resource";
+        //public static string ExcutePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        public static string ExcutePath = @"C:\SOODAL";
+        public const string LogoFilePath = "Resource";
 		public const string LogoFile = "Logo.jpg";
 
-		public static string GetLogoFileImage { get { return Path.Combine(GlobalVariables.ExcutePath, GlobalVariables.LogoFilePath, GlobalVariables.LogoFile); } }
 
-	}
+        static string configPath = string.Empty;
 
+
+        public static string CLICKONCE_CONFIG_FILE = Path.Combine(ApplicationDeployment.IsNetworkDeployed ? Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data") : Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "SmartSqlMapConfig.xml");
+        public const string CONNECTION_CONFIG_FILE = @"C:\SOODAL\Network\SmartSqlMapConfig.xml";
+
+
+        public static string GetLogoFileImage { get { return Path.Combine(GlobalVariables.ExcutePath, GlobalVariables.LogoFilePath, GlobalVariables.LogoFile); } }
+
+    }
 }

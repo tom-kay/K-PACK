@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
-    <PublishUrlHistory>ftp://kayroot.dothome.co.kr/html/soodal/|ftp://kayroot.dothome.co.kr/|ftp://kayroot.dothome.co.kr/soodal/|kayroot.dothome.co.kr/soodal/|/soodal/</PublishUrlHistory>
+    <PublishUrlHistory>G:\workspace\Clickonce\|ftp://kayroot.dothome.co.kr/html/soodal/|ftp://kayroot.dothome.co.kr/|ftp://kayroot.dothome.co.kr/soodal/|kayroot.dothome.co.kr/soodal/</PublishUrlHistory>
     <InstallUrlHistory>http://kayroot.dothome.co.kr/soodal/|http://kayroot.dothome.co.kr/html/soodal/|http://kayroot.dothome.co.kr/html/soodal/publish.htm/</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory />
@@ -13,5 +13,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win64_x64\dotnet\</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
   </PropertyGroup>
 </Project>
