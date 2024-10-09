@@ -28,41 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-			this.pnlLogo.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
-			this.pnlBody.SuspendLayout();
-			this.pnlLogin.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// txtPass
-			// 
-			this.txtPass.PasswordChar = '●';
-			// 
-			// btnlogin
-			// 
-			this.btnlogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
-			this.btnlogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-			this.btnlogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
-			this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
-			// 
-			// frmLogin
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-			this.ClientSize = new System.Drawing.Size(910, 305);
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Name = "frmLogin";
-			this.Load += new System.EventHandler(this.frmLogin_Load);
-			this.pnlLogo.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
-			this.pnlBody.ResumeLayout(false);
-			this.pnlLogin.ResumeLayout(false);
-			this.pnlLogin.PerformLayout();
-			this.ResumeLayout(false);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
+            this.pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
+            this.pnlBody.SuspendLayout();
+            this.pnlLogin.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // txtPass
+            // 
+            this.txtPass.PasswordChar = '●';
+            // 
+            // btnlogin
+            // 
+            this.btnlogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
+            this.btnlogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnlogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
+            // 
+            // frmLogin
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.ClientSize = new System.Drawing.Size(910, 305);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmLogin";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.pnlLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
+            this.pnlBody.ResumeLayout(false);
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
+            this.ResumeLayout(false);
 
         }
 

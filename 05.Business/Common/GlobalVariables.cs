@@ -92,7 +92,8 @@ namespace P05_Business.Common
 	public static class GlobalVariables
 	{
         //public static string ExcutePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        public static string ExcutePath = @"C:\SOODAL";
+		public static string SYSTEM_DRIVE = Environment.GetFolderPath(Environment.SpecialFolder.System).Substring(0, 3);
+        public const string ExcutePath = "SOODAL";
         public const string LogoFilePath = "Resource";
 		public const string LogoFile = "Logo.jpg";
 
@@ -100,11 +101,11 @@ namespace P05_Business.Common
         static string configPath = string.Empty;
 
 
-        public static string CLICKONCE_CONFIG_FILE = Path.Combine(ApplicationDeployment.IsNetworkDeployed ? Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data") : Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "SmartSqlMapConfig.xml");
-        public const string CONNECTION_CONFIG_FILE = @"C:\SOODAL\Network\SmartSqlMapConfig.xml";
+        public static string CLICKONCE_CONFIG_FILE = Path.Combine(ApplicationDeployment.IsNetworkDeployed ? AppDomain.CurrentDomain.BaseDirectory : Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "SmartSqlMapConfig.xml");
+        public static string CONNECTION_CONFIG_FILE = Path.Combine(SYSTEM_DRIVE, @"SOODAL\Network\SmartSqlMapConfig.xml");
 
 
-        public static string GetLogoFileImage { get { return Path.Combine(GlobalVariables.ExcutePath, GlobalVariables.LogoFilePath, GlobalVariables.LogoFile); } }
+        public static string GetLogoFileImage { get { return Path.Combine(SYSTEM_DRIVE, ExcutePath, LogoFilePath, LogoFile); } }
 
     }
 }
