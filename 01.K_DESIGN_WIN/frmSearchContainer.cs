@@ -25,7 +25,8 @@ namespace P01_K_DESIGN_WIN
 		{
 			FormSettings.Control_SetDesign(this);
 			FormSettings.Control_SetEvents(this);    //이벤트 할당
-		}
+            FormSettings.SetTabIndexes(this);   // 탭인덱스 할당
+        }
 
 		private void btnInit_Click(object sender, EventArgs e)
 		{

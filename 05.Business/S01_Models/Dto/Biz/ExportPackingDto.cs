@@ -18,6 +18,10 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("팩킹리스트ID")]
         public int? PackingId { get; set; }
 
+        [Required]
+        [Description("정렬순번")]
+        public int? PackingSeq { get; set; }
+
         [Description("발주번호")]
         public string OrderNo { get; set; }
 

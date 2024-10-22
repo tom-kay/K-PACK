@@ -229,6 +229,9 @@ namespace P05_Business.S03_Views.Biz
 
                 if (KMessageBox.Show("저장 하시겠습니까?", "저장", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
 
+                /*컨테이너, 팩킹리스트, 인보이스에 각각 현재의 Row 순번을 부여한다.*/
+                SetDetailRowNum();
+
                 ResultCRUD save = SaveData();
 
                 if (save == ResultCRUD.SaveSuccessData)
@@ -685,6 +688,7 @@ namespace P05_Business.S03_Views.Biz
             SpreadHelper.CreateSpread(spdContainerList, "ContainerList");
             SpreadHelper.AddTextColumn(spdContainerList, "InvoiceNo", "INV.NO", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdContainerList, "ContainerId", "CNTR.ID", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdContainerList, "ContainerSeq", "CNTR.SEQ", true, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdContainerList, "ContainerNo", "CNTR.NO", true, true, 250, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdContainerList, "SealNo1", "SEAL.NO.1", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdContainerList, "SealNo2", "SEAL.NO.2", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
@@ -698,6 +702,7 @@ namespace P05_Business.S03_Views.Biz
             SpreadHelper.CreateSpread(spdPackingList, "PackingList");
             SpreadHelper.AddTextColumn(spdPackingList, "InvoiceNo", "INV.NO", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "PackingId", "PACK.ID", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "PackingSeq", "PACK.SEQ", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "PkgStartNo", "PKG.NO", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "PkgEndNo", "PKG.NO", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "OrderNo", "발주번호", false, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
@@ -718,6 +723,7 @@ namespace P05_Business.S03_Views.Biz
             SpreadHelper.CreateSpread(spdInvoiceList, "InvoiceList");
             SpreadHelper.AddTextColumn(spdInvoiceList, "InvoiceNo", "INV.NO", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdInvoiceList, "InvoiceId", "INV.ID", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdInvoiceList, "InvoiceSeq", "INV.SEQ", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdInvoiceList, "OrderNo", "ORD.NO", false, false, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdInvoiceList, "OrderDetailId", "ORD.ID", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdInvoiceList, "BuyerPoNo", "수주번호", false, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
@@ -870,8 +876,30 @@ namespace P05_Business.S03_Views.Biz
             return true;
         }
 
+        private void SetDetailRowNum()
+        {
+            
+            // spdContainerList
+            foreach (Row row in spdContainerList.ActiveSheet.Rows)
+            {
+                spdContainerList.SetValue(row.Index, "ContainerSeq", row.Index + 1);
+            }
+
+            //spdPackingList
+            foreach (Row row in spdPackingList.ActiveSheet.Rows)
+            {
+                spdPackingList.SetValue(row.Index, "PackingSeq", row.Index + 1);
+            }
+
+            //spdInvoiceList
+            foreach (Row row in spdInvoiceList.ActiveSheet.Rows)
+            {
+                spdInvoiceList.SetValue(row.Index, "InvoiceSeq", row.Index + 1);
+            }
+
+        }
+
+
         #endregion -- Method
-
-
     }
 }

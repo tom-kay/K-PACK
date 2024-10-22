@@ -87,6 +87,12 @@
     <Compile Include="KDropdownMenu.Designer.cs">
       <DependentUpon>KDropdownMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="KNumberBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KNumberBox.Designer.cs">
+      <DependentUpon>KNumberBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="KPeriodDateBox.cs">
       <SubType>UserControl</SubType>
     </Compile>

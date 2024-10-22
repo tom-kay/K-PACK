@@ -332,7 +332,7 @@
 			tb_customer cust2 ON cust2.CustCode = pm.WorkCustCode
 			AND cust2.CompanyCode = pm.CompanyCode
 			LEFT OUTER JOIN
-			TB_CODE_DETAIL cd1 ON cd1.MasterCode = 'ITEMUNIT'
+			tb_code_detail cd1 ON cd1.MasterCode = 'ITEMUNIT'
 			AND cd1.Code = pd.UnitCode
 			WHERE pm.OrderNo = @OrderNo
 			AND pm.CompanyCode = @CompanyCode

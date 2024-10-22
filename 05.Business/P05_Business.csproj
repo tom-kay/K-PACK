@@ -500,11 +500,12 @@
     <Compile Include="S03_Views\Popup\Common\frmPortCodePopup.Designer.cs">
       <DependentUpon>frmPortCodePopup.cs</DependentUpon>
     </Compile>
-    <Compile Include="S04_Reports\Rpt\rptOrderDucu.cs">
+    <Compile Include="S04_Reports\Rpt\rptOrderDocu.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rptOrderDucu.rpt</DependentUpon>
+      <DependentUpon>rptOrderDocu.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="S04_Reports\Xsd\OrderDs.cs">
       <DependentUpon>OrderDs.xsd</DependentUpon>
@@ -1221,9 +1222,10 @@
     <EmbeddedResource Include="S04_Reports\frmReportMain.resx">
       <DependentUpon>frmReportMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="S04_Reports\Rpt\rptOrderDucu.rpt">
+    <EmbeddedResource Include="S04_Reports\Rpt\rptOrderDocu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptOrderDucu.cs</LastGenOutput>
+      <LastGenOutput>rptOrderDocu.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="P05_Business_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />

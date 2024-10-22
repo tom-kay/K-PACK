@@ -16,7 +16,11 @@ namespace P05_Business.S01_Models.Dto.Biz
 
         [Required]
         [Description("컨테이너ID")]
-        public string ContainerId { get; set; }
+        public int? ContainerId { get; set; }
+
+        [Required]
+        [Description("정렬순번")]
+        public int? ContainerSeq { get; set; }
 
         [Description("컨테이너번호")]
         public string ContainerNo { get; set; }

@@ -38,7 +38,11 @@ namespace P01_K_DESIGN_WIN
 
 			FormSettings.Control_SetDesign(this);
 			FormSettings.Control_SetEvents(this);    //이벤트 할당
-		}
+			FormSettings.SetTabIndexes(this);   // 탭인덱스 할당
+			//FormSettings.SetTabIndexesAndHandleEnterKey(this); // EnterKey 입력 시 다음 탭으로 이동 설정
+			
+
+        }
 
 		private void InitControlTag()
 		{

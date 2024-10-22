@@ -207,8 +207,8 @@ namespace P01_K_DESIGN_WIN
             lblPopupTitle.ForeColor = Color.White;
 
             Control_SetEvents(this);    //이벤트 할당
-
-		}
+            FormSettings.SetTabIndexes(this);   // 탭인덱스 할당
+        }
 
 		/// <summary>
 		/// 폼컨트롤 이벤트 할당

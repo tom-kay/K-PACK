@@ -37,9 +37,9 @@
 			`exp`.`DestinationName`,
 			`exp`.`PaymentTermCode`,
 			`exp`.`PaymentDesc`,
-			`exp`.`Measurement`,
-			`exp`.`NetWeight`,
-			`exp`.`GrossWeight`,
+			format(`exp`.`Measurement`, 3) as Measurement,
+			format(`exp`.`NetWeight`,2) as NetWeight,
+			format(`exp`.`GrossWeight`,2) as GrossWeight,
 			`exp`.`ShippingMark`,
 			`exp`.`Remark`,
 			`exp`.`PackingRemark`,
@@ -96,9 +96,9 @@
 			`exp`.`DestinationName`,
 			`exp`.`PaymentTermCode`,
 			`exp`.`PaymentDesc`,
-			`exp`.`Measurement`,
-			`exp`.`NetWeight`,
-			`exp`.`GrossWeight`,
+			format(`exp`.`Measurement`, 3) as Measurement,
+			format(`exp`.`NetWeight`,2) as NetWeight,
+			format(`exp`.`GrossWeight`,2) as GrossWeight,
 			`exp`.`ShippingMark`,
 			`exp`.`Remark`,
 			`exp`.`PackingRemark`,
@@ -240,6 +240,7 @@
 			SELECT
 			`cntr`.`InvoiceNo`,
 			`cntr`.`ContainerId`,
+			`cntr`.`ContainerSeq`,
 			`cntr`.`ContainerNo`,
 			`cntr`.`SealNo1`,
 			`cntr`.`SealNo2`,
@@ -248,12 +249,14 @@
 			WHERE `InvoiceNo` = @InvoiceNo
 			AND `CompanyCode` = @CompanyCode
 			AND `DelYn` != 'Y'
+			ORDER BY ContainerSeq
 		</Statement>
 
 		<Statement Id="selectExportContainer">
 			SELECT
 			`cntr`.`InvoiceNo`,
 			`cntr`.`ContainerId`,
+			`cntr`.`ContainerSeq`,
 			`cntr`.`ContainerNo`,
 			`cntr`.`SealNo1`,
 			`cntr`.`SealNo2`,
@@ -270,6 +273,7 @@
 			INSERT INTO `tb_export_container` (
 			`InvoiceNo`,
 			`ContainerId`,
+			`ContainerSeq`,
 			`ContainerNo`,
 			`SealNo1`,
 			`SealNo2`,
@@ -281,6 +285,7 @@
 			) VALUES (
 			@InvoiceNo,
 			FN_CreateExpCntrId(@CompanyCode, @InvoiceNo, @ContainerId),
+			@ContainerSeq,
 			@ContainerNo,
 			@SealNo1,
 			@SealNo2,
@@ -290,6 +295,7 @@
 			@CreateId,
 			NOW()
 			) ON DUPLICATE KEY UPDATE
+			`ContainerSeq` = VALUES(`ContainerSeq`),
 			`ContainerNo` = VALUES(`ContainerNo`),
 			`SealNo1` = VALUES(`SealNo1`),
 			`SealNo2` = VALUES(`SealNo2`),
@@ -316,6 +322,7 @@
 			SELECT
 			`pack`.`InvoiceNo`,
 			`pack`.`PackingId`,
+			`pack`.`PackingSeq`,
 			`pack`.`OrderNo`,
 			`pack`.`OrderDetailId`,
 			`ord`.`BuyerPoNo`,
@@ -338,12 +345,14 @@
 			WHERE `pack`.`InvoiceNo` = @InvoiceNo
 			AND `pack`.`CompanyCode` = @CompanyCode
 			AND `pack`.`DelYn` != 'Y'
+			ORDER BY PackingSeq
 		</Statement>
 
 		<Statement Id="selectExportPacking">
 			SELECT
 			`pack`.`InvoiceNo`,
 			`pack`.`PackingId`,
+			`pack`.`PackingSeq`,
 			`pack`.`OrderNo`,
 			`pack`.`OrderDetailId`,
 			`ord`.`BuyerPoNo`,
@@ -374,6 +383,7 @@
 			INSERT INTO `tb_export_packing` (
 			`InvoiceNo`,
 			`PackingId`,
+			`PackingSeq`,
 			`OrderNo`,
 			`OrderDetailId`,
 			`PkgUnitCode`,
@@ -388,6 +398,7 @@
 			) VALUES (
 			@InvoiceNo,
 			`soodal`.`FN_CreateExpPkgId`(@CompanyCode, @InvoiceNo, @PackingId),
+			@PackingSeq,
 			@OrderNo,
 			@OrderDetailId,
 			@PkgUnitCode,
@@ -402,6 +413,8 @@
 			) ON DUPLICATE KEY UPDATE
 			`OrderNo` = VALUES(`OrderNo`),
 			`OrderDetailId` = VALUES(`OrderDetailId`),
+			`PackingId` = VALUES(`PackingId`),
+			`PackingSeq` = VALUES(`PackingSeq`),
 			`PkgUnitCode` = VALUES(`PkgUnitCode`),
 			`PkgStartNo` = VALUES(`PkgStartNo`),
 			`PkgEndNo` = VALUES(`PkgEndNo`),
@@ -429,6 +442,7 @@
 			SELECT
 			`inv`.`InvoiceNo`,
 			`inv`.`InvoiceId`,
+			`inv`.`InvoiceSeq`,
 			`inv`.`OrderNo`,
 			`inv`.`OrderDetailId`,
 			`inv`.`ItemLength`,
@@ -451,12 +465,14 @@
 			WHERE `inv`.`CompanyCode` = @CompanyCode
 			AND `inv`.`InvoiceNo` = @InvoiceNo
 			AND `inv`.`DelYn` != 'Y'
+			ORDER BY `inv`.`InvoiceSeq`
 		</Statement>
 
 		<Statement Id="selectExportInvoice">
 			SELECT
 			`inv`.`InvoiceNo`,
 			`inv`.`InvoiceId`,
+			`inv`.`InvoiceSeq`,
 			`inv`.`OrderNo`,
 			`inv`.`OrderDetailId`,
 			`inv`.`ItemLength`,
@@ -487,6 +503,7 @@
 			INSERT INTO tb_export_invoice (
 			InvoiceNo,
 			InvoiceId,
+			InvoiceSeq,
 			OrderNo,
 			OrderDetailId,
 			ItemLength,
@@ -501,6 +518,7 @@
 			) VALUES (
 			@InvoiceNo,
 			`soodal`.`FN_CreateExpInvId`(@CompanyCode, @InvoiceNo, @InvoiceId),
+			@InvoiceSeq,
 			@OrderNo,
 			@OrderDetailId,
 			@ItemLength,
@@ -513,6 +531,7 @@
 			@CreateId,
 			NOW()
 			) ON DUPLICATE KEY UPDATE
+			InvoiceSeq = VALUES(InvoiceSeq),
 			OrderNo = VALUES(OrderNo),
 			OrderDetailId = VALUES(OrderDetailId),
 			ItemLength = VALUES(ItemLength),

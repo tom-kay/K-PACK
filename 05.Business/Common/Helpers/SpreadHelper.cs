@@ -745,6 +745,12 @@ namespace P05_Business.Common.Helpers
             CheckRowBounds(fpSpread, row);
             CheckColumnBounds(fpSpread, column);
 
+            DataTable dt = fpSpread.ActiveSheet.DataSource as DataTable;
+            if (dt.Rows[row].RowState == DataRowState.Unchanged)
+            {
+                dt.Rows[row].SetModified();
+            }
+
             fpSpread.ActiveSheet.Cells[row, column].Value = value;
             //SetRowStatus(fpSpread, row, RowStatus.Modified);
         }

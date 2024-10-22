@@ -16,14 +16,14 @@ namespace P05_Business.S04_Reports.Rpt {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptOrderDucu : ReportClass {
+    public class rptOrderDocu : ReportClass {
         
-        public rptOrderDucu() {
+        public rptOrderDocu() {
         }
         
         public override string ResourceName {
             get {
-                return "rptOrderDucu.rpt";
+                return "rptOrderDocu.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace P05_Business.S04_Reports.Rpt {
         
         public override string FullResourceName {
             get {
-                return "P05_Business.S04_Reports.Rpt.rptOrderDucu.rpt";
+                return "P05_Business.S04_Reports.Rpt.rptOrderDocu.rpt";
             }
             set {
                 // Do nothing
@@ -114,9 +114,9 @@ namespace P05_Business.S04_Reports.Rpt {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptOrderDucu : Component, ICachedReport {
+    public class CachedrptOrderDocu : Component, ICachedReport {
         
-        public CachedrptOrderDucu() {
+        public CachedrptOrderDocu() {
         }
         
         [Browsable(false)]
@@ -153,7 +153,7 @@ namespace P05_Business.S04_Reports.Rpt {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptOrderDucu rpt = new rptOrderDucu();
+            rptOrderDocu rpt = new rptOrderDocu();
             rpt.Site = this.Site;
             return rpt;
         }

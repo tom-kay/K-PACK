@@ -138,7 +138,7 @@ namespace P05_Business.S03_Views.Biz
                 ds.Tables.Add(dtReport);
                 ds.Tables.Add(dtCom);
 
-                rptOrderDucu rpt = new rptOrderDucu();
+                rptOrderDocu rpt = new rptOrderDocu();
                 rpt.SetDataSource(ds);
                 //rpt.SetParameterValue("MyParameter", "Hello");    //파라미터 설정
                 //rpt.DataDefinition.FormulaFields["MyFormula"].Text = "'" + textBox1.Text + "'";       //포뮬러 설정

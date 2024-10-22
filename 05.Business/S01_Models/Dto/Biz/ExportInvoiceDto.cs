@@ -18,6 +18,10 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("인보이스상세ID")]
         public int? InvoiceId { get; set; }
 
+        [Required]
+        [Description("정렬순번")]
+        public int? InvoiceSeq { get; set; }
+
         [Description("발주번호")]
         public string OrderNo { get; set; }
 

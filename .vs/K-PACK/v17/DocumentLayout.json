@@ -1,7 +1,40 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "G:\\workspace\\K-PACK\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s01_models\\maps\\biz\\itemmng.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\maps\\biz\\itemmng.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71F6E26D-8061-4E84-97DA-5777776E6D57}|01.K_DESIGN_WIN\\P01_K_DESIGN_WIN.csproj|g:\\workspace\\k-pack\\01.k_design_win\\frmeditcontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71F6E26D-8061-4E84-97DA-5777776E6D57}|01.K_DESIGN_WIN\\P01_K_DESIGN_WIN.csproj|solutionrelative:01.k_design_win\\frmeditcontainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|G:\\workspace\\K-PACK\\05.business\\s01_models\\maps\\biz\\exportmng.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s01_models\\maps\\biz\\exportmng.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|G:\\workspace\\K-PACK\\05.business\\s03_views\\biz\\frmexportmng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\biz\\frmexportmng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|G:\\workspace\\K-PACK\\05.business\\common\\datahandles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\common\\datahandles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5815AF69-7BA4-4078-93C6-1858678AE33E}|02.K_CONTROL_WIN\\P02_K_CONTROL_WIN.csproj|G:\\workspace\\K-PACK\\02.k_control_win\\knumberbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5815AF69-7BA4-4078-93C6-1858678AE33E}|02.K_CONTROL_WIN\\P02_K_CONTROL_WIN.csproj|solutionrelative:02.k_control_win\\knumberbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71F6E26D-8061-4E84-97DA-5777776E6D57}|01.K_DESIGN_WIN\\P01_K_DESIGN_WIN.csproj|G:\\workspace\\K-PACK\\01.k_design_win\\classes\\formsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{71F6E26D-8061-4E84-97DA-5777776E6D57}|01.K_DESIGN_WIN\\P01_K_DESIGN_WIN.csproj|solutionrelative:01.k_design_win\\classes\\formsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|G:\\workspace\\K-PACK\\05.business\\s03_views\\biz\\frmexportmng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s03_views\\biz\\frmexportmng.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -20,8 +53,101 @@
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ItemMng.xml",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Maps\\Biz\\ItemMng.xml",
+              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Maps\\Biz\\ItemMng.xml",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Maps\\Biz\\ItemMng.xml",
+              "RelativeToolTip": "05.Business\\S01_Models\\Maps\\Biz\\ItemMng.xml",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAADoAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-10-22T15:27:19.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExportMng.xml",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Maps\\Biz\\ExportMng.xml",
+              "RelativeDocumentMoniker": "05.Business\\S01_Models\\Maps\\Biz\\ExportMng.xml",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S01_Models\\Maps\\Biz\\ExportMng.xml",
+              "RelativeToolTip": "05.Business\\S01_Models\\Maps\\Biz\\ExportMng.xml",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAAGIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-10-21T14:11:34.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmEditContainer.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\01.K_DESIGN_WIN\\frmEditContainer.cs",
+              "RelativeDocumentMoniker": "01.K_DESIGN_WIN\\frmEditContainer.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\01.K_DESIGN_WIN\\frmEditContainer.cs",
+              "RelativeToolTip": "01.K_DESIGN_WIN\\frmEditContainer.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAmwEwAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T14:06:49.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormSettings.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\01.K_DESIGN_WIN\\Classes\\FormSettings.cs",
+              "RelativeDocumentMoniker": "01.K_DESIGN_WIN\\Classes\\FormSettings.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\01.K_DESIGN_WIN\\Classes\\FormSettings.cs",
+              "RelativeToolTip": "01.K_DESIGN_WIN\\Classes\\FormSettings.cs",
+              "ViewState": "AQIAAJkAAAAAAAAAAAAxwK0AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T13:47:50.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataHandles.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\Common\\DataHandles.cs",
+              "RelativeDocumentMoniker": "05.Business\\Common\\DataHandles.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\Common\\DataHandles.cs",
+              "RelativeToolTip": "05.Business\\Common\\DataHandles.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAD4v0kAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T13:45:55.266Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "KNumberBox.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\02.K_CONTROL_WIN\\KNumberBox.cs",
+              "RelativeDocumentMoniker": "02.K_CONTROL_WIN\\KNumberBox.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\02.K_CONTROL_WIN\\KNumberBox.cs",
+              "RelativeToolTip": "02.K_CONTROL_WIN\\KNumberBox.cs",
+              "ViewState": "AQIAAEgBAAAAAAAAAAAuwFQBAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T13:44:04.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmExportMng.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmExportMng.cs",
+              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Biz\\frmExportMng.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmExportMng.cs",
+              "RelativeToolTip": "05.Business\\S03_Views\\Biz\\frmExportMng.cs",
+              "ViewState": "AQIAAP8BAAAAAAAAAAD4vxICAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T13:43:57.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmExportMng.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmExportMng.cs",
+              "RelativeDocumentMoniker": "05.Business\\S03_Views\\Biz\\frmExportMng.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S03_Views\\Biz\\frmExportMng.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "05.Business\\S03_Views\\Biz\\frmExportMng.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-21T13:42:33.233Z"
             }
           ]
         }

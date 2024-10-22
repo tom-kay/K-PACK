@@ -250,7 +250,7 @@ namespace P05_Business.Common
 
         internal static DataTable GetAllData(DataGridView grid)
         {
-			return (grid.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted | DataRowState.Unchanged);
+			return grid.DataSource as DataTable;
         }
 
         internal static DataTable GetChangeAll(DataGridView grid)
@@ -282,27 +282,28 @@ namespace P05_Business.Common
         internal static DataTable GetAllData(FpSpread spd)
         {
 			//UpdateDataSourceFromSpread(spd);
-            return (spd.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted | DataRowState.Unchanged);
+            return spd.ActiveSheet.DataSource as DataTable;
         }
 
         internal static DataTable GetChangeAll(FpSpread spd)
         {
-            return (spd.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted);
+			DataTable dt = (spd.ActiveSheet.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted);
+            return dt;
         }
 
         internal static DataTable GetChangeAdded(FpSpread spd)
         {
-            return (spd.DataSource as DataTable).GetChanges(DataRowState.Added);
+            return (spd.ActiveSheet.DataSource as DataTable).GetChanges(DataRowState.Added);
         }
 
         internal static DataTable GetChangeModified(FpSpread spd)
         {
-            return (spd.DataSource as DataTable).GetChanges(DataRowState.Modified);
+            return (spd.ActiveSheet.DataSource as DataTable).GetChanges(DataRowState.Modified);
         }
 
         internal static DataTable GetChangeDeleted(FpSpread spd)
         {
-            return (spd.DataSource as DataTable).GetChanges(DataRowState.Deleted);
+            return (spd.ActiveSheet.DataSource as DataTable).GetChanges(DataRowState.Deleted);
         }
 
         internal static DataTable GetChangesWithoutDeleted(FpSpread spd)

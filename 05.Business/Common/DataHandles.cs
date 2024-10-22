@@ -67,9 +67,17 @@ namespace P05_Business.Common
 						}
 						else if (c is TextBox)
 						{
-							c.Text = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null).ToString();
+							if (c.GetType().Name.Equals("KNumberBox"))
+							{	
+                                c.Text = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null).ToString();
+								(c as KNumberBox).Validate();
+                            }
+							else
+							{
+                                c.Text = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null).ToString();
+                            }
 						}
-						else if (c is KComboBox)
+                        else if (c is KComboBox)
 						{
 							(c as KComboBox).SelectedValue = dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null);
 						}
@@ -177,9 +185,17 @@ namespace P05_Business.Common
 						}
 						else if (c is TextBox)
 						{
-							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, c.Text);
+							if (c.GetType().Name.Equals("KNumberBox"))
+							{
+                                dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, Convert.ToDecimal(c.Text));
+                            }
+							else
+							{
+                                dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, c.Text);
+                            }
+							
 						}
-						else if (c is KComboBox)
+                        else if (c is KComboBox)
 						{
 							dto.GetType().GetProperty(c.Tag.ToString()).SetValue(dto, (c as KComboBox).SelectedValue);
 						}

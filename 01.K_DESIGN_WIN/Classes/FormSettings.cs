@@ -171,7 +171,6 @@ namespace P01_K_DESIGN_WIN.Classes
 					((TextBox)ctrl).EnabledChanged += TextBox_EnabledChanged;
 				}
 
-
 				if (ctrl.Controls.Count > 0)
 				{
 					Control_SetEvents(ctrl);
@@ -279,6 +278,69 @@ namespace P01_K_DESIGN_WIN.Classes
 				}
 			}
 
+		}
+
+		public static void SetTabIndexes(Control parent)
+		{
+			// 모든 컨트롤을 좌표 기준으로 정렬
+			var controls = parent.Controls.Cast<Control>()
+				.OrderBy(c => c.Top)
+				.ThenBy(c => c.Left)
+				.ToList();
+
+			// 정렬된 컨트롤에 순차적으로 탭 인덱스 부여
+			int tabIndex = 0;
+			foreach (var control in controls)
+			{
+				control.TabIndex = tabIndex++;
+
+				// 자식 컨트롤이 있는 경우 재귀적으로 호출
+				if (control.HasChildren)
+				{
+					SetTabIndexes(control);
+				}
+			}
+		}
+
+		public static void SetTabIndexesAndHandleEnterKey(Control parent)
+		{
+			var controls = parent.Controls.Cast<Control>()
+				.OrderBy(c => c.Top)
+				.ThenBy(c => c.Left)
+				.ToList();
+
+			int tabIndex = 0;
+			foreach (var control in controls)
+			{
+				if (IsInputControl(control))
+				{
+					control.TabIndex = tabIndex++;
+					control.KeyDown += Control_KeyDown;
+				}
+				if (control.HasChildren)
+				{
+					SetTabIndexesAndHandleEnterKey(control);
+				}
+			}
+		}
+
+		private static bool IsInputControl(Control control)
+		{
+			return control.GetType().GetProperty("KeyDown") != null; // KeyDown 속성이 있는 컨트롤 확인
+		}
+
+		private static void Control_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				e.SuppressKeyPress = true;
+				Control control = sender as Control;
+				if (control != null)
+				{
+					Form form = control.FindForm();
+					form.SelectNextControl(control, true, true, true, true);
+				}
+			}
 		}
 
 

@@ -646,3 +646,5 @@ G:\workspace\K-PACK\05.Business\obj\Debug\SOODAL.exe.manifest
 G:\workspace\K-PACK\05.Business\bin\Debug\SOODAL.exe.manifest
 G:\workspace\K-PACK\05.Business\bin\Debug\SOODAL.application
 G:\workspace\K-PACK\05.Business\obj\Debug\SOODAL.application
+G:\workspace\K-PACK\05.Business\bin\Debug\S04_Reports\Rpt\rptOrderDocu.rpt
+G:\workspace\K-PACK\05.Business\bin\Debug\S04_Reports\Rpt\rptOrderDocu.cs
