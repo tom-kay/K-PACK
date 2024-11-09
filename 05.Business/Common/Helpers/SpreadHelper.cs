@@ -5,8 +5,10 @@ using FarPoint.Win.Spread.CellType;
 using FarPoint.Win.Spread.Model;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace P05_Business.Common.Helpers
@@ -296,7 +298,9 @@ namespace P05_Business.Common.Helpers
             cellType.DecimalSeparator = ".";
             cellType.Separator = ",";
             cellType.ShowSeparator = showSeparator;
-            cellType.MaximumValue = 9999999999999.9999;
+            cellType.MaximumValue = 9999999999999;
+            cellType.MinimumValue = -9999999999999;
+
             column.CellType = cellType;
         }
 
@@ -409,24 +413,37 @@ namespace P05_Business.Common.Helpers
         /// <param name="valueField"></param>
         /// <param name="displayField"></param>
         /// <param name="enabled"></param>
-        public static void AddComboBoxColumn(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, DataTable dtCombo, string valueField, string displayField)
+        public static void AddComboBoxColumn<T>(this FpSpread fpSpread, string fieldName, string label, bool enabled, bool visible, int width, List<T> lCombo, string valueField, string displayField, GridHorizontalAlignment cellAlignment) where T : class
         {
-            AddColumn(fpSpread, fieldName, label, enabled, visible, width, GridHorizontalAlignment.Center);
+            AddColumn(fpSpread, fieldName, label, enabled, visible, width, cellAlignment);
 
             Column column = fpSpread.ActiveSheet.Columns[fpSpread.ActiveSheet.Columns.Count - 1];
 
             ComboBoxCellType cellType = new ComboBoxCellType();
-            string[] valueList = new string[dtCombo.Rows.Count];
-            string[] displayList = new string[dtCombo.Rows.Count];
-            for (int i = 0; i < dtCombo.Rows.Count; i++)
+            string[] valueList = new string[lCombo.Count];
+            string[] displayList = new string[lCombo.Count];
+
+            int i = 0;
+            foreach (var item in lCombo)
             {
-                //valueList[i] = ConvertUtil.ToString(dtCombo.Rows[i][valueField]);
-                //displayList[i] = ConvertUtil.ToString(dtCombo.Rows[i][displayField]);
+                Type type = item.GetType();
+
+                // valueField 값 가져오기
+                PropertyInfo valueProperty = type.GetProperty(valueField);
+                valueList[i] = valueProperty.GetValue(item).ToString();
+
+                // displayField 값 가져오기
+                PropertyInfo displayProperty = type.GetProperty(displayField);
+                displayList[i] = displayProperty.GetValue(item).ToString();
+
+                i++;
             }
+
             cellType.Items = displayList;
             cellType.ItemData = valueList;
             cellType.EditorValue = EditorValue.ItemData;
             column.CellType = cellType;
+
         }
 
         public static void AddImageColumn(this FpSpread fpSpread, string fieldName, string label, bool visible, int width)

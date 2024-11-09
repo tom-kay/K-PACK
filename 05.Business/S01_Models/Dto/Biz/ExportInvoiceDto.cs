@@ -28,6 +28,9 @@ namespace P05_Business.S01_Models.Dto.Biz
         [Description("발주목록ID")]
         public int? OrderDetailId { get; set; }
 
+        [Description("제품규격")]
+        public string ItemSize { get; set; }
+
         [Description("제품길이")]
         public decimal? ItemLength { get; set; }
 

@@ -35,7 +35,7 @@ namespace P05_Business.S01_Models.Dto.Biz
         public string ItemNo { get; set; }
 
         [Description("제품 사이즈 정보")]
-        public string ItemDescription { get; set; }
+        public string ItemSize { get; set; }
 
         [Description("포장단위코드")]
         public string PkgUnitCode { get; set; }

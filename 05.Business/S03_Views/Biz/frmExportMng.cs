@@ -1,5 +1,6 @@
 ﻿using FarPoint.Excel.EntityClassLibrary.DrawingVML;
 using FarPoint.Excel.EntityClassLibrary.SpreadsheetML;
+using FarPoint.Win;
 using FarPoint.Win.Spread;
 using GrapeCity.Spreadsheet;
 using log4net;
@@ -699,23 +700,26 @@ namespace P05_Business.S03_Views.Biz
             spdContainerList.DataSource = DataHandles.ConvertToDataTable<ExportContainerDto>(dtoContainers);
 
             // Packing List
+            // 그리드 콤보박스 아이템 조회
+            List<CodeDetailDto> items = GetPackingUnits();
+
             SpreadHelper.CreateSpread(spdPackingList, "PackingList");
             SpreadHelper.AddTextColumn(spdPackingList, "InvoiceNo", "INV.NO", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "PackingId", "PACK.ID", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "PackingSeq", "PACK.SEQ", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddComboBoxColumn(spdPackingList, "PkgUnitCode", "PACK.UNIT", true, true, 120, items, "Code", "Name", SpreadHelper.GridHorizontalAlignment.Left);
             SpreadHelper.AddTextColumn(spdPackingList, "PkgStartNo", "PKG.NO", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "PkgEndNo", "PKG.NO", true, true, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "OrderNo", "발주번호", false, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "OrderDetailId", "ORD.DTL.ID", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "BuyerPoNo", "수주번호", false, false, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdPackingList, "ItemNo", "ITEM.NO", false, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Left);
-            SpreadHelper.AddTextColumn(spdPackingList, "ItemDescription", "ITEM.DESC", false, true, 300, 100, SpreadHelper.GridHorizontalAlignment.Left);
-            SpreadHelper.AddTextColumn(spdPackingList, "PkgUnitCode", "PKG.UNIT.CODE", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddTextColumn(spdPackingList, "PkgUnitName", "PKG.UNIT.NAME", false, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddTextColumn(spdPackingList, "ItemSize", "ITEM.SIZE", false, true, 300, 100, SpreadHelper.GridHorizontalAlignment.Left);
             SpreadHelper.AddTextColumn(spdPackingList, "Qty", "Q'TY", true, true, 100, 200, SpreadHelper.GridHorizontalAlignment.Right);
             SpreadHelper.AddTextColumn(spdPackingList, "PkgQty", "PKG.Q'TY", true, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Right);
             SpreadHelper.MergeColumnHeader(spdPackingList, "PkgStartNo", 2);
             SpreadHelper.EndSpread(spdPackingList);
+
 
             spdPackingList.DataSource = DataHandles.ConvertToDataTable<ExportPackingDto>(dtoPackings);
 
@@ -727,10 +731,11 @@ namespace P05_Business.S03_Views.Biz
             SpreadHelper.AddTextColumn(spdInvoiceList, "OrderNo", "ORD.NO", false, false, 100, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdInvoiceList, "OrderDetailId", "ORD.ID", false, false, 0, 100, SpreadHelper.GridHorizontalAlignment.Center);
             SpreadHelper.AddTextColumn(spdInvoiceList, "BuyerPoNo", "수주번호", false, true, 200, 100, SpreadHelper.GridHorizontalAlignment.Center);
-            SpreadHelper.AddNumberColumn(spdInvoiceList, "ItemLength", "제품 길이", true, true, 300, 0, true);
-            SpreadHelper.AddNumberColumn(spdInvoiceList, "UsQty", "미환산 수량", true, true, 200, 0, true);
+            SpreadHelper.AddTextColumn(spdInvoiceList, "ItemSize", "제품규격", false, true, 300, 100, SpreadHelper.GridHorizontalAlignment.Center);
+            SpreadHelper.AddNumberColumn(spdInvoiceList, "ItemLength", "제품길이", true, true, 200, 0, true);
+            SpreadHelper.AddNumberColumn(spdInvoiceList, "UsQty", "미환산수량", true, true, 200, 0, true);
             SpreadHelper.AddNumberColumn(spdInvoiceList, "Qty", "수량", true, true, 200, 0, true);
-            SpreadHelper.AddNumberColumn(spdInvoiceList, "UnitPrice", "단가", true, true, 200, 4, true);
+            SpreadHelper.AddNumberColumn(spdInvoiceList, "UnitPrice", "단가", true, true, 200, 0, true);
             SpreadHelper.AddNumberColumn(spdInvoiceList, "Amount", "금액", true, true, 200, 0, true);
             SpreadHelper.EndSpread(spdInvoiceList);
 
@@ -897,6 +902,17 @@ namespace P05_Business.S03_Views.Biz
                 spdInvoiceList.SetValue(row.Index, "InvoiceSeq", row.Index + 1);
             }
 
+        }
+
+
+        private static List<CodeDetailDto> GetPackingUnits()
+        {
+            CodeDetailDto param = new CodeDetailDto()
+            {
+                MasterCode = "PACKINGUNIT",
+            };
+            List<CodeDetailDto> items = new CodeMngController().GetUseCodeList(param);
+            return items;
         }
 
 

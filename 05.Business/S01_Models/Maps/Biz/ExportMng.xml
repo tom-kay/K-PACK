@@ -329,19 +329,27 @@
 			`pack`.`PkgUnitCode`,
 			`pack`.`PkgStartNo`,
 			`pack`.`PkgEndNo`,
-			`pack`.`Qty`,
-			`pack`.`PkgQty`,
+			TRIM(TRAILING '.' FROM TRIM(TRAILING '0' FROM FORMAT( `pack`.`Qty`, 2))) as Qty,
+			TRIM(TRAILING '.' FROM TRIM(TRAILING '0' FROM FORMAT(`pack`.`PkgQty`, 2))) as PkgQty,
 			`pack`.`CompanyCode`,
 			`pack`.`DelYn`,
 			`pack`.`CreateId`,
+			it.Size as `ItemSize`,
+			it.Size as `ItemNo`,
 			date_format(`pack`.`CreateDt`, '%Y-%m-%d %H:%i:%s') AS `CreateDt`,
 			`pack`.`UpdateId`,
 			date_format(`pack`.`UpdateDt`, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
 			`pack`.`DeleteId`,
 			date_format(`pack`.`DeleteDt`, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
 			FROM `tb_export_packing` pack
-			LEFT JOIN `soodal`.`tb_po_master` `ord`
+			JOIN `soodal`.`tb_po_master` `ord`
 			ON `ord`.`OrderNo` = `pack`.`OrderNo`
+			join tb_po_detail pod
+			on pod.OrderNo = pack.OrderNo
+			and pod.DetailId = pack.OrderDetailId
+			join tb_item it
+			on it.GroupCode = pod.ItemGroupCode
+			and it.`ItemCode` = pod.`ItemCode`
 			WHERE `pack`.`InvoiceNo` = @InvoiceNo
 			AND `pack`.`CompanyCode` = @CompanyCode
 			AND `pack`.`DelYn` != 'Y'
@@ -359,7 +367,7 @@
 			`pack`.`PkgUnitCode`,
 			`pack`.`PkgStartNo`,
 			`pack`.`PkgEndNo`,
-			`pack`.`Qty`,
+			TRIM(TRAILING '.' FROM TRIM(TRAILING '0' FROM FORMAT( `pack`.`Qty`, 2))) as Qty,
 			`pack`.`PkgQty`,
 			`pack`.`CompanyCode`,
 			`pack`.`DelYn`,
@@ -453,6 +461,8 @@
 			`inv`.`CompanyCode`,
 			`inv`.`DelYn`,
 			`inv`.`CreateId`,
+			it.ItemNo,
+			it.Size as ItemSize,
 			date_format(`inv`.`CreateDt`, '%Y-%m-%d %H:%i:%s') AS `CreateDt`,
 			`inv`.`UpdateId`,
 			date_format(`inv`.`UpdateDt`, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`,
@@ -462,6 +472,12 @@
 			FROM `tb_export_invoice` inv
 			JOIN `soodal`.`tb_po_master` ord
 			ON `ord`.`OrderNo` = `inv`.`OrderNo`
+			join tb_po_detail pod
+			on pod.OrderNo = inv.OrderNo
+			and pod.DetailId = inv.OrderDetailId
+			join tb_item it
+			on it.GroupCode = pod.ItemGroupCode
+			and it.ItemCode = pod.ItemCode
 			WHERE `inv`.`CompanyCode` = @CompanyCode
 			AND `inv`.`InvoiceNo` = @InvoiceNo
 			AND `inv`.`DelYn` != 'Y'

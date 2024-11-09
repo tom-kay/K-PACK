@@ -180,8 +180,20 @@ namespace P01_K_DESIGN_WIN
 						{
 							if (!Equals(c.Text, Convert.ToString(dto.GetType().GetProperty(c.Tag.ToString()).GetValue(dto, null))))
 							{
-                                Debug.Print(string.Concat(c.Name, " : 변경됨"));
-                                return false;
+								if (c.GetType() == typeof(KNumberBox)) {
+									decimal values;
+									decimal.TryParse(c.Text, out values);
+									if (values != 0)
+									{
+                                        Debug.Print(string.Concat(c.Name, " : 변경됨"));
+                                        return false;
+                                    }
+								}
+								else
+								{
+                                    Debug.Print(string.Concat(c.Name, " : 변경됨"));
+                                    return false;
+                                }
 							}
 						}
 						else if (c is KComboBox)

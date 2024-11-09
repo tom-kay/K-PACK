@@ -30,7 +30,7 @@
     <SuiteName>moodal</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>34</ApplicationRevision>
+    <ApplicationRevision>35</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -500,12 +500,36 @@
     <Compile Include="S03_Views\Popup\Common\frmPortCodePopup.Designer.cs">
       <DependentUpon>frmPortCodePopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="S04_Reports\Rpt\rptExportInvoiceDocu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptExportInvoiceDocu.rpt</DependentUpon>
+    </Compile>
     <Compile Include="S04_Reports\Rpt\rptOrderDocu.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptOrderDocu.rpt</DependentUpon>
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="S04_Reports\Rpt\rtpExportPackingDocu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rtpExportPackingDocu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="S04_Reports\Xsd\ExportInvoiceDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExportInvoiceDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="S04_Reports\Xsd\ExportPackingDs.cs">
+      <DependentUpon>ExportPackingDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="S04_Reports\Xsd\ExportPackingDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExportPackingDs.xsd</DependentUpon>
     </Compile>
     <Compile Include="S04_Reports\Xsd\OrderDs.cs">
       <DependentUpon>OrderDs.xsd</DependentUpon>
@@ -1222,15 +1246,45 @@
     <EmbeddedResource Include="S04_Reports\frmReportMain.resx">
       <DependentUpon>frmReportMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="S04_Reports\Rpt\rptExportInvoiceDocu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptExportInvoiceDocu.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="S04_Reports\Rpt\rptOrderDocu.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptOrderDocu.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="S04_Reports\Rpt\rtpExportPackingDocu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rtpExportPackingDocu.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="P05_Business_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Resource\Font\D2Coding-Ver1.3.2-20180524-all.ttc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="S04_Reports\Xsd\ExportInvoiceDs.xsc">
+      <DependentUpon>ExportInvoiceDs.xsd</DependentUpon>
+    </None>
+    <None Include="S04_Reports\Xsd\ExportInvoiceDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExportInvoiceDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="S04_Reports\Xsd\ExportInvoiceDs.xss">
+      <DependentUpon>ExportInvoiceDs.xsd</DependentUpon>
+    </None>
+    <None Include="S04_Reports\Xsd\ExportPackingDs.xsc">
+      <DependentUpon>ExportPackingDs.xsd</DependentUpon>
+    </None>
+    <None Include="S04_Reports\Xsd\ExportPackingDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExportPackingDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="S04_Reports\Xsd\ExportPackingDs.xss">
+      <DependentUpon>ExportPackingDs.xsd</DependentUpon>
     </None>
     <None Include="S04_Reports\Xsd\OrderDs.xsc">
       <DependentUpon>OrderDs.xsd</DependentUpon>
