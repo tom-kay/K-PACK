@@ -1760,6 +1760,20 @@ namespace P05_Business.S04_Reports.Xsd {
             
             private global::System.Data.DataColumn columnOrderDetailId;
             
+            private global::System.Data.DataColumn columnItemGroupCode;
+            
+            private global::System.Data.DataColumn columnItemGroupName;
+            
+            private global::System.Data.DataColumn columnItemGroupAliasName;
+            
+            private global::System.Data.DataColumn columnItemCode;
+            
+            private global::System.Data.DataColumn columnItemName;
+            
+            private global::System.Data.DataColumn columnItemAliasName;
+            
+            private global::System.Data.DataColumn columnItemSize;
+            
             private global::System.Data.DataColumn columnItemLength;
             
             private global::System.Data.DataColumn columnUsQty;
@@ -1858,6 +1872,62 @@ namespace P05_Business.S04_Reports.Xsd {
             public global::System.Data.DataColumn OrderDetailIdColumn {
                 get {
                     return this.columnOrderDetailId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ItemGroupCodeColumn {
+                get {
+                    return this.columnItemGroupCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ItemGroupNameColumn {
+                get {
+                    return this.columnItemGroupName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ItemGroupAliasNameColumn {
+                get {
+                    return this.columnItemGroupAliasName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ItemCodeColumn {
+                get {
+                    return this.columnItemCode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ItemNameColumn {
+                get {
+                    return this.columnItemName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ItemAliasNameColumn {
+                get {
+                    return this.columnItemAliasName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ItemSizeColumn {
+                get {
+                    return this.columnItemSize;
                 }
             }
             
@@ -2016,6 +2086,13 @@ namespace P05_Business.S04_Reports.Xsd {
                         int InvoiceSeq, 
                         string OrderNo, 
                         int OrderDetailId, 
+                        string ItemGroupCode, 
+                        string ItemGroupName, 
+                        string ItemGroupAliasName, 
+                        string ItemCode, 
+                        string ItemName, 
+                        string ItemAliasName, 
+                        string ItemSize, 
                         decimal ItemLength, 
                         decimal UsQty, 
                         decimal Qty, 
@@ -2037,6 +2114,13 @@ namespace P05_Business.S04_Reports.Xsd {
                         InvoiceSeq,
                         OrderNo,
                         OrderDetailId,
+                        ItemGroupCode,
+                        ItemGroupName,
+                        ItemGroupAliasName,
+                        ItemCode,
+                        ItemName,
+                        ItemAliasName,
+                        ItemSize,
                         ItemLength,
                         UsQty,
                         Qty,
@@ -2090,6 +2174,13 @@ namespace P05_Business.S04_Reports.Xsd {
                 this.columnInvoiceSeq = base.Columns["InvoiceSeq"];
                 this.columnOrderNo = base.Columns["OrderNo"];
                 this.columnOrderDetailId = base.Columns["OrderDetailId"];
+                this.columnItemGroupCode = base.Columns["ItemGroupCode"];
+                this.columnItemGroupName = base.Columns["ItemGroupName"];
+                this.columnItemGroupAliasName = base.Columns["ItemGroupAliasName"];
+                this.columnItemCode = base.Columns["ItemCode"];
+                this.columnItemName = base.Columns["ItemName"];
+                this.columnItemAliasName = base.Columns["ItemAliasName"];
+                this.columnItemSize = base.Columns["ItemSize"];
                 this.columnItemLength = base.Columns["ItemLength"];
                 this.columnUsQty = base.Columns["UsQty"];
                 this.columnQty = base.Columns["Qty"];
@@ -2119,6 +2210,20 @@ namespace P05_Business.S04_Reports.Xsd {
                 base.Columns.Add(this.columnOrderNo);
                 this.columnOrderDetailId = new global::System.Data.DataColumn("OrderDetailId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOrderDetailId);
+                this.columnItemGroupCode = new global::System.Data.DataColumn("ItemGroupCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemGroupCode);
+                this.columnItemGroupName = new global::System.Data.DataColumn("ItemGroupName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemGroupName);
+                this.columnItemGroupAliasName = new global::System.Data.DataColumn("ItemGroupAliasName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemGroupAliasName);
+                this.columnItemCode = new global::System.Data.DataColumn("ItemCode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemCode);
+                this.columnItemName = new global::System.Data.DataColumn("ItemName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemName);
+                this.columnItemAliasName = new global::System.Data.DataColumn("ItemAliasName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemAliasName);
+                this.columnItemSize = new global::System.Data.DataColumn("ItemSize", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemSize);
                 this.columnItemLength = new global::System.Data.DataColumn("ItemLength", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnItemLength);
                 this.columnUsQty = new global::System.Data.DataColumn("UsQty", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -3489,6 +3594,118 @@ namespace P05_Business.S04_Reports.Xsd {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ItemGroupCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableExportInvoice.ItemGroupCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'ExportInvoice\' 테이블의 \'ItemGroupCode\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableExportInvoice.ItemGroupCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ItemGroupName {
+                get {
+                    try {
+                        return ((string)(this[this.tableExportInvoice.ItemGroupNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'ExportInvoice\' 테이블의 \'ItemGroupName\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableExportInvoice.ItemGroupNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ItemGroupAliasName {
+                get {
+                    try {
+                        return ((string)(this[this.tableExportInvoice.ItemGroupAliasNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'ExportInvoice\' 테이블의 \'ItemGroupAliasName\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableExportInvoice.ItemGroupAliasNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ItemCode {
+                get {
+                    try {
+                        return ((string)(this[this.tableExportInvoice.ItemCodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'ExportInvoice\' 테이블의 \'ItemCode\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableExportInvoice.ItemCodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ItemName {
+                get {
+                    try {
+                        return ((string)(this[this.tableExportInvoice.ItemNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'ExportInvoice\' 테이블의 \'ItemName\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableExportInvoice.ItemNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ItemAliasName {
+                get {
+                    try {
+                        return ((string)(this[this.tableExportInvoice.ItemAliasNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'ExportInvoice\' 테이블의 \'ItemAliasName\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableExportInvoice.ItemAliasNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ItemSize {
+                get {
+                    try {
+                        return ((string)(this[this.tableExportInvoice.ItemSizeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'ExportInvoice\' 테이블의 \'ItemSize\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableExportInvoice.ItemSizeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public decimal ItemLength {
                 get {
                     try {
@@ -3739,6 +3956,90 @@ namespace P05_Business.S04_Reports.Xsd {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetOrderDetailIdNull() {
                 this[this.tableExportInvoice.OrderDetailIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsItemGroupCodeNull() {
+                return this.IsNull(this.tableExportInvoice.ItemGroupCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetItemGroupCodeNull() {
+                this[this.tableExportInvoice.ItemGroupCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsItemGroupNameNull() {
+                return this.IsNull(this.tableExportInvoice.ItemGroupNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetItemGroupNameNull() {
+                this[this.tableExportInvoice.ItemGroupNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsItemGroupAliasNameNull() {
+                return this.IsNull(this.tableExportInvoice.ItemGroupAliasNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetItemGroupAliasNameNull() {
+                this[this.tableExportInvoice.ItemGroupAliasNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsItemCodeNull() {
+                return this.IsNull(this.tableExportInvoice.ItemCodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetItemCodeNull() {
+                this[this.tableExportInvoice.ItemCodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsItemNameNull() {
+                return this.IsNull(this.tableExportInvoice.ItemNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetItemNameNull() {
+                this[this.tableExportInvoice.ItemNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsItemAliasNameNull() {
+                return this.IsNull(this.tableExportInvoice.ItemAliasNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetItemAliasNameNull() {
+                this[this.tableExportInvoice.ItemAliasNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsItemSizeNull() {
+                return this.IsNull(this.tableExportInvoice.ItemSizeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetItemSizeNull() {
+                this[this.tableExportInvoice.ItemSizeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
