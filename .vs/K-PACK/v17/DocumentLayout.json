@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "G:\\workspace\\K-PACK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\s04_reports\\rpt\\rptexportinvoicedocu.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}",
-      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\s04_reports\\rpt\\rptexportinvoicedocu.rpt||{C0EF7560-990E-4D61-B970-65A6096B6866}"
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\smartsqlmapconfig.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\smartsqlmapconfig.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AF28BCC-FF90-45CE-9A4C-1197732A8A5F}|Launcher\\Launcher.csproj|G:\\workspace\\K-PACK\\launcher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AF28BCC-FF90-45CE-9A4C-1197732A8A5F}|Launcher\\Launcher.csproj|solutionrelative:launcher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AF28BCC-FF90-45CE-9A4C-1197732A8A5F}|Launcher\\Launcher.csproj|G:\\workspace\\K-PACK\\launcher\\upgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AF28BCC-FF90-45CE-9A4C-1197732A8A5F}|Launcher\\Launcher.csproj|solutionrelative:launcher\\upgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AF28BCC-FF90-45CE-9A4C-1197732A8A5F}|Launcher\\Launcher.csproj|G:\\workspace\\K-PACK\\launcher\\upgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3AF28BCC-FF90-45CE-9A4C-1197732A8A5F}|Launcher\\Launcher.csproj|solutionrelative:launcher\\upgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,14 +43,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "rptExportInvoiceDocu.rpt",
-              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\S04_Reports\\Rpt\\rptExportInvoiceDocu.rpt",
-              "RelativeDocumentMoniker": "05.Business\\S04_Reports\\Rpt\\rptExportInvoiceDocu.rpt",
-              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\S04_Reports\\Rpt\\rptExportInvoiceDocu.rpt",
-              "RelativeToolTip": "05.Business\\S04_Reports\\Rpt\\rptExportInvoiceDocu.rpt",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIdSURBVDhPpZJNaBNBFMf/M7ub2NhajSDiwS96CbY2BykojaD0oF5s0YPgQYReLHgpeNCLYv0AexNRb1VUAkJcPXgQEUG89BIaxI9gqzGxH6QmXTef3Wx2nJkmNev25g8ebx7z3n/ezBv8F4wx0lhK7j6fYo3lmowMhl35HoRA3XGk/YvYW\u002BsA2vCrUEIwu1hEJltwmeDc8V5Plx4BAaXEY4J7LxLSt4q4BBS6Eiq8oGm3nXHZ1VCkS9pgfxc62/0yT\u002BASaNRLIWE6ieHB3H1EZsMyVhUKTXU37Yo0RZFeVQiuL14D1tnooBtQcEwcSO9d7aoVdefw5yFC2GG\u002BDsa/OTj228LYwmXejYrkzxkUsqZMNG0TfZkexA99lHETUqlYJ0rV5YEPqfKOG7Glo3MGRSTkx2T4JNp2\u002BzGfmMf3JzNAHijHarJIfz\u002BN0wMh2QoduRrVL9x6NqrWzUt3hjfjYMiHV1NVWNHHCJAOoMof3OBOt10T8XD24kOiv0uynFFkp8ZTrPv8NNs3\u002BpXtifawUmWZWbU6q9l16Z\u002B\u002BTXrHOHHzDPP7ND6iNvSHAtjYrkLTNDzqfQleBIU/rDhdeI1Po4l7JpyqDSTSDoKdPmwLqqhaNdh2vbHrxXWhidcZ9mXBj3yJYr3Pwf7tBnL5HLZu2YRA4O/nERzp2yVrXQJiIhWrdsUwy92/lorZyURqLP4p/YZv/eBXLK9ktQL8AbhJ7xVosbKmAAAAAElFTkSuQmCC",
-              "WhenOpened": "2024-11-09T15:47:39.059Z",
+              "Title": "SmartSqlMapConfig.xml",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\SmartSqlMapConfig.xml",
+              "RelativeDocumentMoniker": "05.Business\\SmartSqlMapConfig.xml",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\SmartSqlMapConfig.xml",
+              "RelativeToolTip": "05.Business\\SmartSqlMapConfig.xml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-11-19T13:30:40.288Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\Launcher\\Program.cs",
+              "RelativeDocumentMoniker": "Launcher\\Program.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\Launcher\\Program.cs",
+              "RelativeToolTip": "Launcher\\Program.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAD4v1MAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T14:02:29.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Upgrade.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\Launcher\\Upgrade.cs",
+              "RelativeDocumentMoniker": "Launcher\\Upgrade.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\Launcher\\Upgrade.cs",
+              "RelativeToolTip": "Launcher\\Upgrade.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAAwDUAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T14:04:26.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Upgrade.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\Launcher\\Upgrade.cs",
+              "RelativeDocumentMoniker": "Launcher\\Upgrade.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\Launcher\\Upgrade.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Launcher\\Upgrade.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T11:30:34.217Z"
             }
           ]
         }

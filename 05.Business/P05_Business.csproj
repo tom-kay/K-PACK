@@ -13,6 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>G:\workspace\Clickonce\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -30,7 +31,7 @@
     <SuiteName>moodal</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>35</ApplicationRevision>
+    <ApplicationRevision>41</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -45,7 +46,8 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>5</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -67,13 +69,11 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>408B70941F8DFDAD9523D0A9C22D16C26305C3B3</ManifestCertificateThumbprint>
@@ -81,6 +81,10 @@
   <PropertyGroup>
     <ManifestKeyFile>
     </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
@@ -504,6 +508,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptExportInvoiceDocu.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="S04_Reports\Rpt\rptOrderDocu.cs">
       <AutoGen>True</AutoGen>
@@ -735,6 +740,11 @@
     </Compile>
     <Compile Include="S04_Reports\frmReportMain.Designer.cs">
       <DependentUpon>frmReportMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S04_Reports\Xsd\OrderDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDs.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Content Include="Logging.xml">
@@ -1135,6 +1145,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="version.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <Content Include="S01_Models\Maps\Base\MenuMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1259,7 +1272,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rtpExportPackingDocu.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="P05_Business_TemporaryKey.pfx" />
+    <None Include="P05_Business_TemporaryKey.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Resource\Font\D2Coding-Ver1.3.2-20180524-all.ttc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1292,6 +1307,7 @@
     <None Include="S04_Reports\Xsd\OrderDs.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>OrderDs.Designer.cs</LastGenOutput>
     </None>
     <None Include="S04_Reports\Xsd\OrderDs.xss">
       <DependentUpon>OrderDs.xsd</DependentUpon>
@@ -1355,6 +1371,10 @@
     <ProjectReference Include="..\03.Framework\P03_Framework.csproj">
       <Project>{9573b406-7b9a-4087-8020-45945058f1c7}</Project>
       <Name>P03_Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Launcher\Launcher.csproj">
+      <Project>{3af28bcc-ff90-45ce-9a4c-1197732a8a5f}</Project>
+      <Name>Launcher</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -1498,4 +1518,12 @@
     </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>
