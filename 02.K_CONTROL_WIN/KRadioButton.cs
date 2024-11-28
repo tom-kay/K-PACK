@@ -93,6 +93,5 @@ namespace P02_K_CONTROL_WIN
                     rbBorderSize + 8, (this.Height - TextRenderer.MeasureText(this.Text, this.Font).Height) / 2);//Y=Center
             }
         }
-
-    }
+	}
 }

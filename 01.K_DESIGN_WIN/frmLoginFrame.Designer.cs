@@ -46,6 +46,10 @@
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.label4 = new System.Windows.Forms.Label();
+			this.panel6 = new System.Windows.Forms.Panel();
+			this.cboCompany = new System.Windows.Forms.ComboBox();
 			this.pnlLogo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -57,6 +61,8 @@
 			this.panel2.SuspendLayout();
 			this.panel3.SuspendLayout();
 			this.panel4.SuspendLayout();
+			this.panel5.SuspendLayout();
+			this.panel6.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pnlLogo
@@ -92,7 +98,7 @@
 			this.txtUser.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.txtUser.Name = "txtUser";
 			this.txtUser.Size = new System.Drawing.Size(313, 27);
-			this.txtUser.TabIndex = 1;
+			this.txtUser.TabIndex = 0;
 			this.txtUser.Text = "User";
 			// 
 			// txtPass
@@ -105,7 +111,7 @@
 			this.txtPass.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.txtPass.Name = "txtPass";
 			this.txtPass.Size = new System.Drawing.Size(313, 27);
-			this.txtPass.TabIndex = 2;
+			this.txtPass.TabIndex = 0;
 			this.txtPass.Text = "Password";
 			// 
 			// label1
@@ -129,10 +135,10 @@
 			this.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
 			this.btnlogin.ForeColor = System.Drawing.Color.LightGray;
-			this.btnlogin.Location = new System.Drawing.Point(71, 252);
+			this.btnlogin.Location = new System.Drawing.Point(71, 251);
 			this.btnlogin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.btnlogin.Name = "btnlogin";
-			this.btnlogin.Size = new System.Drawing.Size(476, 37);
+			this.btnlogin.Size = new System.Drawing.Size(476, 32);
 			this.btnlogin.TabIndex = 3;
 			this.btnlogin.Text = "LOGIN";
 			this.btnlogin.UseVisualStyleBackColor = false;
@@ -189,28 +195,33 @@
 			// 
 			// tableLayoutPanel1
 			// 
+			this.tableLayoutPanel1.AutoSize = true;
 			this.tableLayoutPanel1.ColumnCount = 2;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.85034F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.14966F));
-			this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
-			this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
-			this.tableLayoutPanel1.Controls.Add(this.panel4, 1, 1);
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(89, 103);
+			this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 1);
+			this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 2);
+			this.tableLayoutPanel1.Controls.Add(this.panel4, 1, 2);
+			this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.panel6, 1, 0);
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(89, 80);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.RowCount = 2;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(441, 87);
-			this.tableLayoutPanel1.TabIndex = 11;
+			this.tableLayoutPanel1.RowCount = 3;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(441, 132);
+			this.tableLayoutPanel1.TabIndex = 0;
 			// 
 			// panel1
 			// 
 			this.panel1.Controls.Add(this.label2);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel1.Location = new System.Drawing.Point(3, 3);
+			this.panel1.Location = new System.Drawing.Point(3, 47);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(108, 37);
+			this.panel1.Size = new System.Drawing.Size(108, 38);
 			this.panel1.TabIndex = 0;
 			// 
 			// label2
@@ -220,7 +231,7 @@
 			this.label2.ForeColor = System.Drawing.Color.Silver;
 			this.label2.Location = new System.Drawing.Point(0, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(108, 37);
+			this.label2.Size = new System.Drawing.Size(108, 38);
 			this.label2.TabIndex = 9;
 			this.label2.Text = "USER ID";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,16 +240,16 @@
 			// 
 			this.panel2.Controls.Add(this.txtUser);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel2.Location = new System.Drawing.Point(117, 3);
+			this.panel2.Location = new System.Drawing.Point(117, 47);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(321, 37);
+			this.panel2.Size = new System.Drawing.Size(321, 38);
 			this.panel2.TabIndex = 1;
 			// 
 			// panel3
 			// 
 			this.panel3.Controls.Add(this.label3);
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel3.Location = new System.Drawing.Point(3, 46);
+			this.panel3.Location = new System.Drawing.Point(3, 91);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(108, 38);
 			this.panel3.TabIndex = 2;
@@ -259,10 +270,55 @@
 			// 
 			this.panel4.Controls.Add(this.txtPass);
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.panel4.Location = new System.Drawing.Point(117, 46);
+			this.panel4.Location = new System.Drawing.Point(117, 91);
 			this.panel4.Name = "panel4";
 			this.panel4.Size = new System.Drawing.Size(321, 38);
-			this.panel4.TabIndex = 3;
+			this.panel4.TabIndex = 2;
+			// 
+			// panel5
+			// 
+			this.panel5.Controls.Add(this.label4);
+			this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel5.Location = new System.Drawing.Point(3, 3);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(108, 38);
+			this.panel5.TabIndex = 4;
+			// 
+			// label4
+			// 
+			this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.label4.Font = new System.Drawing.Font("Century Gothic", 12F);
+			this.label4.ForeColor = System.Drawing.Color.Silver;
+			this.label4.Location = new System.Drawing.Point(0, 0);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(108, 38);
+			this.label4.TabIndex = 10;
+			this.label4.Text = "COMPANY";
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// panel6
+			// 
+			this.panel6.Controls.Add(this.cboCompany);
+			this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel6.Location = new System.Drawing.Point(117, 3);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(321, 38);
+			this.panel6.TabIndex = 0;
+			// 
+			// cboCompany
+			// 
+			this.cboCompany.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.cboCompany.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
+			this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboCompany.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cboCompany.Font = new System.Drawing.Font("Century Gothic", 12F);
+			this.cboCompany.ForeColor = System.Drawing.Color.Silver;
+			this.cboCompany.FormattingEnabled = true;
+			this.cboCompany.Location = new System.Drawing.Point(4, 5);
+			this.cboCompany.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			this.cboCompany.Name = "cboCompany";
+			this.cboCompany.Size = new System.Drawing.Size(313, 29);
+			this.cboCompany.TabIndex = 0;
 			// 
 			// frmLoginFrame
 			// 
@@ -273,10 +329,12 @@
 			this.Controls.Add(this.pnlBody);
 			this.Controls.Add(this.pnlLogo);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.KeyPreview = true;
 			this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.Name = "frmLoginFrame";
 			this.Opacity = 0.9D;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLoginFrame_KeyDown);
 			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MoveWindow);
 			this.pnlLogo.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
@@ -292,6 +350,8 @@
 			this.panel3.ResumeLayout(false);
 			this.panel4.ResumeLayout(false);
 			this.panel4.PerformLayout();
+			this.panel5.ResumeLayout(false);
+			this.panel6.ResumeLayout(false);
 			this.ResumeLayout(false);
 
         }
@@ -315,6 +375,10 @@
 		public System.Windows.Forms.Panel panel4;
 		public System.Windows.Forms.Label label3;
 		public System.Windows.Forms.Button btnlogin;
+		public System.Windows.Forms.Label label4;
+		public System.Windows.Forms.Panel panel5;
+		public System.Windows.Forms.Panel panel6;
+		public System.Windows.Forms.ComboBox cboCompany;
 	}
 }
 

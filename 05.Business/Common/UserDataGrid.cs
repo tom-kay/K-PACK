@@ -1,5 +1,13 @@
-﻿using System.Data;
+﻿using FarPoint.Win;
+using FarPoint.Win.Spread;
+using P02_K_CONTROL_WIN;
+using P05_Business.S01_Models.Dto.Base;
+using P05_Business.S02_Controllers.Base;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -24,30 +32,37 @@ namespace P05_Business.Common
 		/// </summary>
 		/// <param name="dataGrid"></param>
 		/// <param name="sizeColumnsMode"></param>
-		public static void Create(DataGridView dataGrid, DataGridViewAutoSizeColumnsMode sizeColumnsMode)
+		public static void Create(DataGridView dataGrid, DataGridViewAutoSizeColumnsMode sizeColumnsMode
+			, DataGridViewCellBorderStyle borderStyle = DataGridViewCellBorderStyle.None
+			, DataGridViewHeaderBorderStyle headerStyle = DataGridViewHeaderBorderStyle.None)
 		{
+			dataGrid.Refresh();
+
 			dataGrid.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
 			dataGrid.AutoSizeColumnsMode = sizeColumnsMode;  //사용자정의
 			dataGrid.AllowUserToResizeRows = false;
 			dataGrid.BackgroundColor = SystemColors.Window;
 			dataGrid.BorderStyle = BorderStyle.None;
-			dataGrid.CellBorderStyle = DataGridViewCellBorderStyle.None;
+			dataGrid.CellBorderStyle = borderStyle;
 			dataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 			dataGrid.AutoGenerateColumns = false;
-			
+			dataGrid.RowHeadersVisible = false;
+			dataGrid.EnableHeadersVisualStyles = false;
+			dataGrid.AllowUserToAddRows = false;
+			dataGrid.EditMode = DataGridViewEditMode.EditOnEnter;
 
-			dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+			dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 			dataGrid.ColumnHeadersHeight = 35;
-			dataGrid.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;			
+			dataGrid.ColumnHeadersBorderStyle = headerStyle;			
 			dataGrid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-			dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft New Tai Lue", 12f, FontStyle.Bold);
+			dataGrid.ColumnHeadersDefaultCellStyle.Font = new Font(SystemHelper._FONT_NAME, 12, FontStyle.Bold);
 			dataGrid.ColumnHeadersDefaultCellStyle.BackColor = Color.CornflowerBlue;
 			dataGrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 			dataGrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
 			dataGrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.White;
 
 			dataGrid.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-			dataGrid.DefaultCellStyle.Font = new Font("Microsoft New Tai Lue", 12f);
+			dataGrid.DefaultCellStyle.Font = new Font(SystemHelper._FONT_NAME, 12);
 			dataGrid.DefaultCellStyle.BackColor = Color.White;
 			dataGrid.DefaultCellStyle.ForeColor = SystemColors.WindowText;
 			dataGrid.DefaultCellStyle.SelectionBackColor = Color.White;
@@ -55,6 +70,8 @@ namespace P05_Business.Common
 
 			dataGrid.RowsDefaultCellStyle.SelectionBackColor = Color.Beige;
 			dataGrid.RowsDefaultCellStyle.SelectionForeColor = SystemColors.WindowText;
+
+			dataGrid.RowTemplate.Height = 35;
 		}
 
 		public static void End(DataGridView dataGrid)
@@ -75,31 +92,36 @@ namespace P05_Business.Common
 		/// <param name="alignment">컬럼 정렬 설정</param>
 		public static void AddTextBoxColumn(DataGridView dataGrid
 			, string name, string headerText, bool readOnly, bool visible, int columnWidth
-			, DataGridViewContentAlignment alignment, TextType textType = TextType.None)
+			, DataGridViewContentAlignment alignment, TextType textType = TextType.None, Int16 maxInputLength = Int16.MaxValue, string format = "", object nullValue = null)
 		{
 			DataGridViewTextBoxColumn text = new DataGridViewTextBoxColumn();
+
+			text.MaxInputLength = maxInputLength;
+			text.DefaultCellStyle.Format = format;
+			text.DefaultCellStyle.NullValue = nullValue;
 
 			dataGrid.Columns.Add(SetGridCommonOption(text, name, headerText, readOnly, visible, columnWidth, alignment, textType));
 
 		}
 
-		/// <summary>
-		/// 콤보박스 컬럼 추가
-		/// </summary>
-		/// <param name="dataGrid">DataGridView</param>
-		/// <param name="name">컬럼명</param>
-		/// <param name="headerText">컬럼헤더 텍스트</param>
-		/// <param name="readOnly">컬럼 읽기 전용 설정</param>
-		/// <param name="visible">컬럼 노출 설정</param>
-		/// <param name="columnWidth">컬럼 넓이 설정</param>
-		/// <param name="alignment">컬럼 정렬 설정</param>
-		public static void AddComboBoxColumn(DataGridView dataGrid
+        /// <summary>
+        /// 콤보박스 컬럼 추가
+        /// </summary>
+        /// <param name="dataGrid">DataGridView</param>
+        /// <param name="name">컬럼명</param>
+        /// <param name="headerText">컬럼헤더 텍스트</param>
+        /// <param name="readOnly">컬럼 읽기 전용 설정</param>
+        /// <param name="visible">컬럼 노출 설정</param>
+        /// <param name="columnWidth">컬럼 넓이 설정</param>
+        /// <param name="alignment">컬럼 정렬 설정</param>
+        public static void AddComboBoxColumn(DataGridView dataGrid
 			, string name, string headerText, bool readOnly, bool visible, int columnWidth
 			, DataGridViewContentAlignment alignment)
 		{
 			DataGridViewComboBoxColumn combo = new DataGridViewComboBoxColumn();
+			combo.FlatStyle = FlatStyle.Popup;
 
-			dataGrid.Columns.Add(SetGridCommonOption(combo, name, headerText, readOnly, visible, columnWidth, alignment));
+            dataGrid.Columns.Add(SetGridCommonOption(combo, name, headerText, readOnly, visible, columnWidth, alignment));
 		}
 
 		/// <summary>
@@ -196,13 +218,15 @@ namespace P05_Business.Common
 			column.Name = name;
 			column.DataPropertyName = name;
 			column.HeaderText = headerText;
-			column.Width = columnWidth;
-			column.ReadOnly = readOnly;
+			column.FillWeight = columnWidth;
+            column.Width = columnWidth;
+            column.ReadOnly = readOnly;
 			column.Visible = visible;
 			column.DefaultCellStyle.Alignment = alignment;
 			column.SortMode = DataGridViewColumnSortMode.NotSortable;
-			column.DefaultCellStyle.Font = new Font("Microsoft New Tai Lue", 12);
-            if (textType != TextType.None && textType != TextType.Text)
+			column.DefaultCellStyle.Font = new Font(SystemHelper._FONT_NAME, 12);
+
+			if (textType != TextType.None && textType != TextType.Text)
             {
 				switch (textType)
 				{
@@ -223,5 +247,146 @@ namespace P05_Business.Common
 
             return column;
 		}
-	}
+
+        internal static DataTable GetAllData(DataGridView grid)
+        {
+			return grid.DataSource as DataTable;
+        }
+
+        internal static DataTable GetChangeAll(DataGridView grid)
+		{
+			return (grid.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted);
+
+        }
+
+		internal static DataTable GetChangeAdded(DataGridView grid)
+		{
+			return (grid.DataSource as DataTable).GetChanges(DataRowState.Added);
+		}
+
+		internal static DataTable GetChangeModified(DataGridView grid)
+		{
+			return (grid.DataSource as DataTable).GetChanges(DataRowState.Modified);
+		}
+
+		internal static DataTable GetChangeDeleted(DataGridView grid)
+		{
+			return (grid.DataSource as DataTable).GetChanges(DataRowState.Deleted);
+		}
+
+		internal static DataTable GetChangesWithoutDeleted(DataGridView grid)
+		{
+			return (grid.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified);
+		}
+
+        internal static DataTable GetAllData(FpSpread spd)
+        {
+			//UpdateDataSourceFromSpread(spd);
+            return spd.ActiveSheet.DataSource as DataTable;
+        }
+
+        internal static DataTable GetChangeAll(FpSpread spd)
+        {
+			DataTable dt = (spd.ActiveSheet.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified | DataRowState.Deleted);
+            return dt;
+        }
+
+        internal static DataTable GetChangeAdded(FpSpread spd)
+        {
+            return (spd.ActiveSheet.DataSource as DataTable).GetChanges(DataRowState.Added);
+        }
+
+        internal static DataTable GetChangeModified(FpSpread spd)
+        {
+            return (spd.ActiveSheet.DataSource as DataTable).GetChanges(DataRowState.Modified);
+        }
+
+        internal static DataTable GetChangeDeleted(FpSpread spd)
+        {
+            return (spd.ActiveSheet.DataSource as DataTable).GetChanges(DataRowState.Deleted);
+        }
+
+        internal static DataTable GetChangesWithoutDeleted(FpSpread spd)
+        {
+            return (spd.DataSource as DataTable).GetChanges(DataRowState.Added | DataRowState.Modified);
+        }
+
+        /// <summary>
+        /// 코드 테이블에서 데이터를 조회해서 바인딩한다.
+        /// </summary>
+        /// <param name="combo"></param>
+        internal static void BindComboBoxColumnCommonCode(DataGridViewComboBoxColumn cbo, string masterCode, bool allItem, bool blankItem)
+        {
+            try
+            {
+                cbo.Items.Clear();
+
+                CodeDetailDto param = new CodeDetailDto()
+                {
+                    MasterCode = masterCode,
+                };
+
+                List<CodeDetailDto> items = new CodeMngController().GetUseCodeList(param);
+
+                if (allItem)
+                {
+                    items.Insert(0, new CodeDetailDto() { Code = "", Name = "전체" });
+                }
+
+                if (blankItem)
+                {
+                    items.Insert(0, new CodeDetailDto() { Code = "", Name = "" });
+                }
+
+                cbo.DataSource = items;
+                cbo.ValueMember = "Code";
+                cbo.DisplayMember = "Name";
+
+                cbo.DefaultCellStyle.NullValue = "";
+            }
+            catch
+            {
+                cbo.Items.Clear();
+            }
+        }
+
+        private static void UpdateDataSourceFromSpread(FpSpread spread)
+        {
+            var dataSource = spread.ActiveSheet.DataSource as DataTable;
+            if (dataSource == null) return;
+
+            for (int rowIndex = 0; rowIndex < spread.ActiveSheet.RowCount; rowIndex++)
+            {
+                for (int colIndex = 0; colIndex < spread.ActiveSheet.ColumnCount; colIndex++)
+                {
+                    var cell = spread.ActiveSheet.Cells[rowIndex, colIndex];
+                    var cellType = cell.CellType;
+
+                    if (cellType is FarPoint.Win.Spread.CellType.TextCellType)
+                    {
+                        dataSource.Rows[rowIndex][colIndex] = cell.Text;
+                    }
+                    else if (cellType is FarPoint.Win.Spread.CellType.ComboBoxCellType)
+                    {
+                        dataSource.Rows[rowIndex][colIndex] = cell.Value;
+                    }
+                    else if (cellType is FarPoint.Win.Spread.CellType.ImageCellType)
+                    {
+                        dataSource.Rows[rowIndex][colIndex] = cell.Value; // 이미지 데이터 처리
+                    }
+                    else if (cellType is FarPoint.Win.Spread.CellType.CheckBoxCellType)
+                    {
+                        dataSource.Rows[rowIndex][colIndex] = cell.Value;
+                    }
+                    else if (cellType is FarPoint.Win.Spread.CellType.ButtonCellType)
+                    {
+                        dataSource.Rows[rowIndex][colIndex] = cell.Text; // 버튼 셀의 텍스트 처리
+                    }
+                    // 다른 셀 유형에 대한 처리 추가
+                }
+            }
+        }
+
+    }
+
 }

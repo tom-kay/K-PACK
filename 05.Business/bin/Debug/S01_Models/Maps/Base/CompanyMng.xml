@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SmartSqlMap Scope="Base.CompanyMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+	<Statements>
+		<Statement Id="SelectAdd">
+			, ifnull(`com`.DelYn,'N') AS DelYn
+			,`com`.`CreateId`
+			,date_format(`com`.CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`
+			,`com`.`UpdateId`
+			,date_format(`com`.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`
+			,`com`.`DeleteId`
+			,date_format(`com`.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+		</Statement>
+
+		<Statement Id="selectCompanyList">
+			SELECT `com`.`CompanyCode`
+			, `com`.`Nationality`
+			, `com`.`HeadOffice`
+			, `com`.`CompanyGroup`
+			, `com`.`CompanyNameK`
+			, `com`.`CompanyNameE`
+			, `com`.`TelNo`
+			, `com`.`FaxNo`
+			, `com`.`AddressK1`
+			, `com`.`AddressK2`
+			, `com`.`AddressE1`
+			, `com`.`AddressE2`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_company` AS com
+			WHERE 1=1
+			<Switch Prepend="And" Property="DelYn">
+				<Case CompareValue="Y">
+					`DelYn` IS NOT NULL AND `DelYn` = 'Y'
+				</Case>
+				<Case CompareValue="N">
+					(`DelYn` IS NULL OR `DelYn` != 'Y')
+				</Case>
+			</Switch>
+		</Statement>
+
+		<Statement Id="selectCompany">
+			SELECT `com`.`CompanyCode`
+			, `com`.`Nationality`
+			, `nat`.`Name` AS NationalityName
+			, `com`.`HeadOffice`
+			, `com`.`CompanyGroup`
+			, `com`.`CompanyNameK`
+			, `com`.`CompanyNameE`
+			, `com`.`TelNo`
+			, `com`.`FaxNo`
+			, `com`.`AddressK1`
+			, `com`.`AddressK2`
+			, `com`.`AddressE1`
+			, `com`.`AddressE2`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_company` AS com
+			LEFT JOIN tb_code_detail AS nat
+			ON nat.MasterCode = 'NATIONALITY'
+			AND nat.`code` = com.Nationality
+			WHERE `com`.`CompanyCode` = @CompanyCode
+		</Statement>
+
+		<Statement Id="insertCompany">
+
+			INSERT INTO `tb_company`
+			(`CompanyCode`,
+			`Nationality`,
+			`HeadOffice`,
+			`CompanyGroup`,
+			`CompanyNameK`,
+			`CompanyNameE`,
+			`TelNo`,
+			`FaxNo`,
+			`AddressK1`,
+			`AddressK2`,
+			`AddressE1`,
+			`AddressE2`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES
+			(@CompanyCode,
+			@Nationality,
+			@HeadOffice,
+			@CompanyGroup,
+			@CompanyNameK,
+			@CompanyNameE,
+			@TelNo,
+			@FaxNo,
+			@AddressK1,
+			@AddressK2,
+			@AddressE1,
+			@AddressE2,
+			@CreateId,
+			now())
+			ON DUPLICATE KEY UPDATE
+			`Nationality` = @Nationality,
+			`HeadOffice` = @HeadOffice,
+			`CompanyGroup` = @CompanyGroup,
+			`CompanyNameK` = @CompanyNameK,
+			`CompanyNameE` = @CompanyNameE,
+			`TelNo` = @TelNo,
+			`FaxNo` = @FaxNo,
+			`AddressK1` = @AddressK1,
+			`AddressK2` = @AddressK2,
+			`AddressE1` = @AddressE1,
+			`AddressE2` = @AddressE2,
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = null
+			;
+		</Statement>
+		
+
+		<Statement Id="deleteCompany" >
+			UPDATE `tb_company`
+			SET
+			`DelYn` = @DelYn,
+			`DeleteId` = @DeleteId,
+			`DeleteDt` = now()
+			WHERE `CompanyCode` = @CompanyCode
+		</Statement>
+
+
+	</Statements>
+</SmartSqlMap>

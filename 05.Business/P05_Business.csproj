@@ -12,6 +12,31 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>G:\workspace\Clickonce\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://kayroot.dothome.co.kr/soodal/</InstallUrl>
+    <TargetCulture>ko-KR</TargetCulture>
+    <ProductName>soodal</ProductName>
+    <PublisherName>kay</PublisherName>
+    <SuiteName>moodal</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>41</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,7 +46,8 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>5</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,9 +65,119 @@
     <Win32Resource>
     </Win32Resource>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>408B70941F8DFDAD9523D0A9C22D16C26305C3B3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.Engine.13.0.4003\lib\net40\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ClientDoc.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.ClientDoc.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommLayer.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.CommLayer.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommonControls.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.CommonControls.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommonObjectModel.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.CommonObjectModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.Controllers.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.Controllers.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CubeDefModel.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.CubeDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.DataDefModel.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.DataDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataSetConversion, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.DataSetConversion.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.DataSetConversion.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ObjectFactory.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.ObjectFactory.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Prompting, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.Prompting.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.Prompting.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ReportDefModel.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.ReportDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.XmlSerialize, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.XmlSerialize.13.0.4003\lib\net40\CrystalDecisions.ReportAppServer.XmlSerialize.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportSource.13.0.4003\lib\net40\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.Shared.13.0.4003\lib\net40\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.Web.13.0.4003\lib\net40\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=6.0.21.0, Culture=neutral, PublicKeyToken=09af7300eec23701" />
+    <Reference Include="Devart.Data.MySql, Version=9.3.21.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL" />
+    <Reference Include="FarPoint.CalcEngine, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Excel, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Localization, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.PDF, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.PluginCalendar.WinForms, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Win, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Win.Chart, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="FarPoint.Win.Spread, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL" />
+    <Reference Include="Google.Protobuf, Version=3.25.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.25.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="GrapeCity.CalcEngine, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="GrapeCity.Spreadsheet, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="GrapeCity.Spreadsheet.Win, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457" />
+    <Reference Include="GrapeCity.Win.PluginInputMan, Version=12.45.20193.0, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL" />
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
@@ -55,8 +191,62 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.1.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.1.1.2\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.8.0.0\lib\net462\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.8.0.0\lib\net462\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.8.0.0\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Configuration, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Configuration.8.0.0\lib\net462\Microsoft.Extensions.Logging.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Console, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Console.8.0.0\lib\net462\Microsoft.Extensions.Logging.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.8.0.0\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options.ConfigurationExtensions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.ConfigurationExtensions.8.0.0\lib\net462\Microsoft.Extensions.Options.ConfigurationExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.8.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.dll</HintPath>
@@ -71,10 +261,11 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\MySQL\MySQL Connector NET 8.3.0\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.4.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.4.0\lib\net462\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="SmartSql, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SmartSql.2.3.2\lib\net46\SmartSql.dll</HintPath>
     </Reference>
@@ -84,9 +275,15 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
       <Private>True</Private>
@@ -94,8 +291,8 @@
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.0\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.Tracing, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.Tracing.4.3.0\lib\net462\System.Diagnostics.Tracing.dll</HintPath>
@@ -133,6 +330,9 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
     <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
       <Private>True</Private>
@@ -142,6 +342,10 @@
       <HintPath>..\packages\System.Linq.Expressions.4.3.0\lib\net463\System.Linq.Expressions.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
@@ -154,6 +358,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Reflection, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Reflection.4.3.0\lib\net462\System.Reflection.dll</HintPath>
       <Private>True</Private>
@@ -163,6 +370,9 @@
       <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Extensions, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.Extensions.4.3.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
@@ -199,12 +409,27 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.0\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.RegularExpressions.4.3.0\lib\net463\System.Text.RegularExpressions.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
@@ -217,21 +442,137 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsControlLibrary1">
+      <HintPath>..\..\..\Users\Administrator\source\repos\WindowsFormsControlLibrary1\bin\Debug\WindowsFormsControlLibrary1.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="ZstdSharp, Version=0.7.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.7.1\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\AccessMain.cs" />
+    <Compile Include="Common\DataHandles.cs" />
+    <Compile Include="Common\Helpers\ComboHelper.cs" />
+    <Compile Include="Common\Helpers\FileHelper.cs" />
+    <Compile Include="Common\Helpers\GridHelper.cs" />
+    <Compile Include="Common\Helpers\SpreadHelper.cs" />
+    <Compile Include="Common\LogConfig.cs" />
+    <Compile Include="Common\LoginCompany.cs" />
+    <Compile Include="Common\LoginUserInfo.cs" />
     <Compile Include="Common\UserDataGrid.cs" />
     <Compile Include="Common\GlobalVariables.cs" />
     <Compile Include="Common\MainMessage.cs" />
+    <Compile Include="S01_Models\Dao\Biz\ExportMngDao.cs" />
+    <Compile Include="S01_Models\Dto\Base\AirportCodeDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\ExportContainerDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\ExportInvoiceDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\ExportMasterDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\ExportPackingDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\OrderReportDto.cs" />
+    <Compile Include="S01_Models\Dto\Base\ShipportCodeDto.cs" />
+    <Compile Include="S02_Controllers\Biz\ExportMngController.cs" />
+    <Compile Include="S03_Views\Biz\frmExportList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmExportList.Designer.cs">
+      <DependentUpon>frmExportList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmExportMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmExportMng.Designer.cs">
+      <DependentUpon>frmExportMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Biz\frmPoFindPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Biz\frmPoFindPopup.Designer.cs">
+      <DependentUpon>frmPoFindPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmDetailCodePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmDetailCodePopup.Designer.cs">
+      <DependentUpon>frmDetailCodePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmPortCodePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmPortCodePopup.Designer.cs">
+      <DependentUpon>frmPortCodePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S04_Reports\Rpt\rptExportInvoiceDocu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptExportInvoiceDocu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="S04_Reports\Rpt\rptOrderDocu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptOrderDocu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="S04_Reports\Rpt\rtpExportPackingDocu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rtpExportPackingDocu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="S04_Reports\Xsd\ExportInvoiceDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExportInvoiceDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="S04_Reports\Xsd\ExportPackingDs.cs">
+      <DependentUpon>ExportPackingDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="S04_Reports\Xsd\ExportPackingDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExportPackingDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="S04_Reports\Xsd\OrderDs.cs">
+      <DependentUpon>OrderDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="S01_Models\Dao\Base\CompanyMngDao.cs" />
+    <Compile Include="S01_Models\Dao\Base\CustomerMngDao.cs" />
+    <Compile Include="S01_Models\Dao\Base\ExchangeRateMngDao.cs" />
+    <Compile Include="S01_Models\Dao\Base\MemoMngDao.cs" />
     <Compile Include="S01_Models\Dao\Base\MenuMntDao.cs" />
     <Compile Include="S01_Models\Dao\Base\CodeMntDao.cs" />
+    <Compile Include="S01_Models\Dao\Base\UserMngDao.cs" />
+    <Compile Include="S01_Models\Dao\Biz\ItemMngDao.cs" />
+    <Compile Include="S01_Models\Dao\Biz\OrderMngDao.cs" />
     <Compile Include="S01_Models\Dao\DaoFactory.cs" />
     <Compile Include="S01_Models\Dto\Base\CodeDetailDto.cs" />
     <Compile Include="S01_Models\Dto\Base\CodeMasterDto.cs" />
     <Compile Include="S01_Models\Dto\Base\CompanyInfoDto.cs" />
+    <Compile Include="S01_Models\Dto\Base\CustomerDto.cs" />
+    <Compile Include="S01_Models\Dto\Base\CustomerEmpDto.cs" />
+    <Compile Include="S01_Models\Dto\Base\ExchangeRateMngDto.cs" />
+    <Compile Include="S01_Models\Dto\Base\MemoTemplateDto.cs" />
     <Compile Include="S01_Models\Dto\Base\MenuMasterDto.cs" />
+    <Compile Include="S01_Models\Dto\Base\UserMngDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\ItemDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\ItemGroupDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\OrderDetailDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\OrderMasterDto.cs" />
     <Compile Include="S01_Models\Dto\DtoBase.cs" />
     <Compile Include="S02_Controllers\Base\CodeMngController.cs" />
+    <Compile Include="S02_Controllers\Base\CompanyMngController.cs" />
+    <Compile Include="S02_Controllers\Base\CustomerMngController.cs" />
+    <Compile Include="S02_Controllers\Base\ExchangeRateMngController.cs" />
+    <Compile Include="S02_Controllers\Base\MemoMngController.cs" />
     <Compile Include="S02_Controllers\Base\MenuMngController.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -245,6 +586,9 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="S02_Controllers\Base\UserMngController.cs" />
+    <Compile Include="S02_Controllers\Biz\ItemMngController.cs" />
+    <Compile Include="S02_Controllers\Biz\OrderMngController.cs" />
     <Compile Include="S03_Views\Base\frmCodeDetailList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +619,36 @@
     <Compile Include="S03_Views\Base\frmCompanyInfo.Designer.cs">
       <DependentUpon>frmCompanyInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="S03_Views\Base\frmCustomerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCustomerList.Designer.cs">
+      <DependentUpon>frmCustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCustomerMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmCustomerMng.Designer.cs">
+      <DependentUpon>frmCustomerMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmExchangeRateMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmExchangeRateMng.Designer.cs">
+      <DependentUpon>frmExchangeRateMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmMemoList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmMemoList.Designer.cs">
+      <DependentUpon>frmMemoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmMemoMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Base\frmMemoMng.Designer.cs">
+      <DependentUpon>frmMemoMng.cs</DependentUpon>
+    </Compile>
     <Compile Include="S03_Views\Base\frmMenuMasterMng.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +667,54 @@
     <Compile Include="S03_Views\Base\frmUserMng.Designer.cs">
       <DependentUpon>frmUserMng.cs</DependentUpon>
     </Compile>
+    <Compile Include="S03_Views\Biz\frmItemList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmItemList.Designer.cs">
+      <DependentUpon>frmItemList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmItemMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmItemMng.Designer.cs">
+      <DependentUpon>frmItemMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmOrderList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmOrderList.Designer.cs">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmOrderMng.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Biz\frmOrderMng.Designer.cs">
+      <DependentUpon>frmOrderMng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Biz\frmCustomerPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Biz\frmCustomerPopup.Designer.cs">
+      <DependentUpon>frmCustomerPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Biz\frmItemFindPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Biz\frmItemFindPopup.Designer.cs">
+      <DependentUpon>frmItemFindPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmLoading.Designer.cs">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmMasterCodePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmMasterCodePopup.Designer.cs">
+      <DependentUpon>frmMasterCodePopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="S03_Views\Popup\Common\frmPopup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,10 +723,199 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="S03_Views\Popup\Common\frmTemplatePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmTemplatePopup.Designer.cs">
+      <DependentUpon>frmTemplatePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmUserSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S03_Views\Popup\Common\frmUserSetting.Designer.cs">
+      <DependentUpon>frmUserSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S04_Reports\frmReportMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="S04_Reports\frmReportMain.Designer.cs">
+      <DependentUpon>frmReportMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="S04_Reports\Xsd\OrderDs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderDs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Content Include="Logging.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resource\loading.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resource\Images\50off_sticker_50off_black_sticker.png" />
+    <Content Include="Resource\Images\58460_down_arrow_arrow_down.png" />
+    <Content Include="Resource\Images\58461_left_left_arrow_arrow.png" />
+    <Content Include="Resource\Images\58462_right_right_arrow_arrow.png" />
+    <Content Include="Resource\Images\58463_up_up_arrow_arrow.png" />
+    <Content Include="Resource\Images\58464_board_2_black_board.png" />
+    <Content Include="Resource\Images\58465_school_chalkboard_board_teach_black_school_chalkboard_board_teach.png" />
+    <Content Include="Resource\Images\58466_bluetooth_bluetooth.png" />
+    <Content Include="Resource\Images\58467_bookmarks_bookmarks_2.png" />
+    <Content Include="Resource\Images\58468_bookmarks_bookmarks.png" />
+    <Content Include="Resource\Images\58469_box_add_box_add.png" />
+    <Content Include="Resource\Images\58470_box_box_down_down.png" />
+    <Content Include="Resource\Images\58471_box_remove_box_remove.png" />
+    <Content Include="Resource\Images\58472_up_up_box_box.png" />
+    <Content Include="Resource\Images\58473_product_product_box_box.png" />
+    <Content Include="Resource\Images\58474_work_briefcase_work_briefcase.png" />
+    <Content Include="Resource\Images\58475_bug_bug_ladybug_ladybug.png" />
+    <Content Include="Resource\Images\58476_button_add_add.png" />
+    <Content Include="Resource\Images\58477_button_burn_button_burn.png" />
+    <Content Include="Resource\Images\58478_check_button_check.png" />
+    <Content Include="Resource\Images\58479_circle_circle_color_color.png" />
+    <Content Include="Resource\Images\58480_eject_button_eject.png" />
+    <Content Include="Resource\Images\58481_button_help_help.png" />
+    <Content Include="Resource\Images\58482_info_help_information_info_help_information_button.png" />
+    <Content Include="Resource\Images\58483_load_load_button.png" />
+    <Content Include="Resource\Images\58484_next_button_next.png" />
+    <Content Include="Resource\Images\58485_pause_pause_button_button.png" />
+    <Content Include="Resource\Images\58486_button_play_play.png" />
+    <Content Include="Resource\Images\58487_previous_button_previous.png" />
+    <Content Include="Resource\Images\58488_active_active.png" />
+    <Content Include="Resource\Images\58489_record_button_record.png" />
+    <Content Include="Resource\Images\58490_remove_remove_button.png" />
+    <Content Include="Resource\Images\58491_button_rss_rss_feed_feed.png" />
+    <Content Include="Resource\Images\58492_stop_button_stop.png" />
+    <Content Include="Resource\Images\58501_calendar_2_calendar.png" />
+    <Content Include="Resource\Images\58502_calendar_calendar.png" />
+    <Content Include="Resource\Images\58503_camera_camera.png" />
+    <Content Include="Resource\Images\58504_chart_bar_bar_chart.png" />
+    <Content Include="Resource\Images\58505_chart_pie_chart_pie.png" />
+    <Content Include="Resource\Images\58506_chart_chart.png" />
+    <Content Include="Resource\Images\58507_blue_checkbox_empty_blue_checkbox_empty.png" />
+    <Content Include="Resource\Images\58508_tick_full_checkbox_tick_full_checkbox.png" />
+    <Content Include="Resource\Images\58509_wait_clock_time_alarm_wait_time_clock_alarm.png" />
+    <Content Include="Resource\Images\58510_clock_wait_time_clock_wait_time.png" />
+    <Content Include="Resource\Images\58511_key_cmd_cmd_key.png" />
+    <Content Include="Resource\Images\58512_drink_cocktail_drink_cocktail.png" />
+    <Content Include="Resource\Images\58513_cog_cog.png" />
+    <Content Include="Resource\Images\58514_comment_add_comment_add.png" />
+    <Content Include="Resource\Images\58515_edit_comment_edit_comment.png" />
+    <Content Include="Resource\Images\58516_remove_comment_remove_comment.png" />
+    <Content Include="Resource\Images\58517_comment_comment.png" />
+    <Content Include="Resource\Images\58518_computer_off_computer_off.png" />
+    <Content Include="Resource\Images\58519_screen_computer_monitor_on_computer_monitor_on_screen.png" />
+    <Content Include="Resource\Images\58520_contact_contact.png" />
+    <Content Include="Resource\Images\58521_email_contacts_email_add_book_address_add_address_book_contacts.png" />
+    <Content Include="Resource\Images\58522_remove_contacts_remove_contacts.png" />
+    <Content Include="Resource\Images\58523_contacts_contacts_sync_sync.png" />
+    <Content Include="Resource\Images\58524_contacts_contacts.png" />
+    <Content Include="Resource\Images\58525_credit_credit_paypal_paypal_card_card.png" />
+    <Content Include="Resource\Images\58526_visa_credit_card_credit_card_visa.png" />
+    <Content Include="Resource\Images\58527_dashboard_dashboard.png" />
+    <Content Include="Resource\Images\58528_add_database_add_database.png" />
+    <Content Include="Resource\Images\58529_database_remove_database_remove.png" />
+    <Content Include="Resource\Images\58530_database_database.png" />
+    <Content Include="Resource\Images\58531_desktop_wallpaper_wallpaper_desktop.png" />
+    <Content Include="Resource\Images\58532_blu_ray_disc_blu_ray_disc.png" />
+    <Content Include="Resource\Images\58533_dvd_disc_disc_dvd.png" />
+    <Content Include="Resource\Images\58534_add_document_document_add.png" />
+    <Content Include="Resource\Images\58535_document_edit_edit_file_document_file.png" />
+    <Content Include="Resource\Images\58536_document_remove_document_remove.png" />
+    <Content Include="Resource\Images\58537_document_document.png" />
+    <Content Include="Resource\Images\58538_add_2_document_add_document.png" />
+    <Content Include="Resource\Images\58539_document_document_edit_edit_2.png" />
+    <Content Include="Resource\Images\58540_2_document_remove_document_remove.png" />
+    <Content Include="Resource\Images\58541_2_document_document.png" />
+    <Content Include="Resource\Images\58542_blueprint_document_file_file_document_blueprint.png" />
+    <Content Include="Resource\Images\58543_document_todo_document_checklist_todo_checklist.png" />
+    <Content Include="Resource\Images\58544_closed_drawer_drawer_closed_furniture_furniture.png" />
+    <Content Include="Resource\Images\58545_drawer_cabinet_drawer_open_archive_archive_cabinet_open.png" />
+    <Content Include="Resource\Images\58546_file_add_file_add.png" />
+    <Content Include="Resource\Images\58547_receive_file_receive_file.png" />
+    <Content Include="Resource\Images\58548_file_remove_file_remove.png" />
+    <Content Include="Resource\Images\58549_send_file_send_file.png" />
+    <Content Include="Resource\Images\58550_file_file.png" />
+    <Content Include="Resource\Images\58551_mac os x_finder_mac os x_finder_apple_apple.png" />
+    <Content Include="Resource\Images\58552_add_folder_add_folder.png" />
+    <Content Include="Resource\Images\58553_folder_remove_remove_folder.png" />
+    <Content Include="Resource\Images\58554_folder_smart_smart_folder.png" />
+    <Content Include="Resource\Images\58555_folder_sync_folder_sync.png" />
+    <Content Include="Resource\Images\58556_folder_folder.png" />
+    <Content Include="Resource\Images\58557_fonts_fonts.png" />
+    <Content Include="Resource\Images\58558_active_active_globe_globe.png" />
+    <Content Include="Resource\Images\58559_internet_planet_internet_inactive_globe_global_planet_inactive_globe_global.png" />
+    <Content Include="Resource\Images\58560_add_add.png" />
+    <Content Include="Resource\Images\58561_check_check.png" />
+    <Content Include="Resource\Images\58562_remove_remove.png" />
+    <Content Include="Resource\Images\58563_home_home.png" />
+    <Content Include="Resource\Images\58564_talk_video_chat_skype_talk_video_chat_skype.png" />
+    <Content Include="Resource\Images\58565_im_im.png" />
+    <Content Include="Resource\Images\58566_ipad_ipad.png" />
+    <Content Include="Resource\Images\58567_iphone_iphone_mobile_mobile.png" />
+    <Content Include="Resource\Images\58568_light_off_bulb_off_light_bulb.png" />
+    <Content Include="Resource\Images\58569_on_yellow_tip_light_idea_hint_bulb_yellow_tip_on_light_idea_hint_bulb.png" />
+    <Content Include="Resource\Images\58570_chain_chain_link_link.png" />
+    <Content Include="Resource\Images\58571_lock_closed_padlock_closed_lock_padlock.png" />
+    <Content Include="Resource\Images\58572_lock_open_lock_open.png" />
+    <Content Include="Resource\Images\58573_love_love.png" />
+    <Content Include="Resource\Images\58574_wand_magic_wand_magic.png" />
+    <Content Include="Resource\Images\58575_mail_add_mail_add.png" />
+    <Content Include="Resource\Images\58576_mail_edit_mail_edit.png" />
+    <Content Include="Resource\Images\58577_forward_mail_forward_mail.png" />
+    <Content Include="Resource\Images\58578_envelope_email_open_mail_envelope_email_open_mail.png" />
+    <Content Include="Resource\Images\58579_open_2_open_mail_mail.png" />
+    <Content Include="Resource\Images\58580_mail_mail_receive_receive.png" />
+    <Content Include="Resource\Images\58581_mail_remove_mail_remove.png" />
+    <Content Include="Resource\Images\58582_mail_reply_mail_reply.png" />
+    <Content Include="Resource\Images\58583_send_mail_send_mail.png" />
+    <Content Include="Resource\Images\58584_envelope_email_envelope_mail_email_mail.png" />
+    <Content Include="Resource\Images\58585_maps_maps.png" />
+    <Content Include="Resource\Images\58586_call_mobile_phone_phone_mobile_call_cell_cell.png" />
+    <Content Include="Resource\Images\58587_money_money_bundle_bundle.png" />
+    <Content Include="Resource\Images\58588_money_money.png" />
+    <Content Include="Resource\Images\58589_film_movie_movie_film.png" />
+    <Content Include="Resource\Images\58590_music_blue_music_blue.png" />
+    <Content Include="Resource\Images\58591_music_green_music_green.png" />
+    <Content Include="Resource\Images\58592_music_music_red_red.png" />
+    <Content Include="Resource\Images\58593_add_news_add_news.png" />
+    <Content Include="Resource\Images\58594_news_news_remove_remove.png" />
+    <Content Include="Resource\Images\58595_news_news.png" />
+    <Content Include="Resource\Images\58596_list_pinned_note_list_note_pinned.png" />
+    <Content Include="Resource\Images\58597_sticky_sticky_note_note.png" />
+    <Content Include="Resource\Images\58598_pencil_pencil.png" />
+    <Content Include="Resource\Images\58599_photos_photos_pictures_pictures.png" />
+    <Content Include="Resource\Images\58600_printer_printer.png" />
+    <Content Include="Resource\Images\58601_private_private.png" />
+    <Content Include="Resource\Images\58602_ruler_ruler.png" />
+    <Content Include="Resource\Images\58603_add_search_search_add.png" />
+    <Content Include="Resource\Images\58604_search_remove_search_remove.png" />
+    <Content Include="Resource\Images\58605_search_search.png" />
+    <Content Include="Resource\Images\58606_sign_public_sign_public.png" />
+    <Content Include="Resource\Images\58607_sign_attention_warning_attention_warning_sign.png" />
+    <Content Include="Resource\Images\58608_happy_smiley_smiley_happy.png" />
+    <Content Include="Resource\Images\58609_sad_smiley_sad_smiley.png" />
+    <Content Include="Resource\Images\58610_speaker_speaker.png" />
+    <Content Include="Resource\Images\58611_off_star_off_star.png" />
+    <Content Include="Resource\Images\58612_star_star_bookmark_favorite_on_on_bookmark_favorite.png" />
+    <Content Include="Resource\Images\58613_stop_2_stop.png" />
+    <Content Include="Resource\Images\58614_stop_stop.png" />
+    <Content Include="Resource\Images\58615_system_activity_monitor_system_activity_monitor.png" />
+    <Content Include="Resource\Images\58616_equalizer_system_system_equalizer.png" />
+    <Content Include="Resource\Images\58617_preferences_system_preferences_system.png" />
+    <Content Include="Resource\Images\58618_system_system_terminal_terminal.png" />
+    <Content Include="Resource\Images\58619_trash_empty_trash_empty.png" />
+    <Content Include="Resource\Images\58620_full_trash_full_trash.png" />
+    <Content Include="Resource\Images\58621_trash_shredder_trash_shredder.png" />
+    <Content Include="Resource\Images\58622_screen_monitor_off_off_monitor_tv_screen_tv.png" />
+    <Content Include="Resource\Images\58623_on_monitor_screen_tv_tv_screen_on_monitor.png" />
+    <Content Include="Resource\Images\58624_user_user.png" />
+    <Content Include="Resource\Images\58625_users_users.png" />
+    <Content Include="Resource\Images\58626_singal_wifi_singal_podcast_podcast_wifi.png" />
+    <Content Include="Resource\Images\58627_window_move_window_move.png" />
+    <Content Include="Resource\Images\58628_resize_window_window_resize.png" />
+    <Content Include="Resource\Images\58629_window_window.png" />
     <Content Include="Resource\Images\accept_sub_sub_accept_black.png" />
     <Content Include="Resource\Images\access_black_access.png" />
     <Content Include="Resource\Images\active_database_database_active.png" />
@@ -406,6 +1017,7 @@
     <Content Include="Resource\Images\empty_empty_battery_battery.png" />
     <Content Include="Resource\Images\euro_blue_currency_euro_blue_currency.png" />
     <Content Include="Resource\Images\euro_currency_black_currency_euro.png" />
+    <Content Include="Resource\Images\eye.png" />
     <Content Include="Resource\Images\ffw_black_button_ffw.png" />
     <Content Include="Resource\Images\file_file_download_download.png" />
     <Content Include="Resource\Images\file_upload_file_upload.png" />
@@ -517,14 +1129,37 @@
     <Content Include="Resource\Images\windows_windows.png" />
     <Content Include="Resource\Images\yuan_yuan_currency_blue_blue_currency.png" />
     <Content Include="Resource\k_icon.ico" />
-    <EmbeddedResource Include="S01_Models\Maps\Base\MenuMng.xml">
+    <Content Include="S01_Models\Maps\Biz\ExportMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="version.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <Content Include="S01_Models\Maps\Base\MenuMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmCodeDetailList.resx">
+      <DependentUpon>frmCodeDetailList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmCodeDetailMng.resx">
       <DependentUpon>frmCodeDetailMng.cs</DependentUpon>
@@ -538,28 +1173,145 @@
     <EmbeddedResource Include="S03_Views\Base\frmCompanyInfo.resx">
       <DependentUpon>frmCompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmCustomerList.resx">
+      <DependentUpon>frmCustomerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmCustomerMng.resx">
+      <DependentUpon>frmCustomerMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmExchangeRateMng.resx">
+      <DependentUpon>frmExchangeRateMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmMemoList.resx">
+      <DependentUpon>frmMemoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmMemoMng.resx">
+      <DependentUpon>frmMemoMng.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Base\frmMenuMasterMng.resx">
       <DependentUpon>frmMenuMasterMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmUserList.resx">
+      <DependentUpon>frmUserList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Base\frmUserMng.resx">
+      <DependentUpon>frmUserMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Biz\frmExportList.resx">
+      <DependentUpon>frmExportList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Biz\frmExportMng.resx">
+      <DependentUpon>frmExportMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Biz\frmItemList.resx">
+      <DependentUpon>frmItemList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Biz\frmItemMng.resx">
+      <DependentUpon>frmItemMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Biz\frmOrderList.resx">
+      <DependentUpon>frmOrderList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Biz\frmOrderMng.resx">
+      <DependentUpon>frmOrderMng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Biz\frmCustomerPopup.resx">
+      <DependentUpon>frmCustomerPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Biz\frmPoFindPopup.resx">
+      <DependentUpon>frmPoFindPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Biz\frmItemFindPopup.resx">
+      <DependentUpon>frmItemFindPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Common\frmDetailCodePopup.resx">
+      <DependentUpon>frmDetailCodePopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Common\frmLoading.resx">
+      <DependentUpon>frmLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Common\frmMasterCodePopup.resx">
+      <DependentUpon>frmMasterCodePopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="S03_Views\Popup\Common\frmPopup.resx">
       <DependentUpon>frmPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Content Include="k_icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="S03_Views\Popup\Common\frmPortCodePopup.resx">
+      <DependentUpon>frmPortCodePopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Common\frmTemplatePopup.resx">
+      <DependentUpon>frmTemplatePopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S03_Views\Popup\Common\frmUserSetting.resx">
+      <DependentUpon>frmUserSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S04_Reports\frmReportMain.resx">
+      <DependentUpon>frmReportMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S04_Reports\Rpt\rptExportInvoiceDocu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptExportInvoiceDocu.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S04_Reports\Rpt\rptOrderDocu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOrderDocu.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="S04_Reports\Rpt\rtpExportPackingDocu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rtpExportPackingDocu.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="P05_Business_TemporaryKey.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Resource\Font\D2Coding-Ver1.3.2-20180524-all.ttc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="S04_Reports\Xsd\ExportInvoiceDs.xsc">
+      <DependentUpon>ExportInvoiceDs.xsd</DependentUpon>
+    </None>
+    <None Include="S04_Reports\Xsd\ExportInvoiceDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExportInvoiceDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="S04_Reports\Xsd\ExportInvoiceDs.xss">
+      <DependentUpon>ExportInvoiceDs.xsd</DependentUpon>
+    </None>
+    <None Include="S04_Reports\Xsd\ExportPackingDs.xsc">
+      <DependentUpon>ExportPackingDs.xsd</DependentUpon>
+    </None>
+    <None Include="S04_Reports\Xsd\ExportPackingDs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExportPackingDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="S04_Reports\Xsd\ExportPackingDs.xss">
+      <DependentUpon>ExportPackingDs.xsd</DependentUpon>
+    </None>
+    <None Include="S04_Reports\Xsd\OrderDs.xsc">
+      <DependentUpon>OrderDs.xsd</DependentUpon>
+    </None>
+    <None Include="S04_Reports\Xsd\OrderDs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>OrderDs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="S04_Reports\Xsd\OrderDs.xss">
+      <DependentUpon>OrderDs.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -575,15 +1327,37 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resource\loading2.gif" />
     <Content Include="Resource\Logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S01_Models\Maps\Base\CompanyMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S01_Models\Maps\Base\UserMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S01_Models\Maps\Base\CustomerMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S01_Models\Maps\Base\ExchangeRateMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S01_Models\Maps\Base\MemoMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S01_Models\Maps\Biz\ItemMng.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="S01_Models\Maps\Biz\OrderMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SmartSqlMapConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="S01_Models\Maps\Base\CodeMng.xml">
+    <Content Include="S01_Models\Maps\Base\CodeMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\01.K_DESIGN_WIN\P01_K_DESIGN_WIN.csproj">
@@ -598,7 +1372,158 @@
       <Project>{9573b406-7b9a-4087-8020-45945058f1c7}</Project>
       <Name>P03_Framework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Launcher\Launcher.csproj">
+      <Project>{3af28bcc-ff90-45ce-9a4c-1197732a8a5f}</Project>
+      <Name>Launcher</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Logging.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="S01_Models\Maps\Base\CodeMng.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="S01_Models\Maps\Base\CompanyMng.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="S01_Models\Maps\Base\CustomerMng.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="S01_Models\Maps\Base\ExchangeRateMng.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="S01_Models\Maps\Base\MemoMng.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="S01_Models\Maps\Base\MenuMng.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="S01_Models\Maps\Base\UserMng.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="S01_Models\Maps\Biz\ExportMng.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="S01_Models\Maps\Biz\ItemMng.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="S01_Models\Maps\Biz\OrderMng.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="SmartSqlMapConfig.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>

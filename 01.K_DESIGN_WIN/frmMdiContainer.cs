@@ -16,11 +16,15 @@ namespace P01_K_DESIGN_WIN
 		private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
 		//private Random random;
-		private int tempIndex;
+		//private int tempIndex;
 		
 		private int tolerance = 12;
 		private const int WM_NCHITTEST = 132;
 		private const int HTBOTTOMRIGHT = 17;
+		private const int WM_NCLBUTTONDOWN = 0xA1;
+		private const int HT_CAPTION = 0x2;
+		private const int WM_NCCALCSIZE = 0x83;
+		private const int WM_NCLBUTTONDBLCLK = 0x00A3; // 마우스 더블 클릭 메시지
 
 		private Rectangle sizeGripRectangle;
 
@@ -28,9 +32,7 @@ namespace P01_K_DESIGN_WIN
 		public frmMdiContainer()
 		{
 			InitializeComponent();
-			//random = new Random();
-			btnCloseChildForm.Visible = false;
-			//this.Text = string.Empty;
+
 			this.ControlBox = false;
 			this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
@@ -39,7 +41,7 @@ namespace P01_K_DESIGN_WIN
 
 			tabMenuForm.TabPages.Clear();   // 모든 메뉴탭 지우기
 
-			SetTimeZone();	//타임존 설정
+			SetTimeZone();  //타임존 설정
 		}
 
 		/// <summary>
@@ -148,7 +150,7 @@ namespace P01_K_DESIGN_WIN
 			childForm.BringToFront();
 			childForm.Show();
 
-			btnCloseChildForm.Visible = true;
+			//btnCloseChildForm.Visible = true;
 		}
 
 		private TabPage CreateMenuTab(Form childForm)
@@ -222,7 +224,20 @@ namespace P01_K_DESIGN_WIN
 
 		private void btnCloseChildForm_Click(object sender, EventArgs e)
 		{
-			CloseChildForm();
+			//CloseChildForm();
+			if (KMessageBox.Show("로그아웃 하시겠습니까?", "로그아웃", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
+				//열려있는 서브폼 닫기
+				int pagesCount = tabMenuForm.TabPages.Count;
+				for (int i = 0; i < pagesCount; i++)
+				{
+					tabMenuForm.SelectedIndex = i;
+					CloseChildForm();
+				}
+
+				if (tabMenuForm.TabPages.Count == 0)
+					Application.Restart();
+			}
 		}
 
 		public void CloseChildForm()
@@ -236,12 +251,13 @@ namespace P01_K_DESIGN_WIN
 					if (frm.IsDisposed == true)
 					{
 						tabMenuForm.TabPages.Remove(tabMenuForm.SelectedTab);
+						break;
 					}
 				}
 			}
 
-			if (Application.OpenForms.Count < 2)
-				Reset();
+			//if (Application.OpenForms.Count < 2)
+			//	Reset();
 		}
 
 		private void Reset()
@@ -250,18 +266,24 @@ namespace P01_K_DESIGN_WIN
 			//panelSubMenuBar.BackColor = Color.FromArgb(51, 60, 77);
 			//panelLogo.BackColor = Color.FromArgb(51, 60, 77);
 			
-			btnCloseChildForm.Visible = false;
+			//btnCloseChildForm.Visible = false;
 		}
 		private void pnlTitleBar_MouseDown(object sender, MouseEventArgs e)
 		{
-			if (e.Clicks == 2)
-			{
-				pnlTitleBar_MouseDoubleClick(sender, e);
-			}
-			else if (e.Clicks == 1)
+			if (e.Clicks == 1)
 			{
 				ReleaseCapture();
-				SendMessage(this.Handle, 0x112, 0xf012, 0);
+				//SendMessage(this.Handle, 0x112, 0xf012, 0);
+				SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+
+				if (this.Location.Y <= 0)
+				{
+					this.WindowState = FormWindowState.Maximized;
+				}
+				else
+				{
+					this.WindowState = FormWindowState.Normal; // original은 창의 원래 크기를 저장한 변수입니다.
+				}
 			}
 		}
 
@@ -297,10 +319,19 @@ namespace P01_K_DESIGN_WIN
 			this.WindowState = FormWindowState.Minimized;
 		}
 		private void btnClose_Click(object sender, EventArgs e)
-		{
+		{	
 			if (KMessageBox.Show("종료 하시겠습니까?", "종료", MessageBoxButtons.YesNo) == DialogResult.Yes)
 			{
-				Application.Exit();
+				//열려있는 서브폼 닫기
+				int pagesCount = tabMenuForm.TabPages.Count;
+                for (int i = 0; i < pagesCount; i++)
+                {
+					tabMenuForm.SelectedIndex = i;
+					CloseChildForm();
+				}
+                
+				if (tabMenuForm.TabPages.Count == 0)
+					Application.Exit();
 			}
 		}
 
@@ -328,6 +359,49 @@ namespace P01_K_DESIGN_WIN
 			if (e.TabPage != null && e.TabPage.Tag is Form)
 			{
 				lblTopMenuCaption.Text = (e.TabPage.Tag as Form).Text; 
+			}
+		}
+
+		private int X, Y;
+		private void lblTitleBarCaption_MouseDown(object sender, MouseEventArgs e)
+		{	
+			if (e.Button == MouseButtons.Left && e.Clicks == 1)
+			{
+				X = this.Location.X; Y = this.Location.Y;
+				ReleaseCapture();
+				//SendMessage(this.Handle, 0x112, 0xf012, 0);
+				SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+
+				if (X != this.Location.X || Y != this.Location.Y)
+				{
+					if (this.Location.Y <= 0)
+					{
+						if (this.WindowState != FormWindowState.Maximized)
+						{
+							this.WindowState = FormWindowState.Maximized;
+						}
+					}
+					else
+					{
+						if (this.WindowState != FormWindowState.Normal)
+						{
+							this.WindowState = FormWindowState.Normal;
+						}
+					} 
+				}
+
+			}
+		}
+
+		private void lblTitleBarCaption_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			if (this.Size == Screen.PrimaryScreen.WorkingArea.Size)
+			{
+				btnNormal_Click(sender, e);
+			}
+			else
+			{
+				btnMaximum_Click(sender, e);
 			}
 		}
 	}

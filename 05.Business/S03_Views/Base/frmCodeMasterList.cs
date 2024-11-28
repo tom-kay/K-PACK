@@ -19,7 +19,7 @@ namespace P05_Business.S03_Views.Base
 		{
 			InitializeComponent();
 
-			Set_Menu_Button(new EditButtonSettings { isPrint = false });
+			Set_Menu_Button(new EditButtonSettings { isPrint = false, isNew = false });
 
 			//그리드 생성
 			CreateGrid();
@@ -30,8 +30,10 @@ namespace P05_Business.S03_Views.Base
 		#region Control Events
 		private void btnInit_Click(object sender, EventArgs e)
 		{
-			rdoUseY.Checked = true;
-			rdoDelY.Checked = true;
+			rdoUseA.Checked = true;
+			rdoDelA.Checked = true;
+
+			dgvList.DataSource = null;
 		}
 
 		private void btnSearch_Click(object sender, EventArgs e)
@@ -60,9 +62,9 @@ namespace P05_Business.S03_Views.Base
 				CodeMasterDto item = new CodeMasterDto()
 				{
 					Code = txtCode.Texts,
-					Name = txtName.Text,
-					UseYn = rdoUseY.Checked ? "Y" : "N",
-					DelYn = rdoDelY.Checked ? "Y" : "N",
+					Name = txtName.Texts,
+					UseYn = rdoUseA.Checked ? "" : rdoUseY.Checked ? "Y" : "N",
+					DelYn = rdoDelA.Checked ? "" : rdoDelY.Checked ? "Y" : "N",
 				};
 
 				List<CodeMasterDto> codeMasters = ctrl.GetCodeMasterList(item);

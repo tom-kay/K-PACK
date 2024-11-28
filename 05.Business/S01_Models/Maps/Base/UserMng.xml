@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SmartSqlMap Scope="Base.UserMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+	<Statements>
+		<Statement Id="SelectAdd">
+			,ifnull(user.DelYn,'N') AS DelYn
+			,user.`CreateId`
+			,date_format(user.CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`
+			,user.`UpdateId`
+			,date_format(user.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`
+			,user.`DeleteId`
+			,date_format(user.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+		</Statement>
+
+		<Statement Id="selectUserList">
+			SELECT user.`UserId`,
+			user.`CompanyCode`,
+			com.`CompanyNameK`,
+			user.`UserNameK`,
+			user.`UserNameE`,
+			user.`Nationality`,
+			user.`TelNo1`,
+			user.`TelNo2`,
+			user.`Email`,
+			user.`Address1`,
+			user.`Address2`,
+			user.`EnterDt`,
+			user.`LeaveDt`,
+			user.`DepartmentCode`,
+			user.`TeamCode`,
+			user.`PositionCode`,
+			user.`JobCode`,
+			user.`TaskCharge`,
+			user.`LoginId`,
+			user.`LoginErrorCnt`,
+			user.`UseYn`,
+			dept.`Name` AS DepartmentName,
+			team.`Name` AS TeamName,
+			pos.`Name` AS PositionName,
+			job.`Name` AS JobName
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_user` AS user
+			JOIN `tb_company` AS com
+			ON user.CompanyCode = com.CompanyCode
+			LEFT JOIN tb_code_detail AS dept
+			ON dept.MasterCode = 'DEPARTMENT'
+			AND dept.`Code` = `user`.`DepartmentCode`
+			LEFT JOIN tb_code_detail AS team
+			ON team.MasterCode = 'TEAM'
+			AND team.`Code` = `user`.`TeamCode`
+			LEFT JOIN tb_code_detail AS pos
+			ON pos.MasterCode = 'POSITION'
+			AND pos.`Code` = `user`.`PositionCode`
+			LEFT JOIN tb_code_detail AS job
+			ON job.MasterCode = 'JOBTYPE'
+			AND job.`Code` = `user`.`JobCode`
+			WHERE 1=1
+			<IsNotEmpty Prepend="And" Property="CompanyCode">
+				user.`CompanyCode` = @CompanyCode
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="LoginId">
+				user.`LoginId` Like Concat('%', @LoginId,'%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="UserNameK">
+				user.`UserNameK` Like Concat('%', @UserNameK,'%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="DepartmentCode">
+				user.`DepartmentCode` = @DepartmentCode
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="TeamCode">
+				user.`TeamCode` = @TeamCode
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="PositionCode">
+				user.`PositionCode` = @PositionCode
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="JobCode">
+				user.`JobCode` = @JobCode
+			</IsNotEmpty>
+			<Switch Prepend="And" Property="UseYn">
+				<Case CompareValue="Y">
+					user.`UseYn` IS NOT NULL AND user.`UseYn` = 'Y'
+				</Case>
+				<Case CompareValue="N">
+					(user.`UseYn` IS NULL OR user.`UseYn` != 'Y')
+				</Case>
+			</Switch>
+		</Statement>
+
+		<Statement Id="selectUser">
+			SELECT user.`UserId`,
+			user.`CompanyCode`,
+			user.`UserNameK`,
+			user.`UserNameE`,
+			user.`Nationality`,
+			user.`TelNo1`,
+			user.`TelNo2`,
+			user.`Email`,
+			user.`Address1`,
+			user.`Address2`,
+			user.`EnterDt`,
+			user.`LeaveDt`,
+			user.`DepartmentCode`,
+			user.`TeamCode`,
+			user.`PositionCode`,
+			user.`JobCode`,
+			user.`TaskCharge`,
+			user.`LoginId`,
+			user.`LoginErrorCnt`,
+			user.`UseYn`,
+			company.CompanyNameK
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_user` AS user
+			JOIN `tb_company` AS company
+			ON user.CompanyCode = company.CompanyCode
+			WHERE `UserId` = @UserId
+			<IsNotEmpty Prepend="And" Property="CompanyCode">
+				user.`CompanyCode` = @CompanyCode
+			</IsNotEmpty>
+		</Statement>
+
+		<Statement Id="insertUser">
+
+			INSERT INTO `tb_user`
+			(`UserId`,
+			`CompanyCode`,
+			`UserNameK`,
+			`UserNameE`,
+			`Nationality`,
+			`TelNo1`,
+			`TelNo2`,
+			`Email`,
+			`Address1`,
+			`Address2`,
+			`EnterDt`,
+			`LeaveDt`,
+			`DepartmentCode`,
+			`TeamCode`,
+			`PositionCode`,
+			`JobCode`,
+			`TaskCharge`,
+			`LoginId`,
+			`LoginPw`,
+			`LoginErrorCnt`,
+			`UseYn`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES
+			(FN_CreateUserId(@CompanyCode, @UserId),
+			@CompanyCode,
+			@UserNameK,
+			@UserNameE,
+			@Nationality,
+			@TelNo1,
+			@TelNo2,
+			@Email,
+			@Address1,
+			@Address2,
+			@EnterDt,
+			@LeaveDt,
+			@DepartmentCode,
+			@TeamCode,
+			@PositionCode,
+			@JobCode,
+			@TaskCharge,
+			@LoginId,
+			SHA2(@LoginPw,512),
+			@LoginErrorCnt,
+			@UseYn,
+			'N',
+			@CreateId,
+			now())
+			ON DUPLICATE KEY UPDATE
+			`UserNameK` = @UserNameK,
+			`UserNameE` = @UserNameE,
+			`Nationality` = @Nationality,
+			`TelNo1` = @TelNo1,
+			`TelNo2` = @TelNo2,
+			`Email` = @Email,
+			`Address1` = @Address1,
+			`Address2` = @Address2,
+			`EnterDt` = @EnterDt,
+			`LeaveDt` = @LeaveDt,
+			`DepartmentCode` = @DepartmentCode,
+			`TeamCode` = @TeamCode,
+			`PositionCode` = @PositionCode,
+			`JobCode` = @JobCode,
+			`TaskCharge` = @TaskCharge,
+			`LoginPw` = SHA2(@LoginPw,512),
+			`LoginErrorCnt` = @LoginErrorCnt,
+			`UseYn` = @UseYn,
+			`DelYn` = 'N',
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = null,
+			`Deletedt` = null
+			;
+			SELECT UserId FROM tb_user WHERE LoginId = @LoginId;
+		</Statement>
+		
+
+		<Statement Id="deleteUser" >
+			UPDATE `tb_user`
+			SET
+			`DelYn` = @DelYn,
+			`DeleteId` = @DeleteId,
+			`Deletedt` = now()
+			WHERE `UserId` = @UserId;
+		</Statement>
+
+		<Statement Id="signInUser">
+			SELECT user.`UserId`,
+			user.`UserNameK`,
+			user.`UserNameE`,
+			user.`TelNo1`,
+			user.`TelNo2`,
+			user.`Email`,
+			user.`DepartmentCode`,
+			dept.`Name` AS DepartmentName,
+			user.`TeamCode`,
+			team.`Name` AS TeamName,
+			user.`PositionCode`,
+			pos.`Name` AS PositionName,
+			user.`JobCode`,
+			job.`Name` AS JobName,
+			user.`TaskCharge`,
+			user.`LoginId`
+			FROM `tb_user` AS user
+			JOIN `tb_company` AS com
+			ON user.CompanyCode = com.CompanyCode
+			LEFT JOIN tb_code_detail AS dept
+			ON dept.MasterCode = 'DEPARTMENT'
+			AND dept.`Code` = `user`.`DepartmentCode`
+			LEFT JOIN tb_code_detail AS team
+			ON team.MasterCode = 'TEAM'
+			AND team.`Code` = `user`.`TeamCode`
+			LEFT JOIN tb_code_detail AS pos
+			ON pos.MasterCode = 'POSITION'
+			AND pos.`Code` = `user`.`PositionCode`
+			LEFT JOIN tb_code_detail AS job
+			ON job.MasterCode = 'JOBTYPE'
+			AND job.`Code` = `user`.`JobCode`
+			WHERE user.CompanyCode = @CompanyCode
+			AND user.LoginId = @LoginId
+			AND user.LoginPw = SHA2(@LoginPw,512)
+		</Statement>
+
+		<Statement Id="updateUser" >
+			UPDATE tb_user SET
+			UserNameE = @UserNameE
+			, TelNo1 = @TelNo1
+			, TelNo2 = @TelNo2
+			, Email = @Email
+			, Address1 = @Address1
+			, Address2 = @Address2
+			, UpdateId = @UpdateId
+			, UpdateDt = now()
+			WHERE CompanyCode = @CompanyCode
+			AND UserId = @UserId
+		</Statement>
+
+
+		<Statement Id="updateUserPassword" >
+			UPDATE tb_user SET
+			LoginPw = SHA2(@LoginPw,512)
+			, UpdateId = @UpdateId
+			, UpdateDt = now()
+			WHERE CompanyCode = @CompanyCode
+			AND UserId = @UserId
+		</Statement>
+
+		<Statement Id="selectUserPassword">
+			SELECT *
+			FROM tb_user AS `user`
+			WHERE user.CompanyCode = @CompanyCode
+			AND user.UserId = @UserId
+			AND user.LoginPw = SHA2(@LoginPw,512)
+		</Statement>
+
+	</Statements>
+</SmartSqlMap>

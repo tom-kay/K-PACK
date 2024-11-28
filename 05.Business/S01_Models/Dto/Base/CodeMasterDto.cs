@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace P05_Business.S01_Models.Dto.Base
 {
-	public class CodeMasterDto : DtoBase
+    public class CodeMasterDto : DtoBase
 	{
 		[Display(Name = "CODE")]
 		[Required(ErrorMessage ="[CODE]는 필수 입니다.")]

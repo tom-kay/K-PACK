@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "G:\\workspace\\K-PACK\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|g:\\workspace\\k-pack\\05.business\\smartsqlmapconfig.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A973F7FA-F929-4143-99AF-323DD7E502B0}|05.Business\\P05_Business.csproj|solutionrelative:05.business\\smartsqlmapconfig.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AF28BCC-FF90-45CE-9A4C-1197732A8A5F}|Launcher\\Launcher.csproj|G:\\workspace\\K-PACK\\launcher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AF28BCC-FF90-45CE-9A4C-1197732A8A5F}|Launcher\\Launcher.csproj|solutionrelative:launcher\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AF28BCC-FF90-45CE-9A4C-1197732A8A5F}|Launcher\\Launcher.csproj|G:\\workspace\\K-PACK\\launcher\\upgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AF28BCC-FF90-45CE-9A4C-1197732A8A5F}|Launcher\\Launcher.csproj|solutionrelative:launcher\\upgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AF28BCC-FF90-45CE-9A4C-1197732A8A5F}|Launcher\\Launcher.csproj|G:\\workspace\\K-PACK\\launcher\\upgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3AF28BCC-FF90-45CE-9A4C-1197732A8A5F}|Launcher\\Launcher.csproj|solutionrelative:launcher\\upgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SmartSqlMapConfig.xml",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\05.Business\\SmartSqlMapConfig.xml",
+              "RelativeDocumentMoniker": "05.Business\\SmartSqlMapConfig.xml",
+              "ToolTip": "G:\\workspace\\K-PACK\\05.Business\\SmartSqlMapConfig.xml",
+              "RelativeToolTip": "05.Business\\SmartSqlMapConfig.xml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-11-19T13:30:40.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\Launcher\\Program.cs",
+              "RelativeDocumentMoniker": "Launcher\\Program.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\Launcher\\Program.cs",
+              "RelativeToolTip": "Launcher\\Program.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAD4v1MAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T14:02:29.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Upgrade.cs",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\Launcher\\Upgrade.cs",
+              "RelativeDocumentMoniker": "Launcher\\Upgrade.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\Launcher\\Upgrade.cs",
+              "RelativeToolTip": "Launcher\\Upgrade.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAAwDUAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T14:04:26.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Upgrade.cs [\uB514\uC790\uC778]",
+              "DocumentMoniker": "G:\\workspace\\K-PACK\\Launcher\\Upgrade.cs",
+              "RelativeDocumentMoniker": "Launcher\\Upgrade.cs",
+              "ToolTip": "G:\\workspace\\K-PACK\\Launcher\\Upgrade.cs [\uB514\uC790\uC778]",
+              "RelativeToolTip": "Launcher\\Upgrade.cs [\uB514\uC790\uC778]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T11:30:34.217Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

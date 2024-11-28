@@ -28,38 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.pnlContainer.SuspendLayout();
-			this.pnlTitleBar.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// pnlContainer
-			// 
-			this.pnlContainer.Size = new System.Drawing.Size(819, 515);
-			// 
-			// pnlTitleBar
-			// 
-			this.pnlTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-			this.pnlTitleBar.Size = new System.Drawing.Size(819, 50);
-			// 
-			// btnClose
-			// 
-			this.btnClose.FlatAppearance.BorderSize = 0;
-			this.btnClose.Location = new System.Drawing.Point(769, 0);
-			// 
-			// btnMinimize
-			// 
-			this.btnMinimize.FlatAppearance.BorderSize = 0;
-			this.btnMinimize.Location = new System.Drawing.Point(719, 0);
-			// 
-			// frmPopup
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-			this.ClientSize = new System.Drawing.Size(823, 519);
-			this.Name = "frmPopup";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.pnlContainer.ResumeLayout(false);
-			this.pnlTitleBar.ResumeLayout(false);
-			this.ResumeLayout(false);
+            this.pnlContainer.SuspendLayout();
+            this.pnlTitleBar.SuspendLayout();
+            this.pnlPopupButtonBar.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
+            this.pnlInit.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // pnlPopupOptional
+            // 
+            this.pnlPopupOptional.Size = new System.Drawing.Size(565, 50);
+            // 
+            // pnlContainer
+            // 
+            this.pnlContainer.Size = new System.Drawing.Size(565, 400);
+            // 
+            // pnlTitleBar
+            // 
+            this.pnlTitleBar.Size = new System.Drawing.Size(565, 35);
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.Location = new System.Drawing.Point(515, 0);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.Location = new System.Drawing.Point(465, 0);
+            // 
+            // pnlBody
+            // 
+            this.pnlBody.Location = new System.Drawing.Point(0, 120);
+            this.pnlBody.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBody.Size = new System.Drawing.Size(565, 280);
+            // 
+            // lblPopupTitle
+            // 
+            this.lblPopupTitle.Size = new System.Drawing.Size(465, 35);
+            // 
+            // pnlPopupButtonBar
+            // 
+            this.pnlPopupButtonBar.Size = new System.Drawing.Size(565, 35);
+            // 
+            // pnlButtons
+            // 
+            this.pnlButtons.Location = new System.Drawing.Point(158, 0);
+            this.pnlButtons.Size = new System.Drawing.Size(407, 35);
+            // 
+            // pnlInit
+            // 
+            this.pnlInit.Location = new System.Drawing.Point(245, 0);
+            // 
+            // btnInit
+            // 
+            this.btnInit.FlatAppearance.BorderSize = 0;
+            // 
+            // pnlSearch
+            // 
+            this.pnlSearch.Location = new System.Drawing.Point(326, 0);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            // 
+            // frmPopup
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.ClientSize = new System.Drawing.Size(569, 404);
+            this.Name = "frmPopup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.pnlContainer.ResumeLayout(false);
+            this.pnlTitleBar.ResumeLayout(false);
+            this.pnlPopupButtonBar.ResumeLayout(false);
+            this.pnlButtons.ResumeLayout(false);
+            this.pnlInit.ResumeLayout(false);
+            this.pnlSearch.ResumeLayout(false);
+            this.ResumeLayout(false);
 
         }
 

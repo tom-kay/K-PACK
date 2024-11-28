@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SmartSqlMap Scope="Biz.OrderMng" xmlns="http://SmartSql.net/schemas/SmartSqlMap.xsd">
+	<Statements>
+		<Statement Id="SelectAdd">
+			,`ord`.CompanyCode
+			,ifnull(`ord`.DelYn,'N') AS DelYn
+			,`ord`.`CreateId`
+			,date_format(`ord`.CreateDt, '%Y-%m-%d %H:%i:%s') AS `CreateDt`
+			,`ord`.`UpdateId`
+			,date_format(`ord`.UpdateDt, '%Y-%m-%d %H:%i:%s') AS `UpdateDt`
+			,`ord`.`DeleteId`
+			,date_format(`ord`.DeleteDt, '%Y-%m-%d %H:%i:%s') AS `DeleteDt`
+		</Statement>
+
+		<!-- 주문 마스터 리스트 조회 -->
+		<Statement Id="selectOrderMasterList">
+			SELECT
+			`ord`.`OrderNo`,
+			`ord`.`RegDt`,
+			`ord`.`ExWorkDt`,
+			`ord`.`BuyerCustCode`,
+			`buyer`.`CustName` AS `BuyerCustName`,
+			`ord`.`BuyerPoNo`,
+			`ord`.`DueDt`,
+			`ord`.`OrderDt`,
+			`ord`.`WorkCustCode`,
+			`work`.`CustName` AS `WorkCustName`,
+			`ord`.`Description`,
+			`ord`.`Remark`,
+			`ord`.`TermsAndConditions`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `soodal`.`tb_po_master` AS `ord`
+			LEFT JOIN `soodal`.`tb_customer` AS `buyer`
+			ON `ord`.`BuyerCustCode` = `buyer`.`CustCode`
+			LEFT JOIN `soodal`.`tb_customer` AS `work`
+			ON `ord`.`WorkCustCode` = `work`.`CustCode`
+			WHERE `ord`.`CompanyCode` = @CompanyCode
+			AND `ord`.`DelYn` = 'N'
+			<Switch Prepend="AND" Property="DatePeriodType">
+				<Case CompareValue="R">
+					`ord`.`RegDt` BETWEEN @PeriodFromDt AND @PeriodToDt
+				</Case>
+				<Case CompareValue="W">
+					`ord`.`ExWorkDt` BETWEEN @PeriodFromDt AND @PeriodToDt
+				</Case>
+				<Case CompareValue="O">
+					`ord`.`OrderDt` BETWEEN @PeriodFromDt AND @PeriodToDt
+				</Case>
+				<Case CompareValue="D">
+					`ord`.`DueDt` BETWEEN @PeriodFromDt AND @PeriodToDt
+				</Case>
+			</Switch>
+			<IsNotEmpty Prepend="And" Property="OrderNo">
+				`ord`.`OrderNo` Like CONCAT('%', @OrderNo, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="BuyerPoNo">
+				`ord`.`BuyerPoNo` Like CONCAT('%', @BuyerPoNo, '%')
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="BuyerCustCode">
+				`ord`.`BuyerCustCode` = @BuyerCustCode
+			</IsNotEmpty>
+			<IsNotEmpty Prepend="And" Property="WorkCustCode">
+				`ord`.`WorkCustCode` = @WorkCustCode
+			</IsNotEmpty>
+		</Statement>
+
+		<!-- 주문 마스터 조회 -->
+		<Statement Id="selectOrderMaster">
+			SELECT
+			`ord`.`OrderNo`,
+			`ord`.`RegDt`,
+			`ord`.`ExWorkDt`,
+			`ord`.`BuyerCustCode`,
+			`buyer`.`CustName` AS `BuyerCustName`,
+			`ord`.`BuyerPoNo`,
+			`ord`.`DueDt`,
+			`ord`.`OrderDt`,
+			`ord`.`WorkCustCode`,
+			`work`.`CustName` AS `WorkCustName`,
+			`ord`.`Description`,
+			`ord`.`Remark`,
+			`ord`.`TermsAndConditions`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `soodal`.`tb_po_master` AS `ord`
+			LEFT JOIN `soodal`.`tb_customer` AS `buyer`
+			ON `ord`.`BuyerCustCode` = `buyer`.`CustCode`
+			LEFT JOIN `soodal`.`tb_customer` AS `work`
+			ON `ord`.`WorkCustCode` = `work`.`CustCode`
+			WHERE `ord`.`OrderNo` = @OrderNo
+			AND `ord`.`CompanyCode` = @CompanyCode
+			AND `ord`.`DelYn` = 'N'
+		</Statement>
+
+		<!-- 주문 마스터 삽입 -->
+		<Statement Id="insertOrderMaster">
+			INSERT INTO `tb_po_master`
+			(
+			`OrderNo`,
+			`RegDt`,
+			`ExWorkDt`,
+			`BuyerCustCode`,
+			`BuyerPoNo`,
+			`DueDt`,
+			`OrderDt`,
+			`WorkCustCode`,
+			`Description`,
+			`Remark`,
+			`TermsAndConditions`,
+			`CompanyCode`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES
+			(
+			@OrderNo,
+			date_format(now(), '%Y-%m-%d'),
+			@ExWorkDt,
+			@BuyerCustCode,
+			@BuyerPoNo,
+			@DueDt,
+			@OrderDt,
+			@WorkCustCode,
+			@Description,
+			@Remark,
+			@TermsAndConditions,
+			@CompanyCode,
+			'N',
+			@CreateId,
+			now()
+			)
+		</Statement>
+
+		<!-- 주문 마스터 업데이트 -->
+		<Statement Id="updateOrderMaster">
+			UPDATE `tb_po_master`
+			SET
+			`ExWorkDt` = @ExWorkDt,
+			`BuyerCustCode` = @BuyerCustCode,
+			`BuyerPoNo` = @BuyerPoNo,
+			`DueDt` = @DueDt,
+			`OrderDt` = @OrderDt,
+			`WorkCustCode` = @WorkCustCode,
+			`Description` = @Description,
+			`Remark` = @Remark,
+			`TermsAndConditions` = @TermsAndConditions,
+			`DelYn` = 'N',
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = NULL,
+			`DeleteDt` = NULL
+			WHERE `OrderNo` = @OrderNo
+			AND `CompanyCode` = @CompanyCode
+		</Statement>
+
+
+		<!-- 주문 마스터 삭제 (실제로는 업데이트) -->
+		<Statement Id="deleteOrderMaster">
+			UPDATE `tb_po_master` AS `ord`
+			SET
+			`ord`.`DelYn` = 'Y',
+			`ord`.`DeleteId` = @DeleteId,
+			`ord`.`DeleteDt` = now()
+			WHERE
+			`ord`.`OrderNo` = @OrderNo
+			AND `ord`.`CompanyCode` = @CompanyCode
+		</Statement>
+
+		<!-- 주문 상세 리스트 조회 -->
+		<Statement Id="selectOrderDetailList">
+			SELECT
+			`ord`.`OrderNo`,
+			`ord`.`DetailId`,
+			`ord`.`ItemGroupCode`,
+			`ord`.`ItemCode`,
+			`ord`.`SeqNo`,
+			`ord`.`ItemNo`,
+			`ord`.`SizeName`,
+			`ord`.`Description`,
+			`ord`.`Qty`,
+			`ord`.`UnitCode`,
+			`ord`.`MarkingColor`,
+			`ord`.`Remark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_po_detail` AS `ord`
+			WHERE
+			`ord`.`OrderNo` = @OrderNo
+			AND `ord`.`CompanyCode` = @CompanyCode
+			AND `ord`.`DelYn` = 'N'
+			ORDER BY `ord`.`ItemGroupCode`, `ord`.`ItemCode`
+		</Statement>
+
+		<!-- 주문 상세 조회 -->
+		<Statement Id="selectOrderDetail">
+			SELECT
+			`ord`.`OrderNo`,
+			`ord`.`DetailId`,
+			`ord`.`ItemGroupCode`,
+			`ord`.`ItemCode`,
+			`ord`.`SeqNo`,
+			`ord`.`ItemNo`,
+			`ord`.`SizeName`,
+			`ord`.`Description`,
+			`ord`.`Qty`,
+			`ord`.`UnitCode`,
+			`ord`.`MarkingColor`,
+			`ord`.`Remark`
+			<Include Prepend="" RefId="SelectAdd"/>
+			FROM `tb_po_detail` AS `ord`
+			WHERE
+			`ord`.`OrderNo` = @OrderNo
+			AND `ord`.`DetailId` = @DetailId
+			AND `ord`.`CompanyCode` = @CompanyCode
+			AND `ord`.`DelYn` = 'N'
+		</Statement>
+
+		<!-- 주문 상세 삽입 또는 업데이트 (Merge Insert) -->
+		<Statement Id="mergeOrderDetail">
+			INSERT INTO `tb_po_detail`
+			(
+			`OrderNo`,
+			`DetailId`,
+			`ItemGroupCode`,
+			`ItemCode`,
+			`SeqNo`,
+			`ItemNo`,
+			`SizeName`,
+			`Description`,
+			`Qty`,
+			`UnitCode`,
+			`MarkingColor`,
+			`Remark`,
+			`CompanyCode`,
+			`DelYn`,
+			`CreateId`,
+			`CreateDt`
+			)
+			VALUES
+			(
+			@OrderNo,
+			FN_CreateOrderDetailId(@OrderNo, @CompanyCode, @DetailId),
+			@ItemGroupCode,
+			@ItemCode,
+			@SeqNo,
+			@ItemNo,
+			@SizeName,
+			@Description,
+			@Qty,
+			@UnitCode,
+			@MarkingColor,
+			@Remark,
+			@CompanyCode,
+			'N',
+			@CreateId,
+			now()
+			)
+			ON DUPLICATE KEY UPDATE
+			`SeqNo` = @SeqNo,
+			`ItemNo` = @ItemNo,
+			`SizeName` = @SizeName,
+			`Description` = @Description,
+			`Qty` = @Qty,
+			`UnitCode` = @UnitCode,
+			`MarkingColor` = @MarkingColor,
+			`Remark` = @Remark,
+			`DelYn` = 'N',
+			`UpdateId` = @UpdateId,
+			`UpdateDt` = now(),
+			`DeleteId` = NULL,
+			`DeleteDt` = NULL
+		</Statement>
+
+		<!-- 주문 상세 삭제 (실제로는 업데이트) -->
+		<Statement Id="deleteOrderDetail">
+			UPDATE `tb_po_detail` AS `ord`
+			SET
+			`ord`.`DelYn` = 'Y',
+			`ord`.`DeleteId` = @DeleteId,
+			`ord`.`DeleteDt` = now()
+			WHERE
+			`ord`.`OrderNo` = @OrderNo
+			AND `ord`.`DetailId` = @DetailId
+			AND `ord`.`CompanyCode` = @CompanyCode
+		</Statement>
+
+		<Statement Id="selectReportOrderData">
+			SELECT
+			pm.OrderNo,
+			pm.RegDt,
+			pm.ExWorkDt,
+			pm.BuyerCustCode,
+			cust1.CustName AS BuyerCustName,
+			pm.BuyerPoNo,
+			pm.DueDt,
+			pm.OrderDt,
+			pm.WorkCustCode,
+			cust2.CustName AS WorkCustName,
+			cust2.Address1 AS WorkAddr1,
+			cust2.Address2 AS WorkAddr2,
+			cust2.TelNo AS WorkTelNo,
+			cust2.FaxNo AS WorkFaxNo,
+			pm.Description AS OrderDesc,
+			pm.TermsAndConditions,
+			pd.DetailId,
+			pd.ItemGroupCode,
+			tg.GroupName AS ItemGroupName,
+			pd.ItemCode,
+			pd.SeqNo,
+			pd.ItemNo,
+			pd.SizeName,
+			pd.Description AS ItemDesc,
+			pd.Qty,
+			pd.UnitCode,
+			cd1.Option1 AS UnitName,
+			pd.MarkingColor
+			FROM
+			tb_po_master pm
+			LEFT OUTER JOIN
+			tb_po_detail pd ON pm.OrderNo = pd.OrderNo
+			AND pm.CompanyCode = pd.CompanyCode
+			LEFT OUTER JOIN
+			tb_item td ON td.GroupCode = pd.ItemGroupCode
+			AND td.ItemCode = pd.ItemCode
+			AND td.CompanyCode = pd.CompanyCode
+			LEFT OUTER JOIN
+			tb_item_group tg ON tg.GroupCode = td.GroupCode
+			AND tg.CompanyCode = td.CompanyCode
+			LEFT OUTER JOIN
+			tb_customer cust1 ON cust1.CustCode = pm.BuyerCustCode
+			AND cust1.CompanyCode = pm.CompanyCode
+			LEFT OUTER JOIN
+			tb_customer cust2 ON cust2.CustCode = pm.WorkCustCode
+			AND cust2.CompanyCode = pm.CompanyCode
+			LEFT OUTER JOIN
+			tb_code_detail cd1 ON cd1.MasterCode = 'ITEMUNIT'
+			AND cd1.Code = pd.UnitCode
+			WHERE pm.OrderNo = @OrderNo
+			AND pm.CompanyCode = @CompanyCode
+		</Statement>
+
+		<Statement Id="selectOrderNoPopupList">
+			SELECT
+			`ord`.`OrderNo`
+			FROM `tb_po_master` AS `ord`
+			WHERE `ord`.`CompanyCode` = @CompanyCode
+			AND `ord`.`DelYn` = 'N'
+			<IsNotEqual Prepend="And" Property="ExCustCode" CompareValue="">
+				`ord`.`ExCustCode` = @ExCustCode
+			</IsNotEqual>
+			<IsNotEqual Prepend="And" Property="BuyerCustCode" CompareValue="">
+				`ord`.`BuyerCustCode` = @BuyerCustCode
+			</IsNotEqual>
+			<IsNotEqual Prepend="And" Property="BuyerPoNo" CompareValue="">
+				`ord`.`BuyerPoNo` LIKE concat('%', @BuyerPoNo, '%')
+			</IsNotEqual>
+			ORDER BY `ord`.`OrderNo`;
+		</Statement>
+		
+		<Statement Id="selectOrderDetailPopupList">
+			SELECT
+			`ord`.`OrderNo`,
+			`ord`.`BuyerPoNo`,
+			`dtl`.`DetailId`,
+			`dtl`.`ItemGroupCode`,
+			`dtl`.`ItemCode`,
+			`dtl`.`SeqNo`,
+			`dtl`.`ItemNo`,
+			`dtl`.`SizeName`,
+			`dtl`.`Description`,
+			`dtl`.`Qty`,
+			`dtl`.`UnitCode`,
+			`cd1`.`Option1` AS `UnitName`,
+			`dtl`.`MarkingColor`,
+			`dtl`.`Remark`
+			FROM `tb_po_master` AS `ord`
+			JOIN `tb_po_detail` AS `dtl`
+			ON `ord`.`OrderNo` = `dtl`.`OrderNo`
+			AND `ord`.`CompanyCode` = `dtl`.`CompanyCode`
+			AND `dtl`.`DelYn` = 'N'
+			LEFT JOIN tb_code_detail cd1
+			ON `cd1`.`MasterCode` = 'ITEMUNIT'
+			AND `cd1`.`Code` = `dtl`.`UnitCode`
+			WHERE`ord`.`CompanyCode` = @CompanyCode
+			AND `ord`.`DelYn` = 'N'
+			AND `ord`.`OrderNo` = @OrderNo
+			ORDER BY `dtl`.`ItemGroupCode`, `dtl`.`ItemCode`;
+		</Statement>
+	</Statements>
+</SmartSqlMap>
+

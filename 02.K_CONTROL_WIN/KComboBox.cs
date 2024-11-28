@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Windows.Forms;
 
 namespace P02_K_CONTROL_WIN
@@ -26,6 +27,8 @@ namespace P02_K_CONTROL_WIN
 
         //Events
         public event EventHandler OnSelectedIndexChanged;//Default event
+        public event EventHandler OnSelectedValueChanged;//Default event
+        public event EventHandler OnTextChanged;//Default event
         #endregion
 
         #region -> Constructor
@@ -38,9 +41,12 @@ namespace P02_K_CONTROL_WIN
 
             //ComboBox: Dropdown list
             cmbList.BackColor = listBackColor;
-            cmbList.Font = new Font(this.Font.Name, 10F);
+			//cmbList.Anchor = AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Top;
+			cmbList.Dock = DockStyle.Fill;
+			cmbList.Font = new Font(this.Font.Name, 10F);
             cmbList.ForeColor = listTextColor;
             cmbList.SelectedIndexChanged += new EventHandler(ComboBox_SelectedIndexChanged);//Default event
+            cmbList.SelectedValueChanged += new EventHandler(ComboBox_SelectedValueChanged);
             cmbList.TextChanged += new EventHandler(ComboBox_TextChanged);//Refresh text
 
             //Button: Icon
@@ -69,7 +75,7 @@ namespace P02_K_CONTROL_WIN
             this.Controls.Add(lblText);//2
             this.Controls.Add(btnIcon);//1
             this.Controls.Add(cmbList);//0
-            this.MinimumSize = new Size(200, 30);
+            //this.MinimumSize = new Size(200, 30);
             this.Size = new Size(200, 30);
             this.ForeColor = Color.DimGray;
             this.Padding = new Padding(borderSize);//Border Size
@@ -79,6 +85,7 @@ namespace P02_K_CONTROL_WIN
             this.ResumeLayout();
             AdjustComboBoxDimensions();
         }
+
         #endregion
 
         //Properties
@@ -196,7 +203,7 @@ namespace P02_K_CONTROL_WIN
 
         #region -> Data properties
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [Localizable(true)]
@@ -206,7 +213,7 @@ namespace P02_K_CONTROL_WIN
             get { return cmbList.Items; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [AttributeProvider(typeof(IListSource))]
         [DefaultValue(null)]
         public object DataSource
@@ -215,7 +222,7 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.DataSource = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [Browsable(true)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
@@ -227,7 +234,7 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.AutoCompleteCustomSource = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [Browsable(true)]
         [DefaultValue(AutoCompleteSource.None)]
         [EditorBrowsable(EditorBrowsableState.Always)]
@@ -237,7 +244,7 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.AutoCompleteSource = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [Browsable(true)]
         [DefaultValue(AutoCompleteMode.None)]
         [EditorBrowsable(EditorBrowsableState.Always)]
@@ -247,7 +254,7 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.AutoCompleteMode = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [Bindable(true)]
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -257,7 +264,7 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.SelectedItem = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int SelectedIndex
@@ -266,7 +273,27 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.SelectedIndex = value; }
         }
 
-        [Category("RJ Code - Data")]
+		[Category("K Code - Data")]
+		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public string SelectedText
+		{
+			get { return cmbList.Text; }
+			set { cmbList.SelectedText = value; }
+		}
+
+		[Category("K Code - Data")]
+		[DefaultValue(null)]
+		[Browsable(false)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		[Bindable(true)]
+		public object SelectedValue
+		{
+			get { return cmbList.SelectedValue; }
+			set { cmbList.SelectedValue = value; }
+		}
+
+        [Category("K Code - Data")]
         [DefaultValue("")]
         [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         [TypeConverter("System.Windows.Forms.Design.DataMemberFieldConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
@@ -276,7 +303,7 @@ namespace P02_K_CONTROL_WIN
             set { cmbList.DisplayMember = value; }
         }
 
-        [Category("RJ Code - Data")]
+        [Category("K Code - Data")]
         [DefaultValue("")]
         [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
         public string ValueMember
@@ -289,7 +316,7 @@ namespace P02_K_CONTROL_WIN
         #region -> Private methods
         private void AdjustComboBoxDimensions()
         {
-            cmbList.Width = lblText.Width;
+            //cmbList.Width = lblText.Width;
             cmbList.Location = new Point()
             {
                 X = this.Width - this.Padding.Right - cmbList.Width,
@@ -306,9 +333,17 @@ namespace P02_K_CONTROL_WIN
 
         //-> Default event
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {   
             if (OnSelectedIndexChanged != null)
                 OnSelectedIndexChanged.Invoke(sender, e);
+            //Refresh text
+            lblText.Text = cmbList.Text;
+        }
+
+        private void ComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (OnSelectedValueChanged != null)
+                OnSelectedValueChanged.Invoke(sender, e);
             //Refresh text
             lblText.Text = cmbList.Text;
         }
@@ -351,6 +386,8 @@ namespace P02_K_CONTROL_WIN
         }
         private void ComboBox_TextChanged(object sender, EventArgs e)
         {
+            if (OnTextChanged != null)
+                OnTextChanged.Invoke(sender, e);
             //Refresh text
             lblText.Text = cmbList.Text;
         }

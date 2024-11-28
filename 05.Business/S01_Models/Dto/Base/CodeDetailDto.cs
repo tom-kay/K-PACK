@@ -1,16 +1,8 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using Mysqlx.Crud;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace P05_Business.S01_Models.Dto.Base
 {
-	internal class CodeDetailDto : DtoBase
+	public class CodeDetailDto : DtoBase
 	{
 
 		[Required(ErrorMessage ="[CODE]는 필수 입니다.")]
@@ -21,7 +13,9 @@ namespace P05_Business.S01_Models.Dto.Base
 		[MaxLength(20, ErrorMessage = "[MASTER CODE]는 최대 20자리까지만 허용됩니다.")]
 		public string MasterCode { get; set; }
 
-		[MaxLength(20, ErrorMessage = "[코드명]은 최대 50자리까지만 허용됩니다.")]
+        public string MasterName { get; set; }
+
+        [MaxLength(20, ErrorMessage = "[코드명]은 최대 50자리까지만 허용됩니다.")]
 		public string Name { get; set; }
 
 		[MaxLength(20, ErrorMessage = "[설명]은 최대 255자리까지만 허용됩니다.")]
@@ -57,7 +51,9 @@ namespace P05_Business.S01_Models.Dto.Base
 		[MaxLength(20, ErrorMessage = "[옵션10]은 최대 20자리까지만 허용됩니다.")]
 		public string Option10 { get; set; }
 
-		public string UseYn { get; set; }
+        public int? OrderSeq { get; set; }
+
+        public string UseYn { get; set; }
 
 	}
 }
