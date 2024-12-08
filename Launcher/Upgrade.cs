@@ -29,6 +29,8 @@ namespace Launcher
             this.Text = "파일 다운로드 진행 중...";
             this.Size = new System.Drawing.Size(400, 100);
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.ShowIcon = false;
+            this.ControlBox = false;
 
             worker = new BackgroundWorker();
             worker.DoWork += new DoWorkEventHandler(Worker_DoWork);

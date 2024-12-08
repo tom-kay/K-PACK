@@ -5,6 +5,7 @@ using SmartSql.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -243,6 +244,103 @@ namespace P05_Business.S01_Models.Dao.Biz
 
             return invoices;
         }
+
+        /// <summary>
+        /// 레포트용 수출 마스터 정보 조회
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        internal RptExportMasterDto SelectRptExportMaster(ExportMasterDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "Biz.ExportMng",
+                SqlId = "selectExportMasterRpt",
+                Request = param
+            };
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+            RptExportMasterDto master = SqlMapper.QuerySingle<RptExportMasterDto>(context);
+
+            return master;
+        }
+
+        /// <summary>
+        /// 레포트용 수출 수주 정보 조회
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        internal RptExportBuyerPoDto SelectRptExportBuyerPo(ExportMasterDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "Biz.ExportMng",
+                SqlId = "selectExportBuyerPoRpt",
+                Request = param
+            };
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+            RptExportBuyerPoDto po = SqlMapper.QuerySingle<RptExportBuyerPoDto>(context);
+
+            return po;
+        }
+
+        /// <summary>
+        /// 레포트용 수출 컨테이너 정보 조회
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        internal RptExportContainerDto SelectRptExportContainer(ExportMasterDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "Biz.ExportMng",
+                SqlId = "selectExportContainerRpt",
+                Request = param
+            };
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+            RptExportContainerDto conatiner = SqlMapper.QuerySingle<RptExportContainerDto>(context);
+
+            return conatiner;
+        }
+
+        /// <summary>
+        /// 레포트용 수출 팩킹 정보 조회
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        internal List<RptExportPackingListDto> SelectRptExportPackingList(ExportMasterDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "Biz.ExportMng",
+                SqlId = "selectExportPackingListRpt",
+                Request = param
+            };
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+            List<RptExportPackingListDto> packing = SqlMapper.Query<RptExportPackingListDto>(context).ToList();
+
+            return packing;
+        }
+
+        /// <summary>
+        /// 레포트용 수출 송장 정보 조회
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        internal List<RptExportInvoiceDto> SelectRptExportInvoice(ExportMasterDto param)
+        {
+            RequestContext context = new RequestContext
+            {
+                Scope = "Biz.ExportMng",
+                SqlId = "selectExportInvoiceRpt",
+                Request = param
+            };
+            log.Info(SqlMapper.SqlBuilder.BuildSql(context));
+            List<RptExportInvoiceDto> packing = SqlMapper.Query<RptExportInvoiceDto>(context).ToList();
+
+            
+            return packing;
+        }
+
     }
 
 }

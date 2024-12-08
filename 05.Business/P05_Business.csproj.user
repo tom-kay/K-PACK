@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectView>ProjectFiles</ProjectView>
+    <ProjectView>ShowAllFiles</ProjectView>
     <PublishUrlHistory>G:\workspace\Clickonce\|ftp://kayroot.dothome.co.kr/html/soodal/|ftp://kayroot.dothome.co.kr/|ftp://kayroot.dothome.co.kr/soodal/|kayroot.dothome.co.kr/soodal/</PublishUrlHistory>
     <InstallUrlHistory>http://kayroot.dothome.co.kr/soodal/|http://kayroot.dothome.co.kr/html/soodal/|http://kayroot.dothome.co.kr/html/soodal/publish.htm/</InstallUrlHistory>
     <SupportUrlHistory />

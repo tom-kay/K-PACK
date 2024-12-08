@@ -108,3 +108,5 @@ G:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.csproj.CoreCompil
 G:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DE.5A9BE153.Up2Date
 G:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.dll
 G:\workspace\K-PACK\01.K_DESIGN_WIN\obj\Debug\P01_K_DESIGN_WIN.pdb
+G:\workspace\K-PACK\01.K_DESIGN_WIN\bin\Debug\FluentFTP.dll
+G:\workspace\K-PACK\01.K_DESIGN_WIN\bin\Debug\FluentFTP.xml

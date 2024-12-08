@@ -570,6 +570,155 @@
 			AND `CompanyCode` = @CompanyCode
 		</Statement>
 
+		<Statement Id="selectExportMasterRpt">
+			select mst.InvoiceNo
+				, mst.InvoiceDate
+				, mst.ShipperCode
+				, shp.CustName as ShipperName
+				, mst.ShipperAddress
+				, mst.ConsigneeCode
+				, csn.CustName as ConsigneeName
+				, mst.ConsigneeAddress
+				, mst.NotifyCode
+				, nty.CustName as NotifyName
+				, mst.NotifyAddress
+				, mst.BuyerCode
+				, byr.CustName as BuyerName
+				, mst.BuyerAddress
+				, mst.DepartureDate
+				, mst.CarrierName
+				, mst.PolCode
+				, pol.PortName as PolName
+				, mst.DestinationName
+				, mst.PodCode
+				, pod.PortName as PodName
+				, mst.DeliveryTermCode
+				, del.`Name` as DeliveryTermName
+				, mst.PaymentTermCode
+				, pay.`Name` as PaymentTermName
+				, mst.PaymentDesc
+				, format(mst.Measurement, 3) as Measurement
+				, format(mst.NetWeight,2) as NetWeight
+				, format(mst.GrossWeight,2) as GrossWeight
+				, mst.ShippingMark
+				, mst.Remark
+				, mst.PackingRemark
+				, mst.InvoiceRemark
+			from tb_export_master mst
+			left join tb_customer shp
+			on mst.ShipperCode = shp.CustCode
+			left join tb_customer csn
+			on mst.ConsigneeCode = csn.CustCode
+			left join tb_customer nty
+			on mst.NotifyCode = nty.CustCode
+			left join tb_customer byr
+			on mst.BuyerCode = byr.CustCode
+			left join tb_shipport_code pol
+			on mst.PolCode = pol.PortCode
+			left join tb_shipport_code pod
+			on mst.PodCode = pod.PortCode
+			left join tb_code_detail del
+			on mst.DeliveryTermCode = del.`Code`
+			and del.MasterCode = 'DELIVERYTERMS'
+			left join tb_code_detail pay
+			on mst.PaymentTermCode = pay.`Code`
+			and pay.MasterCode = 'PAYMENTTERMS'
+			where mst.InvoiceNo = @InvoiceNo
+		</Statement>
+
+
+		<Statement Id="selectExportBuyerPoRpt">
+			select pkg.InvoiceNo
+				, GROUP_CONCAT(distinct(pom.BuyerPoNo) separator ',') as BuyerPoNo
+				, GROUP_CONCAT(distinct(pom.OrderDt) separator ',') as BuyerPoDate
+			from tb_export_packing pkg
+			join tb_po_master pom
+			on pkg.OrderNo = pom.OrderNo
+			where pkg.InvoiceNo = @InvoiceNo
+		</Statement>
+
+		<Statement Id="selectExportContainerRpt">
+			select InvoiceNo as InvoiceNo
+				, GROUP_CONCAT(CONCAT(ContainerNo, '/'
+				, CONCAT_WS(','
+				, IF(SealNo1 <![CDATA[<>]]> '', SealNo1, null)
+				, IF(SealNo2 <![CDATA[<>]]> '', SealNo2, null)
+				, IF(SealNo3 <![CDATA[<>]]> '', SealNo3, null))) SEPARATOR '\r\n') as ContainerNo
+			from tb_export_container cntr
+			where InvoiceNo = @InvoiceNO
+			group by InvoiceNo
+			order by InvoiceNo, ContainerNo
+		</Statement>
+
+		<Statement Id="selectExportPackingListRpt">
+			select mst.InvoiceNo as InvoiceNo
+				, itg.GroupName as ItemGroupName		
+				, itg.AliasName as ItemGroupNameAlias	
+				, pkg.PkgUnitCode	
+				, pkgc.`Option1` as PkgUnitName	
+				, pkg.PkgStartNo	
+				, pkg.PkgEndNo	
+				, pod.SizeName	
+				, (pkg.Qty * pkg.PkgQty) as TotQty	
+				, unic.`Option1` as PcsUnitName	
+				, pkg.Qty as PcsQty		
+				, pkg.PkgQty as PkgQty	
+			from tb_export_master mst
+			join tb_export_packing pkg
+			on mst.InvoiceNo = pkg.InvoiceNo
+			join tb_po_detail pod
+			on pod.OrderNo = pkg.OrderNo
+			and pod.DetailId = pkg.OrderDetailId
+			left join tb_item it
+			on it.GroupCode = pod.ItemGroupCode
+			and it.ItemCode = pod.ItemCode
+			left join tb_item_group itg
+			on it.GroupCode = itg.GroupCode
+			left join tb_code_detail pkgc
+			on pkgc.MasterCode = 'PACKINGUNIT'
+			and pkgc.`Code` = pkg.PkgUnitCode
+			join tb_code_detail unic
+			on unic.MasterCode = 'ITEMUNIT'
+			and unic.`Code` = pod.UnitCode
+			where mst.InvoiceNo = @InvoiceNo
+			order by PackingSeq
+		</Statement>
+
+		<Statement Id="selectExportInvoiceRpt">
+			select
+				mt.InvoiceNo
+				, iv.InvoiceId
+				, iv.InvoiceSeq
+				, iv.OrderNo
+				, iv.OrderDetailId
+				, pd.ItemGroupCode
+				, ig.GroupName as ItemGroupName
+				, ig.AliasName as ItemGroupAliasName
+				, pd.ItemCode
+				, it.ItemName
+				, it.AliasName as ItemAliasName
+				, it.Size as ItemSize
+				, it.`Description` as ItemLength
+				, iv.UsQty
+				, iv.Qty
+				, iv.UnitPrice
+				, iv.Amount
+				, iv.CompanyCode
+			from tb_export_master mt
+			left join tb_export_invoice iv
+			on mt.InvoiceNo = iv.InvoiceNo
+			left join tb_po_detail pd
+			on pd.OrderNo = iv.OrderNo
+			and pd.DetailId = iv.OrderDetailId
+			left join tb_item it
+			on it.GroupCode = pd.ItemGroupCode
+			and it.ItemCode = pd.ItemCode
+			left join tb_item_group ig
+			on ig.GroupCode = it.GroupCode
+			where mt.InvoiceNo = @InvoiceNo
+			order by iv.InvoiceId
+		</Statement>
+
 	</Statements>
 </SmartSqlMap>
 

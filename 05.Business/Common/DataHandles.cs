@@ -249,7 +249,23 @@ namespace P05_Business.Common
 			return results;
 		}
 
-		public static DataTable ConvertToDataTable<T>(IList<T> data)
+        public static DataTable ConvertToDataTable<T>(T data)
+        {
+            if (data == null) return null;
+
+            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
+            DataTable dt = new DataTable();
+            foreach (PropertyDescriptor prop in properties)
+                dt.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+
+            DataRow row = dt.NewRow();
+            foreach (PropertyDescriptor prop in properties)
+                row[prop.Name] = prop.GetValue(data) ?? DBNull.Value;
+            dt.Rows.Add(row);
+            return dt;
+        }
+
+        public static DataTable ConvertToDataTable<T>(IList<T> data)
 		{
 			if (data == null) return null;
 

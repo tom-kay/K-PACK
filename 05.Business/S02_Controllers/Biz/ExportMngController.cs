@@ -88,5 +88,56 @@ namespace P05_Business.S02_Controllers.Biz
 
             return isDelete;
         }
+
+        /// <summary>
+        /// 레포트용 수출 팩킹리스트 정보 조회
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        internal RptExportMasterDto GetRptExportPacking(ExportMasterDto param)
+        {
+            // 마스터 정보 조회
+            RptExportMasterDto master = dao.SelectRptExportMaster(param);
+
+            if (master != null && !string.IsNullOrEmpty(master.InvoiceNo))
+            {
+                // 바이어 수주 정보 조회
+                master.RptExportBuyerPo = dao.SelectRptExportBuyerPo(param);
+
+                // 컨테이너 정보 조회
+                master.RptExportContainer = dao.SelectRptExportContainer(param);
+
+                // 팩킹리스트 정보 조회
+                master.RptExportPackingList = dao.SelectRptExportPackingList(param);
+
+            }
+
+            return master;
+        }
+
+        /// <summary>
+        /// 레포트용 수출 인보이스 정보 조회
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        internal RptExportMasterDto GetRptExportInvoice(ExportMasterDto param)
+        {
+            // 마스터 정보 조회
+            RptExportMasterDto master = dao.SelectRptExportMaster(param);
+
+            if (master != null && !string.IsNullOrEmpty(master.InvoiceNo))
+            {
+                // 바이어 수주 정보 조회
+                master.RptExportBuyerPo = dao.SelectRptExportBuyerPo(param);
+
+                // 컨테이너 정보 조회
+                master.RptExportContainer = dao.SelectRptExportContainer(param);
+
+                // 인보이스 정보 조회
+                master.RptExportInvoice = dao.SelectRptExportInvoice(param);
+            }
+
+            return master;
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P05_Business.S01_Models.Dto.Biz
 {
-    internal class OrderReportDto
+    internal class OrderReportDto : DtoBase
     {
         public string OrderNo { get; set; }
         public string RegDt { get; set; }

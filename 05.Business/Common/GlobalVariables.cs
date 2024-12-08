@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.Logging;
+using Org.BouncyCastle.Asn1.Mozilla;
 using System;
 using System.Collections.Generic;
 using System.Deployment.Application;
@@ -92,20 +93,20 @@ namespace P05_Business.Common
 	public static class GlobalVariables
 	{
         //public static string ExcutePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-		public static string SYSTEM_DRIVE = Environment.GetFolderPath(Environment.SpecialFolder.System).Substring(0, 3);
+        public static string SYSTEM_DRIVE = Environment.GetFolderPath(Environment.SpecialFolder.System).Substring(0, 3);
         public const string ExcutePath = "SOODAL";
         public const string LogoFilePath = "Resource";
 		public const string LogoFile = "Logo.jpg";
+		public const string CONNECTION_FILE_NAME = "SmartSqlMapConfig.xml";
 
 
-        static string configPath = string.Empty;
-
-
-        public static string CLICKONCE_CONFIG_FILE = Path.Combine(ApplicationDeployment.IsNetworkDeployed ? AppDomain.CurrentDomain.BaseDirectory : Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "SmartSqlMapConfig.xml");
+        public static string CLICKONCE_CONFIG_FILE = Path.Combine(ApplicationDeployment.IsNetworkDeployed ? AppDomain.CurrentDomain.BaseDirectory : Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), CONNECTION_FILE_NAME);
+        public static string SOURCE_LOGO_FILE = Path.Combine(ApplicationDeployment.IsNetworkDeployed ? AppDomain.CurrentDomain.BaseDirectory : Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), LogoFilePath, LogoFile);
         public static string CONNECTION_CONFIG_FILE = Path.Combine(SYSTEM_DRIVE, @"SOODAL\Network\SmartSqlMapConfig.xml");
 
 
         public static string GetLogoFileImage { get { return Path.Combine(SYSTEM_DRIVE, ExcutePath, LogoFilePath, LogoFile); } }
 
+        
     }
 }

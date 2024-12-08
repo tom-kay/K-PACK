@@ -43,7 +43,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\soodal\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>5</WarningLevel>
@@ -473,6 +473,11 @@
     <Compile Include="S01_Models\Dto\Biz\ExportPackingDto.cs" />
     <Compile Include="S01_Models\Dto\Biz\OrderReportDto.cs" />
     <Compile Include="S01_Models\Dto\Base\ShipportCodeDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\RptExportContainerDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\RptExportBuyerPoDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\RptExportInvoiceDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\RptExportMasterDto.cs" />
+    <Compile Include="S01_Models\Dto\Biz\RptExportPackingListDto.cs" />
     <Compile Include="S02_Controllers\Biz\ExportMngController.cs" />
     <Compile Include="S03_Views\Biz\frmExportList.cs">
       <SubType>Form</SubType>
@@ -522,6 +527,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>rtpExportPackingDocu.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="S04_Reports\Xsd\ExportInvoiceDs.cs">
+      <DependentUpon>ExportInvoiceDs.xsd</DependentUpon>
     </Compile>
     <Compile Include="S04_Reports\Xsd\ExportInvoiceDs.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1128,7 +1136,6 @@
     <Content Include="Resource\Images\warning_warning_black.png" />
     <Content Include="Resource\Images\windows_windows.png" />
     <Content Include="Resource\Images\yuan_yuan_currency_blue_blue_currency.png" />
-    <Content Include="Resource\k_icon.ico" />
     <Content Include="S01_Models\Maps\Biz\ExportMng.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

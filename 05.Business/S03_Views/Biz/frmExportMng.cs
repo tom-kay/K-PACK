@@ -14,6 +14,8 @@ using P05_Business.S01_Models.Dto.Biz;
 using P05_Business.S02_Controllers.Base;
 using P05_Business.S02_Controllers.Biz;
 using P05_Business.S03_Views.Popup.Biz;
+using P05_Business.S04_Reports;
+using P05_Business.S04_Reports.Rpt;
 using SmartSql.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -97,57 +99,42 @@ namespace P05_Business.S03_Views.Biz
         {
             try
             {
-/*
+
                 AccessMain.ShowLoading();
 
                 // 데이터 조회
-                OrderMasterDto param = new OrderMasterDto
+                ExportMasterDto param = new ExportMasterDto
                 {
-                    OrderNo = txtOrderNo.Texts.Trim(),
+                    InvoiceNo = txtInvoiceNo.Texts.Trim(),
                     CompanyCode = LoginCompany.CompanyCode,
                 };
 
-                List<OrderReportDto> reportDtos = ctrl.GetReportOrderData(param);
+                //팩킹리스트
+                RptExportMasterDto master = ctrl.GetRptExportPacking(param);
+                RptExportBuyerPoDto buyerPo = master.RptExportBuyerPo;
+                RptExportContainerDto container = master.RptExportContainer;
+                IList<RptExportPackingListDto> packing = master.RptExportPackingList;
+                
+                DataTable dtMaster = DataHandles.ConvertToDataTable(master);
+                DataTable dtBuyerPo = DataHandles.ConvertToDataTable(buyerPo);
+                DataTable dtContainer = DataHandles.ConvertToDataTable(container);
+                DataTable dtPacking = DataHandles.ConvertToDataTable(packing);
 
-                DataTable dtReport = DataHandles.ConvertToDataTable(reportDtos);
-                dtReport.TableName = "OrderDt";
-
-                DataTable dtCom = new DataTable();
-                dtCom.Columns.Add("CompanyCode", typeof(string));
-                dtCom.Columns.Add("Nationality", typeof(string));
-                dtCom.Columns.Add("HeadOffice", typeof(string));
-                dtCom.Columns.Add("CompanyGroup", typeof(string));
-                dtCom.Columns.Add("CompanyNameK", typeof(string));
-                dtCom.Columns.Add("CompanyNameE", typeof(string));
-                dtCom.Columns.Add("TelNo", typeof(string));
-                dtCom.Columns.Add("FaxNo", typeof(string));
-                dtCom.Columns.Add("AddressK1", typeof(string));
-                dtCom.Columns.Add("AddressK2", typeof(string));
-                dtCom.Columns.Add("AddressE1", typeof(string));
-                dtCom.Columns.Add("AddressE2", typeof(string));
-
-                DataRow drCom = dtCom.NewRow();
-                drCom["CompanyCode"] = LoginCompany.CompanyCode;
-                drCom["Nationality"] = LoginCompany.NationalityCode;
-                drCom["HeadOffice"] = LoginCompany.HeadOffice;
-                drCom["CompanyGroup"] = LoginCompany.CompanyGroup;
-                drCom["CompanyNameK"] = LoginCompany.CompanyNameK;
-                drCom["CompanyNameE"] = LoginCompany.CompanyNameE;
-                drCom["TelNo"] = LoginCompany.TelNo;
-                drCom["FaxNo"] = LoginCompany.FaxNo;
-                drCom["AddressK1"] = LoginCompany.AddressK1;
-                drCom["AddressK2"] = LoginCompany.AddressK2;
-                drCom["AddressE1"] = LoginCompany.AddressE1;
-                drCom["AddressE2"] = LoginCompany.AddressE2;
-                dtCom.Rows.Add(drCom);
-                dtCom.TableName = "CompanyInfo";
+                dtMaster.TableName = "ExportMaster";
+                dtBuyerPo.TableName = "ExportBuyerPoNo";
+                dtContainer.TableName = "ExportContainer";
+                dtPacking.TableName = "ExportPacking";
 
                 DataSet ds = new DataSet();
-                ds.Tables.Add(dtReport);
-                ds.Tables.Add(dtCom);
+                ds.DataSetName = "ExportPackingDs";
+                ds.Tables.Add(dtMaster.Copy());
+                ds.Tables.Add(dtBuyerPo.Copy());
+                ds.Tables.Add(dtContainer.Copy());
+                ds.Tables.Add(dtPacking.Copy());
 
-                rptOrderDucu rpt = new rptOrderDucu();
+                rtpExportPackingDocu rpt = new rtpExportPackingDocu();
                 rpt.SetDataSource(ds);
+                
                 //rpt.SetParameterValue("MyParameter", "Hello");    //파라미터 설정
                 //rpt.DataDefinition.FormulaFields["MyFormula"].Text = "'" + textBox1.Text + "'";       //포뮬러 설정
 
@@ -158,7 +145,7 @@ namespace P05_Business.S03_Views.Biz
                 AccessMain.HideLoading();
 
                 frmReport.ShowDialog(this);
-*/
+
             }
             catch (Exception ex)
             {
